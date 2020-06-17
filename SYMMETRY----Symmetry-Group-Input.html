@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>SYMMETRY    Symmetry Group Input - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SYMMETRY    Symmetry Group Input";
+    var mkdocs_page_input_path = "SYMMETRY----Symmetry-Group-Input.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>SYMMETRY    Symmetry Group Input</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/SYMMETRY----Symmetry-Group-Input.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="symmetry-symmetry-group-input">SYMMETRY -- Symmetry Group Input</h2>
+<p>The SYMMETRY directive is used (optionally) within the compound GEOMETRY
+directive to specify the point group for the molecular geometry or space
+group for the crystal structure. The general form of the directive, as
+described above within the general form of the GEOMETRY directive, is as
+follows:</p>
+<pre><code>   [SYMMETRY [group] &lt;string group_name&gt;|&lt;integer group number&gt; \
+   [setting &lt;integer setting&gt;] [print] \  
+          [tol &lt;real tol default 1d-2&gt;]]
+</code></pre>
+
+<p>The keyword group is optional, and can be omitted without affecting how
+the input for this directive is processed. However, if the SYMMETRY
+directive is used, a group name must be specified by supplying an entry
+for the string variable <code>&lt;group_name&gt;</code> or <code>&lt;group number&gt;</code>. The latter is
+useful for the space groups discussed in the section below. The group
+name should be specified as the standard Schöflies symbol. Examples of
+expected input for the variable group_name include such entries as:</p>
+<ul>
+<li>c2v - for molecular symmetry <em>C</em><sub>2<em>v</em></sub></li>
+<li>d2h - for molecular symmetry <em>D</em><sub>2<em>h</em></sub></li>
+<li>Td - for molecular symmetry <em>T</em><sub><em>d</em></sub></li>
+<li>d6h - for molecular symmetry <em>D</em><sub>6<em>h</em></sub></li>
+</ul>
+<p>The SYMMETRY directive is optional. The default is no symmetry (i.e.,
+<em>C</em><sub>1</sub> point group). Automatic detection of point group
+symmetry is available through the use of autosym in the GEOMETRY
+directive main line (discussed in <a href="Keywords-on-the-GEOMETRY-directive.html">Keywords on the GEOMETRY directive</a>).
+Note: if the SYMMETRY directive is present the autosym keyword is
+ignored.</p>
+<p>If only symmetry-unique atoms are specified, the others will be
+generated through the action of the point group operators, but the user
+if free to specify all atoms. The user must know the symmetry of the
+molecule being modeled, and be able to specify the coordinates of the
+atoms in a suitable orientation relative to the rotation axes and planes
+of symmetry. Appendix C lists a number of examples of the GEOMETRY
+directive input for specific molecules having symmetry patterns
+recognized by NWChem. The exact point group symmetry will be forced upon
+the molecule, and atoms within 10<sup>−3</sup> A.U. of a symmetry
+element (e.g., a mirror plane or rotation axis) will be forced onto that
+element. Thus, it is not necessary to specify to a high precision those
+coordinates that are determined solely by symmetry.</p>
+<p>The keyword print gives information concerning the point group
+generation, including the group generators, a character table, the
+mapping of centers, and the group operations.</p>
+<p>The keyword tol relates to the accuracy with which the symmetry-unique
+atoms should be specified. When the atoms are generated, those that are
+within the tolerance, tol, are considered the same.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
