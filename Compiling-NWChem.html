@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Compiling NWChem from source - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Compiling NWChem from source";
+    var mkdocs_page_input_path = "Compiling-NWChem.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-proper-environment-variables">Setting up the proper environment variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mpi-variables">MPI variables</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-optional-environmental-variables">Adding optional environmental variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#optimized-math-libraries">Optimized math libraries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-deal-with-integer-size-of-linear-algebra-libraries">How to deal with integer size of Linear Algebra libraries</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linking-in-nbo">Linking in NBO</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#building-the-nwchem-binary">Building the NWChem binary</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Compiling NWChem from source</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Compiling-NWChem.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+        <a href="Developer.html" class="btn btn-neutral float-right" title="NWChem Development">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="Supplementary-Information.html" class="btn btn-neutral" title="Supplementary Information"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="compiling-nwchem-from-source">Compiling NWChem from source</h1>
+<p>On this page, a step-by-step description of the build process and
+necessary and optional environment variables is outlined. In addition,
+based on the experiences of developers and users how-to's for various
+platforms have been created. These how-to's will be updated with
+additional platforms and better environment variables over time.</p>
+<h2 id="setting-up-the-proper-environment-variables">Setting up the proper environment variables</h2>
+<ul>
+<li><strong>NWCHEM_TOP</strong> defines the top directory of the NWChem source tree,
+    e.g.</li>
+</ul>
+<p>When dealing with source from a <strong><em>NWChem release</em></strong> (6.8 in this
+example)</p>
+<pre><code>export NWCHEM_TOP=&lt;your path&gt;/nwchem-6.8
+</code></pre>
+
+<p>when using the <strong><em>NWChem development</em></strong> source</p>
+<pre><code>export NWCHEM_TOP=&lt;your path&gt;/nwchem
+</code></pre>
+
+<ul>
+<li>$NWCHEM_TARGET defines your target platform, e.g.</li>
+</ul>
+<pre><code>export NWCHEM_TARGET=LINUX64
+</code></pre>
+
+<table>
+<caption>The platforms that available are:</caption>
+<thead>
+<tr>
+<th>NWCHEM_TARGET</th>
+<th>Platform</th>
+<th>OS/Version</th>
+<th>Compilers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>LINUX</td>
+<td>x86<br />
+ppc<br/>
+arm</td>
+<td>RedHat, Suse<br />
+Suse</td>
+<td>GNU, Intel, PGI<br />
+GNU, xlf</td>
+</tr>
+<tr class="odd">
+<td>LINUX64</td>
+<td>ia64<br />
+x86_64<br />
+ppc64</br>
+ppc64le</br>
+aarch64</td>
+<td>RedHat<br />
+SLES, RedHat<br />
+SLES, RedHat</td>
+<td>Intel<br />
+GNU, PGI, PathScale, Intel<br />
+xlf</td>
+</tr>
+<tr class="even">
+<td>BGL<br />
+BGP<br />
+BGQ</td>
+<td>Blue Gene/L<br />
+Blue Gene/P<br />
+Blue Gene/Q</td>
+<td>SLES (login) CNK (compute)</td>
+<td>blrts_xlf<br />
+bgxlf_r<br />
+bgxlf_r</td>
+</tr>
+<tr class="odd">
+<td>LAPI<br />
+LAPI64</td>
+<td>IBM SP</td>
+<td>AIX/LAPI</td>
+<td>xlf</td>
+</tr>
+<tr class="even">
+<td>MACX<br />
+MACX64</td>
+<td>Apple MacOSX</td>
+<td>OSX</td>
+<td>GNU, xlf, Intel</td>
+</tr>
+<tr class="odd">
+<td>CYGWIN<br />
+</td>
+<td>Intel x86</td>
+<td>Windows with Cygwin<br />
+Windows</td>
+<td>GNU</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><strong>ARMCI_NETWORK</strong> must be defined in order to achieve best
+    performance on high performance networks, e.g.</li>
+</ul>
+<pre><code>export ARMCI_NETWORK=OPENIB
+</code></pre>
+
+<p>For a single processor system, this environment variable does not have
+to be defined.</p>
+<table>
+<caption>Supported combination of ARMCI_NETWORK and NWCHEM_TARGET variables:</caption>
+<thead>
+<tr>
+<th>ARMCI_NETWORK</th>
+<th>NWCHEM_TARGET</th>
+<th>Network</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>OPENIB</td>
+<td>LINUX, LINUX64</td>
+<td>Mellanox InfiniBand</td>
+<td>Verbs</td>
+</tr>
+<tr class="odd">
+<td>MPI-PR</td>
+<td>LINUX64</td>
+<td>Any network</td>
+<td>MPI</td>
+</tr>
+<tr class="even">
+<td>MPI-MT<br />
+MPI-SPAWN</td>
+<td>LINUX64</td>
+<td>MPI support multi-threading multiple</td>
+<td>MPI-2</td>
+</tr>
+<tr class="odd">
+<td>MPI-TS</td>
+<td>any</td>
+<td>any network with MPI</td>
+<td>MPI</td>
+</tr>
+<tr class="even">
+<td>MPI-PT</td>
+<td>any</td>
+<td>any network with MPI</td>
+<td>MPI</td>
+</tr>
+<tr class="odd">
+<td>DMAPP</td>
+<td>LINUX64</td>
+<td>Cray Gemini &amp; Aries</td>
+<td>Cray DMAPP</td>
+</tr>
+<tr class="even">
+<td>GEMINI</td>
+<td>LINUX64</td>
+<td>Cray Gemini</td>
+<td>Cray libonesided</td>
+</tr>
+<tr class="odd">
+<td>PORTALS</td>
+<td>LINUX64</td>
+<td>Cray SeaStar/HyperTransport</td>
+<td>Cray Portals3</td>
+</tr>
+<tr class="even">
+<td>BGMLMPI</td>
+<td>BGL</td>
+<td>IBM Blue Gene/L</td>
+<td>BGLMPI</td>
+</tr>
+<tr class="odd">
+<td>DCMFMPI</td>
+<td>BGP</td>
+<td>IBM Blue Gene/P</td>
+<td>DCMF, MPI</td>
+</tr>
+</tbody>
+</table>
+
+<p>Please see <a href="ARMCI.html">Choosing the ARMCI Library</a> for
+additional information on choosing the right network
+options.</p>
+<h3 id="mpi-variables">MPI variables</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>USE_MPI</td>
+<td>Set to "y" to indicate that NWChem should be compiled with MPI</td>
+</tr>
+<tr>
+<td>USE_MPIF</td>
+<td>Set to "y" for the NWPW module to use fortran-bindings of MPI (Generally set when USE_MPI is set)</td>
+</tr>
+<tr>
+<td>USE_MPIF4</td>
+<td>Set to "y" for the NWPW module to use Integer*4 fortran-bindings of MPI. (Generally set when USE_MPI is set on most platforms)</td>
+</tr>
+<tr>
+<td>LIBMPI</td>
+<td>Name of the MPI library that should be linked with -l (eg. -lmpich)</td>
+</tr>
+<tr>
+<td>MPI_LIB</td>
+<td>Directory where the MPI library resides</td>
+</tr>
+<tr>
+<td>MPI_INCLUDE</td>
+<td>Directory where the MPI include files reside</td>
+</tr>
+</tbody>
+</table>
+<p><strong><span style="color:#FF0000">New in NWChem 6.6</span></strong>: If the
+location of the mpif90 command is part of your PATH env. variable,
+NWChem will figure out the values of LIBMPI, MPI_LIB and MPI_INCLUDE
+(if they are not set). Therefore, we do <strong>NOT</strong> recommend to set LIBMPI,
+MPI_LIB and MPI_INCLUDE and add the location of mpif90 to the PATH
+variable, instead.</p>
+<p>The output of the command</p>
+<pre><code>mpif90 -show
+</code></pre>
+
+<p>can be used to extract the values of LIBMPI, MPI_LIB and MPI_INCLUDE</p>
+<p>E.g. for MPICH2, this might look
+like:</p>
+<pre><code>$ mpif90 -show
+f95 -I/usr/local/mpich2.141p1/include -I/usr/local/mpich2.141p1/include -L/usr/local/mpich2.141p1/lib \
+-lmpichf90 -lmpichf90 -lmpich -lopa -lmpl -lrt -lpthread
+</code></pre>
+
+<p>The corresponding environment variables
+are</p>
+<pre><code>  % setenv USE_MPI y
+  % setenv LIBMPI &quot;-lmpich -lopa -lmpl -lpthread -lmpichf90 -lfmpich -lmpich&quot;
+  % setenv MPI_LIB /usr/local/mpich2.141p1/lib 
+  % setenv MPI_INCLUDE '/usr/local/mpich2.141p1/include
+</code></pre>
+
+<p>Note: a script is available in NWChem 6.5 to extract the environment variables listed above</p>
+<p>$NWCHEM_TOP/contrib/distro-tools/getmpidefs_nwchem</p>
+<table>
+<caption>For some specific implementations the settings for MPI_LIB, MPI_INCLUDE, and LIBMPI look like:</caption>
+<thead>
+<tr>
+<th>MPI Implementation</th>
+<th>Environment variables</th>
+</tr>
+</thead>
+<tbody>
+<tr class="even">
+<td>MPICH</td>
+<td>setenv MPI_LOC /usr/local #location of mpich installation<br />
+setenv MPI_LIB $MPI_LOC/lib<br />
+setenv MPI_INCLUDE $MPI_LOC/include<br />
+setenv LIBMPI &quot;-lfmpich -lmpich -lpmpich&quot;</td>
+</tr>
+<tr class="odd">
+<td>MPICH2</td>
+<td>setenv MPI_LOC /usr/local #location of mpich2 installation<br />
+setenv MPI_LIB $MPI_LOC/lib<br />
+setenv MPI_INCLUDE $MPI_LOC/include<br />
+setenv LIBMPI &quot;-lmpich -lopa -lmpl -lrt -lpthread&quot;</td>
+</tr>
+<tr class="even">
+<td>OPENMPI</td>
+<td>setenv MPI_LOC /usr/local #location of openmpi installation<br />
+setenv MPI_LIB $MPI_LOC/lib<br />
+setenv MPI_INCLUDE $MPI_LOC/include<br />
+setenv LIBMPI &quot;-lmpi_f90 -lmpi_f77 -lmpi -ldl -Wl,--export-dynamic -lnsl -lutil&quot;</td>
+</tr>
+</tbody>
+</table>
+
+<p>Note:</p>
+<p>When MPI is used, the appropriate MPI run command should be used to
+start an NWChem calculation, e.g.</p>
+<pre><code>  % mpirun -np 8 $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem h2o.nw
+</code></pre>
+
+<p>When all nodes are connected via shared memory and the ch_shmem version
+of MPICH is installed and used, NWChem can be called directly, e.g.</p>
+<pre><code>  % $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem -np 8 h2o.nw
+</code></pre>
+
+<ul>
+<li><strong>NWCHEM_MODULES</strong> defines the modules to be compiled, e.g.</li>
+</ul>
+<pre><code>export NWCHEM_MODULES=&quot;all python&quot;
+</code></pre>
+
+<p>The following modules are available:</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all</td>
+<td>Everything useful</td>
+</tr>
+<tr>
+<td>all python</td>
+<td>Everything useful plus python</td>
+</tr>
+<tr>
+<td>qm</td>
+<td>All quantum mechanics modules</td>
+</tr>
+<tr>
+<td>md</td>
+<td>MD only build</td>
+</tr>
+</tbody>
+</table>
+<p>Note that additional environment variables need to be defined to specify
+the location of the Python libraries, when the python module is
+compiled. See the optional environmental variables section for
+specifics.</p>
+<h2 id="adding-optional-environmental-variables">Adding optional environmental variables</h2>
+<p><strong>USE_NOFSCHECK</strong> can be set to avoid NWChem creating files for each
+process when testing the size of the scratch directory (a.k.a. creation
+of junk files), e.g.</p>
+<pre><code>export USE_NOFSCHECK=TRUE
+</code></pre>
+
+<p><strong>USE_NOIO</strong> can be set to avoid NWChem 6.5 doing I/O for the ddscf,
+mp2 and ccsd modules (it automatically sets USE_NOFSCHECK, too). It is
+strongly recommended on large clusters or supercomputers or any computer
+lacking any fast and large local filesystem.</p>
+<pre><code>export USE_NOIO=TRUE
+</code></pre>
+
+<p><strong>LIB_DEFINES</strong> can be set to pass additional defines to the C
+preprocessor (for both Fortran and C), e.g.</p>
+<pre><code>export LIB_DEFINES=-DDFLT_TOT_MEM=16777216
+</code></pre>
+
+<p>Note: -DDFLT_TOT_MEM sets the default dynamic memory available for
+NWChem to run, where the units are in doubles. Instead of manually
+defining these one can optionally use the <code>getmem.nwchem</code> script in the
+$NWCHEM_TOP/contrib directory. This script should be run after an
+initial build of the binary has been completed. The script will assess
+memory availability and make an educated guess, recompile the
+appropriate files and relink.</p>
+<p><strong>MRCC_METHODS</strong> can be set to request the multireference coupled
+cluster capability to be included in the code, e.g.</p>
+<pre><code>export MRCC_METHODS=TRUE
+</code></pre>
+
+<p><strong>CCSDTQ</strong> can be set to request the CCSDTQ method and its derivatives 
+to be included in the code, e.g.</p>
+<pre><code>export CCSDTQ=TRUE
+</code></pre>
+
+<p><strong>Setting Python environment variables</strong></p>
+<p>Python programs may be embedded into the NWChem input and used to
+control the execution of NWChem. To build with Python, Python needs to
+be available on your machine. The software can be download from
+<a href="https://www.python.org">https://www.python.org</a> . Follow the Python instructions for
+installation and testing. NWChem has been tested with Python versions
+1.x and 2.x.</p>
+<p>The following environment variables need to be set when compiling with
+Python:</p>
+<pre><code>export PYTHONHOME=/usr/local/Python-1.5.1
+export PYTHONVERSION=1.5
+</code></pre>
+
+<p>Note that the third number in the version should not be kept: 2.2.3
+should be set as 2.2</p>
+<p><strong><span style="color:#FF0000">New in NWChem 6.6</span></strong>: By setting the
+env. variable</p>
+<pre><code>USE_PYTHONCONFIG=Y
+</code></pre>
+
+<p>all the linking bits should be picked up, therefore you will not need to
+set any further env .variable other than PYTHONHOME and PYTHONVERSION
+(and safely ignore the rest of this paragraph)</p>
+<p>The following env. variables might be required</p>
+<pre><code>export USE_PYTHON64= y
+export PYTHONLIBTYPE=so
+export PYTHONCONFIGDIR=config-x86_64-linux-gnu
+</code></pre>
+
+<p>USE_PYTHON64 is needed on platforms were the Python library is found
+under the /usr/lib64 tree instead of /usr/lib (e.g. 64-bit RHEL6:
+/usr/lib64/python2.6/config/libpython2.6.so).</p>
+<p>PYTHONLIBTYPE=so needs to be set when static libraries are not present,
+and shared libraries needs to be used, instead
+(/usr/lib64/python2.6/config/libpython2.6.a vs
+/usr/lib64/python2.6/config/libpython2.6.so).</p>
+<p>PYTHONCONFIGDIR needs to be set when the name of the subdirectory
+containing the Python library is not config (e.g.
+config-x86_64-linux-gnu instead of config).</p>
+<p>To run with Python, make sure that PYTHONHOME is set as mentioned above.
+You will also need to set PYTHONPATH to include any modules that you are
+using in your input. Examples of Python within NWChem are in the
+$NWCHEM_TOP/QA/tests/pyqa and $NWCHEM_TOP/contrib/python directories.</p>
+<h3 id="optimized-math-libraries">Optimized math libraries</h3>
+<p>By default NWChem uses its own basic linear algebra subroutines (BLAS).
+To include faster BLAS routines, the environment variable BLASOPT needs
+to be set before building the code. For example, with
+OpenBLAS</p>
+<pre><code>export BLASOPT=&quot;-lopenblas&quot;
+</code></pre>
+
+<p>Good choices of optimized BLAS libraries on x86 (e.g. LINUX and LINUX64)
+hardware include:  </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BLIS</td>
+<td><a href="https://github.com/flame/blis">https://github.com/flame/blis</a></td>
+</tr>
+<tr>
+<td>OpenBLAS</td>
+<td><a href="https://github.com/xianyi/OpenBLAS">https://github.com/xianyi/OpenBLAS</a></td>
+</tr>
+<tr>
+<td>GotoBLAS</td>
+<td><a href="http://www.tacc.utexas.edu/tacc-projects/gotoblas2">http://www.tacc.utexas.edu/tacc-projects/gotoblas2</a></td>
+</tr>
+<tr>
+<td>Intel MKL</td>
+<td><a href="http://www.intel.com/software/products/mkl">http://www.intel.com/software/products/mkl</a></td>
+</tr>
+<tr>
+<td>ATLAS</td>
+<td><a href="http://math-atlas.sf.net">http://math-atlas.sf.net</a></td>
+</tr>
+<tr>
+<td>Cray LibSci</td>
+<td>Available only on Cray hardware, it is automatically linked when compiling on Cray computers.</td>
+</tr>
+</tbody>
+</table>
+<p><em><strong>New since release 7.0.0 (after commit <a href="https://github.com/nwchemgit/nwchem/commit/6b0a971207e776f43dec81974014e86caf8cee61#diff-1750a4dcc9a0a9b1773d275e96c46a1e">6b0a971</a>)</strong></em>:  If BLASOPT is defined, the LAPACK_LIB environment variable must be set up, too.  LAPACK_LIB must provide the location of the library containing the LAPACK routines. For example, OpenBLAS provides the full suite of LAPACK routines, therefore, in this case, LAPACK_LIB can be set to the same value as BLASOPT</p>
+<pre><code>export BLASOPT=-lopenblas
+export LAPACK_LIB=-lopenblas
+</code></pre>
+
+<p>NWChem can also take advantage of the <a href="http://www.netlib.org/scalapack/">ScaLAPACK
+library</a> if it is installed on your
+system. The following environment variables need to be set:</p>
+<pre><code>export USE_SCALAPACK=y
+
+export SCALAPACK=&quot;location of Scalapack and BLACS library&quot;
+</code></pre>
+
+<h3 id="how-to-deal-with-integer-size-of-linear-algebra-libraries">How to deal with integer size of Linear Algebra libraries</h3>
+<p>In the case of 64-bit platforms, most vendors optimized BLAS
+libraries cannot be used. This is due to the fact that while NWChem uses
+64-bit integers (i.e. integer*8) on 64-bit platforms, most of the
+vendors optimized BLAS libraries used 32-bit integers. The same holds
+for the ScaLAPACK libraries, which internally use 32-bit integers.<br />
+The BLAS_SIZE environment variable is used at compile time to set the size of integer arguments in BLAS calls.  </p>
+<table>
+<thead>
+<tr>
+<th align="center">BLAS_SIZE</th>
+<th>size of integer arguments in BLAS routines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">4</td>
+<td>32-bit (most common default)</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td>64-bit</td>
+</tr>
+</tbody>
+</table>
+<p>A method is available to link against the libraries mentioned above,
+using the following procedure:</p>
+<pre><code>   cd $NWCHEM_TOP/src
+   make clean
+   make 64_to_32
+   make USE_64TO32=y  BLAS_SIZE=4 BLASOPT=&quot; optimized BLAS&quot; SCALAPACK=&quot;location of Scalapack and BLACS library&quot;
+</code></pre>
+
+<p>E.g., for IBM64 this looks like</p>
+<pre><code>  % make USE_64TO32=y BLAS_SIZE=4 BLASOPT=&quot;-lessl -lmass&quot;
+</code></pre>
+
+<p>Notes:</p>
+<ul>
+<li>GotoBLAS2 (or OpenBLAS) can be installed with 64bit integers. This
+    is accomplished by compiling the GotoBLAS2 library after having
+    edited the GotoBLAS2 Makefile.rule file and un-commenting the line
+    containing the INTERFACE64 definition. In other words, the line</li>
+</ul>
+<pre><code>          #INTERFACE64 = 1
+</code></pre>
+
+<p>needs to be changed to</p>
+<pre><code>          INTERFACE64 = 1
+</code></pre>
+
+<ul>
+<li>ACML and MKL can support 64-bit integers if the appropriate library
+    is chosen. For MKL, one can choose the ILP64 Version of Intel® MKL
+    and the correct recipe can be extracted from the website
+    <a href="https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor">https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor</a>.
+    For ACML the int64 libraries should be chosen, e.g. in the case of
+    ACML 4.4.0 using a PGI compiler
+    /opt/acml/4.4.0/pgi64_int64/lib/libacml.a</li>
+</ul>
+<h3 id="linking-in-nbo">Linking in NBO</h3>
+<p>The 5.0 (obsolete) version of NBO provides a utility to generate source
+code that can be linked into computational chemistry packages such as
+NWChem. To utilize this functionality, follow the instructions in the
+NBO 5 package to generate an nwnbo.f file. Linking NBO into NWChem can
+be done using the following procedure:</p>
+<pre><code>  % cd $NWCHEM_TOP/src 
+  % cp nwnbo.f $NWCHEM_TOP/src/nbo/.  
+  % make nwchem_config NWCHEM_MODULES=&quot;all nbo&quot; 
+  % make
+</code></pre>
+
+<p>One can now use "task nbo" and incorporate NBO input into the NWChem
+input file directly:</p>
+<pre><code> nbo  
+   $NBO NRT $END  
+   ... 
+ end  
+
+ task nbo
+</code></pre>
+
+<h2 id="building-the-nwchem-binary">Building the NWChem binary</h2>
+<p>Once all required and optional environment variables have been set,
+NWChem can be compiled:</p>
+<pre><code>  % cd $NWCHEM_TOP/src  
+
+  % make nwchem_config 
+
+  % make &gt;&amp; make.log
+</code></pre>
+
+<p>The make above will use the standard compilers available on your system.
+To use compilers different from the default one can either set
+environment variables:</p>
+<pre><code>  % export FC=&lt;fortran compiler&gt;  
+  % export CC=&lt;c compiler&gt;
+</code></pre>
+
+<p>Or one can supply the compiler options to the make command (<em>recommended</em> option), e.g:</p>
+<pre><code>  % make FC=ifort 
+</code></pre>
+
+<p>For example, on Linux FC could be set either equal to ifort, gfortran or pgf90</p>
+<p><strong>Nota bene:</strong> NWChem does NOT support usage of the full path in FC and
+CC variables. Please provide filenames only as in the examples above!</p>
+<p>Note 1: If in a Linux environment, FC is set equal to anything other
+than the tested compilers, there is no guarantee of a successful
+installation, since the makefile structure has not been tested to
+process other settings. In other words, please avoid make FC="ifort -O3 -xhost"
+and stick to make FC="ifort", instead</p>
+<p>Note 2: It's better to avoid redefining CC, since a) NWChem does not
+have C source that is a computational bottleneck and b) we typically
+test just the default C compiler. In other words, the recommendation is
+to compile with make FC=ifort</p>
+<p>Note 3: It's better to avoid modifying the values of the FOPTIMIZE and
+COPTIMIZE variables. The reason is that the default values for FOPTIMIZE
+and COPTIMIZE have been tested by the NWChem developers (using the
+internal QA suites, among others), while any modification might produce
+incorrect results.</p>
+<h1 id="how-to-build_nwchem-script-unsupported">How-to: Build_nwchem script (unsupported)</h1>
+<p>The build_nwchem script is an auto-compile tool. It guesses the
+configuration of your machine based on the results of a number of tests
+and compiles a corresponding binary. It is of course possible that the
+script guesses something wrong in which case that setting can be
+corrected by manually specifying the corresponding environment variable.
+See the other platform how-to's for details on those variables. The only
+requirement to use the script is that the MPI compiler wrappers (e.g.
+mpif90, mpicc and mpiCC) should be in your path, and that if your
+machine uses the "module" software you should have all modules you want
+to use loaded. If these requirements are met then simply run</p>
+<pre><code>% cd $NWCHEM_TOP
+% ./contrib/distro-tools/build_nwchem | tee build_nwchem.log
+</code></pre>
+
+<p>In the file build_nwchem.log you will find under "Building NWChem" a
+report on what platform the script thinks you are using.</p>
+<p>In addition to compiling the code the build_nwchem script now also
+creates scripts that can be used to set or unset all the environment
+variables that were used in the build. Those scripts are</p>
+<pre><code>nwchem_make_env.csh
+nwchem_make_env.sh
+nwchem_make_unenv.csh
+nwchem_make_unenv.sh
+</code></pre>
+
+<p>The scripts also define a command</p>
+<pre><code>renwc
+</code></pre>
+
+<p>that can be used to recompile just one directory and relink the code.
+This is particularly convenient when developing.</p>
+<h1 id="how-to-linux-platforms">How-to: Linux platforms</h1>
+<ul>
+<li><strong>Common environmental variables for building in serial or in
+    parallel with MPI</strong></li>
+</ul>
+<pre><code> % setenv NWCHEM_TOP &lt;your path&gt;/nwchem  
+ % setenv NWCHEM_TARGET LINUX64  
+ % setenv NWCHEM_MODULES  all
+</code></pre>
+
+<ul>
+<li><strong>Common environmental variables for building with MPI</strong></li>
+</ul>
+<p>The following environment variables need to be set when NWChem is
+compiled with
+MPI:</p>
+<pre><code>% setenv USE_MPI y
+% setenv USE_MPIF y
+% setenv USE_MPIF4 y
+
+% setenv MPI_LOC &lt;your path&gt;/openmpi-1.4.3  (for example, if you are using OpenMPI)
+% setenv MPI_LIB &lt;your path&gt;/openmpi-1.4.3/lib
+% setenv MPI_INCLUDE &lt;your path&gt;/openmpi-1.4.3/include
+% setenv LIBMPI &quot;-lmpi_f90 -lmpi_f77 -lmpi -lpthread&quot;
+</code></pre>
+
+<p><strong>New in NWChem 6.6:</strong> If the location of the mpif90 command is part of
+your PATH env. variable, NWChem will figure out the values of LIBMPI,
+MPI_LIB and MPI_INCLUDE (if they are not set). Therefore, we recommend
+not to set LIBMPI, MPI_LIB and MPI_INCLUDE and add the location of
+mpif90 to the PATH variable, instead.</p>
+<ul>
+<li><strong>Compiling the code once all variables are set</strong></li>
+</ul>
+<pre><code>% cd $NWCHEM_TOP/src
+% make nwchem_config
+% make FC=gfortran &gt;&amp; make.log
+</code></pre>
+
+<h4 id="nwchem-66-on-ubuntu-1404-trusty-tahr">NWChem 6.6 on Ubuntu 14.04 (Trusty Tahr)</h4>
+<p>These instruction are likely to work (with minor modifications) on all
+Debian based distributions</p>
+<ul>
+<li>Packages
+required:</li>
+</ul>
+<pre><code>python-dev gfortran libopenblas-dev libopenmpi-dev openmpi-bin tcsh make
+</code></pre>
+
+<ul>
+<li>Settings</li>
+</ul>
+<pre><code>export USE_MPI=y
+export NWCHEM_TARGET=LINUX64
+export USE_PYTHONCONFIG=y
+export PYTHONVERSION=2.7
+export PYTHONHOME=/usr
+export BLASOPT=&quot;-lopenblas -lpthread -lrt&quot;
+export LAPACK_LIB=$BLASOPT
+export BLAS_SIZE=4
+export USE_64TO32=y
+</code></pre>
+
+<ul>
+<li>Compilation steps</li>
+</ul>
+<pre><code>make nwchem_config NWCHEM_MODULES=&quot;all python&quot;
+make 64_to_32
+make
+</code></pre>
+
+<h4 id="nwchem-66-on-fedora-22">NWChem 6.6 on Fedora 22</h4>
+<ul>
+<li>Packages
+required:</li>
+</ul>
+<pre><code>python-devel gcc-gfortran openblas-devel openblas-serial64 openmpi-devel tcsh make patch
+</code></pre>
+
+<ul>
+<li>Settings</li>
+</ul>
+<pre><code>export USE_MPI=y
+export NWCHEM_TARGET=LINUX64
+export USE_PYTHONCONFIG=y
+export PYTHONVERSION=2.7
+export PYTHONHOME=/usr
+export BLASOPT=&quot;-lnwclapack -lopenblas64&quot;
+export BLAS_SIZE=8
+export PATH=/usr/lib64/openmpi/bin:$PATH
+export LD_LIBRARY_PATH=/usr/lib64/openmpi/lib:$LD_LIBRARY_PATH
+export USE_ARUR=y
+</code></pre>
+
+<ul>
+<li>Compilation steps</li>
+</ul>
+<pre><code>make nwchem_config NWCHEM_MODULES=&quot;all python&quot;
+make
+</code></pre>
+
+<h4 id="nwchem-68-on-centos-71fedora-27">NWChem 6.8 on Centos 7.1/Fedora 27</h4>
+<p>Once you have added the <a href="https://fedoraproject.org/wiki/EPEL">EPEL
+repository</a> to your Centos/Fedora/RedHat
+installation, you can have a more efficient NWChem build. </p>
+<pre><code>sudo rpm -Uvh http://download.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-11.noarch.rpm
+</code></pre>
+
+<ul>
+<li>Packages
+required:</li>
+</ul>
+<pre><code>python-devel gcc-gfortran openblas-devel openblas-serial64 openmpi-devel scalapack-openmpi-devel \
+elpa-openmpi-devel tcsh openssh-clients which tar bzip2
+</code></pre>
+
+<ul>
+<li>Settings</li>
+</ul>
+<pre><code>export USE_MPI=y
+export NWCHEM_TARGET=LINUX64
+export USE_PYTHONCONFIG=y
+export PYTHONVERSION=2.7
+export PYTHONHOME=/usr
+export USE_64TO32=y
+export BLAS_SIZE=4
+export BLASOPT=&quot;-lopenblas -lpthread -lrt&quot;
+export LAPACK_LIB=$BLASOPT
+export SCALAPACK_SIZE=4
+export SCALAPACK=&quot;-L/usr/lib64/openmpi/lib -lscalapack&quot;
+export ELPA=&quot;-I/usr/lib64/gfortran/modules/openmpi -L/usr/lib64/openmpi/lib -lelpa&quot;
+export LD_LIBRARY_PATH=/usr/lib64/openmpi/lib/:$LD_LIBRARY_PATH
+export PATH=/usr/lib64/openmpi/bin/:$PATH
+</code></pre>
+
+<ul>
+<li>Compilation steps</li>
+</ul>
+<pre><code>cd $NWCHEM_TOP/src  
+make nwchem_config NWCHEM_MODULES=&quot;all python&quot;  
+make 64_to_32  
+make
+</code></pre>
+
+<h4 id="nwchem-66-on-redhat-6">NWChem 6.6 on RedHat 6</h4>
+<ul>
+<li>Packages required:</li>
+</ul>
+<pre><code>python-devel gcc-gfortran openmpi-devel tcsh make
+</code></pre>
+
+<ul>
+<li>Settings</li>
+</ul>
+<pre><code>export USE_MPI=y
+export NWCHEM_TARGET=LINUX64
+export USE_PYTHONCONFIG=y
+export PYTHONVERSION=2.6
+export PYTHONHOME=/usr
+export USE_INTERNALBLAS
+export LD_LIBRARY_PATH=/usr/lib64/openmpi/lib/:$LD_LIBRARY_PATH
+export PATH=/usr/lib64/openmpi/bin/:$PATH
+</code></pre>
+
+<ul>
+<li>Compilation steps</li>
+</ul>
+<pre><code>make nwchem_config NWCHEM_MODULES=&quot;all python&quot;
+make
+</code></pre>
+
+<h4 id="nwchem-66-on-redhat-6-epel-repository">NWChem 6.6 on RedHat 6 &amp; EPEL repository</h4>
+<p>Once you have added the <a href="https://fedoraproject.org/wiki/EPEL">EPEL
+repository</a> to you RedHat 6
+installation, you can have a more efficient NWChem build. The settings
+are exactly the same as
+<a href="http://www.nwchem-sw.org/index.php?title=Compiling_NWChem#NWChem_6.6_on_Centos_7.1">Centos 7.1</a></p>
+<h4 id="nwchem-66-on-opensuse-13">NWChem 6.6 on OpenSuse 13</h4>
+<ul>
+<li>Packages
+required:</li>
+</ul>
+<pre><code>gcc-fortran make python-devel openblas-devel openmpi-devel tcsh
+</code></pre>
+
+<ul>
+<li>Settings</li>
+</ul>
+<pre><code>export USE_MPI=y
+export NWCHEM_TARGET=LINUX64
+export USE_PYTHONCONFIG=y
+export PYTHONVERSION=2.7
+export PYTHONHOME=/usr
+export USE_64TO32=y
+export BLAS_SIZE=4
+export BLASOPT=&quot;-lopenblas -lpthread -lrt&quot;
+export PATH=/usr/lib64/mpi/gcc/openmpi/bin:$PATH
+export LD_LIBRARY_PATH=/usr/lib64/mpi/gcc/openmpi/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/lib64/openmpi/bin/:$PATH
+</code></pre>
+
+<ul>
+<li>Compilation steps</li>
+</ul>
+<pre><code>make nwchem_config NWCHEM_MODULES=&quot;all python&quot;
+make 64_to_32
+make
+</code></pre>
+
+<h1 id="how-to-mac-platforms">How to: Mac platforms</h1>
+<h2 id="compilation-of-nwchem-63-release-on-mac-os-x-107">Compilation of NWChem 6.3 release on Mac OS X 10.7</h2>
+<ul>
+<li>Download and unpack latest NWChem tarball to the directory of your
+    choosing, say /Users/johndoe/nwchem</li>
+<li>Download XCode from the <a href="http://itunes.apple.com/us/app/xcode/id497799835?mt=12">App
+    store</a></li>
+<li>From within Xcode install command line tools</li>
+<li>Download
+    <a href="http://quatramaran.ens.fr/~coudert/gfortran/gfortran-4.6.2-x86_64-Lion.dmg">gfortran 4.6.2</a>
+    from <a href="http://gcc.gnu.org/wiki/GFortranBinaries#MacOS">http://gcc.gnu.org/wiki/GFortranBinaries#MacOS</a></li>
+<li>To compile serial version of NWChem 6.3 set (unset) the following
+    environmental variables</li>
+</ul>
+<pre><code>unsetenv USE_MPI
+setenv NWCHEM_MODULES all
+setenv OLD_GA yes
+setenv NWCHEM_TARGET MACX
+setenv NWCHEM_TOP /Users/johndoe/nwchem
+</code></pre>
+
+<ul>
+<li>Go to your source directory, configure, and compile</li>
+</ul>
+<pre><code>cd /Users/johndoe/nwchem/src
+make nwchem_config
+make
+</code></pre>
+
+<ul>
+<li>That is it !</li>
+</ul>
+<h2 id="compilation-of-nwchem-65-release-on-mac-os-x-109-x86_64">Compilation of NWChem 6.5 release on Mac OS X 10.9 x86_64</h2>
+<ul>
+<li>Download and unpack latest NWChem tarball to the directory of your
+    choosing, say /Users/johndoe/nwchem</li>
+<li>Install Homebrew as described at
+<a href="http://brew.sh">http://brew.sh</a></li>
+</ul>
+<pre><code>ruby -e &quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;
+</code></pre>
+
+<ul>
+<li>Use Homebrew to install mpich2</li>
+</ul>
+<pre><code>brew install mpich2
+</code></pre>
+
+<ul>
+<li>As usual, set the env. variables</li>
+</ul>
+<pre><code>setenv USE_MPI y
+setenv NWCHEM_MODULES all
+setenv NWCHEM_TARGET MACX64
+setenv NWCHEM_TOP /Users/johndoe/nwchem
+</code></pre>
+
+<ul>
+<li><strong>Important</strong>: set the following env. variable (GA will not compile
+    otherwise)</li>
+</ul>
+<pre><code>setenv CFLAGS_FORGA &quot;-DMPICH_NO_ATTR_TYPE_TAGS&quot;
+</code></pre>
+
+<ul>
+<li>Go to your source directory, configure, and compile</li>
+</ul>
+<pre><code>cd /Users/johndoe/nwchem/src
+make nwchem_config
+make
+</code></pre>
+
+<h2 id="compilation-of-nwchem-66-on-mac-os-x-1010-yosemite-x86_64">Compilation of NWChem 6.6 on Mac OS X 10.10 (Yosemite) x86_64</h2>
+<h4 id="method-1-using-gfortran-from-hpcsfnet-and-mpich-from-macports">Method #1: using gfortran from hpc.sf.net and mpich from macports</h4>
+<ul>
+<li>Download and unpack latest NWChem tarball to the directory of your
+    choosing, say /Users/johndoe/nwchem</li>
+<li>Install gfortran (4.9) from <a href="http://hpc.sourceforge.net/">http://hpc.sourceforge.net/</a> (
+    <a href="http://prdownloads.sourceforge.net/hpc/gcc-4.9-bin.tar.gz?download">http://prdownloads.sourceforge.net/hpc/gcc-4.9-bin.tar.gz?download</a>
+    ) and make sure to add the location to your path</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li>Install mpi (e.g. using macports)</li>
+</ul>
+<pre><code>sudo port install mpich
+sudo port select mpi mpich-mp-fortran
+</code></pre>
+
+<ul>
+<li>Set environmental variables</li>
+</ul>
+<pre><code>export NWCHEM_TOP=/Users/johndoe/nwchem/
+export NWCHEM_TARGET=MACX64
+export USE_MPI=&quot;y&quot;
+export USE_MPIF=&quot;y&quot;
+export USE_MPIF4=&quot;y&quot;
+export CFLAGS_FORGA=&quot;-DMPICH_NO_ATTR_TYPE_TAGS&quot;
+export LIBMPI=&quot;-lmpifort -lmpi -lpmpi -lpthread&quot;
+export BLASOPT=&quot; &quot;
+</code></pre>
+
+<ul>
+<li>Go to your source directory, configure, and compile</li>
+</ul>
+<pre><code>cd /Users/johndoe/nwchem/src
+make nwchem_config
+make
+</code></pre>
+
+<h4 id="method-2-using-gfortran-and-openmpi-from-brew">Method #2: using gfortran and openmpi from brew</h4>
+<ul>
+<li>Download and unpack latest NWChem tarball to the directory of your
+    choosing, say /Users/johndoe/nwchem</li>
+<li>Install Homebrew as described at <a href="http://brew.sh">http://brew.sh</a> (more details at
+    <a href="https://docs.brew.sh/Installation.html">https://docs.brew.sh/Installation.html</a>)</li>
+</ul>
+<!-- end list -->
+
+<pre><code> /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 
+</code></pre>
+
+<ul>
+<li>Use Homebrew to install open-mpi</li>
+</ul>
+<pre><code>brew install open-mpi
+</code></pre>
+
+<ul>
+<li>As usual, set the env. variables</li>
+</ul>
+<pre><code>export USE_MPI=y  
+export NWCHEM_TARGET=MACX64  
+export NWCHEM_TOP=/Users/johndoe/nwchem  
+export USE_INTERNALBLAS=y
+</code></pre>
+
+<ul>
+<li><strong>Important</strong>: set the following env. variable (GA will not compile
+    otherwise)</li>
+</ul>
+<pre><code>export CFLAGS_FORGA &quot;-DMPICH_NO_ATTR_TYPE_TAGS&quot;
+</code></pre>
+
+<ul>
+<li>Go to your source directory, configure, and compile</li>
+</ul>
+<pre><code> cd /Users/johndoe/nwchem/src  
+ make nwchem_config`  
+ make
+</code></pre>
+
+<p><strong>WARNING:</strong> Please do not use the Mac OS X default BLAS and LAPACK
+libraries available (or brew's veclibfort), since they are causing
+NWChem to produce erroneous results</p>
+<h4 id="method-3-using-intel-compilers-and-mkl">Method #3: using Intel compilers and MKL</h4>
+<p>The Intel compilers and MKL work just fine on Mac with the following
+options:</p>
+<pre><code>NWCHEM_TARGET=MACX64
+CC=icc
+FC=ifort
+BLASOPT=&quot;-mkl -openmp&quot;
+USE_OPENMP=T
+</code></pre>
+
+<p>MPICH and ARMCI-MPI work reliably on Mac. See <a href="ARMCI.html">Choosing the ARMCI
+Library</a> for details on ARMCI-MPI</p>
+<h1 id="how-to-cray-platforms">How-to: Cray platforms</h1>
+<p>Common environmental variables for building and running on the Cray XT, XE, XC and XK:</p>
+<pre><code>  % setenv NWCHEM_TOP &lt;your path&gt;/nwchem  
+  % setenv NWCHEM_TARGET LINUX64  
+  % setenv NWCHEM_MODULES all  
+  % setenv USE_MPI y
+  % setenv USE_MPIF y 
+  % setenv USE_MPIF4 y 
+  % setenv USE_SCALAPACK y 
+  % setenv USE_64TO32 y  
+  % setenv LIBMPI &quot; &quot;
+</code></pre>
+
+<ul>
+<li><strong>Compiling the code on Cray once all variables (described below)
+    are set</strong></li>
+</ul>
+<pre><code>  % cd $NWCHEM_TOP/src
+  % make nwchem_config
+  % make 64_to_32
+  % make FC=ftn &gt;&amp; make.log
+</code></pre>
+
+<p>The step <code>make 64_to_32</code> is required only if either SCALAPACK_SIZE or
+BLAS_SIZE are set equal to 4.</p>
+<h3 id="portals-eg-xt3-xt4-xt5">Portals, e.g. XT3, XT4, XT5</h3>
+<p>Set the following environmental variable for compilation:</p>
+<pre><code>  % setenv ARMCI_NETWORK PORTALS
+</code></pre>
+
+<h3 id="gemini-eg-xe6-xk7">Gemini, e.g. XE6, XK7</h3>
+<h4 id="method-1-armci_networkgemini">Method #1: ARMCI_NETWORK=GEMINI</h4>
+<p>Load the onsided module by executing the command</p>
+<pre><code>  % module load onesided
+</code></pre>
+
+<p>Note: Preferred version of onesided is 1.5.0 or later ones.</p>
+<p>Set the environmental variables for compilation:</p>
+<pre><code>  % setenv ARMCI_NETWORK GEMINI  
+  % setenv ONESIDED_USE_UDREG 1  
+  % setenv ONESIDED_UDREG_ENTRIES 2048
+</code></pre>
+
+<h4 id="method-2-armci_networkmpi-pr">Method #2: ARMCI_NETWORK=MPI-PR</h4>
+<p>This is a <strong><span style="color:#FF0000">new option available in NWChem
+6.6.</span></strong></p>
+<p>Set the environmental variables for compilation:</p>
+<pre><code>  % setenv ARMCI_NETWORK MPI-PR
+</code></pre>
+
+<h4 id="example-olcf-titan">Example: OLCF Titan</h4>
+<p>These are variables used for compilation on the <a href="https://www.olcf.ornl.gov/computing-resources/titan-cray-xk7/">OLCF Titan, a Cray
+XK7</a> We
+assume use of Portland Group compilers programming environment (<code>module
+load PrgEnv-pgi</code>)</p>
+<pre><code>NWCHEM_TARGET=LINUX64  
+ARMCI_NETWORK=MPI-PR  
+USE_64TO32=y  
+USE_MPI=y  
+BLAS_SIZE=4 
+LAPACK_SIZE=4  
+SCALAPACK_SIZE=4  
+SCALAPACK=-lsci_pgi_mp  
+BLASOPT=-lsci_pgi_mp
+</code></pre>
+
+<p>To enable the GPU part, set</p>
+<pre><code>TCE_CUDA=y
+</code></pre>
+
+<p>and load the cudatoolkit module</p>
+<pre><code>module load cudatoolkit
+</code></pre>
+
+<h3 id="aries-eg-xc30xc40">Aries, e.g. XC30/XC40</h3>
+<h4 id="method-1-armci_networkmpi-pr">Method #1: ARMCI_NETWORK=MPI-PR</h4>
+<p>This is a <strong><span style="color:#FF0000">new option available in NWChem
+6.6.</span></strong></p>
+<p>Set the environmental variables for compilation:</p>
+<pre><code>% setenv ARMCI_NETWORK MPI-PR
+</code></pre>
+
+<h4 id="method-2-armci_networkdmapp-deprecated">Method #2: ARMCI_NETWORK=DMAPP (deprecated)</h4>
+<p>This method is now <strong><span style="color:#FF0000">deprecated</span></strong> in
+favor of method #1 ARMCI_NETWORK=MPI-PR</p>
+<p>Might need to execute</p>
+<p><code>% module load craype-hugepages64M</code></p>
+<p>Recommended: replace ga-5-3 (or ga-5-4) with GA/ARMCI developed
+by Cray. The software is hosted on github at
+<a href="https://github.com/ryanolson/ga">https://github.com/ryanolson/ga</a>.</p>
+<p>Instructions:</p>
+<pre><code>% cd $NWCHEM_TOP/src/tools
+% module load dmapp
+% wget https://github.com/ryanolson/ga/archive/cray.zip -O cray.zip
+% unzip cray.zip
+% make FC=ftn GA_DIR=ga-cray  DMAPP_INCLUDE=$CRAY_DMAPP_INCLUDE_OPTS   DMAPP_LIB=$CRAY_DMAPP_POST_LINK_OPTS   
+</code></pre>
+
+<p>Load the dmapp module by executing the command</p>
+<pre><code>  % module load dmapp
+</code></pre>
+
+<p>Set the environmental variable for compilation:</p>
+<pre><code>  % setenv ARMCI_NETWORK DMAPP
+</code></pre>
+
+<p>in the PBS script, add the following env. variables definitions</p>
+<pre><code>  % setenv HUGETLB_MORECORE yes 
+  % setenv HUGETLB_DEFAULT_PAGE_SIZE 8M  
+  % setenv UGNI_CDM_MDD_DEDICATED 2
+</code></pre>
+
+<h4 id="example-nersc-edison">Example: NERSC Edison</h4>
+<p>These are variables used for compilation on <a href="https://www.nersc.gov/users/computational-systems/edison/">NERSC Edison, a Cray
+XC30</a>, as of
+October 23rd 2015, when using Intel compilers (i.e. after issuing the
+commands <code>module swap PrgEnv-gnu PrgEnv-intel</code>). Very similar settings
+can be applied to other Cray XC30 computers, such as <a href="http://www.archer.ac.uk">the UK ARCHER
+computer</a></p>
+<pre><code>CRAY_CPU_TARGET=sandybridge 
+NWCHEM_TARGET=LINUX64  
+ARMCI_NETWORK=MPI-PR  
+USE_MPI=y
+SCALAPACK=&quot;-L$MKLROOT/lib/intel64 -lmkl_scalapack_ilp64 -lmkl_intel_ilp64 -lmkl_core -lmkl_sequential \\  
+-lmkl_blacs_intelmpi_ilp64 -lpthread -lm&quot;  
+SCALAPACK_SIZE=8  
+BLAS_SIZE=8  
+BLASOPT=&quot;-L$MKLROOT/lib/intel64 -lmkl_intel_ilp64 -lmkl_core -lmkl_sequential -lpthread -lm&quot;  
+LD_LIBRARY_PATH=/opt/gcc/4.9.2/snos/lib64:$LD_LIBRARY_PATH 
+PATH=/opt/gcc/4.9.2/bin:$PATH  
+CRAYPE_LINK_TYPE=dynamic 
+</code></pre>
+
+<p>To compile</p>
+<pre><code>make nwchem_config 
+make FC=ftn
+</code></pre>
+
+<p>The following env. variables needs to added to the batch queue
+submission script
+```  
+MPICH_GNI_MAX_VSHORT_MSG_SIZE=8192
+MPICH_GNI_MAX_EAGER_MSG_SIZE=131027 <br />
+MPICH_GNI_NUM_BUFS=300 <br />
+MPICH_GNI_NDREG_MAXSIZE=16777216  
+MPICH_GNI_MBOX_PLACEMENT=nic  <br />
+COMEX_MAX_NB_OUTSTANDING=6</p>
+<pre><code>#### Example: NERSC Cori
+
+These are variables used for compilation on the Haswell partition of
+[NERSC Edison, a Cray
+XC40](https://www.nersc.gov/users/computational-systems/cori), as of
+November 6th 2016, when using Intel compilers (i.e. after issuing the
+commands `module swap PrgEnv-gnu
+PrgEnv-intel`).
+</code></pre>
+
+<p>export NWCHEM_TARGET=LINUX64<br />
+export USE_MPI=y<br />
+export NWCHEM_TARGET=LINUX64<br />
+export ARMCI_NETWORK=MPI-PR<br />
+export USE_MPI=y<br />
+export USE_SCALAPACK=y<br />
+export SCALAPACK="-L$MKLROOT/lib/intel64 -lmkl_scalapack_ilp64 -lmkl_intel_ilp64 -lmkl_core -lmkl_sequential \<br />
+-lmkl_blacs_intelmpi_ilp64 -lpthread -lm"<br />
+export SCALAPACK_SIZE=8<br />
+export SCALAPACK_LIB="$SCALAPACK" 
+export BLAS_SIZE=8
+export BLASOPT="-L$MKLROOT/lib/intel64 -lmkl_intel_ilp64 -lmkl_core -lmkl_sequential -lmkl_core -liomp5 -lpthread -ldmapp -lm"<br />
+export USE_NOIO=y<br />
+export CRAYPE_LINK_TYPE=dynamic</p>
+<pre><code>To compile
+</code></pre>
+
+<p>make nwchem_config
+make FC=ftn</p>
+<pre><code>The following env. variables needs to added to the batch queue
+submission script
+</code></pre>
+
+<p>MPICH_GNI_MAX_VSHORT_MSG_SIZE=10000<br />
+MPICH_GNI_MAX_EAGER_MSG_SIZE=98304<br />
+MPICH_GNI_NUM_BUFS=300<br />
+MPICH_GNI_NDREG_MAXSIZE=16777216 
+MPICH_GNI_MBOX_PLACEMENT=nic
+COMEX_MAX_NB_OUTSTANDING=6</p>
+<pre><code># How-to: Intel Xeon Phi
+
+This section describes both the newer KNL and older KNC hardware, in
+reverse chronological order.
+
+  - **Compiling NWChem on self-hosted Intel Xeon Phi Knights Landing
+    processors**
+
+NWChem 6.6 (and later versions) support OpenMP threading, which is
+essential to obtaining good performance with NWChem on Intel Xeon Phi
+many-core processors.  
+As of November 2016, the development version of NWChem contains
+threading support in the TCE coupled-cluster codes (primarily
+non-iterative triples in e.g. CCSD(T)), semi-direct CCSD(T), and
+plane-wave DFT (i.e. NWPW).
+
+Required for compilation: Intel compilers, version 16+ (17+ is strongly
+recommended).
+
+Environmental variables required for compilation:
+</code></pre>
+
+<p>% setenv USE_KNL 1 
+% setenv USE_OPENMP 1<br />
+% setenv USE_F90_ALLOCATABLE T<br />
+% setenv USE_FASTMEM T</p>
+<pre><code>The latter two options are required to allocate temporaries in MCDRAM
+when running in flat mode. Please do not use cache mode for NWChem
+CCSD(T) codes. Note that using Fortran heap allocations means the memory
+statistics generated by MA are no longer accurate, but we doubt that
+anyone has been relying on these anyways.
+
+
+`USE_FASTMEM` requires the _memkind_ library to be installed.
+An open source version of the memkind library can be downloaded from [Github](https://github.com/memkind/memkind)
+
+Side note: With the exception of `USE_FASTMEM`, all of the options in
+the KNL section apply to Intel Xeon processors as well. OpenMP is
+certainly useful on multicore processors as a way to reduce the
+communication overhead and memory footprint of NWChem.
+
+When using MKL and Intel 16+, please use the following
+settings
+</code></pre>
+
+<p>% setenv BLASOPT   "-mkl -qopenmp" 
+% setenv SCALAPACK "-mkl -qopenmp -lmkl_scalapack_ilp64 -lmkl_blacs_intelmpi_ilp64"</p>
+<pre><code>The command require for compilation is
+</code></pre>
+
+<p>$ make FC=ifort CC=icc</p>
+<pre><code>Environmental variables recommended at runtime (assuming Intel OpenMP
+and MPI):
+</code></pre>
+
+<p>% setenv I_MPI_PIN 1<br />
+% setenv I_MPI_DEBUG 4<br />
+% setenv KMP_BLOCKTIME 1 
+% setenv KMP_AFFINITY scatter,verbose</p>
+<pre><code>Once you are comfortable with the affinity settings, you can use these
+instead:
+</code></pre>
+
+<p>% setenv I_MPI_PIN 1
+% setenv KMP_BLOCKTIME 1<br />
+% setenv KMP_AFFINITY scatter</p>
+<pre><code>Please consult the Intel or similar documentation regarding MPI+OpenMP
+affinity on your system. This is a complicated issue that depends on the
+software you use; it is impossible to document all the different
+combinations of MPI and OpenMP implementations that may be used with
+NWChem.
+
+If you encounter segfaults not related to ARMCI, you may need to set the
+following or recompile with `-heap-arrays`. Please create thread in the
+Forum if you observe this.
+</code></pre>
+
+<p>% ulimit -s unlimited<br />
+% setenv OMP_STACKSIZE 32M</p>
+<pre><code>  - **Compiling NWChem on hosts equipped with Intel Xeon Phi Knights
+    Corner coprocessors**
+
+NWChem 6.5 (and later versions) offers the possibility of using Intel
+Xeon Phi hardware to perform the most computationally intensive part of
+the CCSD(T) calculations (non-iterative triples corrections).
+
+Required for compilation: Intel Composer XE version 14.0.3 (or later
+versions)
+
+Environmental variables required for compilation:
+</code></pre>
+
+<p>% setenv USE_OPENMP 1 
+% setenv USE_OFFLOAD 1</p>
+<pre><code>When using MKL and Intel Composer XE version 14 (or later versions),
+please use the following
+settings
+</code></pre>
+
+<p>% setenv BLASOPT   "-mkl -openmp   -lpthread -lm"<br />
+% setenv SCALAPACK "-mkl -openmp -lmkl_scalapack_ilp64 -lmkl_blacs_intelmpi_ilp64 -lpthread -lm"</p>
+<pre><code>The command require for compilation is
+</code></pre>
+
+<p>$ make FC=ifort </p>
+<pre><code>  - **Examples of recommended configurations**
+
+From our experience using the CCSD(T) TCE module, we have determined
+that the optimal configuration is to use a single Global Arrays ranks
+for offloading work to each Xeon Phi card.
+
+On the EMSL cascade system, each node is equipped with two coprocessors,
+and NWChem can allocate one GA ranks per coprocessor. In the job
+scripts, we recommend spawning just 6 GA ranks for each node, instead of
+16 (number that would match the number of physical cores). Therefore, 2
+out 6 GA ranks assigned to a particular compute node will offload to the
+coprocessors, while the remaining 6 cores while be used for traditional
+CPU processing duties. Since during offload the host core is idle, we
+can double the number of OpenMP threads for the host
+(`OMP_NUM_THREADS=4`) in order to fill the idle core with work from
+another GA rank (4 process with 4 threads each will total 16 threads on
+each node).
+
+NWChem itself automatically detects the available coprocessors in the
+system and properly partitions them for optimal use, therefore no action
+is required other than specifying the number of processes on each node
+(using the appropriate mpirun/mpiexec options) and setting the value of
+`OMP_NUM_THREADS` as in the example above.
+
+Environmental variables useful at run-time:
+
+OMP\_NUM\_THREADS is needed for the thread-level parallelization on the
+Xeon CPU hosts
+
+</code></pre>
+
+<p>% setenv OMP_NUM_THREADS 4</p>
+<pre><code>
+MIC\_USE\_2MB\_BUFFER greatly improve communication between host and
+Xeon Phi card
+
+</code></pre>
+
+<p>% setenv MIC_USE_2MB_BUFFER 16K</p>
+<pre><code>
+**[Very important](Very_important.md)**: when running on
+clusters equipped with Xeon Phi and Infiniband network hardware
+(requiring `ARMCI_NETWORK=OPENIB`), the following env. variable is
+required, even [in the case when the Xeon Phi hardware is not
+utilized](in_the_case_when_the_Xeon_Phi_hardware_is_not_utilized.md)
+
+</code></pre>
+
+<p>% setenv ARMCI_OPENIB_DEVICE mlx4_0</p>
+<pre><code>
+# How-to: IBM platforms
+
+  - **Compiling NWChem on BLUEGENE/L**
+
+The following environment variables need to be
+set
+
+</code></pre>
+
+<p>% setenv NWCHEM_TOP <your path>/nwchem
+% setenv NWCHEM_TARGET BGL
+% setenv ARMCI_NETWORK BGMLMPI
+% setenv BGLSYS_DRIVER /bgl/BlueLight/ppcfloor
+% setenv BGLSYS_ROOT ${BGLSYS_DRIVER}/bglsys
+% setenv BLRTS_GNU_ROOT ${BGLSYS_DRIVER}/blrts-gnu
+% setenv BGDRIVER ${BGLSYS_DRIVER}
+% setenv BGCOMPILERS ${BLRTS_GNU_ROOT}/bin
+% setenv USE_MPI y
+% setenv LARGE_FILES TRUE
+% setenv MPI_LIB ${BGLSYS_ROOT}/lib
+% setenv MPI_INCLUDE ${BGLSYS_ROOT}/include
+% setenv LIBMPI "-lfmpich_.rts -lmpich.rts -lmsglayer.rts -lrts.rts -ldevices.rts"
+% setenv BGMLMPI_INCLUDE /bgl/BlueLight/ppcfloor/bglsys/include
+% setenv BGMLLIBS /bgl/BlueLight/ppcfloor/bglsys/lib</p>
+<pre><code>
+To compile, the following commands should be used:
+
+</code></pre>
+
+<p>% cd $NWCHEM_TOP/src
+% make nwchem_config
+% make FC=blrts_xlf &gt;&amp; make.log</p>
+<pre><code>
+  - **Compiling NWChem on BLUEGENE/P**
+
+The following environment variables need to be
+set
+
+</code></pre>
+
+<p>% setenv NWCHEM_TARGET BGP
+% setenv ARMCI_NETWORK DCMFMPI
+% setenv MSG_COMMS DCMFMPI
+% setenv USE_MPI y
+% setenv LARGE_FILES TRUE
+% setenv BGP_INSTALLDIR /bgsys/drivers/ppcfloor
+% setenv BGCOMPILERS /bgsys/drivers/ppcfloor/gnu-linux/bin
+% setenv BGP_RUNTIMEPATH /bgsys/drivers/ppcfloor/runtime
+% setenv ARMCIDRV ${BGP_INSTALLDIR}
+% setenv BGDRIVER ${ARMCIDRV}
+% setenv MPI_LIB ${BGDRIVER}/comm/lib
+% setenv MPI_INCLUDE ${BGDRIVER}/comm/include
+% setenv LIBMPI "-L${MPI_LIB} -lfmpich_.cnk -lmpich.cnk -ldcmfcoll.cnk -ldcmf.cnk -lpthread -lrt -L${BGP_RUNTIMEPATH}/SPI -lSPI.cna"
+% setenv BGMLMPI_INCLUDE ${MPI_INCLUDE}</p>
+<pre><code>
+To compile, the following commands should be used:
+
+</code></pre>
+
+<p>% cd $NWCHEM_TOP/src
+% make nwchem_config
+% make FC=bgxlf &gt;&amp; make.log</p>
+<pre><code>
+  - **Compiling NWChem on BLUEGENE/Q**
+
+The following environment variables need to be
+set
+
+</code></pre>
+
+<p>% setenv NWCHEM_TARGET BGQ
+% setenv USE_MPI y
+% setenv USE_MPIF y
+% setenv USE_MPIF4 y
+% setenv MPI_INCLUDE /bgsys/drivers/ppcfloor/comm/xl/include
+% setenv LIBMPI " "
+% setenv BLASOPT "/opt/ibmmath/essl/5.1/lib64/libesslbg.a -llapack -lblas -Wl,-zmuldefs "
+% setenv BLAS_LIB "/opt/ibmmath/essl/5.1/lib64/libesslbg.a -zmuldefs "
+% setenv BLAS_SIZE 4
+% setenv USE_64TO32 y
+% set path=(/bgsys/drivers/ppcfloor/gnu-linux/bin/ $path)
+% setenv ARMCI_NETWORK MPI-TS
+% setenv DISABLE_GAMIRROR y</p>
+<pre><code>
+To compile, the following commands should be used:
+
+</code></pre>
+
+<p>% module load bgq-xl
+% make nwchem_config
+% make 64_to_32 &gt;&amp; make6t3.log
+% make &gt;&amp; make.log</p>
+<pre><code>
+**WARNING**: This is just a baseline port that we have tested and
+validated against our QA suite. There is large room for improvement both
+for serial performance (compiler options) and parallel performance (use
+of alternative ARMCI\_NETWORKs other than MPI-TS)
+
+  - **Compiling NWChem on IBM PowerPC architectures**
+
+The following environment variables should be set:
+
+</code></pre>
+
+<p>% setenv NWCHEM_TOP <your path>/nwchem
+% setenv NWCHEM_TARGET IBM64
+% setenv ARMCI_NETWORK MPI-MT
+% setenv OBJECT_MODE 64
+% setenv USE_MPI y
+% setenv LARGE_FILES TRUE
+% setenv MPI_LIB /usr/lpp/ppe.poe/lib
+% setenv MPI_INCLUDE /usr/lpp/ppe.poe/include
+% setenv LIBMPI "-lmpi -lpthreads"</p>
+<pre><code>
+To compile, the following commands should be used:
+
+</code></pre>
+
+<p>% cd $NWCHEM_TOP/src
+% make nwchem_config
+% make FC=xlf &gt;&amp; make.log</p>
+<pre><code>
+# How-to: Commodity clusters with Infiniband
+
+Common environmental variables for building and running on most
+Infiniband clusters are:
+</code></pre>
+
+<p>% setenv NWCHEM_TOP <your path>/nwchem<br />
+  % setenv NWCHEM_TARGET LINUX64 
+  % setenv NWCHEM_MODULES "all"<br />
+  % setenv USE_MPI y 
+  % setenv USE_MPIF y 
+  % setenv USE_MPIF4 y  </p>
+<pre><code>  - On Infiniband clusters with the OpenIB software stack, the following
+    environment variables should be defined
+</code></pre>
+
+<p>% setenv ARMCI_NETWORK OPENIB 
+  % setenv IB_INCLUDE <Location of Infiniband libraries>/include  </p>
+<pre><code>  - On Infiniband clusters that do not support OpenIB, such as Myrinet
+    MX, the MPI2 protocol can be used
+</code></pre>
+
+<p>% setenv ARMCI_NETWORK MPI-MT</p>
+<pre><code>  - Compiling the code on an Infiniband cluster once all variables are
+    set
+</code></pre>
+
+<p>% cd $NWCHEM_TOP/src  </p>
+<p>% make nwchem_config  </p>
+<p>% make &gt;&amp; make.log</p>
+<pre><code># How-to: Windows Platforms
+## MingW
+The current recommended approach for building a NWChem binary for a
+Windows platform is to build with the
+[MinGW/Mingw32](http://www.mingw.org/) environment. MinGW can be
+installed using a semi-automatic tool mingw-get-setup.exe
+(http://sourceforge.net/projects/mingw/files/Installer/). A basic MinGW
+installation is required (Basic Setup), plus pthreads-32,
+mingw32-gcc-fortran-dev of &quot;All Packages&quot; and the MSYS software.  
+More detailed MinGW/MSYS installation tips can be found in the following
+forum discussions
+
+|                                                                 |
+| --------------------------------------------------------------- |
+| &lt;http://www.nwchem-sw.org/index.php/Special:AWCforum/sp/id5124&gt; |
+| &lt;http://www.nwchem-sw.org/index.php/Special:AWCforum/sp/id6628&gt; |
+
+Another essential prerequisite step is to install Mpich, which can be
+found at the following
+URL
+
+&lt;http://www.mpich.org/static/tarballs/1.4.1p1/mpich2-1.4.1p1-win-ia32.msi&gt;
+
+Once Mpich is installed, you should copy the installation files to a
+different location to avoid the failure of the tools compilation. You
+can use the following command
+</code></pre>
+
+<p>% cp -rp /c/Program\ Files\ (x86)/MPICH2/ ~/</p>
+<pre><code>You might want to install Python, too, by using the following
+installation file
+
+&lt;https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi&gt;
+
+Next, you need to set the env.
+</code></pre>
+
+<p>% export NWCHEM_TOP=~/nwchem-6.8<br />
+% export NWCHEM_TARGET=LINUX
+% export USE_MPI=y<br />
+% export MPI_LOC=~/MPICH2<br />
+% export MPI_INCLUDE=$MPI_LOC/include<br />
+% export MPI_LIB=$MPI_LOC/lib<br />
+% export LIBMPI="-lfmpich2g -lmpi"<br />
+% export PYTHONHOME=/c/Python27/<br />
+% export PYTHONVERSION=27<br />
+% export DEPEND_CC=gcc
+% export USE_INTERNALBLAS=y
+% export NWCHEM_MODULES=all</p>
+<pre><code>Then, you can start the compilation by typing
+</code></pre>
+
+<p>% cd $NWCHEM_TOP/src<br />
+% make nwchem_config<br />
+% make FC=gfortran DEPEND_CC=gcc</p>
+<pre><code>### MSYS2
+
+https://github.com/msys2/msys2/wiki/MSYS2-installation
+</code></pre>
+
+<p>pacman -Syuu
+pacman -S mingw32/mingw-w64-i686-gcc-fortran
+pacman -S mingw32/mingw-w64-i686-python3
+pacman -S msys/make</p>
+<pre><code>
+## WSL on Windows 10
+A good alternative only on Windows 10 is **Windows Subsystem for Linux** (WSL). 
+**WSL** allows you to obtain a functional command line Linux 64-bit NWChem environment, either by compiling the NWChem code from scratch or by using the Ubuntu precompiled NWChem package. Here is a link to the install guide
+
+https://msdn.microsoft.com/en-us/commandline/wsl/install_guide
+
+Once Ubuntu is installed, the quickest method to install NWChem is by fetching the Ubuntu NWChem package by typing
+</code></pre>
+
+<p>sudo apt install nwchem</p>
+<pre><code>## Cygwin
+As an unsupported alternative, Cygwin might be used with make, perl, and
+gcc/gfortran version 4 installed (however several Cygwin versions are
+not a good match for NWChem installation, for example cygwin version
+1.7.32 -- current version as of September 2014 -- fails to compile
+NWChem)
+
+</code></pre>
+
+<p>% setenv NWCHEM_TOP <your path>/nwchem
+% setenv NWCHEM_TARGET CYGWIN
+% setenv NWCHEM_MODULES all`
+% cd $NWCHEM_TOP/src
+% make nwchem_config
+% make &gt;&amp; make.log</p>
+<pre><code>
+It used to be possible to build a version for native Windows using the
+Compaq Visual Fortran compiler. This has not been tested for the last
+couple of releases as the NWChem.
+
+</code></pre>
+
+<p>% setenv NWCHEM_TOP <your path>/nwchem
+% setenv NWCHEM_TARGET WIN32
+% setenv NWCHEM_MODULES all</p>
+<pre><code>
+To start the compilation, start the Microsoft makefile utility from the
+top level source directory by typing &quot;nmake&quot;. Reminder: For Compaq
+visual fortran don't forget to execute the &quot;dfvars&quot; script.
+
+# General site installation
+
+The build procedures outlined above will allow use of NWChem within the
+NWChem directory structure. The code will look for the basis set library
+file in a default place within that directory structure. To install the
+code in a general, public place (e.g., /usr/local/NWChem) the following
+procedure can be applied:
+
+  - Determine the local storage path for the install files. (e.g.,
+    /usr/local/NWChem).
+  - Make directories
+
+</code></pre>
+
+<p>mkdir /usr/local/NWChem
+mkdir /usr/local/NWChem/bin
+mkdir /usr/local/NWChem/data</p>
+<pre><code>
+  - Copy binary
+
+</code></pre>
+
+<p>cp $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem /usr/local/NWChem/bin
+cd /usr/local/NWChem/bin
+chmod 755 nwchem</p>
+<pre><code>
+  - Set links to data files (basis sets, force fields, etc.)
+
+</code></pre>
+
+<p>cd $NWCHEM_TOP/src/basis
+cp -r libraries /usr/local/NWChem/data
+cd $NWCHEM_TOP/src/
+cp -r data /usr/local/NWChem
+cd $NWCHEM_TOP/src/nwpw
+cp -r libraryps /usr/local/NWChem/data</p>
+<pre><code>
+  - Each user will need a .nwchemrc file to point to these default data
+    files. A global one could be put in /usr/local/NWChem/data and a
+    symbolic link made in each users $HOME directory is probably the
+    best plan for new installs. Users would have to issue the following
+    command prior to using NWChem: ln -s
+    /usr/local/NWChem/data/default.nwchemrc $HOME/.nwchemrc
+
+Contents of the default.nwchemrc file based on the above information
+should be:
+
+</code></pre>
+
+<p>nwchem_basis_library /usr/local/NWChem/data/libraries/
+nwchem_nwpw_library /usr/local/NWChem/data/libraryps/
+ffield amber
+amber_1 /usr/local/NWChem/data/amber_s/
+amber_2 /usr/local/NWChem/data/amber_q/
+amber_3 /usr/local/NWChem/data/amber_x/
+amber_4 /usr/local/NWChem/data/amber_u/
+spce    /usr/local/NWChem/data/solvents/spce.rst
+charmm_s /usr/local/NWChem/data/charmm_s/
+charmm_x /usr/local/NWChem/data/charmm_x/</p>
+<pre><code>
+Of course users can copy this file instead of making the symbolic link
+described above and change these defaults at their discretion.
+
+It is can also be useful to use the NWCHEM\_BASIS\_LIBRARY environment
+variable when testing a new installation when an old one exists. This
+will allow you to overwrite the value of nwchem\_basis\_library in your
+.nwchemrc file and point to the new basis library. For example:
+
+</code></pre>
+
+<p>% setenv NWCHEM_BASIS_LIBRARY "$NWCHEM/data-5.0/libraries/"
+```</p>
+<p>Do not forget the trailing "/".</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Developer.html" class="btn btn-neutral float-right" title="NWChem Development">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="Supplementary-Information.html" class="btn btn-neutral" title="Supplementary Information"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="Supplementary-Information.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="Developer.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

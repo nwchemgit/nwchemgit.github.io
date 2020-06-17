@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Geometry load - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Geometry load";
+    var mkdocs_page_input_path = "Geometry-load.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Geometry load</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Geometry-load.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="load">LOAD</h2>
+<pre><code>   [ LOAD [format xyz||pdb]  [frame &lt;int frame&gt;] \  
+          [select [not] \  
+               [name &lt;string atomname&gt;] \  
+               [rname &lt;string residue-name&gt;]  
+               [id  &lt;int atom-id&gt;|&lt;int range atom-id1:atom-id2&gt; ... ]  
+               [resi &lt;int residue-id&gt;|&lt;int range residue-id1:residue-id2&gt; ... ]  
+         ]  
+    
+   &lt;string filename&gt; ]
+</code></pre>
+
+<p>LOAD directive allows users to load Cartesian coordinates from external
+pdb or xyz files with the name <filename>. This directive works in
+addition to the explicit Cartesian coordinate declaration and can be
+repeated and mixed with the latter. This allows for complex coordinate
+assemblies where some coordinates are loaded from external files and
+some specified explicitly in the input file. The ordering of coordinates
+in the final geometry will follow the order in which LOAD statements and
+explicit coordinates are specified.</p>
+<ul>
+<li>The actual file from which coordinates will be loaded is presumed to
+    be located in the run directory (the same place where input file
+    resides). Its name cannot coincide with any of the keywords in the
+    LOAD statement. To keep things simple it is advised to specify it
+    either at the beginning or the end of the LOAD directive.</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li><strong>format</strong> xyz || pdb - specifies format of the input file. The only
+    formats that are supported at this point are pdb and xyz. Either one
+    can contain multiple structures, which can be selected using the
+    frame directive. Note that in case of PDB file multiple structures
+    are expected to be separated by END keyword. If the format directive
+    is not provided the format will be inferred from file extension -
+    .xyz for xyz files and .pdb for pdb files</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li><strong>frame</strong> <int frame> - specifies which frame/structure to load from
+    multiple structure xyz or pdb files. In the absence of this
+    directive the 1st frame/structure will be loaded</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li>''' select ''' ... - this directive allows to selectively load parts
+    of the geoemtry in the file within aspecified frame. Selections can
+    be based on atom index (<strong>id</strong>), atom name (<strong>name</strong>), and for pdb
+    files can also include residue index (<strong>resi</strong>) and residue name
+    (<strong>rname</strong>). Atom and residue name selection are based on an <em>exact</em>
+    single name match. Atom and residue index allow both multiple single
+    number and multiple range selection. For example</li>
+</ul>
+<pre><code> select id 2 4:6 9
+</code></pre>
+
+<p>will result in the selection of atom id's 2 4 5 6 9.</p>
+<p>Multiple selection criteria are always combined as <strong>AND</strong> selections.
+For example</p>
+<pre><code>  select name O  id 2:4
+</code></pre>
+
+<p>will select atoms that are named <strong>O</strong> <em>and</em> whose id/index is between 2
+and 4. Each selection criteria can be inverted by prepending <strong>not</strong>
+keyword. For example</p>
+<pre><code>  select not name O  id 2:4
+</code></pre>
+
+<p>will select all atoms that are <em>not</em> named <strong>O</strong> <em>and</em> whose id/index is
+between 2 and 4.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

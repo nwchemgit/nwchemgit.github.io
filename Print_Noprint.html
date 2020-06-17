@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Print Noprint - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Print Noprint";
+    var mkdocs_page_input_path = "Print_Noprint.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Print Noprint</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Print_Noprint.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>The PRINT and NOPRINT directives allow the user to control how much output NWChem generates. These two directives are special in that the compound directives for all modules are supposed to recognize them. Each module can control both the overall print level (general verbosity) and the printing of individual items which are identified by name (see below). The standard form of the PRINT directive is as follows:</p>
+<pre><code>PRINT [(none || low || medium || high || debug) default medium]  [&lt;string list_of_names ... &gt;]
+NOPRINT &lt;string list_of_names ... &gt;
+</code></pre>
+
+<p>The default print level is medium.</p>
+<p>Every output that is printed by NWChem has a print threshold associated with it. If this threshold is equal to or lower than the print level requested by the user, then the output is generated. For example, the threshold for printing the SCF energy at convergence is low. This means that if the user-specified print level on the PRINT directive is low, medium, high, or debug, then the SCF energy will be printed at convergence.</p>
+<p>The overall print level specified using the PRINT directive is a convenient tool for controlling the verbosity of NWChem. Setting the print level to high might be helpful in diagnosing convergence problems. The print level of debug might also be of use in evaluating problem cases, but the user should be aware that this can generate a huge amount of output. Setting the print level to low might be the preferable choice for geometry optimizations that will perform many steps which are in themselves of little interest to the user.</p>
+<p>In addition, it is possible to enable the printing of specific items by naming them in the PRINT directive in the <list_of_names>. Items identified in this way will be printed, regardless of the overall print level specified. Similarly, the NOPRINT directive can be used to suppress the printing of specific items by naming them in its <list_of_names>. These items will not be printed, regardless of the overall print level, or the specific print level of the individual items.</p>
+<p>The list of items that can be printed for each module is documented as part of the input instructions for that module. The items recognized by the top level of the code, and their thresholds, are:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Print Level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"total time"</td>
+<td>medium</td>
+<td>Print cpu and wall time at job end</td>
+</tr>
+<tr>
+<td>"task time"</td>
+<td>high</td>
+<td>Print cpu and wall time for each task</td>
+</tr>
+<tr>
+<td>"rtdb"</td>
+<td>high</td>
+<td>Print names of RTDB entries</td>
+</tr>
+<tr>
+<td>"rtdbvalues"</td>
+<td>high</td>
+<td>Print name and values of RTDB entries</td>
+</tr>
+<tr>
+<td>"ga summary"</td>
+<td>medium</td>
+<td>Summarize GA allocations at job end</td>
+</tr>
+<tr>
+<td>"ga stats"</td>
+<td>high</td>
+<td>Print GA usage statistics at job end</td>
+</tr>
+<tr>
+<td>"ma summary"</td>
+<td>medium</td>
+<td>Summarize MA allocations at job end</td>
+</tr>
+<tr>
+<td>"ma stats"</td>
+<td>high</td>
+<td>Print MA usage statistics at job end</td>
+</tr>
+<tr>
+<td>"version"</td>
+<td>debug</td>
+<td>Print version number of all compiled routines</td>
+</tr>
+<tr>
+<td>"tcgmsg"</td>
+<td>never</td>
+<td>Print TCGMSG debug information</td>
+</tr>
+</tbody>
+</table>
+<h1 id="top-level-print-control-specifications">Top Level Print Control Specifications</h1>
+<p>The following example shows how a PRINT directive for the top level process can be used to limit printout to only essential information. The directive is</p>
+<pre><code>print none &quot;ma stats&quot; rtdb
+</code></pre>
+
+<p>This directive instructs the NWChem main program to print nothing, except for the memory usage statistics (ma stats) and the names of all items stored in the database at the end of the job.</p>
+<p>The print level within a module is inherited from the calling layer. For instance, by specifying the print to be low within the MP2 module will cause the SCF, CPHF and gradient modules when invoked from the MP2 to default to low print. Explicit user input of print thresholds overrides the inherited value.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

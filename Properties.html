@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Properties - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Properties";
+    var mkdocs_page_input_path = "Properties.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Properties</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Properties.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="properties">Properties</h1>
+<p>Properties can be calculated for both the Hartree-Fock and DFT wave
+functions. The properties that are available are:</p>
+<ul>
+<li>Natural bond analysis</li>
+<li>Dipole, quadrupole, and octupole moment</li>
+<li>Mulliken population analysis and bond order analysis</li>
+<li>Electrostatic potential (diamagnetic shielding) at nuclei</li>
+<li>Electric field and field gradient at nuclei</li>
+<li>Electric field gradients with relativistic effects</li>
+<li>Electron and spin density at nuclei</li>
+<li>NMR shielding (GIAO method)</li>
+<li>NMR hyperfine coupling (Fermi-Contact and Spin-Dipole expectation
+    values)</li>
+<li>NMR indirect spin-spin coupling</li>
+<li>Gshift</li>
+<li>Response to electric and magnetic fields (static and dynamic)</li>
+<li>Raman</li>
+</ul>
+<p>The properties module is started when the task directive TASK <theory>
+property is defined in the user input file. The input format has the
+form:</p>
+<pre><code> PROPERTY 
+   [property keyword]  
+   [CENTER ((com || coc || origin || arb &lt;real x y z&gt;) default coc)] 
+ END
+</code></pre>
+
+<p>Most of the properties can be computed for Hartree-Fock (closed-shell
+RHF, open-shell ROHF, and open-shell UHF), and DFT (closed-shell and
+open-shell spin unrestricted) wavefunctions. The NMR hyperfine and
+indirect spin-spin coupling require a UHF or ODFT wave function.</p>
+<h2 id="vectors-keyword">Vectors keyword</h2>
+<pre><code> VECTORS [ (&lt;string input_movecs &gt;)]
+</code></pre>
+
+<p>The VECTORS directive allows the user to specify the input molecular
+orbital vectors for the property calculation</p>
+<h2 id="property-keywords">Property keywords</h2>
+<p>Each property can be requested by defining one of the following
+keywords:</p>
+<pre><code> NBOFILE  
+ DIPOLE  
+ QUADRUPOLE  
+ OCTUPOLE  
+ MULLIKEN  
+ ESP  
+ EFIELD  
+ EFIELDGRAD  
+ EFIELDGRADZ4  
+ GSHIFT  
+ ELECTRONDENSITY  
+ HYPERFINE [&lt;integer&gt; number_of_atoms &lt;integer&gt; atom_list]  
+ SHIELDING [&lt;integer&gt; number_of_atoms &lt;integer&gt; atom_list]  
+ SPINSPIN [&lt;integer&gt; number_of_pairs &lt;integer&gt; pair_list]  
+ RESPONSE [&lt;integer&gt; response_order &lt;real&gt; frequency]  
+ AIMFILE  
+ MOLDENFILE  
+ ALL
+</code></pre>
+
+<p>The "ALL" keyword generates all currently available properties.</p>
+<h3 id="nmr-and-epr">NMR and EPR</h3>
+<p>Both the NMR shielding and spin-spin coupling have additional optional
+parameters that can be defined in the input. For the shielding the user
+can define the number of atoms for which the shielding tensor should be
+calculated, followed by the list of specific atom centers. In the case
+of spin-spin coupling the number of atom pairs, followed by the atom
+pairs, can be defined (i.e., spinspin 1 1 2 will calculate the coupling
+for one pair, and the coupling will be between atoms 1 and 2).</p>
+<p>For both the NMR spin-spin and hyperfine coupling the isotope that has
+the highest abundance and has spin, will be chosen for each atom under
+consideration.</p>
+<p><strong>Calculating EPR and paramagnetic NMR parameters:</strong> The following
+<a href="EPR-pNMR.pdf">tutorial</a> illustrates how to combine the
+hyperfine, gshift and shielding to calculate the EPR and paramagnetic
+NMR parameters of an open-shell system. All calculations are compatible 
+with the ZORA model potential approach.</p>
+<p>For theoretical and computational details, please refer to the following
+references:</p>
+<ol>
+<li>J. Autschbach, S. Patchkovskii, B. Pritchard, "Calculation of
+    Hyperfine Tensors and Paramagnetic NMR Shifts Using the Relativistic
+    Zeroth-Order Regular Approximation and Density Functional Theory",
+    Journal of Chemical Theory and Computation 7, 2175 (2011)</li>
+<li>F. Aquino, B. Pritchard, J. Autschbach, "Scalar relativistic
+    computations and localized orbital analysis of nuclear hyperfine
+    coupling and paramagnetic NMR chemical shifts", J. Chem. Theory
+    Comput. 2012, 8, 598–609.</li>
+<li>F. Aquino, N. Govind, J. Autschbach, "Scalar relativistic
+    computations of nuclear magnetic shielding and g-shifts with the
+    zeroth-order regular approximation and range-separated hybrid
+    density functionals", J. Chem. Theory Comput. 2011, 7, 3278–3292.</li>
+</ol>
+<p>The user also has the option to choose the center of expansion for the
+dipole, quadrupole, and octupole calculations.</p>
+<pre><code>   [CENTER ((com || coc || origin || arb &lt;real x y z&gt;) default coc)]
+</code></pre>
+
+<p>com is the center of mass, coc is the center of charge, origin is (0.0,
+0.0, 0.0) and arb is any arbitrary point which must be accompanied by
+the coordinated to be used. Currently the x, y, and z coordinates must
+be given in the same units as UNITS in <a href="Geometry.html">GEOMETRY</a>.</p>
+<h3 id="response-calculations">Response Calculations</h3>
+<p>Response calculations can be calculated as
+follows:</p>
+<pre><code>property
+ response  1 7.73178E-2   # response order and frequency in Hartree energy units  
+ velocity                 # use modified velocity gauge for electric dipole  
+ orbeta                   # calculate optical rotation 'beta' directly [2]  
+ giao                     # GIAO optical rotation [1,3,6], forces orbeta  
+ bdtensor                 # calculates B-tilde of Refs. [1,6] 
+ analysis                 # analyze response in terms of MOs [6]  
+ damping 0.007            # complex response functions with damping, Ref [5] 
+ convergence 1e-4         # set CPKS convergence criterion (default 1e-4)  
+end
+</code></pre>
+
+<p>Response calculations are currently supported only for order 1 (linear
+response), single frequency, electric field and mixed electric-magnetic
+field perturbations. The output consists of the electric polarizability
+and optical rotation tensors (alpha, beta for optical rotation) in
+atomic units. If the 'velocity' or 'giao' keywords are absent, the
+dipole-length form will be used for the dipole integrals. This is a bit
+faster. The isotropic optical rotation is origin independent when using
+the velocity gauge or with GIAOs [1]. With the keyword 'bdtensor', a
+fully origin-invariant optical rotation tensor is calculated [1,6].
+Note that 'velocity' and 'orbeta' are incompatible. An input line 'set
+prop:newaoresp 0' outside of the 'properties' block forces the use of an
+older version of the response code, which has fewer features (in
+particular, no working GIAO opetical rotation) but which has been tested
+more thoroughly. In the default newer version you may encounter
+undocumented features (bugs). 'analysis' triggers an analysis of the
+response tensors in terms of molecular orbitals. If the property input
+block also contains the keyword 'pmlocalization', then the analysis is
+performed in terms of Pipek-Mezey localized MOs, otherwise the canonical
+set is used (this feature may currently not work, please check the sum
+of the analysis carefully). See Ref. [6] for an example. Works with HF
+and density functionals for which linear response kernels are
+implemented in NWChem.</p>
+<p>Please refer to the following papers for further details:</p>
+<ol>
+<li>J. Autschbach, ChemPhysChem 12 (2011), 3224-3235</li>
+<li>J. Autschbach, Comp. Lett. 3, (2007), 131</li>
+<li>M. Krykunov, J. Autschbach, J. Chem. Phys. 123 (2005), 114103</li>
+<li>J.R. Hammond, N. Govind, K. Kowalski, J. Autschbach, S.S. Xantheas,
+    J. Chem. Phys. 131 (2009), 214103</li>
+<li>M. Krykunov, M. D. Kundrat, J. Autschbach, J. Chem. Phys. 125
+    (2006), 194110</li>
+<li>B. Moore II, M. Srebro, J. Autschbach, J. Chem. Theory Comput. 8
+    (2012), 4336-4346</li>
+</ol>
+<h3 id="raman">Raman</h3>
+<p>Raman calculations can be performed by specifying the Raman block. These
+calculations are performed in conjunction with polarizability
+calculations. Detailed description of input parameters at
+<a href="http://pubs.acs.org/doi/suppl/10.1021/jp411039m">http://pubs.acs.org/doi/suppl/10.1021/jp411039m</a></p>
+<pre><code>RAMAN 
+ [ (NORMAL | | RESONANCE) default NORMAL ]  
+ [ (LORENTZIAN | | GAUSSIAN) default LORENTZIAN ]  
+ [ LOW &lt;double low default 0.0&gt; ]  
+ [ HIGH &lt;double high default highest normal mode&gt; ]  
+ [ FIRST &lt;integer first default 7&gt; ]  
+ [ LAST &lt; integer last default number of normal modes &gt; ]  
+ [ WIDTH &lt;double width default 20.0&gt; ]  
+ [ DQ &lt;double dq default 0.01&gt; ]  
+END  
+task dft raman
+</code></pre>
+
+<p>or</p>
+<pre><code>task dft raman numerical
+</code></pre>
+
+<p>Sample input block:</p>
+<pre><code>property
+ response 1 8.8559E-2  
+ damping 0.007  
+end  
+raman  
+ normal  
+ lorentzian  
+end
+</code></pre>
+
+<h4 id="raman-keywords">Raman Keywords</h4>
+<ul>
+<li>NORMAL and RESONANCE: Type of Raman plot to make.</li>
+<li>LORENTZIAN and GAUSSIAN: Generation of smoothed spectra (rather than
+    sticks) using either a Lorentzian function or a Gaussian function.
+    The default is LORENTZIAN.</li>
+<li>LOW and HIGH: The default range in which to generate the Raman
+    spectrum plot is (0.0, highest wavenumber normal mode) cm-1. The LOW
+    and HIGH keywords modify the frequency range.</li>
+<li>FIRST and LAST: The default range of indices of normal modes used in
+    the plot is (7, number of normal modes). The FIRST and LAST keywords
+    modify the range of indices.</li>
+<li>WIDTH:Controls the width in the smoothed peaks, using Lorentzians or
+    Gaussians, in the plot. The default value for WIDTH is 20.0.</li>
+<li>DQ: Size of the steps along the normal modes. The default value for
+    DQ is 0.01. It is related to the step size dR used in numerical
+    evaluation of polarizability derivative</li>
+</ul>
+<h4 id="raman-output">Raman Output</h4>
+<p>Raman spectrum in stick format and smoothed using Lorentzians or
+Gaussians stored in a filename with format [fname].normal.<br />
+The number of points is 1000 by default. This value can be changed by adding the following <a href="SET.html">SET</a> directive to the input file</p>
+<pre><code>set raman:numpts &lt;integer&gt;
+</code></pre>
+
+<h4 id="raman-references">Raman References</h4>
+<p>Please refer to the following papers for further details:</p>
+<ol>
+<li>J. M. Mullin, J. Autschbach, G. C. Schatz, Computational and
+    Theoretical Chemistry 987, 32 (2012). DOI:
+    10.1016/j.comptc.2011.08.027.</li>
+<li>F. W. Aquino and G. C. Schatz, The Journal of Physical Chemistry A
+    118 , 517 (2014). DOI: 10.1021/jp411039m</li>
+</ol>
+<h3 id="nbofile">Nbofile</h3>
+<p>The keyword NBOFILE does not execute the Natural Bond Analysis code, but
+simply creates an input file to be used as input to the stand-alone NBO
+code. All other properties are calculated upon request.</p>
+<p>Following the successful completion of an electronic structure
+calculation, a Natural Bond Orbital (NBO) analysis may be carried out by
+providing the keyword NBOFILE in the PROPERTY directive. NWChem will
+query the rtdb and construct an ASCII file, <file_prefix>.gen, that may
+be used as input to the stand alone version of the NBO program, gennbo.
+<file_prefix> is equal to string following the START directive. The
+input deck may be edited to provide additional options to the NBO
+calculation, (see the NBO user's manual for details.)</p>
+<p>Users that have their own NBO version can compile and link the code into
+the NWChem software. See the INSTALL file in the source for details.</p>
+<h2 id="gaussian-cube-files">Gaussian Cube Files</h2>
+<p>Electrostatic potential (keyword <em>esp</em>) and the magnitude of the
+electric field (keyword <em>efield</em>) on the grid can be generated in the
+form of the Gaussian Cube File. This behavior is triggered by the
+inclusion of grid keyword as shown
+below</p>
+<pre><code> grid [pad dx [dy dz]] [rmax x y z] [rmin x y z] [ngrid nx [ny nz]] [output filename]
+</code></pre>
+
+<p>where</p>
+<ul>
+<li>pad dx [dy dz] - specifies amount of padding (in angstroms) in
+    x,y, and z dimensions that will be applied in the automatic
+    construction of the rectangular grid volume based on the geometry of
+    the system. If only one number is provided then the same amount of
+    padding will be applied in all dimensions. The default setting is 4
+    angstrom padding in all dimensions.</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li>rmin x y z - specifies the coordinates (in angstroms) of the minimum
+    corner of the rectangular grid volume. This will override any
+    padding in this direction.</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li>rmax x y z - specifies the coordinates (in angstroms) of the maximum
+    corner of the rectangular grid volume. This will override any
+    padding in this direction.</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li>ngrid nx [ny nz] - specifies number of grid points along each
+    dimension. If only one number is provided then the same number of
+    grid points are assumed all dimensions. In the absence of this
+    directive the number of grid points would be computed such that grid
+    spacing will be close to 0.2 angstrom, but not exceeding 50 grid
+    points in either dimension.</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li>output filename - specifies name of the output cube file. The
+    default behavior is to use \&lt;prefix>-elp.cube or \&lt;prefix>-elf.cube
+    file names for electrostatic potential or electric field
+    respectively. Here <prefix> denotes the system name as specified in
+    start directive. Note that Gaussian cube files will be written in
+    the run directory (where the input file resides).</li>
+</ul>
+<p>Example input file</p>
+<pre><code>  echo  
+  start nacl  
+    
+   
+  geometry nocenter noautoz noautosym  
+   Na                   -0.00000000     0.00000000    -0.70428494  
+   Cl                    0.00000000    -0.00000000     1.70428494  
+  end  
+    
+    
+  basis  
+    * library 6-31g*  
+  end  
+    
+  #electric field would be written out to nacl.elf.cube file  
+  #with  
+  #ngrid     : 20 20 20  
+  #rmax      : 4.000     4.000     5.704  
+  #rmin      :-4.000    -4.000    -4.704  
+    
+  property  
+  efield  
+  grid pad 4.0 ngrid 20  
+  end  
+    
+  task dft property  
+    
+  #electrostatic potential would be written to esp-pad.cube file  
+  # with the same parameters as above  
+    
+  property  
+  esp  
+  grid pad 4.0 ngrid 20 output esp-pad.cube  
+  end  
+    
+  task dft property  
+     
+  #illustrating explicit specification of minumum box coordinates  
+    
+  property  
+  esp  
+  grid pad 4.0 rmax 4.000 4.000 5.704 ngrid 20  
+  end  
+    
+  task dft property
+</code></pre>
+
+<h2 id="aimfile">Aimfile</h2>
+<p>This keyword generates AIM Wavefunction files. The resulting AIM
+wavefunction file (.wfn/.wfx) can be post-processed with a variety of
+codes, e.g.</p>
+<ul>
+<li><a href="http://www.quimica.urv.es/XAIM/">XAIM</a></li>
+<li><a href="https://github.com/aoterodelaroza/nciplot">NCIPLOT</a></li>
+<li><a href="http://multiwfn.codeplex.com/">Multiwfn</a></li>
+<li><a href="https://github.com/aoterodelaroza/postg">Postg</a></li>
+</ul>
+<p>More details at
+<a href="https://sites.google.com/site/alvarovazquezmayagoitia/goals/codes/nwchem-notes/generator-of-aim-wavefunction-files-nwchem">https://sites.google.com/site/alvarovazquezmayagoitia/goals/codes/nwchem-notes/generator-of-aim-wavefunction-files-nwchem</a><br />
+<strong>WARNING:</strong> Since we have discovered issues in generating .WFN files with this module (e.g. systems with ECPs), the recommended method for generating .WFN file is to first generate a Molden file with the <a href="Properties.html#moldenfile">Moldenfile</a> option, then convert the Molden file into a WFN file by using the <a href="http://zorkzou.github.io/Molden2AIM">Molden2AIM</a> program.</p>
+<h2 id="moldenfile">Moldenfile</h2>
+<pre><code>MOLDENFILE
+MOLDEN_NORM (JANPA | | NWCHEM || NONE)
+</code></pre>
+
+<p>This keyword generates files using the <a href="http://www.cmbi.ru.nl/molden/molden_format.html">Molden
+format</a>. The resulting
+Molden file (.molden) should compatible with a variety of codes that can
+input Molden files, e.g.</p>
+<ul>
+<li><a href="http://www.cmbi.ru.nl/molden/">Molden</a></li>
+<li><a href="http://janpa.sf.net">JANPA</a> (the nwchem2molden step is no longer
+    required when using .molden files and the <code>MOLDEN_NORM JANPA</code>
+    keyword)</li>
+<li><a href="http://orbkit.github.io/">orbkit</a></li>
+<li><a href="http://github.com/Konjkov/molden2qmc">Molden2qmc</a></li>
+<li><a href="http://zorkzou.github.io/Molden2AIM">Molden2AIM</a></li>
+</ul>
+<p>the <code>MOLDEN_NORM</code> option allows the renormalization of the basis set
+coefficients. By default, the coefficient values from input are not
+modified. Using the <code>JANPA</code> value coefficients are normalized following
+<a href="https://sourceforge.net/p/janpa/wiki/nwchem2molden/">JANPA</a>'s
+convention, while the <code>NWCHEM</code> will produce coefficients normalized
+according to NWChem's convention. Using <code>MOLDEN_NORM</code> equal <code>NONE</code> will
+leave the input coefficients unmodified.<br />
+It is strongly recommended to use <strong>spherical</strong> <a href="Basis.html">basis set</a> when using the NWChem Molden output for JANPA analysis</p>
+<p>Example input file for a scf calculation. The resulting Molden file will
+be named <code>h2o.molden</code></p>
+<pre><code> start heat
+
+ geometry; he 0. 0. 0.; end  
+
+ basis spherical; * library 6-31g ; end  
+
+ task scf  
+
+ property 
+  vectors heat.movecs  
+  moldenfile   
+  molden_norm janpa 
+ end
+
+ task scf property
+</code></pre>
+
+<p>Then, the resulting <code>h2o.molden</code> file can be post processed by Janpa with the following command</p>
+<pre><code>java -jar janpa.jar h2o.molden &gt; h2o.janpa.txt
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

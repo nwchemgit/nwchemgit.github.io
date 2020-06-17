@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Vibrational SCF (VSCF) - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Vibrational SCF (VSCF)";
+    var mkdocs_page_input_path = "VSCF.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Vibrational SCF (VSCF)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/VSCF.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="vibrational-scf-vscf">Vibrational SCF (VSCF)</h1>
+<p>The VSCF module can be used to calculate the anharmonic contributions to
+the vibrational modes of the molecule of interest. Energies are
+calculated on a one-dimensional grid along each normal mode, on a
+two-dimensional grid along each pair of normal modes, and optionally on
+a three-dimensional grid along each triplet of normal modes. These
+energies are then used to calculate the vibrational nuclear wavefunction
+at an SCF- (VSCF) and MP2-like (cc-VSCF) level of theory.</p>
+<p>VSCF can be used at all levels of theory, SCF and correlated methods,
+and DFT. For correlated methods, only the SCF level dipole is evaluated
+and used to calculate the IR intensity values.</p>
+<p>The VSCF module is started when the task directive <code>TASK &lt;theory&gt; vscf</code> is
+defined in the user input file. The input format has the form:</p>
+<pre><code> VSCF
+   [coupling &lt;string couplelevel default &quot;pair&quot;&gt;]  
+   [ngrid    &lt;integer default 16 &gt;]  
+   [iexcite  &lt;integer default 1  &gt;]  
+   [vcfct    &lt;real    default 1.0&gt;]  
+ END
+</code></pre>
+
+<p>The order of coupling of the harmonic normal modes included in the
+calculation is controlled by the specifying:</p>
+<pre><code>   coupling &lt;string couplelevel default &quot;pair&quot;&gt;
+</code></pre>
+
+<p>For <code>coupling=diagonal</code> a one-dimensional grid along each normal mode is
+computed. <br />
+For <code>coupling=pair</code> a two-dimensional grid along each pair of normal modes is computed. <br />
+For <code>coupling=triplet</code> a three-dimensional grid along each triplet of normal modes is computed. </p>
+<p>The number of grid points along each normal mode, or pair of modes can
+be defined by specifying:</p>
+<pre><code>   ngrid &lt;integer default 16&gt;
+</code></pre>
+
+<p>This VSCF module by default calculates the ground state (&nu;=0), but can
+also calculate excited states (such as &nu;=1). The number of excited
+states calculated is defined by specifying:</p>
+<pre><code>   iexcite &lt;integer default 1&gt;
+</code></pre>
+
+<p>With <code>iexcite=1</code> the fundamental frequencies are calculated.<br />
+With <code>iexcite=2</code> the first overtones are calculated.<br />
+With <code>iexcite=3</code> the second overtones are calculated.</p>
+<p>In certain cases the pair coupling potentials can become larger than
+those for a single normal mode. In this case the pair potentials need to
+be scaled down. The scaling factor used can be defined by specifying:</p>
+<pre><code>   vcfct &lt;real default 1.0&gt;
+</code></pre>
+
+<p><strong>References</strong></p>
+<ol>
+<li>G. M. Chaban, J. O. Jung, and R. B. Gerber, The Journal of Chemical Physics 111, 1823-1829 (1999)</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
