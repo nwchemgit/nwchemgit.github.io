@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>SET - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SET";
+    var mkdocs_page_input_path = "SET.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>SET</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/SET.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="set">SET</h2>
+<p>This top-level directive allows the user to enter data directly into the
+<a href="NWChem-Architecture.html#database-structure">run-time database</a>.
+The format of the directive is as follows:</p>
+<pre><code>SET &lt;string name&gt; [&lt;string type default automatic&gt;] &lt;type data&gt;
+</code></pre>
+
+<p>The entry for variable <name> is the name of data to be entered into the
+database. This must be specified; there is no default. The variable
+<type>, which is optional, allows the user to define a string specifying
+the type of data in the array <name>. The data type can be explicitly
+specified as integer, real, double, logical, or string. If no entry for
+<type> is specified on the directive, its value is inferred from the
+data type of the first datum. In such a case, floating-point data
+entered using this directive must include either an exponent or a
+decimal point, to ensure that the correct default type will be inferred.
+The correct default type will be inferred for logical values if
+logical-true values are specified as .true., true, or t, and
+logical-false values are specified as .false., false, or f. One
+exception to the automatic detection of the data type is that the data
+type <strong>must</strong> be explicitly stated to input integer ranges, unless the
+first element in the list is an integer that is not a
+<a href="Getting-Started.html#input-format-and-syntax-for-directives">range</a>.
+For example,</p>
+<pre><code>set atomid 1 3:7 21
+</code></pre>
+
+<p>will be interpreted as a list of integers. However,</p>
+<pre><code>set atomid 3:7 21 
+</code></pre>
+
+<p>will not work since the first element will be interpreted as a string
+and not an integer. To work around this feature, use instead</p>
+<pre><code>set atomid integer 3:7 21
+</code></pre>
+
+<p>which says to write three through seven, as well as twenty-one.</p>
+<p>The SET directive is useful for providing indirection by associating the
+name of a basis set or geometry with the standard object names (such as
+"ao basis" or geometry) used by NWChem. The following input file shows
+an example using the SET directive to direct different tasks to
+different geometries. The required input lines are as follows:</p>
+<p><code>title "Ar dimer BSSE corrected MP2 interaction energy"</code><br />
+<code>geometry "Ar+Ar"</code><br />
+<code>Ar1 0 0 0</code><br />
+<code>Ar2 0 0 2</code><br />
+<code>end</code><br />
+<code>geometry "Ar+ghost"</code><br />
+<code>Ar1 0 0 0</code><br />
+<code>Bq2 0 0 2</code><br />
+<code>end</code><br />
+<code>basis</code><br />
+<code>Ar1 library aug-cc-pvdz</code><br />
+<code>Ar2 library aug-cc-pvdz</code><br />
+<code>Bq2 library Ar aug-cc-pvdz</code><br />
+<code>end</code><br />
+<code>set geometry "Ar+Ar" task mp2</code><br />
+<code>scf; vectors atomic; end</code><br />
+<code>set geometry "Ar+ghost" task mp2</code></p>
+<p>This input tells the code to perform MP2 energy calculations on an argon
+dimer in the first task, and then on the argon atom in the presence of
+the "ghost" basis of the other atom.</p>
+<p>The SET directive can also be used as an indirect means of supplying
+input to a part of the code that does not have a separate input module
+(e.g., the <a href="Hartree-Fock-Theory-for-Molecules.html#atomic-guess-orbitals-with-charged_atoms">atomic
+SCF</a>).
+Additional examples of applications of this directive can be found in
+the <a href="Getting-Started.html#water-molecule-sample-input-file">sample input
+files</a>, and
+its usage with <a href="Basis.html">basis sets</a> and
+<a href="Geometry.html">geometries</a>. Also see <a href="NWChem-Architecture.html#database-structure">database
+section</a> for an example of how to
+store an array in the database.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Analysis - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Analysis";
+    var mkdocs_page_input_path = "Analysis.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Analysis</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Analysis.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="analysis">Analysis</h1>
+<p>The analysis module is used to analyze molecular trajectories generated by the NWChem molecular dynamics module, or partial charges generated by the NWChem electrostatic potential fit module. This module should not de run in parallel mode.</p>
+<p>Directives for the analysis module are read from an input deck,</p>
+<p><code>analysis</code></p>
+<p><code>...</code></p>
+<p><code>end</code></p>
+<p>The analysis is performed as post-analysis of trajectory files through using the task directive</p>
+<p><code>task analysis</code></p>
+<p>or</p>
+<p><code>task analyze</code></p>
+<h2 id="system-specification">System specification</h2>
+<p><code>system &lt;string systemid&gt;_&lt;string calcid&gt;</code></p>
+<p>where the strings systemid and calcid are user defined names for the chemical system and the type of calculation to ber performed, respectively. These names are used to derive the filenames used for the calculation. The topoly file used will be systemid.top, while all other files are named systemid_calcid.ext.</p>
+<h2 id="reference-coordinates">Reference coordinates</h2>
+<p>Most analyses require a set of reference coordinates. These coordinates are read from a NWChem restart file by the directive,</p>
+<p><code>reference &lt;string filename&gt;</code></p>
+<p>where filename is the name of an existing restart file. This input directive is required.</p>
+<h2 id="file-specification">File specification</h2>
+<p>The trajectory file(s) to be analyzed are specified with</p>
+<p><code>file  &lt;string filename&gt;  [ &lt;integer firstfile&gt;   &lt;integer lastfile&gt; ]</code></p>
+<p>where filename is an existing trj trajectory file. If firstfile and lastfile are specified, the specified filename needs to have a ? wild card character that will be substituted by the 3-character integer number from firstfile to lastfile, and the analysis will be performed on the series of files. For example,</p>
+<p><code>file tr_md?.trj 3 6</code></p>
+<p>will instruct the analysis to be performed on files tr_md003.trj, tr_md004.trj, tr_md005.trj and tr_md006.trj.</p>
+<p>From the specified files the subset of frames to be analyzed is specified by</p>
+<p><code>frames [ &lt;integer firstframe default 1&gt; ]  &lt;integer lastframe&gt;  \</code></p>
+<p><code>[ &lt;integer frequency default 1&gt; ]</code></p>
+<p>For example, to analyze the first 100 frames from the specified trajectory files, use</p>
+<p><code>frames 100</code></p>
+<p>To analyze every 10-th frame between frames 200 and 400 recorded on the specified trajectory files, use</p>
+<p><code>frames 200 400 10</code></p>
+<p>A time offset can be specified with</p>
+<p><code>time</code><real timoff></p>
+<p>Solute coordinates of the reference set and ech subsequent frame read from a trajectory file are translated to have the center of geometry of the specified solute molecule at the center of the simulation box. After this translation all molecules are folded back into the box according to the periodic boundary conditions. The directive for this operation is</p>
+<p><code>center  &lt;integer imol&gt;  [ &lt;integer jmol default imol&gt; ]</code></p>
+<p>Coordinates of each frame read from a trajectory file can be rotated using</p>
+<p><code>rotate ( off | x | y | z )</code><real angle units degrees></p>
+<p>If center was defined, rotation takes place after the system has been centered. The rotate directives only apply to frames read from the trajectory files, and not to the reference coordinates. Up to 100 rotate directives can be specified, which will be carried out in the order in which they appear in the input deck. rotate off cancels all previously defined rotate directives.</p>
+<p>To perform a hydrogen bond analysis:</p>
+<p><code>hbond [distance [[&lt;real rhbmin default 0.0&gt;] &lt;real rhbmin&gt;]] \</code></p>
+<p><code>[angle [&lt;real hbdmin&gt; [ &lt;real hbdmax default pi&gt;]]] \</code></p>
+<p><code>[solvent [&lt;integer numwhb&gt;]]</code></p>
+<h2 id="selection">Selection</h2>
+<p>Analyses can be applied to a selection of solute atoms and solvent molecules. The selection is determined by</p>
+<p><code>select ( [ super ] [ { &lt;string atomlist&gt; } ] |</code>
+<code>solvent &lt;real range&gt; | save &lt;string filename&gt; | read &lt;string filename&gt; )</code></p>
+<p>where {atomlist} is the set of atom names selected from the specified residues. By default all solute atoms are selected. When keyword super is specified the selecion applies to the superimposition option.</p>
+<p>The selected atoms are specified by the string atomlist which takes the form</p>
+<p><code>[{isgm [ - jsgm ] [,]} [:] [{aname[,]}]</code></p>
+<p>where isgm and jsgm are the first and last residue numbers, and aname is an atom name. In the atomname a question mark may be used as a wildcard character.</p>
+<p>For example, all protein backbone atoms are selected by</p>
+<p><code>select _N,_CA,_C</code></p>
+<p>To select the backbone atoms in residues 20 to 80 and 90 to 100 only, use</p>
+<p><code>select 20-80,90-100:_N,_CA,_C</code></p>
+<p>This selection is reset to apply to all atoms after each file directive.</p>
+<p>Solvent molecules within range nm from any selected solute atom are selected by</p>
+<p><code>select solvent</code><real range></p>
+<p>After solvent selection, the solute atom selection is reset to being all selected.</p>
+<p>The current selection can be saved to, or read from a file using the save and read keywords, respectively.</p>
+<p>Some analysis are performed on groups of atoms. These groups of atoms are defined by</p>
+<p><code>define</code><integer igroup><code>[</code><real rsel><code>] [solvent] {</code><string atomlist><code>}</code></p>
+<p>The string atom in this definitions again takes the form</p>
+<p><code>[{isgm [ - jsgm ] [,]} [:] [{aname[,]}]</code></p>
+<p>where isgm and jsgm are the first and last residue numbers, and aname is an atom name. In the atomname a question mark may be used as a wildcard character.</p>
+<p>Multiple define directive can be used to define a single set of atoms.</p>
+<h2 id="coordinate-analysis">Coordinate analysis</h2>
+<p>To analyze the root mean square deviation from the specified reference coordinates:</p>
+<p><code>rmsd</code></p>
+<p>To analyze protein φ-ψ and backbone hydrogen bonding:</p>
+<p><code>ramachandran</code></p>
+<p>To define a distance:</p>
+<p><code>distance &lt;integer ibond&gt; &lt;string atomi&gt; &lt;string atomj&gt;</code></p>
+<p>To define an angle:</p>
+<p><code>angle &lt;integer iangle&gt; &lt;string atomi&gt; &lt;string atomj&gt; &lt;string atomk&gt;</code></p>
+<p>To define a torsion:</p>
+<p><code>torsion &lt;integer itorsion&gt; &lt;string atomi&gt; &lt;string atomj&gt; \</code></p>
+<p><code>&lt;string atomk&gt; &lt;string atoml&gt;</code></p>
+<p>To define a vector:</p>
+<p><code>vector &lt;integer ivector&gt; &lt;string atomi&gt; &lt;string atomj&gt;</code></p>
+<p>The atom string in these definitions takes the form</p>
+<p><code>&lt;integer segment&gt;:&lt;string atomname&gt; | w&lt;integer molecule&gt;:&lt;string atomname&gt;</code></p>
+<p>for solute and solvent atom specification, respectively.</p>
+<p>To define charge distribution in z-direction:</p>
+<p><code>charge_distribution</code><integer bins></p>
+<p>Analyses on atoms in a predefined group are specified by</p>
+<p><code>group [</code><integer igroup><code>[periodic</code><integer ipbc><code>] \</code>
+<code>( local [</code><real rsel default 0.0><code>] [</code><real rval default rsel><code>]</code>
+<code></code><string function><code>)</code></p>
+<p>where igroup specifies the group of atoms defined with a define directive. Keyword periodic can be used to specify the periodicity, ipbc=1 for periodicity in z, ipbc=2 for periodicity in x and y, and ipbc=3 for periodicity in x, y and z. Currently the only option is local which prints all selected solute atom with a distance between rsel and rval from the atoms defined in igroup. The actual analysis is done by the scan deirective. A formatted report is printed from group analyses using</p>
+<p><code>report</code><string filename><code>local</code></p>
+<p>Analyses on pairs of atoms in predefined groups are specified by</p>
+<p><code>groups [</code><integer igroup><code>[</code><integer jgroup><code>]] [periodic [</code><integer ipbc default 3><code>]] \</code>
+<code></code><string function><code>[</code><real value1><code>[</code><real value2><code>]] [</code><string filename><code>]</code></p>
+<p>where <em>igroup</em> and <em>jgroup</em> are groups of atoms defined with a define directive. Keyword periodic specifies that periodic boundary conditions need to be applied in <em>ipbc</em> dimensions. The type of analysis is define by <em>function</em>, <em>value1</em> and <em>value2</em>. If <em>filename</em> is specified, the analysis is applied to the reference coordinates and written to the specified file. If no filename is given, the analysis is applied to the specified trajectory and performed as part of the scan directive. Implemented analyses defined by <string function> [<real value1> [<real value2>]] include</p>
+<ul>
+<li>distance to calculate the distance between the centers of geometry of the two specified groups of atoms, and</li>
+<li>distances to calculate all atomic distances between atoms in the specified groups that lie between <em>value1</em> and <em>value2</em>.</li>
+</ul>
+<p>Coordinate histograms are specified by</p>
+<p><code>histogram</code><integer idef><code>[</code><integer length><code>] zcoordinate</code><string filename></p>
+<p>where <em>idef</em> is the atom group definition number, <em>length</em> is the size of the histogram, zcoordinate is the currently only histogram option, and <img alt="$filename$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ebe1efea94507a0bee82dbc9ac2d018a.svg?invert_in_darkmode&sanitize=true" align=middle width="68.75649pt" height="22.74591pt"/> is the filname to which the histogram is written.</p>
+<p>Order parameters are evalated using</p>
+<p><code>order &lt;integer isel&gt; &lt;integer jsel&gt; &lt;string atomi&gt; &lt;string atomj&gt;</code></p>
+<p>This is an experimental feature.</p>
+<p>To write the average coordinates of a trajectory</p>
+<p><code>average [super] &lt;string filename&gt;</code></p>
+<p>To perform the coordinate analysis:</p>
+<p><code>scan [ super ] &lt;string filename&gt;</code></p>
+<p>which will create, depending on the specified analysis options files filename.rms and filename.ana. After the scan directive previously defined coordinate analysis options are all reset. Optional keyword super specifies that frames read from the trajectory file(s) are superimposed to the reference structure before the analysis is performed.</p>
+<h2 id="essential-dynamics-analysis">Essential dynamics analysis</h2>
+<p>Essential dynamics analysis is performed by</p>
+<p><code>essential</code></p>
+<p>This can be followed by one or more</p>
+<p><code>project</code><integer vector><code></code><string filename></p>
+<p>to project the trajectory onto the specified vector. This will create files filename with extensions frm or trj, val, vec, _min.pdb and _max.pdb, with the projected trajectory, the projection value, the eigenvector, and the minimum and maximum projection structure.</p>
+<p>For example, an essential dynamics analysis with projection onto the first vector generating files firstvec.{trj, val, vec, _min.pdb, _max.pdb} is generated by</p>
+<p><code>essential</code></p>
+<p><code>project 1 firstvec</code></p>
+<h2 id="trajectory-format-conversion">Trajectory format conversion</h2>
+<p>To write a single frame in PDB or XYZ format, use</p>
+<p><code>write [</code><integer number default 1><code>] [super] [solute]</code><string filename></p>
+<p>To copy the selected frames from the specified trejctory file(s), onto a new file, use</p>
+<p><code>copy  [solute] [rotate</code><real tangle><code>]</code><string filename></p>
+<p>To superimpose the selected atoms for each specified frame to the reference coordinates before copying onto a new file, use</p>
+<p><code>super [solute] [rotate</code><real tangle><code>]</code><string filename></p>
+<p>The rotate directive specifies that the structure will make a full ratation every tangle ps. This directive only has effect when writing povray files.</p>
+<p>The format of the new file is determined from the extension, which can be one of</p>
+<p><code>amb    AMBER formatted trajectory file (obsolete)</code></p>
+<p><code>arc    DISCOVER archive file</code></p>
+<p><code>bam    AMBER unformatted trajectory file</code></p>
+<p><code>crd    AMBER formatted trajectory file</code></p>
+<p><code>dcd    CHARMM formatted trajectory file</code></p>
+<p><code>esp    gOpenMol formatted electrostatic potential files</code></p>
+<p><code>frm    ecce frames file (obsolete)</code></p>
+<p><code>pov    povray input files</code></p>
+<p><code>trj    NWChem trajectory file</code></p>
+<p><code>xyz     NWChem trajectory in xyz format</code></p>
+<p>If no extension is specified, a trj formatted file will be written.</p>
+<p>A special tag can be added to frm and pov formatted files using</p>
+<p><code>label</code><integer itag><code></code><string tag><code>[</code><real rval default 1.0><code>] \\</code>
+<code>[</code><integer iatag><code>[</code><integer jatag default iatag><code>] [</code><real rtag default 0.0><code>] ]</code>
+<code>[</code><string anam><code>]</code></p>
+<p>where tag number <em>itag</em> is set to the string <em>tag</em> for all atoms anam within a distance <em>rtag</em> from segments <em>iatag</em> through <em>jatag</em>. A question mark can be used in anam as a wild card character.</p>
+<p>Atom rendering is specified using</p>
+<p><code>render ( cpk | stick )  [</code><real rval default 1.0><code>] \\</code>
+<code>[</code><integer iatag><code>[</code><integer jatag default iatag><code>] [</code><real rtag default 0.0><code>] ]</code>
+<code>[</code><string anam><code>]</code></p>
+<p>for all atoms anam within a distance <img alt="$rtag$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d27dff583239b5f92bb177f0e93a75de.svg?invert_in_darkmode&sanitize=true" align=middle width="30.81474pt" height="20.1465pt"/> from segments <img alt="$iatag$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a5fc2c1cb1c7c00ad2a0c026c155617.svg?invert_in_darkmode&sanitize=true" align=middle width="37.26822pt" height="21.60213pt"/> through <img alt="$jatag$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3c2df9732319cf79e85ac465559f3e57.svg?invert_in_darkmode&sanitize=true" align=middle width="39.311415pt" height="21.60213pt"/>, and a scaling factor of <img alt="$rval$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7e59caa52426cab252f5bed55bc1b699.svg?invert_in_darkmode&sanitize=true" align=middle width="30.23889pt" height="22.74591pt"/>. A question mark can be used in anam as a wild card character.</p>
+<p>Atom color is specified using</p>
+<p><code>color ( &lt;string color&gt; | atom ) \\</code></p>
+<p><code>[ &lt;integer iatag&gt; [ &lt;integer jatag default iatag&gt; ] [ &lt;real rtag default 0.0&gt; ] ]</code></p>
+<p><code>[ &lt;string anam&gt; ]</code></p>
+<p>for all atoms anam within a distance <em>rtag</em> from segments <em>iatag</em> through <em>jatag</em>. A question mark can be used in anam as a wild card character.</p>
+<p>For example, to display all carbon atoms in segments 34 through 45 in green and rendered cpk in povray files can be specified with</p>
+<p><code>render cpk 34 45 _C??</code></p>
+<p><code>color green 34 45 _C??</code></p>
+<p>Coordinates written to a pov file can be scaled using</p>
+<p><code>scale &lt;real factor&gt;</code></p>
+<p>A zero or negative scaling factor will scale the coordinates to lie within [-1,1] in all dimensions.</p>
+<p>The cpk rendering in povray files can be scaled by</p>
+<p><code>cpk &lt;real factor default 1.0&gt;</code></p>
+<p>The stick rendering in povray files can be scaled by</p>
+<p><code>stick &lt;real factor default 1.0&gt;</code></p>
+<p>The initial sequence number of esp related files is defined by</p>
+<p><code>index &lt;integer index default 1&gt;</code></p>
+<p>A sequence of trajectory files with unequal lengths can be converted to files with all <img alt="$nclean$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a82f80fa1ad88445e6814ef9998b308d.svg?invert_in_darkmode&sanitize=true" align=middle width="48.239565pt" height="22.74591pt"/> frames using</p>
+<p><code>clean &lt;integer nclean&gt;</code></p>
+<h2 id="electrostatic-potentials">Electrostatic potentials</h2>
+<p>A file in plt format of the electrostatic potential resulting from partial charges generated by the ESP module is generated by the command</p>
+<p><code>esp  [</code><integer spacing default 10><code>] \</code></p>
+<p><code>[</code><real rcut default 1.0><code>] [periodic [</code><integer iper default 3><code>]] \</code></p>
+<p><code>[ &lt;string xfile&gt; [ &lt;string pltfile&gt; ] ]</code></p>
+<p>The input coordinates are taken from the xyzq file that can be generated from a rst by the prepare module. Parameter spacing specifies the number of gridpoints per nm, rcut specifies extent of the charge grid beyond the molecule. Periodic boundaries will be used if periodic is specified. If iper is set to 2, periodic boundary conditions are applied in x and y dimensions only. If periodic is specified, a negative value of rcut will extend the grid in the periodic dimensions by abs(rcut), otherwise this value will be ignored in the periodic dimensions. The resulting plt formatted file pltfile can be viewed with the gOpenMol program. The resulting electrostatic potential grid is in units of <img alt="$kJ mol^{-1} e^{-1}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7c7b8255032b643e31a6d41dd956b79f.svg?invert_in_darkmode&sanitize=true" align=middle width="89.27094pt" height="26.70657pt"/>. If no files are specified, only the parameters are set. This analysis applies to solute(s) only.</p>
+<p>The electrostatic potential at specific point are evaluated using</p>
+<p><code>esp_points [</code><string filpin><code>[</code><string filhol><code>[</code><string filpou><code>[</code><string filavg><code>]]]]</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

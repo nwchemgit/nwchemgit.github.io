@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Coupled Cluster Calculations - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Coupled Cluster Calculations";
+    var mkdocs_page_input_path = "CCSD.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Coupled Cluster Calculations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/CCSD.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="coupled-cluster-calculations">Coupled Cluster Calculations</h1>
+<p>The NWChem coupled cluster energy module is primarily the work of
+Alistair Rendell and Rika Kobayashi[1][2], with contributions from
+Bert de Jong, David Bernholdt and Edoardo Aprà[3].</p>
+<p>The coupled cluster code can perform calculations with full iterative
+treatment of single and double excitations and non-iterative inclusion
+of triple excitation effects. It is presently limited to closed-shell
+(RHF) references.</p>
+<p>Note that symmetry is not used within most of the CCSD(T) code. This can
+have a profound impact on performance since the speed-up from symmetry
+is roughly the square of the number of irreducible representations. In
+the absence of symmetry, the performance of this code is competitive
+with other programs.</p>
+<p>The operation of the coupled cluster code is controlled by the input
+block</p>
+<pre><code>CCSD
+  [MAXITER &lt;integer maxiter default 20&gt;]
+  [THRESH  &lt;real thresh default 1e-6&gt;]
+  [TOL2E &lt;real tol2e default min(1e-12 , 0.01**`thresh`*`)&gt;]
+  [DIISBAS  &lt;integer diisbas default 5&gt;]
+  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
+          [virtual &lt;integer nfzv default 0&gt;]]
+  [NODISK]
+  [IPRT  &lt;integer IPRT default 0&gt;]
+  [PRINT ...]
+  [NOPRINT ...]
+END
+</code></pre>
+
+<p>Note that the keyword CCSD is used for the input block regardless of the
+actual level of theory desired (specified with the TASK directive). The
+following directives are recognized within the CCSD group.</p>
+<h2 id="maxiter-maximum-number-of-iterations">MAXITER -- Maximum number of iterations</h2>
+<p>The maximum number of iterations is set to 20 by default. This should be
+quite enough for most calculations, although particularly troublesome
+cases may require more.</p>
+<pre><code> MAXITER  &lt;integer maxiter default 20&gt;
+</code></pre>
+
+<h2 id="thresh-convergence-threshold">THRESH -- Convergence threshold</h2>
+<p>Controls the convergence threshold for the iterative part of the
+calculation. Both the RMS error in the amplitudes and the change in
+energy must be less than thresh.</p>
+<pre><code> THRESH  &lt;real thresh default 1e-6&gt;
+</code></pre>
+
+<h2 id="tol2e-integral-screening-threshold">TOL2E -- integral screening threshold</h2>
+<pre><code> TOL2E &lt;real tol2e default min(1e-12, 0.01*thresh)&gt;
+</code></pre>
+
+<p>The variable tol2e is used in determining the integral screening
+threshold for the evaluation of the energy and related quantities.</p>
+<p>CAUTION! At the present time, the tol2e parameter only affects the
+three- and four-virtual contributions, and the triples, all of which are
+done "on the fly". The transformations used for the other parts of the
+code currently have a hard-wired threshold of <img alt="$10^{-12}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/aeab78344f8b0fe0d6b7163980cf8ff1.svg?invert_in_darkmode&sanitize=true" align=middle width="39.668805pt" height="26.70657pt"/>. The default
+for tol2e is set to match this, and since user input can only make the
+threshold smaller, setting this parameter can only make calculations
+take longer.</p>
+<h2 id="diisbas-diis-subspace-dimension">DIISBAS -- DIIS subspace dimension</h2>
+<p>Specifies the maximum size of the subspace used in DIIS convergence
+acceleration. Note that DIIS requires the amplitudes and errors be
+stored for each iteration in the subspace. Obviously this can
+significantly increase memory requirements, and could force the user to
+reduce DIISBAS for large calculations.</p>
+<p>Measures to alleviate this problem, including more compact storage of
+the quantities involved, and the possibility of disk storage are being
+considered, but have not yet been implemented.</p>
+<pre><code> DIISBAS  &lt;integer diisbas default 5&gt;
+</code></pre>
+
+<h2 id="freeze-freezing-orbitals">FREEZE -- Freezing orbitals</h2>
+<pre><code>  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
+          [virtual &lt;integer nfzv default 0&gt;]]
+</code></pre>
+
+<p>This directive is identical to that used in the <a href="MP2.html">MP2</a>
+module.</p>
+<h2 id="nodisk-on-the-fly-computation-of-integrals">NODISK -- On-the-fly computation of integrals</h2>
+<p>The CCSD modules by default computes once and stores on disk the
+integrals. To avoid this kind of I/O operations, specify the keyword
+<code>NODISK</code></p>
+<h2 id="iprt-debug-printing">IPRT -- Debug printing</h2>
+<p>This directive controls the level of output from the code, mostly to
+facilitate debugging and the like. The larger the value, the more output
+printed. From looking at the source code, the interesting values seem to
+be IPRT > 5, 10, and 50.</p>
+<pre><code> IPRT  &lt;integer IPRT default 0&gt;
+</code></pre>
+
+<h2 id="print-and-noprint">PRINT and NOPRINT</h2>
+<p>The coupled cluster module supports the standard NWChem print control
+keywords, although very little in the code is actually hooked into this
+mechanism
+yet.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Print Level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"reference"</td>
+<td>high</td>
+<td>Wavefunction information</td>
+</tr>
+<tr>
+<td>"guess pair energies"</td>
+<td>debug</td>
+<td>MP2 pair energies</td>
+</tr>
+<tr>
+<td>"byproduct energies"</td>
+<td>default</td>
+<td>Intermediate energies</td>
+</tr>
+<tr>
+<td>"term debugging switches"</td>
+<td>debug</td>
+<td>Switches for individual terms</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h2 id="methods-tasks-recognized">Methods (Tasks) Recognized</h2>
+<p>Currently available methods
+are</p>
+<ul>
+<li>CCSD - Full iterative inclusion of single and double excitations</li>
+<li>CCSD+T(CCSD) - The fourth order triples contribution computed with converged singles and doubles amplitudes</li>
+<li>CCSD(T) - The linearized triples approximation due to Raghavachari.</li>
+</ul>
+<p>The calculation is invoked using the TASK directive, so to perform a
+CCSD+T(CCSD) calculation, for example, the input file should include the
+directive</p>
+<pre><code> TASK CCSD+T(CCSD)
+</code></pre>
+
+<p>Lower-level results which come as by-products (such as MP3/MP4) of the
+requested calculation are generally also printed in the output file and
+stored on the run-time database, but the method specified in the TASK
+directive is considered the primary result.</p>
+<h2 id="debugging-and-development-aids">Debugging and Development Aids</h2>
+<p>The information in this section is intended for use by experts (both
+with the methodology and with the code), primarily for debugging and
+development work. Messing with stuff in listed in this section will
+probably make your calculation quantitatively wrong! Consider yourself
+warned!</p>
+<h3 id="switching-on-and-off-terms">Switching On and Off Terms</h3>
+<p>The /DEBUG/ common block contains a number of arrays which control the
+calculation of particular terms in the program. These are 15-element
+integer arrays (although from the code only a few elements actually
+effect anything) which can be set from the input deck. See the code for
+details of how the arrays are interpreted.</p>
+<p>Printing of this data at run-time is controlled by the "term debugging
+switches" print option. The values are checked against the defaults at
+run-time and a warning is printed to draw attention to the fact that the
+calculation does not correspond precisely to the requested method.</p>
+<pre><code>DOA  &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
+DOB  &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
+DOG  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
+DOH  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
+DOJK &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
+DOS  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
+DOD  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
+</code></pre>
+
+<h2 id="alternative-implementations-of-triples">Alternative Implementations of Triples</h2>
+<p>There are four customized versions of the CCSD(T) triples driver that
+may improve performance on some architectures. These are not the default
+implementation and are not tested regularly. The burden is on the user
+to evaluate their correctness in comparison to the default triples
+driver. The triples driver only affects how the (T) energy contribution
+is evaluated; the CCSD code is the same in all cases.</p>
+<p>All of the non-standard triples drivers are activated using RTDB set
+directives, which are specified outside of the CCSD input block.</p>
+<h3 id="nonblocking">Nonblocking</h3>
+<p>The nonblocking variant of the triples driver uses nonblocking Global
+Arrays get operations. It may improve communication overlap at large
+node code, provided that nonblocking communication makes asynchronous
+progress.</p>
+<pre><code> set ccsd:use_trpdrv_nb T
+</code></pre>
+
+<h3 id="openmp">OpenMP</h3>
+<p>As of November 2016, the development version of semidirect CCSD(T) uses
+OpenMP extensively. The OpenMP variant of the triples driver includes
+OpenMP threaded kernels and attempts to run multiple DGEMM calls
+simultaneously. The CCSD iteration uses OpenMP threading in kernels with
+a relatively small number of parallel regions. It also uses nonblocking
+Global Arrays get operations.</p>
+<pre><code>set ccsd:use_ccsd_omp T
+set ccsd:use_trpdrv_omp T
+</code></pre>
+
+<p>If one runs with only the (T) portion of the code using threads, the
+CCSD code will run slower when using fewer cores. Thus, it may be
+prudent to run the CCSD portion with a larger number of processes and
+then run a second job for (T) that restarts the computation on a smaller
+number of processes and a larger number of threads.</p>
+<p>Preliminary evaluation of this implementation indicates that a small
+number of threads (2 to 4) is optimal, with the assumption that
+single-threaded execution can utilize all of the cores. It is expected
+that nodes with a large number of cores may not be able to support
+process-only parallelism due to memory-capacity constraints, in which
+case the OpenMP implementation allows the user to make use of more cores
+than otherwise possible.</p>
+<p>Because of the extensive refactoring of the code to maximize OpenMP
+performance and the intrinsic non-associativity of floating-point
+arithmetic, the OpenMP variant may not produce the exact same answer as
+the default one. If there is concern about the numerical fidelity of
+results, a more stringent numerical threshold for the CCSD equations may
+be required.</p>
+<h3 id="offload">Offload</h3>
+<p>The offload variant of the triples driver supports Intel Xeon Phi
+coprocessors (Knights Corner family), in addition to the aforementioned
+OpenMP and nonblocking features. This implementation has not been tested
+extensively and a recommendation concerning the right number of
+processes and threads is not available.</p>
+<pre><code> set ccsd:use_trpdrv_offload T
+</code></pre>
+
+<h2 id="references">References</h2>
+<p><references/></p>
+<ol>
+<li>Rendell, A.P., Lee, T.J., Komornicki, A., and Wilson, S. (1992)
+    "Evaluation of the contribution from triply excited intermediates to
+    the fourth-order perturbation theory energy on Intel distributed
+    memory supercomputers", <em>Theor. Chem. Acc.</em>, <strong>84</strong>, 271-287, doi:
+    <a href="http://dx.doi.org/10.1007/BF01113267">10.1007/BF01113267</a></li>
+<li>Kobayashi, R. and Rendell, A.P. (1997) "A direct coupled cluster
+    algorithm for massively parallel computers", <em>Chem. Phys. Lett.</em>,
+    <strong>265</strong>, 1-11, doi:
+    <a href="http://dx.doi.org/10.1016/S0009-2614$96$01387-5">10.1016/S0009-2614(96)01387-5</a></li>
+<li>Aprà, E., Harrison, R.J., de Jong, W.A., Rendell, A.P., Tipparaju,
+    V. and Xantheas, S.S. (2009) "Liquid Water: Obtaining the Right
+    Answer for the Right Reasons", <em>Proc. SC'09</em>, doi:
+    <a href="http://dx.doi.org/10.1145/1654059.1654127">10.1145/1654059.1654127</a></li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
