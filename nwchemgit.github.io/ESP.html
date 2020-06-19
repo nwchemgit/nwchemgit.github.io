@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Electrostatic potentials - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Electrostatic potentials";
+    var mkdocs_page_input_path = "ESP.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Electrostatic potentials</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/ESP.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="electrostatic-potentials">Electrostatic potentials</h1>
+<p>The NWChem Electrostatic Potential (ESP) module derives partial atomic
+charges that fit the quantum mechanical electrostatic potential on
+selected grid points.</p>
+<p>The ESP module is specified by the NWChem task directive</p>
+<pre><code>task esp
+</code></pre>
+
+<p>The input for the module is taken from the ESP input block</p>
+<pre><code>ESP  
+  ... 
+END
+</code></pre>
+
+<h2 id="grid-specification">Grid specification</h2>
+<p>The grid points for which the quantum mechanical electrostatic potential
+is evaluated and used in the fitting procedure of the partial atomic
+charges all lie outside the van der Waals radius of the atoms and within
+a cutoff distance from the atomic centers. The following input
+parameters determine the selection of grid points.</p>
+<ul>
+<li>If a grid file is found, the grid will be read from that file. If no
+    grid file is found, or the keyword</li>
+</ul>
+<pre><code>       recalculate  
+</code></pre>
+
+<p>is given, the grid and the electrostatic potential is recalculated.`</p>
+<ul>
+<li>The extent of the grid is determined by</li>
+</ul>
+<pre><code>       range &lt;real rcut&gt; 
+</code></pre>
+
+<p>where rcut is the maximum distance in nm between a grid point and any of the atomic centers. 
+When omitted, a default value for rcut of 0.3 nm is used.</p>
+<ul>
+<li>The grid spacing is specified by</li>
+</ul>
+<pre><code>       spacing &lt;real spac&gt;  
+ ``` 
+where spac is the grid spacing in _nm_ for the regularly spaced grid points.
+If not specified, a default spacing of 0.05 nm is used.
+
+  - The van der Waals radius of an element can be specified by
+</code></pre>
+
+<p>radius <integer iatnum> <real atrad><br />
+ ``` 
+where iatnum is the atomic number for which a van der Waals radius of atrad in nm will be used in the grid point determination.  
+Default values will be used for atoms not specified.</p>
+<ul>
+<li>The probe radius in nm determining the envelope around the molecule
+    is specified by</li>
+</ul>
+<p><code>probe &lt;real probe default 0.07&gt;</code></p>
+<ul>
+<li>The distance between atomic center and probe center can be
+    multiplied by a constant factor specified
+by</li>
+</ul>
+<p><code>factor &lt;real factor default 1.0&gt;</code>  </p>
+<p>All grid points are discarded that lie within a distance factor<em>(radius(i)+probe) from any atom </em><em>i</em>*.</p>
+<ul>
+<li>Schwarz screening is applied using</li>
+</ul>
+<p><code>screen [&lt;real scrtol default 1.0D-5&gt;]</code></p>
+<h2 id="constraints">Constraints</h2>
+<p>Additional constraints to the partial atomic charges can be imposed
+during the fitting procedure.</p>
+<ul>
+<li>The net charge of a subset of atoms can be constrained
+using</li>
+</ul>
+<p><code>constrain &lt;real charge {&lt;integer iatom&gt;}</code>  </p>
+<p>where charge is the net charge of the set of atoms {iatom}. A negative atom number iatom can be  
+used to specify that the partial charge of that atom is substracted in the sum for the set.</p>
+<ul>
+<li>The net charge of a sequence of atoms can be constrained using</li>
+</ul>
+<pre><code>       constrain &lt;real charge&gt; &lt;integer iatom&gt; through &lt;integer jatom&gt; 
+</code></pre>
+
+<p>where charge is the net charge of the set of atoms {[iatom:jatom]}.</p>
+<ul>
+<li>A group of atoms can be constrained to have the same charge with</li>
+</ul>
+<p><code>constrain equal {&lt;integer iatom&gt;}</code></p>
+<ul>
+<li>The individual charge of a group of atoms can be constrained to be equal to those of a second group of atoms
+with</li>
+</ul>
+<pre><code>      constrain group  &lt;integer iatom&gt; &lt;integer jatom&gt;  to  &lt;integer katom&gt; &lt;integer latom&gt;
+</code></pre>
+
+<p>resulting in the same charge for atoms iatom and katom, for atoms iatom+1 and k atom+1, ... for atoms jatom and latom.</p>
+<ul>
+<li>A special constraint</li>
+</ul>
+<p><code>constrain xhn  &lt;integer iatom&gt; {&lt;integer jatom&gt;}</code>  </p>
+<p>can be used to constrain the set {iatom,{jatom}} to zero charge, and constrain all atoms  in {jatom} to have the same charge. This can be used, for example, to restrain a methyl    group to zero charge, and have all hydrogen carrying identical charges.</p>
+<h2 id="restraints">Restraints</h2>
+<p>Restraints can be applied to each partial charge using the RESP charge
+fitting procedure.</p>
+<ul>
+<li>The directive for charge restraining is</li>
+</ul>
+<pre><code>      restrain [hfree] (harmonic [&lt;real scale&gt;] | \ 
+      hyperbolic [&lt;real scale&gt; [&lt;real tight&gt;]]  \  
+       [maxiter &lt;integer maxit&gt;]  [tolerance &lt;real toler&gt;])
+</code></pre>
+
+<p>Here hfree can be specified to exclude hydrogen atoms from the
+restaining procedure. Variable scale is the strength of the restraint
+potential, with a default of 0.005 au for the harmonic restraint and a
+default value of 0.001 au for the hyperbolic restraint. For the
+hyperbolic restraints the tightness tight can be specified to change the
+default value of 0.1 e. The iteration count that needs to be carried out
+for the hyperbolic restraint is determined by the maximum number of
+allowed iterations maxiter, with a default value of 25, and the
+tolerance in the convergence of the partial charges toler, with a
+default of 0.001 e.</p>
+<h2 id="plotting">Plotting</h2>
+<p>The electrostatic potential computed on a grid can be displayed using
+the  <a href="https://research.csc.fi/-/gopenmol_download">gOpenMol</a>  code.</p>
+<p>A necessary step requires to convert the .plt file computed by the ESP
+module from human readable to machine readable format; this can be
+achieved by using the gOpenMol Pltfile converter.</p>
+<p>In practice, you would need to follow the following steps</p>
+<ol>
+<li>rename <em>filename.plt</em> to <em>filename.plt.txt</em></li>
+<li>start gOpenMol</li>
+<li>open the <strong><ins>R</ins>un</strong> menu</li>
+<li>select the <strong>Pltfile (conversion)</strong> utility</li>
+<li>choose <em>filename.plt.txt</em> as input file name and <em>filename.plt</em> as
+    the output file name</li>
+<li>select <strong>Formatted ==> Unformatted</strong></li>
+<li>read the <em>filename.xyz</em> file by going to: <strong>File -> Import ->
+    Coord -> Browse -> Apply</strong>; you should see your system in the main
+    graphical window as connections between atoms</li>
+<li>plot the density by going to <strong>Plot -> Contour</strong></li>
+<li>first click <strong><ins>B</ins>rowse</strong> and read the gOpenMol filename.plt
+    file:</li>
+<li>then click <strong>Import</strong></li>
+<li>define desired <strong>Contour level</strong></li>
+<li>click <strong><ins>A</ins>pply</strong></li>
+</ol>
+<p>More details at:
+<a href="http://nms.kcl.ac.uk/lev.kantorovitch/codes/lev00/node71.html">http://nms.kcl.ac.uk/lev.kantorovitch/codes/lev00/node71.html</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

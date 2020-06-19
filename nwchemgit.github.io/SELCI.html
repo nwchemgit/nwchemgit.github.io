@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Selected CI - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Selected CI";
+    var mkdocs_page_input_path = "SELCI.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Selected CI</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/SELCI.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="selected-ci">Selected CI</h1>
+<p>The selected CI module is integrated into NWChem but as yet no input
+module has been written[1]. The input thus consists of setting the
+appropriate variables in the database.</p>
+<p>It is assumed that an initial SCF/MCSCF calculation has completed, and
+that MO vectors are available. These will be used to perform a
+four-index transformation, if this has not already been performed.</p>
+<h2 id="background">Background</h2>
+<p>This is a general spin-adapted, configuration-driven CI program which
+can perform arbitrary CI calculations, the only restriction being that
+all spin functions are present for each orbital occupation. CI
+wavefunctions may be specified using a simple configuration generation
+program, but the prime usage is intended to be in combination with
+perturbation correction and selection of new configurations. The
+second-order correction (Epstein-Nesbet) to the CI energy may be
+computed, and at the same time configurations that interact greater than
+a certain threshold with the current CI wavefunction may be chosen for
+inclusion in subsequent calculations. By repeating this process
+(typically twice is adequate) with the same threshold until no new
+configurations are added, the CI expansion may be made consistent with
+the selection threshold, enabling tentative extrapolation to the full-CI
+limit.</p>
+<p>A typical sequence of calculations is as follows:</p>
+<ol>
+<li>Pick as an initial CI reference the previously executed SCF/MCSCF.</li>
+<li>Define an initial selection threshold.</li>
+<li>Determine the roots of interest in the current reference space.</li>
+<li>Compute the perturbation correction and select additional
+    configurations that interact greater than the current threshold.</li>
+<li>Repeat steps 3 and 4.</li>
+<li>Lower the threshold (a factor of 10 is common) and repeat steps 3,
+    4, and 5. The first pass through step 4 will yield the approximately
+    self-consistent CI and CI+PT energies from the previous selection
+    threshold.</li>
+</ol>
+<p>To illustrate this, below is some abbreviated output from a calculation
+on water in an augmented cc-PVDZ basis set with one frozen core orbital.
+The SCF was converged to high precision in (C_{2v}) symmetry with the
+following input</p>
+<pre><code> start h2o  
+ geometry; symmetry c2v  
+   O 0 0 0; H 0 1.43042809 -1.10715266  
+ end  
+ basis  
+   H library aug-cc-pvdz; O library aug-cc-pvdz  
+ end  
+ task scf  
+ scf; thresh 1d-8; end
+</code></pre>
+
+<p>The following input restarts from the SCF to perform a sequence of
+selected CI calculations with the specified tolerances, starting with
+the SCF reference.</p>
+<pre><code> restart h2o  
+ set fourindex:occ_frozen 1  
+ set selci:mode select  
+ set &quot;selci:selection thresholds&quot; \  
+     0.001 0.001 0.0001 0.0001 0.00001 0.00001 0.000001  
+ task selci
+</code></pre>
+
+<p>The table below summarizes the output from each of the major
+computational steps that were
+performed.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td>CI</td>
+<td></td>
+</tr>
+<tr>
+<td>Step</td>
+<td>Description</td>
+<td>dimension</td>
+<td>Energy</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Four-index, one frozen-core</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Config. generator, SCF default</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>3+4</td>
+<td>CI diagonalization</td>
+<td>1</td>
+<td>(E_{CI} = -76.041983)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PT selection T=0.001</td>
+<td>1</td>
+<td>(E_{CI+PT} = -76.304797)</td>
+</tr>
+<tr>
+<td>6+7</td>
+<td>CI diagonalization</td>
+<td>75</td>
+<td>(E_{CI} = -76.110894)</td>
+</tr>
+<tr>
+<td>8</td>
+<td>PT selection T=0.001</td>
+<td>75</td>
+<td>(E_{CI+PT} = -76.277912)</td>
+</tr>
+<tr>
+<td>9+10</td>
+<td>CI diagonalization</td>
+<td>75</td>
+<td>(E_{CI}(T=0.001) = -76.110894)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>PT selection T=0.0001</td>
+<td>75</td>
+<td>(E_{CI+PT}(T=0.001) = -76.277912)</td>
+</tr>
+<tr>
+<td>12+13</td>
+<td>CI diagonalization</td>
+<td>823</td>
+<td>(E_{CI} = -76.228419)</td>
+</tr>
+<tr>
+<td>14</td>
+<td>PT selection T=0.0001</td>
+<td>823</td>
+<td>(E_{CI+PT} = -76.273751)</td>
+</tr>
+<tr>
+<td>15+16</td>
+<td>CI diagonalization</td>
+<td>841</td>
+<td>(E_{CI}(T=0.0001) = -76.2300544)</td>
+</tr>
+<tr>
+<td>17</td>
+<td>PT selection T=0.00001</td>
+<td>841</td>
+<td>(E_{CI+PT}(T=0.0001) = -76.274073)</td>
+</tr>
+<tr>
+<td>18+19</td>
+<td>CI diagonalization</td>
+<td>2180</td>
+<td>(E_{CI} = -76.259285)</td>
+</tr>
+<tr>
+<td>20</td>
+<td>PT selection T=0.00001</td>
+<td>2180</td>
+<td>(E_{CI+PT} = -76.276418)</td>
+</tr>
+<tr>
+<td>21+22</td>
+<td>CI diagonalization</td>
+<td>2235</td>
+<td>(E_{CI}(T=0.00001) = -76.259818)</td>
+</tr>
+<tr>
+<td>23</td>
+<td>PT selection T=0.000001</td>
+<td>2235</td>
+<td>(E_{CI+PT}(T=0.00001) = -76.276478)</td>
+</tr>
+<tr>
+<td>24</td>
+<td>CI diagonalization</td>
+<td>11489</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Summary of steps performed in a selected CI calculation on water.</p>
+<p></center></p>
+<h2 id="files">Files</h2>
+<p>Currently, no direct control is provided over filenames. All files are
+prefixed with the standard file-prefix, and any files generated by all
+nodes are also postfixed with the processor number. Thus, for example
+the molecular integrals file, used only by process zero, might be called
+h2o.moints whereas the off-diagonal Hamiltonian matrix element file used
+by process number eight would be called h2o.hamil.8.</p>
+<ul>
+<li>ciconf -- the CI configuration file, which holds information about
+    the current CI expansion, indexing vectors, etc. This is the most
+    important file and is required for all restarts. Note that the CI
+    configuration generator is only run if this file does not exist.
+    Referenced only by process zero.</li>
+<li>moints -- the molecular integrals, generated by the four-index
+    transformation. As noted above these must currently be manually
+    deleted, or the database entry selci:moints:force set, to force
+    regeneration. Referenced only by process zero.</li>
+<li>civecs -- the CI vectors. Referenced only by process zero.</li>
+<li>wmatrx -- temporary file used to hold coupling coefficients. Deleted
+    at calculation end. Referenced only by process zero.</li>
+<li>rtname, roname -- restart information for the PT selection. Should
+    be automatically deleted if no restart is necessary. Referenced only
+    by process zero.</li>
+<li>hamdg -- diagonal elements of the Hamiltonian. Deleted at
+    calculation end. Referenced only by process zero.</li>
+<li>hamil -- off-diagonal Hamiltonian matrix elements. All processes
+    generate a file containing a subset of these elements. These files
+    can become very large. Deleted at calculation end.</li>
+</ul>
+<h2 id="configuration-generation">Configuration Generation</h2>
+<p>If no configuration is explicitly specified then the previous SCF/MCSCF
+wavefunction is used, adjusting for any orbitals frozen in the
+four-index transformation. The four-index transformation must have
+completed successfully before this can execute. Orbital configurations
+for use as reference functions may also be explicitly specified.</p>
+<p>Once the default/user-input reference configurations have been
+determined additional reference functions may be generated by applying
+multiple sets of creation-annihilation operators, permitting for
+instance, the ready specification of complete or restricted active
+spaces.</p>
+<p>Finally, a uniform level of excitation from the current set of
+configurations into all orbitals may be applied, enabling, for instance,
+the simple creation of single or single+double excitation spaces from an
+MCSCF reference.</p>
+<h3 id="specifying-the-reference-occupation">Specifying the reference occupation</h3>
+<p>A single orbital configuration or occupation is specified by</p>
+<pre><code> ns  (socc(i),i=1,ns)  (docc(i),i=1,nd)
+</code></pre>
+
+<p>where ns specifies the number of singly occupied orbitals, socc() is the
+list of singly occupied orbitals, and docc() is the list of doubly
+occupied orbitals (the number of doubly occupied orbitals, nd, is
+inferred from ns and the total number of electrons). All occupations may
+be strung together and inserted into the database as a single integer
+array with name "selci:conf". For example, the input</p>
+<pre><code> set &quot;selci:conf&quot; \  
+   0                1  2  3  4 \  
+   0                1  2  3 27 \  
+   0                1  3  4 19 \  
+   2   11 19        1  3  4 \  
+   2    8 27        1  2  3 \  
+   0                1  2  4 25 \  
+   4   3  4 25 27   1  2 \  
+   4   2  3 19 20   1 4 \  
+   4   2  4 20 23   1 3
+</code></pre>
+
+<p>specifies the following nine orbital configurations</p>
+<pre><code>  1(2)  2(2)  3(2)  4(2)  
+  1(2)  2(2)  3(2) 27(2)  
+  1(2)  3(2)  4(2) 19(2)  
+  1(2)  3(2)  4(2) 11(1) 19(1)  
+  1(2)  2(2)  3(2)  8(1) 27(1)  
+  1(2)  2(2)  4(2) 25(2)  
+  1(2)  2(2)  3(1)  4(1) 25(1) 27(1)  
+  1(2)  2(1)  3(1)  4(2) 19(1) 20(1)  
+  1(2)  2(1)  3(2)  4(1) 20(1) 23(1)
+</code></pre>
+
+<p>The optional formatting of the input is just to make this arcane
+notation easier to read. Relatively few configurations can be currently
+specified in this fashion because of the input line limit of 1024
+characters.</p>
+<h3 id="applying-creation-annihilation-operators">Applying creation-annihilation operators</h3>
+<p>Up to 10 sets of creation-annihilation operator pairs may be specified,
+each set containing up to 255 pairs. This suffices to specify complete
+active spaces with up to ten electrons.</p>
+<p>The number of sets is specified as follows,</p>
+<p><code>set selci:ngen 4</code></p>
+<p>which indicates that there will be four sets. Each set is then specified
+as a separate integer array</p>
+<pre><code> set &quot;selci:refgen  1&quot; 5 4    6 4   5 3   6 3    
+ set &quot;selci:refgen  2&quot; 5 4    6 4   5 3   6 3    
+ set &quot;selci:refgen  3&quot; 5 4    6 4   5 3   6 3    
+ set &quot;selci:refgen  4&quot; 5 4    6 4   5 3   6 3
+</code></pre>
+
+<p>In the absence of friendly, input note that the names "selci:refgen n"
+must be formatted with n in I2 format. Each set specifies a list of
+creation-annihilation operator pairs (in that order). So for instance,
+in the above example each set is the same and causes the excitations</p>
+<p><code>4-&gt;5   4-&gt;6   3-&gt;5   3-&gt;6</code></p>
+<p>If orbitals 3 and 4 were initially doubly occupied, and orbitals 5 and 6
+initially unoccupied, then the application of this set of operators four
+times in succession is sufficient to generate the four electron in four
+orbital complete active space.</p>
+<p>The precise sequence in which operators are applied is</p>
+<ol>
+<li>loop through sets of operators</li>
+<li>loop through reference configurations</li>
+<li>loop through operators in the set</li>
+<li>apply the operator to the configuration, if the result is new add it
+    to the new list</li>
+<li>end the loop over operators</li>
+<li>end the loop over reference configurations</li>
+<li>augment the configuration list with the new list</li>
+<li>end the loop over sets of operators</li>
+</ol>
+<h3 id="uniform-excitation-level">Uniform excitation level</h3>
+<p>By default no excitation is applied to the reference configurations. If,
+for instance, you wanted to generate a single excitation CI space from
+the current configuration list, specify</p>
+<p><code>set selci:exci 1</code></p>
+<p>Any excitation level may be applied, but since the list of
+configurations is explicitly generated, as is the CI Hamiltonian matrix,
+you will run out of disk space if you attempt to use more than a few
+tens of thousands of configurations.</p>
+<h2 id="number-of-roots">Number of roots</h2>
+<p>By default, only one root is generated in the CI diagonalization or
+perturbation selection. The following requests that 2 roots be generated</p>
+<p><code>set selci:nroot 2</code></p>
+<p>There is no imposed upper limit. If many roots are required, then, to
+minimize root skipping problems, it helps to perform an initial
+approximate diagonalization with several more roots than required, and
+then resetting this parameter once satisfied that the desired states are
+obtained.</p>
+<h2 id="accuracy-of-diagonalization">Accuracy of diagonalization</h2>
+<p>By default, the CI wavefunctions are converged to a residual norm of
+(10^{-6}) which provides similar accuracy in the perturbation
+corrections to the energy, and much higher accuracy in the CI
+eigenvalues. This may be adjusted with</p>
+<p><code>set "selci:diag tol" 1d-3</code></p>
+<p>the example setting much lower precision, appropriate for the
+approximate diagonalization discussed in the preceding section.</p>
+<h2 id="selection-thresholds">Selection thresholds</h2>
+<p>When running in the selected-CI mode the program will loop through a
+list of selection thresholds (<em>T</em>), performing the CI diagonalization,
+computing the perturbation correction, and augmenting the CI expansion
+with configurations that make an energy lowering to any root greater
+than <em>T</em>. The list of selection thresholds is specified as follows</p>
+<pre><code> set &quot;selci:selection thresholds&quot; \  
+     0.001 0.001 0.0001 0.0001 0.00001 0.00001 0.000001
+</code></pre>
+
+<p>There is no default for this parameter.</p>
+<h2 id="mode">Mode</h2>
+<p>By default the program runs in "ci+davids" mode and just determines the
+CI eigenvectors/values in the current configuration space. To perform a
+selected-CI with perturbation correction use the following</p>
+<p><code>set selci:mode select</code></p>
+<p>and remember to define the selection thresholds.</p>
+<h2 id="memory-requirements">Memory requirements</h2>
+<p>No global arrays are used inside the selected-CI, though the four-index
+transformation can be automatically invoked and it does use GAs. The
+selected CI replicates inside each
+process</p>
+<pre><code>   * all unique two-electron integrals in the MO basis that are non-zero by symmetry, and
+   * all CI information, including the CI vectors.
+</code></pre>
+
+<p>These large data structures are allocated on the local stack. A fatal
+error will result if insufficient memory is available.</p>
+<h2 id="forcing-regeneration-of-the-mo-integrals">Forcing regeneration of the MO integrals</h2>
+<p>When scanning a potential energy surface or optimizing a geometry the MO
+integrals need to be regenerated each time. Specify</p>
+<p><code>set selci:moints:force logical .true.</code></p>
+<p>to accomplish this.</p>
+<h2 id="disabling-update-of-the-configuration-list">Disabling update of the configuration list</h2>
+<p>When computing CI+PT energy the reference configuration list is normally
+updated to reflect all configurations that interact more than the
+specified threshold. This is usually desirable. But when scanning a
+potential energy surface or optimizing a geometry the reference list
+must be kept fixed to keep the potential energy surface continuous and
+well defined. To do this specify</p>
+<p><code>set selci:update logical .false.</code></p>
+<h2 id="orbital-locking-in-ci-geometry-optimization">Orbital locking in CI geometry optimization</h2>
+<p>The selected CI wavefunction is not invariant to orbital rotations or to
+swapping two or more orbitals. Orbitals could be swapped or rotated when
+the geometry is changed in a geometry optimization step. The keyword
+lock has to be set in the SCF/MCSCF (vectors) input block to keep the
+orbitals in the same order throughout the geometry optimization.</p>
+<h2 id="references">References</h2>
+<ol>
+<li>R. J. Harrison (1991). "Approximating full configuration interaction with selected configuration interaction and perturbation theory". Journal of Chemical Physics 94: 5021-5031. doi:10.1063/1.460537. </li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

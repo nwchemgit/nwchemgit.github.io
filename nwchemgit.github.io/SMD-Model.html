@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>SMD (Solvation Model Based on Density) Model - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SMD (Solvation Model Based on Density) Model";
+    var mkdocs_page_input_path = "SMD-Model.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>SMD (Solvation Model Based on Density) Model</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/SMD-Model.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="smd-solvation-model-based-on-density-model">SMD (Solvation Model Based on Density) Model</h1>
+<p>SMD denotes “solvation model based on density” and it is described in
+detail in the following paper:</p>
+<p>Marenich, A. V.; Cramer, C. J.; Truhlar, D. G. Universal solvation model
+based on solute electron density and on a continuum model of the solvent
+defined by the bulk dielectric constant and atomic surface tensions. J.
+Phys. Chem. B 2009, 113, 6378-6396;
+<a href="http://dx.doi.org/10.1021/jp810292n">http://dx.doi.org/10.1021/jp810292n</a>.</p>
+<p>The SMD model is a universal continuum solvation model where “universal”
+denotes its applicability to any charged or uncharged solute in any
+solvent or liquid medium for which a few key descriptors are known. The
+word “continuum” denotes that the solvent is not represented explicitly
+as a collection of discrete solvent molecules but rather as a dielectric
+medium with surface tensions at the solute-solvent interface.</p>
+<p>SMD directly calculates the free energy of solvation of an ideal
+solvation process that occurs at fixed concentration (for example, from
+an ideal gas at a concentration of 1 mol/L to an ideal solution at a
+liquid-phase concentration of 1 mol/L) at 298 K, but this may converted
+by standard thermodynamic formulas to a standard-state free energy of
+solvation, which is defined as the transfer of molecules from an ideal
+gas at 1 bar to an ideal 1 molar solution.</p>
+<p>The SMD model separates the fixed-concentration free energy of solvation
+into two components. The first component is the bulk-electrostatic
+contribution arising from a self-consistent reaction field (SCRF)
+treatment. The SCRF treatment involves an integration of the
+nonhomogeneous-dielectric Poisson equation for bulk electrostatics in
+terms of the COSMO model of Klamt and Schüürmann with the modified COSMO
+scaling factor suggested by Stefanovich and Truong and by using the SMD
+intrinsic atomic Coulomb radii. These radii have been optimized for H,
+C, N, O, F, Si, P, S, Cl, and Br. For any other atom the current
+implementation of the SMD model uses scaled values of the van der Waals
+radii of Mantina et al.</p>
+<p>Mantina, M.; Valero, R.; Cramer, C. J.; Truhlar, D. G. “Atomic Radii of
+the Elements.” In CRC Handbook of Chemistry and Physics, 91st Edition,
+2010-2011; Haynes, W. M., Ed.; CRC Press: Boca Raton, FL, 2010; pp 9-49
+– 9-50.</p>
+<p>The scaling factor equals 1.52 for group 17 elements heavier than Br
+(i.e., for I and At) and 1.18 for all other elements for which there are
+no optimized SMD radii.</p>
+<p>The second contribution to the fixed-concentration free energy of
+solvation is the contribution arising from short-range interactions
+between the solute and solvent molecules in the first solvation shell.
+This contribution is called the cavity–dispersion–solvent-structure
+(CDS) term, and it is a sum of terms that are proportional (with
+geometry-dependent proportionality constants called atomic surface
+tensions) to the solvent-accessible surface areas (SASAs) of the
+individual atoms of the solute.</p>
+<p>At the moment the SMD model is available in NWChem only with the DFT
+block</p>
+<p>The SMD input options are as follows:</p>
+<pre><code>do_cosmo_smd (logical input)
+.true.  (perform a ground-state SMD calculation) or
+.false. (default)
+</code></pre>
+
+<pre><code>solvent (keyword) 
+ a solvent keyword from a list of available SMD solvent names below:
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>h2o</td>
+<td>water (default)</td>
+</tr>
+<tr>
+<td>water</td>
+<td>water (default)</td>
+</tr>
+<tr>
+<td>acetacid</td>
+<td>acetic acid</td>
+</tr>
+<tr>
+<td>acetone</td>
+<td>acetone</td>
+</tr>
+<tr>
+<td>acetntrl</td>
+<td>acetonitrile</td>
+</tr>
+<tr>
+<td>acetphen</td>
+<td>acetophenone</td>
+</tr>
+<tr>
+<td>aniline</td>
+<td>aniline</td>
+</tr>
+<tr>
+<td>anisole</td>
+<td>anisole</td>
+</tr>
+<tr>
+<td>benzaldh</td>
+<td>benzaldehyde</td>
+</tr>
+<tr>
+<td>benzene</td>
+<td>benzene</td>
+</tr>
+<tr>
+<td>benzntrl</td>
+<td>benzonitrile</td>
+</tr>
+<tr>
+<td>benzylcl</td>
+<td>benzyl chloride</td>
+</tr>
+<tr>
+<td>brisobut</td>
+<td>1-bromo-2-methylpropane</td>
+</tr>
+<tr>
+<td>brbenzen</td>
+<td>bromobenzene</td>
+</tr>
+<tr>
+<td>brethane</td>
+<td>bromoethane</td>
+</tr>
+<tr>
+<td>bromform</td>
+<td>bromoform</td>
+</tr>
+<tr>
+<td>broctane</td>
+<td>1-bromooctane</td>
+</tr>
+<tr>
+<td>brpentan</td>
+<td>1-bromopentane</td>
+</tr>
+<tr>
+<td>brpropa2</td>
+<td>2-bromopropane</td>
+</tr>
+<tr>
+<td>brpropan</td>
+<td>1-bromopropane</td>
+</tr>
+<tr>
+<td>butanal</td>
+<td>butanal</td>
+</tr>
+<tr>
+<td>butacid</td>
+<td>butanoic acid</td>
+</tr>
+<tr>
+<td>butanol</td>
+<td>1-butanol</td>
+</tr>
+<tr>
+<td>butanol2</td>
+<td>2-butanol</td>
+</tr>
+<tr>
+<td>butanone</td>
+<td>butanone</td>
+</tr>
+<tr>
+<td>butantrl</td>
+<td>butanonitrile</td>
+</tr>
+<tr>
+<td>butile</td>
+<td>butyl acetate</td>
+</tr>
+<tr>
+<td>nba</td>
+<td>butylamine</td>
+</tr>
+<tr>
+<td>nbutbenz</td>
+<td>n-butylbenzene</td>
+</tr>
+<tr>
+<td>sbutbenz</td>
+<td>sec-butylbenzene</td>
+</tr>
+<tr>
+<td>tbutbenz</td>
+<td>tert-butylbenzene</td>
+</tr>
+<tr>
+<td>cs2</td>
+<td>carbon disulfide</td>
+</tr>
+<tr>
+<td>carbntet</td>
+<td>carbon tetrachloride</td>
+</tr>
+<tr>
+<td>clbenzen</td>
+<td>chlorobenzene</td>
+</tr>
+<tr>
+<td>secbutcl</td>
+<td>sec-butyl chloride</td>
+</tr>
+<tr>
+<td>chcl3</td>
+<td>chloroform</td>
+</tr>
+<tr>
+<td>clhexane</td>
+<td>1-chlorohexane</td>
+</tr>
+<tr>
+<td>clpentan</td>
+<td>1-chloropentane</td>
+</tr>
+<tr>
+<td>clpropan</td>
+<td>1-chloropropane</td>
+</tr>
+<tr>
+<td>ocltolue</td>
+<td>o-chlorotoluene</td>
+</tr>
+<tr>
+<td>m-cresol</td>
+<td>m-cresol</td>
+</tr>
+<tr>
+<td>o-cresol</td>
+<td>o-cresol</td>
+</tr>
+<tr>
+<td>cychexan</td>
+<td>cyclohexane</td>
+</tr>
+<tr>
+<td>cychexon</td>
+<td>cyclohexanone</td>
+</tr>
+<tr>
+<td>cycpentn</td>
+<td>cyclopentane</td>
+</tr>
+<tr>
+<td>cycpntol</td>
+<td>cyclopentanol</td>
+</tr>
+<tr>
+<td>cycpnton</td>
+<td>cyclopentanone</td>
+</tr>
+<tr>
+<td>declncis</td>
+<td>cis-decalin</td>
+</tr>
+<tr>
+<td>declntra</td>
+<td>trans-decalin</td>
+</tr>
+<tr>
+<td>declnmix</td>
+<td>decalin (cis/trans mixture)</td>
+</tr>
+<tr>
+<td>decane</td>
+<td>n-decane</td>
+</tr>
+<tr>
+<td>decanol</td>
+<td>1-decanol</td>
+</tr>
+<tr>
+<td>edb12</td>
+<td>1,2-dibromoethane</td>
+</tr>
+<tr>
+<td>dibrmetn</td>
+<td>dibromomethane</td>
+</tr>
+<tr>
+<td>butyleth</td>
+<td>dibutyl ether</td>
+</tr>
+<tr>
+<td>odiclbnz</td>
+<td>o-dichlorobenzene</td>
+</tr>
+<tr>
+<td>edc12</td>
+<td>1,2-dichloroethane</td>
+</tr>
+<tr>
+<td>c12dce</td>
+<td>cis-dichloroethylene</td>
+</tr>
+<tr>
+<td>t12dce</td>
+<td>trans-dichloroethylene</td>
+</tr>
+<tr>
+<td>dcm</td>
+<td>dichloromethane</td>
+</tr>
+<tr>
+<td>ether</td>
+<td>diethyl ether</td>
+</tr>
+<tr>
+<td>et2s</td>
+<td>diethyl sulfide</td>
+</tr>
+<tr>
+<td>dietamin</td>
+<td>diethylamine</td>
+</tr>
+<tr>
+<td>mi</td>
+<td>diiodomethane</td>
+</tr>
+<tr>
+<td>dipe</td>
+<td>diisopropyl ether</td>
+</tr>
+<tr>
+<td>dmds</td>
+<td>dimethyl disulfide</td>
+</tr>
+<tr>
+<td>dmso</td>
+<td>dimethyl sulfoxide</td>
+</tr>
+<tr>
+<td>dma</td>
+<td>N,N-dimethylacetamide</td>
+</tr>
+<tr>
+<td>cisdmchx</td>
+<td>cis-1,2-dimethylcyclohexane</td>
+</tr>
+<tr>
+<td>dmf</td>
+<td>N,N-dimethylformamide</td>
+</tr>
+<tr>
+<td>dmepen24</td>
+<td>2,4-dimethylpentane</td>
+</tr>
+<tr>
+<td>dmepyr24</td>
+<td>2,4-dimethylpyridine</td>
+</tr>
+<tr>
+<td>dmepyr26</td>
+<td>2,6-dimethylpyridine</td>
+</tr>
+<tr>
+<td>dioxane</td>
+<td>1,4-dioxane</td>
+</tr>
+<tr>
+<td>phoph</td>
+<td>diphenyl ether</td>
+</tr>
+<tr>
+<td>dproamin</td>
+<td>dipropylamine</td>
+</tr>
+<tr>
+<td>dodecan</td>
+<td>n-dodecane</td>
+</tr>
+<tr>
+<td>meg</td>
+<td>1,2-ethanediol</td>
+</tr>
+<tr>
+<td>etsh</td>
+<td>ethanethiol</td>
+</tr>
+<tr>
+<td>ethanol</td>
+<td>ethanol</td>
+</tr>
+<tr>
+<td>etoac</td>
+<td>ethyl acetate</td>
+</tr>
+<tr>
+<td>etome</td>
+<td>ethyl formate</td>
+</tr>
+<tr>
+<td>eb</td>
+<td>ethylbenzene</td>
+</tr>
+<tr>
+<td>phenetol</td>
+<td>ethyl phenyl ether</td>
+</tr>
+<tr>
+<td>c6h5f</td>
+<td>fluorobenzene</td>
+</tr>
+<tr>
+<td>foctane</td>
+<td>1-fluorooctane</td>
+</tr>
+<tr>
+<td>formamid</td>
+<td>formamide</td>
+</tr>
+<tr>
+<td>formacid</td>
+<td>formic acid</td>
+</tr>
+<tr>
+<td>heptane</td>
+<td>n-heptane</td>
+</tr>
+<tr>
+<td>heptanol</td>
+<td>1-heptanol</td>
+</tr>
+<tr>
+<td>heptnon2</td>
+<td>2-heptanone</td>
+</tr>
+<tr>
+<td>heptnon4</td>
+<td>4-heptanone</td>
+</tr>
+<tr>
+<td>hexadecn</td>
+<td>n-hexadecane</td>
+</tr>
+<tr>
+<td>hexane</td>
+<td>n-hexane</td>
+</tr>
+<tr>
+<td>hexnacid</td>
+<td>hexanoic acid</td>
+</tr>
+<tr>
+<td>hexanol</td>
+<td>1-hexanol</td>
+</tr>
+<tr>
+<td>hexanon2</td>
+<td>2-hexanone</td>
+</tr>
+<tr>
+<td>hexene</td>
+<td>1-hexene</td>
+</tr>
+<tr>
+<td>hexyne</td>
+<td>1-hexyne</td>
+</tr>
+<tr>
+<td>c6h5i</td>
+<td>iodobenzene</td>
+</tr>
+<tr>
+<td>iobutane</td>
+<td>1-iodobutane</td>
+</tr>
+<tr>
+<td>c2h5i</td>
+<td>iodoethane</td>
+</tr>
+<tr>
+<td>iohexdec</td>
+<td>1-iodohexadecane</td>
+</tr>
+<tr>
+<td>ch3i</td>
+<td>iodomethane</td>
+</tr>
+<tr>
+<td>iopentan</td>
+<td>1-iodopentane</td>
+</tr>
+<tr>
+<td>iopropan</td>
+<td>1-iodopropane</td>
+</tr>
+<tr>
+<td>cumene</td>
+<td>isopropylbenzene</td>
+</tr>
+<tr>
+<td>p-cymene</td>
+<td>p-isopropyltoluene</td>
+</tr>
+<tr>
+<td>mesityln</td>
+<td>mesitylene</td>
+</tr>
+<tr>
+<td>methanol</td>
+<td>methanol</td>
+</tr>
+<tr>
+<td>egme</td>
+<td>2-methoxyethanol</td>
+</tr>
+<tr>
+<td>meacetat</td>
+<td>methyl acetate</td>
+</tr>
+<tr>
+<td>mebnzate</td>
+<td>methyl benzoate</td>
+</tr>
+<tr>
+<td>mebutate</td>
+<td>methyl butanoate</td>
+</tr>
+<tr>
+<td>meformat</td>
+<td>methyl formate</td>
+</tr>
+<tr>
+<td>mibk</td>
+<td>4-methyl-2-pentanone</td>
+</tr>
+<tr>
+<td>mepropyl</td>
+<td>methyl propanoate</td>
+</tr>
+<tr>
+<td>isobutol</td>
+<td>2-methyl-1-propanol</td>
+</tr>
+<tr>
+<td>terbutol</td>
+<td>2-methyl-2-propanol</td>
+</tr>
+<tr>
+<td>nmeaniln</td>
+<td>N-methylaniline</td>
+</tr>
+<tr>
+<td>mecychex</td>
+<td>methylcyclohexane</td>
+</tr>
+<tr>
+<td>nmfmixtr</td>
+<td>N-methylformamide (E/Z mixture)</td>
+</tr>
+<tr>
+<td>isohexan</td>
+<td>2-methylpentane</td>
+</tr>
+<tr>
+<td>mepyrid2</td>
+<td>2-methylpyridine</td>
+</tr>
+<tr>
+<td>mepyrid3</td>
+<td>3-methylpyridine</td>
+</tr>
+<tr>
+<td>mepyrid4</td>
+<td>4-methylpyridine</td>
+</tr>
+<tr>
+<td>c6h5no2</td>
+<td>nitrobenzene</td>
+</tr>
+<tr>
+<td>c2h5no2</td>
+<td>nitroethane</td>
+</tr>
+<tr>
+<td>ch3no2</td>
+<td>nitromethane</td>
+</tr>
+<tr>
+<td>ntrprop1</td>
+<td>1-nitropropane</td>
+</tr>
+<tr>
+<td>ntrprop2</td>
+<td>2-nitropropane</td>
+</tr>
+<tr>
+<td>ontrtolu</td>
+<td>o-nitrotoluene</td>
+</tr>
+<tr>
+<td>nonane</td>
+<td>n-nonane</td>
+</tr>
+<tr>
+<td>nonanol</td>
+<td>1-nonanol</td>
+</tr>
+<tr>
+<td>nonanone</td>
+<td>5-nonanone</td>
+</tr>
+<tr>
+<td>octane</td>
+<td>n-octane</td>
+</tr>
+<tr>
+<td>octanol</td>
+<td>1-octanol</td>
+</tr>
+<tr>
+<td>octanon2</td>
+<td>2-octanone</td>
+</tr>
+<tr>
+<td>pentdecn</td>
+<td>n-pentadecane</td>
+</tr>
+<tr>
+<td>pentanal</td>
+<td>pentanal</td>
+</tr>
+<tr>
+<td>npentane</td>
+<td>n-pentane</td>
+</tr>
+<tr>
+<td>pentacid</td>
+<td>pentanoic acid</td>
+</tr>
+<tr>
+<td>pentanol</td>
+<td>1-pentanol</td>
+</tr>
+<tr>
+<td>pentnon2</td>
+<td>2-pentanone</td>
+</tr>
+<tr>
+<td>pentnon3</td>
+<td>3-pentanone</td>
+</tr>
+<tr>
+<td>pentene</td>
+<td>1-pentene</td>
+</tr>
+<tr>
+<td>e2penten</td>
+<td>E-2-pentene</td>
+</tr>
+<tr>
+<td>pentacet</td>
+<td>pentyl acetate</td>
+</tr>
+<tr>
+<td>pentamin</td>
+<td>pentylamine</td>
+</tr>
+<tr>
+<td>pfb</td>
+<td>perfluorobenzene</td>
+</tr>
+<tr>
+<td>benzalcl</td>
+<td>phenylmethanol</td>
+</tr>
+<tr>
+<td>propanal</td>
+<td>propanal</td>
+</tr>
+<tr>
+<td>propacid</td>
+<td>propanoic acid</td>
+</tr>
+<tr>
+<td>propanol</td>
+<td>1-propanol</td>
+</tr>
+<tr>
+<td>propnol2</td>
+<td>2-propanol</td>
+</tr>
+<tr>
+<td>propntrl</td>
+<td>propanonitrile</td>
+</tr>
+<tr>
+<td>propenol</td>
+<td>2-propen-1-ol</td>
+</tr>
+<tr>
+<td>propacet</td>
+<td>propyl acetate</td>
+</tr>
+<tr>
+<td>propamin</td>
+<td>propylamine</td>
+</tr>
+<tr>
+<td>pyridine</td>
+<td>pyridine</td>
+</tr>
+<tr>
+<td>c2cl4</td>
+<td>tetrachloroethene</td>
+</tr>
+<tr>
+<td>thf</td>
+<td>tetrahydrofuran</td>
+</tr>
+<tr>
+<td>sulfolan</td>
+<td>tetrahydrothiophene-S,S-dioxide</td>
+</tr>
+<tr>
+<td>tetralin</td>
+<td>tetralin</td>
+</tr>
+<tr>
+<td>thiophen</td>
+<td>thiophene</td>
+</tr>
+<tr>
+<td>phsh</td>
+<td>thiophenol</td>
+</tr>
+<tr>
+<td>toluene</td>
+<td>toluene</td>
+</tr>
+<tr>
+<td>tbp</td>
+<td>tributyl phosphate</td>
+</tr>
+<tr>
+<td>tca111</td>
+<td>1,1,1-trichloroethane</td>
+</tr>
+<tr>
+<td>tca112</td>
+<td>1,1,2-trichloroethane</td>
+</tr>
+<tr>
+<td>tce</td>
+<td>trichloroethene</td>
+</tr>
+<tr>
+<td>et3n</td>
+<td>triethylamine</td>
+</tr>
+<tr>
+<td>tfe222</td>
+<td>2,2,2-trifluoroethanol</td>
+</tr>
+<tr>
+<td>tmben124</td>
+<td>1,2,4-trimethylbenzene</td>
+</tr>
+<tr>
+<td>isoctane</td>
+<td>2,2,4-trimethylpentane</td>
+</tr>
+<tr>
+<td>undecane</td>
+<td>n-undecane</td>
+</tr>
+<tr>
+<td>m-xylene</td>
+<td>m-xylene</td>
+</tr>
+<tr>
+<td>o-xylene</td>
+<td>o-xylene</td>
+</tr>
+<tr>
+<td>p-xylene</td>
+<td>p-xylene</td>
+</tr>
+<tr>
+<td>xylenemx</td>
+<td>xylene (mixture)</td>
+</tr>
+</tbody>
+</table>
+<p>When a solvent is specified by name, the descriptors for the solvent are
+based on the Minnesota Solvent Descriptor Database:</p>
+<p>Winget, P.; Dolney, D. M.; Giesen, D. J.; Cramer, C. J.; Truhlar, D. G.
+Minnesota Solvent Descriptor Database. University of Minnesota:
+Minneapolis, MN, 2010. <a href="http://comp.chem.umn.edu/solvation/mnsddb.pdf">http://comp.chem.umn.edu/solvation/mnsddb.pdf</a></p>
+<p>The user can specify a solvent that is not on the list by omitting the
+solvent keyword and instead introducing user-provided values for the
+following solvent
+descriptors:</p>
+<pre><code>dielec (real input)
+dielectric constant at 298 K
+</code></pre>
+
+<pre><code>sola (real input) 
+Abraham’s hydrogen bond acidity   
+</code></pre>
+
+<pre><code>solb (real input) 
+Abraham’s hydrogen bond basicity
+  
+solc (real input) 
+aromaticity as a fraction of non-hydrogenic solvent atoms that are aromatic carbon atoms
+
+solg (real input) 
+macroscopic surface tension of the solvent at an air/solvent interface at 298 K in units of cal mol–1 Å–2 (note that 1 dyne/cm = 1.43932 cal mol–1 Å–2)
+</code></pre>
+
+<pre><code>solh (real input)
+electronegative halogenicity as the fraction of non-hydrogenic solvent atoms that are F, Cl, or Br 
+</code></pre>
+
+<pre><code>soln (real input)
+index of refraction at optical frequencies at 293 K
+</code></pre>
+
+<p>An example of an SMD input file is as
+follows:</p>
+<pre><code>echo 
+title 'SMD/M06-2X/6-31G(d) solvation free energy for CF3COO- in water'
+start
+charge -1
+geometry nocenter
+C    0.512211   0.000000  -0.012117
+C   -1.061796   0.000000  -0.036672
+O   -1.547400   1.150225  -0.006609
+O   -1.547182  -1.150320  -0.006608
+F    1.061911   1.087605  -0.610341
+F    1.061963  -1.086426  -0.612313
+F    0.993255  -0.001122   1.266928
+symmetry c1
+end
+basis
+* library 6-31G*
+end
+dft
+ XC m06-2x
+end
+cosmo
+ do_cosmo_smd true
+ solvent water
+end
+task dft energy
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

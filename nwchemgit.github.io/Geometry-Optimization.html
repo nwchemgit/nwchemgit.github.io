@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Geometry Optimization with DRIVER - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Geometry Optimization with DRIVER";
+    var mkdocs_page_input_path = "Geometry-Optimization.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Geometry Optimization with DRIVER</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Geometry-Optimization.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="geometry-optimization-with-driver">Geometry Optimization with DRIVER</h1>
+<p>The DRIVER module is one of two drivers (also see documentation on
+<a href="Geometry-Optimization.html#geometry-optimization-with-stepper">STEPPER</a>)
+to perform a geometry optimization function on the molecule defined by
+input using the <a href="Geometry.html">GEOMETRY</a> directive.
+Geometry optimization is either an energy minimization or a transition
+state optimization. The algorithm programmed in DRIVER is a quasi-newton
+optimization with line searches and approximate energy Hessian updates.</p>
+<p>DRIVER is selected by default out of the two available modules to
+perform geometry optimization. In order to force use of DRIVER (e.g.,
+because a previous optimization used STEPPER) provide a DRIVER input
+block (below) -- even an empty block will force use of DRIVER.</p>
+<p>Optional input for this module is specified within the compound
+directive,</p>
+<pre><code> DRIVER   
+   (LOOSE || DEFAULT || TIGHT)  
+   GMAX &lt;real value&gt;  
+   GRMS &lt;real value&gt;  
+   XMAX &lt;real value&gt;  
+   XRMS &lt;real value&gt;  
+   EPREC &lt;real eprec default 1e-7&gt;  
+   TRUST &lt;real trust default 0.3&gt;  
+   SADSTP &lt;real sadstp default 0.1&gt;  
+   CLEAR  
+   REDOAUTOZ  
+   INHESS &lt;integer inhess default 0&gt;  
+   (MODDIR || VARDIR) &lt;integer dir default 0&gt; 
+   (FIRSTNEG || NOFIRSTNEG)  
+   MAXITER &lt;integer maxiter default 20&gt;  
+   BSCALE &lt;real BSCALE default 1.0&gt;` 
+   ASCALE &lt;real ASCALE default 0.25&gt;  
+   TSCALE &lt;real TSCALE default 0.1&gt; 
+   HSCALE &lt;real HSCALE default 1.0&gt; 
+      PRINT ... 
+   XYZ &lt;string xyz default *file_prefix*&gt;]  
+   NOXYZ  
+   SOCKET (UNIX || IPI_CLIENT) &lt;string socketname default (see input description)&gt;  
+ END
+</code></pre>
+
+<p>On each optimization step a line search is performed. To speed up
+calculations (up to two times), it may be beneficial to turn off the
+line search using following directive:</p>
+<pre><code> set driver:linopt 0
+</code></pre>
+
+<h2 id="convergence-criteria">Convergence criteria</h2>
+<pre><code>   (LOOSE || DEFAULT || TIGHT)  
+   GMAX &lt;real value&gt;  
+   GRMS &lt;real value&gt;  
+   XMAX &lt;real value&gt;  
+   XRMS &lt;real value&gt;
+</code></pre>
+
+<p>The defaults may be used, or the directives LOOSE, DEFAULT, or TIGHT
+specified to use standard sets of values, or the individual criteria
+adjusted. All criteria are in atomic units. GMAX and GRMS control the
+maximum and root mean square gradient in the coordinates being used
+(Z-matrix, redundant internals, or Cartesian). XMAX and XRMS control the
+maximum and root mean square of the Cartesian step.</p>
+<table>
+<thead>
+<tr>
+<th>      </th>
+<th> LOOSE   </th>
+<th> DEFAULT </th>
+<th> TIGHT </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> GMAX </td>
+<td> 0.00450 </td>
+<td> 0.00045 </td>
+<td> 0.000015 </td>
+</tr>
+<tr>
+<td> GRMS </td>
+<td> 0.00300 </td>
+<td> 0.00030 </td>
+<td> 0.00001</td>
+</tr>
+<tr>
+<td> XMAX </td>
+<td> 0.01800 </td>
+<td> 0.00180 </td>
+<td> 0.00006</td>
+</tr>
+<tr>
+<td> XRMS </td>
+<td> 0.01200 </td>
+<td> 0.00120 </td>
+<td> 0.00004</td>
+</tr>
+</tbody>
+</table>
+<p>Note that GMAX and GRMS used for convergence of geometry may
+significantly vary in different coordinate systems such as Z-matrix,
+redundant internals, or Cartesian. The coordinate system is defined in
+the input file (default is Z-matrix). Therefore the choice of coordinate
+system may slightly affect converged energy. Although in most cases XMAX
+and XRMS are last to converge which are always done in Cartesian
+coordinates, which insures convergence to the same geometry in different
+coordinate systems.</p>
+<p>The old criterion may be recovered with the input</p>
+<pre><code>  gmax 0.0008; grms 1; xrms 1; xmax 1
+</code></pre>
+
+<h2 id="available-precision">Available precision</h2>
+<pre><code>   EPREC &lt;real eprec default 1e-7&gt;
+</code></pre>
+
+<p>In performing a line search the optimizer must know the precision of the
+energy (this has nothing to do with convergence criteria). The default
+value of 1e-7 should be adjusted if less, or more, precision is
+available. Note that the default EPREC for DFT calculations is 5e-6
+instead of 1e-7.</p>
+<h2 id="controlling-the-step-length">Controlling the step length</h2>
+<pre><code>   TRUST &lt;real trust default 0.3&gt;
+   SADSTP &lt;real sadstp default 0.1&gt;
+</code></pre>
+
+<p>A fixed trust radius (trust) is used to control the step during
+minimizations, and is also used for modes being minimized during
+saddle-point searches. It defaults to 0.3 for minimizations and 0.1 for
+saddle-point searches. The parameter sadstp is the trust radius used for
+the mode being maximized during a saddle-point search and defaults to
+0.1.</p>
+<h2 id="maximum-number-of-steps">Maximum number of steps</h2>
+<pre><code>   MAXITER &lt;integer maxiter default 20&gt;
+</code></pre>
+
+<p>By default at most 20 geometry optimization steps will be taken, but
+this may be modified with this directive.</p>
+<h2 id="discard-restart-information">Discard restart information</h2>
+<pre><code>   CLEAR
+</code></pre>
+
+<p>By default Driver reuses Hessian information from a previous
+optimization, and, to facilitate a restart also stores which mode is
+being followed for a saddle-point search. This option deletes all
+restart data.</p>
+<h2 id="regenerate-internal-coordinates">Regenerate internal coordinates</h2>
+<pre><code>   REDOAUTOZ
+</code></pre>
+
+<p>Deletes Hessian data and regenerates internal coordinates at the current
+geometry. Useful if there has been a large change in the geometry that
+has rendered the current set of coordinates invalid or non-optimal.</p>
+<h2 id="initial-hessian">Initial Hessian</h2>
+<pre><code>   INHESS &lt;integer inhess default 0&gt;
+</code></pre>
+
+<ul>
+<li>0 = Default ... use restart data if available, otherwise use
+    diagonal guess.</li>
+<li>1 = Use diagonal initial guess.</li>
+<li>2 = Use restart data if available, otherwise transform Cartesian
+    Hessian from previous frequency calculation.</li>
+</ul>
+<p>In addition, the diagonal elements of the initial Hessian for internal
+coordinates may be scaled using separate factors for bonds, angles and
+torsions with the following</p>
+<pre><code>   BSCALE &lt;real bscale default 1.0&gt;  
+   ASCALE &lt;real ascale default 0.25&gt;  
+   TSCALE &lt;real tscale default 0.1&gt;
+</code></pre>
+
+<p>These values typically give a two-fold speedup over unit values, based
+on about 100 test cases up to 15 atoms using 3-21g and 6-31g* SCF.
+However, if doing many optimizations on physically similar systems it
+may be worth fine tuning these parameters.</p>
+<p>Finally, the entire Hessian from any source may be scaled by a factor
+using the directive</p>
+<pre><code>   HSCALE &lt;real hscale default 1.0&gt;
+</code></pre>
+
+<p>It might be of utility, for instance, when computing an initial Hessian
+using SCF to start a large MP2 optimization. The SCF vibrational modes
+are expected to be stiffer than the MP2, so scaling the initial Hessian
+by a number less than one might be beneficial.</p>
+<h2 id="mode-or-variable-to-follow-to-saddle-point">Mode or variable to follow to saddle point</h2>
+<pre><code>   (MODDIR || VARDIR) &lt;integer dir default 0&gt;  
+   (FIRSTNEG || NOFIRSTNEG)
+</code></pre>
+
+<p>When searching for a transition state the program, by default, will take
+an initial step uphill and then do mode following using a fuzzy maximum
+overlap (the lowest eigen-mode with an overlap with the previous search
+direction of 0.7 times the maximum overlap is selected). Once a negative
+eigen-value is found, that mode is followed regardless of overlap.</p>
+<p>The initial uphill step is appropriate if the gradient points roughly in
+the direction of the saddle point, such as might be the case if a
+constrained optimization was performed at the starting geometry.
+Alternatively, the initial search direction may be chosen to be along a
+specific internal variable (using the directive VARDIR) or along a
+specific eigen-mode (using MODDIR). Following a variable might be
+valuable if the initial gradient is either very small or very large.
+Note that the eigen-modes in the optimizer have next-to-nothing to do
+with the output from a frequency calculation. You can examine the
+eigen-modes used by the optimizer with</p>
+<pre><code>  driver; print hvecs; end
+</code></pre>
+
+<p>The selection of the first negative mode is usually a good choice if the
+search is started in the vicinity of the transition state and the
+initial search direction is satisfactory. However, sometimes the first
+negative mode might not be the one of interest (e.g., transverse to the
+reaction direction). If NOFIRSTNEG is specified, the code will not take
+the first negative direction and will continue doing mode-following
+until that mode goes negative.</p>
+<h2 id="optimization-history-as-xyz-files">Optimization history as XYZ files</h2>
+<pre><code>   XYZ [&lt;string xyz default $fileprefix&gt;] 
+   NOXYZ
+</code></pre>
+
+<p>The XYZ directive causes the geometry at each step (but not intermediate
+points of a line search) to be output into separate files in the
+permanent directory in XYZ format. The optional string will prefix the
+filename. The NOXYZ directive turns this off.</p>
+<p>For example, the input</p>
+<pre><code>   driver; xyz test; end
+</code></pre>
+
+<p>will cause files test-000.xyz, test-001.xyz, ... to be created in the
+permanent directory.</p>
+<p>The script rasmolmovie in the NWChem contrib directory can be used to
+turn these into an animated GIF movie.</p>
+<h2 id="i-pi-socket-communication">i-PI Socket communication</h2>
+<pre><code>   SOCKET (UNIX || IPI_CLIENT) &lt;string socketname default (see input description)&gt;  
+</code></pre>
+
+<p>The SOCKET directive enables NWChem to communicate with other software
+packages -- such as <a href="http://ipi-code.org/">i-PI</a> or
+<a href="https://wiki.fysik.dtu.dk/ase/dev/ase/calculators/socketio/socketio.html">ASE</a> --
+via the i-PI socket protocol.</p>
+<p>Communication is done either over Unix sockets (<code>SOCKET UNIX</code>) or IP
+sockets (<code>SOCKET IPI_CLIENT</code>):</p>
+<ul>
+<li>Unix sockets - NWChem will create and bind to a UNIX socket
+    file located at <code>/tmp/ipi_&lt;socketname&gt;</code>. If not specified,
+    <code>&lt;socketname&gt;</code> will default to <code>nwchem</code>.</li>
+<li>IP sockets - NWChem will bind to the IP address and port
+    specified by <code>&lt;socketname&gt;</code>. If not specified, <code>&lt;socketname&gt;</code>
+    will default to <code>127.0.0.1:31415</code>.</li>
+</ul>
+<p>The <code>SOCKET</code> directive is only useful when used in conjunction with other
+software packages that support communication via the i-PI socket
+protocol. For more information, see the
+<a href="http://ipi-code.org/resources/documentation/">i-PI documentation</a>.</p>
+<h2 id="print-options">Print options</h2>
+<p>The UNIX command "egrep '^@' \&lt; output" will extract a pretty table
+summarizing the optimization.</p>
+<p>If you specify the NWChem input</p>
+<pre><code>     scf; print none; end  
+     driver; print low; end  
+     task scf optimize
+</code></pre>
+
+<p>you'll obtain a pleasantly terse output.</p>
+<p>For more control, these options for the standard print directive are
+recognized</p>
+<ul>
+<li>debug - prints a large amount of data. Don't use in parallel.</li>
+<li>high - print the search direction in internals</li>
+<li>default - prints geometry for each major step (not during the line
+    search), gradient in internals (before and after application of
+    constraints)</li>
+<li>low - prints convergence and energy information. At convergence
+    prints final geometry, change in internals from initial geometry</li>
+</ul>
+<p>and these specific print options</p>
+<ul>
+<li>finish (low) - print geometry data at end of calculation</li>
+<li>bonds (default) - print bonds at end of calculation</li>
+<li>angles (default) - print angles at end of calculation</li>
+<li>hvecs (never) - print eigen-values/vectors of the Hessian</li>
+<li>searchdir (high) - print the search direction in internals</li>
+<li>"internal gradient" (default) - print the gradient in internals</li>
+<li>sadmode (default) - print the mode being followed to the saddle
+    point</li>
+</ul>
+<h1 id="geometry-optimization-with-stepper">Geometry Optimization with STEPPER</h1>
+<p>The STEPPER module performs a search for critical points on the
+potential energy surface of the molecule defined by input using the
+<a href="Geometry.html">GEOMETRY</a> directive. Since STEPPER is
+not the primary geometry optimization module in NWChem the compound
+directive is required; the
+<a href="Geometry-Optimization.html">DRIVER</a> module is the
+default. Input for this module is specified within the compound
+directive,</p>
+<pre><code> STEPPER  
+   ...  
+ END
+</code></pre>
+
+<p>The presence of the STEPPER compound directive automatically turns off
+the default geometry optimization tool DRIVER. Input specified for the
+STEPPER module must appear in the input file after the GEOMETRY
+directive, since it must know the number of atoms that are to be used in
+the geometry optimization. In the current version of NWChem, STEPPER can
+be used only with geometries that are defined in Cartesian coordinates.
+STEPPER removes translational and rotational components before
+determining the step direction (5 components for linear systems and 6
+for others) using a standard Eckart algorithm. The default initial guess
+nuclear Hessian is the identity matrix.</p>
+<p>The default in STEPPER is to minimize the energy as a function of the
+geometry with a maximum of 20 geometry optimization iterations. When
+this is the desired calculation, no input is required other than the
+STEPPER compound directive. However, the user also has the option of
+defining different tasks for the STEPPER module, and can vary the number
+of iterations and the convergence criteria from the default values. The
+input for these options is described in the following sections.</p>
+<h2 id="min-and-ts-minimum-or-transition-state-search">MIN and TS -- Minimum or transition state search</h2>
+<p>The default is for STEPPER to minimize the energy with respect to the
+geometry of the system. This default behavior may be forced with the
+directive</p>
+<pre><code> MIN
+</code></pre>
+
+<p>STEPPER can also be used to find the transition state by following the
+lowest eigenvector of the nuclear Hessian. This is usually invoked by
+using the saddle keyword on the <a href="Top-level.html#TASK">TASK
+directive</a>, but it may also be
+selected by specifying the directive</p>
+<pre><code> TS
+</code></pre>
+
+<p>in the STEPPER input.</p>
+<h2 id="track-mode-selection">TRACK -- Mode selection</h2>
+<p>STEPPER has the ability to ``track'' a specific mode during an
+optimization for a transition state search, the user can also have the
+module track the eigenvector corresponding to a specific mode. This is
+done by specifying the directive</p>
+<pre><code> TRACK [nmode &lt;integer nmode default 1&gt;]
+</code></pre>
+
+<p>The keyword TRACK tells STEPPER to track the eigenvector corresponding
+to the integer value of <nmode> during a transition state walk. (Note:
+this input is invalid for a minimization walk since following a specific
+eigenvector will not necessarily give the desired local minimum.) The
+step is constructed to go up in energy along the nmode eigenvector and
+down in all other degrees of freedom.</p>
+<h2 id="maxiter-maximum-number-of-steps">MAXITER -- Maximum number of steps</h2>
+<p>In most applications, 20 stepper iterations will be sufficient to obtain
+the energy minimization. However, the user has the option of specifying
+the maximum number of iterations allowed, using the input line,</p>
+<pre><code> MAXITER &lt;integer maxiter default 20&gt;
+</code></pre>
+
+<p>The value specified for the integer <maxiter> defines the maximum number
+of geometry optimization steps. The geometry optimization will restart
+automatically.</p>
+<h2 id="trust-trust-radius">TRUST -- Trust radius</h2>
+<p>The size of steps that can be taken in STEPPER is controlled by the
+trust radius which has a default value of 0.1. Steps are constrained to
+be no larger than the trust radius. The user has the option of
+overriding this default using the keyword TRUST, with the following
+input line,</p>
+<pre><code> TRUST &lt;real radius default 0.1&gt;
+</code></pre>
+
+<p>The larger the value specified for the variable radius, the larger the
+steps that can be taken by STEPPER. Experience has shown that for larger
+systems (i.e., those with 20 or more atoms), a value of 0.5, or greater,
+usually should be entered for <radius>.</p>
+<h2 id="convggm-convgg-and-convge-convergence-criteria">CONVGGM, CONVGG and CONVGE -- Convergence criteria</h2>
+<p>Three convergence criteria can be specified explicitly for the STEPPER
+calculations. The keyword CONVGGM allows the user to specify the
+convergence tolerance for the largest component of the gradient. This is
+the primary convergence criterion, as per the default settings, although
+all three criteria are in effect. this default setting is consistent
+with the other optimizer module DRIVER. The input line for CONVGGM has
+the following form,</p>
+<pre><code>  CONVGGM &lt;real convggm default 8.0d-04&gt;
+</code></pre>
+
+<p>The keyword CONVGG allows the user to specify the convergence tolerance
+for the gradient norm for all degrees of freedom. The input line is of
+the following form,</p>
+<pre><code>  CONVGG &lt;real convgg default 1.0d-02&gt;
+</code></pre>
+
+<p>The entry for the real variable <convgg> should be approximately equal
+to the square root of the energy convergence tolerance.</p>
+<p>The energy convergence tolerance is the convergence criterion for the
+energy difference in the geometry optimization in STEPPER. It can be
+specified by input using a line of the following form,</p>
+<pre><code>  CONVGE &lt;real convge default 1.0d-04&gt;
+</code></pre>
+
+<h2 id="backstepping-in-stepper">Backstepping in STEPPER</h2>
+<p>If a step taken during the optimization is too large (e.g., the step
+causes the energy to go up for a minimization or down for a transition
+state search), the STEPPER optimizer will automatically "backstep"
+and correct the step based on information prior to the faulty step. If
+you have an optimization that "backsteps" frequently then the initial
+trust radius should most likely be decreased.</p>
+<h2 id="initial-nuclear-hessian-options">Initial Nuclear Hessian Options</h2>
+<p>Stepper uses a modified Fletcher-Powell algorithm to find the transition
+state or energy minimum on the potential energy hypersurface.<br />
+There are
+two files left in the user's permanent directory that are used to
+provide an initial hessian to the critical point search algorithm. If
+these files do not exist then the default is to use a unit matrix as the
+initial hessian.<br />
+Once Stepper executes it generates a binary dump file
+by the name of <code>name.stpr41</code> which will be used on all subsequent stepper
+runs and modified with the current updated hessian. The default file
+prefix is the "name" that is used (see
+<a href="Start_Restart.html">START</a>).
+It also stores the information for the last valid step in case the
+algorithm must take a <a href="Geometry-Optimization.html#backstepping-in-stepper">"backstep"</a>.
+This file is the working data store for all stepper-based optimizations.
+This file is never deleted by default and is the first source of an
+initial hessian.<br />
+The second source of an initial hessian is an ASCII file
+that contains the lower triangular values of the initial hessian. This
+is stored in file <code>name.hess</code>, where "name" is again the default file
+prefix. This is the second source of an initial hessian and is the
+method used to incorporate an initial hessian from any other source
+(e.g., another ab initio code, a molecular mechanics code, etc.,). To
+get a decent starting hessian at a given point you can use the task
+specification task scf hessian, with a smaller basis set, which will by
+default generate the <code>name.hess</code> file. Then you may define your basis set
+of choice and proceed with the optimization you desire.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

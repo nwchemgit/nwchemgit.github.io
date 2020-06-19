@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>MCSCF - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "MCSCF";
+    var mkdocs_page_input_path = "Multiconfiguration_SCF.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>MCSCF</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Multiconfiguration_SCF.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mcscf">MCSCF</h1>
+<p>The NWChem multiconfiguration SCF (MCSCF) module can currently perform
+complete active space SCF (CASSCF) calculations with at most 20 active
+orbitals and about 500 basis
+functions.</p>
+<pre><code> MCSCF  
+   STATE &lt;string state&gt;  
+   ACTIVE &lt;integer nactive&gt;  
+   ACTELEC &lt;integer nactelec&gt;  
+   MULTIPLICITY `&lt;integer multiplicity&gt;  
+   [SYMMETRY &lt;integer symmetry default 1&gt;]  
+   [VECTORS [[input] &lt;string input_file default file_prefix.movecs&gt;]   
+          [swap &lt;integer vec1 vec2&gt; ...] \  
+          [output &lt;string output_file default input_file&gt;] \  
+          [lock]  
+   [HESSIAN (exact||onel)]  
+   [MAXITER &lt;integer maxiter default 20&gt;]  
+   [THRESH  &lt;real thresh default 1.0e-4&gt;]  
+   [TOL2E &lt;real tol2e default 1.0e-9&gt;] 
+   [LEVEL &lt;real shift default 0.1d0&gt;]  
+ END
+</code></pre>
+
+<p>Note that the ACTIVE, ACTELEC, and MULTIPLICITY directives are required.
+The symmetry and multiplicity may alternatively be entered using the
+STATE directive.</p>
+<h2 id="active-number-of-active-orbitals">ACTIVE -- Number of active orbitals</h2>
+<p>The number of orbitals in the CASSCF active space must be specified
+using the ACTIVE directive.</p>
+<p>E.g.,</p>
+<pre><code> active 10
+</code></pre>
+
+<p>The input molecular orbitals (see the vectors directive in <a href="#VECTORS_--_Input/output_of_MO_vectors">MCSCF
+Vectors</a> and <a href="Hartree-Fock-Theory-for-Molecules.html#vectors----inputoutput-of-mo-vectors">SCF
+Vectors</a>)
+must be arranged in order</p>
+<ol>
+<li>doubly occupied orbitals,</li>
+<li>active orbitals, and</li>
+<li>unoccupied orbitals.</li>
+</ol>
+<h2 id="actelec-number-of-active-electrons">ACTELEC -- Number of active electrons</h2>
+<p>The number of electrons in the CASSCF active space must be specified
+using the ACTELEC directive. An error is reported if the number of
+active electrons and the multiplicity are inconsistent.</p>
+<p>The number of closed shells is determined by subtracting the number of
+active electrons from the total number of electrons (which in turn is
+derived from the sum of the nuclear charges minus the total system
+charge).</p>
+<h2 id="multiplicity">MULTIPLICITY</h2>
+<p>The spin multiplicity must be specified and is enforced by projection of
+the determinant wavefunction.</p>
+<p>E.g., to obtain a triplet state</p>
+<pre><code> multiplicity 3
+</code></pre>
+
+<h2 id="symmetry-spatial-symmetry-of-the-wavefunction">SYMMETRY -- Spatial symmetry of the wavefunction</h2>
+<p>This species the irreducible representation of the wavefunction as an
+integer in the range 1--8 using the same numbering of representations as
+output by the SCF program. Note that only Abelian point groups are
+supported.</p>
+<p>E.g., to specify a <img alt="$B_1$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fe468915e44d9e34d437fbf99b371809.svg?invert_in_darkmode&sanitize=true" align=middle width="18.95025pt" height="22.38192pt"/> state when using the <img alt="$C_{2v}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fbae2e8884819f6fd147d3039ef3a9bc.svg?invert_in_darkmode&sanitize=true" align=middle width="25.19517pt" height="22.38192pt"/> group</p>
+<pre><code> symmetry 3
+</code></pre>
+
+<h2 id="state-symmetry-and-multiplicity">STATE -- Symmetry and multiplicity</h2>
+<p>The electronic state (spatial symmetry and multiplicity) may
+alternatively be specified using the conventional notation for an
+electronic state, such as <img alt="$^3B_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6e2161ad2ba92369ce803c5813cce493.svg?invert_in_darkmode&sanitize=true" align=middle width="26.324595pt" height="26.70657pt"/> for a triplet state of <img alt="$B_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2b7de9b9b655b068f97484efba8812fb.svg?invert_in_darkmode&sanitize=true" align=middle width="18.95025pt" height="22.38192pt"/>
+symmetry. This would be accomplished with the input</p>
+<pre><code> state 3b2
+</code></pre>
+
+<p>which is equivalent to</p>
+<pre><code> symmetry 4 
+ multiplicity 3
+</code></pre>
+
+<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS -- Input/output of MO vectors</h2>
+<p>Calculations are best started from RHF/ROHF molecular orbitals (see
+<a href="Hartree-Fock-Theory-for-Molecules.html">SCF</a>), and by
+default vectors are taken from the previous MCSCF or SCF calculation. To
+specify another input file use the VECTORS directive. Vectors are by
+default output to the input file, and may be redirected using the output
+keyword. The swap keyword of the
+<a href="Hartree-Fock-Theory-for-Molecules.html#vectors----inputoutput-of-mo-vectors">VECTORS</a>
+directive may be used to reorder orbitals to obtain the correct active
+space.</p>
+<p>The
+<a href="Hartree-Fock-Theory-for-Molecules.html#vectors----inputoutput-of-mo-vectors">LOCK</a>
+keyword allows the user to specify that the ordering of orbitals will be
+locked to that of the initial vectors, insofar as possible. The default
+is to order by ascending orbital energies within each orbital space. One
+application where locking might be desirable is a calculation where it
+is necessary to preserve the ordering of a previous geometry, despite
+flipping of the orbital energies. For such a case, the LOCK directive
+can be used to prevent the SCF calculation from changing the ordering,
+even if the orbital energies change.</p>
+<p>Output orbitals of a converged MCSCF calculation are canonicalized as
+follows:</p>
+<ul>
+<li>Doubly occupied and unoccupied orbitals diagonalize the
+    corresponding blocks of an effective Fock operator. Note that in the
+    case of degenerate orbital energies this does not fully determine
+    the orbtials.</li>
+<li>Active-space orbitals are chosen as natural orbitals by
+    diagonalization of the active space 1-particle density matrix. Note
+    that in the case of degenerate occupations that this does not fully
+    determine the orbitals.</li>
+</ul>
+<h2 id="hessian-select-preconditioner">HESSIAN -- Select preconditioner</h2>
+<p>The MCSCF will use a one-electron approximation to the orbital-orbital
+Hessian until some degree of convergence is obtained, whereupon it will
+attempt to use the exact orbital-orbital Hessian which makes the micro
+iterations more expensive but potentially reduces the total number of
+macro iterations. Either choice may be forced throughout the calculation
+by specifying the appropriate keyword on the HESSIAN directive.</p>
+<p>E.g., to specify the one-electron approximation throughout</p>
+<pre><code> hessian onel
+</code></pre>
+
+<h2 id="level-level-shift-for-convergence">LEVEL -- Level shift for convergence</h2>
+<p>The <a href="Hessians-and-Vibrational-Frequencies.html">Hessian</a>
+used in the MCSCF optimization is by default level shifted by 0.1 until
+the orbital gradient norm falls below 0.01, at which point the level
+shift is reduced to zero. The initial value of 0.1 may be changed using
+the LEVEL directive. Increasing the level shift may make convergence
+more stable in some instances.</p>
+<p>E.g., to set the initial level shift to 0.5</p>
+<pre><code> level 0.5
+</code></pre>
+
+<h2 id="print-and-noprint">PRINT and NOPRINT</h2>
+<p>Specific output items can be selectively enabled or disabled using the
+<a href="Top-level.html#PRINT_.2F_NOPRINT">print control
+mechanism</a> with the
+available print options listed in the table
+below.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th>MCSCF Print Options</th>
+<th>Option</th>
+<th>Class</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ci energy</td>
+<td>default</td>
+<td>CI energy eigenvalue</td>
+<td></td>
+</tr>
+<tr>
+<td>fock energy</td>
+<td>default</td>
+<td>Energy derived from Fock matrices</td>
+<td></td>
+</tr>
+<tr>
+<td>gradient norm</td>
+<td>default</td>
+<td>Gradient norm</td>
+<td></td>
+</tr>
+<tr>
+<td>movecs</td>
+<td>default</td>
+<td>Converged occupied MO vectors</td>
+<td></td>
+</tr>
+<tr>
+<td>trace energy</td>
+<td>high</td>
+<td>Trace Energy</td>
+<td></td>
+</tr>
+<tr>
+<td>converge info</td>
+<td>high</td>
+<td>Convergence data and monitoring</td>
+<td></td>
+</tr>
+<tr>
+<td>precondition</td>
+<td>high</td>
+<td>Orbital preconditioner iterations</td>
+<td></td>
+</tr>
+<tr>
+<td>microci</td>
+<td>high</td>
+<td>CI iterations in line search</td>
+<td></td>
+</tr>
+<tr>
+<td>canonical</td>
+<td>high</td>
+<td>Canonicalization information</td>
+<td></td>
+</tr>
+<tr>
+<td>new movecs</td>
+<td>debug</td>
+<td>MO vectors at each macro-iteration</td>
+<td></td>
+</tr>
+<tr>
+<td>ci guess</td>
+<td>debug</td>
+<td>Initial guess CI vector</td>
+<td></td>
+</tr>
+<tr>
+<td>density matrix</td>
+<td>debug</td>
+<td>One- and Two-particle density matrices</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Vibration - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Vibration";
+    var mkdocs_page_input_path = "Vibration.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Vibration</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Vibration.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="vibrational-frequencies">Vibrational frequencies</h2>
+<p>The nuclear hessian which is used to compute the vibrational frequencies
+can be computed by finite difference for any ab initio wave-function
+that has analytic gradients or by analytic methods for SCF and DFT (see
+<a href="Hessians-and-Vibrational-Frequencies.html">Hessians</a> for details). The appropriate nuclear
+hessian generation algorithm is chosen based on the user input when TASK
+<theory> frequencies is the task directive.</p>
+<p>The vibrational package was integrated from the Utah Messkit and can use
+any nuclear hessian generated from the driver routines, finite
+difference routines or any analytic hessian modules. There is no
+required input for the "VIB" package. VIB computes the Infra Red
+frequencies and intensities for the computed nuclear hessian and the
+"projected" nuclear hessian. The VIB module projects out the
+translations and rotations of the nuclear hessian using the standard
+Eckart projection algorithm. It also computes the zero point energy for
+the molecular system based on the frequencies obtained from the
+projected hessian.</p>
+<p>The default mass of each atom is used unless an alternative mass is
+provided via the <a href="Geometry.html">geometry</a> input or redefined
+using the vibrational module input. The default mass is the mass of the
+most abundant isotope of each element. If the abundance was roughly
+equal, the mass of the isotope with the longest half life was used.</p>
+<p>In addition, the vibrational analysis is given at the default standard
+temperature of 298.15 degrees.</p>
+<h1 id="vibrational-module-input">Vibrational Module Input</h1>
+<p>All input for the Vibrational Module is optional since the default
+definitions will compute the frequencies and IR intensities. The generic
+module input can begin with vib, freq, frequency and has the form:</p>
+<pre><code> {freq || vib || frequency}  
+   [reuse [&lt;string hessian_filename&gt;]]  
+   [mass &lt;integer lexical_index&gt; &lt;real new_mass&gt;]  
+   [mass &lt;string tag_identifier&gt; &lt;real new_mass&gt;]  
+   [{temp || temperature} &lt;integer number_of_temperatures&gt; \  
+         &lt;real temperature1 temperature2 ...&gt;]  
+   [animate [&lt;real step_size_for_animation&gt;]]  
+ end
+</code></pre>
+
+<h3 id="hessian-file-reuse">Hessian File Reuse</h3>
+<p>By default the task <theory> frequencies directive will recompute the
+hessian. To reuse the previously computed hessian you need only specify
+reuse in the module input block. If you have stored the hessian in an
+alternate place you may redirect the reuse directive to that file by
+specifying the path to that file.</p>
+<pre><code> reuse /path_to_hessian_file
+</code></pre>
+
+<p>This will reuse your saved Hessian data but one caveat is that the
+geometry specification at the point where the hessian is computed must
+be the default "geometry" on the current run-time-data-base for the
+projection to work properly.</p>
+<h3 id="redefining-masses-of-elements">Redefining Masses of Elements</h3>
+<p>You may also modify the mass of a specific center or a group of centers
+via the input.</p>
+<p>To modify the mass of a specific center you can simply use:</p>
+<pre><code> mass 3 4.00260324
+</code></pre>
+
+<p>which will set the mass of center 3 to 4.00260324 AMUs. The lexical
+index of centers is determined by the geometry object.</p>
+<p>To modify all Hydrogen atoms in a molecule you may use the tag based
+mechanism:</p>
+<pre><code> mass hydrogen 2.014101779
+</code></pre>
+
+<p>The mass redefinitions always start with the default masses and change
+the masses in the order given in the input. Care must be taken to change
+the masses properly. For example, if you want all hydrogens to have the
+mass of Deuterium and the third hydrogen (which is the 6th atomic
+center) to have the mass of Tritium you must set the Deuterium masses
+first with the tag based mechanism and then set the 6th center's mass to
+that of Tritium using the lexical center index mechanism.</p>
+<p>The mass redefinitions are not fully persistent on the
+run-time-data-base. Each input block that redefines masses will
+invalidate the mass definitions of the previous input block. For
+example,</p>
+<pre><code>freq  
+  reuse  
+  mass hydrogen 2.014101779  
+end  
+task scf frequencies  
+freq  
+  reuse  
+  mass oxygen 17.9991603  
+end  
+task scf frequencies
+</code></pre>
+
+<p>will use the new mass for all hydrogens in the first frequency analysis.
+The mass of the oxygen atoms will be redefined in the second frequency
+analysis but the hydrogen atoms will use the default mass. To get a
+modified oxygen and hydrogen analysis you would have to use:</p>
+<pre><code>freq  
+  reuse  
+  mass hydrogen 2.014101779  
+end  
+task scf frequencies  
+freq  
+  reuse  
+  mass hydrogen 2.014101779  
+  mass oxygen 17.9991603  
+end  
+task scf frequencies
+</code></pre>
+
+<h3 id="temp-or-temperature">Temp or Temperature</h3>
+<p>The "VIB" module can generate the vibrational analysis at various
+temperatures other than at standard room temperature. Either temp or
+temperature can be used to initiate this command.</p>
+<p>To modify the temperature of the computation you can simply use:</p>
+<pre><code> temp 4 298.15 300.0 350.0 400.0
+</code></pre>
+
+<p>At this point, the temperatures are persistant and so the user must
+"reset" the temperature if the standard behavior is required after
+setting the temperatures in a previous "VIB" command, i.e.</p>
+<pre><code> temp 1 298.15
+</code></pre>
+
+<h3 id="animation">Animation</h3>
+<p>The "VIB" module also can generate mode animation input files in the
+standard xyz file format for graphics packages like RasMol or XMol There
+are scripts to automate this for RasMol in
+$NWCHEM_TOP/contrib/rasmolmovie. Each mode will have 20 xyz files
+generated that cycle from the equilibrium geometry to 5 steps in the
+positive direction of the mode vector, back to 5 steps in the negative
+direction of the mode vector, and finally back to the equilibrium
+geometry. By default these files are not generated. To activate this
+mechanism simply use the following input directive</p>
+<pre><code> animate
+</code></pre>
+
+<p>anywhere in the frequency/vib input block.</p>
+<h4 id="controlling-the-step-size-along-the-mode-vector">Controlling the Step Size Along the Mode Vector</h4>
+<p>By default, the step size used is 0.15 a.u. which will give reliable
+animations for most systems. This can be changed via the input directive</p>
+<pre><code> animate real &lt;step_size&gt;
+</code></pre>
+
+<p>where <step_size> is the real number that is the magnitude of each step
+along the eigenvector of each nuclear hessian mode in atomic units.</p>
+<h3 id="an-example-input-deck">An Example Input Deck</h3>
+<p>This example input deck will optimize the geometry for the given basis
+set, compute the frequencies for H<sub>2</sub>O, H<sub>2</sub>O at different
+temperatures, D<sub>2</sub>O, HDO, and TDO.</p>
+<pre><code>start  h2o  
+title Water   
+geometry units au autosym  
+  O      0.00000000    0.00000000    0.00000000  
+  H      0.00000000    1.93042809   -1.10715266  
+  H      0.00000000   -1.93042809   -1.10715266  
+end  
+basis noprint  
+  H library sto-3g   
+  O library sto-3g  
+end  
+scf; thresh 1e-6; end  
+driver; tight; end  
+task scf optimize  
+
+scf; thresh 1e-8; print none; end  
+task scf freq   
+
+freq  
+ reuse; temp 4 298.15 300.0 350.0 400.0  
+end  
+task scf freq  
+
+freq   
+ reuse; mass H 2.014101779  
+ temp 1 298.15  
+end  
+task scf freq  
+
+freq  
+ reuse; mass 2 2.014101779  
+end  
+task scf freq  
+
+freq  
+ reuse; mass 2 2.014101779 ; mass 3 3.01604927  
+end  
+task scf freq
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

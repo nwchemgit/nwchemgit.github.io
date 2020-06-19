@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>NWChem Architecture - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "NWChem Architecture";
+    var mkdocs_page_input_path = "NWChem-Architecture.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>NWChem Architecture</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/NWChem-Architecture.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="nwchem-architecture">NWChem Architecture</h1>
+<p>As noted above, NWChem consists of independent modules that perform the
+various functions of the code. Examples include the input parser,
+self-consistent field (SCF) energy, SCF analytic gradient, and density
+functional theory (DFT) energy modules. The independent NWChem modules
+can share data only through a disk-resident database, which is similar
+to the GAMESS-UK dumpfile or the Gaussian checkpoint file. This allows
+the modules to share data, or to share access to files containing data.</p>
+<p>It is not necessary for the user to be intimately familiar with the
+contents of the
+<a href="NWChem-Architecture.html#database-structure">database</a> in order
+to run NWChem. However, a nodding acquaintance with the design of the
+code will help in clarifying the logic behind the input requirements,
+especially when restarting jobs or performing multiple tasks within one
+job.</p>
+<p>As described above (<a href="Getting-Started.html#input-file-structure">Input File
+Structure</a>), all
+start-up directives are processed at the beginning of the job by the
+main program, and then the input module is invoked. Each input directive
+usually results in one or more entries being made in the database. When
+a TASK directive is encountered, control is passed to the appropriate
+module, which extracts relevant data from the database and any
+associated files. Upon completion of the task, the module will store
+significant results in the database, and may also modify other database
+entries in order to affect the behavior of subsequent computations.</p>
+<h2 id="database-structure">Database Structure</h2>
+<p>Data is shared between modules of NWChem by means of the database. Three
+main types of information are stored in the data base: (1) arrays of
+data, (2) names of files that contain data, and (3) objects. Arrays are
+stored directly in the database, and contain the following information:</p>
+<ol>
+<li>the name of the array, which is a string of ASCII characters (e.g.,
+    "reference energies")</li>
+<li>the type of the data in the array (i.e., real, integer, logical, or
+    character)</li>
+<li>the number (N) of data items in the array (Note: A scalar is stored
+    as an array of unit length.)</li>
+<li>the N items of data of the specified type</li>
+</ol>
+<p>It is possible to enter data directly into the database using the <a href="SET.html">SET
+directive</a>. For example, to store a (64-bit precision)
+three-element real array with the name "reference energies" in the
+database, the directive is as follows:</p>
+<p><code>set "reference energies" 0.0 1.0 -76.2</code></p>
+<p>NWChem determines the data to be real (based on the type of the first
+element, 0.0), counts the number of elements in the array, and enters
+the array into the database.</p>
+<p>Much of the data stored in the database is internally managed by NWChem
+and should not be modified by the user. However, other data, including
+some NWChem input options, can be freely modified.</p>
+<p>Objects are built in the database by storing associated data as multiple
+entries, using an internally consistent naming convention. This data is
+managed exclusively by the subroutines (or methods) that are associated
+with the object. Currently, the code has two main objects: basis sets
+and geometries. <a href="Geometry.html">GEOMETRY</a> and
+<a href="Basis.html">BASIS</a> present a complete discussion of the input to
+describe these objects.</p>
+<p>As an illustration of what comprises a geometry object, the following
+table contains a partial listing of the database contents for a water
+molecule geometry named "test geom". Each entry contains the field test
+geom, which is the unique name of the object.</p>
+<pre><code>Contents of RTDB h2o.db  
+-----------------------  
+Entry                                   Type[nelem]  
+---------------------------  ----------------------  
+geometry:test geom:efield             double[3]      
+geometry:test geom:coords             double[9]      
+geometry:test geom:ncenter               int[1]      
+geometry:test geom:charges            double[3]      
+geometry:test geom:tags                 char[6] 
+...
+</code></pre>
+
+<p>Using this convention, multiple instances of objects may be stored with
+different names in the same database. For example, if a user needed to
+do calculations considering alternative geometries for the water
+molecule, an input file could be constructed containing all the
+geometries of interest by storing them in the database under different
+names.</p>
+<p>The runtime database contents for the file h2o.db listed above were
+generated from the user-specified input directive,</p>
+<pre><code> geometry &quot;test geom&quot;  
+   O     0.00000000    0.00000000    0.00000000 
+   H     0.00000000    1.43042809   -1.10715266 
+   H     0.00000000   -1.43042809   -1.10715266  
+ end
+</code></pre>
+
+<p>The <a href="Geometry.html">GEOMETRY</a> directive allows the user to specify
+the coordinates of the atoms (or centers), and identify the geometry
+with a unique name.</p>
+<p>Unless a specific name is defined for the geometry, (such as the name
+"test geom" shown in the example), the default name of geometry is
+assigned. This is the geometry name that computational modules will look
+for when executing a calculation. The SET directive can be used in the
+input to force NWChem to look for a geometry with a name other than
+geometry. For example, to specify use of the geometry with the name
+"test geom" in the example above, the SET directive is as follows:</p>
+<pre><code>set geometry &quot;test geom&quot;
+</code></pre>
+
+<p>NWChem will automatically check for such indirections when loading
+geometries. Storage of data associated with basis sets, the other
+database resident object, functions in a similar fashion, using the
+default name "ao basis".</p>
+<h2 id="persistence-of-data-and-restart">Persistence of data and restart</h2>
+<p>The database is persistent, meaning that all input data and output data
+(calculation results) that are not destroyed in the course of execution
+are permanently stored. These data are therefore available to subsequent
+tasks or jobs. This makes the input for restart jobs very simple, since
+only new or changed data must be provided. It also makes the behavior of
+successive restart jobs identical to that of multiple tasks within one
+job.</p>
+<p>Sometimes, however, this persistence is undesirable, and it is necessary
+to return an NWChem module to its default behavior by restoring the
+database to its input-free state. In such a case, the
+<a href="UNSET.html">UNSET</a> directive can be used to delete all database
+entries associated with a given module (including both inputs and
+outputs).</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

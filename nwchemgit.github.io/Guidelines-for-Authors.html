@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>**TO BE REVISED. MOST OF THE CONTENT HERE IS OBSOLETE** - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "**TO BE REVISED. MOST OF THE CONTENT HERE IS OBSOLETE**";
+    var mkdocs_page_input_path = "Guidelines-for-Authors.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">Documentation Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Overview.html">Overview</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="System-Description.html">System Description</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Developer.html">NWChem Development</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">General information about NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived-Forum</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>**TO BE REVISED. MOST OF THE CONTENT HERE IS OBSOLETE**</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Guidelines-for-Authors.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="to-be-revised-most-of-the-content-here-is-obsolete"><strong>TO BE REVISED. MOST OF THE CONTENT HERE IS OBSOLETE</strong></h1>
+<p>The current wiki has
+been created to provide documentation related to NWChem [1]. This
+includes the user manual, tutorials and common practices, as well as
+programmer references, as well as other useful information. In order to
+make this wiki as useful as possible to the NWChem community a certain
+level of consistency of style is useful. To asist with this and beause
+of the nature of the subject matter of this specific wiki a number of
+tools and extensions have been selected to help document relevant
+aspects. These tools and suggestions for their use will be discussed
+here as well. Obviously for general information on these tools external
+references will be used.</p>
+<h2 id="tools">Tools</h2>
+<p>This wiki has a number of extensions installed to facilitate the
+documentation process for which it is intended. The configuration of the
+wiki installation can found at
+<a href="Special:Version.md">Special:Version</a>. For the purpose of this
+wiki there are a number of aspects that are relevant. These include
+<a href="#Links">Links</a>,
+<a href="#Equations">Equations</a>,
+<a href="#Citations">Citations</a>, and
+<a href="#Images">Images</a>.</p>
+<h3 id="links">Links</h3>
+<p>Links are an essential tool for integrating information from various
+sources. The wiki therefore supports a wide variety of links that can be
+used and details on how to used them can be found at <a href="http://meta.wikimedia.org/wiki/Help:Advanced_editing#Links.2C_URLs">Links,
+URLs</a>.
+For general use there are a few types of links that are clearly
+important. These links include</p>
+<ul>
+<li>intra wiki links to other pages</li>
+<li>intra wiki links to sections of pages</li>
+<li>external links</li>
+</ul>
+<p>Below a few simple examples can be found. However, before links are
+discussed a few comments on how the wiki handles anchors are in order so
+that there is a construct to link to.</p>
+<h4 id="anchors-on-wiki-pages">Anchors on wiki pages</h4>
+<p>Anchors are points on the wiki pages that you can link to. Anchors are
+either automatically generated by the wiki but can also be created
+manually.</p>
+<p>The wiki automatically creates anchors for all pages and all headers on
+each page. This means that you can link to every page and every section
+or subsection on every page in any case.</p>
+<p>In cases where the automatically generated anchors do not provide for
+the right points to link to anchors can be created manually. In HTML one
+would use a construct such as \&lt;a name="link here">text\&lt;/a>. However,
+the wiki does not allow the use of the \&lt;a> tag. Instead, the "id" HTML
+attribute can be used with a number of tags to the same effect. Examples
+of this are:</p>
+<p><code></code><br />
+<code>&lt;div id="link here"&gt;text&lt;/div&gt;</code><br />
+<code>&lt;div id="link here"/&gt;</code><br />
+<code>&lt;span id="link here"&gt;text&lt;/span&gt;</code><br />
+<code></code></p>
+<p>Occasionally manually entered anchors are also needed where one would
+expect automatically generated anchors to work. For example, the
+automatically generated anchor for the subsection entitled "Dyall's
+Modified Dirac Hamiltonian approximation" cannot be linked to as the
+apostrophe character cannot be used in a link. In this case adding an
+anchor manually for the title allows the subsection to be linked
+successfully. To see this compare the examples
+below:</p>
+<p><code></code><br />
+<code>[[Relativistic-All-electron-Approximations#Dyall's Modified Dirac-Hamiltonian approximation]]</code><br />
+<code>[[Relativistic-All-electron-Approximations#Dyall-Mod-Dirac-Hamiltonian]]</code><br />
+<code></code></p>
+<p><code></code><a href="Relativistic-All-electron-Approximations.html#Dyall's_Modified_Dirac-Hamiltonian_approximation"><code>Relativistic-All-electron-Approximations#Dyall's`` ``Modified``
+``Dirac-Hamiltonian``
+``approximation</code></a><br />
+<code></code><a href="Relativistic-All-electron-Approximations.html#Dyall-Mod-Dirac-Hamiltonian"><code>Relativistic-All-electron-Approximations#Dyall-Mod-Dirac-Hamiltonian</code></a></p>
+<h4 id="intra-wiki-links-to-other-pages">Intra wiki links to other pages</h4>
+<p>Links to other pages are generated by placing the page title between
+double square brackets.</p>
+<p><code></code><br />
+<code>[[Getting Started]]</code><br />
+<code>[[ECP|Effective Core Potentials]]</code><br />
+<code></code></p>
+<p>becomes</p>
+<p><code></code><a href="Getting-Started.html"><code>Getting`` ``Started</code></a><br />
+<code></code><a href="ECP.html"><code>Effective`` ``Core`` ``Potentials</code></a></p>
+<p>Note that spaces in the specified page name are automatically replaced
+by underscores to generate the correct link. In addition the "|"
+character may be used to specify a label for the link.</p>
+<h4 id="intra-wiki-links-to-sections-of-pages">Intra wiki links to sections of pages</h4>
+<p>Links to sections of pages are a simple extension of the links to other
+pages. Similar to ordinary URLs one simply appends a "#" character
+followed by the section title. For example</p>
+<p><code></code><br />
+<code>[[ECP#Scalar ECPs]]</code><br />
+<code>[[ECP#Scalar ECPs|Scalar Effective Core Potentials]]</code><br />
+<code></code></p>
+<p>results in</p>
+<p><code></code><a href="ECP.html#Scalar_ECPs"><code>ECP#Scalar`` ``ECPs</code></a><br />
+<code></code><a href="ECP.html#Scalar_ECPs"><code>Scalar`` ``Effective`` ``Core``
+``Potentials</code></a></p>
+<p>which takes you to the section "Scalar ECPs" on the ECP page. Obviously
+the construct to provide labels for links comes in handy to make these
+links look appealing.</p>
+<h4 id="external-links">External links</h4>
+<p>External links can be specified simply by placing the corresponding URL
+in single square brackets. For
+example</p>
+<p><code></code><br />
+<code>[http://dx.doi.org/10.1103/PhysRev.28.1049]</code><br />
+<code>[http://dx.doi.org/10.1103/PhysRev.28.1049 Schrödingers wave mechanics (English)]</code><br />
+<code></code></p>
+<p>becomes</p>
+<p><code></code><a href="http://dx.doi.org/10.1103/PhysRev.28.1049"><code>1</code></a><br />
+<code></code><a href="http://dx.doi.org/10.1103/PhysRev.28.1049"><code>Schrödingers`` ``wave`` ``mechanics``
+``(English)</code></a></p>
+<p><a href="http://www.sciencedirect.com/science?_ob=MiamiCaptionURL&amp;_method=retrieve&amp;_udi=B6TJ5-502V6YP-2&amp;_image=fig004&amp;_ba=4&amp;_user=2741876&amp;_coverDate=09%2F30%2F2010&amp;_rdoc=1&amp;_fmt=full&amp;_orig=search&amp;_cdi=5301&amp;_issn=00104655&amp;_pii=S0010465510001438&amp;view=c&amp;_acct=C000058656&amp;_version=1&amp;_urlVersion=0&amp;_userid=2741876&amp;md5=31635e54b2c090ff7f164cf0acad2a04">Hello
+World</a></p>
+<p>The URLs may, of course, use any of the usual protocols including ftp:
+and mailto:. Note that in external links the "|" construct to provide a
+label does not work. Instead the text that appears after the first space
+is used as the label.</p>
+<h3 id="equations">Equations</h3>
+<p>As people working in the quantum chemistry domain are usually familiar
+with LaTeX (and the original documentation was written in LaTeX) it is
+reasonable to provide a mechanism in which equations can be entered in
+LaTeX on the wiki pages. When a wiki page is saved the LaTeX equations
+are extracted and transformed to images which are displayed on pages
+served to readers.</p>
+<p>This capability is offered by the \&lt;math> ... \&lt;/math> construct. With
+this construct the time dependent Schrödinger equation may be entered
+as:</p>
+<p><code></code><br />
+<code>&lt;math&gt;</code><br />
+<code>\hat{H}\Psi = i\hbar\frac{\partial}{\partial t}\Psi</code><br />
+<code>&lt;/math&gt;</code><br />
+<code></code></p>
+<p>which comes out to look like</p>
+<p><code></code>(\hat{H}\Psi = i\hbar\frac{\partial}{\partial t}\Psi)</p>
+<p>Because the expression is extracted, embedded in some default LaTeX
+shrubbery, and then passed to the LaTeX program for processing it is
+clear that only fairly standard mathematical commands are going to work.
+Therefore all equations need to be written in plain LaTeX without
+relying on special packages or user defined commands.</p>
+<p>For further details, including a quick LaTeX math reference, more
+information can be found at <a href="http://meta.wikimedia.org/wiki/Help:Displaying_a_formula">displaying a
+formula</a>.</p>
+<h3 id="images">Images</h3>
+<p>"One picture says more than a thousand words" is the cliche statement
+expressing that graphical representations can provide a very direct way
+to communicate something. For the purposes of this wiki there are three
+kinds of graphical representations that are clearly useful. They are:
+Charts (scaling curves, spectra, function plots, etc.), Diagrams
+(organization of code modules, flow charts, data dependency graphs,
+etc.), Pictures (images of computer, molecules, developers &amp;
+collaborators, etc.). Although the need for supporting diagrams is
+foreseen this is currently not supported for technical reasons. The
+support for other kinds of graphical representations is described below.</p>
+<h4 id="charts">Charts</h4>
+<p>To include charts on the wiki pages the extension
+<a href="http://www.mediawiki.org/wiki/Extension:Pchart4mw_pChart4mw">http://www.mediawiki.org/wiki/Extension:Pchart4mw
+pChart4mw</a>
+is supported. Although the link provides a reasonable documentation of
+the extension the salient points are summarized below. The extension
+works similar to many other tools. The extension detects certain
+keywords on the wiki page and extracts the associated data block. The
+data block is fed to a tool (pChart in this case) which renders a chart
+based on the data provided. The chart is subsequently included as an
+image on the page the wiki serves. The advantage of using a tool like
+this is that charts can easily be updated when new data becomes
+available. If the chart was uploaded as a picture instead the chances
+are that it can only be updated by redrawing it from scratch.</p>
+<p>The extension supports a number of different kinds of charts. They are:
+line charts, bar charts, pie charts, scatter diagrams, radar charts and
+bubble charts. As line charts are probably the most important ones for
+our purposes let's look at an example of a scaling
+curve.</p>
+<p><code></code><br />
+<code>&lt;plines title="Scaling of NWChem DFT on C240" xtitle="processors" ytitle="time (s)" labels=true xlabels=true</code><br />
+<code>legend=right cubic=true plots=closed&gt;</code><br />
+<code>,Fock_2e,Fock_xc,Diag</code><br />
+<code>32,   2777,     35,  26</code><br />
+<code>64,   1392,     19,  16</code><br />
+<code>128,    691,     11,  12</code><br />
+<code>256,    351,      7,  12</code><br />
+<code>512,    178,      5,  12</code><br />
+<code>1024,     91,      4,  12</code><br />
+<code>2048,     51,      4,  13</code><br />
+<code>4096,     31,      6,  13</code><br />
+<code>&lt;/plines&gt;</code><br />
+<code></code></p>
+<p><code></code><plines title="Scaling of NWChem DFT on C240" xtitle="processors" ytitle="time (s)" labels=true xlabels=true
+          legend=right cubic=true plots=closed><br />
+<code>,Fock_2e,Fock_xc,Diag</code><br />
+<code>32,   2777,     35,  26</code><br />
+<code>64,   1392,     19,  16</code><br />
+<code>128,    691,     11,  12</code><br />
+<code>256,    351,      7,  12</code><br />
+<code>512,    178,      5,  12</code><br />
+<code>1024,     91,      4,  12</code><br />
+<code>2048,     51,      4,  13</code><br />
+<code>4096,     31,      6,  13</code><br />
+<code></code></plines></p>
+<p>Obviously there are quite a number of attributes that can be set at the
+start of the chart data. The <a href="http://code.google.com/p/pchart4mw/wiki/Parameters">pChart4mw
+Parameters</a> page
+provides details on which attributes can be set, how and what they mean.</p>
+<h4 id="pictures">Pictures</h4>
+<p>There are a variety of situations where the best way to show something
+is to provide a picture. In order to do this the image file has to be
+uploaded (see the <a href="Special:Upload.md">Upload</a> page) to the wiki
+server. Next a link on the wiki page to the image file has be included.
+In order to avoid trampling over previously uploaded image files it is
+recommended to check the list of previously uploaded files at the
+<a href="Special:ListFiles.md">ListFiles</a> page.</p>
+<p>As an example the (old) NWChem logo image is used. First the picture was
+included on with wiki page using</p>
+<p><code></code><br />
+<code>[[file:Nwchem_logo_dark.png|NWChem logo]]</code><br />
+<code></code></p>
+<p>to give</p>
+<p><code></code><a href="file:Nwchem_logo_dark.png.md"><code>NWChem`` ``logo</code></a></p>
+<p>Alternatively the construct</p>
+<p><code></code><br />
+<code>[[media:Nwchem_logo_dark.png]]</code><br />
+<code></code></p>
+<p>gives</p>
+<p><code></code><a href="media:Nwchem_logo_dark.png.md"><code>media:Nwchem_logo_dark.png</code></a></p>
+<p>The wiki page generated will include a link to the upload page to upload
+the file. Following the link the upload page is displayed with the
+destination file name already filled in (so less opportunity to
+introduce inconsistencies through typos). After that it is simply a
+matter of selecting the right file and click the upload button and the
+picture will appear on the wiki page.</p>
+<p>Note that the [[media: ... ]] construct introduces a link to the
+file instead of displaying its contents. This might be a good way to
+provide sample input files, for example.</p>
+<h3 id="citations">Citations</h3>
+<p>In any scientific endeavor linking your statements to the work of others
+is essential in building interpersonal understanding of the scientific
+domain. As this wiki is about NWChem only the references cited tend to
+be related and each reference may be cited multiple times. So for
+consistency reasons alone it makes sense to store all the references in
+a single wiki-wide location. For this purpose
+<a href="http://www.refbase.net/index.php/Web_Reference_Database">RefBase</a> was
+chosen which is a literature reference data base. The corresponding
+media wiki extension enables the wiki to query the data base to extract
+the citation, the citation data is parsed by media wiki's
+<a href="http://www.mediawiki.org/wiki/Extension:Cite/Cite.php">Cite</a> extension
+to generate the appropriate links on the page and the table of
+references at the bottom.</p>
+<p>The consequence of this is that adding references is a two stage
+process:</p>
+<ol>
+<li>Add the reference data to the data base</li>
+<li>Cite the reference on the wiki page</li>
+</ol>
+<h4 id="adding-references-in-refbase">Adding references in RefBase</h4>
+<p>To add references to the RefBase data base you will need a RefBase
+account (<a href="mailto:hubertus.vandam@pnl.gov">email e.g. huub</a> to request
+one to be set up). Go to
+<a href="http://nwchemweb.emsl.pnl.gov/refbase/">RefBase</a> and login to get
+access to the data base. At the top of the page, right under the title
+"Your Literature Database", two new links "add record" and "import" have
+now appeared.</p>
+<p>Clicking "add record" brings up a form. Simply filling out the various
+fields on the form and clicking "Save Record" at the bottom of the page
+will add the data to the data base. It is recommended to also complete
+the DOI field as that eventually adds a link to the paper on the wiki
+page.</p>
+<p>Alternatively, clicking "import" brings up a form that allows reference
+to be imported from external sources. These sources can be files
+containing references in the EndNote, BibTeX or other formats (see the
+import page for a complete list), or they can be web-based sources such
+as DOI, OpenURL, etc. Unfortunately the web-based sources importation
+does not seem to work at present. What does work is looking the paper up
+online and using the publisher's export function to export the reference
+to a file of a format that RefBase recognizes and import this file into
+RefBase.</p>
+<p>After entering a reference, you can find and inspect the details of it.
+Particularly relevant in this is the field "Serial" which is the
+reference number RefBase assigned to it. This is the data base's primary
+key that you use to cite the reference on a wiki page.</p>
+<h4 id="citing-references-on-wiki-pages">Citing references on wiki pages</h4>
+<p>The mechanism for citing references from RefBase on a wiki is a two
+stage one. The first stage is extracting a reference from the RefBase
+data base. The second stage involves parsing and formatting the
+reference for presentation on the wiki page.</p>
+<p>To extract a reference from RefBase use the construct</p>
+<p><code></code><br />
+<code>&lt;refbase&gt;14&lt;/refbase&gt;</code><br />
+<code></code></p>
+<p>to obtain</p>
+<p><code></code><refbase><code>14</code></refbase></p>
+<p>This information is the same kind of information that could be provided
+manually to the Cite extension. For
+example</p>
+<p><code></code><br />
+<code>DIIS</code><br />
+<code>&lt;ref&gt;Pulay, P. (1980). "Convergence acceleration of iterative sequences.</code><br />
+<code>the case of scf iteration". Chemical Physics Letters 73: 393-398.</code><br />
+<code>doi:10.1016/0009-2614(80)80396-4. ISSN 0009-2614&lt;/ref&gt;</code><br />
+<code></code></p>
+<p>gives</p>
+<p><code>DIIS</code>[2]</p>
+<p>The combination of RefBase and Cite allows this to be rolled into one as</p>
+<p><code></code><br />
+<code>DIIS&lt;ref&gt;&lt;refbase&gt;14&lt;/refbase&gt;&lt;/ref&gt;</code><br />
+<code></code></p>
+<p>to yield</p>
+<p><code>DIIS</code>[3]</p>
+<p>The Cite extension obviously still needs somewhere to put the references
+being cited. It uses the construct</p>
+<p><code></code><br />
+<code>&lt;references/&gt;</code><br />
+<code></code></p>
+<p>for this. Where \&lt;references/> is replaced with the list of references.
+An example of a table generated in this way can be found at the bottom
+of this page under the heading
+<a href="#References">References</a>.</p>
+<h3 id="jmol-extensions">Jmol extensions</h3>
+<p>JMol applets can be included in the pages. More information can be found
+at the <a href="http://www.mediawiki.org/wiki/Extension:Jmol">MediaWiki Extension
+Page</a> and the <a href="http://wiki.jmol.org/index.php/MediaWiki">JMol Wiki
+Page</a>.</p>
+<p><center></p>
+<p><jmol> <jmolApplet></p>
+<p><title></p>
+<p>Ethanol</p>
+<p></title></p>
+<p><color>gray</color>
+<uploadedFileContents>Uo2no3o.xyz</uploadedFileContents>
+<size>200</size> </jmolApplet> </jmol></p>
+<p></center></p>
+<p><center></p>
+<p><jmol> <jmolApplet></p>
+<p><title></p>
+<p>Ethanol</p>
+<p></title></p>
+<p><color>gray</color>
+<uploadedFileContents>Diamond.opt.cif</uploadedFileContents>
+</jmolApplet> </jmol></p>
+<p></center></p>
+<p><jmolFile>Uo2no3o.xyz</jmolFile></p>
+<p>Clicking the link above should pop up a Java Applet
+window!!!</p>
+<h2 id="generating-a-new-copy-of-the-documentation-to-work-on-for-next-development-release">Generating a new copy of the documentation to work on for next development release</h2>
+<p>The NWChem 6.0 documentation is in the main namespace, and should be
+left alone. The NWChem 6.1 documentation is in the namespace Release61.
+To make a duplicate of this documentation for Development or for a next
+release, the following approach works best:</p>
+<ul>
+<li>Go to Special Pages</li>
+<li>Go to All Pages and select the namespace you want the pages from</li>
+<li>Copy the list</li>
+<li>Go to Export pages</li>
+<li>Past the list, parse to one per line, add "namespace:" in front of
+    each page</li>
+<li>Export the page into an XML document</li>
+<li>Edit the XML document and replace the old namespace with the new one
+    you want to use. Example: replace "Release61:" with "Release 62:"
+    and save.</li>
+<li>Add the new namespace you want to use in the list of defined
+    namespaces with a unique numbering to LocalSettings.php . Also add
+    the new numbers of the namespace of the CollectionArticleNamespaces
+    list in LocalSettings.php</li>
+<li>Go to Import pages</li>
+<li>Read in the file</li>
+<li>Now you have a new set of pages with the new name space. beats
+    copying one page at a time.</li>
+</ul>
+<h2 id="updating-release-documentation-on-top">Updating release documentation on top</h2>
+<p>You need to update the page "MediaWiki:Sidebar".</p>
+<h2 id="making-a-pdf-of-the-nwchem-documentation">Making a PDF of the NWChem documentation</h2>
+<ul>
+<li>In LocalSettings.php, uncomment the Collections.php extensions
+    (don't leave it there, comment out after you're done so it's not
+    exposed to the users).</li>
+</ul>
+<!-- end list -->
+
+<ul>
+<li>In "Book Creator" add all individual pages in the documentation (in
+    order). Add chapter headings like the documentation. Export to PDF,
+    and you're done.</li>
+</ul>
+<h2 id="movies">Movies</h2>
+<p>The effort to add movies to the Wiki pages is under development.</p>
+<p><a href="Media:Eric.mpg.md">Media:Eric.mpg</a></p>
+<p><player>Eric.mpg</player></p>
+<p><img alt="The GIF format can be used to display animation, as in this image of
+Newton's Cradle." src="Newtons_cradle_animation_book_2.gif" /></p>
+<p><img alt="The GIF format can be used to display animation, as in this image of
+metadynamics." src="Meta-example.gif" /></p>
+<h2 id="counters">Counters</h2>
+<p>Below is a list of files and the number of times they have been
+downloaded. </p>
+<p>All Releases Downloads <img alt="All Releases Downloads" src="https://img.shields.io/github/downloads/nwchemgit/nwchem/total.svg" /></p>
+<p>Latest Release Downloads <img alt="Latest Release Downloads" src="https://img.shields.io/github/downloads/nwchemgit/nwchem/latest/total.svg" /></p>
+<p>Total Pre-Releases Downloads <img alt="Total Pre-Release Downloads" src="https://img.shields.io/github/downloads-pre/nwchemgit/nwchem/total.svg" /></p>
+<p>v6.8-beta.3 Downloads <img alt="Latest Release Downloads" src="https://img.shields.io/github/downloads/nwchemgit/nwchem/v6.8-beta.3/total.svg" /></p>
+<p>v6.8 Downloads <img alt="Latest Release Downloads" src="https://img.shields.io/github/downloads/nwchemgit/nwchem/v6.8/total.svg" /></p>
+<h2 id="references">References</h2>
+<p><references/></p>
+<ol>
+<li><refbase>13</refbase></li>
+<li><code>Pulay,`` ``P.`` ``(1980).`` ``"Convergence`` ``acceleration``
+    ``of`` ``iterative`` ``sequences.`` ``the`` ``case`` ``of`` ``scf``
+    ``iteration".`` ``Chemical`` ``Physics`` ``Letters`` ``73:``
+    ``393-398.``</code><doi:10.1016/0009-2614(80)80396-4><code>.`` ``ISSN``
+    ``0009-2614</code></li>
+<li><refbase><code>14</code></refbase></li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
