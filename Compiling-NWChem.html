@@ -381,14 +381,36 @@ options.</p>
 <td>MPI_INCLUDE</td>
 <td>Directory where the MPI include files reside</td>
 </tr>
+<tr>
+<td>#### Automatic detection of MPI variables - mpif90</td>
+<td></td>
+</tr>
+<tr>
+<td><strong><em>New in NWChem 6.6</em></strong>: If the</td>
+<td></td>
+</tr>
+<tr>
+<td>location of the mpif90 command is part of your PATH env. variable,</td>
+<td></td>
+</tr>
+<tr>
+<td>NWChem will figure out the values of LIBMPI, MPI_LIB and MPI_INCLUDE</td>
+<td></td>
+</tr>
+<tr>
+<td>(if they are not set). Therefore, we do <strong>NOT</strong> recommend to set LIBMPI,</td>
+<td></td>
+</tr>
+<tr>
+<td>MPI_LIB and MPI_INCLUDE and add the location of mpif90 to the PATH</td>
+<td></td>
+</tr>
+<tr>
+<td>variable, instead.</td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<p><strong><span style="color:#FF0000">New in NWChem 6.6</span></strong>: If the
-location of the mpif90 command is part of your PATH env. variable,
-NWChem will figure out the values of LIBMPI, MPI_LIB and MPI_INCLUDE
-(if they are not set). Therefore, we do <strong>NOT</strong> recommend to set LIBMPI,
-MPI_LIB and MPI_INCLUDE and add the location of mpif90 to the PATH
-variable, instead.</p>
 <p>The output of the command</p>
 <pre><code>mpif90 -show
 </code></pre>
