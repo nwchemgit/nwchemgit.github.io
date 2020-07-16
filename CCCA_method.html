@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Geometry - NWChem</title>
+  <title>Correlation consistent Composite Approach (ccCA) - NWChem</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Geometry";
-    var mkdocs_page_input_path = "Geometry.md";
+    var mkdocs_page_name = "Correlation consistent Composite Approach (ccCA)";
+    var mkdocs_page_input_path = "CCCA_method.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -112,10 +112,10 @@
     
       
     
-    <li>Geometry</li>
+    <li>Correlation consistent Composite Approach (ccCA)</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Geometry.md"
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/CCCA_method.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -126,115 +126,69 @@
           <div role="main">
             <div class="section">
               
-                <p>The GEOMETRY directive is a compound directive that allows the user to
-define the geometry to be used for a given calculation. The directive
-allows the user to specify the geometry with a relatively small amount
-of input, but there are a large number of optional keywords and
-additional subordinate directives that the user can specify, if needed.
-The directive therefore appears to be rather long and complicated when
-presented in its general form, as
-follows:</p>
-<pre><code> GEOMETRY [&lt;string name default geometry&gt;] \  
-          [units &lt;string units default angstroms&gt;] \  
-          [(angstrom_to_au || ang2au) \  
-                 &lt;real angstrom_to_au default 1.8897265&gt;] \  
-          [print [xyz] || noprint] \  
-          [center || nocenter] \  
-          [bqbq] \  
-          [autosym [real tol default 1d-2] || noautosym] \  
-          [autoz || noautoz] \  
-          [adjust] \  
-          [(nuc || nucl || nucleus) &lt;string nucmodel&gt;]  
-   [SYMMETRY [group] &lt;string group_name&gt; [print] \  
-          [tol &lt;real tol default 1d-2&gt;]]  
-   [ [LOAD] [format xyz||pdb]  [frame &lt;int frame&gt;] \  
-          [select [not] \  
-               [name &lt;string atomname&gt;] \  
-               [rname &lt;string residue-name&gt;]  
-               [id  &lt;int atom-id&gt;|&lt;int range atom-id1:atom-id2&gt; ... ]  
-               [resi &lt;int residue-id&gt;|&lt;int range residue-id1:residue-id2&gt; ... ]  
-         ]  
-   &lt;string filename&gt; ]  
-    
-   &lt;string tag&gt; &lt;real x y z&gt; [vx vy vz] [charge &lt;real charge&gt;] \  
-          [mass &lt;real mass&gt;] \  
-          [(nuc || nucl || nucleus) &lt;string nucmodel&gt;]  
-   ... ]  
-   [ZMATRIX || ZMT || ZMAT  
-        &lt;string tagn&gt; &lt;list_of_zmatrix_variables&gt;  
-        ...   
-        [VARIABLES  
-             &lt;string symbol&gt; &lt;real value&gt;  
-             ... ]  
-        [CONSTANTS  
-             &lt;string symbol&gt; &lt;real value&gt;  
-             ... ]  
-    (END || ZEND)]  
-    [ZCOORD  
-         CVR_SCALING &lt;real value&gt;  
-         BOND    &lt;integer i&gt; &lt;integer j&gt; \  
-                 [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
-         ANGLE   &lt;integer i&gt; &lt;integer j&gt; \  
-                     [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
-         TORSION &lt;integer i&gt; &lt;integer j&gt; &lt;integer k&gt; &lt;integer l&gt; \  
-                 [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
-     END]  
-           
-     [SYSTEM surface  &lt;molecule polymer surface crystal default molecule&gt;  
-          lat_a &lt;real lat_a&gt; lat_b &lt;real lat_b&gt; lat_c &lt;real lat_c&gt;  
-          alpha &lt;real alpha&gt; beta &lt;real beta&gt; gamma &lt;real gamma&gt;  
-     END]  
-  END
-</code></pre>
-
-<p>The three main parts of the GEOMETRY directive are:</p>
-<ul>
-<li>keywords on the first line of the directive (to specify such
-    optional input as the geometry name, input units, and print level
-    for the output)</li>
-<li>symmetry information</li>
-<li>Cartesian coordinates or Z-matrix input to specify the locations of
-    the atoms and centers</li>
-<li>lattice parameters (needed only for periodic systems)</li>
-</ul>
-<p>The following sections present the input for this compound directive in
-detail, describing the options available and the usages of the various
-keywords in each of the three main parts.</p>
-<ul>
-<li>
-<p><a href="Keywords-on-the-GEOMETRY-directive.html">Keywords on the GEOMETRY
-    directive</a></p>
-</li>
-<li>
-<p><a href="SYMMETRY----Symmetry-Group-Input.html">SYMMETRY -- Symmetry Group
-    Input</a></p>
-</li>
-<li>
-<p><a href="Names-of-3-dimensional-space-groups.html">Names of 3-dimensional space
-    groups</a></p>
-</li>
-<li>
-<p><a href="Cartesian-coordinate-input.html">Cartesian coordinate
-    input</a></p>
-</li>
-<li>
-<p><a href="ZMATRIX----Z-matrix-input.html">ZMATRIX -- Z-matrix
-    input</a></p>
-</li>
-<li>
-<p><a href="ZCOORD----Forcing-internal-coordinates.html">ZCOORD -- Forcing internal
-    coordinates</a></p>
-</li>
-<li>
-<p><a href="SYSTEM----Lattice-parameters-for-periodic-systems.html">SYSTEM -- Lattice parameters for periodic
-    systems</a></p>
-</li>
-<li>
-<p><a href="Geometry-load.html">LOAD -- Load geometry from 
-     XYZ file</a></p>
-</li>
-</ul>
-<!-- end list -->
+                <h1 id="correlation-consistent-composite-approach-ccca">Correlation consistent Composite Approach (ccCA)</h1>
+<p>The CCCA module calculates the total energy using the correlation
+consistent Composite Approach (ccCA). At present the ccCA module is
+designed for the study of main group species
+only.</p>
+<p><img alt="$E_{ccCA} = \Delta E_{MP2/CBS} + \Delta E_{CC} + \Delta E_{CV} + \Delta E_{SR} + \Delta E_{ZPE}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/33d001731fec2d367d816d40f9d4d5c1.svg?invert_in_darkmode&sanitize=true" align=middle width="435.461895pt" height="22.38192pt"/></p>
+<p>where EMP2/CBS is the complete basis set extrapolation of MP2 energies
+with the aug-cc-pVnZ (n=T,D,Q) series of basis sets, <img alt="$\Delta E_{CC}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/79cb5a98482f91ca45c232baf0f425c2.svg?invert_in_darkmode&sanitize=true" align=middle width="46.132515pt" height="22.38192pt"/>
+is the correlation correction,</p>
+<p><img alt="$\Delta E_{CC} = E_{CCSD(T)/cc-pVTZ}  -  E_{MP2/cc-pVTZ}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7cd8edeec69d3ef393984d8fdcf574d8.svg?invert_in_darkmode&sanitize=true" align=middle width="335.001645pt" height="22.38192pt"/></p>
+<p><img alt="$\Delta E_{CV}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0570832b09f85b50763a623dd4e06142.svg?invert_in_darkmode&sanitize=true" align=middle width="46.490235pt" height="22.38192pt"/> is the core-valence correction,</p>
+<p><img alt="$\Delta E_{CV} = E_{MP2(FC1)/aug-cc-pCVTZ}  -  E_{MP2/aug-cc-pVTZ}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4b107a49e88b226a19ca4d21d252e686.svg?invert_in_darkmode&sanitize=true" align=middle width="417.031395pt" height="22.38192pt"/></p>
+<p><img alt="$\Delta E_{SR}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1cd5c52716adb816ebcf09a0e34ed078.svg?invert_in_darkmode&sanitize=true" align=middle width="44.332365pt" height="22.38192pt"/> is the scalar-relativistic correction,</p>
+<p><img alt="$\Delta E_{SR} = E_{MP2/cc-pVTZ-DK} -  E_{MP2/cc-pVTZ}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/59c2e1bfd715f850fe20dd8d285fee91.svg?invert_in_darkmode&sanitize=true" align=middle width="336.805095pt" height="22.38192pt"/></p>
+<p>and <img alt="$\Delta E_{ZPE}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0072b1808e925a44693aafbef49b4135.svg?invert_in_darkmode&sanitize=true" align=middle width="55.81818pt" height="22.38192pt"/> is the zero-point energy correction or thermal
+correction. Geometry optimization and subsequent frequency analysis are
+performed with B3LYP/cc-pVTZ.</p>
+<p>Suggested reference: N.J. DeYonker, B. R. Wilson, A.W. Pierpont, T.R.
+Cundari, A.K. Wilson, Mol. Phys. 107, 1107 (2009). Earlier variants for
+ccCA algorithms can also be found in: N. J. DeYonker, T. R. Cundari, A.
+K. Wilson, J. Chem. Phys. 124, 114104 (2006).</p>
+<p>The ccCA module can be used to calculate the total single point energy
+for a fixed geometry and the zero-point energy correction is not
+available in this calculation. Alternatively the geometry optimization
+by B3LYP/cc-pVTZ is performed before the single point energy evaluation.
+For open shell molecules, the number of unpaired electrons must be given
+explicitly.</p>
+<p>CCCA</p>
+<p><code>[(ENERGY||OPTIMIZE)   default ENERGY]</code><br />
+<code>[(DFT||DIRECT)   default DFT]</code><br />
+<code>[(MP2||MBPT2)   default MP2]</code><br />
+<code>[(RHF||ROHF||UHF)   default RHF]</code><br />
+<code>[(CCSD(T)||TCE)   default CCSD(T)]</code><br />
+<code>[NOPEN   &lt;integer number of unpaired electrons   default   0 &gt;]</code><br />
+<code>[(THERM||NOTHERM)   default  THERM]</code><br />
+<code>[(PRINT||NOPRINT) default NOPRINT]</code><br />
+<code>[BASIS</code><basis name for orbital projection guess><code>]</code><br />
+<code>[MOVEC</code><file name for orbital projection guess><code>]</code><br />
+<code>END</code></p>
+<p>One example of input file for single point energy evaluation is given
+here:</p>
+<p>start h2o_ccca</p>
+<p>title "H2O, ccCA test"</p>
+<p>geometry units au</p>
+<p><code>H       0.0000000000   1.4140780900  -1.1031626600</code><br />
+<code>H       0.0000000000  -1.4140780900  -1.1031626600</code><br />
+<code>O       0.0000000000   0.0000000000  -0.0080100000</code></p>
+<p>end</p>
+<p>task ccca</p>
+<p>An input file for the ground state of O2 with geometry optimization is
+given below:</p>
+<p>start o2_ccca</p>
+<p>title "O2, ccCA test"</p>
+<p>geometry units au</p>
+<p><code>O       0.0000000000   0.0000000000  -2.0000</code><br />
+<code>O       0.0000000000   0.0000000000   0.0000</code></p>
+<p>end</p>
+<p>ccca</p>
+<p><code>optimize</code><br />
+<code>dft</code><br />
+<code>nopen 2</code></p>
+<p>end</p>
+<p>task ccca</p>
               
             </div>
           </div>
