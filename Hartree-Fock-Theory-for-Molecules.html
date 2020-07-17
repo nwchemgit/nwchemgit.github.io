@@ -171,7 +171,7 @@ are as follows:</p>
  UHF
 </code></pre>
 
-<p>The optional keywords SINGLET, DOUBLET, ..., OCTET and NOPEN allow the
+<p>The optional keywords SINGLET, DOUBLET, &hellip;, OCTET and NOPEN allow the
 user to specify the number of singly occupied orbitals for a particular
 calculation. SINGLET is the default, and specifies a closed shell;
 DOUBLET specifies one singly occupied orbital; TRIPLET specifies two
@@ -208,7 +208,7 @@ defeating the defaults by specifying the keywords
 may be necessary to specify these in order to modify the behavior of a
 previous calculation (see <a href="NWChem-Architecture.html">NWChem
 Architecture</a> for restart behavior).</p>
-<h2 id="sym-use-of-symmetry">SYM -- use of symmetry</h2>
+<h2 id="sym-use-of-symmetry">SYM &ndash; use of symmetry</h2>
 <pre><code>  SYM &lt;string (ON||OFF) default ON&gt;
 </code></pre>
 
@@ -233,11 +233,11 @@ symmetry contaminated for some problems. This is especially likely if
 the calculation is started using orbitals from a distorted geometry.</p>
 <p>The underlying assumption in the use of symmetry in Fock matrix
 construction is that the density is totally symmetric. If the orbitals
-are symmetry contaminated, this assumption may not be valid -- which
+are symmetry contaminated, this assumption may not be valid &ndash; which
 could result in incorrect energies and poor convergence of the
 calculation. It is thus advisable when specifying ADAPT OFF to also
 specify SYM OFF (<a href="#sym----use-of-symmetry">Use of Symmetry</a>).</p>
-<h2 id="tol2e-integral-screening-threshold">TOL2E -- integral screening threshold</h2>
+<h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold</h2>
 <pre><code> TOL2E &lt;real tol2e default min(10e-7 , 0.01*thresh)&gt;
 </code></pre>
 
@@ -263,7 +263,7 @@ is, for example:</p>
 be necessary to set this parameter. A value of 10<sup>-12</sup> is
 sufficient for nearly all such
 purposes.</p>
-<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS -- input/output of MO vectors</h2>
+<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS &ndash; input/output of MO vectors</h2>
 <pre><code> VECTORS [[input] (&lt;string input_movecs default atomic&gt;) || \  
                   (project &lt;string basisname&gt; &lt;string filename&gt;) || \  
                   (fragment &lt;string file1&gt; [&lt;string file2&gt; ...])] \ 
@@ -284,26 +284,26 @@ calculation, the default is to use the previous MO vectors.</p>
 <p>The optional keyword INPUT allows the user to specify the source of the
 input molecular orbital vectors as any of the following:</p>
 <ul>
-<li>ATOMIC -- eigenvectors of a Fock-like matrix formed from a
+<li>ATOMIC &ndash; eigenvectors of a Fock-like matrix formed from a
     superposition of the atomic densities (the default guess). See
     <a href="#atomic-guess-orbitals-with-charged-atoms">Atomic
     guess</a> and
     <a href="#accuracy-of-initial-guess">Accuracy of initial guess</a>.</li>
-<li>HCORE -- eigenvectors of the bare-nucleus Hamiltonian or the
+<li>HCORE &ndash; eigenvectors of the bare-nucleus Hamiltonian or the
     one-electron Hamiltonian.</li>
-<li>filename -- the name of a file containing the MO vectors from a
+<li>filename &ndash; the name of a file containing the MO vectors from a
     previous calculation. Note that unless the path is fully qualified,
-    or begins with a dot ("."), then it is assumed to reside in the
+    or begins with a dot (&ldquo;.&rdquo;), then it is assumed to reside in the
     directory for permanent files (see <a href="Top-level.html#Scratch_Dir">File
     directories</a>).</li>
-<li>PROJECT basisname filename -- projects the existing MO vectors in
+<li>PROJECT basisname filename &ndash; projects the existing MO vectors in
     the file filename from the smaller basis with name basisname into
     the current basis. The definition of the basis basisname must be
     available in the current database, and the basis must be smaller
     than the current basis. In addition, the geometry used for the
     previous calculations must have the atoms in the same order and in
     the same orientation as the current geometry.</li>
-<li>FRAGMENT file1 ... -- assembles starting MO vectors from previously
+<li>FRAGMENT file1 &hellip; &ndash; assembles starting MO vectors from previously
     performed calculations on fragments of the system and is described
     in more detail in <a href="#superposition_of-fragment-molecular-orbitals">Superposition of fragment molecular
     orbitals</a>.
@@ -313,7 +313,7 @@ input molecular orbital vectors as any of the following:</p>
     orbitals</a>),
     this is the most powerful initial guess option within the code. It
     is particularly indispensable for open shell metallic systems.</li>
-<li>ROTATE input_geometry input_movecs -- rotates MO vectors generated
+<li>ROTATE input_geometry input_movecs &ndash; rotates MO vectors generated
     at a previous geometry to the current active geometry.</li>
 </ul>
 <p>The molecular orbitals are saved every iteration if more than 600
@@ -331,8 +331,8 @@ follows:</p>
 <li>a default file name is generated in the directory for permanent
     files (<a href="Permanent_Dir.html">File
     directories</a>)
-    by prepending ".movecs" with the file prefix, i.e.,
-    "<file_prefix>.movecs".</li>
+    by prepending &ldquo;.movecs&rdquo; with the file prefix, i.e.,
+    &ldquo;<file_prefix>.movecs&rdquo;.</li>
 </ul>
 <p>The name of this file is stored in the database so that a subsequent SCF
 calculation will automatically restart from these MO vectors.</p>
@@ -350,15 +350,15 @@ file h2o.movecs.</p>
 </code></pre>
 
 <p>This directive will result in the initial vectors being read from the
-file "initial.movecs". The results will be written to the file
-final.movecs. The contents of "initial.movecs" will not be changed.</p>
+file &ldquo;initial.movecs&rdquo;. The results will be written to the file
+final.movecs. The contents of &ldquo;initial.movecs&rdquo; will not be changed.</p>
 <p>Example 3:</p>
 <pre><code> vectors input project &quot;small basis&quot; small.movecs
 </code></pre>
 
 <p>This directive will cause the calculation to start from vectors in the
-file "small.movecs" which are in a basis named "small basis". The output
-vectors will be written to the default file "\&lt;file_prefix.movecs>".</p>
+file &ldquo;small.movecs&rdquo; which are in a basis named &ldquo;small basis&rdquo;. The output
+vectors will be written to the default file &ldquo;\&lt;file_prefix.movecs>&ldquo;.</p>
 <h3 id="vectors-swap-keyword">VECTORS SWAP keyword</h3>
 <p>Once starting vectors have been obtained using any of the possible
 options, they may be reordered through use of the SWAP keyword. This
@@ -370,10 +370,10 @@ alpha and beta orbitals, as necessary.</p>
 </code></pre>
 
 <p>This directive will cause the initial orbitals to be read from the file
-"try1.movecs". The vectors for the orbitals within the pairs 173-175
+&ldquo;try1.movecs&rdquo;. The vectors for the orbitals within the pairs 173-175
 will be swapped with those within 174-176, so the resulting order is
 175, 176, 173, 174. The final orbitals obtained in the calculation will
-be written to the file "try2.movecs".</p>
+be written to the file &ldquo;try2.movecs&rdquo;.</p>
 <p>The swapping of orbitals occurs as a sequential process in the order
 (left to right) input by the user. Thus, regarding each pair as an
 elementary transposition it is possible to construct arbitrary
@@ -401,7 +401,7 @@ previous geometry, despite flipping of the orbital energies. For such a
 case, the LOCK directive can be used to prevent the SCF calculation from
 changing the ordering, even if the orbital energies change.</p>
 <h3 id="vectors-reorder-keyword">VECTORS REORDER keyword</h3>
-<p>The mapping of the MO's to the nuclei can be changed using the REORDER
+<p>The mapping of the MO&rsquo;s to the nuclei can be changed using the REORDER
 keyword. Once starting vectors have been obtained using any of the
 possible options, the REORDER keyword moves the MO coefficients between
 atoms listed in the integer list. This keyword is particularly useful
@@ -414,9 +414,9 @@ orbitals.</p>
 </code></pre>
 
 <p>This directive will cause the initial orbitals to be read from the file
-"try1.movecs". The MO coefficients for the basis functions on atom 2
+&ldquo;try1.movecs&rdquo;. The MO coefficients for the basis functions on atom 2
 will be swapped with those on atom 1. The final orbitals obtained in the
-calculation will be written to the file "try2.movecs".</p>
+calculation will be written to the file &ldquo;try2.movecs&rdquo;.</p>
 <p>The following example shows how the ROTATE keyword can be used to rotate
 MO vectors calculated at geometry geom1 to geometry geom2, which has a
 different rotational orientation:</p>
@@ -542,7 +542,7 @@ use of the fragment guess, and redirecting the output MOs.</p>
     for each fragment.</li>
 <li>Linear dependencies which were present in a fragment calculation may
     be magnified in the full calculation. When this occurs, some of the
-    fragment's highest virtual orbitals will not be copied to the full
+    fragment&rsquo;s highest virtual orbitals will not be copied to the full
     system, and a warning will be printed.</li>
 </ol>
 <p>A more involved example is now presented. We wish to model the sextet
@@ -700,7 +700,7 @@ task scf
 
 <h3 id="example-of-projecting-smaller-basis-into-larger-basis">Example of projecting smaller basis into larger basis</h3>
 <p>Key ingredient needed: definition of both the smaller and the larger
-basis set, plus mention of the small basis set in the "<code>input project</code>"
+basis set, plus mention of the small basis set in the &ldquo;<code>input project</code>&rdquo;
 line.</p>
 <pre><code>    start he
 
@@ -779,7 +779,7 @@ following directive which should be inserted in the top-level of input
 <pre><code> set tolguess 1e-7
 </code></pre>
 
-<h2 id="thresh-convergence-threshold">THRESH -- convergence threshold</h2>
+<h2 id="thresh-convergence-threshold">THRESH &ndash; convergence threshold</h2>
 <pre><code> THRESH  &lt;real thresh default 1.0e-4&gt;
 </code></pre>
 
@@ -805,7 +805,7 @@ Hessian, and for post-Hartree-Fock calculations. A threshold of
 <img alt="$10^{-8}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3638e50463da9c60c05d8519c65d3982.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/> might be necessary for very high accuracy or very weak
 interactions. A threshold of <img alt="$10^{-10}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7e66fb4017db9bbbc21f10b17fe18e42.svg?invert_in_darkmode&sanitize=true" align=middle width="39.668805pt" height="26.70657pt"/> should be regarded as the best
 that can be attained in most circumstances.</p>
-<h2 id="maxiter-iteration-limit">MAXITER -- iteration limit</h2>
+<h2 id="maxiter-iteration-limit">MAXITER &ndash; iteration limit</h2>
 <pre><code> MAXITER &lt;integer maxiter default 8&gt;
 </code></pre>
 
@@ -827,7 +827,7 @@ converge due to the presence of many states with similar energies.</p>
 <pre><code> maxiter 50
 </code></pre>
 
-<h2 id="profile-performance-profile">PROFILE -- performance profile</h2>
+<h2 id="profile-performance-profile">PROFILE &ndash; performance profile</h2>
 <p>This directive allows the user to obtain timing and parallel execution
 information about the SCF module. It is specified by the simple keyword</p>
 <pre><code> PROFILE
@@ -837,7 +837,7 @@ information about the SCF module. It is specified by the simple keyword</p>
 performance of an SCF calculation. However, it can introduce a
 significant overhead on machines that have expensive timing routines,
 such as the SUN.</p>
-<h2 id="diis-diis-convergence">DIIS -- DIIS convergence</h2>
+<h2 id="diis-diis-convergence">DIIS &ndash; DIIS convergence</h2>
 <p>This directive allows the user to specify DIIS convergence rather than
 second-order convergence for the SCF calculation. The form of the
 directive is as follows:</p>
@@ -846,7 +846,7 @@ directive is as follows:</p>
 
 <p>The implementation of this option is currently fairly rudimentary. It
 does not have level-shifting and damping, and does not support open
-shells or UHF. It is provided on an "as is" basis, and should be used
+shells or UHF. It is provided on an &ldquo;as is&rdquo; basis, and should be used
 with caution.</p>
 <p>When the DIIS directive is specified in the input, the user has the
 additional option of specifying the size of the subspace for the DIIS
@@ -858,7 +858,7 @@ of the form:</p>
 <p>The default of 5 should be adequate for most applications, but may be
 increased if convergence is poor. On large systems, it may be necessary
 to specify a lower value for diisbas, to conserve memory.</p>
-<h2 id="direct-and-semidirect-recomputation-of-integrals">DIRECT and SEMIDIRECT -- recomputation of integrals</h2>
+<h2 id="direct-and-semidirect-recomputation-of-integrals">DIRECT and SEMIDIRECT &ndash; recomputation of integrals</h2>
 <p>In the context of SCF calculations direct means that all integrals are
 recomputed as required and none are stored. The other extreme are disk-
 or memory-resident (sometimes termed conventional) calculations in which
@@ -1053,7 +1053,7 @@ cause the iterative linear equation solver to converge slowly, resulting
 in an excessive number of micro-iterations. This makes the SCF expensive
 in terms of computation time, and it is possible to exceed the maximum
 number of iterations without achieving the accuracy required for
-quadratic convergence -- which causes more macro-iterations to be
+quadratic convergence &ndash; which causes more macro-iterations to be
 performed.</p>
 <p>Two main options are available when a problem will not converge:
 Newton-Raphson can be disabled temporarily or permanently (see
@@ -1081,7 +1081,7 @@ solution will do more macro-iterations, but each one should take less
 time than it would with the unshifted Hessian.</p>
 <p>The following sections describe the directives needed to disable the
 Newton-Raphson iteration and specify level-shifting.</p>
-<h2 id="nr-controlling-the-newton-raphson">NR -- controlling the Newton-Raphson</h2>
+<h2 id="nr-controlling-the-newton-raphson">NR &ndash; controlling the Newton-Raphson</h2>
 <pre><code>   NR &lt;real nr_switch default 0.1&gt;
 </code></pre>
 
@@ -1095,7 +1095,7 @@ to zero. The directive to accomplish this is as follows:</p>
 <pre><code> nr 0
 </code></pre>
 
-<h2 id="level-level-shifting-the-orbital-hessian">LEVEL -- level-shifting the orbital Hessian</h2>
+<h2 id="level-level-shifting-the-orbital-hessian">LEVEL &ndash; level-shifting the orbital Hessian</h2>
 <p>This directive allows the user to specify level-shifting to obtain a
 positive-definite preconditioning matrix for the SCF solution procedure.
 Separate level shifts can be set for the first-order convergent
@@ -1197,107 +1197,107 @@ one.</p>
 </thead>
 <tbody>
 <tr>
-<td>"atomic guess density"</td>
+<td>&ldquo;atomic guess density&rdquo;</td>
 <td>debug</td>
 <td>guess density matrix</td>
 </tr>
 <tr>
-<td>"atomic scf"</td>
+<td>&ldquo;atomic scf&rdquo;</td>
 <td>debug</td>
 <td>details of atomic SCF</td>
 </tr>
 <tr>
-<td>"mo guess"</td>
+<td>&ldquo;mo guess&rdquo;</td>
 <td>default</td>
 <td>brief info from mo guess</td>
 </tr>
 <tr>
-<td>"information"</td>
+<td>&ldquo;information&rdquo;</td>
 <td>low</td>
 <td>results</td>
 </tr>
 <tr>
-<td>"initial vectors"</td>
+<td>&ldquo;initial vectors&rdquo;</td>
 <td>debug</td>
 <td></td>
 </tr>
 <tr>
-<td>"intermediate vectors"</td>
+<td>&ldquo;intermediate vectors&rdquo;</td>
 <td>debug</td>
 <td></td>
 </tr>
 <tr>
-<td>"final vectors"</td>
+<td>&ldquo;final vectors&rdquo;</td>
 <td>debug</td>
 <td></td>
 </tr>
 <tr>
-<td>"final vectors analysis"</td>
+<td>&ldquo;final vectors analysis&rdquo;</td>
 <td>default</td>
 <td></td>
 </tr>
 <tr>
-<td>"initial vectors analysis"</td>
+<td>&ldquo;initial vectors analysis&rdquo;</td>
 <td>never</td>
 <td></td>
 </tr>
 <tr>
-<td>"intermediate evals"</td>
+<td>&ldquo;intermediate evals&rdquo;</td>
 <td>debug</td>
 <td></td>
 </tr>
 <tr>
-<td>"final evals"</td>
+<td>&ldquo;final evals&rdquo;</td>
 <td>default</td>
 <td></td>
 </tr>
 <tr>
-<td>"schwarz"</td>
+<td>&ldquo;schwarz&rdquo;</td>
 <td>high</td>
 <td>integral screening info stats at completion</td>
 </tr>
 <tr>
-<td>"screening statistics"</td>
+<td>&ldquo;screening statistics&rdquo;</td>
 <td>debug</td>
 <td>display stats after every Fock build</td>
 </tr>
 <tr>
-<td>"geometry"</td>
+<td>&ldquo;geometry&rdquo;</td>
 <td>high</td>
 <td></td>
 </tr>
 <tr>
-<td>"symmetry"</td>
+<td>&ldquo;symmetry&rdquo;</td>
 <td>debug</td>
 <td>detailed symmetry info</td>
 </tr>
 <tr>
-<td>"basis"</td>
+<td>&ldquo;basis&rdquo;</td>
 <td>high</td>
 <td></td>
 </tr>
 <tr>
-<td>"geombas"</td>
+<td>&ldquo;geombas&rdquo;</td>
 <td>debug</td>
 <td>detailed basis map info</td>
 </tr>
 <tr>
-<td>"vectors i/o"</td>
+<td>&ldquo;vectors i/o&rdquo;</td>
 <td>default</td>
 <td>report vectors I/O</td>
 </tr>
 <tr>
-<td>"parameters"</td>
+<td>&ldquo;parameters&rdquo;</td>
 <td>default</td>
 <td>convergence parameters</td>
 </tr>
 <tr>
-<td>"convergence"</td>
+<td>&ldquo;convergence&rdquo;</td>
 <td>default</td>
 <td>info each iteration</td>
 </tr>
 <tr>
-<td>"mulliken ao"</td>
+<td>&ldquo;mulliken ao&rdquo;</td>
 <td>never</td>
 <td>Mulliken population of basis functions</td>
 </tr>
@@ -1327,27 +1327,27 @@ explicitly invoked via print control. These are as follows:</p>
 </thead>
 <tbody>
 <tr>
-<td>"information"</td>
+<td>&ldquo;information&rdquo;</td>
 <td>low</td>
 <td>calculation info</td>
 </tr>
 <tr>
-<td>"geometry"</td>
+<td>&ldquo;geometry&rdquo;</td>
 <td>high</td>
 <td>geometry information</td>
 </tr>
 <tr>
-<td>"basis"</td>
+<td>&ldquo;basis&rdquo;</td>
 <td>high</td>
 <td>basis set(s) used</td>
 </tr>
 <tr>
-<td>"forces"</td>
+<td>&ldquo;forces&rdquo;</td>
 <td>low</td>
 <td>details of force components</td>
 </tr>
 <tr>
-<td>"timing"</td>
+<td>&ldquo;timing&rdquo;</td>
 <td>default</td>
 <td>timing for each phase</td>
 </tr>
@@ -1357,14 +1357,14 @@ explicitly invoked via print control. These are as follows:</p>
 <h2 id="references">References</h2>
 <p><references/></p>
 <ol>
-<li>Wong, A. T. and Harrison, R. J. (1995) "Approaches to large-scale
-    parallel self-consistent field calculation", <em>J. Comp. Chem.</em>
+<li>Wong, A. T. and Harrison, R. J. (1995) &ldquo;Approaches to large-scale
+    parallel self-consistent field calculation&rdquo;, <em>J. Comp. Chem.</em>
     <strong>16</strong>, 1291-1300, doi:
     <a href="http://dx.doi.org/10.1002/jcc.540161010">10.1002/jcc.540161010</a></li>
 <li>Foster, I. T.; Tilson, J. L.; Wagner, A. F.; Shepard, R. L.;
     Harrison, R. J.; Kendall, R. A. and Littlefield, R. J. (1996)
-    "Toward high-performance computational chemistry: I. Scalable Fock
-    matrix construction algorithms", <em>J. Comp. Chem.</em> <strong>17</strong>, 109-123,
+    &ldquo;Toward high-performance computational chemistry: I. Scalable Fock
+    matrix construction algorithms&rdquo;, <em>J. Comp. Chem.</em> <strong>17</strong>, 109-123,
     doi:[10.1002/(SICI)1096-987X(19960115)17:1%3C109::AID-JCC9%3E3.0.CO;2-V]
 (https://doi.org/10.1002/(SICI)1096-987X(19960115)17:1%3C109::AID-JCC9%3E3.0.CO;2-V)</li>
 </ol>

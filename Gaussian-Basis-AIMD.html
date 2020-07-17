@@ -144,8 +144,8 @@ be read from that file and the trajectory will resume from that point.</p>
 <p>For computational details and a case study using the module, please
 refer to the following paper: S. A. Fischer, T. W. Ueltschi, P. Z.
 El-Khoury, A. L. Mifflin, W. P. Hess, H.F. Wang, C. J. Cramer, N. Govind
-"Infrared and Raman Spectroscopy from Ab Initio Molecular Dynamics and
-Static Normal Mode Analysis: The CH Region of DMSO as a Case Study" J.
+&ldquo;Infrared and Raman Spectroscopy from Ab Initio Molecular Dynamics and
+Static Normal Mode Analysis: The CH Region of DMSO as a Case Study&rdquo; J.
 Phys. Chem. B, 120 (8), pp 1429–1436 (2016), <a href="https://dx.doi.org/10.1021/acs.jpcb.5b03323">DOI:10.1021/acs.jpcb.5b03323</a> (2015) Publication Date (Web): July 29, 2015</p>
 <pre><code>QMD
   [dt_nucl &lt;double default 10.0&gt;]  
@@ -167,18 +167,18 @@ END
 
 <p>where \&lt;level of theory> is any Gaussian basis set method in NWChem</p>
 <h2 id="qmd-keywords">QMD Keywords</h2>
-<h3 id="dt_nucl-nuclear-time-step">dt_nucl -- Nuclear time step</h3>
+<h3 id="dt_nucl-nuclear-time-step">dt_nucl &ndash; Nuclear time step</h3>
 <p>This specifies the nuclear time step in atomic units (1 a.u. = 0.02419
 fs). Default 10.0 a.u.</p>
-<h3 id="nstep_nucl-simulation-steps">nstep_nucl -- Simulation steps</h3>
+<h3 id="nstep_nucl-simulation-steps">nstep_nucl &ndash; Simulation steps</h3>
 <p>This specifies the number of steps to take in the nuclear dynamics.
 Default 1000</p>
-<h3 id="targ_temp-temperature-of-the-system">targ_temp -- Temperature of the system</h3>
+<h3 id="targ_temp-temperature-of-the-system">targ_temp &ndash; Temperature of the system</h3>
 <p>This specifies the temperature to use with the thermostat. Also it is
 used in generating initial velocities from the Maxwell-Boltzmann
 distribution. Default 298.15
 K</p>
-<h3 id="thermostat-thermostat-for-controling-temperature-of-the-simulation">thermostat -- Thermostat for controling temperature of the simulation</h3>
+<h3 id="thermostat-thermostat-for-controling-temperature-of-the-simulation">thermostat &ndash; Thermostat for controling temperature of the simulation</h3>
 <p>This specifies the thermostat to use for regulating the temperature of
 the nuclei. Possible options are:</p>
 <ul>
@@ -203,27 +203,27 @@ the nuclei. Possible options are:</p>
 <li><strong>rescale</strong></li>
 </ul>
 <p>Velocity rescaling, i.e. isokinetic ensemble  </p>
-<h3 id="rand_seed-seed-for-the-random-number-generator">rand_seed -- Seed for the random number generator</h3>
+<h3 id="rand_seed-seed-for-the-random-number-generator">rand_seed &ndash; Seed for the random number generator</h3>
 <p>This specifies the seed for initializing the random number generator. If
 not given, a unique random seed will be generated. Even without a
 thermostat, this will influence the initial
 velocities.</p>
-<h3 id="com_step-how-often-center-of-mass-translations-and-rotations-are-removed">com_step -- How often center-of-mass translations and rotations are removed</h3>
+<h3 id="com_step-how-often-center-of-mass-translations-and-rotations-are-removed">com_step &ndash; How often center-of-mass translations and rotations are removed</h3>
 <p>This specifies that center-of-mass translations and rotations will be
 removed every com_step steps. Default 10 COM translations and rotations
 are removed on startup (either randomized initial velocities or those
 read from the restart file).</p>
-<h3 id="print_xyz-how-often-to-print-trajectory-information-to-xyz-file">print_xyz -- How often to print trajectory information to xyz file</h3>
+<h3 id="print_xyz-how-often-to-print-trajectory-information-to-xyz-file">print_xyz &ndash; How often to print trajectory information to xyz file</h3>
 <p>This specifies that the trajectory information (coordinates, velocities,
 total energy, step number, dipole (if available)) to the xyz file. The
 units for the coordinates and velocities in the xyz file are Angstrom
 and Angstrom/fs, respectively.</p>
-<h3 id="linear-flag-for-linear-molecules">linear -- Flag for linear molecules</h3>
+<h3 id="linear-flag-for-linear-molecules">linear &ndash; Flag for linear molecules</h3>
 <p>If present, the code assumes the molecule is linear.</p>
-<h3 id="property-how-often-to-calculate-molecular-properties-as-part-of-the-md-simulation">property -- How often to calculate molecular properties as part of the MD simulation</h3>
+<h3 id="property-how-often-to-calculate-molecular-properties-as-part-of-the-md-simulation">property &ndash; How often to calculate molecular properties as part of the MD simulation</h3>
 <p>If present, the code will look for the property block and calculate the requested properties.<br />
 For example, property 5 will calculate properties on the current geometry every 5 steps.  </p>
-<h3 id="tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation">tddft -- How often to peform TDDFT calculation as part of the MD simulation</h3>
+<h3 id="tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation">tddft &ndash; How often to peform TDDFT calculation as part of the MD simulation</h3>
 <p>If present, the code will look for the tddft block and calculate the absorption spectrum.<br />
 For example, tddft 5 will perform tddft calculations on the current geometry every 5 steps.    </p>
 <h2 id="sample-input">Sample input</h2>

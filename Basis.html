@@ -162,21 +162,21 @@ explicitly in the input, to define a particular basis set.</p>
 <li>
 <p>name :<br />
     By default, the basis set is stored in the database with the name
-    "ao basis". Another name may be specified in the BASIS directive,
+    &ldquo;ao basis&rdquo;. Another name may be specified in the BASIS directive,
     thus, multiple basis sets may be stored simultaneously in the
     database. Also, the
     <a href="Density-Functional-Theory-for-Molecules.html">DFT</a>
     and <a href="MP2.html">RI-MP2</a> modules and the
     <a href="Relativistic-All-electron-Approximations.html#dyalls-modified-dirac-hamitonian-approximation">Dyall-modified-Dirac</a>
     relativistic method require multiple basis sets with specific names.
-    The user can associate the "ao basis" with another named basis using
+    The user can associate the &ldquo;ao basis&rdquo; with another named basis using
     the SET directive (see <a href="Top-level.html#SET">SET</a>).</p>
 </li>
 <li>
 <p><a href="#-spherical-or-cartesian">SPHERICAL or CARTESIAN</a> <br />
     The keywords spherical and cartesian offer the option of using
-    either spherical-harmonic (5 d, 7 f, 9 g, ...) or Cartesian (6 d, 10
-    f, 15 g, ...) angular functions. The default is Cartesian. Note that
+    either spherical-harmonic (5 d, 7 f, 9 g, &hellip;) or Cartesian (6 d, 10
+    f, 15 g, &hellip;) angular functions. The default is Cartesian. Note that
     the correlation-consistent basis sets were designed using spherical
     harmonics and to use these, the spherical keyword should be present
     in the BASIS directive. The use of spherical functions also helps
@@ -311,7 +311,7 @@ explicitly in the input, to define a particular basis set.</p>
     proper association between the relativistic shells in the ao basis
     and the shells in the large and/or small component basis. This is
     only necessary for basis sets which are to be used as the ao basis.
-    The user is referred to the section on <a href="Relativistic-All-electron-Approximations.html#dyalls-modified-dirac-hamitonian-approximation">Dyall's modified
+    The user is referred to the section on <a href="Relativistic-All-electron-Approximations.html#dyalls-modified-dirac-hamitonian-approximation">Dyall&rsquo;s modified
     Dirac-Hamiltonian
     approximation</a>
     for more details.</li>
@@ -320,23 +320,23 @@ explicitly in the input, to define a particular basis set.</p>
 <a href="Geometry.html">geometry</a> that has either been input by
 the user or is available elsewhere. Each atom or center with the same
 tag will have the same basis set. All atoms must have basis functions
-assigned to them -- only dummy centers (X or Bq) may have no basis
+assigned to them &ndash; only dummy centers (X or Bq) may have no basis
 functions. To facilitate the specification of the geometry and the basis
 set for any chemical system, the matching process of a basis set tag to
 a geometry tag first looks for an exact match. If no match is found,
 NWChem will attempt to match, ignoring case, the name or symbol of the
-element. E.g., all hydrogen atoms in a system could be labeled "H1",
-"H2", ..., in the geometry but only one basis set specification for "H"
-or "hydrogen" is necessary. If desired, a special basis may be added to
-one or more centers (e.g., "H1") by providing a basis for that tag. If
+element. E.g., all hydrogen atoms in a system could be labeled &ldquo;H1&rdquo;,
+&ldquo;H2&rdquo;, &hellip;, in the geometry but only one basis set specification for &ldquo;H&rdquo;
+or &ldquo;hydrogen&rdquo; is necessary. If desired, a special basis may be added to
+one or more centers (e.g., &ldquo;H1&rdquo;) by providing a basis for that tag. If
 the matching mechanism fails then NWChem stops with an appropriate error
 message.</p>
-<p>A special set of tags, "*" and tags ending with a "*" (E.g. "H*") can
+<p>A special set of tags, &ldquo;*&rdquo; and tags ending with a &ldquo;*&rdquo; (E.g. &ldquo;H*&ldquo;) can
 be used in combination with the keyword
 <a href="#basis-set-library">library</a>. These tags facilitate the
 definition of a certain type of basis set of all atoms, or a group of
 atoms, in a geometry using only a single or very few basis set entries.
-The "*" tag will not place basis sets on dummy atoms, Bq* can be used
+The &ldquo;*&rdquo; tag will not place basis sets on dummy atoms, Bq* can be used
 for that if necessary.</p>
 <p>Examined next is how to reference standard basis sets in the basis set
 library, and finally, how to define a basis set using exponents and
@@ -382,7 +382,7 @@ accessed for the basis functions. For example,</p>
 the directory /usr/d3g681/nwchem/libraries/ for atom si, rather than
 look for them in the default libraries. When a directory is defined the
 code will search for the basis set in a file with the name 6-31g.</p>
-<p>The "*" tag can be used to efficiently define basis set input
+<p>The &ldquo;*&rdquo; tag can be used to efficiently define basis set input
 directives for large numbers of atoms. An example is:</p>
 <pre><code> basis  
    *  library 3-21g 
@@ -401,14 +401,14 @@ directive can be used:</p>
 <p>This directive tells the code to assign the basis sets 3-21g to all the
 atoms in the geometry, except the hydrogen atoms. Remember that the user
 will have to explicitly define the hydrogen basis set in this
-directive! One may also define tags that end with a "*":</p>
+directive! One may also define tags that end with a &ldquo;*&ldquo;:</p>
 <pre><code> basis  
    oxy*  library 3-21g   
  end
 </code></pre>
 
 <p>This directive tells the code to assign the basis sets 3-21g to all atom
-tags in the geometry that start with "oxy".</p>
+tags in the geometry that start with &ldquo;oxy&rdquo;.</p>
 <p>If standard basis sets are to be placed upon a dummy center, the
 variable <tag_in_lib> must also be entered on this line, to identify the
 correct atom type to use from the basis function library (see the ghost
@@ -437,7 +437,7 @@ contracted for relativistic effects and are included in the standard
 library.</p>
 <p>There are also contractions in the standard library for both a point
 nucleus and a finite nucleus of Gaussian shape. These are usually
-distinguished by the suffix _pt and _fi. It is the user's
+distinguished by the suffix _pt and _fi. It is the user&rsquo;s
 responsibility to ensure that the contraction matches the nuclear type
 specified in the geometry object. The specification of a finite nucleus
 basis set does NOT automatically set the nuclear type for that atom to
@@ -445,7 +445,7 @@ be finite. See <a href="Geometry.html">Geometries</a> for
 information.</p>
 <h2 id="how-to-use-basis-files-from-httpswwwbasissetexchangeorg-new-in-2019">How to use basis files from https://www.basissetexchange.org (NEW in 2019)</h2>
 <p>In order to ensure compatibility with the existing basis libraries available in NWChem, we suggest the user  to 
-select the "Advanced Options" menu and tick the boxes "Optimize General Contractions" and "Uncontract General",
+select the &ldquo;Advanced Options&rdquo; menu and tick the boxes &ldquo;Optimize General Contractions&rdquo; and &ldquo;Uncontract General&rdquo;,
 as in the image below, when downloading basis files from https://www.basissetexchange.org
 <img alt="How to download" src="BSE_NWChem_selection.png" /></p>
 <p>As an alternative,  basis set files downloaded from the basissetexchange.org website are available in
@@ -466,7 +466,7 @@ associated with a center using an input line of the following form:</p>
 
 <p>The variable <shell_type> identifies the angular momentum of the shell,
 <em>s</em>, <em>p</em>, <em>d</em>, .... NWChem is configured to handle up to h shells. The
-keyword rel marks the shell as relativistic -- see the Section  on <a href="Relativistic-All-electron-Approximations.html">relativistic
+keyword rel marks the shell as relativistic &ndash; see the Section  on <a href="Relativistic-All-electron-Approximations.html">relativistic
 all-electron
 approximations</a> for more
 details. Subsequent lines define the primitive function exponents and

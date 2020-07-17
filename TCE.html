@@ -418,7 +418,7 @@ input file will be</p>
 <p>which performs a CCSD/cc-pVDZ calculation of the Be atom in its singlet
 ground state with a spin-restricted HF reference.</p>
 <p>New implementations of the iterative CCSD and EOMCCSD methods based on the
-improved task scheduling can be enable by the "set tce:nts T" command as
+improved task scheduling can be enable by the &ldquo;set tce:nts T&rdquo; command as
 in the following example:</p>
 <pre><code>geometry/basis set specifications 
 tce
@@ -438,7 +438,7 @@ task tce energy
 <p>New task scheduling should reduce time to solutions and provide better
 parallel performance especially in large CCSD/EOMCCSD runs.</p>
 <h2 id="keywords-of-tce-input-block">Keywords of TCE input block</h2>
-<h3 id="hf-scf-or-dft-the-reference-wave-function">HF, SCF, or DFT -- the reference wave function</h3>
+<h3 id="hf-scf-or-dft-the-reference-wave-function">HF, SCF, or DFT &ndash; the reference wave function</h3>
 <p>This keyword tells the module which of the HF (SCF) or DFT module is
 going to be used for the calculation of a reference wave function. The
 keyword HF and SCF are one and the same keyword internally, and are
@@ -503,7 +503,7 @@ calculation of an open-shell doublet system,</p>
 
 <p>Note that the default model of the DFT module is
 LDA.</p>
-<h3 id="ccsdccsdtccsdtqcisdcisdtcisdtq-mbpt2mbpt3mbpt4-etc-the-correlation-models">CCSD,CCSDT,CCSDTQ,CISD,CISDT,CISDTQ, MBPT2,MBPT3,MBPT4, etc. -- the correlation models</h3>
+<h3 id="ccsdccsdtccsdtqcisdcisdtcisdtq-mbpt2mbpt3mbpt4-etc-the-correlation-models">CCSD,CCSDT,CCSDTQ,CISD,CISDT,CISDTQ, MBPT2,MBPT3,MBPT4, etc. &ndash; the correlation models</h3>
 <p>These keywords stand for the following models:</p>
 <ul>
 <li>LCCD: linearized coupled-cluster doubles,</li>
@@ -630,15 +630,15 @@ possible (in the context of the spatial and spin symmetry, M_s)
 distributions of active electrons among active spin orbitals. The user
 can define the modelspace in two ways. As a first approach the model
 space can be defined by hand, as shown in the two examples below. The
-input of the model space starts with the "NREF" keyword followed by the
+input of the model space starts with the &ldquo;NREF&rdquo; keyword followed by the
 number of reference configurations that will be used, which should equal
-the number of strings for references below. In the input "2" refers to
-doubly occupied orbitals, "a" to alpha electrons, "b" to beta electrons
-and "0" identifies an unoccupied orbital. When the model space is
+the number of strings for references below. In the input &ldquo;2&rdquo; refers to
+doubly occupied orbitals, &ldquo;a&rdquo; to alpha electrons, &ldquo;b&rdquo; to beta electrons
+and &ldquo;0&rdquo; identifies an unoccupied orbital. When the model space is
 defined by hand the occupation strings have to include the frozen
 orbitals as well. In the second way the CMS can be generated using the
-keyword "CAS" followed by the number of active electrons and the number
-of active orbitals. When using the "CAS" keyword we strongly recommend
+keyword &ldquo;CAS&rdquo; followed by the number of active electrons and the number
+of active orbitals. When using the &ldquo;CAS&rdquo; keyword we strongly recommend
 that users check the references that are generated.</p>
 <p>As the model space typically includes multiple configurations it is
 possible to use the MRCC method to calculate excited states instead of
@@ -718,7 +718,7 @@ keyword ROOT 3 should be used. An example is given below.</p>
  task tce energy
 </code></pre>
 
-<p>This version of MRCC works only with GA as specified by the "IO GA"
+<p>This version of MRCC works only with GA as specified by the &ldquo;IO GA&rdquo;
 option. In addition this code works only with the spin-orbit 4-index
 transformation, however in all circumstances an RHF Hartree-Fock initial
 calculation has to be used. In this implementation the effective
@@ -728,7 +728,7 @@ energy threshold for the convergence, whereas the MKCCSD method uses the
 norm of the residual.</p>
 <p>In addition to the iterative single-double calculations the code can
 calculate non-iterative triples corrections. To request these triples
-corrections the keyword "SE4T" should be added to the MRCCDATA block.
+corrections the keyword &ldquo;SE4T&rdquo; should be added to the MRCCDATA block.
 The implementation details and the from of the triples correction are
 given in equation 20 [ <a href="http://dx.doi.org/10.1063/1.4747698">J. Chem. Phys. 137, 094112
 (2012)</a>].</p>
@@ -823,7 +823,7 @@ this approach have been described in</p>
     K. Kowalski, <a href="http://dx.doi.org/10.1063/1.4747698">J. Chem. Phys. 137, 094112
     (2012)</a>.</li>
 </ul>
-<p>Two essential keywords have to be added to the "mrccdata" block of the
+<p>Two essential keywords have to be added to the &ldquo;mrccdata&rdquo; block of the
 input:</p>
 <pre><code>subgroupsize n
 improvetiling
@@ -880,7 +880,7 @@ perform the GA subgroup test in
 same location. Additionally it is strongly encouraged to run the NWChem
 QA tests from the $NWCHEM_TOP/QA/tests/tce_mrcc_bwcc_subgroups directory
 with various combinations of subgroup size and total number of CPU.</p>
-<p>The USS corrections can be enabled by using "usspt" directive
+<p>The USS corrections can be enabled by using &ldquo;usspt&rdquo; directive
 keyword in the mrccdata</p>
 <pre><code>tce
   mkccsd
@@ -985,7 +985,7 @@ task tce energy
 
 <p>As in the EOMCCSD input we can request any number of roots.</p>
 <p>In analogy to the EOMCC calculations we can customize the number of
-initial guesses by using "set tce:maxeorb" directive. For example for
+initial guesses by using &ldquo;set tce:maxeorb&rdquo; directive. For example for
 system with the symmetry with the orbital energy structure shown
 below <br />
 <img alt="ea ip" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/images/ea-ip-initial-guess.png" align=middle with="336pt" height="412pt"/><br />
@@ -1005,7 +1005,7 @@ be only one such a vector corresponding to the unoccupied orbital energy
 
 <p>option should be used(there are two a1 unoccupied orbitals with energies
 less than 0.16).</p>
-<p>For the IP-EOMCCSD case the "set tce:maxeorb" option works in a similar
+<p>For the IP-EOMCCSD case the &ldquo;set tce:maxeorb&rdquo; option works in a similar
 way. For example if one is looks for 1 IP-EOMCCSD root of a1 symmetry ,</p>
 <pre><code>set tce:maxeorb 0.24 
 </code></pre>
@@ -1013,15 +1013,15 @@ way. For example if one is looks for 1 IP-EOMCCSD root of a1 symmetry ,</p>
 <p>directive should be used (there is only one occupied orbital of a1
 symmetry with the absolute value of orbital energy less than 0.24),
 etc.</p>
-<h3 id="thresh-the-convergence-threshold-of-iterative-solutions-of-amplitude-equations">THRESH -- the convergence threshold of iterative solutions of amplitude equations</h3>
+<h3 id="thresh-the-convergence-threshold-of-iterative-solutions-of-amplitude-equations">THRESH &ndash; the convergence threshold of iterative solutions of amplitude equations</h3>
 <p>This keyword specifies the convergence threshold of iterative solutions
 of amplitude equations, and applies to all of the CI, CC, and MBPT
 models. The threshold refers to the norm of residual, namely, the
 deviation from the amplitude equations. The default value is 1e-6.</p>
-<h3 id="maxiter-the-maximum-number-of-iterations">MAXITER -- the maximum number of iterations</h3>
+<h3 id="maxiter-the-maximum-number-of-iterations">MAXITER &ndash; the maximum number of iterations</h3>
 <p>It sets the maximum allowed number iterations for the iterative
 solutions of amplitude equations. The default value is 100.</p>
-<h3 id="io-parallel-io-scheme">IO -- parallel I/O scheme</h3>
+<h3 id="io-parallel-io-scheme">IO &ndash; parallel I/O scheme</h3>
 <p>There are five parallel I/O schemes implemented for all the models,
 which need to be wisely chosen for a particular problem and computer
 architecture.</p>
@@ -1075,7 +1075,7 @@ the 4-index transformation are accessible using the 2emet options. See
 <a href="#2EMET_--_alternative_storage_of_two-electron_integrals">Alternative storage of two-electron
 integrals</a>
 for details.</p>
-<h3 id="diis-the-convergence-acceleration">DIIS -- the convergence acceleration</h3>
+<h3 id="diis-the-convergence-acceleration">DIIS &ndash; the convergence acceleration</h3>
 <p>It sets the number iterations in which a DIIS extrapolation is performed
 to accelerate the convergence of excitation amplitudes. The default
 value is 5, which means in every five iteration, one DIIS extrapolation
@@ -1091,7 +1091,7 @@ up-dates for cluster amplitudes. Typical values for lshift oscillates
 between 0.3 and 0.5 for CC calculations for ground states of
 multi-configurational character. Otherwise, the value of lshift is by
 default set equal to 0.</p>
-<h3 id="freeze-the-frozen-corevirtual-approximation">FREEZE -- the frozen core/virtual approximation</h3>
+<h3 id="freeze-the-frozen-corevirtual-approximation">FREEZE &ndash; the frozen core/virtual approximation</h3>
 <p>Some of the lowest-lying core orbitals and/or some of the highest-lying
 virtual orbitals may be excluded in the calculations by this keyword
 (this does not affect the ground state HF or DFT calculation). No
@@ -1115,13 +1115,13 @@ instance, to freeze the top 5 virtuals</p>
 <pre><code> FREEZE virtual 5
 </code></pre>
 
-<h3 id="nroots-the-number-of-excited-states">NROOTS -- the number of excited states</h3>
+<h3 id="nroots-the-number-of-excited-states">NROOTS &ndash; the number of excited states</h3>
 <p>One can specify the number of excited state roots to be determined. The
 default value is 1. It is advised that the users request several more
 roots than actually needed, since owing to the nature of the trial
 vector algorithm, some low-lying roots can be missed when they do not
 have sufficient overlap with the initial guess vectors.</p>
-<h3 id="target-and-targetsym-the-target-root-and-its-symmetry">TARGET and TARGETSYM -- the target root and its symmetry</h3>
+<h3 id="target-and-targetsym-the-target-root-and-its-symmetry">TARGET and TARGETSYM &ndash; the target root and its symmetry</h3>
 <p>At the moment, the first and second geometrical derivatives of
 excitation energies that are needed in force, geometry, and frequency
 calculations are obtained by numerical differentiation. These keywords
@@ -1145,24 +1145,24 @@ calculations will lift the spatial symmetry of the equilibrium geometry.
 When these finite displacements can alter the order of excited states
 including the target state, the frequency calculation is not be
 feasible.</p>
-<h3 id="symmetry-restricting-the-excited-state-symmetry">SYMMETRY -- restricting the excited state symmetry</h3>
+<h3 id="symmetry-restricting-the-excited-state-symmetry">SYMMETRY &ndash; restricting the excited state symmetry</h3>
 <p>By adding this keyword to the input block, the user can request the
 module to seek just the roots of the specified irreducible
 representation as TARGETSYM. By default, this option is not set.
 TARGETSYM must be specified when SYMMETRY is
 invoked.</p>
-<h3 id="eomsol-alternative-solver-for-the-right-eomccsd-eigenvalue-problem">EOMSOL -- alternative solver for the right EOMCCSD eigenvalue problem</h3>
+<h3 id="eomsol-alternative-solver-for-the-right-eomccsd-eigenvalue-problem">EOMSOL &ndash; alternative solver for the right EOMCCSD eigenvalue problem</h3>
 <p>The EOMSOL enables the user to switch between two algorithms for solving
-EOMCCSD eigenproblem. When EOMSOL is set equal to 1 ("eomsol 1"
+EOMCCSD eigenproblem. When EOMSOL is set equal to 1 (&ldquo;eomsol 1&rdquo;
 directive in the tce group) the old solver is invoked. The advantage of
 this solver is a possibility of finding states of complicated
 configurational structure, for example doubly excited states. However,
 the dimension of the iterative space increases with each iteration and
 in effect this algorithm requires large memory allocations especially
 for large systems. In order to address this bottleneck, new algorithm
-("eomsol 2" directive in the tce group) was designed. In EOMSOL 2
+(&ldquo;eomsol 2&rdquo; directive in the tce group) was designed. In EOMSOL 2
 algorithm all iterations are split into microcycles corresponding to
-diis microiterations (the use of "diis" parameter is discussed earlier).
+diis microiterations (the use of &ldquo;diis&rdquo; parameter is discussed earlier).
 This algorithm enables the user to precisely estimate the memory usage
 in the EOMCCSD calculations, which is equal to
 diis*nroots*(size_x1+size_x2), where diis is the length of the DIIS
@@ -1171,7 +1171,7 @@ size of GA storing singly excited EOMCC almplitudes, and size_x2 is the
 size of GA with doubly excited EOMCC amplitudes. Generally, larger
 values of diis parameter lead to a faster convergence, however, this
 happens at the expense of larger memory requirements. It is recommended
-not to use in the EOMCCSD calculations with "eomsol 2" diis parameter
+not to use in the EOMCCSD calculations with &ldquo;eomsol 2&rdquo; diis parameter
 smaller than 5, which is its default value. The EOMSOL 2 algorithm uses
 the CIS vectors as initial guesses, and for this reason is suited mainly
 to track singly excited states. By default, the EOMSOL 1 option is
@@ -1192,11 +1192,11 @@ task tce energy
 </code></pre>
 
 <p>the CCSD equations will be converged to the 1.0d-6 threshold while the
-EOMCCSD ones to 1.0d-4. This option shoul dbe used with the "eomsol 2"
+EOMCCSD ones to 1.0d-4. This option shoul dbe used with the &ldquo;eomsol 2&rdquo;
 option. In some situations finding several (n) roots to the EOMCCSD
 equations can be quite challenging. To by-pass this problem one can use
-the "n+1" model, i.e., we request another root to be converged. Usually,
-the presence the "buffer" root can imporve the iterative process for n
+the &ldquo;n+1&rdquo; model, i.e., we request another root to be converged. Usually,
+the presence the &ldquo;buffer&rdquo; root can imporve the iterative process for n
 roots of interest. However, the buffer root does not have to be
 converged to the same accuracy as n roots of interest. The follwing
 example, shows how to handle this process (we chose n=2, n+1=3):</p>
@@ -1215,7 +1215,7 @@ task tce energy
 <p>In this example the CCSD equations are solved with the 1.0d-6 threshold,
 the first n (2) EOMCCSD roots are determined with the 10d-4 accuracy,
 while the buffer root is determined with relax conv. criterion 1.0d-3.</p>
-<h3 id="2eorb-alternative-storage-of-two-electron-integrals">2EORB -- alternative storage of two-electron integrals</h3>
+<h3 id="2eorb-alternative-storage-of-two-electron-integrals">2EORB &ndash; alternative storage of two-electron integrals</h3>
 <p>In the 5.0 version a new option has been added in order to provide more
 economical way of storing two-electron integrals used in CC calculations
 based on the RHF and ROHF references. The 2EORB keyword can be used for
@@ -1233,7 +1233,7 @@ the first half of 4-index transformation and final file with fully
 transformed two-electron integrals. Savings in the memory requirements
 on the order of magnitude (and more) have been observed for large-scale
 open-shell calculations.</p>
-<h3 id="2emet-alternative-storage-of-two-electron-integrals">2EMET -- alternative storage of two-electron integrals</h3>
+<h3 id="2emet-alternative-storage-of-two-electron-integrals">2EMET &ndash; alternative storage of two-electron integrals</h3>
 <p>Several new computation-intensive algorithms has been added with the
 purpose of improving scalability and overcoming local memory bottleneck
 of the 5.0 2EORB 4-index transformation. In order to give the user a
@@ -1327,7 +1327,7 @@ better performance.</p>
 <p>In the later part of this manual several examples illustrate the use of
 the newly introduced keywords.</p>
 <p>An efficient loop-fused four-index transfromations for RHF and ROHF references can be
-enabled by the sequence "2eorb/2emet 16".</p>
+enabled by the sequence &ldquo;2eorb/2emet 16&rdquo;.</p>
 <h3 id="ccsdtcr-eomccsdt-calculations-with-large-tiles">CCSD(T)/CR-EOMCCSD(T) calculations with large tiles</h3>
 <p>In 6.5 version of NWChem we have enabled versions of the CCSD(T) and
 CR-EOMCCSD(T) codes, which by-pass the local memory limitation of
@@ -1341,7 +1341,7 @@ Seattle). In order to enable these versions it is enough to add</p>
 <p>which defines maximum memory size (in MB) for the slice of 6-dimensional
 tensors (in the current example 100 MB; for more details see QA tests
 tce_ccsd_t_xmem and tce_cr_eomccsd_t_xmem).</p>
-<h3 id="dipole-the-ground-and-excited-state-dipole-moments">DIPOLE -- the ground- and excited-state dipole moments</h3>
+<h3 id="dipole-the-ground-and-excited-state-dipole-moments">DIPOLE &ndash; the ground- and excited-state dipole moments</h3>
 <p>When this is set, the ground-state CC calculation will enter another
 round of iterative step for the so-called <img alt="$\Lambda$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b23332f99af850a48831f80dbf681ed6.svg?invert_in_darkmode&sanitize=true" align=middle width="11.372955pt" height="22.38192pt"/> equation to obtain
 the one-particle density matrix and dipole moments. Likewise, for
@@ -1351,16 +1351,16 @@ EOM-CC left hand side solutions will be sought incurring approximately
 three times the computational cost of excitation energies alone (note
 that the EOM-CC effective Hamiltonian is not Hermitian and has distinct
 left and right eigenvectors).</p>
-<h3 id="nofock-not-recompute-fock-matrix">(NO)FOCK -- (not) recompute Fock matrix</h3>
+<h3 id="nofock-not-recompute-fock-matrix">(NO)FOCK &ndash; (not) recompute Fock matrix</h3>
 <p>The default is FOCK meaning that the Fock matrix will be reconstructed
 (as opposed to using the orbital energies as the diagonal part of Fock).
 This is essential in getting correct correlation energies with ROHF or
 DFT reference wave functions. However, currently, this module cannot
 reconstruct the Fock matrix when one-component relativistic effects are
-operative. So when a user wishes to run TCE's correlation methods with
+operative. So when a user wishes to run TCE&rsquo;s correlation methods with
 DK or other relativistic reference, NOFOCK must be set and orbital
 energies must be used for the Fock matrix.</p>
-<h3 id="print-the-verbosity">PRINT -- the verbosity</h3>
+<h3 id="print-the-verbosity">PRINT &ndash; the verbosity</h3>
 <p>This keyword changes the level of output verbosity. One may also request
 some particular items in the table
 below.</p>
@@ -1375,92 +1375,92 @@ below.</p>
 </thead>
 <tbody>
 <tr>
-<td>"time"</td>
+<td>&ldquo;time&rdquo;</td>
 <td>vary</td>
 <td>CPU and wall times</td>
 </tr>
 <tr>
-<td>"tile"</td>
+<td>&ldquo;tile&rdquo;</td>
 <td>vary</td>
 <td>Orbital range tiling information</td>
 </tr>
 <tr>
-<td>"t1"</td>
+<td>&ldquo;t1&rdquo;</td>
 <td>debug</td>
 <td><img alt="$T_1$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b1aadae6dafc7da339f61626db58e355.svg?invert_in_darkmode&sanitize=true" align=middle width="16.09839pt" height="22.38192pt"/> excitation amplitude dumping</td>
 </tr>
 <tr>
-<td>"t2"</td>
+<td>&ldquo;t2&rdquo;</td>
 <td>debug</td>
 <td><img alt="$T_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b48cd4fc1cc1b8c602c81734763b31f0.svg?invert_in_darkmode&sanitize=true" align=middle width="16.09839pt" height="22.38192pt"/> excitation amplitude dumping</td>
 </tr>
 <tr>
-<td>"t3"</td>
+<td>&ldquo;t3&rdquo;</td>
 <td>debug</td>
 <td><img alt="$T_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4025cf3981c802483ddf735af283a602.svg?invert_in_darkmode&sanitize=true" align=middle width="16.09839pt" height="22.38192pt"/> excitation amplitude dumping</td>
 </tr>
 <tr>
-<td>"t4"</td>
+<td>&ldquo;t4&rdquo;</td>
 <td>debug</td>
 <td><img alt="$T_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1bb0637e12d67715e8b82e190b60229e.svg?invert_in_darkmode&sanitize=true" align=middle width="16.09839pt" height="22.38192pt"/> excitation amplitude dumping</td>
 </tr>
 <tr>
-<td>"general information"</td>
+<td>&ldquo;general information&rdquo;</td>
 <td>default</td>
 <td>General information</td>
 </tr>
 <tr>
-<td>"correlation information"</td>
+<td>&ldquo;correlation information&rdquo;</td>
 <td>default</td>
 <td>TCE information</td>
 </tr>
 <tr>
-<td>"mbpt2"</td>
+<td>&ldquo;mbpt2&rdquo;</td>
 <td>debug</td>
 <td>Caonical HF MBPT2 test</td>
 </tr>
 <tr>
-<td>"get_block"</td>
+<td>&ldquo;get_block&rdquo;</td>
 <td>debug</td>
 <td>I/O information</td>
 </tr>
 <tr>
-<td>"put_block"</td>
+<td>&ldquo;put_block&rdquo;</td>
 <td>debug</td>
 <td>I/O information</td>
 </tr>
 <tr>
-<td>"add_block"</td>
+<td>&ldquo;add_block&rdquo;</td>
 <td>debug</td>
 <td>I/O information</td>
 </tr>
 <tr>
-<td>"files"</td>
+<td>&ldquo;files&rdquo;</td>
 <td>debug</td>
 <td>File information</td>
 </tr>
 <tr>
-<td>"offset"</td>
+<td>&ldquo;offset&rdquo;</td>
 <td>debug</td>
 <td>File offset information</td>
 </tr>
 <tr>
-<td>"ao1e"</td>
+<td>&ldquo;ao1e&rdquo;</td>
 <td>debug</td>
 <td>AO one-electron integral evaluation</td>
 </tr>
 <tr>
-<td>"ao2e"</td>
+<td>&ldquo;ao2e&rdquo;</td>
 <td>debug</td>
 <td>AO two-electron integral evaluation</td>
 </tr>
 <tr>
-<td>"mo1e"</td>
+<td>&ldquo;mo1e&rdquo;</td>
 <td>debug</td>
 <td>One-electron integral transformation</td>
 </tr>
 <tr>
-<td>"mo2e"</td>
+<td>&ldquo;mo2e&rdquo;</td>
 <td>debug</td>
 <td>Two-electron integral transformation</td>
 </tr>
@@ -1729,7 +1729,7 @@ task tce energy
 </code></pre>
 
 <p>The active-space in the active-space CR-EOMCCSD(T) calculations can be
-alternatively specified by defining the energy "window"
+alternatively specified by defining the energy &ldquo;window&rdquo;
 [emin_act,emax_act]. All orbitals with orbital energies falling into
 this widnow will considered as active (the active space in the following
 example is different from the one used in the previous example).</p>
@@ -2016,7 +2016,7 @@ not advised due to the phase issue in the molecular orbital
 coefficients. If the phase changes, the amplitudes will no longer be a
 useful guess and may lead to nonsense results. Expert users may be able
 to use restart when the geometry varies using careful choices in the SCF
-input by using the "rotate" and "lock" options but this use of restart
+input by using the &ldquo;rotate&rdquo; and &ldquo;lock&rdquo; options but this use of restart
 is not supported.</p>
 <p>If SF encounters a failure during restart I/O, the job will fail. The
 capability to ignore a subset of failures, such as when saving the
@@ -2131,7 +2131,7 @@ level of the CCSD(T) approach (2*tilesize<sup>6</sup>).</p>
 <h3 id="using-openmp-in-tce">Using OpenMP in TCE</h3>
 <p>TCE compute kernels are both floating-point and bandwidth intensive,
 hence are amenable to multithreading. However, not all TCE kernels
-support OpenMP, and therefore performance may be limited by Amdahl's
+support OpenMP, and therefore performance may be limited by Amdahl&rsquo;s
 law. Furthermore, Global Arrays communication is not yet thread-safe and
 must be called outside of threaded regions, potentially limiting
 performance. However, even partial OpenMP is likely to improve
@@ -2297,8 +2297,8 @@ hardware is not utilized</span>.</p>
 <p>NWChem 6.3 offers a possibility of using GPU accelerators to perform the
 most computationally intensive part of the CCSD(T) calculations
 (non-iterative triples corrections). To enable this option one has to
-enable compilation options described below and add the "cuda n"
-directive to the tce block of input, where "n" refers to number of CUDA
+enable compilation options described below and add the &ldquo;cuda n&rdquo;
+directive to the tce block of input, where &ldquo;n&rdquo; refers to number of CUDA
 devices per node.</p>
 <p>geometry/basis set specifications</p>
 <pre><code>tce 

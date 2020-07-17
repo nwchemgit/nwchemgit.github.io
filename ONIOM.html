@@ -144,7 +144,7 @@ high-level calculation on the full system.</p>
 <li>S. Dapprich, I. Komaromi, K.S. Byun, K. Morokuma, and M.J. Frisch,
     J. Mol. Struct. (Theochem), 461-462, 1 (1999).</li>
 <li>R.D.J. Froese and K. Morokuma in ``Encylopedia of Computational
-    Chemistry,'' volume 2, pp.1244-1257, (ed. P. von Rague Schleyer,
+    Chemistry,&rsquo;&lsquo; volume 2, pp.1244-1257, (ed. P. von Rague Schleyer,
     John Wiley and Sons, Chichester, Sussex, 1998).</li>
 </ol>
 <p>The NWChem ONIOM module implements two- and three-layer ONIOM models for
@@ -155,11 +155,11 @@ calculations with either solvation models or classical force fields. Nor
 is it yet possible to compute properties except as derivatives of the
 total energy.</p>
 <p>Using the terminology of Morokuma et al., the full molecular geometry
-including all atoms is referred to as the "real" geometry and it is
-treated using a "low"-level of theory. A subset of these atoms (referred
-to as the "model" geometry) are treated using both the "low"-level and a
-"high"-level of theory. A three-layer model also introduces an
-"intermediate" model geometry and a "medium" level of theory.</p>
+including all atoms is referred to as the &ldquo;real&rdquo; geometry and it is
+treated using a &ldquo;low&rdquo;-level of theory. A subset of these atoms (referred
+to as the &ldquo;model&rdquo; geometry) are treated using both the &ldquo;low&rdquo;-level and a
+&ldquo;high&rdquo;-level of theory. A three-layer model also introduces an
+&ldquo;intermediate&rdquo; model geometry and a &ldquo;medium&rdquo; level of theory.</p>
 <p>The two-layer model requires a high and low level of theory and a real
 and model molecular geometry. The energy at the high-level of theory for
 the real geometry is estimated as</p>
@@ -260,7 +260,7 @@ factor should be chosen as 1.084/1.528 ~ 0.709.</p>
 <p>Example 2. A calculation on acetaldehyde (<img alt="$H_{3}C-CHO$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9615cbc1d27fcbf805188bee31d14ebc.svg?invert_in_darkmode&sanitize=true" align=middle width="94.68855pt" height="22.38192pt"/>) using aldehyde
 (<img alt="$H-CHO$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/413f09d46c9fbfd640a837d6d746520f.svg?invert_in_darkmode&sanitize=true" align=middle width="75.76899pt" height="22.38192pt"/>) as the model system. The covalent bond between the two
 carbon atoms is broken and a link atom must be introduced to replace the
-methyl group. The link atom is automatically generated -- all you need
+methyl group. The link atom is automatically generated &ndash; all you need
 to do is specify the atoms in the model system that are also in the real
 system (here <img alt="$CHO$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6437f0894a99729bcbb4f09453b64569.svg?invert_in_darkmode&sanitize=true" align=middle width="40.776615pt" height="22.38192pt"/>) and the broken bonds. Here is the geometry of
 acetaldehyde with the <img alt="$CHO$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6437f0894a99729bcbb4f09453b64569.svg?invert_in_darkmode&sanitize=true" align=middle width="40.776615pt" height="22.38192pt"/> of aldehyde first</p>
@@ -280,7 +280,7 @@ replacing atom 7 with a hydrogen link atom. This is all accomplished by
 the directive</p>
 <p><code>model 3   1 7 0.709 H</code></p>
 <p>Since the default link atom is hydrogen there is actually no need to
-specify the ``H''.</p>
+specify the ``H&rsquo;&lsquo;.</p>
 <p>See also the
 <a href="ONIOM.html#a-three-layer-example">ONIOM#a-three-layer-example</a>
 for a more complex example.</p>
@@ -298,7 +298,7 @@ string containing general NWChem input.</p>
 <p>The basis name on the theory directive (high, medium, or low) is that
 specified on a basis set directive (see Section 7) and not the name of a
 standard basis in the library. If not specified, the basis set for the
-high-level theory defaults to the standard "ao basis". That for the
+high-level theory defaults to the standard &ldquo;ao basis&rdquo;. That for the
 medium level defaults to the high-level basis, and the low-level basis
 defaults to the medium-level basis. Other wavefunction parameters are
 obtained from the standard wavefunction input blocks. See <a href="#effective-core-potential">Effective
@@ -342,7 +342,7 @@ fitting</a> for another
 example.</p>
 <h2 id="use-of-symmetry">Use of symmetry</h2>
 <p>Symmetry should work just fine as long as the model and intermediate
-regions respect the symmetry -- i.e., symmetry equivalent atoms need to
+regions respect the symmetry &ndash; i.e., symmetry equivalent atoms need to
 be treated equivalently. If symmetry equivalent atoms must be treated in
 separate regions then the symmetry must be lowered (or completely
 switched off).</p>
@@ -354,12 +354,12 @@ each combination will store the MO vectors in the permanent directory
 using a file name created by appending to the name of the calculation
 the following string</p>
 <ul>
-<li>low-real -- ".lrmos"</li>
-<li>low-inter -- ".limos"</li>
-<li>low-model -- ".lmmos"</li>
-<li>medium-inter -- ".mimos"</li>
-<li>medium-model -- ".mmmos"</li>
-<li>high-model -- ".hmmos"</li>
+<li>low-real &ndash; &ldquo;.lrmos&rdquo;</li>
+<li>low-inter &ndash; &ldquo;.limos&rdquo;</li>
+<li>low-model &ndash; &ldquo;.lmmos&rdquo;</li>
+<li>medium-inter &ndash; &ldquo;.mimos&rdquo;</li>
+<li>medium-model &ndash; &ldquo;.mmmos&rdquo;</li>
+<li>high-model &ndash; &ldquo;.hmmos&rdquo;</li>
 </ul>
 <p>Each calculation will utilize the appropriate vectors which is more
 efficient during geometry optimizations and frequency calculations, and

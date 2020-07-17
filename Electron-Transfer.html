@@ -136,7 +136,7 @@ coupling energy (also called the electron transfer matrix element)
 between ET reactant and product states. The electronic coupling
 (<i>V<sub>RP</sub></i>), and nuclear
 reorganization energy (λ) are all components of the electron transfer
-rate defined by Marcus' theory, which also depends on the temperature
+rate defined by Marcus&rsquo; theory, which also depends on the temperature
 (see Reference 1
 below):</p>
 <p><img alt="${k_{ET}}= \frac{2\pi}{\hbar} V_{RP}^{2} \frac{1}{\sqrt{4\pi \lambda k_{B}T}} \exp \left( \frac{- \Delta G^{*}}{k_{B} T} \right)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/534ce113598ba681e3cbb214b4ef4072.svg?invert_in_darkmode&sanitize=true" align=middle width="255.900645pt" height="37.80348pt"/></p>
@@ -150,31 +150,31 @@ magnitude of <i>V<sub>RP</sub></i> depends on the amount of overlap between <em>
 <em>P</em>, which is important to consider when choosing the basis set. Diffuse
 functions may be necessary to fill in the overlap, particularly when the
 ET distance is long.</p>
-<p>The MO's of <em>R</em> and <em>P</em> must correspond to localized states. for
+<p>The MO&rsquo;s of <em>R</em> and <em>P</em> must correspond to localized states. for
 instance, in the reaction A<sup>-</sup> + B &rarr; A + B<sup>-</sup>  the
 transferring electron is localized on A in the reactant state and is
 localized on B in the product state. To verify the localization of the
 electron in the calculation of the vectors, carefully examine the
 Mulliken population analysis. In order to determine which orbitals are
-involved in the electron transfer, use the print keyword "mulliken ao"
+involved in the electron transfer, use the print keyword &ldquo;mulliken ao&rdquo;
 which prints the Mulliken population of each basis function.</p>
 <p>An effective core potential (ECP) basis can be used to replace core
 electrons. However, there is one caveat: the orbitals involved in
-electron transfer must not be replaced with ECP's. Since the ET orbitals
+electron transfer must not be replaced with ECP&rsquo;s. Since the ET orbitals
 are valence orbitals, this is not usually a problem, but the user should
-use ECP's with care.</p>
+use ECP&rsquo;s with care.</p>
 <p>Suggested references are listed below. The first two references gives a
-good description of Marcus' two-state ET model, and the appendix of the
+good description of Marcus&rsquo; two-state ET model, and the appendix of the
 third reference details the method used in the ET module.</p>
 <ol>
 <li>R.A. Marcus, N. Sutin, Biochimica Biophysica Acta 35, 437, (1985).</li>
-<li>J.R. Bolton, N. Mataga, and G. McLendon in "Electron Transfer in
-    Inorganic, Organic and Biological Systems" (American Chemical
+<li>J.R. Bolton, N. Mataga, and G. McLendon in &ldquo;Electron Transfer in
+    Inorganic, Organic and Biological Systems&rdquo; (American Chemical
     Society, Washington, D.C., 1991)</li>
 <li>A. Farazdel, M. Dupuis, E. Clementi, and A. Aviram, J. Am. Chem.
     Soc., 112, 4206 (1990).</li>
 </ol>
-<h2 id="vectors-input-of-mo-vectors-for-et-reactant-and-product-states">VECTORS -- input of MO vectors for ET reactant and product states</h2>
+<h2 id="vectors-input-of-mo-vectors-for-et-reactant-and-product-states">VECTORS &ndash; input of MO vectors for ET reactant and product states</h2>
 <pre><code> VECTORS [reactants] &lt;string reactants_filename&gt;  
  VECTORS [products ] &lt;string products_filename&gt;
 </code></pre>
@@ -185,11 +185,11 @@ input, as no default filename will be set by the program. In fact, this
 is the only required input in the ET module, although there are other
 optional keywords described
 below.</p>
-<h2 id="focknofock-method-for-calculating-the-two-electron-contribution-to-vrp">FOCK/NOFOCK -- method for calculating the two-electron contribution to  <i>V<sub>RP</sub></i></h2>
+<h2 id="focknofock-method-for-calculating-the-two-electron-contribution-to-vrp">FOCK/NOFOCK &ndash; method for calculating the two-electron contribution to  <i>V<sub>RP</sub></i></h2>
 <pre><code>  &lt;string (FOCK||NOFOCK) default FOCK&gt;
 </code></pre>
 
-<p>This directive enables/disables the use of the NWChem's Fock matrix
+<p>This directive enables/disables the use of the NWChem&rsquo;s Fock matrix
 routine in the calculation of the two-electron portion of the ET
 Hamiltonian. Since the Fock matrix routine has been optimized for speed,
 accuracy and parallel performance, it is the most efficient choice.</p>
@@ -197,7 +197,7 @@ accuracy and parallel performance, it is the most efficient choice.</p>
 the ET Hamiltonian with another subroutine which may be more accurate
 for systems with a small number of basis functions, although it is
 slower.</p>
-<h2 id="tol2e-integral-screening-threshold">TOL2E -- integral screening threshold</h2>
+<h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold</h2>
 <pre><code> TOL2E &lt;real tol2e default max(10e-12,min(10e-7, S(RP)*10e-7 )&gt;
 </code></pre>
 

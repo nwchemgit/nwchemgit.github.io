@@ -279,7 +279,7 @@ Gaussian function based approaches by having an accuracy at least as
 good for many applications, yet is still fast enough to treat systems
 containing hundreds of atoms. Another significant advantage is its
 ability to simulate dynamics on a ground state potential surface
-directly at run-time using the Car-Parrinello algorithm. This method's
+directly at run-time using the Car-Parrinello algorithm. This method&rsquo;s
 efficiency and accuracy make it a desirable first principles method of
 simulation in the study of complex molecular, liquid, and solid state
 systems. Applications for this first principles method include the
@@ -485,9 +485,9 @@ block.</p>
     Note Ewald summation is only used if the simulation_cell is
     periodic.</li>
 </ul>
-<p><code>Default set to be</code><img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>"<code>.</code></p>
+<p><code>Default set to be</code><img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>&ldquo;<code>.</code></p>
 <ul>
-<li>(Vosko || PBE96 || revPBE || ...) - Choose between Vosko et al's LDA
+<li>(Vosko || PBE96 || revPBE || &hellip;) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
     Ernzerhof GGA functional. In addition, several hybrid options.</li>
 <li>MULT - optional keyword which if specified allows the user to define
@@ -813,7 +813,7 @@ the 94 elements H-Pu, J. Chem. Phys, 132 (2010), 154104. S. Grimme, S.
 Ehrlich and L. Goerigk, J. Comput. Chem, 32 (2011), 1456-1465. This
 correction augments the Grimme3 correction by including BJ-damping.</p>
 <p>If these functionals are used in a publication please include in your
-citations the references to Grimme's work.</p>
+citations the references to Grimme&rsquo;s work.</p>
 <h4 id="using-exchange-correlation-potentials-available-in-the-dft-module">Using Exchange-Correlation Potentials Available in the DFT Module</h4>
 <p>(<span style="color: red;"><em>Warning - To use this capability in NWChem
 6.6 the user must explicitly include the nwxc module in the
@@ -824,7 +824,7 @@ all the functionality in NWChem. We are planning to have a debug release
 in winter 2016 to take fix this problem. This capability is still
 included by default in NWChem 6.5</em></span>)</p>
 <p>The user has the option of using many of the exchange-correlation
-potentials available in DFT Module (see Section <a href="Density-Functional-Theory-for-Molecules.html#XC_and_DECOMP_--_Exchange-Correlation_Potentials">XC and DECOMP --
+potentials available in DFT Module (see Section <a href="Density-Functional-Theory-for-Molecules.html#XC_and_DECOMP_--_Exchange-Correlation_Potentials">XC and DECOMP &ndash;
 Exchange-Correlation
 Potentials</a>).</p>
 <pre><code>  XC [[acm] [b3lyp] [beckehandh] [pbe0] [bhlyp]\
@@ -851,7 +851,7 @@ Potentials</a>).</p>
       [vwn_1_rpa &lt;real prefactor default 1.0&gt;]]
 </code></pre>
 
-<p>These functional can be invoked by prepending the "new" directive before
+<p>These functional can be invoked by prepending the &ldquo;new&rdquo; directive before
 the exchange correlation potetntials in the input directive, XC new
 slater vwn_5.</p>
 <p>That is, this statement in the input file</p>
@@ -865,7 +865,7 @@ task pspw energy
 nonlocal contributions of a given functional. The user can also specify
 a multiplicative prefactor (the variable <prefactor> in the input) for
 the local/nonlocal component or total (for more details see Section <a href="Density-Functional-Theory-for-Molecules.html#XC_and_DECOMP_--_Exchange-Correlation_Potentials">XC
-and DECOMP -- Exchange-Correlation
+and DECOMP &ndash; Exchange-Correlation
 Potentials</a>).
 An example of this might be,</p>
 <p><code>XC new becke88 nonlocal 0.72</code></p>
@@ -949,7 +949,7 @@ END
 </ul>
 <h3 id="mulliken-analysis">Mulliken Analysis</h3>
 <h3 id="density-of-states">Density of States</h3>
-<p>The "dos" option is used to turn on a density of states analysis. This
+<p>The &ldquo;dos&rdquo; option is used to turn on a density of states analysis. This
 option can be specified without additional parameters, i.e.</p>
 <pre><code>nwpw 
   dos  
@@ -1010,7 +1010,7 @@ determine weights for dos generation. If the variable is not set then
 all the atoms are used, e.g.</p>
 <p><code>set nwpw:dos:actlist 1 2 3 4</code></p>
 <h3 id="projected-density-of-states">Projected Density of States</h3>
-<p>For projected density of states the "Mulliken" keyword needs to be set,
+<p>For projected density of states the &ldquo;Mulliken&rdquo; keyword needs to be set,
 e.g.</p>
 <pre><code>nwpw 
   Mulliken  
@@ -1034,7 +1034,7 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_both_p - p projected density of states
     of virtual states</li>
 </ul>
-<p>...</p>
+<p>&hellip;</p>
 <ul>
 <li>file_prefix.mulliken_dos_both_all - total of projected density
     of filled and virtual restricted states</li>
@@ -1058,7 +1058,7 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_alpha_p - p projected density of
     states of virtual up states</li>
 </ul>
-<p>...</p>
+<p>&hellip;</p>
 <ul>
 <li>file_prefix.mulliken_dos_alpha_all - total of projected density
     of filled up states</li>
@@ -1067,7 +1067,7 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_alpha_all - total of projected density
     of states of virtual up states</li>
 </ul>
-<p>...</p>
+<p>&hellip;</p>
 <ul>
 <li>file_prefix.mulliken_dos_beta_s - total s projected density of
     down states</li>
@@ -1082,7 +1082,7 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_beta_p - p projected density of states
     of virtual down states</li>
 </ul>
-<p>...</p>
+<p>&hellip;</p>
 <ul>
 <li>file_prefix.mulliken_dos_beta_all - total of projected density
     of filled down states</li>
@@ -1279,7 +1279,7 @@ END 
 </ul>
 <p><code>Default set to be</code><img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/><code>.</code></p>
 <ul>
-<li>(Vosko || PBE96 || revPBE) - Choose between Vosko et al's LDA
+<li>(Vosko || PBE96 || revPBE) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
     Ernzerhof GGA functional.</li>
 <li>SIMULATION_CELL (see section -sec:pspw_cell-)</li>
@@ -1335,7 +1335,7 @@ The following list describes the input in detail.</p>
 <p>(3)</p>
 <h3 id="screened-exchange">Screened Exchange</h3>
 <h3 id="density-of-states-and-projected-density-of-states">Density of States and Projected Density of States</h3>
-<p>The "dos" option is used to calculate density of states using broadening
+<p>The &ldquo;dos&rdquo; option is used to calculate density of states using broadening
 of the eigenvalues . This option can be specified without additional
 parameters, i.e.</p>
 <pre><code>nwpw  
@@ -1396,7 +1396,7 @@ restricted calculations</p>
 determine weights for dos generation. If the variable is not set then
 all the atoms are used, e.g.</p>
 <p><code>set nwpw:dos:actlist 1 2 3 4</code></p>
-<p>For projected density of states the "Mulliken" keyword needs to be set,
+<p>For projected density of states the &ldquo;Mulliken&rdquo; keyword needs to be set,
 e.g.</p>
 <pre><code>nwpw
   Mulliken
@@ -1420,7 +1420,7 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_both_p - p projected density of states
     of virtual states</li>
 </ul>
-<p>...</p>
+<p>&hellip;</p>
 <ul>
 <li>file_prefix.mulliken_dos_both_all - total of projected density
     of filled and virtual restricted states</li>
@@ -1444,7 +1444,7 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_alpha_p - p projected density of
     states of virtual up states</li>
 </ul>
-<p>...</p>
+<p>&hellip;</p>
 <ul>
 <li>file_prefix.mulliken_dos_alpha_all - total of projected density
     of filled up states</li>
@@ -1453,7 +1453,7 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_alpha_all - total of projected density
     of states of virtual up states</li>
 </ul>
-<p>...</p>
+<p>&hellip;</p>
 <ul>
 <li>file_prefix.mulliken_dos_beta_s - total s projected density of
     down states</li>
@@ -1468,7 +1468,7 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_beta_p - p projected density of states
     of virtual down states</li>
 </ul>
-<p>...</p>
+<p>&hellip;</p>
 <ul>
 <li>file_prefix.mulliken_dos_beta_all - total of projected density
     of filled down states</li>
@@ -1653,7 +1653,7 @@ END
 </ul>
 <p><code>Default set to be</code><img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/><code>.</code></p>
 <ul>
-<li>(Vosko || PBE96 || revPBE || ...) - Choose between Vosko et al's LDA
+<li>(Vosko || PBE96 || revPBE || &hellip;) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
     Ernzerhof GGA functional. In addition, several hybrid options.</li>
 <li>Nose-Hoover or Temperature - optional subblock which if specified
@@ -1983,7 +1983,7 @@ END
 <p><img alt="$s\left(r_{ij}\right) = \left \vert \bold{r}_{i}-\bold{r}_j\right\vert = r_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/762bbee86acf8585c59ad9d10c3085cd.svg?invert_in_darkmode&sanitize=true" align=middle width="161.231895pt" height="24.56553pt"/></p>
 <h4 id="angle-collective-variable">Angle Collective Variable</h4>
 <p>This describes the bond angle formed at <img alt="$i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> by the triplet
-<img alt="$&amp;lt;jik&amp;gt;$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8cb7383c6dd45f500dfd0bb39264b7f8.svg?invert_in_darkmode&sanitize=true" align=middle width="59.6475pt" height="22.74591pt"/>"</p>
+<img alt="$&amp;lt;jik&amp;gt;$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8cb7383c6dd45f500dfd0bb39264b7f8.svg?invert_in_darkmode&sanitize=true" align=middle width="59.6475pt" height="22.74591pt"/>&ldquo;</p>
 <p><img alt="$s\left(r_{ij},r_{ik}\right) = \frac{\bold{r}_{ij}\cdot\bold{r}_{ik}}{r_{ij}r_{ik}}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/37f0e0317abf31f95c5902d1b0c10c3b.svg?invert_in_darkmode&sanitize=true" align=middle width="131.80266pt" height="27.3438pt"/></p>
 <h4 id="coordination-collective-variable">Coordination Collective Variable</h4>
 <p>The coordination number collective variable is defined as</p>
@@ -2134,7 +2134,7 @@ sub-block.</p>
 </ul>
 <p><code>Default set to be</code><img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/><code>.</code></p>
 <ul>
-<li>(Vosko || PBE96 || revPBE || ...) - Choose between Vosko et al's LDA
+<li>(Vosko || PBE96 || revPBE || &hellip;) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
     Ernzerhof GGA functional. In addition, several hybrid options
     (hybrid options are not available in BAND).</li>
@@ -2242,8 +2242,8 @@ atom silicon carbide unit cell.</p>
 end
 </code></pre>
 
-<p>Warning - Currently only the "system crystal" option is recognized by
-NWPW. The "system slab" and "system polymer" options will be supported
+<p>Warning - Currently only the &ldquo;system crystal&rdquo; option is recognized by
+NWPW. The &ldquo;system slab&rdquo; and &ldquo;system polymer&rdquo; options will be supported
 in the future.</p>
 <h2 id="unit-cell-optimization">Unit Cell Optimization</h2>
 <p>The PSPW module using the DRIVER geometry optimizer can optimize a
@@ -2343,7 +2343,7 @@ task pspw pspw_dplot
 can be used with Car-Parrinello simulations. Currently, the input is not
 very robust but it is straightforward. The first step to run a QM/MM
 simulations is to define the MM atoms in the geometry block. The MM
-atoms must be at the end of the geometry and a carat, " ^ ", must be
+atoms must be at the end of the geometry and a carat, &rdquo; ^ &ldquo;, must be
 appended to the end of the atom name, e.g.</p>
 <pre><code>`geometry units angstrom nocenter noautosym noautoz print xyz`  
 ` C -0.000283 0.000106 0.000047`  
@@ -2361,7 +2361,7 @@ appended to the end of the atom name, e.g.</p>
 </code></pre>
 
 <p>Another way to specify the MM atoms is to use the mm_tags option which
-appends the atoms with a " ^ ".</p>
+appends the atoms with a &rdquo; ^ &ldquo;.</p>
 <pre><code>`geometry units angstrom nocenter noautosym noautoz print xyz`  
 ` C -0.000283 0.000106 0.000047`  
 ` Cl -0.868403 1.549888 0.254229`  
@@ -2382,7 +2382,7 @@ appends the atoms with a " ^ ".</p>
 `END`
 </code></pre>
 
-<p>The option "mm_tags off" can be used to remove the " ^ " from the
+<p>The option &ldquo;mm_tags off&rdquo; can be used to remove the &rdquo; ^ &rdquo; from the
 atoms, i.e.</p>
 <pre><code>`NWPW`  
 `  QMMM`  
@@ -2715,7 +2715,7 @@ are:</p>
 </ul>
 <p><code>Default set to be</code><img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/><code>.</code></p>
 <ul>
-<li>(Vosko || PBE96 || revPBE) - Choose between Vosko et al's LDA
+<li>(Vosko || PBE96 || revPBE) - Choose between Vosko et al&rsquo;s LDA
     parametrization or the original and revised Perdew, Burke, and
     Ernzerhof GGA functional.</li>
 <li>MULT - optional keyword which if specified allows the user to define
@@ -2817,7 +2817,7 @@ used.</p>
 </code></pre>
 
 <p>In order for the program to recognize the CPI format the CPI files, e.g.
-c.cpi have to be prepended with the "<CPI>" keyword.</p>
+c.cpi have to be prepended with the &ldquo;<CPI>&rdquo; keyword.</p>
 <p>To read in pseudopotentials in TETER format the following input would be
 used.</p>
 <pre><code>`nwpw `  
@@ -2831,7 +2831,7 @@ used.</p>
 </code></pre>
 
 <p>In order for the program to recognize the TETER format the TETER files,
-e.g. c.teter have to be prepended with the "<TETER>" keyword.</p>
+e.g. c.teter have to be prepended with the &ldquo;<TETER>&rdquo; keyword.</p>
 <p>If you wish to redirect the code to a different directory other than the
 default one, you need to set the environmental variable
 NWCHEM_NWPW_LIBRARY to the new location of the libraryps directory.</p>
@@ -2863,12 +2863,12 @@ Car-Parrinello task is run.</p>
 <h3 id="formatted-pseudopotential-datafile">Formatted Pseudopotential Datafile</h3>
 <p>The pseudopotentials in Kleinman-Bylander form expanded on a simulation
 cell (3d grid) are stored in a formatted pseudopotential datafile
-(PSPW-"atomname.vpp", BAND-"atomname.cpp", PAW-"atomname.jpp"). These
+(PSPW-&ldquo;atomname.vpp&rdquo;, BAND-&ldquo;atomname.cpp&rdquo;, PAW-&ldquo;atomname.jpp&rdquo;). These
 are binary files and cannot be directly edited. These datafiles are
 automatically generated.</p>
 <h3 id="one-dimensional-pseudopotential-datafile">One-Dimensional Pseudopotential Datafile</h3>
 <p>The one-dimensional pseudopotentials are stored in a one-dimensional
-pseudopotential file ("atomname.psp"). This is an ASCII file and can be
+pseudopotential file (&ldquo;atomname.psp&rdquo;). This is an ASCII file and can be
 directly edited with a text editor or can be generated using the
 pspw_generator task. However, these datafiles are usually atomatically
 generated.</p>
@@ -2975,7 +2975,7 @@ energy.</p>
 <p>In these equations, the average kinetic energy for the ions is</p>
 <p><img alt="$\begin{matrix}E_{R0} = \frac{1}{2} f k_B T \end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d627accb7a5ff35307c4491e887851a9.svg?invert_in_darkmode&sanitize=true" align=middle width="103.26591pt" height="27.96948pt"/></p>
 <p>where <img alt="$f$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/190083ef7a1625fbc75f243cffb9c96d.svg?invert_in_darkmode&sanitize=true" align=middle width="9.780705pt" height="22.74591pt"/> is the number of atomic degrees of freedom, <img alt="$k_B$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bad54364b5669c56b4b0a72d42c7da00.svg?invert_in_darkmode&sanitize=true" align=middle width="18.979455pt" height="22.74591pt"/> is
-Boltzmann's constant, and T is the desired t emperature. Defining the
+Boltzmann&rsquo;s constant, and T is the desired t emperature. Defining the
 average fictitious kinetic energy of the electrons is not as
 straightforward. Blöchl and Parrinello (P.E. Blöchl and M. Parrinello,
 Phys. Rev. B, <strong>45</strong>, 9413, (1992)) have suggested the following formula

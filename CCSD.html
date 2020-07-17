@@ -162,21 +162,21 @@ END
 <p>Note that the keyword CCSD is used for the input block regardless of the
 actual level of theory desired (specified with the TASK directive). The
 following directives are recognized within the CCSD group.</p>
-<h2 id="maxiter-maximum-number-of-iterations">MAXITER -- Maximum number of iterations</h2>
+<h2 id="maxiter-maximum-number-of-iterations">MAXITER &ndash; Maximum number of iterations</h2>
 <p>The maximum number of iterations is set to 20 by default. This should be
 quite enough for most calculations, although particularly troublesome
 cases may require more.</p>
 <pre><code> MAXITER  &lt;integer maxiter default 20&gt;
 </code></pre>
 
-<h2 id="thresh-convergence-threshold">THRESH -- Convergence threshold</h2>
+<h2 id="thresh-convergence-threshold">THRESH &ndash; Convergence threshold</h2>
 <p>Controls the convergence threshold for the iterative part of the
 calculation. Both the RMS error in the amplitudes and the change in
 energy must be less than thresh.</p>
 <pre><code> THRESH  &lt;real thresh default 1e-6&gt;
 </code></pre>
 
-<h2 id="tol2e-integral-screening-threshold">TOL2E -- integral screening threshold</h2>
+<h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold</h2>
 <pre><code> TOL2E &lt;real tol2e default min(1e-12, 0.01*thresh)&gt;
 </code></pre>
 
@@ -184,12 +184,12 @@ energy must be less than thresh.</p>
 threshold for the evaluation of the energy and related quantities.</p>
 <p>CAUTION! At the present time, the tol2e parameter only affects the
 three- and four-virtual contributions, and the triples, all of which are
-done "on the fly". The transformations used for the other parts of the
+done &ldquo;on the fly&rdquo;. The transformations used for the other parts of the
 code currently have a hard-wired threshold of <img alt="$10^{-12}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/aeab78344f8b0fe0d6b7163980cf8ff1.svg?invert_in_darkmode&sanitize=true" align=middle width="39.668805pt" height="26.70657pt"/>. The default
 for tol2e is set to match this, and since user input can only make the
 threshold smaller, setting this parameter can only make calculations
 take longer.</p>
-<h2 id="diisbas-diis-subspace-dimension">DIISBAS -- DIIS subspace dimension</h2>
+<h2 id="diisbas-diis-subspace-dimension">DIISBAS &ndash; DIIS subspace dimension</h2>
 <p>Specifies the maximum size of the subspace used in DIIS convergence
 acceleration. Note that DIIS requires the amplitudes and errors be
 stored for each iteration in the subspace. Obviously this can
@@ -201,18 +201,18 @@ considered, but have not yet been implemented.</p>
 <pre><code> DIISBAS  &lt;integer diisbas default 5&gt;
 </code></pre>
 
-<h2 id="freeze-freezing-orbitals">FREEZE -- Freezing orbitals</h2>
+<h2 id="freeze-freezing-orbitals">FREEZE &ndash; Freezing orbitals</h2>
 <pre><code>  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
           [virtual &lt;integer nfzv default 0&gt;]]
 </code></pre>
 
 <p>This directive is identical to that used in the <a href="MP2.html">MP2</a>
 module.</p>
-<h2 id="nodisk-on-the-fly-computation-of-integrals">NODISK -- On-the-fly computation of integrals</h2>
+<h2 id="nodisk-on-the-fly-computation-of-integrals">NODISK &ndash; On-the-fly computation of integrals</h2>
 <p>The CCSD modules by default computes once and stores on disk the
 integrals. To avoid this kind of I/O operations, specify the keyword
 <code>NODISK</code></p>
-<h2 id="iprt-debug-printing">IPRT -- Debug printing</h2>
+<h2 id="iprt-debug-printing">IPRT &ndash; Debug printing</h2>
 <p>This directive controls the level of output from the code, mostly to
 facilitate debugging and the like. The larger the value, the more output
 printed. From looking at the source code, the interesting values seem to
@@ -236,22 +236,22 @@ yet.</p>
 </thead>
 <tbody>
 <tr>
-<td>"reference"</td>
+<td>&ldquo;reference&rdquo;</td>
 <td>high</td>
 <td>Wavefunction information</td>
 </tr>
 <tr>
-<td>"guess pair energies"</td>
+<td>&ldquo;guess pair energies&rdquo;</td>
 <td>debug</td>
 <td>MP2 pair energies</td>
 </tr>
 <tr>
-<td>"byproduct energies"</td>
+<td>&ldquo;byproduct energies&rdquo;</td>
 <td>default</td>
 <td>Intermediate energies</td>
 </tr>
 <tr>
-<td>"term debugging switches"</td>
+<td>&ldquo;term debugging switches&rdquo;</td>
 <td>debug</td>
 <td>Switches for individual terms</td>
 </tr>
@@ -288,8 +288,8 @@ calculation of particular terms in the program. These are 15-element
 integer arrays (although from the code only a few elements actually
 effect anything) which can be set from the input deck. See the code for
 details of how the arrays are interpreted.</p>
-<p>Printing of this data at run-time is controlled by the "term debugging
-switches" print option. The values are checked against the defaults at
+<p>Printing of this data at run-time is controlled by the &ldquo;term debugging
+switches&rdquo; print option. The values are checked against the defaults at
 run-time and a warning is printed to draw attention to the fact that the
 calculation does not correspond precisely to the requested method.</p>
 <pre><code>DOA  &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
@@ -360,17 +360,17 @@ processes and threads is not available.</p>
 <p><references/></p>
 <ol>
 <li>Rendell, A.P., Lee, T.J., Komornicki, A., and Wilson, S. (1992)
-    "Evaluation of the contribution from triply excited intermediates to
+    &ldquo;Evaluation of the contribution from triply excited intermediates to
     the fourth-order perturbation theory energy on Intel distributed
-    memory supercomputers", <em>Theor. Chem. Acc.</em>, <strong>84</strong>, 271-287, doi:
+    memory supercomputers&rdquo;, <em>Theor. Chem. Acc.</em>, <strong>84</strong>, 271-287, doi:
     <a href="http://dx.doi.org/10.1007/BF01113267">10.1007/BF01113267</a></li>
-<li>Kobayashi, R. and Rendell, A.P. (1997) "A direct coupled cluster
-    algorithm for massively parallel computers", <em>Chem. Phys. Lett.</em>,
+<li>Kobayashi, R. and Rendell, A.P. (1997) &ldquo;A direct coupled cluster
+    algorithm for massively parallel computers&rdquo;, <em>Chem. Phys. Lett.</em>,
     <strong>265</strong>, 1-11, doi:
     <a href="http://dx.doi.org/10.1016/S0009-2614$96$01387-5">10.1016/S0009-2614(96)01387-5</a></li>
 <li>Aprà, E., Harrison, R.J., de Jong, W.A., Rendell, A.P., Tipparaju,
-    V. and Xantheas, S.S. (2009) "Liquid Water: Obtaining the Right
-    Answer for the Right Reasons", <em>Proc. SC'09</em>, doi:
+    V. and Xantheas, S.S. (2009) &ldquo;Liquid Water: Obtaining the Right
+    Answer for the Right Reasons&rdquo;, <em>Proc. SC&lsquo;09</em>, doi:
     <a href="http://dx.doi.org/10.1145/1654059.1654127">10.1145/1654059.1654127</a></li>
 </ol>
               

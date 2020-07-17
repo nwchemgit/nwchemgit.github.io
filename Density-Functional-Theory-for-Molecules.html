@@ -267,39 +267,39 @@ sub-directives that can be specified for a DFT calculation in NWChem.</p>
 <h2 id="specification-of-basis-sets-for-the-dft-module">Specification of Basis Sets for the DFT Module</h2>
 <p>The DFT module requires at a minimum the basis set for the Kohn-Sham
 molecular orbitals. This basis set must be in the default basis set
-named "ao basis", or it must be assigned to this default name using the
+named &ldquo;ao basis&rdquo;, or it must be assigned to this default name using the
 <a href="SET.html">SET</a> directive.</p>
 <p>In addition to the basis set for the Kohn-Sham orbitals, the charge
 density fitting basis set can also be specified in the input directives
 for the DFT module. This basis set is used for the evaluation of the
 Coulomb potential in the Dunlap scheme. The charge density fitting basis
-set must have the name "cd basis". This can be the actual name of a
+set must have the name &ldquo;cd basis&rdquo;. This can be the actual name of a
 basis set, or a basis set can be assigned this name using the
 <a href="SET.html">SET</a> directive. If this basis set is not
 defined by input, the <img alt="$O(N^4)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6841e6deec263483fbfcac7124b2da91.svg?invert_in_darkmode&sanitize=true" align=middle width="48.01137pt" height="26.70657pt"/> exact Coulomb contribution is computed.</p>
 <p>The user also has the option of specifying a third basis set for the
 evaluation of the exchange-correlation potential. This basis set must
-have the name "xc basis". If this basis set is not specified by input,
+have the name &ldquo;xc basis&rdquo;. If this basis set is not specified by input,
 the exchange contribution (XC) is evaluated by numerical quadrature. In
-most applications, this approach is efficient enough, so the "xc basis"
+most applications, this approach is efficient enough, so the &ldquo;xc basis&rdquo;
 basis set is not generally required.</p>
 <p>For the DFT module, the input options for defining the basis sets in a
 given calculation can be summarized as follows;</p>
 <ul>
-<li>"ao basis" - Kohn-Sham molecular orbitals; required for all
+<li>&ldquo;ao basis&rdquo; - Kohn-Sham molecular orbitals; required for all
     calculations</li>
-<li>"cd basis" - charge density fitting basis set; optional, but
+<li>&ldquo;cd basis&rdquo; - charge density fitting basis set; optional, but
     recommended for evaluation of the Coulomb potential</li>
-<li>"xc basis" - exchange-correlation (XC) fitting basis set; optional,
+<li>&ldquo;xc basis&rdquo; - exchange-correlation (XC) fitting basis set; optional,
     and usually not recommended</li>
 </ul>
-<h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL -- KS-MO Vectors</h2>
+<h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL &ndash; KS-MO Vectors</h2>
 <p>The VECTORS directive is the same as that in the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors----inputoutput-of-mo-vectors">SCF</a> module. Currently, the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-lock-keyword">LOCK</a> keyword is not supported by the DFT module, however the directive</p>
 <pre><code> MAX_OVL
 </code></pre>
 
 <p>has the same effect.</p>
-<h2 id="xc-and-decomp-exchange-correlation-potentials">XC and DECOMP -- Exchange-Correlation Potentials</h2>
+<h2 id="xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash; Exchange-Correlation Potentials</h2>
 <pre><code> XC [[acm] [b3lyp] [beckehandh] [pbe0] [bhlyp]\  
     [becke97]  [becke97-1] [becke97-2] [becke97-3] [becke98] [hcth] [hcth120] [hcth147] \  
      [hcth407] [becke97gga1] [hcth407p] \  
@@ -428,10 +428,10 @@ functionals yet.</p>
 functionals, the user has the alternative of specifying combined
 exchange and correlation functionals.</p>
 <p>The available hybrid functionals (where a Hartree-Fock Exchange
-component is present) consist of the Becke "half and half" (see A.D.
+component is present) consist of the Becke &ldquo;half and half&rdquo; (see A.D.
 Becke, J. Chem. Phys. 98, 1372 (1992)), the adiabatic connection method
 (see A.D. Becke, J. Chem. Phys. 98, 5648 (1993)), B3LYP (popularized by
-Gaussian9X), Becke 1997 ("Becke V" paper: A.D.Becke, J. Chem. Phys.,
+Gaussian9X), Becke 1997 (&ldquo;Becke V&rdquo; paper: A.D.Becke, J. Chem. Phys.,
 107, 8554 (1997)).</p>
 <p>The keyword <code>beckehandh</code> specifies that the exchange-correlation energy
 will be computed
@@ -1836,7 +1836,7 @@ task dft energy
 
 <h3 id="ssb-d-functional">SSB-D functional</h3>
 <p>The recently developed SSB-D is a small correction to the non-empirical
-PBE functional and includes a portion of Grimme's dispersion correction
+PBE functional and includes a portion of Grimme&rsquo;s dispersion correction
 (s6=0.847455). It is designed to reproduce the good results of OPBE for
 spin-state splittings and reaction barriers, and the good results of PBE
 for weak interactions. The SSB-D functional works excellent for these
@@ -1878,11 +1878,11 @@ end
 
 <p>For details of the theory, please see the following reference:</p>
 <ol>
-<li>S. Grimme, "Semiempirical hybrid density functional with
-    perturbative second-order correlation" Journal of Chemical Physics
+<li>S. Grimme, &ldquo;Semiempirical hybrid density functional with
+    perturbative second-order correlation&rdquo; Journal of Chemical Physics
     124, 034108 (2006)</li>
 </ol>
-<h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00 -- Asymptotic correction</h3>
+<h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00 &ndash; Asymptotic correction</h3>
 <p>The keyword <code>LB94</code> will correct the asymptotic region of the XC definition
 of exchange-correlation potential by the van-Leeuwen-Baerends
 exchange-correlation potential that has the correct <img alt="$-1/r$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3053de24294b49c2329426a84757d7d1.svg?invert_in_darkmode&sanitize=true" align=middle width="36.958185pt" height="24.56553pt"/> asymptotic
@@ -1891,7 +1891,7 @@ exchange-correlation functional. This scheme is known to tend to
 overcorrect the deficiency of most uncorrected exchange-correlation
 potentials.</p>
 <p>The keyword <code>CS00</code>, when supplied with a real value of shift (in atomic
-units), will perform Casida-Salahub '00 asymptotic correction. This is
+units), will perform Casida-Salahub &lsquo;00 asymptotic correction. This is
 primarily intended for use in conjunction with
 <a href="Excited-State-Calculations.html">TDDFT</a>. The shift is normally
 positive (which means that the original uncorrected exchange-correlation
@@ -1900,7 +1900,7 @@ potential must be shifted down).</p>
 program will automatically supply it according to the semi-empirical
 formula of Zhan, Nichols, and Dixon (again, see
 <a href="Excited-State-Calculations.html">TDDFT</a> for more details and
-references). As the Zhan's formula is calibrated against B3LYP results,
+references). As the Zhan&rsquo;s formula is calibrated against B3LYP results,
 it is most meaningful to use this in conjunction with the B3LYP
 functional, although the program does not prohibit (or even warn) the
 use of any other functional.</p>
@@ -1934,7 +1934,7 @@ task dft optimize 
 task dft freq numerical
 </code></pre>
 
-<h2 id="iterations-or-maxiter-number-of-scf-iterations">ITERATIONS or MAXITER -- Number of SCF iterations</h2>
+<h2 id="iterations-or-maxiter-number-of-scf-iterations">ITERATIONS or MAXITER &ndash; Number of SCF iterations</h2>
 <pre><code> ITERATIONS or MAXITER &lt;integer iterations default 30&gt;
 </code></pre>
 
@@ -1953,7 +1953,7 @@ the following general form,</p>
 iterations is reached or convergence is met. See an example that uses
 this directive in <a href="#sample-input-file">Sample input
 file</a>.</p>
-<h2 id="convergence-scf-convergence-control">CONVERGENCE -- SCF Convergence Control</h2>
+<h2 id="convergence-scf-convergence-control">CONVERGENCE &ndash; SCF Convergence Control</h2>
 <pre><code> CONVERGENCE [energy &lt;real energy default 1e-6&gt;] \  
              [density &lt;real density default 1e-5&gt;] \  
              [gradient &lt;real gradient default 5e-4&gt;] \  
@@ -2090,7 +2090,7 @@ the following line</p>
 <pre><code> CONVERGENCE rabuck 30
 </code></pre>
 
-<h2 id="cdft-constrained-dft">CDFT -- Constrained DFT</h2>
+<h2 id="cdft-constrained-dft">CDFT &ndash; Constrained DFT</h2>
 <p>This option enables the constrained DFT formalism by Wu and Van Voorhis
 described in the paper: Q. Wu, T. Van Voorhis, Phys. Rev. A 72, 024502
 (2005).</p>
@@ -2119,7 +2119,7 @@ options are defined, the last one will be used. When there are
 convergence problems with multiple constraints, the user is advised to
 do one constraint first and to use the resulting orbitals for the next
 step of the constrained calculations.</p>
-<p>It is best to put "convergence nolevelshifting" in the dft directive to
+<p>It is best to put &ldquo;convergence nolevelshifting&rdquo; in the dft directive to
 avoid issues with gradient calculations and convergence in CDFT. Use
 orbital swap to get a broken-symmetry solution.</p>
 <p>An input example is given below.</p>
@@ -2144,7 +2144,7 @@ end
 task dft
 </code></pre>
 
-<h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR -- Fractional Occupation of the Molecular Orbitals</h2>
+<h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR &ndash; Fractional Occupation of the Molecular Orbitals</h2>
 <p>The SMEAR keyword is useful in cases with many degenerate states near
 the HOMO (eg metallic clusters)</p>
 <pre><code> SMEAR &lt;real smear default 0.001&gt;
@@ -2155,7 +2155,7 @@ Gaussian broadening function of exponent smear is used as described in
 the paper: R.W. Warren and B.I. Dunlap, Chem. Phys. Letters 262, 384
 (1996). The user must be aware that an additional energy term is added
 to the total energy in order to have energies and gradients consistent.</p>
-<h2 id="fon-calculations-with-fractional-numbers-of-electrons">FON -- Calculations with fractional numbers of electrons</h2>
+<h2 id="fon-calculations-with-fractional-numbers-of-electrons">FON &ndash; Calculations with fractional numbers of electrons</h2>
 <h3 id="restricted">Restricted</h3>
 <pre><code>fon partial 3 electrons 1.8 filled 2
 </code></pre>
@@ -2227,7 +2227,7 @@ end
 task dft
 </code></pre>
 
-<h2 id="occup-controlling-the-occupations-of-molecular-orbitals">OCCUP -- Controlling the occupations of molecular orbitals</h2>
+<h2 id="occup-controlling-the-occupations-of-molecular-orbitals">OCCUP &ndash; Controlling the occupations of molecular orbitals</h2>
 <p>Example:</p>
 <pre><code>echo  
 start h2o_core_hole  
@@ -2258,7 +2258,7 @@ end
 task dft
 </code></pre>
 
-<h2 id="grid-numerical-integration-of-the-xc-potential">GRID -- Numerical Integration of the XC Potential</h2>
+<h2 id="grid-numerical-integration-of-the-xc-potential">GRID &ndash; Numerical Integration of the XC Potential</h2>
 <pre><code> GRID [(xcoarse||coarse||medium||fine||xfine||huge) default medium] \  
       [(gausleg||lebedev ) default lebedev ] \  
       [(becke||erf1||erf2||ssf) default erf1] \  
@@ -2330,7 +2330,7 @@ system was computed using the converged SCF density with atoms having
 radial shells ranging from 35-235 (at fixed 48/96 angular quadratures)
 and angular quadratures of 12/24-48/96 (at fixed 235 radial shells). The
 error of the numerical integration was determined by comparison to a
-"best" or most accurate calculation in which a grid of 235 radial points
+&ldquo;best&rdquo; or most accurate calculation in which a grid of 235 radial points
 48 theta and 96 phi angular points on each atom was used. This
 corresponds to approximately 1 million points per atom. The following
 tables were empirically determined to give the desired target accuracy
@@ -2744,7 +2744,7 @@ molecule</p>
 </code></pre>
 
 <p>This keyword turns off storage of grid points and weights on disk.</p>
-<h2 id="tolerances-screening-tolerances">TOLERANCES -- Screening tolerances</h2>
+<h2 id="tolerances-screening-tolerances">TOLERANCES &ndash; Screening tolerances</h2>
 <pre><code> TOLERANCES [[tight] [tol_rho &lt;real tol_rho default 1e-10&gt;] \  
              [accCoul &lt;integer accCoul default 8&gt;] \  
              [radius &lt;real radius default 25.0&gt;]]
@@ -2785,7 +2785,7 @@ initial sleazy tolerances the user can invoke the tight option:</p>
 <p>This option sets all tolerances to their default/user specified values
 at the very first
 iteration.</p>
-<h2 id="direct-semidirect-and-noio-hardware-resource-control">DIRECT, SEMIDIRECT and NOIO -- Hardware Resource Control</h2>
+<h2 id="direct-semidirect-and-noio-hardware-resource-control">DIRECT, SEMIDIRECT and NOIO &ndash; Hardware Resource Control</h2>
 <pre><code> DIRECT||INCORE  
  SEMIDIRECT [filesize &lt;integer filesize default disksize&gt;]  
             [memsize  &lt;integer memsize default available&gt;]  
@@ -2801,16 +2801,16 @@ directive. The input to exercise this option is as follows,</p>
 </code></pre>
 
 <p>If this keyword is encountered, then the two matrices (inverted
-charge-density and exchange-correlation) are computed ``on-the-fly''
+charge-density and exchange-correlation) are computed ``on-the-fly&rsquo;&lsquo;
 whenever needed.</p>
 <p>The <code>INCORE</code> option is always assumed to be true but can be overridden
 with the option <code>DIRECT</code> in which case all integrals are computed
-``on-the-fly''.</p>
+``on-the-fly&rsquo;&lsquo;.</p>
 <p>The <code>SEMIDIRECT</code> option controls caching of integrals. A full description
 of this option is described in the <a href="Hartree-Fock-Theory-for-Molecules.html#direct-and-semidirect----recomputation-of-integrals">Hartree-Fock</a> section. Some functionality
 which is only compatible with the <code>DIRECT</code> option will not, at present,
 work when using <code>SEMIDIRECT</code>.</p>
-<h2 id="odft-and-mult-open-shell-systems">ODFT and MULT -- Open shell systems</h2>
+<h2 id="odft-and-mult-open-shell-systems">ODFT and MULT &ndash; Open shell systems</h2>
 <pre><code> ODFT
  MULT &lt;integer mult default 1&gt;
 </code></pre>
@@ -2832,14 +2832,14 @@ preferentially occupied.</p>
 <p>The keyword <code>ODFT</code> is unnecessary except in the context of forcing a
 singlet system to be computed as an open shell system (i.e., using a
 spin-unrestricted wavefunction).</p>
-<h2 id="cgmin-quadratic-convergence-algorithm">CGMIN -- Quadratic convergence algorithm</h2>
+<h2 id="cgmin-quadratic-convergence-algorithm">CGMIN &ndash; Quadratic convergence algorithm</h2>
 <p>The cgmin keyword will use the quadratic convergence algorithm. It is
 possible to turn the use of the quadratic convergence algorithm off with
 the nocgmin keyword.</p>
-<h2 id="rodft-restricted-open-shell-dft">RODFT -- Restricted open-shell DFT</h2>
+<h2 id="rodft-restricted-open-shell-dft">RODFT &ndash; Restricted open-shell DFT</h2>
 <p>The rodft keyword will perform restricted open-shell calculations. This
 keyword can only be used with the CGMIN keyword.</p>
-<h2 id="sic-self-interaction-correction">SIC -- Self-Interaction Correction</h2>
+<h2 id="sic-self-interaction-correction">SIC &ndash; Self-Interaction Correction</h2>
 <pre><code>sic [perturbative || oep || oep-loc ]
 &lt;default perturbative&gt;
 </code></pre>
@@ -2876,7 +2876,7 @@ sic energy can be printed out using:</p>
 <pre><code>print &quot;SIC information&quot;
 </code></pre>
 
-<h2 id="mulliken-mulliken-analysis">MULLIKEN -- Mulliken analysis</h2>
+<h2 id="mulliken-mulliken-analysis">MULLIKEN &ndash; Mulliken analysis</h2>
 <p>Mulliken analysis of the charge distribution is invoked by the keyword:</p>
 <pre><code> MULLIKEN
 </code></pre>
@@ -2892,7 +2892,7 @@ end
 task dft
 </code></pre>
 
-<h2 id="fukui-fukui-indices">FUKUI -- Fukui Indices</h2>
+<h2 id="fukui-fukui-indices">FUKUI &ndash; Fukui Indices</h2>
 <p>Fukui inidces analysis is invked by the keyword:</p>
 <pre><code> FUKUI
 </code></pre>
@@ -2907,7 +2907,7 @@ analysis can be obtained using the following</p>
  task dft
 </code></pre>
 
-<h2 id="bsse-basis-set-superposition-error">BSSE -- Basis Set Superposition Error</h2>
+<h2 id="bsse-basis-set-superposition-error">BSSE &ndash; Basis Set Superposition Error</h2>
 <p>Particular care is required to compute BSSE by the counter-poise method
 for the DFT module. In order to include terms deriving from the
 numerical grid used in the XC integration, the user must label the ghost
@@ -2932,7 +2932,7 @@ end
 
 <p>Please note that the <q>ghost</q> oxygen atom has been labeled bqO, and
 not just bq.</p>
-<h2 id="disp-empirical-long-range-contribution-vdw">DISP -- Empirical Long-range Contribution (vdW)</h2>
+<h2 id="disp-empirical-long-range-contribution-vdw">DISP &ndash; Empirical Long-range Contribution (vdW)</h2>
 <pre><code> DISP \
       [ vdw &lt;real vdw integer default 2]] \
       [[s6 &lt;real s6 default depends on XC functional&gt;] \
@@ -2977,7 +2977,7 @@ some functionals and triple-zeta plus double polarization basis set
 <li>vdw 2. BLYP 1.20, PBE 0.75, BP86 1.05, B3LYP 1.05, Becke97-D 1.25
     and TPSS 1.00.</li>
 </ul>
-<p>Grimme's DFT-D3 is also available. Here the dispersion term has the
+<p>Grimme&rsquo;s DFT-D3 is also available. Here the dispersion term has the
 following
 form:</p>
 <p>E<sub>disp</sub> = &sum;<sub>ij</sub> &sum;<sub>n=6,8</sub> s<sub>n</sub>  C<sup>ij</sup><sub>n</sub> &frasl; r<sub>ij</sub><sup>n</sup> &lbrace;1 + 6 &lbrack;r<sub>ij</sub> &frasl; (s<sub>r,n</sub> R<sub>0</sub><sup>ij</sup>)&rbrack;<sup>-&alpha;n</sup> &rbrace;<sup>-1</sup></p>
@@ -3000,7 +3000,7 @@ Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010).</p>
 </ul>
 <p>This capability is also supported for energy gradients and Hessian. Is
 possible to be deactivated with OFF.</p>
-<h2 id="noscf-non-self-consistent-calculations">NOSCF --Non Self-Consistent Calculations</h2>
+<h2 id="noscf-non-self-consistent-calculations">NOSCF &ndash;Non Self-Consistent Calculations</h2>
 <p>The noscf keyword allows one to calculate the non self-consistent energy
 for a set of input vectors. For example, the following input shows how a
 non self-consistent B3LYP energy can be calculated using a
@@ -3029,7 +3029,7 @@ end
 task dft energy
 </code></pre>
 
-<h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM -- Exchange-hole dipole moment dispersion model</h2>
+<h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM &ndash; Exchange-hole dipole moment dispersion model</h2>
 <pre><code>XDM  [ a1 &lt;real a1&gt; ]   [ a2 &lt;real a2&gt; ]
 </code></pre>
 
@@ -3077,137 +3077,137 @@ are:</p>
 </thead>
 <tbody>
 <tr>
-<td>"all vector symmetries"</td>
+<td>&ldquo;all vector symmetries&rdquo;</td>
 <td>high</td>
 <td>symmetries of all molecular orbitals</td>
 </tr>
 <tr>
-<td>"alpha partner info"</td>
+<td>&ldquo;alpha partner info&rdquo;</td>
 <td>high</td>
 <td>unpaired alpha orbital analysis</td>
 </tr>
 <tr>
-<td>"common"</td>
+<td>&ldquo;common&rdquo;</td>
 <td>debug</td>
 <td>dump of common blocks</td>
 </tr>
 <tr>
-<td>"convergence"</td>
+<td>&ldquo;convergence&rdquo;</td>
 <td>default</td>
 <td>convergence of SCF procedure</td>
 </tr>
 <tr>
-<td>"coulomb fit"</td>
+<td>&ldquo;coulomb fit&rdquo;</td>
 <td>high</td>
 <td>fitting electronic charge density</td>
 </tr>
 <tr>
-<td>"dft timings"</td>
+<td>&ldquo;dft timings&rdquo;</td>
 <td>high</td>
 <td></td>
 </tr>
 <tr>
-<td>"final vectors"</td>
+<td>&ldquo;final vectors&rdquo;</td>
 <td>high</td>
 <td></td>
 </tr>
 <tr>
-<td>"final vectors analysis"</td>
+<td>&ldquo;final vectors analysis&rdquo;</td>
 <td>high</td>
 <td>print all orbital energies and orbitals</td>
 </tr>
 <tr>
-<td>"final vector symmetries"</td>
+<td>&ldquo;final vector symmetries&rdquo;</td>
 <td>default</td>
 <td>symmetries of final molecular orbitals</td>
 </tr>
 <tr>
-<td>"information"</td>
+<td>&ldquo;information&rdquo;</td>
 <td>low</td>
 <td>general information</td>
 </tr>
 <tr>
-<td>"initial vectors"</td>
+<td>&ldquo;initial vectors&rdquo;</td>
 <td>high</td>
 <td></td>
 </tr>
 <tr>
-<td>"intermediate energy info"</td>
+<td>&ldquo;intermediate energy info&rdquo;</td>
 <td>high</td>
 <td></td>
 </tr>
 <tr>
-<td>"intermediate evals"</td>
+<td>&ldquo;intermediate evals&rdquo;</td>
 <td>high</td>
 <td>intermediate orbital energies</td>
 </tr>
 <tr>
-<td>"intermediate fock matrix"</td>
+<td>&ldquo;intermediate fock matrix&rdquo;</td>
 <td>high</td>
 <td></td>
 </tr>
 <tr>
-<td>"intermediate overlap"</td>
+<td>&ldquo;intermediate overlap&rdquo;</td>
 <td>high</td>
 <td>overlaps between the alpha and beta sets</td>
 </tr>
 <tr>
-<td>"intermediate S2"</td>
+<td>&ldquo;intermediate S2&rdquo;</td>
 <td>high</td>
 <td>values of S2</td>
 </tr>
 <tr>
-<td>"intermediate vectors"</td>
+<td>&ldquo;intermediate vectors&rdquo;</td>
 <td>high</td>
 <td>intermediate molecular orbitals</td>
 </tr>
 <tr>
-<td>"interm vector symm"</td>
+<td>&ldquo;interm vector symm&rdquo;</td>
 <td>high</td>
 <td>symmetries of intermediate orbitals</td>
 </tr>
 <tr>
-<td>"io info"</td>
+<td>&ldquo;io info&rdquo;</td>
 <td>debug</td>
 <td>reading from and writing to disk</td>
 </tr>
 <tr>
-<td>"kinetic_energy"</td>
+<td>&ldquo;kinetic_energy&rdquo;</td>
 <td>high</td>
 <td>kinetic energy</td>
 </tr>
 <tr>
-<td>"mulliken ao"</td>
+<td>&ldquo;mulliken ao&rdquo;</td>
 <td>high</td>
 <td>mulliken atomic orbital population</td>
 </tr>
 <tr>
-<td>"multipole"</td>
+<td>&ldquo;multipole&rdquo;</td>
 <td>default</td>
 <td>moments of alpha, beta, and nuclear charge densities</td>
 </tr>
 <tr>
-<td>"parameters"</td>
+<td>&ldquo;parameters&rdquo;</td>
 <td>default</td>
 <td>input parameters</td>
 </tr>
 <tr>
-<td>"quadrature"</td>
+<td>&ldquo;quadrature&rdquo;</td>
 <td>high</td>
 <td>numerical quadrature</td>
 </tr>
 <tr>
-<td>"schwarz"</td>
+<td>&ldquo;schwarz&rdquo;</td>
 <td>high</td>
 <td>integral screening info &amp; stats at completion</td>
 </tr>
 <tr>
-<td>"screening parameters"</td>
+<td>&ldquo;screening parameters&rdquo;</td>
 <td>high</td>
 <td>integral accuracies</td>
 </tr>
 <tr>
-<td>"semi-direct info"</td>
+<td>&ldquo;semi-direct info&rdquo;</td>
 <td>default</td>
 <td>semi direct algorithm</td>
 </tr>
@@ -3238,7 +3238,7 @@ one can get these from the Stuttgart/Köln web pages  <br />
 (http://www.tc.uni-koeln.de/PP/clickpse.en.html).  See <a href="ECP.html">Effective Core
 Potentials</a> for details how to define the SO ECPs</p>
 <p>Note: One should use a combination of ECP and SO potentials that were
-designed for the same size core, i.e. don't use a small core ECP
+designed for the same size core, i.e. don&rsquo;t use a small core ECP
 potential with a large core SO potential (it will produce erroneous
 results).</p>
 <p>The following is an example of a calculation of <img alt="$UO_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/06f075d510ceac444f473cefd7f488b2.svg?invert_in_darkmode&sanitize=true" align=middle width="31.993995pt" height="22.38192pt"/>:</p>

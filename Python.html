@@ -215,36 +215,36 @@ within NWChem can be extended to Python, but we are also interested in
 ideas that will enable users to build completely new things. For
 instance, how about being able to define your own energy functions that
 can be used with the existing optimizers or dynamics package?</p>
-<p>Python has been extended with a module named "nwchem" which is
+<p>Python has been extended with a module named &ldquo;nwchem&rdquo; which is
 automatically imported and contains the following NWChem-specific
 commands. They all handle NWChem-related errors by raising the exception
-"NWChemError", which may be handled in the standard Python manner (see
+&ldquo;NWChemError&rdquo;, which may be handled in the standard Python manner (see
 Section 38.3.9).</p>
 <ul>
-<li>input_parse(string) -- invokes the standard NWChem input parser
+<li>input_parse(string) &ndash; invokes the standard NWChem input parser
     with the data in string as input. Note that the usual behavior of
-    NWChem will apply -- the parser only reads input up to either end of
+    NWChem will apply &ndash; the parser only reads input up to either end of
     input or until a TASK directive is encountered (the task directive
     is not executed by the parser).</li>
-<li>task_energy(theory) -- returns the energy as if computed with the
+<li>task_energy(theory) &ndash; returns the energy as if computed with the
     NWChem directive TASK ENERGY <THEORY>.</li>
-<li>task_gradient(theory) -- returns a tuple (energy,gradient) as if
+<li>task_gradient(theory) &ndash; returns a tuple (energy,gradient) as if
     computed with the NWChem directive TASK GRADIENT <THEORY>.</li>
-<li>task_optimize(theory) -- returns a tuple (energy,gradient) as if
+<li>task_optimize(theory) &ndash; returns a tuple (energy,gradient) as if
     computed with the NWChem directive TASK OPTIMIZE <THEORY>. The
     energy and gradient will be those at the last point in the
     optimization and consistent with the current geometry in the
     database.</li>
-<li>ga_nodeid() -- returns the number of the parallel process.</li>
-<li>rtdb_print(print_values) -- prints the contents of the RTDB. If
+<li>ga_nodeid() &ndash; returns the number of the parallel process.</li>
+<li>rtdb_print(print_values) &ndash; prints the contents of the RTDB. If
     print_values is 0, only the keys are printed, if it is 1 then the
     values are also printed.</li>
-<li>rtdb_put(name, values) or rtdb_put(name, values, type) -- puts the
+<li>rtdb_put(name, values) or rtdb_put(name, values, type) &ndash; puts the
     values into the database with the given name. In the first form, the
     type is inferred from the first value, and in the second form the
     type is specified using the last argument as one of INT, DBL,
     LOGICAL, or CHAR.</li>
-<li>rtdb_get(name) -- returns the data from the database associated
+<li>rtdb_get(name) &ndash; returns the data from the database associated
     with the given name.</li>
 </ul>
 <p>An
@@ -294,7 +294,7 @@ the exponent and energy at each step.</p>
 inside a call to input_parse() in the Python program. The standard
 Python string substitution is used to put the current value of the
 exponent into the basis set (replacing the %f) before being parsed by
-NWChem. The energy is returned by task_energy('scf') and printed out.
+NWChem. The energy is returned by task_energy(&lsquo;scf&rsquo;) and printed out.
 The print none in the NWChem input switches off all NWChem output so all
 you will see is the output from your Python program.</p>
 <p>Note that execution in parallel may produce unwanted output since all
@@ -338,7 +338,7 @@ but uses a slightly more sophisticated Python program, also writes the
 data out to a file for easy visualization with a package such as
 gnuplot, and protects write statements to prevent duplicate output in a
 parallel job. The only significant differences are in the Python
-program. A file called "plotdata" is opened, and then a procedure is
+program. A file called &ldquo;plotdata&rdquo; is opened, and then a procedure is
 defined which given an exponent returns the energy. Next comes the main
 loop that scans the exponent through the desired range and prints the
 results to standard output and to the file. When the loop is finished
@@ -405,7 +405,7 @@ end
 task python
 </code></pre>
 
-<p>This example scans the He--Ne bond-length from 3.3 to 4.3 and prints out
+<p>This example scans the He&ndash;Ne bond-length from 3.3 to 4.3 and prints out
 the BSSE counterpoise corrected MP2 energy.</p>
 <p>The basis set is specified as usual, noting that we will need functions
 on ghost centers to do the counterpoise correction. The Python program
@@ -504,7 +504,7 @@ task python
 2CH<sub>4</sub> is evaluated using MP2 in several basis sets. The geometries are
 fixed, but could be re-optimized in each basis. To illustrate the useful
 associative arrays in Python, the reaction energies are put into the
-associative array energies -- note its declaration at the top of the
+associative array energies &ndash; note its declaration at the top of the
 program.</p>
 <h3 id="using-the-database">Using the database</h3>
 <p><code>python</code><br />
@@ -543,7 +543,7 @@ program.</p>
 <p>The above test program shows how to handle exceptions generated by
 NWChem by forcing an SCF calculation on (He_2) to fail due to
 insufficient iterations.</p>
-<p>If an NWChem command fails it will raise the exception "NWChemError"
+<p>If an NWChem command fails it will raise the exception &ldquo;NWChemError&rdquo;
 (case sensitive) unless the error was fatal. If the exception is not
 caught, then it will cause the entire Python program to terminate with
 an error. This Python program catches the exception, prints out the
@@ -552,10 +552,10 @@ been handled.</p>
 <p>If your Python program detects an error, raise an unhandled exception.
 Do not call exit(1) since this may circumvent necessary clean-up of the
 NWChem execution environment.</p>
-<h3 id="accessing-geometry-information-a-temporary-hack">Accessing geometry information -- a temporary hack</h3>
+<h3 id="accessing-geometry-information-a-temporary-hack">Accessing geometry information &ndash; a temporary hack</h3>
 <p>In an ideal world the geometry and basis set objects would have full
 Python wrappers, but until then a back-door solution will have to
-suffice. We've already seen how to use input_parse() to put geometry
+suffice. We&rsquo;ve already seen how to use input_parse() to put geometry
 (and basis) data into NWChem, so it only remains to get the geometry
 data back after it has been updated by a geometry optimzation or some
 other operation.</p>
@@ -584,10 +584,10 @@ is included in the NWChem contrib directory.</p>
 atomic units) stored in the database entry geometry:NAME:coords. A minor
 wrinkle here is that indirection is possible (and used by the
 optimizers) so that we must first check if NAME actually points to
-another name. In the program this is done in the first try...except
+another name. In the program this is done in the first try&hellip;except
 sequence. With the actual name of the geometry, we can get the
 coordinates. Any exceptions are passed up to the caller. The rest of the
-code is just to convert back into the initial input units -- only atomic
+code is just to convert back into the initial input units &ndash; only atomic
 units or Angstrøms are handled in this simple example. Returned is a
 list of the atomic coordinates in the same units as your initial input.</p>
 <p>The routine is used as follows</p>
@@ -604,15 +604,15 @@ another, but, browsing the output of rtdb_print() at the end of a
 calculation is a good way to find stuff. To be on safer ground, look in
 the programmers manual since some of the high-level routines do pass
 data via the database in a well-defined and supported manner. Be warned
--- you must be very careful if you try to modify data in the database.
+&ndash; you must be very careful if you try to modify data in the database.
 The input parser does many important things that are not immediately
 apparent (e.g., ensure the geometry is consistent with the point group,
-mark the SCF as not converged if the SCF options are changed, ...).
+mark the SCF as not converged if the SCF options are changed, &hellip;).
 Where at all possible your Python program should generate standard
 NWChem input and pass it to input_parse() rather than setting
 parameters directly in the
 database.</p>
-<h3 id="scaning-a-basis-exponent-yet-again-plotting-and-handling-child-processes">Scaning a basis exponent yet again -- plotting and handling child processes</h3>
+<h3 id="scaning-a-basis-exponent-yet-again-plotting-and-handling-child-processes">Scaning a basis exponent yet again &ndash; plotting and handling child processes</h3>
 <pre><code> geometry units au  
    O 0 0 0; H 0 1.430 -1.107; H 0 -1.430 -1.107  
  end  
@@ -654,7 +654,7 @@ database.</p>
 and how to generate simple plots on UNIX systems. The <a href="#scanning-a-basis-exponent-revisited">scanning
 example</a> is modified so
 that instead of writing the data to a file for subsequent visualization,
-it is saved for subsequent visualization with Gnuplot (you'll need both
+it is saved for subsequent visualization with Gnuplot (you&rsquo;ll need both
 Gnuplot and the corresponding package for Python in your PYTHONPATH.
 Look at <a href="http://monsoon.harvard.edu/~mhagger/download">http://monsoon.harvard.edu/~mhagger/download</a>).</p>
 <p>The issue is that NWChem traps various signals from the O/S that usually
@@ -676,12 +676,12 @@ the first line. If this is not the case then perhaps there is a tab
 in your input which NWChem treats as a single space character but
 appears to you as more spaces. Try running untabify in Emacs. The
 problem could also be the END directive that terminates the PYTHON
-compound directive -- since Python also has an end statement. To
+compound directive &ndash; since Python also has an end statement. To
 avoid confusion the END directive for NWChem must be at the start of
 the line.  </p>
 </li>
 <li>
-<p>Your program hangs or deadlocks -- most likely you have a piece of
+<p>Your program hangs or deadlocks &ndash; most likely you have a piece of
     code that is restricted to executing on a subset of the processors
     (perhaps just node 0) but is calling (perhaps indirectly) a function
     that must execute on all nodes.</p>
