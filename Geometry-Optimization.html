@@ -141,7 +141,7 @@ optimization with line searches and approximate energy Hessian updates.</p>
 <p>DRIVER is selected by default out of the two available modules to
 perform geometry optimization. In order to force use of DRIVER (e.g.,
 because a previous optimization used STEPPER) provide a DRIVER input
-block (below) -- even an empty block will force use of DRIVER.</p>
+block (below) &ndash; even an empty block will force use of DRIVER.</p>
 <p>Optional input for this module is specified within the compound
 directive,</p>
 <pre><code> DRIVER   
@@ -284,7 +284,7 @@ has rendered the current set of coordinates invalid or non-optimal.</p>
 </code></pre>
 
 <ul>
-<li>0 = Default ... use restart data if available, otherwise use
+<li>0 = Default &hellip; use restart data if available, otherwise use
     diagonal guess.</li>
 <li>1 = Use diagonal initial guess.</li>
 <li>2 = Use restart data if available, otherwise transform Cartesian
@@ -354,7 +354,7 @@ filename. The NOXYZ directive turns this off.</p>
 <pre><code>   driver; xyz test; end
 </code></pre>
 
-<p>will cause files test-000.xyz, test-001.xyz, ... to be created in the
+<p>will cause files test-000.xyz, test-001.xyz, &hellip; to be created in the
 permanent directory.</p>
 <p>The script rasmolmovie in the NWChem contrib directory can be used to
 turn these into an animated GIF movie.</p>
@@ -363,8 +363,8 @@ turn these into an animated GIF movie.</p>
 </code></pre>
 
 <p>The SOCKET directive enables NWChem to communicate with other software
-packages -- such as <a href="http://ipi-code.org/">i-PI</a> or
-<a href="https://wiki.fysik.dtu.dk/ase/dev/ase/calculators/socketio/socketio.html">ASE</a> --
+packages &ndash; such as <a href="http://ipi-code.org/">i-PI</a> or
+<a href="https://wiki.fysik.dtu.dk/ase/dev/ase/calculators/socketio/socketio.html">ASE</a> &ndash;
 via the i-PI socket protocol.</p>
 <p>Communication is done either over Unix sockets (<code>SOCKET UNIX</code>) or IP
 sockets (<code>SOCKET IPI_CLIENT</code>):</p>
@@ -381,7 +381,7 @@ software packages that support communication via the i-PI socket
 protocol. For more information, see the
 <a href="http://ipi-code.org/resources/documentation/">i-PI documentation</a>.</p>
 <h2 id="print-options">Print options</h2>
-<p>The UNIX command "egrep '^@' \&lt; output" will extract a pretty table
+<p>The UNIX command &ldquo;egrep &lsquo;^@&rsquo; \&lt; output&rdquo; will extract a pretty table
 summarizing the optimization.</p>
 <p>If you specify the NWChem input</p>
 <pre><code>     scf; print none; end  
@@ -389,11 +389,11 @@ summarizing the optimization.</p>
      task scf optimize
 </code></pre>
 
-<p>you'll obtain a pleasantly terse output.</p>
+<p>you&rsquo;ll obtain a pleasantly terse output.</p>
 <p>For more control, these options for the standard print directive are
 recognized</p>
 <ul>
-<li>debug - prints a large amount of data. Don't use in parallel.</li>
+<li>debug - prints a large amount of data. Don&rsquo;t use in parallel.</li>
 <li>high - print the search direction in internals</li>
 <li>default - prints geometry for each major step (not during the line
     search), gradient in internals (before and after application of
@@ -408,7 +408,7 @@ recognized</p>
 <li>angles (default) - print angles at end of calculation</li>
 <li>hvecs (never) - print eigen-values/vectors of the Hessian</li>
 <li>searchdir (high) - print the search direction in internals</li>
-<li>"internal gradient" (default) - print the gradient in internals</li>
+<li>&ldquo;internal gradient&rdquo; (default) - print the gradient in internals</li>
 <li>sadmode (default) - print the mode being followed to the saddle
     point</li>
 </ul>
@@ -443,7 +443,7 @@ STEPPER compound directive. However, the user also has the option of
 defining different tasks for the STEPPER module, and can vary the number
 of iterations and the convergence criteria from the default values. The
 input for these options is described in the following sections.</p>
-<h2 id="min-and-ts-minimum-or-transition-state-search">MIN and TS -- Minimum or transition state search</h2>
+<h2 id="min-and-ts-minimum-or-transition-state-search">MIN and TS &ndash; Minimum or transition state search</h2>
 <p>The default is for STEPPER to minimize the energy with respect to the
 geometry of the system. This default behavior may be forced with the
 directive</p>
@@ -459,8 +459,8 @@ selected by specifying the directive</p>
 </code></pre>
 
 <p>in the STEPPER input.</p>
-<h2 id="track-mode-selection">TRACK -- Mode selection</h2>
-<p>STEPPER has the ability to ``track'' a specific mode during an
+<h2 id="track-mode-selection">TRACK &ndash; Mode selection</h2>
+<p>STEPPER has the ability to ``track&rsquo;&lsquo; a specific mode during an
 optimization for a transition state search, the user can also have the
 module track the eigenvector corresponding to a specific mode. This is
 done by specifying the directive</p>
@@ -473,7 +473,7 @@ this input is invalid for a minimization walk since following a specific
 eigenvector will not necessarily give the desired local minimum.) The
 step is constructed to go up in energy along the nmode eigenvector and
 down in all other degrees of freedom.</p>
-<h2 id="maxiter-maximum-number-of-steps">MAXITER -- Maximum number of steps</h2>
+<h2 id="maxiter-maximum-number-of-steps">MAXITER &ndash; Maximum number of steps</h2>
 <p>In most applications, 20 stepper iterations will be sufficient to obtain
 the energy minimization. However, the user has the option of specifying
 the maximum number of iterations allowed, using the input line,</p>
@@ -483,7 +483,7 @@ the maximum number of iterations allowed, using the input line,</p>
 <p>The value specified for the integer <maxiter> defines the maximum number
 of geometry optimization steps. The geometry optimization will restart
 automatically.</p>
-<h2 id="trust-trust-radius">TRUST -- Trust radius</h2>
+<h2 id="trust-trust-radius">TRUST &ndash; Trust radius</h2>
 <p>The size of steps that can be taken in STEPPER is controlled by the
 trust radius which has a default value of 0.1. Steps are constrained to
 be no larger than the trust radius. The user has the option of
@@ -496,7 +496,7 @@ input line,</p>
 steps that can be taken by STEPPER. Experience has shown that for larger
 systems (i.e., those with 20 or more atoms), a value of 0.5, or greater,
 usually should be entered for <radius>.</p>
-<h2 id="convggm-convgg-and-convge-convergence-criteria">CONVGGM, CONVGG and CONVGE -- Convergence criteria</h2>
+<h2 id="convggm-convgg-and-convge-convergence-criteria">CONVGGM, CONVGG and CONVGE &ndash; Convergence criteria</h2>
 <p>Three convergence criteria can be specified explicitly for the STEPPER
 calculations. The keyword CONVGGM allows the user to specify the
 convergence tolerance for the largest component of the gradient. This is
@@ -524,31 +524,31 @@ specified by input using a line of the following form,</p>
 <h2 id="backstepping-in-stepper">Backstepping in STEPPER</h2>
 <p>If a step taken during the optimization is too large (e.g., the step
 causes the energy to go up for a minimization or down for a transition
-state search), the STEPPER optimizer will automatically "backstep"
+state search), the STEPPER optimizer will automatically &ldquo;backstep&rdquo;
 and correct the step based on information prior to the faulty step. If
-you have an optimization that "backsteps" frequently then the initial
+you have an optimization that &ldquo;backsteps&rdquo; frequently then the initial
 trust radius should most likely be decreased.</p>
 <h2 id="initial-nuclear-hessian-options">Initial Nuclear Hessian Options</h2>
 <p>Stepper uses a modified Fletcher-Powell algorithm to find the transition
 state or energy minimum on the potential energy hypersurface.<br />
 There are
-two files left in the user's permanent directory that are used to
+two files left in the user&rsquo;s permanent directory that are used to
 provide an initial hessian to the critical point search algorithm. If
 these files do not exist then the default is to use a unit matrix as the
 initial hessian.<br />
 Once Stepper executes it generates a binary dump file
 by the name of <code>name.stpr41</code> which will be used on all subsequent stepper
 runs and modified with the current updated hessian. The default file
-prefix is the "name" that is used (see
+prefix is the &ldquo;name&rdquo; that is used (see
 <a href="Start_Restart.html">START</a>).
 It also stores the information for the last valid step in case the
-algorithm must take a <a href="Geometry-Optimization.html#backstepping-in-stepper">"backstep"</a>.
+algorithm must take a <a href="Geometry-Optimization.html#backstepping-in-stepper">&ldquo;backstep&rdquo;</a>.
 This file is the working data store for all stepper-based optimizations.
 This file is never deleted by default and is the first source of an
 initial hessian.<br />
 The second source of an initial hessian is an ASCII file
 that contains the lower triangular values of the initial hessian. This
-is stored in file <code>name.hess</code>, where "name" is again the default file
+is stored in file <code>name.hess</code>, where &ldquo;name&rdquo; is again the default file
 prefix. This is the second source of an initial hessian and is the
 method used to incorporate an initial hessian from any other source
 (e.g., another ab initio code, a molecular mechanics code, etc.,). To

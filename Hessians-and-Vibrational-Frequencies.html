@@ -187,32 +187,32 @@ below:</p>
 </thead>
 <tbody>
 <tr>
-<td>"hess_follow"</td>
+<td>&ldquo;hess_follow&rdquo;</td>
 <td>high</td>
 <td>more information about where the calculation is</td>
 </tr>
 <tr>
-<td>"cphf_cont"</td>
+<td>&ldquo;cphf_cont&rdquo;</td>
 <td>debug</td>
 <td>detailed CPHF information</td>
 </tr>
 <tr>
-<td>"nucdd_cont"</td>
+<td>&ldquo;nucdd_cont&rdquo;</td>
 <td>debug</td>
 <td>detailed nuclear contribution information</td>
 </tr>
 <tr>
-<td>"onedd_cont"</td>
+<td>&ldquo;onedd_cont&rdquo;</td>
 <td>debug</td>
 <td>detailed one electron contribution information</td>
 </tr>
 <tr>
-<td>"twodd_cont"</td>
+<td>&ldquo;twodd_cont&rdquo;</td>
 <td>debug</td>
 <td>detailed two electron contribution information</td>
 </tr>
 <tr>
-<td>"fock_xc"</td>
+<td>&ldquo;fock_xc&rdquo;</td>
 <td>debug</td>
 <td>detailed XC information during the fock builds</td>
 </tr>
@@ -230,9 +230,9 @@ hessian generation algorithm is chosen based on the user input when TASK
 <p>The vibrational package was integrated from the Utah Messkit and can use
 any nuclear hessian generated from the driver routines, finite
 difference routines or any analytic hessian modules. There is no
-required input for the "VIB" package. VIB computes the Infra Red
+required input for the &ldquo;VIB&rdquo; package. VIB computes the Infra Red
 frequencies and intensities for the computed nuclear hessian and the
-"projected" nuclear hessian. The VIB module projects out the
+&ldquo;projected&rdquo; nuclear hessian. The VIB module projects out the
 translations and rotations of the nuclear hessian using the standard
 Eckart projection algorithm. It also computes the zero point energy for
 the molecular system based on the frequencies obtained from the
@@ -272,7 +272,7 @@ specifying the path to that file.</p>
 
 <p>This will reuse your saved Hessian data but one caveat is that the
 geometry specification at the point where the hessian is computed must
-be the default "geometry" on the current run-time-data-base for the
+be the default &ldquo;geometry&rdquo; on the current run-time-data-base for the
 projection to work properly.</p>
 <h3 id="redefining-masses-of-elements">Redefining Masses of Elements</h3>
 <p>You may also modify the mass of a specific center or a group of centers
@@ -293,7 +293,7 @@ the masses in the order given in the input. Care must be taken to change
 the masses properly. For example, if you want all hydrogens to have the
 mass of Deuterium and the third hydrogen (which is the 6th atomic
 center) to have the mass of Tritium you must set the Deuterium masses
-first with the tag based mechanism and then set the 6th center's mass to
+first with the tag based mechanism and then set the 6th center&rsquo;s mass to
 that of Tritium using the lexical center index mechanism.</p>
 <p>The mass redefinitions are not fully persistent on the
 run-time-data-base. Each input block that redefines masses will
@@ -329,7 +329,7 @@ task scf frequencies
 </code></pre>
 
 <h3 id="temp-or-temperature">Temp or Temperature</h3>
-<p>The "VIB" module can generate the vibrational analysis at various
+<p>The &ldquo;VIB&rdquo; module can generate the vibrational analysis at various
 temperatures other than at standard room temperature. Either temp or
 temperature can be used to initiate this command.</p>
 <p>To modify the temperature of the computation you can simply use:</p>
@@ -337,13 +337,13 @@ temperature can be used to initiate this command.</p>
 </code></pre>
 
 <p>At this point, the temperatures are persistant and so the user must
-"reset" the temperature if the standard behavior is required after
-setting the temperatures in a previous "VIB" command, i.e.</p>
+&ldquo;reset&rdquo; the temperature if the standard behavior is required after
+setting the temperatures in a previous &ldquo;VIB&rdquo; command, i.e.</p>
 <pre><code> temp 1 298.15
 </code></pre>
 
 <h3 id="animation">Animation</h3>
-<p>The "VIB" module also can generate mode animation input files in the
+<p>The &ldquo;VIB&rdquo; module also can generate mode animation input files in the
 standard xyz file format for graphics packages like RasMol or XMol There
 are scripts to automate this for RasMol in
 <code>$NWCHEM_TOP/contrib/rasmolmovie</code>. Each mode will have 20 xyz files
@@ -383,7 +383,7 @@ end
 along the eigenvector of each nuclear hessian mode in atomic units.</p>
 <h3 id="specifying-filenames-for-animated-normal-modes">Specifying filenames for animated normal modes</h3>
 <p>By default, normal modes will be stored in files that start with
-"freq.m-<mode number>". This is inconvenient if more than vibrational
+&ldquo;freq.m-<mode number>&ldquo;. This is inconvenient if more than vibrational
 analysis is run in a single input file. To specify different filename
 for a particular vibrational analysis use the directive</p>
 <pre><code>filename &lt;file_set_name&gt; [overwrite]
@@ -391,7 +391,7 @@ for a particular vibrational analysis use the directive</p>
 
 <p>where <file_set_name> is the name that will be prepended to the usual
 filenames. In addition the code by default requires all files to be new
-files. When the option "overwrite" is provided any pre-existing files
+files. When the option &ldquo;overwrite&rdquo; is provided any pre-existing files
 will simply be overwritten.</p>
 <h3 id="controlling-the-step-size-of-the-finite-difference-hessian">Controlling the Step Size of the Finite difference Hessian</h3>
 <p>By default, the step size used for calculating the finite difference
@@ -405,7 +405,7 @@ end
 <p>where <fd_hessian_step_size> is the real number that is the magnitude of
 each displacement in atomic units for the calculation of the finite
 difference Hessian. For older versions of NWChem without the fd_delta
-option just set the "stpr_gen:delta" value on the runtime database,
+option just set the &ldquo;stpr_gen:delta&rdquo; value on the runtime database,
 e.g.</p>
 <pre><code>set stpr_gen:delta 0.005
 </code></pre>
@@ -457,9 +457,9 @@ task scf freq
 <h2 id="references">References</h2>
 <p><references/></p>
 <ol>
-<li>Johnson, B.G. and Frisch, M.J. (1994) "An implementation of analytic
+<li>Johnson, B.G. and Frisch, M.J. (1994) &ldquo;An implementation of analytic
     second derivatives of the gradient-corrected density functional
-    energy", <em>Journal of Chemical Physics</em> <strong>100</strong> 7429-7442,
+    energy&rdquo;, <em>Journal of Chemical Physics</em> <strong>100</strong> 7429-7442,
     <a href="doi:%5Bhttp://dx.doi.org/10.1063/1.466887.md">doi:[http://dx.doi.org/10.1063/1.466887</a>
     10.1063/1.466887]</li>
 </ol>

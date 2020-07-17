@@ -162,7 +162,7 @@ data, (2) names of files that contain data, and (3) objects. Arrays are
 stored directly in the database, and contain the following information:</p>
 <ol>
 <li>the name of the array, which is a string of ASCII characters (e.g.,
-    "reference energies")</li>
+    &ldquo;reference energies&rdquo;)</li>
 <li>the type of the data in the array (i.e., real, integer, logical, or
     character)</li>
 <li>the number (N) of data items in the array (Note: A scalar is stored
@@ -171,7 +171,7 @@ stored directly in the database, and contain the following information:</p>
 </ol>
 <p>It is possible to enter data directly into the database using the <a href="SET.html">SET
 directive</a>. For example, to store a (64-bit precision)
-three-element real array with the name "reference energies" in the
+three-element real array with the name &ldquo;reference energies&rdquo; in the
 database, the directive is as follows:</p>
 <p><code>set "reference energies" 0.0 1.0 -76.2</code></p>
 <p>NWChem determines the data to be real (based on the type of the first
@@ -189,7 +189,7 @@ and geometries. <a href="Geometry.html">GEOMETRY</a> and
 describe these objects.</p>
 <p>As an illustration of what comprises a geometry object, the following
 table contains a partial listing of the database contents for a water
-molecule geometry named "test geom". Each entry contains the field test
+molecule geometry named &ldquo;test geom&rdquo;. Each entry contains the field test
 geom, which is the unique name of the object.</p>
 <pre><code>Contents of RTDB h2o.db  
 -----------------------  
@@ -222,19 +222,19 @@ generated from the user-specified input directive,</p>
 the coordinates of the atoms (or centers), and identify the geometry
 with a unique name.</p>
 <p>Unless a specific name is defined for the geometry, (such as the name
-"test geom" shown in the example), the default name of geometry is
+&ldquo;test geom&rdquo; shown in the example), the default name of geometry is
 assigned. This is the geometry name that computational modules will look
 for when executing a calculation. The SET directive can be used in the
 input to force NWChem to look for a geometry with a name other than
 geometry. For example, to specify use of the geometry with the name
-"test geom" in the example above, the SET directive is as follows:</p>
+&ldquo;test geom&rdquo; in the example above, the SET directive is as follows:</p>
 <pre><code>set geometry &quot;test geom&quot;
 </code></pre>
 
 <p>NWChem will automatically check for such indirections when loading
 geometries. Storage of data associated with basis sets, the other
 database resident object, functions in a similar fashion, using the
-default name "ao basis".</p>
+default name &ldquo;ao basis&rdquo;.</p>
 <h2 id="persistence-of-data-and-restart">Persistence of data and restart</h2>
 <p>The database is persistent, meaning that all input data and output data
 (calculation results) that are not destroyed in the course of execution

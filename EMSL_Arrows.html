@@ -135,7 +135,7 @@
 project for providing support that helped with the initial development
 of EMSL Arrows.</p>
 <p><span style="background: #82BA57; border: solid 1px #a9a9a9; padding: 8px">
-<a href="https://arrows.emsl.pnnl.gov/api"><em>' EMSL Arrows API</em>'</a> </span></p>
+<a href="https://arrows.emsl.pnnl.gov/api"><em>&lsquo; EMSL Arrows API</em>&lsquo;</a> </span></p>
 <p><iframe width="560" height="315" src="//www.youtube.com/embed/6cIwx63qiQM" frameborder="0" allowfullscreen></iframe>
 </p
 ><p><a href="https://youtu.be/UFZg-_nQZPM" class="external text" rel="nofollow">Tutorial on YouTube</a>
@@ -154,7 +154,7 @@ A Web API to EMSL Arrows is now available for Alpha testing.
 Click on this <a href="https://arrows.emsl.pnnl.gov/api">link</a>.  </p>
 <p>For more information contact  <a href="mailto:eric.bylaska@pnnl.gov?Subject=EMSL%20Arrows%20Question">Eric Bylaska (eric.bylaska@pnnl.gov)</a></p>
 <p><span style="background: #82BA57; border: solid 1px #a9a9a9; padding: 8px">
-<a href="https://arrows.emsl.pnnl.gov/api"><em>' EMSL Arrows API</em>'</a> </span></p>
+<a href="https://arrows.emsl.pnnl.gov/api"><em>&lsquo; EMSL Arrows API</em>&lsquo;</a> </span></p>
 <p>The difficulty of simulating the thermodynamic and kinetic properties of
 new materials is convoluted by the sensitivity of the processes at the
 macroscopic scale to the atomic scale; the unusual and unexpected
@@ -196,7 +196,7 @@ reactions to arrows@emsl.pnnl.gov and then an email is sent back with
 thermodynamic, reaction pathway (kinetic), spectroscopy, and other
 results.</p>
 <p>EMSL Arrows parses the email and then searches the database for the
-compounds in the reactions. If a compound isn't there, an NWChem
+compounds in the reactions. If a compound isn&rsquo;t there, an NWChem
 calculation is setup and submitted to calculate it. Once the calculation
 is finished the results are entered into the database and then results
 are emailed back. This whole process is completely automated. To enter
@@ -311,9 +311,9 @@ nwoutput: caffeine :nwoutput
 <h2 id="try-out-the-following-web-api-links-now-available-for-alpha-testing">Try out the following web API links (Now Available for Alpha Testing)</h2>
 <p><a href="http://arrows.emsl.pnnl.gov/api/">EMSL Arrows API v1.0</a></p>
 <h2 id="introduction-to-esmiles-how-to-change-calculation-theories">Introduction to ESMILES - How to Change Calculation Theories</h2>
-<p>The combined string, "Molecule_Input keyword1{option1}
-keyword2{option2} keywordN{optionN}", is called an "extended smiles" or
-"esmiles" for short. The Molecule_Input can be specified using a
+<p>The combined string, &ldquo;Molecule_Input keyword1{option1}
+keyword2{option2} keywordN{optionN}&rdquo;, is called an &ldquo;extended smiles&rdquo; or
+&ldquo;esmiles&rdquo; for short. The Molecule_Input can be specified using a
 variety of formats including a SMILES string, common names, iupac, kegg
 numbers, cas, pubchem ids, chemspider ids, and InChI strings. The
 keyword{option} tags are used to enter different calculation types for a
@@ -449,7 +449,7 @@ reaction: C(Cl)(Cl)(Cl)O + C --&gt; C(Cl)(Cl)Cl + CO :reaction
 ::Arrows
 </code></pre>
 
-<p>Note that the reaction: :reaction keywords have only one ":", whereas
+<p>Note that the reaction: :reaction keywords have only one &ldquo;:&rdquo;, whereas
 the Arrows keywords use two colons.</p>
 <p>The results contain both gas phase and solution phase reaction energies.
 The default level of theory used in these calculations is
@@ -548,7 +548,7 @@ in the Web API entry box</p>
 <p>Entering ESMILES in this way for reactions is tedius and prone to typos.
 To simplify this type of input a map function has been added to the
 reaction input, where the format for the mapping function is to append
-the reaction with the tilde, "\~", symbol followed by the esmiles
+the reaction with the tilde, &ldquo;\~&rdquo;, symbol followed by the esmiles
 options.</p>
 <pre><code>trichloromethanol + methane --&gt; chloroform + methyl alcohol ~ theory{pspw} xc{lda}
 </code></pre>
@@ -651,7 +651,7 @@ nmr: c1ccccc1 basis{6-31G*} solvation_type{None} :nmr
 ::Arrows
 </code></pre>
 
-<p>For single line input the esmiles is preceded by the words "nmr for",
+<p>For single line input the esmiles is preceded by the words &ldquo;nmr for&rdquo;,
 e.g.</p>
 <pre><code>nmr for c1ccccc1 basis{6-31G*} solvation_type{None}
 </code></pre>
@@ -687,8 +687,8 @@ nwoutput: TNT theory{pspw} :nwoutput
 ::Arrows
 </code></pre>
 
-<p>For single line input the esmiles is preceded by the words "nwoutput
-for", e.g.</p>
+<p>For single line input the esmiles is preceded by the words &ldquo;nwoutput
+for&rdquo;, e.g.</p>
 <pre><code>nwoutput for aspirin theory{pspw}
 </code></pre>
 
@@ -700,7 +700,7 @@ printnwout: 13212 :printnwout
 
 <h2 id="generate-nwchem-input">Generate NWChem Input</h2>
 <p>The Web API can be used to generate an NWChem input deck. For single
-line input the esmiles is preceded by the words "input deck for", e.g.</p>
+line input the esmiles is preceded by the words &ldquo;input deck for&rdquo;, e.g.</p>
 <pre><code>input deck for aspirin
 </code></pre>
 
@@ -719,7 +719,7 @@ printxyz: 13212 :printxyz
 ::Arrows
 </code></pre>
 
-<p>For single line input the esmiles is preceded by the words "xyz for",
+<p>For single line input the esmiles is preceded by the words &ldquo;xyz for&rdquo;,
 e.g.</p>
 <pre><code>xyz for TNT theory{pspw}
 </code></pre>

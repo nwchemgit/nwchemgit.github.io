@@ -131,8 +131,8 @@
             <div class="section">
               
                 <h1 id="general-information-about-nwchem">General information about NWChem</h1>
-<h2 id="where-is-the-users-manual">Where is the User's Manual?</h2>
-<p>The NWChem User's Manual is now at <a href="https://github.com/nwchemgit/nwchem/wiki">https://github.com/nwchemgit/nwchem/wiki</a> </p>
+<h2 id="where-is-the-users-manual">Where is the User&rsquo;s Manual?</h2>
+<p>The NWChem User&rsquo;s Manual is now at <a href="https://github.com/nwchemgit/nwchem/wiki">https://github.com/nwchemgit/nwchem/wiki</a> </p>
 <h2 id="where-do-i-go-for-help-with-a-global-arrays-problem">Where do I go for help with a Global Arrays problem?</h2>
 <p>If you have problems with compiling the tools directory, please visit
 the Global Arrays Google group at
@@ -160,9 +160,9 @@ unset LIBMPI
 export PATH=&quot;directory where mpif90 is located&quot;:$PATH
 </code></pre>
 
-<h2 id="whats-this-business-with-armci-and-armci_network">What's this business with ARMCI and ARMCI_NETWORK?</h2>
+<h2 id="whats-this-business-with-armci-and-armci_network">What&rsquo;s this business with ARMCI and ARMCI_NETWORK?</h2>
 <p>ARMCI is a library used by Global Arrays (both ARMCI and GA source code
-is located in NWChem's tools directory). More information can be found
+is located in NWChem&rsquo;s tools directory). More information can be found
 at the following URL <a href="http://hpc.pnl.gov/armci">http://hpc.pnl.gov/armci</a> If your installation
 uses a fast network and you are aiming to get optimal communication
 performance, you might want to assign a non-default value to
@@ -180,16 +180,16 @@ containing the task directive). To fix the problem, add one more blank
 line after the task line and your task directive will be executed.</p>
 <h2 id="autoz-fails-to-generate-valid-internal-coordinates-now-what">AUTOZ fails to generate valid internal coordinates. Now what?</h2>
 <p>If AUTOZ fails, NWChem will default to using Cartesian coordinates (and
-ignore any zcoord data) so you don't have to do anything unless you
+ignore any zcoord data) so you don&rsquo;t have to do anything unless you
 really need to use internal coordinates. An exception are certain cases
 where we have a molecule that contains a linear chain of 4 or more
 atoms, in which case the code will fail (see item 2. for work arounds).
 For small systems you can easily construct a Z-matrix, but for larger
 systems this can be quite hard.</p>
 <p>First check your input. Are you using the correct units? The default is
-Angstroms. If you input atomic units but did not tell NWChem, then it's
+Angstroms. If you input atomic units but did not tell NWChem, then it&rsquo;s
 no wonder things are breaking. Also, is the geometry physically
-sensible? If atoms are too close to each other you'll get many
+sensible? If atoms are too close to each other you&rsquo;ll get many
 unphysical bonds, whereas if they are too far apart AUTOZ will not be
 able to figure out how to connect things.</p>
 <p>Once the obvious has been checked, there are several possible modes of
@@ -240,7 +240,7 @@ try using a smaller value of the scaling factor for covalent radii</p>
 
 <p>In addition to this you can also try specifying a minimal set of bonds
 to connect the fragments.</p>
-<p>If these together don't work, then you're out of luck. Use Cartesians or
+<p>If these together don&rsquo;t work, then you&rsquo;re out of luck. Use Cartesians or
 construct a Z-matrix.</p>
 <h2 id="how-do-i-restart-a-geometry-optimization">How do I restart a geometry optimization?</h2>
 <p>If you have saved the restart information that is kept in the permanent
@@ -296,7 +296,7 @@ number of iterations, then it may be restarted with the second job.</p>
 <h2 id="how-do-i-set-the-correct-value-for-armci_default_shmmax">How do I set the correct value for <code>ARMCI_DEFAULT_SHMMAX</code>?</h2>
 <p>Some ARMCI_NETWORK values (e.g. OPENIB) depend on the
 <code>ARMCI_DEFAULT_SHMMAX</code> value for large allocations of Global memory. We
-recommend a value of -- at least -- 2048, e.g. in bash shell parlance</p>
+recommend a value of &ndash; at least &ndash; 2048, e.g. in bash shell parlance</p>
 <pre><code>export ARMCI_DEFAULT_SHMMAX=2048
 </code></pre>
 

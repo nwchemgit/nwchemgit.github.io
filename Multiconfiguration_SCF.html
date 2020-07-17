@@ -156,7 +156,7 @@ functions.</p>
 <p>Note that the ACTIVE, ACTELEC, and MULTIPLICITY directives are required.
 The symmetry and multiplicity may alternatively be entered using the
 STATE directive.</p>
-<h2 id="active-number-of-active-orbitals">ACTIVE -- Number of active orbitals</h2>
+<h2 id="active-number-of-active-orbitals">ACTIVE &ndash; Number of active orbitals</h2>
 <p>The number of orbitals in the CASSCF active space must be specified
 using the ACTIVE directive.</p>
 <p>E.g.,</p>
@@ -172,7 +172,7 @@ must be arranged in order</p>
 <li>active orbitals, and</li>
 <li>unoccupied orbitals.</li>
 </ol>
-<h2 id="actelec-number-of-active-electrons">ACTELEC -- Number of active electrons</h2>
+<h2 id="actelec-number-of-active-electrons">ACTELEC &ndash; Number of active electrons</h2>
 <p>The number of electrons in the CASSCF active space must be specified
 using the ACTELEC directive. An error is reported if the number of
 active electrons and the multiplicity are inconsistent.</p>
@@ -187,16 +187,16 @@ the determinant wavefunction.</p>
 <pre><code> multiplicity 3
 </code></pre>
 
-<h2 id="symmetry-spatial-symmetry-of-the-wavefunction">SYMMETRY -- Spatial symmetry of the wavefunction</h2>
+<h2 id="symmetry-spatial-symmetry-of-the-wavefunction">SYMMETRY &ndash; Spatial symmetry of the wavefunction</h2>
 <p>This species the irreducible representation of the wavefunction as an
-integer in the range 1--8 using the same numbering of representations as
+integer in the range 1&ndash;8 using the same numbering of representations as
 output by the SCF program. Note that only Abelian point groups are
 supported.</p>
 <p>E.g., to specify a <img alt="$B_1$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fe468915e44d9e34d437fbf99b371809.svg?invert_in_darkmode&sanitize=true" align=middle width="18.95025pt" height="22.38192pt"/> state when using the <img alt="$C_{2v}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fbae2e8884819f6fd147d3039ef3a9bc.svg?invert_in_darkmode&sanitize=true" align=middle width="25.19517pt" height="22.38192pt"/> group</p>
 <pre><code> symmetry 3
 </code></pre>
 
-<h2 id="state-symmetry-and-multiplicity">STATE -- Symmetry and multiplicity</h2>
+<h2 id="state-symmetry-and-multiplicity">STATE &ndash; Symmetry and multiplicity</h2>
 <p>The electronic state (spatial symmetry and multiplicity) may
 alternatively be specified using the conventional notation for an
 electronic state, such as <img alt="$^3B_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6e2161ad2ba92369ce803c5813cce493.svg?invert_in_darkmode&sanitize=true" align=middle width="26.324595pt" height="26.70657pt"/> for a triplet state of <img alt="$B_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2b7de9b9b655b068f97484efba8812fb.svg?invert_in_darkmode&sanitize=true" align=middle width="18.95025pt" height="22.38192pt"/>
@@ -209,7 +209,7 @@ symmetry. This would be accomplished with the input</p>
  multiplicity 3
 </code></pre>
 
-<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS -- Input/output of MO vectors</h2>
+<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS &ndash; Input/output of MO vectors</h2>
 <p>Calculations are best started from RHF/ROHF molecular orbitals (see
 <a href="Hartree-Fock-Theory-for-Molecules.html">SCF</a>), and by
 default vectors are taken from the previous MCSCF or SCF calculation. To
@@ -241,7 +241,7 @@ follows:</p>
     that in the case of degenerate occupations that this does not fully
     determine the orbitals.</li>
 </ul>
-<h2 id="hessian-select-preconditioner">HESSIAN -- Select preconditioner</h2>
+<h2 id="hessian-select-preconditioner">HESSIAN &ndash; Select preconditioner</h2>
 <p>The MCSCF will use a one-electron approximation to the orbital-orbital
 Hessian until some degree of convergence is obtained, whereupon it will
 attempt to use the exact orbital-orbital Hessian which makes the micro
@@ -252,7 +252,7 @@ by specifying the appropriate keyword on the HESSIAN directive.</p>
 <pre><code> hessian onel
 </code></pre>
 
-<h2 id="level-level-shift-for-convergence">LEVEL -- Level shift for convergence</h2>
+<h2 id="level-level-shift-for-convergence">LEVEL &ndash; Level shift for convergence</h2>
 <p>The <a href="Hessians-and-Vibrational-Frequencies.html">Hessian</a>
 used in the MCSCF optimization is by default level shifted by 0.1 until
 the orbital gradient norm falls below 0.01, at which point the level

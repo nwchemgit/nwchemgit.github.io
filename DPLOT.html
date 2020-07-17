@@ -151,20 +151,20 @@ The quantities stored in local memory are:</p>
 </ul>
 <p>The stack memory setting in the input file must be sufficient to hold
 these quantities in local memory on a processor.</p>
-<h2 id="gaussian-gaussian-cube-format">GAUSSIAN -- Gaussian Cube format</h2>
+<h2 id="gaussian-gaussian-cube-format">GAUSSIAN &ndash; Gaussian Cube format</h2>
 <pre><code> GAUSSIAN
 </code></pre>
 
 <p>A outputfile is generate in Gaussian Cube format. You can visualize this
 file using gOpenMol (after converting the Gaussian Cube file with
 gcube2plt), Molden or Molekel.</p>
-<h2 id="title-title-directive">TITLE -- Title directive</h2>
+<h2 id="title-title-directive">TITLE &ndash; Title directive</h2>
 <pre><code> TITLE &lt;string Title default Unknown Title&gt;
 </code></pre>
 
 <p>This sub-directive specifies a title line for the generated input to the
 Insight program or for the Gaussian cube file. Only one line is allowed.</p>
-<h2 id="limitxyz-plot-limits">LIMITXYZ -- Plot limits</h2>
+<h2 id="limitxyz-plot-limits">LIMITXYZ &ndash; Plot limits</h2>
 <pre><code> LIMITXYZ [units &lt;string Units default angstroms&gt;]  
   &lt;real X_From&gt; &lt;real X_To&gt; &lt;integer No_Of_Spacings_X&gt;  
    &lt;real Y_From&gt; &lt;real Y_To&gt; &lt;integer No_Of_Spacings_Y&gt;  
@@ -174,21 +174,21 @@ Insight program or for the Gaussian cube file. Only one line is allowed.</p>
 <p>This sub-directive specifies the limits of the cell to be plotted. The
 grid is generated using No_Of_Spacings + 1 points along each
 direction. The known names for Units are angstroms, au and bohr.</p>
-<h2 id="spin-density-to-be-plotted">SPIN -- Density to be plotted</h2>
+<h2 id="spin-density-to-be-plotted">SPIN &ndash; Density to be plotted</h2>
 <pre><code> SPIN &lt;string Spin default total&gt;
 </code></pre>
 
 <p>This sub-directive specifies, what kind of density is to be computed.
 The known names for Spin are total, alpha, beta and spindens, the last
 being computed as the difference between α and β electron densities.</p>
-<h2 id="output-filename">OUTPUT -- Filename</h2>
+<h2 id="output-filename">OUTPUT &ndash; Filename</h2>
 <pre><code> OUTPUT &lt;string File_Name default dplot&gt;
 </code></pre>
 
 <p>This sub-directive specifies the name of the generated input to the
 Insight program or the generated Gaussian cube file. The name OUTPUT is
 reserved for the standard NWChem output.</p>
-<h2 id="vectors-mo-vector-file-name">VECTORS -- MO vector file name</h2>
+<h2 id="vectors-mo-vector-file-name">VECTORS &ndash; MO vector file name</h2>
 <pre><code> VECTORS &lt;string File_Name default movecs&gt; [&lt;string File_Name2&gt;]
 </code></pre>
 
@@ -196,7 +196,7 @@ reserved for the standard NWChem output.</p>
 the second file is optionally given the density is computed as the
 difference between the corresponding electron densities. The vector
 files have to match.</p>
-<h2 id="where-density-evaluation">WHERE -- Density evaluation</h2>
+<h2 id="where-density-evaluation">WHERE &ndash; Density evaluation</h2>
 <pre><code> WHERE &lt;string Where default grid&gt;
 </code></pre>
 
@@ -206,7 +206,7 @@ performed on the set of a grid points specified by the sub-directive
 LimitXYZ and the file specified by the sub-directive Output is
 generated), nuclei (the density is computed at the position of the
 nuclei and written to the NWChem output) and g+n (both).</p>
-<h2 id="orbital-orbital-sub-space">ORBITAL -- Orbital sub-space</h2>
+<h2 id="orbital-orbital-sub-space">ORBITAL &ndash; Orbital sub-space</h2>
 <pre><code> ORBITALS [&lt;string Option default density&gt;]
  &lt;integer No_Of_Orbitals&gt;  
  &lt;integer Orb_No_1 Orb_No_2 ...&gt;
@@ -221,11 +221,11 @@ should be set to <code>view</code> (instead of the implicit default value
 and sub-directive Where is automatically set to grid. Also specification
 of two orbital files conflicts with the view option. alpha orbitals are
 always plotted unless Spin is set to beta.</p>
-<h2 id="civecs-ci-vectors">CIVECS -- CI vectors</h2>
+<h2 id="civecs-ci-vectors">CIVECS &ndash; CI vectors</h2>
 <pre><code>CIVECS [&lt;string Name of civecs file&gt;]
 </code></pre>
 
-<h2 id="densmat-density-matrix">DENSMAT -- Density matrix</h2>
+<h2 id="densmat-density-matrix">DENSMAT &ndash; Density matrix</h2>
 <pre><code>DENSMAT [&lt;string Name of density matrix file&gt;]
 </code></pre>
 

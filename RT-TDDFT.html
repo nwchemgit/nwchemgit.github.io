@@ -146,9 +146,9 @@ arbitrary external stimuli (e.g., electron charge dynamics after laser
 excitation). For theoretical and computational details, please refer to
 the following paper:</p>
 <ol>
-<li>K. Lopata, N. Govind,"Modeling Fast Electron Dynamics with Real-Time
+<li>K. Lopata, N. Govind,&rdquo;Modeling Fast Electron Dynamics with Real-Time
     Time-Dependent Density Functional Theory: Application to Small
-    Molecules and Chromophores", J. Chem. Theory Comput., 7, 1344 (2011)</li>
+    Molecules and Chromophores&rdquo;, J. Chem. Theory Comput., 7, 1344 (2011)</li>
 </ol>
 <p>This functionality is built on the <a href="Density-Functional-Theory-for-Molecules.html">Gaussian basis set
 DFT</a> module, and
@@ -231,7 +231,7 @@ afterwards.</p>
 END
 </code></pre>
 
-<h3 id="tmax-simulation-time">TMAX -- Simulation time</h3>
+<h3 id="tmax-simulation-time">TMAX &ndash; Simulation time</h3>
 <p>This option specifies the maximum time (in au) to run the simulation
 before stopping, which must be a positive real number. In practice, you
 can just stop the simulation early, so in most cases it is simplest to
@@ -247,7 +247,7 @@ to automatically stop at 500 au:</p>
 end
 </code></pre>
 
-<h3 id="dt-time-step">DT -- Time step</h3>
+<h3 id="dt-time-step">DT &ndash; Time step</h3>
 <p>This specifies the electronic time step for time integration. A larger
 time step results in a faster simulation, but there are two issues which
 limit the size of the time step. First, the integration algorithm can
@@ -269,10 +269,10 @@ end
 
 <p>It is always good practice to check that your results are independent of
 time step.</p>
-<h3 id="tag-output-label">TAG -- Output label</h3>
+<h3 id="tag-output-label">TAG &ndash; Output label</h3>
 <p>This option sets a label for the output for convenient parsing (e.g.,
-with "grep"). Every output line with time-dependent data will begin with
-this string (set to "<rt_tddft>: " by default). For example setting:</p>
+with &ldquo;grep&rdquo;). Every output line with time-dependent data will begin with
+this string (set to &ldquo;<rt_tddft>: &rdquo; by default). For example setting:</p>
 <pre><code>rt_tddft
  ...
  tag &quot;nameofrun&quot;
@@ -286,8 +286,8 @@ nameofrun      2.20000  -7.589146713114E+001     # Etot
 ...
 </code></pre>
 
-<h3 id="nchecks-number-of-run-time-check-points">NCHECKS -- Number of run-time check points</h3>
-<p>This option takes an integer number (default 10), or "*" which means
+<h3 id="nchecks-number-of-run-time-check-points">NCHECKS &ndash; Number of run-time check points</h3>
+<p>This option takes an integer number (default 10), or &ldquo;*&rdquo; which means
 every step, which sets the total of number of run-time checkpoints,
 where various sanity checks are made such as symmetries, idempotency,
 traces, etc. These checks are not terribly efficient (e.g., involve
@@ -300,13 +300,13 @@ execution.</p>
 end
 </code></pre>
 
-<h3 id="nprints-number-of-print-points">NPRINTS -- Number of print points</h3>
+<h3 id="nprints-number-of-print-points">NPRINTS &ndash; Number of print points</h3>
 <p>This sets the number of print points, i.e., the total number of
 time-dependent observables (e.g., dipole, charge, energy) that are
-computed and printed. It either takes an integer number or "*" which
+computed and printed. It either takes an integer number or &ldquo;*&rdquo; which
 means every time step (this is the default). Since there is no
 appreciable cost to computing and printing these quantities, there is
-usually no need to change this from "*".</p>
+usually no need to change this from &ldquo;*&ldquo;.</p>
 <pre><code>rt_tddft
   ...
   nprints *
@@ -314,7 +314,7 @@ usually no need to change this from "*".</p>
 end
 </code></pre>
 
-<h3 id="nrestarts-number-of-restart-checkpoints">NRESTARTS -- Number of restart checkpoints</h3>
+<h3 id="nrestarts-number-of-restart-checkpoints">NRESTARTS &ndash; Number of restart checkpoints</h3>
 <p>This sets the number of run-time check points where the time-dependent
 complex density matrix is saved to file, allowing the simulation to be
 <a href="RT-TDDFT.html#Restarts">restarted</a>) from that point. By
@@ -332,7 +332,7 @@ following example there will be 100 restart points, which corresponds to
 end
 </code></pre>
 
-<h3 id="tolerances-controlling-numerical-tolerances">TOLERANCES -- Controlling numerical tolerances</h3>
+<h3 id="tolerances-controlling-numerical-tolerances">TOLERANCES &ndash; Controlling numerical tolerances</h3>
 <p>This option controls various numerical tolerances:</p>
 <ul>
 <li>zero: threshold for checks that quantities are zero, e.g., in
@@ -352,10 +352,10 @@ defaults with a looser interpolation tolerance:</p>
 end
 </code></pre>
 
-<h3 id="propagator-selecting-the-integrator-method">PROPAGATOR -- Selecting the integrator method</h3>
+<h3 id="propagator-selecting-the-integrator-method">PROPAGATOR &ndash; Selecting the integrator method</h3>
 <p>This selects the propagator (i.e., time integrator) method. Possible
-choices include "euler" for Euler integration (terrible, you should
-never use this), "rk4" for 4th order Runge-Kutta, and "magnus" for 2nd
+choices include &ldquo;euler&rdquo; for Euler integration (terrible, you should
+never use this), &ldquo;rk4&rdquo; for 4th order Runge-Kutta, and &ldquo;magnus&rdquo; for 2nd
 order Magnus with self-consistent interpolation. In virtually all cases
 Magnus is superior in terms of stability. Euler or rk4 are perhaps only
 useful for debugging or simplicity (e.g., for code development).</p>
@@ -366,9 +366,9 @@ useful for debugging or simplicity (e.g., for code development).</p>
 end
 </code></pre>
 
-<h3 id="exp-selecting-the-matrix-exponentiation-method">EXP -- Selecting the matrix exponentiation method</h3>
+<h3 id="exp-selecting-the-matrix-exponentiation-method">EXP &ndash; Selecting the matrix exponentiation method</h3>
 <p>This selects the method for exponentiation matrices. For now this can
-either be "pseries" for a contractive power series or "diag" for
+either be &ldquo;pseries&rdquo; for a contractive power series or &ldquo;diag&rdquo; for
 diagonalization. In general the power series (default) is faster.</p>
 <pre><code>rt_tddft
   ...
@@ -377,7 +377,7 @@ diagonalization. In general the power series (default) is faster.</p>
 end
 </code></pre>
 
-<h3 id="prof-run-time-profiling">PROF -- Run-time profiling</h3>
+<h3 id="prof-run-time-profiling">PROF &ndash; Run-time profiling</h3>
 <p>This turns on run-time profiling, which will display time spent in each
 component of the code (e.g., building components of the TD Fock matrix,
 properites, etc). This slows code down slightly and results in very
@@ -389,7 +389,7 @@ verbose output.</p>
 end
 </code></pre>
 
-<h3 id="noprop-skipping-propagation">NOPROP -- Skipping propagation</h3>
+<h3 id="noprop-skipping-propagation">NOPROP &ndash; Skipping propagation</h3>
 <p>This options causes the RT-TDDFT module skip propagation, i.e., to
 initialize and finalize. For now this is largely useful for skipping to
 visualization post-processing without having to re-run a simulation.</p>
@@ -400,12 +400,12 @@ visualization post-processing without having to re-run a simulation.</p>
 end
 </code></pre>
 
-<h3 id="static-force-static-fock-matrix">STATIC -- Force static Fock matrix</h3>
+<h3 id="static-force-static-fock-matrix">STATIC &ndash; Force static Fock matrix</h3>
 <p>This option sets the static Fock matrix flag, meaning the time-dependent
 Fock matrix will not be recalculated at each time, but instead use the
 t=0 value. This will drastically increase the simulation speed since the
 bulk of the work is spent rebuilding the TD Fock matrix, but will give
-non-physical results. For example, using "static" to compute an
+non-physical results. For example, using &ldquo;static&rdquo; to compute an
 absorption spectrum will result in excitations corresponding to the raw
 eigenvalue differences without electron-hole relaxation. This option has
 few uses besides dry-runs and debugging.</p>
@@ -416,12 +416,12 @@ few uses besides dry-runs and debugging.</p>
 end
 </code></pre>
 
-<h3 id="print-selecting-time-dependent-quantities-to-be-printed">PRINT -- Selecting time-dependent quantities to be printed</h3>
+<h3 id="print-selecting-time-dependent-quantities-to-be-printed">PRINT &ndash; Selecting time-dependent quantities to be printed</h3>
 <p>This sets the various time-dependent properties that are to be computed
 and printed at each print point. Note that for many of these options,
 the values are computed and printed for each geometry specified in the
-input deck, not only the active one (i.e., the one set using "set
-geometry ..." in the input deck). Possible choices are:</p>
+input deck, not only the active one (i.e., the one set using &ldquo;set
+geometry &hellip;&rdquo; in the input deck). Possible choices are:</p>
 <ul>
 <li>dipole: Dipole moment</li>
 <li>quadrupole: Quadrupole moment</li>
@@ -444,7 +444,7 @@ geometry ..." in the input deck). Possible choices are:</p>
 end
 </code></pre>
 
-<h3 id="field-sub-block-for-specifying-external-electric-fields">FIELD -- Sub-block for specifying external electric fields</h3>
+<h3 id="field-sub-block-for-specifying-external-electric-fields">FIELD &ndash; Sub-block for specifying external electric fields</h3>
 <p>This sub-block is used to specify external electric fields, each of
 which must be given a unique name. Numerous fields can be specified, but
 each will applied to the system only if an appropriate <a href="RT-TDDFT.html#excite----excitation-rules">excitation
@@ -491,13 +491,13 @@ end
 end
 </code></pre>
 
-<h3 id="excite-excitation-rules">EXCITE -- Excitation rules</h3>
+<h3 id="excite-excitation-rules">EXCITE &ndash; Excitation rules</h3>
 <p>This sets the rules for applying external fields to the system. It takes
-the form "excite <geom> with <field>", where <geom> is the name of a
-geometry fragment (defaults to "geometry" which is the default geometry
+the form &ldquo;excite <geom> with <field>&ldquo;, where <geom> is the name of a
+geometry fragment (defaults to &ldquo;geometry&rdquo; which is the default geometry
 name), and <field> is the name of a <a href="RT-TDDFT.html#field----sub-block-for-specifying-external-electric-fields">field
 structure</a>.
-Assuming, for example, you have defined a field name "kick" this option
+Assuming, for example, you have defined a field name &ldquo;kick&rdquo; this option
 takes the form (note that quotes are optional and shown for clarity):</p>
 <pre><code>rt_tddft
   ...
@@ -506,14 +506,14 @@ takes the form (note that quotes are optional and shown for clarity):</p>
 end
 </code></pre>
 
-<h3 id="visualization-sub-block-for-controlling-3d-visualization">VISUALIZATION -- Sub-block for controlling 3D visualization</h3>
+<h3 id="visualization-sub-block-for-controlling-3d-visualization">VISUALIZATION &ndash; Sub-block for controlling 3D visualization</h3>
 <p>This block is used to control visualization of the electronic charge
 density, which is typically used during a resonant excitation. This is a
 two stage process. During the propagation, a series of density matrices
 will be dumped to file (see options below). After propagation, if the
-"dplot" option is set, the code will read in options from a separate
+&ldquo;dplot&rdquo; option is set, the code will read in options from a separate
 DPLOT block and convert the density matrix snapshots to a corresponding
-series of real-space charge density "cube"
+series of real-space charge density &ldquo;cube&rdquo;
 files.</p>
 <pre><code>visualization
   tstart 0.0        # start visualization at this time
@@ -640,7 +640,7 @@ task dft rt_tddft
 </code></pre>
 
 <p>After running the simulation, we extract the x-dipole moment for the
-x-kick and similarly for the y and z-kicks (see "contrib/parsers"
+x-kick and similarly for the y and z-kicks (see &ldquo;contrib/parsers&rdquo;
 directory for this script or download here:
 <a href="RT_TDDFT_scripts.tgz">RT_TDDFT_scripts.tgz</a> ).</p>
 <pre><code>nw_rtparse.py -xdipole -px -tkick_x h2o_abs.nwo &gt; x.dat
@@ -658,11 +658,11 @@ similarly for the y,y and z,z elements. Here I am using an FFT utility,
 although any discrete Fourier transform will do. To accelerate
 convergence of the FFT, I have damped the time signals by
 <img alt="$\exp(-t / \tau)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5e63d73d92b58041531afaf7d225930d.svg?invert_in_darkmode&sanitize=true" align=middle width="73.711935pt" height="24.56553pt"/> which results in Lorentzians with FWHM of
-<img alt="$2 / \tau$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/37a3e0871d016fe54fe36230326b31bd.svg?invert_in_darkmode&sanitize=true" align=middle width="25.390035pt" height="24.56553pt"/> and have also "zero padded" the data with 50000 points.
-This is not critical for extracting frequencies, but creates "cleaner"
+<img alt="$2 / \tau$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/37a3e0871d016fe54fe36230326b31bd.svg?invert_in_darkmode&sanitize=true" align=middle width="25.390035pt" height="24.56553pt"/> and have also &ldquo;zero padded&rdquo; the data with 50000 points.
+This is not critical for extracting frequencies, but creates &ldquo;cleaner&rdquo;
 spectra, although care must be taken to damp sufficiently if padding to
 avoid artifacts (see small ripples around 23 eV in plot below). After
-Fourier transform, I "paste" the three files together to easily plot the
+Fourier transform, I &ldquo;paste&rdquo; the three files together to easily plot the
 absorption, which is constructed from the trace of the polarizability
 matrix, i.e., the sum of the imaginary parts of the FFTs of the dipole
 moments.</p>
@@ -680,7 +680,7 @@ paste xw.dat yw.dat zw.day &gt; s.dat
 
 <p>Here, you can just use your favorite Fourier transform utility or
 analysis software, but for convenience there is also a simple GNU Octave
-fft1d.m utility in the "contrib/parsers" directory of the trunk or
+fft1d.m utility in the &ldquo;contrib/parsers&rdquo; directory of the trunk or
 download here:
 <a href="RT_TDDFT_scripts.tgz">RT_TDDFT_scripts.tgz</a>
 Note, options are hardcoded at the moment, so the switches above are not
@@ -692,7 +692,7 @@ Abs), to plot using gnuplot we would do:</p>
 
 <p>where we have scaled by 27.2114 to output in eV instead of atomic units,
 and we have not properly scaled to get the absolute oscillator strengths
-(thus our magnitudes are in "arbitrary units"). The real-time spectrum
+(thus our magnitudes are in &ldquo;arbitrary units&rdquo;). The real-time spectrum
 is shown below, along with the corresponding linear-response TDDFT
 excitations are shown in orange for comparison. Since we are in the weak
 field regime, the two are identical. Note the oscillator strengths are
@@ -1049,12 +1049,12 @@ task dft rt_tddft
 
 <p><img alt="Time dependent charge oscillation between a TCNE dimer" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/RT_TDDFT_tcne_td_charge.png" align=middle with="364pt" height="200pt"/>  </p>
 <p>The time-dependent charge shows that the excess electron starts on the
-"bottom" molecule (i.e., a total electronic charge of -65), then swings
-to completely occupy the "top" molecule then oscillates back and forth.
+&ldquo;bottom&rdquo; molecule (i.e., a total electronic charge of -65), then swings
+to completely occupy the &ldquo;top&rdquo; molecule then oscillates back and forth.
 The frequency of this oscillation is dependent on the separation, with
 larger separations leading to lower frequencies. It is important to
 note, however, this starting point is highly non-physical, specifically
-converging the two fragments together and "gluing" them together
+converging the two fragments together and &ldquo;gluing&rdquo; them together
 introduces an indeterminate amount of energy to the system, but this
 simulation shows how charge dynamics simulations can be done.</p>
               

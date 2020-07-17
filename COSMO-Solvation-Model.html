@@ -131,7 +131,7 @@
             <div class="section">
               
                 <h1 id="cosmo-solvation-model">COSMO Solvation Model</h1>
-<p>COSMO is the continuum solvation 'COnductor-like Screening MOdel' of A.
+<p>COSMO is the continuum solvation &lsquo;COnductor-like Screening MOdel&rsquo; of A.
 Klamt and G. Schüürmann to describe dielectric screening effects in
 solvents[1]. This model has been enhanced by D.M. York and M.
 Karplus[2] to create a smooth potential energy surface. The latter
@@ -197,15 +197,15 @@ end
 </code></pre>
 
 <p>followed by the task directive specifying the wavefunction and type of
-calculation, e.g., "task scf energy", "task mp2 energy", "task dft
-optimize", etc.</p>
-<p>"off' can be used to turn off COSMO in a compound (multiple task) run.
+calculation, e.g., &ldquo;task scf energy&rdquo;, &ldquo;task mp2 energy&rdquo;, &ldquo;task dft
+optimize&rdquo;, etc.</p>
+<p>&ldquo;off&rsquo; can be used to turn off COSMO in a compound (multiple task) run.
 By default, once the COSMO solvation model has been defined it will be
-used in subsequent calculations. Add the keyword "off" if COSMO is not
+used in subsequent calculations. Add the keyword &ldquo;off&rdquo; if COSMO is not
 needed in subsequent calculations.</p>
-<p>"Dielec" is the value of the dielectric constant of the medium, with a
+<p>&ldquo;Dielec&rdquo; is the value of the dielectric constant of the medium, with a
 default value of 78.4 (the dielectric constant for water).</p>
-<p>"parameters" specifies COSMO radii parameters file that stores custom
+<p>&ldquo;parameters&rdquo; specifies COSMO radii parameters file that stores custom
 setting for COSMO parameters. The format for such file consists of the
 atom or element name followed by the radii. The program will first
 attempt to match based on atom name and only then the element name.
@@ -214,9 +214,9 @@ to present in one of the three location ( in the order of preference) -
 directory specified by the environmental variable
 NWCHEM_COSMO_LIBRARY, permanent directory, and run directory. This
 directive is replacing previous facility of loading COSMO radii
-parameters through "set cosmo:map cosmo.par" directive. See example at
+parameters through &ldquo;set cosmo:map cosmo.par&rdquo; directive. See example at
 the end of this section.</p>
-<p>"Radius" is an array that specifies the radius of the spheres associated
+<p>&ldquo;Radius&rdquo; is an array that specifies the radius of the spheres associated
 with each atom and that make up the molecule-shaped cavity. These values
 will override default radii setting including those specified in the
 COSMO parameter file (if any) Default values are Van der Waals radii.
@@ -247,65 +247,65 @@ Waals radii by default:</p>
 </code></pre>
 
 <p>For examples see Stefanovich et al.[5] and Barone et al.[6]</p>
-<p>"Rsolv" is no longer used.</p>
-<p>"Iscren" is a flag to define the dielectric charge scaling option.
-"iscren 1" implies the original scaling from Klamt and Schüürmann,
-mainly "(&epsilon;-1)/(&epsilon;+1/2)", where &epsilon; is the
-dielectric constant. "iscren 0" implies the modified scaling suggested
-by Stefanovich and Truong[7], mainly "(&epsilon;-1)/&epsilon;".
+<p>&ldquo;Rsolv&rdquo; is no longer used.</p>
+<p>&ldquo;Iscren&rdquo; is a flag to define the dielectric charge scaling option.
+&ldquo;iscren 1&rdquo; implies the original scaling from Klamt and Schüürmann,
+mainly &ldquo;(&epsilon;-1)/(&epsilon;+1/2)&rdquo;, where &epsilon; is the
+dielectric constant. &ldquo;iscren 0&rdquo; implies the modified scaling suggested
+by Stefanovich and Truong[7], mainly &ldquo;(&epsilon;-1)/&epsilon;&ldquo;.
 Default is to use the modified scaling. For high dielectric the
 difference between the scaling is not significant.</p>
 <p>The next two parameters define the tesselation of the unit sphere. The
 approach still follows the original proposal by Klamt and Schüürmann to
-some degree. Basically a tesselation is generated from "minbem" refining
+some degree. Basically a tesselation is generated from &ldquo;minbem&rdquo; refining
 passes starting from either an octahedron or an icosahedron. Each level
 of refinement partitions the triangles of the current tesselation into
 four triangles. This procedure is repeated recursively until the desired
 granularity of the tesselation is reached. The induced point charges
 from the polarization of the medium are assigned to the centers of the
-tesselation. The default value is "minbem 2". The flag +ificos+ serves
-to select the original tesselation, "ificos 0" for an octahedron
-(default) and "ificos 1" for an icoshedron. Starting from an icosahedron
+tesselation. The default value is &ldquo;minbem 2&rdquo;. The flag +ificos+ serves
+to select the original tesselation, &ldquo;ificos 0&rdquo; for an octahedron
+(default) and &ldquo;ificos 1&rdquo; for an icoshedron. Starting from an icosahedron
 yields a somewhat finer tesselation that converges somewhat faster.
 Solvation energies are not really sensitive to this choice for
-sufficiently fine tesselations. The old "maxbem" directive is no longer
+sufficiently fine tesselations. The old &ldquo;maxbem&rdquo; directive is no longer
 used.</p>
-<p>The "lineq" parameter serves to select the numerical algorithm to solve
+<p>The &ldquo;lineq&rdquo; parameter serves to select the numerical algorithm to solve
 the linear equations yielding the effective charges that represent the
-polarization of the medium. "lineq 0" selects an iterative method
-(default), "lineq 1" selects a dense matrix linear equation solver. For
+polarization of the medium. &ldquo;lineq 0&rdquo; selects an iterative method
+(default), &ldquo;lineq 1&rdquo; selects a dense matrix linear equation solver. For
 large molecules where the number of effective charges is large, the
 codes selects the iterative method.</p>
-<p>"zeta" sets the width of the Gaussian charge distributions that were
+<p>&ldquo;zeta&rdquo; sets the width of the Gaussian charge distributions that were
 suggested by York and Karplus to avoid singularities when two surface
-charges coincide. The default value is "zeta 0.98" this value was chosen
+charges coincide. The default value is &ldquo;zeta 0.98&rdquo; this value was chosen
 to ensure that the results of the current implementation are as close as
 possible to those of the original Klamt and Schuurmann based
 implementation.</p>
-<p>"gamma_s" modifies the width of the smooth switching function that
+<p>&ldquo;gamma_s&rdquo; modifies the width of the smooth switching function that
 eliminates surface charges when their positions move into the sphere of
-a neighboring atom. "gamma_s 0.0" leads to a heavyside or abrupt
-switching function, whereas "gamma_s 1.0" maximizes the width of the
-switching function. The default value is "gamma_s 1.0".</p>
-<p>"sw_tol" specifies the cutoff of the switching function below which a
+a neighboring atom. &ldquo;gamma_s 0.0&rdquo; leads to a heavyside or abrupt
+switching function, whereas &ldquo;gamma_s 1.0&rdquo; maximizes the width of the
+switching function. The default value is &ldquo;gamma_s 1.0&rdquo;.</p>
+<p>&ldquo;sw_tol&rdquo; specifies the cutoff of the switching function below which a
 surface charge at a particular point is eliminated. The values of the
 switching function lie in the domain from 0 to 1. This value should not
 be set too small as that leads to instabilities in the linear system
-solvers. The default value is "sw_tol 1.0e-4".</p>
-<p>"do_gasphase" is a flag to control whether the calculation of the
+solvers. The default value is &ldquo;sw_tol 1.0e-4&rdquo;.</p>
+<p>&ldquo;do_gasphase&rdquo; is a flag to control whether the calculation of the
 solvation energy is preceded by a gas phase calculation. The default is
 to always perform a gas phase calculation first and then calculate the
 solvation starting from the converged gas phase electron density.
 However, in geometry optimizations this approach can double the cost. In
-such a case setting "do_gasphase false" suppresses the gas phase
+such a case setting &ldquo;do_gasphase false&rdquo; suppresses the gas phase
 calculations and only the solvated system calculations are performed.
 This option needs to be used with care as in some cases starting the
 COSMO solvation from an unconverged electron density can generate
 unphysical charges that lock the calculation into strange electron
 distributions.</p>
-<p>"do_cosmo_ks" is a flag to turn on the Klamt-Schuurmann model</p>
-<p>"do_cosmo_yk" is a flag to turn on the York-Karplus model (default)</p>
-<p>The following example is for a water molecule in `water', using the
+<p>&ldquo;do_cosmo_ks&rdquo; is a flag to turn on the Klamt-Schuurmann model</p>
+<p>&ldquo;do_cosmo_yk&rdquo; is a flag to turn on the York-Karplus model (default)</p>
+<p>The following example is for a water molecule in `water&rsquo;, using the
 HF/6-31G** level of
 theory:</p>
 <pre><code>start  
@@ -331,7 +331,7 @@ task scf energy
 </code></pre>
 
 <p>Alternatively, instead of listing COSMO radii parameters in the input,
-the former can be loaded using an external file through the "parameters"
+the former can be loaded using an external file through the &ldquo;parameters&rdquo;
 directive</p>
 <pre><code>start  
 echo  
@@ -354,7 +354,7 @@ end
 task scf energy
 </code></pre>
 
-<p>where "water.par" may the following form:</p>
+<p>where &ldquo;water.par&rdquo; may the following form:</p>
 <pre><code>O 1.40
 H 1.16
 </code></pre>
@@ -375,13 +375,13 @@ run directory.</p>
 <h2 id="references">References</h2>
 <p><references/></p>
 <ol>
-<li>Klamt, A; Schuurmann, G (1993). "COSMO: A new approach to dielectric screening in solvents with explicit expressions for the screening energy and its gradient". Journal of the Chemical Society, Perkin Transactions 2: 799-805. doi:10.1039/P29930000799. </li>
-<li>York, D.M.; Karplus, M. (1999). "A smooth solvation potential based on the conductor-like screening model". Journal of physical chemistry A 103: 11060-11079. doi:10.1021/jp992097l. </li>
-<li>A. Bondi (1964). "van der Waals volums and radii". Journal of Physical Chemistry 68: 441-451. doi:10.1021/j100785a001. </li>
-<li>A. Klamt, V. Jonas (1998). "Refinement and parametrization of COSMO-RS". Journal of physical chemistry A 102: 5074-5085. doi:10.1021/jp980017s. </li>
-<li>E. V. Stefanovich, T. N. Truong (1995). "Optimized atomic radii for quantum dielectric continuum solvation models". Chemical Physics Letters 244: 65-74. doi:10.1016/0009-2614(95)00898-E. </li>
-<li>V. Barone, M. Cossi (1997). "A new definition of cavities for the computation of solvation free energies by the polarizable continuum model". Journal of Chemical Physics 107: 3210-3221. doi:10.1063/1.474671. </li>
-<li>E. V. Stefanovich, T. N. Truong (1995). "Optimized atomic radii for quantum dielectric continuum solvation models". Chemical Physics Letters 244: 65-74. doi:10.1016/0009-2614(95)00898-E. </li>
+<li>Klamt, A; Schuurmann, G (1993). &ldquo;COSMO: A new approach to dielectric screening in solvents with explicit expressions for the screening energy and its gradient&rdquo;. Journal of the Chemical Society, Perkin Transactions 2: 799-805. doi:10.1039/P29930000799. </li>
+<li>York, D.M.; Karplus, M. (1999). &ldquo;A smooth solvation potential based on the conductor-like screening model&rdquo;. Journal of physical chemistry A 103: 11060-11079. doi:10.1021/jp992097l. </li>
+<li>A. Bondi (1964). &ldquo;van der Waals volums and radii&rdquo;. Journal of Physical Chemistry 68: 441-451. doi:10.1021/j100785a001. </li>
+<li>A. Klamt, V. Jonas (1998). &ldquo;Refinement and parametrization of COSMO-RS&rdquo;. Journal of physical chemistry A 102: 5074-5085. doi:10.1021/jp980017s. </li>
+<li>E. V. Stefanovich, T. N. Truong (1995). &ldquo;Optimized atomic radii for quantum dielectric continuum solvation models&rdquo;. Chemical Physics Letters 244: 65-74. doi:10.1016/0009-2614(95)00898-E. </li>
+<li>V. Barone, M. Cossi (1997). &ldquo;A new definition of cavities for the computation of solvation free energies by the polarizable continuum model&rdquo;. Journal of Chemical Physics 107: 3210-3221. doi:10.1063/1.474671. </li>
+<li>E. V. Stefanovich, T. N. Truong (1995). &ldquo;Optimized atomic radii for quantum dielectric continuum solvation models&rdquo;. Chemical Physics Letters 244: 65-74. doi:10.1016/0009-2614(95)00898-E. </li>
 </ol>
               
             </div>

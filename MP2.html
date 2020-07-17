@@ -137,7 +137,7 @@ correction[1] to the Hartree-Fock energy (MP2). They vary in
 capability, the size of system that can be treated and use of other
 approximations</p>
 <ul>
-<li>Semi-direct -- this is recommended for most large applications (up
+<li>Semi-direct &ndash; this is recommended for most large applications (up
     to about 2800 basis functions), especially on the IBM SP and other
     machines with significant disk I/O capability. Partially transformed
     integrals are stored on disk, multi-passing as necessary. RHF and
@@ -149,7 +149,7 @@ approximations</p>
 </code></pre>
 
 <ul>
-<li>Fully-direct[2] -- this is of utility if only limited I/O
+<li>Fully-direct[2] &ndash; this is of utility if only limited I/O
     resources are available (up to about 2800 functions). Only RHF
     references and energies are available. This is selected by
     specifying direct_mp2 on the task directive, e.g.</li>
@@ -158,7 +158,7 @@ approximations</p>
 </code></pre>
 
 <ul>
-<li>Resolution of the identity (RI) approximation MP2 (RI-MP2)[3] --
+<li>Resolution of the identity (RI) approximation MP2 (RI-MP2)[3] &ndash;
     this uses the RI approximation and is therefore only exact in the
     limit of a complete fitting basis. However, with some care, high
     accuracy may be obtained with relatively modest fitting basis sets.
@@ -185,7 +185,7 @@ approximations</p>
  END
 </code></pre>
 
-<h2 id="freeze-freezing-orbitals">FREEZE -- Freezing orbitals</h2>
+<h2 id="freeze-freezing-orbitals">FREEZE &ndash; Freezing orbitals</h2>
 <p>All MP2 modules support frozen core orbitals, however, only the direct
 MP2 and RI-MP2 modules support frozen virtual orbitals.</p>
 <p>By default, no orbitals are frozen. The atomic keyword causes orbitals
@@ -254,13 +254,13 @@ seven orbitals would be frozen (the oxygen 1<em>s</em>, and the silicon
 </tr>
 </tbody>
 </table>
-<p>Number of orbitals considered "core" in the "freeze by atoms" algorithm</p>
+<p>Number of orbitals considered &ldquo;core&rdquo; in the &ldquo;freeze by atoms&rdquo; algorithm</p>
 <p></center></p>
-<p>Caution: The rule for freezing orbitals "by atoms" are rather
+<p>Caution: The rule for freezing orbitals &ldquo;by atoms&rdquo; are rather
 unsophisticated: the number of orbitals to be frozen is computed from
 the Table 16.1 by summing the number of core orbitals in each atom
 present. The corresponding number of lowest-energy orbitals are frozen
--- if for some reason the actual core orbitals are not the lowest lying,
+&ndash; if for some reason the actual core orbitals are not the lowest lying,
 then correct results will not be obtained. From limited experience, it
 seems that special attention should be paid to systems including third-
 and higher- period atoms.</p>
@@ -295,7 +295,7 @@ instance, to freeze the top 5 virtuals</p>
 
 <p>Again, note that this only works for the direct-MP2 and RI-MP2 energy
 codes.</p>
-<h2 id="tight-increased-precision">TIGHT -- Increased precision</h2>
+<h2 id="tight-increased-precision">TIGHT &ndash; Increased precision</h2>
 <p>The TIGHT directive can be used to increase the precision in the MP2
 energy and gradients.</p>
 <p>By default the MP2 gradient package should compute energies accurate to
@@ -308,7 +308,7 @@ precision may be desirable.</p>
 <img alt="$10^{-6}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ec4c25dce67266d40679a50bf9d75e70.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/> to <img alt="$10^{-8}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3638e50463da9c60c05d8519c65d3982.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/>) and CPHF (from <img alt="$10^{-4}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6784e1fd68d75a57b35bd36247a1aefe.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/> to <img alt="$10^{-6}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ec4c25dce67266d40679a50bf9d75e70.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/>)
 are solved, and also tightens thresholds for computation of the AO and
 MO integrals (from <img alt="$10^{-9}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a9b53cbe5062c1d96ddd43e5494ce6cb.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/> to <img alt="$10^{-11}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bd2a39dedd522990e0b71f9f2eaa2bf.svg?invert_in_darkmode&sanitize=true" align=middle width="39.668805pt" height="26.70657pt"/>) within the MP2 code.</p>
-<h2 id="scratchdisk-limiting-io-usage">SCRATCHDISK -- Limiting I/O usage</h2>
+<h2 id="scratchdisk-limiting-io-usage">SCRATCHDISK &ndash; Limiting I/O usage</h2>
 <p>This directive - used only in the semi-direct algorithm - allows to
 limit the per process disk usage. Mandatory argument for this keyword is
 the maximum number of MBytes. For example, the following input line</p>
@@ -347,87 +347,87 @@ below.</p>
 <td></td>
 </tr>
 <tr>
-<td>"2/3 ints"</td>
+<td>&ldquo;2/3 ints&rdquo;</td>
 <td>debug</td>
 <td>Partial 3-center integrals</td>
 </tr>
 <tr>
-<td>"3c ints"</td>
+<td>&ldquo;3c ints&rdquo;</td>
 <td>debug</td>
 <td>MO 3-center integrals</td>
 </tr>
 <tr>
-<td>"4c ints b"</td>
+<td>&ldquo;4c ints b&rdquo;</td>
 <td>debug</td>
-<td>"B" matrix with approx. 4c integrals</td>
+<td>&ldquo;B&rdquo; matrix with approx. 4c integrals</td>
 </tr>
 <tr>
-<td>"4c ints"</td>
+<td>&ldquo;4c ints&rdquo;</td>
 <td>debug</td>
 <td>Approximate 4-center integrals</td>
 </tr>
 <tr>
-<td>"amplitudes"</td>
+<td>&ldquo;amplitudes&rdquo;</td>
 <td>debug</td>
-<td>"B" matrix with denominators</td>
+<td>&ldquo;B&rdquo; matrix with denominators</td>
 </tr>
 <tr>
-<td>"basis"</td>
+<td>&ldquo;basis&rdquo;</td>
 <td>high</td>
 <td></td>
 </tr>
 <tr>
-<td>"fit xf"</td>
+<td>&ldquo;fit xf&rdquo;</td>
 <td>debug</td>
 <td>Transformation for fitting basis</td>
 </tr>
 <tr>
-<td>"geombas"</td>
+<td>&ldquo;geombas&rdquo;</td>
 <td>debug</td>
 <td>Detailed basis map info</td>
 </tr>
 <tr>
-<td>"geometry"</td>
+<td>&ldquo;geometry&rdquo;</td>
 <td>high</td>
 <td></td>
 </tr>
 <tr>
-<td>"information"</td>
+<td>&ldquo;information&rdquo;</td>
 <td>low</td>
 <td>General information about calc.</td>
 </tr>
 <tr>
-<td>"integral i/o"</td>
+<td>&ldquo;integral i/o&rdquo;</td>
 <td>high</td>
 <td>File size information</td>
 </tr>
 <tr>
-<td>"mo ints"</td>
+<td>&ldquo;mo ints&rdquo;</td>
 <td>debug</td>
 <td></td>
 </tr>
 <tr>
-<td>"pair energies"</td>
+<td>&ldquo;pair energies&rdquo;</td>
 <td>debug</td>
 <td>(working only in direct_mp2)</td>
 </tr>
 <tr>
-<td>"partial pair energies"</td>
+<td>&ldquo;partial pair energies&rdquo;</td>
 <td>debug</td>
 <td>Pair energy matrix each time it is updated</td>
 </tr>
 <tr>
-<td>"progress reports"</td>
+<td>&ldquo;progress reports&rdquo;</td>
 <td>default</td>
 <td>Report completion of time-consuming steps</td>
 </tr>
 <tr>
-<td>"reference"</td>
+<td>&ldquo;reference&rdquo;</td>
 <td>high</td>
 <td>Details about reference wavefunction</td>
 </tr>
 <tr>
-<td>"warnings"</td>
+<td>&ldquo;warnings&rdquo;</td>
 <td>low</td>
 <td>Non-fatal warnings</td>
 </tr>
@@ -435,7 +435,7 @@ below.</p>
 </table>
 <p>Printable items in the MP2 modules and their default print levels</p>
 <p></center></p>
-<h2 id="vectors-mo-vectors">VECTORS -- MO vectors</h2>
+<h2 id="vectors-mo-vectors">VECTORS &ndash; MO vectors</h2>
 <p>All of the (supported) MP2 modules require use of converged canonical
 SCF (RHF or UHF) orbitals for correct results. The vectors are by
 default obtained from the preceding SCF calculation, but it is possible
@@ -457,7 +457,7 @@ orbital 7 into the 6th position. This is accomplished by</p>
 vectors</a>.</p>
 <h2 id="ri-mp2-fitting-basis">RI-MP2 fitting basis</h2>
 <p>The RI-MP2 method requires a fitting basis, which must be specified with
-the name "ri-mp2 basis" (see <a href="Basis.html">Basis</a>). For instance,</p>
+the name &ldquo;ri-mp2 basis&rdquo; (see <a href="Basis.html">Basis</a>). For instance,</p>
 <pre><code> basis &quot;ri-mp2 basis&quot;
    O s; 10000.0 1
    O s;  1000.0 1
@@ -469,8 +469,8 @@ the name "ri-mp2 basis" (see <a href="Basis.html">Basis</a>). For instance,</p>
 <p>Alternatively, using a standard capability of basis sets
 (<a href="Basis.html">Basis</a>) another named basis may be associated with
 the fitting basis. For instance, the following input specifies a basis
-with the name "small fitting basis" and then defines this to be the
-"ri-mp2 basis".</p>
+with the name &ldquo;small fitting basis&rdquo; and then defines this to be the
+&ldquo;ri-mp2 basis&rdquo;.</p>
 <pre><code> basis &quot;small fitting basis&quot;
    H s; 10    1
    H s;  3    1
@@ -483,15 +483,15 @@ with the name "small fitting basis" and then defines this to be the
 <pre><code> set &quot;ri-mp2 basis&quot; &quot;small fitting basis&quot;
 </code></pre>
 
-<h2 id="file3c-ri-mp2-3-center-integral-filename">FILE3C -- RI-MP2 3-center integral filename</h2>
+<h2 id="file3c-ri-mp2-3-center-integral-filename">FILE3C &ndash; RI-MP2 3-center integral filename</h2>
 <p>The default name for the file used to store the transformed 3-center
-integrals is "<img alt="$file\_prefix$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0f4e98d48616daeb64389f8f090dd95c.svg?invert_in_darkmode&sanitize=true" align=middle width="82.682655pt" height="22.74591pt"/>.mo3cint" in the scratch directory. This may
+integrals is &ldquo;<img alt="$file\_prefix$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0f4e98d48616daeb64389f8f090dd95c.svg?invert_in_darkmode&sanitize=true" align=middle width="82.682655pt" height="22.74591pt"/>.mo3cint&rdquo; in the scratch directory. This may
 be overridden using the FILE3C directive. For instance, to specify the
 file /scratch/h2o.3c, use this directive</p>
 <pre><code> file3c /scratch/h2o.3c
 </code></pre>
 
-<h2 id="riapprox-ri-mp2-approximation">RIAPPROX -- RI-MP2 Approximation</h2>
+<h2 id="riapprox-ri-mp2-approximation">RIAPPROX &ndash; RI-MP2 Approximation</h2>
 <p>The type of RI approximation used in the RI-MP2 calculation is
 controlled by means of the RIAPPROX directive. The two possible values
 are V and SVS (case sensitive), which correspond to the approximations
@@ -560,7 +560,7 @@ directives of the following form,</p>
 <p>The default is for the code to determine the batch size based on the
 available memory. Should there be problems with the program-determined
 batch sizes, these variables allow the user to override them. The
-program will always use the smaller of the user's value of these entries
+program will always use the smaller of the user&rsquo;s value of these entries
 and the internally computed batch size.</p>
 <p>The transformation batch size computed in the code is the number of
 occupied orbitals in the <em>(occ vir|fit)</em> three-center integrals to be
@@ -568,7 +568,7 @@ produced at a time. If this entry is less than the number of occupied
 orbitals in the system, the transformation will require multiple passes
 through the two-electron integrals. The memory requirements of this
 stage are two global arrays of dimension <em><batch size> x vir x fit</em> with
-the "fit" dimension distributed across all processors (on shell-block
+the &ldquo;fit&rdquo; dimension distributed across all processors (on shell-block
 boundaries). The compromise here is memory space versus multiple
 integral evaluations.</p>
 <p>The energy evaluation batch sizes are computed in the code from the
@@ -636,7 +636,7 @@ this matches the way experiments probe the electron density more
 closely[5][6][7][8].</p>
 <p>Only dipole moments are printed by the MP2 gradient code, but natural
 orbitals are produced and stored in the permanent directory with a file
-extension of ".mp2nos". These may be fed into the <a href="Properties.html">property
+extension of &ldquo;.mp2nos&rdquo;. These may be fed into the <a href="Properties.html">property
 package</a> to compute more general properties as in the following example.</p>
 <pre><code>start h2o
 geometry
@@ -667,7 +667,7 @@ task mp2 property
 definite so it is not unusual to see a few small negative natural
 orbital occupation numbers. Significant negative occupation numbers have
 been argued to be a sign that the system might be near degenerate[9].</p>
-<h2 id="scs-mp2-spin-component-scaled-mp2">SCS-MP2 -- Spin-Component Scaled MP2</h2>
+<h2 id="scs-mp2-spin-component-scaled-mp2">SCS-MP2 &ndash; Spin-Component Scaled MP2</h2>
 <p>Each MP2 output contains the calculation of the SCS-MP2 correlation
 energies as suggested by S.Grimme[10]</p>
 <p>The SCS keyword is only required for gradients calculations:</p>
@@ -691,47 +691,47 @@ CCSD.</p>
 <h2 id="references">References</h2>
 <p><references/></p>
 <ol>
-<li>Møller, C. and Plesset, M.S. (1934) "Note on an approximation
-    treatment for many-electron systems", <em>Physical Review</em> <strong>46</strong>
+<li>Møller, C. and Plesset, M.S. (1934) &ldquo;Note on an approximation
+    treatment for many-electron systems&rdquo;, <em>Physical Review</em> <strong>46</strong>
     618-622,
     doi:<a href="http://dx.doi.org/10.1103/PhysRev.46.618">http://dx.doi.org/10.1103/PhysRev.46.618</a>.</li>
-<li>Wong, A.T.; Harrison, R.J. and Rendell, A.P. (1996) "Parallel direct
-    four-index transformations", <em>Theoretica Chimica Acta</em> <strong>93</strong>
+<li>Wong, A.T.; Harrison, R.J. and Rendell, A.P. (1996) &ldquo;Parallel direct
+    four-index transformations&rdquo;, <em>Theoretica Chimica Acta</em> <strong>93</strong>
     317-331,
     doi:<a href="http://dx.doi.org/10.1007/BF01129213">http://dx.doi.org/10.1007/BF01129213</a>.</li>
-<li>Bernholdt, D.E. and Harrison, R.J. (1996) "Large-scale correlated
+<li>Bernholdt, D.E. and Harrison, R.J. (1996) &ldquo;Large-scale correlated
     electronic structure calculations: the RI-MP2 method on parallel
-    computers", <em>Chemical Physics Letters</em> <strong>250</strong> (5-6) 477-484,
+    computers&rdquo;, <em>Chemical Physics Letters</em> <strong>250</strong> (5-6) 477-484,
     doi:<a href="http://dx.doi.org/10.1016/0009-2614(96)00054-1">http://dx.doi.org/10.1016/0009-2614(96)00054-1</a></li>
-<li>Vahtras, O.; Almlöf, J. and Feyereisen, M. W. (1993) "Integral
-    approximations for LCAO-SCF calculations", <em>Chem. Phys. Lett.</em>
+<li>Vahtras, O.; Almlöf, J. and Feyereisen, M. W. (1993) &ldquo;Integral
+    approximations for LCAO-SCF calculations&rdquo;, <em>Chem. Phys. Lett.</em>
     <strong>213</strong>, 514-518, doi:
     <a href="http://dx.doi.org/10.1016/0009-2614(93)89151-7">10.1016/0009-2614(93)89151-7</a></li>
-<li>Raghavachari, K. and Pople, J. A. (1981) "Calculation of
+<li>Raghavachari, K. and Pople, J. A. (1981) &ldquo;Calculation of
     one-electron properties using limited configuration interaction
-    techniques", <em>Int. J. Quantum Chem.</em> <strong>20</strong>, 1067-1071, doi:
+    techniques&rdquo;, <em>Int. J. Quantum Chem.</em> <strong>20</strong>, 1067-1071, doi:
     <a href="http://dx.doi.org/10.1002/qua.560200503">10.1002/qua.560200503</a>.</li>
 <li>Diercksen, G. H. F.; Roos, B. O. and Sadlej, A. J. (1981)
-    "Legitimate calculation of first-order molecular properties in the
-    case of limited CI functions. Dipole moments", <em>Chem. Phys.</em> <strong>59</strong>,
+    &ldquo;Legitimate calculation of first-order molecular properties in the
+    case of limited CI functions. Dipole moments&rdquo;, <em>Chem. Phys.</em> <strong>59</strong>,
     29-39, doi:
     <a href="http://dx.doi.org/10.1016/0301-0104(81)80082-1">10.1016/0301-0104(81)80082-1</a>.</li>
-<li>Rice, J. E. and Amos, R. D. (1985) "On the efficient evaluation of
-    analytic energy gradients", <em>Chem. Phys. Lett.</em> <strong>122</strong>, 585-590,
+<li>Rice, J. E. and Amos, R. D. (1985) &ldquo;On the efficient evaluation of
+    analytic energy gradients&rdquo;, <em>Chem. Phys. Lett.</em> <strong>122</strong>, 585-590,
     doi:
     <a href="http://dx.doi.org/10.1016/0009-2614(85)87275-4">10.1016/0009-2614(85)87275-4</a>.</li>
 <li>Wiberg, K. B.; Hadad, C. M.; LePage, T. J.; Breneman, C. M. and
-    Frisch, M. J. (1992) "Analysis of the effect of electron correlation
-    on charge density distributions", <em>J. Phys. Chem.</em> <strong>96</strong>, 671-679,
+    Frisch, M. J. (1992) &ldquo;Analysis of the effect of electron correlation
+    on charge density distributions&rdquo;, <em>J. Phys. Chem.</em> <strong>96</strong>, 671-679,
     doi: <a href="http://dx.doi.org/10.1021/j100181a030">10.1021/j100181a030</a>.</li>
 <li>Gordon, M. S.; Schmidt, M. W.; Chaban, G. M.; Glaesemann, K. R.;
-    Stevens, W. J. and Gonzalez, C. (1999) "A natural orbital diagnostic
-    for multiconfigurational character in correlated wave functions",
+    Stevens, W. J. and Gonzalez, C. (1999) &ldquo;A natural orbital diagnostic
+    for multiconfigurational character in correlated wave functions&rdquo;,
     <em>J. Chem. Phys.</em> <strong>110</strong>, 4199-4207, doi:
     <a href="http://dx.doi.org/10.1063/1.478301">10.1063/1.478301</a>.</li>
-<li>S. Grimme, "Improved second-order Møller-Plesset perturbation theory
+<li>S. Grimme, &ldquo;Improved second-order Møller-Plesset perturbation theory
     by separate scaling of parallel- and antiparallel-spin pair
-    correlation energies", J. Chem. Phys., 118, (2003), 9095-9102,
+    correlation energies&rdquo;, J. Chem. Phys., 118, (2003), 9095-9102,
     doi:<a href="http://dx.doi.org/10.1063/1.1569242">10.1063/1.1569242</a>.</li>
 </ol>
               

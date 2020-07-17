@@ -138,7 +138,7 @@ integrals and basic information including initial wavefunction guesses
 for quantum algorithms. There are currently two options for integrals:</p>
 <h2 id="bare-hamiltonian">Bare Hamiltonian</h2>
 <p>To print the bare Hamiltonian, you must set up a CCSD calculation with the following parameters: <br />
-<em> The symmetry must be declared as 'C1' <br />
+<em> The symmetry must be declared as &lsquo;C1&rsquo; <br />
 </em> In the TCE block, you must include the following:   </p>
 <pre><code>        2eorb
         2emet 13
@@ -161,7 +161,7 @@ notation (each printed element corresponds to (ij|kl), (ij|lk),
 of alpha and beta electrons that are set in the printing does not need
 to correspond to the total number of alpha and beta electrons. Rather
 it is the number of electrons included in the printing, starting from
-the HOMO and counting down. This allows you to 'freeze' core
+the HOMO and counting down. This allows you to &lsquo;freeze&rsquo; core
 orbitals. However, this is not recommended, because unlike freezing
 Fock matrix elements and two-electron integrals in correlated
 calculations, this procedure is dropping core orbitals of the standard
@@ -184,7 +184,7 @@ ground-state implementation is available in the current <a href="https://github.
 release</a>.  </p>
 <p>To print the DUCC Hamiltonian, you must set up a CCSD calculation with the following parameters:  </p>
 <ul>
-<li>The symmetry must be declared as 'C1'  </li>
+<li>The symmetry must be declared as &lsquo;C1&rsquo;  </li>
 <li>In the TCE block, you must include the following:  </li>
 </ul>
 <pre><code>        2eorb
@@ -198,7 +198,7 @@ release</a>.  </p>
 
 <p><em>Notes:</em></p>
 <ul>
-<li>The full form of the DUCC Hamiltonian is intractable and the equations defining the approximation that is currently implemented can be found in "N. P. Bauman, E. J. Bylaska, S. Krishnamoorthy, G. H. Low, N. Wiebe, C. E. Granade, M. Roetteler, M. Troyer, and K. Kowalski, J. Chem. Phys. 151, 014107 (2019)" and "N. P. Bauman, G. H. Low, and K. Kowalski, J. Chem. Phys. 151, 234114 (2019)." In contrast to these early publications, the full form of the two-electron integral is printed.    </li>
+<li>The full form of the DUCC Hamiltonian is intractable and the equations defining the approximation that is currently implemented can be found in &ldquo;N. P. Bauman, E. J. Bylaska, S. Krishnamoorthy, G. H. Low, N. Wiebe, C. E. Granade, M. Roetteler, M. Troyer, and K. Kowalski, J. Chem. Phys. 151, 014107 (2019)&rdquo; and &ldquo;N. P. Bauman, G. H. Low, and K. Kowalski, J. Chem. Phys. 151, 234114 (2019).&rdquo; In contrast to these early publications, the full form of the two-electron integral is printed.    </li>
 <li>The entire two-electron integral is printed out since the DUCC Hamiltonian does not have the same symmetry as the bare Hamiltonian. Instead of the 8-fold symmetry, it has dual 4-fold symmetries    </li>
 </ul>
 <pre><code>        (IJ|KL) = (JI|LK) = (KL|IJ) = (LK|JI)  
@@ -207,7 +207,7 @@ release</a>.  </p>
 </code></pre>
 
 <ul>
-<li>When utilizing the <a href="#yaml-interpreter">YAML interpreter</a>, the full two-electron integral will be printed in the YAML file, despite it being labeled as 'sparse' in the YAML file.   </li>
+<li>When utilizing the <a href="#yaml-interpreter">YAML interpreter</a>, the full two-electron integral will be printed in the YAML file, despite it being labeled as &lsquo;sparse&rsquo; in the YAML file.   </li>
 <li>Frozen core calculations should not be performed. There is nothing preventing such calculation from being executed, but the integrals will be incorrect.   </li>
 <li>Since the all-orbital coupled-cluster calculation must be performed, then there is a chance that a leading excitation outside of the active-space will be printed and therefore included in the initial wave function description in the YAML file. The user ought to be aware of this risk and make changes to the YAML file to exclude these excitations, which would include renormalizing the remaining amplitudes of the initial guess.  </li>
 </ul>
@@ -217,7 +217,7 @@ release</a>.  </p>
 </code></pre>
 
 <p><em>Note:</em>
-* the 'fci_energy' in the YAML file is taken to be the energy of the correlated method, which, in either case, is the CCSD energy.</p>
+* the &lsquo;fci_energy&rsquo; in the YAML file is taken to be the energy of the correlated method, which, in either case, is the CCSD energy.</p>
 <h2 id="example-input-file-for-bare-hamiltonian">Example input file for Bare Hamiltonian</h2>
 <pre><code>echo
 

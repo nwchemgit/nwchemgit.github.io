@@ -158,8 +158,8 @@
                 <h1 id="compiling-nwchem-from-source">Compiling NWChem from source</h1>
 <p>On this page, a step-by-step description of the build process and
 necessary and optional environment variables is outlined. In addition,
-based on the experiences of developers and users how-to's for various
-platforms have been created. These how-to's will be updated with
+based on the experiences of developers and users how-to&rsquo;s for various
+platforms have been created. These how-to&rsquo;s will be updated with
 additional platforms and better environment variables over time.</p>
 <h2 id="setting-up-the-proper-environment-variables">Setting up the proper environment variables</h2>
 <ul>
@@ -351,15 +351,15 @@ options.</p>
 <tbody>
 <tr>
 <td>USE_MPI</td>
-<td>Set to "y" to indicate that NWChem should be compiled with MPI</td>
+<td>Set to &ldquo;y&rdquo; to indicate that NWChem should be compiled with MPI</td>
 </tr>
 <tr>
 <td>USE_MPIF</td>
-<td>Set to "y" for the NWPW module to use fortran-bindings of MPI (Generally set when USE_MPI is set)</td>
+<td>Set to &ldquo;y&rdquo; for the NWPW module to use fortran-bindings of MPI (Generally set when USE_MPI is set)</td>
 </tr>
 <tr>
 <td>USE_MPIF4</td>
-<td>Set to "y" for the NWPW module to use Integer*4 fortran-bindings of MPI. (Generally set when USE_MPI is set on most platforms)</td>
+<td>Set to &ldquo;y&rdquo; for the NWPW module to use Integer*4 fortran-bindings of MPI. (Generally set when USE_MPI is set on most platforms)</td>
 </tr>
 <tr>
 <td>LIBMPI</td>
@@ -714,7 +714,7 @@ be done using the following procedure:</p>
   % make
 </code></pre>
 
-<p>One can now use "task nbo" and incorporate NBO input into the NWChem
+<p>One can now use &ldquo;task nbo&rdquo; and incorporate NBO input into the NWChem
 input file directly:</p>
 <pre><code> nbo  
    $NBO NRT $END  
@@ -751,13 +751,13 @@ CC variables. Please provide filenames only as in the examples above!</p>
 <p>Note 1: If in a Linux environment, FC is set equal to anything other
 than the tested compilers, there is no guarantee of a successful
 installation, since the makefile structure has not been tested to
-process other settings. In other words, please avoid make FC="ifort -O3 -xhost"
-and stick to make FC="ifort", instead</p>
-<p>Note 2: It's better to avoid redefining CC, since a) NWChem does not
+process other settings. In other words, please avoid make FC=&rdquo;ifort -O3 -xhost&rdquo;
+and stick to make FC=&rdquo;ifort&rdquo;, instead</p>
+<p>Note 2: It&rsquo;s better to avoid redefining CC, since a) NWChem does not
 have C source that is a computational bottleneck and b) we typically
 test just the default C compiler. In other words, the recommendation is
 to compile with make FC=ifort</p>
-<p>Note 3: It's better to avoid modifying the values of the FOPTIMIZE and
+<p>Note 3: It&rsquo;s better to avoid modifying the values of the FOPTIMIZE and
 COPTIMIZE variables. The reason is that the default values for FOPTIMIZE
 and COPTIMIZE have been tested by the NWChem developers (using the
 internal QA suites, among others), while any modification might produce
@@ -768,16 +768,16 @@ configuration of your machine based on the results of a number of tests
 and compiles a corresponding binary. It is of course possible that the
 script guesses something wrong in which case that setting can be
 corrected by manually specifying the corresponding environment variable.
-See the other platform how-to's for details on those variables. The only
+See the other platform how-to&rsquo;s for details on those variables. The only
 requirement to use the script is that the MPI compiler wrappers (e.g.
 mpif90, mpicc and mpiCC) should be in your path, and that if your
-machine uses the "module" software you should have all modules you want
+machine uses the &ldquo;module&rdquo; software you should have all modules you want
 to use loaded. If these requirements are met then simply run</p>
 <pre><code>% cd $NWCHEM_TOP
 % ./contrib/distro-tools/build_nwchem | tee build_nwchem.log
 </code></pre>
 
-<p>In the file build_nwchem.log you will find under "Building NWChem" a
+<p>In the file build_nwchem.log you will find under &ldquo;Building NWChem&rdquo; a
 report on what platform the script thinks you are using.</p>
 <p>In addition to compiling the code the build_nwchem script now also
 creates scripts that can be used to set or unset all the environment
@@ -1157,7 +1157,7 @@ export USE_INTERNALBLAS=y
 </code></pre>
 
 <p><strong>WARNING:</strong> Please do not use the Mac OS X default BLAS and LAPACK
-libraries available (or brew's veclibfort), since they are causing
+libraries available (or brew&rsquo;s veclibfort), since they are causing
 NWChem to produce erroneous results</p>
 <h4 id="method-3-using-intel-compilers-and-mkl">Method #3: using Intel compilers and MKL</h4>
 <p>The Intel compilers and MKL work just fine on Mac with the following
@@ -1647,7 +1647,7 @@ Windows platform is to build with the
 installed using a semi-automatic tool mingw-get-setup.exe
 (http://sourceforge.net/projects/mingw/files/Installer/). A basic MinGW
 installation is required (Basic Setup), plus pthreads-32,
-mingw32-gcc-fortran-dev of "All Packages" and the MSYS software.<br />
+mingw32-gcc-fortran-dev of &ldquo;All Packages&rdquo; and the MSYS software.<br />
 More detailed MinGW/MSYS installation tips can be found in the following
 forum discussions</p>
 <table>
@@ -1719,7 +1719,7 @@ pacman -S msys/make
 <p>As an unsupported alternative, Cygwin might be used with make, perl, and
 gcc/gfortran version 4 installed (however several Cygwin versions are
 not a good match for NWChem installation, for example cygwin version
-1.7.32 -- current version as of September 2014 -- fails to compile
+1.7.32 &ndash; current version as of September 2014 &ndash; fails to compile
 NWChem)</p>
 <pre><code>% setenv NWCHEM_TOP &lt;your path&gt;/nwchem
 % setenv NWCHEM_TARGET CYGWIN
@@ -1738,8 +1738,8 @@ couple of releases as the NWChem.</p>
 </code></pre>
 
 <p>To start the compilation, start the Microsoft makefile utility from the
-top level source directory by typing "nmake". Reminder: For Compaq
-visual fortran don't forget to execute the "dfvars" script.</p>
+top level source directory by typing &ldquo;nmake&rdquo;. Reminder: For Compaq
+visual fortran don&rsquo;t forget to execute the &ldquo;dfvars&rdquo; script.</p>
 <h1 id="general-site-installation">General site installation</h1>
 <p>The build procedures outlined above will allow use of NWChem within the
 NWChem directory structure. The code will look for the basis set library
@@ -1806,7 +1806,7 @@ will allow you to overwrite the value of nwchem_basis_library in your
 <pre><code>% setenv NWCHEM_BASIS_LIBRARY &quot;$NWCHEM/data-5.0/libraries/&quot;
 </code></pre>
 
-<p>Do not forget the trailing "/".</p>
+<p>Do not forget the trailing &ldquo;/&rdquo;.</p>
               
             </div>
           </div>

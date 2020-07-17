@@ -168,7 +168,7 @@ command</p>
 <li>When adding new files, make sure to properly update the GNUMakefile
     in the directory you are working in, so that the new file gets
     compiled</li>
-<li>Do document your changes and additions using the "-m" option of git
+<li>Do document your changes and additions using the &ldquo;-m&rdquo; option of git
     commit</li>
 </ol>
 <h2 id="obtaining-readwrite-access-to-nwchem-source-tree">Obtaining Read/Write access to NWChem source tree</h2>
@@ -218,7 +218,7 @@ NWChem</a> page.</p>
 functionality need to be documented for review. New modules or tasks
 will require agreement from the full team before they can be added.</p>
 <h2 id="programming-model-and-languages">Programming Model and Languages</h2>
-<p>The programming model in is based on independent "task" modules that
+<p>The programming model in is based on independent &ldquo;task&rdquo; modules that
 perform various functions in the code and are build on modular APIs.
 Modules and APIs can share data, or share access to files containing
 data, only through a (most of the time) <a href="NWChem-Architecture.html">disk-resident run time
@@ -242,7 +242,7 @@ subsequent computations.</p>
 <!-- end list -->
 
 <ol>
-<li>All routines should start with "implicit none" and all variables
+<li>All routines should start with &ldquo;implicit none&rdquo; and all variables
     used in the routine should be specified explicitly.</li>
 <li>Minimize or avoid sharing of data through common blocks. Instead use
     the run time database.</li>
@@ -258,7 +258,7 @@ subsequent computations.</p>
 <!-- end list -->
 
 <ol>
-<li>FORTRAN77 and FORTRAN90. For FORTRAN90, avoid -- when possible -- using allocates and
+<li>FORTRAN77 and FORTRAN90. For FORTRAN90, avoid &ndash; when possible &ndash; using allocates and
     deallocates. Dynamic memory access should be performed using the
     memory access (MA) layer.</li>
 <li>C and C++. Only simple constructs should be used in C++.</li>
@@ -458,7 +458,7 @@ workflow</a></p>
     itself.</li>
 <li>Change the data type of the input arrays (rho, rgamma, and tau)
     as well as of the output array (func or fnc).</li>
-<li>Include "nwad.fh" before the "implicit" statement.</li>
+<li>Include &ldquo;nwad.fh&rdquo; before the &ldquo;implicit&rdquo; statement.</li>
 <li>Change the data type of the appropriate intermediate variables
     (compiler errors result where assignments of derived data type
     variables to double precision variables remain)</li>
@@ -468,19 +468,19 @@ workflow</a></p>
 <li>Add the functional printing version of the automatically
     differentiated code to <b>nwxc_eval_df_doit_print
     [nwxc_eval_print.F]</b>.</li>
-<li>Recompile <b>nwxc_fnc_print</b> (run "make nwxc_fnc_print"
+<li>Recompile <b>nwxc_fnc_print</b> (run &ldquo;make nwxc_fnc_print&rdquo;
     in the nwxc directory).</li>
 <li>Add an input file to <b>maxima/input</b> to print the
     expression.</li>
-<li>In the "maxima" directory run "make max/\&lt;functional>.max" to
+<li>In the &ldquo;maxima&rdquo; directory run &ldquo;make max/\&lt;functional>.max&rdquo; to
     generate the Maxima expression.</li>
 </ul>
 </li>
 <li>Generate the symbolic algebra implementation<ul>
-<li>In the "maxima" directory edit the GNUmakefile uncommenting the
+<li>In the &ldquo;maxima&rdquo; directory edit the GNUmakefile uncommenting the
     AUTOXC and AUTOXC_DS variables.</li>
 <li>Add the appropriate Fortran file to the OBJ variable.</li>
-<li>Run "make f77/\&lt;functional>.F" to generate the Fortran source
+<li>Run &ldquo;make f77/\&lt;functional>.F&rdquo; to generate the Fortran source
     code (this may take a while).</li>
 </ul>
 </li>
