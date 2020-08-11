@@ -81,6 +81,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#setting-up-the-proper-environment-variables">Setting up the proper environment variables</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#mpi-variables">MPI variables</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#automatic-detection-of-mpi-variables-with-mpif90">Automatic detection of MPI variables with mpif90</a>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -373,36 +377,15 @@ options.</p>
 <td>MPI_INCLUDE</td>
 <td>Directory where the MPI include files reside</td>
 </tr>
-<tr>
-<td>#### Automatic detection of MPI variables - mpif90</td>
-<td></td>
-</tr>
-<tr>
-<td><strong><em>New in NWChem 6.6</em></strong>: If the</td>
-<td></td>
-</tr>
-<tr>
-<td>location of the mpif90 command is part of your PATH env. variable,</td>
-<td></td>
-</tr>
-<tr>
-<td>NWChem will figure out the values of LIBMPI, MPI_LIB and MPI_INCLUDE</td>
-<td></td>
-</tr>
-<tr>
-<td>(if they are not set). Therefore, we do <strong>NOT</strong> recommend to set LIBMPI,</td>
-<td></td>
-</tr>
-<tr>
-<td>MPI_LIB and MPI_INCLUDE and add the location of mpif90 to the PATH</td>
-<td></td>
-</tr>
-<tr>
-<td>variable, instead.</td>
-<td></td>
-</tr>
 </tbody>
 </table>
+<h4 id="automatic-detection-of-mpi-variables-with-mpif90"><span style="color:red;">Automatic detection of MPI variables with mpif90</span></h4>
+<p><strong><em>New in NWChem 6.6</em></strong>: If the
+location of the mpif90 command is part of your PATH env. variable,
+NWChem will figure out the values of LIBMPI, MPI_LIB and MPI_INCLUDE
+(if they are not set). Therefore, we do <strong>NOT</strong> recommend to set LIBMPI,
+MPI_LIB and MPI_INCLUDE and add the location of mpif90 to the PATH
+variable, instead.</p>
 <p>The output of the command</p>
 <pre><code>mpif90 -show
 </code></pre>
@@ -762,38 +745,6 @@ COPTIMIZE variables. The reason is that the default values for FOPTIMIZE
 and COPTIMIZE have been tested by the NWChem developers (using the
 internal QA suites, among others), while any modification might produce
 incorrect results.</p>
-<h1 id="how-to-build_nwchem-script-unsupported">How-to: Build_nwchem script (unsupported)</h1>
-<p>The build_nwchem script is an auto-compile tool. It guesses the
-configuration of your machine based on the results of a number of tests
-and compiles a corresponding binary. It is of course possible that the
-script guesses something wrong in which case that setting can be
-corrected by manually specifying the corresponding environment variable.
-See the other platform how-to&rsquo;s for details on those variables. The only
-requirement to use the script is that the MPI compiler wrappers (e.g.
-mpif90, mpicc and mpiCC) should be in your path, and that if your
-machine uses the &ldquo;module&rdquo; software you should have all modules you want
-to use loaded. If these requirements are met then simply run</p>
-<pre><code>% cd $NWCHEM_TOP
-% ./contrib/distro-tools/build_nwchem | tee build_nwchem.log
-</code></pre>
-
-<p>In the file build_nwchem.log you will find under &ldquo;Building NWChem&rdquo; a
-report on what platform the script thinks you are using.</p>
-<p>In addition to compiling the code the build_nwchem script now also
-creates scripts that can be used to set or unset all the environment
-variables that were used in the build. Those scripts are</p>
-<pre><code>nwchem_make_env.csh
-nwchem_make_env.sh
-nwchem_make_unenv.csh
-nwchem_make_unenv.sh
-</code></pre>
-
-<p>The scripts also define a command</p>
-<pre><code>renwc
-</code></pre>
-
-<p>that can be used to recompile just one directory and relink the code.
-This is particularly convenient when developing.</p>
 <h1 id="how-to-linux-platforms">How-to: Linux platforms</h1>
 <ul>
 <li><strong>Common environmental variables for building in serial or in
