@@ -257,10 +257,9 @@ Windows</td>
 </tbody>
 </table>
 
-<ul>
-<li><strong>ARMCI_NETWORK</strong> must be defined in order to achieve best
-    performance on high performance networks, e.g.</li>
-</ul>
+<p><br>
+  - <strong>ARMCI_NETWORK</strong> must be defined in order to achieve best
+    performance on high performance networks, e.g.</p>
 <pre><code>export ARMCI_NETWORK=OPENIB
 </code></pre>
 
@@ -341,7 +340,8 @@ MPI-SPAWN</td>
 </tbody>
 </table>
 
-<p>Please see <a href="ARMCI.html">Choosing the ARMCI Library</a> for
+<p><br>
+Please see <a href="ARMCI.html">Choosing the ARMCI Library</a> for
 additional information on choosing the right network
 options.</p>
 <h3 id="mpi-variables">MPI variables</h3>
@@ -379,6 +379,7 @@ options.</p>
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <h4 id="automatic-detection-of-mpi-variables-with-mpif90"><span style="color:red;">Automatic detection of MPI variables with mpif90</span></h4>
 <p><strong><em>New in NWChem 6.6</em></strong>: If the
 location of the mpif90 command is part of your PATH env. variable,
@@ -441,7 +442,8 @@ setenv LIBMPI &quot;-lmpi_f90 -lmpi_f77 -lmpi -ldl -Wl,--export-dynamic -lnsl -l
 </tbody>
 </table>
 
-<p>Note:</p>
+<p><br>
+Note:</p>
 <p>When MPI is used, the appropriate MPI run command should be used to
 start an NWChem calculation, e.g.</p>
 <pre><code>  % mpirun -np 8 $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem h2o.nw
@@ -485,7 +487,8 @@ of MPICH is installed and used, NWChem can be called directly, e.g.</p>
 </tr>
 </tbody>
 </table>
-<p>Note that additional environment variables need to be defined to specify
+<p><br>
+Note that additional environment variables need to be defined to specify
 the location of the Python libraries, when the python module is
 compiled. See the optional environmental variables section for
 specifics.</p>
@@ -612,7 +615,8 @@ hardware include:  </p>
 </tr>
 </tbody>
 </table>
-<p><em><strong>New since release 7.0.0 (after commit <a href="https://github.com/nwchemgit/nwchem/commit/6b0a971207e776f43dec81974014e86caf8cee61#diff-1750a4dcc9a0a9b1773d275e96c46a1e">6b0a971</a>)</strong></em>:  If BLASOPT is defined, the LAPACK_LIB environment variable must be set up, too.  LAPACK_LIB must provide the location of the library containing the LAPACK routines. For example, OpenBLAS provides the full suite of LAPACK routines, therefore, in this case, LAPACK_LIB can be set to the same value as BLASOPT</p>
+<p><br>
+<em><strong>New since release 7.0.0 (after commit <a href="https://github.com/nwchemgit/nwchem/commit/6b0a971207e776f43dec81974014e86caf8cee61#diff-1750a4dcc9a0a9b1773d275e96c46a1e">6b0a971</a>)</strong></em>:  If BLASOPT is defined, the LAPACK_LIB environment variable must be set up, too.  LAPACK_LIB must provide the location of the library containing the LAPACK routines. For example, OpenBLAS provides the full suite of LAPACK routines, therefore, in this case, LAPACK_LIB can be set to the same value as BLASOPT</p>
 <pre><code>export BLASOPT=-lopenblas
 export LAPACK_LIB=-lopenblas
 </code></pre>
