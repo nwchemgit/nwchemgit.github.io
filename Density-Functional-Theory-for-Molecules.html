@@ -276,7 +276,8 @@ Coulomb potential in the Dunlap scheme. The charge density fitting basis
 set must have the name &ldquo;cd basis&rdquo;. This can be the actual name of a
 basis set, or a basis set can be assigned this name using the
 <a href="SET.html">SET</a> directive. If this basis set is not
-defined by input, the <img alt="$O(N^4)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6841e6deec263483fbfcac7124b2da91.svg?invert_in_darkmode&sanitize=true" align=middle width="48.01137pt" height="26.70657pt"/> exact Coulomb contribution is computed.</p>
+defined by input, the <script type="math/tex">O(N^4)</script>
+</p>
 <p>The user also has the option of specifying a third basis set for the
 evaluation of the exchange-correlation potential. This basis set must
 have the name &ldquo;xc basis&rdquo;. If this basis set is not specified by input,
@@ -330,7 +331,7 @@ in the DFT Module (see table below for full list of functionals). The
 default exchange-correlation functional is defined as the local density
 approximation (LDA) for closed shell systems and its counterpart the
 local spin-density (LSD) approximation for open shell systems. Within
-this approximation the exchange functional is the Slater <img alt="$\rho^{1/3}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9d1e8d8cdb10bf2a8f81456e9af8ad9b.svg?invert_in_darkmode&sanitize=true" align=middle width="28.233315pt" height="29.12679pt"/>
+this approximation the exchange functional is the Slater <script type="math/tex">\rho^{1/3}</script>
 functional (from J.C. Slater, Quantum Theory of Molecules and Solids,
 Vol. 4: The Self-Consistent Field for Molecules and Solids (McGraw-Hill,
 New York, 1974)), and the correlation functional is the
@@ -364,7 +365,7 @@ how to use these options.</p>
 the default slater and vwn_5 functionals. These are either local or
 gradient-corrected functionals (GCA); a full list can be found in the
 table below.</p>
-<p>The Hartree-Fock exact exchange functional, (which has <img alt="$O(N^4)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6841e6deec263483fbfcac7124b2da91.svg?invert_in_darkmode&sanitize=true" align=middle width="48.01137pt" height="26.70657pt"/>
+<p>The Hartree-Fock exact exchange functional, (which has <script type="math/tex">O(N^4)</script>
 computation expense), is invoked by specifying</p>
 <pre><code>  XC HFexch
 </code></pre>
@@ -476,9 +477,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">1</script>
-</td>
+<td>[1]</td>
 </tr>
 <tr>
 <td>vwn_1</td>
@@ -488,9 +487,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">2</script>
-</td>
+<td>[2]</td>
 </tr>
 <tr>
 <td>vwn_2</td>
@@ -500,9 +497,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">2</script>
-</td>
+<td>[2]</td>
 </tr>
 <tr>
 <td>vwn_3</td>
@@ -512,9 +507,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">2</script>
-</td>
+<td>[2]</td>
 </tr>
 <tr>
 <td>vwn_4</td>
@@ -524,9 +517,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">2</script>
-</td>
+<td>[2]</td>
 </tr>
 <tr>
 <td>vwn_5</td>
@@ -536,9 +527,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">2</script>
-</td>
+<td>[2]</td>
 </tr>
 <tr>
 <td>vwn_1_rpa</td>
@@ -548,9 +537,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">2</script>
-</td>
+<td>[2]</td>
 </tr>
 <tr>
 <td>perdew81</td>
@@ -560,9 +547,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">3</script>
-</td>
+<td>[3]</td>
 </tr>
 <tr>
 <td>pw91lda</td>
@@ -572,9 +557,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">4</script>
-</td>
+<td>[4]</td>
 </tr>
 <tr>
 <td>xbecke86b</td>
@@ -584,9 +567,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">54</script>
-</td>
+<td>[54]</td>
 </tr>
 <tr>
 <td>becke88</td>
@@ -596,9 +577,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">5</script>
-</td>
+<td>[5]</td>
 </tr>
 <tr>
 <td>xperdew86</td>
@@ -608,9 +587,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">53</script>
-</td>
+<td>[53]</td>
 </tr>
 <tr>
 <td>xperdew91</td>
@@ -620,9 +597,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">6</script>
-</td>
+<td>[6]</td>
 </tr>
 <tr>
 <td>xpbe96</td>
@@ -632,9 +607,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">7</script>
-</td>
+<td>[7]</td>
 </tr>
 <tr>
 <td>gill96</td>
@@ -644,9 +617,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">8</script>
-</td>
+<td>[8]</td>
 </tr>
 <tr>
 <td>optx</td>
@@ -656,9 +627,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">20</script>
-</td>
+<td>[20]</td>
 </tr>
 <tr>
 <td>mpw91</td>
@@ -668,9 +637,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">23</script>
-</td>
+<td>[23]</td>
 </tr>
 <tr>
 <td>xft97</td>
@@ -680,9 +647,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">24</script>
-</td>
+<td>[24]</td>
 </tr>
 <tr>
 <td>rpbe</td>
@@ -692,9 +657,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">33</script>
-</td>
+<td>[33]</td>
 </tr>
 <tr>
 <td>revpbe</td>
@@ -704,9 +667,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">34</script>
-</td>
+<td>[34]</td>
 </tr>
 <tr>
 <td>xpw6b95</td>
@@ -716,9 +677,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">36</script>
-</td>
+<td>[36]</td>
 </tr>
 <tr>
 <td>xpwb6k</td>
@@ -728,9 +687,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">36</script>
-</td>
+<td>[36]</td>
 </tr>
 <tr>
 <td>perdew86</td>
@@ -740,9 +697,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">9</script>
-</td>
+<td>[9]</td>
 </tr>
 <tr>
 <td>lyp</td>
@@ -752,9 +707,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">10</script>
-</td>
+<td>[10]</td>
 </tr>
 <tr>
 <td>perdew91</td>
@@ -764,9 +717,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">6</script>
-</td>
+<td>[6]</td>
 </tr>
 <tr>
 <td>cpbe96</td>
@@ -776,9 +727,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">7</script>
-</td>
+<td>[7]</td>
 </tr>
 <tr>
 <td>cft97</td>
@@ -788,9 +737,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">24</script>
-</td>
+<td>[24]</td>
 </tr>
 <tr>
 <td>op</td>
@@ -800,9 +747,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">31</script>
-</td>
+<td>[31]</td>
 </tr>
 <tr>
 <td>hcth</td>
@@ -812,9 +757,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">11</script>
-</td>
+<td>[11]</td>
 </tr>
 <tr>
 <td>hcth120</td>
@@ -824,9 +767,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">12</script>
-</td>
+<td>[12]</td>
 </tr>
 <tr>
 <td>hcth147</td>
@@ -836,9 +777,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">12</script>
-</td>
+<td>[12]</td>
 </tr>
 <tr>
 <td>hcth407</td>
@@ -848,9 +787,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">19</script>
-</td>
+<td>[19]</td>
 </tr>
 <tr>
 <td>becke97gga1</td>
@@ -860,9 +797,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">18</script>
-</td>
+<td>[18]</td>
 </tr>
 <tr>
 <td>hcthp14</td>
@@ -872,9 +807,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">21</script>
-</td>
+<td>[21]</td>
 </tr>
 <tr>
 <td>ft97</td>
@@ -884,9 +817,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">24</script>
-</td>
+<td>[24]</td>
 </tr>
 <tr>
 <td>htch407p</td>
@@ -896,9 +827,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">27</script>
-</td>
+<td>[27]</td>
 </tr>
 <tr>
 <td>bop</td>
@@ -908,9 +837,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">31</script>
-</td>
+<td>[31]</td>
 </tr>
 <tr>
 <td>pbeop</td>
@@ -920,9 +847,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">32</script>
-</td>
+<td>[32]</td>
 </tr>
 <tr>
 <td>xpkzb99</td>
@@ -932,9 +857,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">26</script>
-</td>
+<td>[26]</td>
 </tr>
 <tr>
 <td>cpkzb99</td>
@@ -944,9 +867,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">26</script>
-</td>
+<td>[26]</td>
 </tr>
 <tr>
 <td>xtpss03</td>
@@ -956,9 +877,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">28</script>
-</td>
+<td>[28]</td>
 </tr>
 <tr>
 <td>ctpss03</td>
@@ -968,9 +887,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">28</script>
-</td>
+<td>[28]</td>
 </tr>
 <tr>
 <td>bc95</td>
@@ -980,9 +897,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">33</script>
-</td>
+<td>[33]</td>
 </tr>
 <tr>
 <td>cpw6b95</td>
@@ -992,9 +907,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">36</script>
-</td>
+<td>[36]</td>
 </tr>
 <tr>
 <td>cpwb6k</td>
@@ -1004,9 +917,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">36</script>
-</td>
+<td>[36]</td>
 </tr>
 <tr>
 <td>xm05</td>
@@ -1016,9 +927,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">37</script>
-</td>
+<td>[37]</td>
 </tr>
 <tr>
 <td>cm05</td>
@@ -1028,9 +937,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">37</script>
-</td>
+<td>[37]</td>
 </tr>
 <tr>
 <td>m05-2x</td>
@@ -1040,9 +947,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">38</script>
-</td>
+<td>[38]</td>
 </tr>
 <tr>
 <td>xm05-2x</td>
@@ -1052,9 +957,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">38</script>
-</td>
+<td>[38]</td>
 </tr>
 <tr>
 <td>cm05-2x</td>
@@ -1064,9 +967,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">38</script>
-</td>
+<td>[38]</td>
 </tr>
 <tr>
 <td>xctpssh</td>
@@ -1076,9 +977,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">29</script>
-</td>
+<td>[29]</td>
 </tr>
 <tr>
 <td>bb1k</td>
@@ -1088,9 +987,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">34</script>
-</td>
+<td>[34]</td>
 </tr>
 <tr>
 <td>mpw1b95</td>
@@ -1100,9 +997,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">35</script>
-</td>
+<td>[35]</td>
 </tr>
 <tr>
 <td>mpwb1k</td>
@@ -1112,9 +1007,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">35</script>
-</td>
+<td>[35]</td>
 </tr>
 <tr>
 <td>pw6b95</td>
@@ -1124,9 +1017,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">36</script>
-</td>
+<td>[36]</td>
 </tr>
 <tr>
 <td>pwb6k</td>
@@ -1136,9 +1027,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">36</script>
-</td>
+<td>[36]</td>
 </tr>
 <tr>
 <td>m05</td>
@@ -1148,9 +1037,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">37</script>
-</td>
+<td>[37]</td>
 </tr>
 <tr>
 <td>vs98</td>
@@ -1160,9 +1047,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">41</script>
-</td>
+<td>[41]</td>
 </tr>
 <tr>
 <td>xvs98</td>
@@ -1172,9 +1057,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">41</script>
-</td>
+<td>[41]</td>
 </tr>
 <tr>
 <td>cvs98</td>
@@ -1184,9 +1067,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">41</script>
-</td>
+<td>[41]</td>
 </tr>
 <tr>
 <td>m06-L</td>
@@ -1196,9 +1077,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">40</script>
-</td>
+<td>[40]</td>
 </tr>
 <tr>
 <td>xm06-L</td>
@@ -1208,9 +1087,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">40</script>
-</td>
+<td>[40]</td>
 </tr>
 <tr>
 <td>cm06-L</td>
@@ -1220,9 +1097,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">40</script>
-</td>
+<td>[40]</td>
 </tr>
 <tr>
 <td>m06-hf</td>
@@ -1232,9 +1107,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">41</script>
-</td>
+<td>[41]</td>
 </tr>
 <tr>
 <td>xm06-hf</td>
@@ -1244,9 +1117,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">41</script>
-</td>
+<td>[41]</td>
 </tr>
 <tr>
 <td>cm06-hf</td>
@@ -1256,9 +1127,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">41</script>
-</td>
+<td>[41]</td>
 </tr>
 <tr>
 <td>m06</td>
@@ -1268,9 +1137,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">42</script>
-</td>
+<td>[42]</td>
 </tr>
 <tr>
 <td>xm06</td>
@@ -1280,9 +1147,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">42</script>
-</td>
+<td>[42]</td>
 </tr>
 <tr>
 <td>cm06</td>
@@ -1292,9 +1157,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">42</script>
-</td>
+<td>[42]</td>
 </tr>
 <tr>
 <td>m06-2x</td>
@@ -1304,9 +1167,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">42</script>
-</td>
+<td>[42]</td>
 </tr>
 <tr>
 <td>xm06-2x</td>
@@ -1316,9 +1177,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">42</script>
-</td>
+<td>[42]</td>
 </tr>
 <tr>
 <td>cm06-2x</td>
@@ -1328,9 +1187,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">42</script>
-</td>
+<td>[42]</td>
 </tr>
 <tr>
 <td>cm08-hx</td>
@@ -1340,9 +1197,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">46</script>
-</td>
+<td>[46]</td>
 </tr>
 <tr>
 <td>xm08-hx</td>
@@ -1352,9 +1207,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">46</script>
-</td>
+<td>[46]</td>
 </tr>
 <tr>
 <td>m08-hx</td>
@@ -1364,9 +1217,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">46</script>
-</td>
+<td>[46]</td>
 </tr>
 <tr>
 <td>cm08-so</td>
@@ -1376,9 +1227,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">46</script>
-</td>
+<td>[46]</td>
 </tr>
 <tr>
 <td>xm08-so</td>
@@ -1388,9 +1237,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">46</script>
-</td>
+<td>[46]</td>
 </tr>
 <tr>
 <td>m08-so</td>
@@ -1400,9 +1247,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">46</script>
-</td>
+<td>[46]</td>
 </tr>
 <tr>
 <td>cm11</td>
@@ -1412,9 +1257,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">47</script>
-</td>
+<td>[47]</td>
 </tr>
 <tr>
 <td>xm11</td>
@@ -1424,9 +1267,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">47</script>
-</td>
+<td>[47]</td>
 </tr>
 <tr>
 <td>m11</td>
@@ -1436,9 +1277,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">47</script>
-</td>
+<td>[47]</td>
 </tr>
 <tr>
 <td>cm11-l</td>
@@ -1448,9 +1287,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">48</script>
-</td>
+<td>[48]</td>
 </tr>
 <tr>
 <td>xm11-l</td>
@@ -1460,9 +1297,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">48</script>
-</td>
+<td>[48]</td>
 </tr>
 <tr>
 <td>m11-l</td>
@@ -1472,9 +1307,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">48</script>
-</td>
+<td>[48]</td>
 </tr>
 <tr>
 <td>csogga</td>
@@ -1484,9 +1317,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">49</script>
-</td>
+<td>[49]</td>
 </tr>
 <tr>
 <td>xsogga</td>
@@ -1496,9 +1327,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">49</script>
-</td>
+<td>[49]</td>
 </tr>
 <tr>
 <td>sogga</td>
@@ -1508,9 +1337,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">49</script>
-</td>
+<td>[49]</td>
 </tr>
 <tr>
 <td>csogga11</td>
@@ -1520,9 +1347,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">50</script>
-</td>
+<td>[50]</td>
 </tr>
 <tr>
 <td>xsogga11</td>
@@ -1532,9 +1357,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">50</script>
-</td>
+<td>[50]</td>
 </tr>
 <tr>
 <td>sogga11</td>
@@ -1544,9 +1367,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">50</script>
-</td>
+<td>[50]</td>
 </tr>
 <tr>
 <td>csogga11-x</td>
@@ -1556,9 +1377,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">51</script>
-</td>
+<td>[51]</td>
 </tr>
 <tr>
 <td>xsogga11-x</td>
@@ -1568,9 +1387,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">51</script>
-</td>
+<td>[51]</td>
 </tr>
 <tr>
 <td>sogga11-x</td>
@@ -1580,9 +1397,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">51</script>
-</td>
+<td>[51]</td>
 </tr>
 <tr>
 <td>dldf</td>
@@ -1592,9 +1407,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">52</script>
-</td>
+<td>[52]</td>
 </tr>
 <tr>
 <td>beckehandh</td>
@@ -1604,9 +1417,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">13</script>
-</td>
+<td>[13]</td>
 </tr>
 <tr>
 <td>b3lyp</td>
@@ -1616,9 +1427,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">14</script>
-</td>
+<td>[14]</td>
 </tr>
 <tr>
 <td>acm</td>
@@ -1628,9 +1437,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">14</script>
-</td>
+<td>[14]</td>
 </tr>
 <tr>
 <td>becke97</td>
@@ -1640,9 +1447,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">15</script>
-</td>
+<td>[15]</td>
 </tr>
 <tr>
 <td>becke97-1</td>
@@ -1652,9 +1457,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">11</script>
-</td>
+<td>[11]</td>
 </tr>
 <tr>
 <td>becke97-2</td>
@@ -1664,9 +1467,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">22</script>
-</td>
+<td>[22]</td>
 </tr>
 <tr>
 <td>becke97-3</td>
@@ -1676,9 +1477,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">30</script>
-</td>
+<td>[30]</td>
 </tr>
 <tr>
 <td>becke97-d</td>
@@ -1688,9 +1487,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">45</script>
-</td>
+<td>[45]</td>
 </tr>
 <tr>
 <td>becke98</td>
@@ -1700,9 +1497,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">16</script>
-</td>
+<td>[16]</td>
 </tr>
 <tr>
 <td>pbe0</td>
@@ -1712,9 +1507,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">17</script>
-</td>
+<td>[17]</td>
 </tr>
 <tr>
 <td>mpw1k</td>
@@ -1724,9 +1517,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">25</script>
-</td>
+<td>[25]</td>
 </tr>
 <tr>
 <td>xmvs15</td>
@@ -1736,9 +1527,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">55</script>
-</td>
+<td>[55]</td>
 </tr>
 <tr>
 <td>hle16</td>
@@ -1748,9 +1537,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>
-<script type="math/tex; mode=display">56</script>
-</td>
+<td>[56]</td>
 </tr>
 <tr>
 <td>scan</td>
@@ -1760,9 +1547,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">57</script>
-</td>
+<td>[57]</td>
 </tr>
 <tr>
 <td>scanl</td>
@@ -1772,9 +1557,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">58</script>
-</td>
+<td>[58]</td>
 </tr>
 <tr>
 <td>revm06-L</td>
@@ -1784,9 +1567,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">59</script>
-</td>
+<td>[59]</td>
 </tr>
 <tr>
 <td>revm06</td>
@@ -1796,16 +1577,14 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>
-<script type="math/tex; mode=display">60</script>
-</td>
+<td>[60]</td>
 </tr>
 </tbody>
 </table>
 <p>Table of available Exchange (X) and Correlation (C) functionals. GGA is
 the Generalized Gradient Approximation, and Meta refers to Meta-GGAs.
 The column 2nd refers to second derivatives of the energy with respect
-to nuclear position.</p>
+to nuclear position.  </p>
 <ol>
 <li>J.C. Slater and K. H. Johnson, Phys. Rev. B 5, 844 (1972)</li>
 <li>S.J. Vosko, L. Wilk and M. Nusair, Can. J. Phys. 58, 1200 (1980)</li>
@@ -1908,25 +1687,32 @@ and citations 14-27 therein for thorough background)</p>
 these functionals with the accompanying local PW91LDA. The user does not
 have the ability to set the local part of these metaGGA functionals.</p>
 <h3 id="range-separated-functionals">Range-Separated Functionals<a class="headerlink" href="#range-separated-functionals" title="Permanent link">&para;</a></h3>
-<p>Using the Ewald
-decomposition</p>
-<p><img alt="$\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/702839e7c548f54d8f5b49f0a3ad6824.svg?invert_in_darkmode&sanitize=true" align=middle width="254.98902pt" height="33.14091pt"/></p>
-<p>we can split the the Exchange interaction as</p>
-<p><img alt="$E_{X} = E_X^{LR} + E_X^{SR}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7b23a639e12d5c9a1bfa2148db98ab10.svg?invert_in_darkmode&sanitize=true" align=middle width="130.9704pt" height="27.59823pt"/></p>
+<p>Using the Ewald decomposition</p>
+<p>
+<script type="math/tex; mode=display">\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}</script>
+eee<br />
+<script type="math/tex; mode=display">\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}</script>
+eee 
+we can split the the Exchange interaction as</p>
+<p>
+<script type="math/tex; mode=display">E_{X} = E_X^{LR} + E_X^{SR}</script>
+</p>
 <p>Therefore the long-range HF Exchange energy
 becomes</p>
-<p><img alt="$E_X^{LR} = \alpha E_X^{HF} - \frac{\beta}{2} \sum_i \sum_j \int \int \phi_i(r_1)\phi_j(r_1)\frac{\texttt{erf}(\mu r_{12})}{r_{12}} \phi_i(r_2)\phi_j(r_2)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f3c7b6943ed1cbb2f44e5c597ff1f40b.svg?invert_in_darkmode&sanitize=true" align=middle width="448.107495pt" height="33.14091pt"/>  </p>
+<p>
+<script type="math/tex; mode=display">E_X^{LR} = \alpha E_X^{HF} - \frac{\beta}{2} \sum_i \sum_j \int \int \phi_i(r_1)\phi_j(r_1)\frac{\texttt{erf}(\mu r_{12})}{r_{12}} \phi_i(r_2)\phi_j(r_2)</script>
+</p>
 <pre><code> cam &lt;real cam&gt; cam_alpha &lt;real cam_alpha&gt; cam_beta &lt;cam_beta&gt;
 </code></pre>
 
-<p><code>cam</code> represents the attenuation parameter <img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> , <code>cam_alpha</code> and
-<code>cam_beta</code> are parameters <img alt="$\alpha$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width="10.537065pt" height="14.10255pt"/> and <img alt="$\beta$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8217ed3c32a785f0b5aad4055f432ad8.svg?invert_in_darkmode&sanitize=true" align=middle width="10.1277pt" height="22.74591pt"/> that control the
+<p><code>cam</code> represents the attenuation parameter <script type="math/tex">\mu</script>
+<code>cam_beta</code> are parameters <script type="math/tex">\alpha</script>
 amount of short-range DFT and long-range HF Exchange according to the
-Ewald decomposition. As <img alt="$r_{12} \rightarrow 0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8175ba1917135d1efdde5463e7eb7c98.svg?invert_in_darkmode&sanitize=true" align=middle width="55.01331pt" height="21.10812pt"/>, the HF exchange
-fraction is <img alt="$\alpha$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width="10.537065pt" height="14.10255pt"/>, while the DFT exchange fraction is
-<img alt="$(1-\alpha)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/491890f3829ee2642d52fc90dd9a270f.svg?invert_in_darkmode&sanitize=true" align=middle width="51.506895pt" height="24.56553pt"/>. As <img alt="$r_{12} \rightarrow \infty$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c0e7cebce699a3e05c018ea42a78a091.svg?invert_in_darkmode&sanitize=true" align=middle width="63.201765pt" height="14.10255pt"/>, the HF exchange
-fraction approaches <img alt="$\alpha + \beta$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c1a73141d41bf7fb1026a4ac24f6110a.svg?invert_in_darkmode&sanitize=true" align=middle width="40.708305pt" height="22.74591pt"/> and the DFT exchange fraction
-approaches <img alt="$(1- \alpha - \beta)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5457bd6eac3dc5ac9a603bfc82e48e38.svg?invert_in_darkmode&sanitize=true" align=middle width="81.681105pt" height="24.56553pt"/>. In the HSE functional, the HF part
+Ewald decomposition. As <script type="math/tex">r_{12} \rightarrow 0</script>
+fraction is <script type="math/tex">\alpha</script>
+<script type="math/tex">(1-\alpha)</script>
+fraction approaches <script type="math/tex">\alpha + \beta</script>
+approaches <script type="math/tex">(1- \alpha - \beta)</script>
 is short-ranged and DFT is long-ranged.</p>
 <p>Range separated functionals (or long-range corrected or LC) can be
 specified as follows:</p>
@@ -2107,7 +1893,7 @@ end
 <h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00 &ndash; Asymptotic correction<a class="headerlink" href="#lb94-and-cs00-asymptotic-correction" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>LB94</code> will correct the asymptotic region of the XC definition
 of exchange-correlation potential by the van-Leeuwen-Baerends
-exchange-correlation potential that has the correct <img alt="$-1/r$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3053de24294b49c2329426a84757d7d1.svg?invert_in_darkmode&sanitize=true" align=middle width="36.958185pt" height="24.56553pt"/> asymptotic
+exchange-correlation potential that has the correct <script type="math/tex">-1/r</script>
 behavior. The total energy will be computed by the XC definition of
 exchange-correlation functional. This scheme is known to tend to
 overcorrect the deficiency of most uncorrected exchange-correlation
@@ -2285,7 +2071,7 @@ tolerance to 0.01 would be,</p>
 <p>Direct inversion of the iterative subspace with extrapolation of up to
 10 Fock matrices is a default optimization procedure. For large
 molecular systems the amount of available memory may preclude the
-ability to store this number of <img alt="$N^2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4c87ee198ded31321f89b44a38a0ad5a.svg?invert_in_darkmode&sanitize=true" align=middle width="21.47871pt" height="26.70657pt"/> arrays in global memory. The
+ability to store this number of <script type="math/tex">N^2</script>
 user may then specify the number of Fock matrices to be used in the
 extrapolation (must be greater than three (3) to be effective). To set
 the number of Fock matrices stored and used in the extrapolation
@@ -2768,9 +2554,9 @@ angular points as indicated by the table below:</p>
 <table>
 <thead>
 <tr>
-<th><img alt="$IANGQUAD$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1155c630b831ae7b88cb7f5dea440245.svg?invert_in_darkmode&sanitize=true" align=middle width="100.81599pt" height="22.38192pt"/></th>
-<th><img alt="$N_{angular}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d8da1653fe865d485d10dc0e3051ed3f.svg?invert_in_darkmode&sanitize=true" align=middle width="60.64839pt" height="22.38192pt"/></th>
-<th><img alt="$l$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f2322dff5bde89c37bcae4116fe20a8.svg?invert_in_darkmode&sanitize=true" align=middle width="5.2088685pt" height="22.74591pt"/></th>
+<th>IANGQUAD</th>
+<th>N<sub>angular</sub></th>
+<th>l</th>
 </tr>
 </thead>
 <tbody>
@@ -2944,7 +2730,9 @@ molecule</p>
 <li>erf2 : modified ssf</li>
 </ul>
 <p>Erf<em>n</em> partitioning functions</p>
-<p><img alt="$<script type="math/tex; mode=display">\begin{array}{lcl}&#10;  w_A(r) &amp; = &amp; \prod_{B\neq A}\frac{1}{2} \left[1 \ - \ erf(\mu^\prime_{AB})\right] \\&#10;  \mu^\prime_{AB} &amp; = &amp; \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\&#10;  \mu_{AB} &amp; = &amp; \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|}&#10;\end{array}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a6929e5f4f1fbe470b2d9bf0fe184888.svg?invert_in_darkmode&sanitize=true" align=middle width="268.96155pt" height="75.55119pt"/></p>
+<p>
+<script type="math/tex; mode=display">\begin{array}{lcl}  w_A(r) & = & \prod_{B\neq A}\frac{1}{2} \left[1 \ - \ erf(\mu^\prime_{AB})\right] \\  \mu^\prime_{AB} & = & \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\  \mu_{AB} & = & \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|} \end{array}</script>
+</p>
 <h3 id="radial-grids">Radial grids<a class="headerlink" href="#radial-grids" title="Permanent link">&para;</a></h3>
 <pre><code> GRID [[euler||mura||treutler]  default mura]
 </code></pre>
@@ -2976,7 +2764,8 @@ values can be specified in the input for the DFT module using the
 keywords described below.</p>
 <p>The input parameter accCoul is used to define the tolerance in Schwarz
 screening for the Coulomb integrals. Only integrals with estimated
-values greater than <img alt="$10^{(-accCoul)}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/564fa44e7bfa893835654c63524ec3fd.svg?invert_in_darkmode&sanitize=true" align=middle width="84.27243pt" height="29.12679pt"/> are evaluated.</p>
+values greater than <script type="math/tex">10^{(-accCoul)}</script>
+</p>
 <pre><code> TOLERANCES accCoul &lt;integer accCoul default 8&gt;
 </code></pre>
 
@@ -3161,34 +2950,41 @@ not just bq.</p>
 
 <p>When systems with high dependence on van der Waals interactions are
 computed, the dispersion term may be added empirically through
-long-range contribution DFT-D, i.e. <img alt="$E_{DFT-D}=E_{DFT-KS}+E_{disp}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d77ef4554f554b6ea525e8857f0dd78e.svg?invert_in_darkmode&sanitize=true" align=middle width="217.894545pt" height="22.38192pt"/>,
+long-range contribution DFT-D, i.e. <script type="math/tex; mode=display">E_{DFT-D}=E_{DFT-KS}+E_{disp}</script>
 where:</p>
-<p><img alt="$E_{disp}=-s_6\sum^{N_{atom}-1}_{i=1}\sum^{N_{atom}}_{j=i+1} \frac{C_{6}^{ij}}{R_{ij}^{6}} \left( 1+e^{-\alpha (R_{ij}/R_{vdw}-1)} \right)^{-1}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3666d4a12cd1c98a47524620f9a0e3c5.svg?invert_in_darkmode&sanitize=true" align=middle width="425.340795pt" height="39.36735pt"/></p>
-<p>In this equation, the <img alt="$s_6$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e9349752e05540dee73fddefcedf36f1.svg?invert_in_darkmode&sanitize=true" align=middle width="14.20485pt" height="14.10255pt"/> term depends in the functional and basis
-set used, <img alt="$C_6^{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1d08f5f7b2ad785243464d2366c2de89.svg?invert_in_darkmode&sanitize=true" align=middle width="23.59599pt" height="30.9705pt"/> is the dispersion coefficient between pairs of
-atoms. <img alt="$R_{vdw}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/999715cd04ee6ac29e6dfbacdae8273d.svg?invert_in_darkmode&sanitize=true" align=middle width="35.99871pt" height="22.38192pt"/> and <img alt="$R_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/52acdd56bf90ef8224aaf3db0446f911.svg?invert_in_darkmode&sanitize=true" align=middle width="23.15016pt" height="22.38192pt"/> are related with van der Waals atom
-radii and the nucleus distance respectively. The <img alt="$\alpha$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width="10.537065pt" height="14.10255pt"/> value
+<p>
+<script type="math/tex; mode=display">E_{disp}=-s_6\sum^{N_{atom}-1}_{i=1}\sum^{N_{atom}}_{j=i+1} \frac{C_{6}^{ij}}{R_{ij}^{6}} \left( 1+e^{-\alpha (\frac{R_{ij}}{R_{vdw}} -1)} \right)^{-1}</script>
+</p>
+<p>In this equation, the <script type="math/tex">s_6</script>
+set used, <script type="math/tex">C_6^{ij}</script>
+atoms. <script type="math/tex">R_{vdw}</script>
+radii and the nucleus distance respectively. The <script type="math/tex">\alpha</script>
 contributes to control the corrections at intermediate distances.</p>
 <p>There are available three ways to compute   <em>C<sup>6</sup><sub>ij</sub>:</em> </p>
 <ol>
 <li>
-<p><img alt="$C_6^{ij}= \,\! \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5bf882455a6d3bcb9b85b665b64325fe.svg?invert_in_darkmode&sanitize=true" align=middle width="216.419445pt" height="39.53334pt"/><br />
+<p>
+<script type="math/tex; mode=display">C_6^{ij}= \,\! \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}</script>
 where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from Q. Wu and W. Yang,
 J. Chem. Phys. 116 515 (2002) and U. Zimmerli, M Parrinello and P.
 Koumoutsakos J. Chem. Phys. 120 2693 (2004). (Use vdw 0)  </p>
 </li>
 <li>
-<p><img alt="$C_6^{ij}=2\,\!\frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/05c8b505216f0ee8c8f4b944f827a35b.svg?invert_in_darkmode&sanitize=true" align=middle width="98.800185pt" height="39.36735pt"/>. See details in S. Grimme J. Comp. Chem. 25 1463 (2004). (Use vdw 1)  </p>
+<p>
+<script type="math/tex; mode=display">C_6^{ij}=2\,\!\frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}</script>
+</p>
 </li>
 <li>
-<p><img alt="$C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c0dafc8fd3d85bac68dd41116a615d55.svg?invert_in_darkmode&sanitize=true" align=middle width="101.74065pt" height="42.19875pt"/> See details in S. Grimme J. Comp. Chem. 271787 (2006). (Use vdw 2)  </p>
+<p>
+<script type="math/tex; mode=display">C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}</script>
+</p>
 </li>
 </ol>
-<p>Note that in each option there is a certain set of <img alt="$C_6$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b1a57ffb35b6053ddad04400a4b2a017.svg?invert_in_darkmode&sanitize=true" align=middle width="18.232995pt" height="22.38192pt"/> and
-<img alt="$R_{vdw}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/999715cd04ee6ac29e6dfbacdae8273d.svg?invert_in_darkmode&sanitize=true" align=middle width="35.99871pt" height="22.38192pt"/>. ALso note that Grimme only defined parameters for elements
-up to Z=54 for the dispersion correction above. <img alt="$C_6$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b1a57ffb35b6053ddad04400a4b2a017.svg?invert_in_darkmode&sanitize=true" align=middle width="18.232995pt" height="22.38192pt"/> values for
+<p>Note that in each option there is a certain set of <script type="math/tex">C_6</script>
+<script type="math/tex">R_{vdw}</script>
+up to Z=54 for the dispersion correction above. <script type="math/tex">C_6</script>
 elements above Z=54 have been set to zero.</p>
-<p>For options vdw 1 and vdw 2 , there are <img alt="$s_6$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e9349752e05540dee73fddefcedf36f1.svg?invert_in_darkmode&sanitize=true" align=middle width="14.20485pt" height="14.10255pt"/> values by default for
+<p>For options vdw 1 and vdw 2 , there are <script type="math/tex">s_6</script>
 some functionals and triple-zeta plus double polarization basis set
 (TZV2P):</p>
 <ul>
@@ -3201,7 +2997,7 @@ following
 form:</p>
 <p>E<sub>disp</sub> = &sum;<sub>ij</sub> &sum;<sub>n=6,8</sub> s<sub>n</sub>  C<sup>ij</sup><sub>n</sub> &frasl; r<sub>ij</sub><sup>n</sup> &lbrace;1 + 6 &lbrack;r<sub>ij</sub> &frasl; (s<sub>r,n</sub> R<sub>0</sub><sup>ij</sup>)&rbrack;<sup>-&alpha;n</sup> &rbrace;<sup>-1</sup></p>
 <p>This new dispersion correction covers elements through Z=94.
-<img alt="$C^{ij}_{n} (n=6,8)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4ac510c831b43d15c8ac9326e45069b3.svg?invert_in_darkmode&sanitize=true" align=middle width="92.56137pt" height="27.10224pt"/> are coordination and geometry dependent. Details
+<script type="math/tex">C^{ij}_{n} (n=6,8)</script>
 about the functional form can be found in S. Grimme, J. Antony, S.
 Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010).</p>
 <p>To use the Grimme DFT-D3 dispersion correction, use the option</p>
@@ -3460,7 +3256,8 @@ Potentials</a> for details how to define the SO ECPs</p>
 designed for the same size core, i.e. don&rsquo;t use a small core ECP
 potential with a large core SO potential (it will produce erroneous
 results).</p>
-<p>The following is an example of a calculation of <img alt="$UO_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/06f075d510ceac444f473cefd7f488b2.svg?invert_in_darkmode&sanitize=true" align=middle width="31.993995pt" height="22.38192pt"/>:</p>
+<p>The following is an example of a calculation of <script type="math/tex">UO_2</script>
+</p>
 <pre><code>start uo2_sodft  
 echo  
 Memory 32 mw  
@@ -3621,6 +3418,7 @@ task sodft
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
       <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
+      <script src="mathjaxhelper.js" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {
