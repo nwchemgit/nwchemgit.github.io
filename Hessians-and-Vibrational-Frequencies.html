@@ -130,17 +130,17 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="hessians">Hessians</h1>
+                <h1 id="hessians">Hessians<a class="headerlink" href="#hessians" title="Permanent link">&para;</a></h1>
 <p>This section relates to the computation of analytic hessians which are
 available for open and closed shell SCF, except ROHF and for closed
-shell and unrestricted open shell DFT [1]. Analytic hessians are not
+shell and unrestricted open shell DFT <script type="math/tex; mode=display">1</script>. Analytic hessians are not
 currently available for SCF or DFT calculations relativistic
 all-electron methodologies or for charge fitting with DFT. The current
 algorithm is fully in-core and does not use symmetry.</p>
 <p>There is no required input for the Hessian module. This module only
 impacts the hessian calculation. For options for calculating the
 frequencies, please see the <a href="Vibration.html">Vibrational</a> module.</p>
-<h2 id="hessian-module-input">Hessian Module Input</h2>
+<h2 id="hessian-module-input">Hessian Module Input<a class="headerlink" href="#hessian-module-input" title="Permanent link">&para;</a></h2>
 <p>All input for the Hessian Module is optional since the default
 definitions are usually correct for most purposes. The generic module
 input begins with hessian and has the form:</p>
@@ -151,7 +151,7 @@ input begins with hessian and has the form:</p>
  end
 </code></pre>
 
-<h3 id="defining-the-wavefunction-threshold">Defining the wavefunction threshold</h3>
+<h3 id="defining-the-wavefunction-threshold">Defining the wavefunction threshold<a class="headerlink" href="#defining-the-wavefunction-threshold" title="Permanent link">&para;</a></h3>
 <p>You may modify the default threshold for the wavefunction. This keyword
 is identical to
 <a href="Hartree-Fock-Theory-for-Molecules.html#thresh----convergence-threshold">THRESH</a>
@@ -167,13 +167,13 @@ If, during an analytic hessian calculation, you encounter an error:</p>
 
 <p>the convergence criteria of the wavefunction generally needs to be
 tightened.</p>
-<h3 id="profile">Profile</h3>
+<h3 id="profile">Profile<a class="headerlink" href="#profile" title="Permanent link">&para;</a></h3>
 <p>The PROFILE keyword provides additional information concerning the
 computation times of different sections of the hessian code. Summary
 information is given about the maximum, minimum and average times that a
 particular section of the code took to complete. This is normally only
 useful for developers.</p>
-<h3 id="print-control">Print Control</h3>
+<h3 id="print-control">Print Control<a class="headerlink" href="#print-control" title="Permanent link">&para;</a></h3>
 <p>Known controllable print options are shown in the table
 below:</p>
 <p><center></p>
@@ -220,7 +220,7 @@ below:</p>
 </table>
 <p>Hessian Print Control Specifications</p>
 <p></center></p>
-<h1 id="vibrational-frequencies">Vibrational frequencies</h1>
+<h1 id="vibrational-frequencies">Vibrational frequencies<a class="headerlink" href="#vibrational-frequencies" title="Permanent link">&para;</a></h1>
 <p>The nuclear hessian which is used to compute the vibrational frequencies
 can be computed by finite difference for any ab initio wave-function
 that has analytic gradients or by analytic methods for SCF and DFT (see
@@ -245,7 +245,7 @@ roughly equal, the mass of the isotope with the longest half life was
 used.</p>
 <p>In addition, the vibrational analysis is given at the default standard
 temperature of 298.15 degrees.</p>
-<h2 id="vibrational-module-input">Vibrational Module Input</h2>
+<h2 id="vibrational-module-input">Vibrational Module Input<a class="headerlink" href="#vibrational-module-input" title="Permanent link">&para;</a></h2>
 <p>All input for the Vibrational Module is optional since the default
 definitions will compute the frequencies and IR intensities. The generic
 module input can begin with vib, freq, frequency and has the form:</p>
@@ -261,7 +261,7 @@ module input can begin with vib, freq, frequency and has the form:</p>
  end
 </code></pre>
 
-<h3 id="hessian-file-reuse">Hessian File Reuse</h3>
+<h3 id="hessian-file-reuse">Hessian File Reuse<a class="headerlink" href="#hessian-file-reuse" title="Permanent link">&para;</a></h3>
 <p>By default the task <theory> frequencies directive will recompute the
 hessian. To reuse the previously computed hessian you need only specify
 reuse in the module input block. If you have stored the hessian in an
@@ -274,7 +274,7 @@ specifying the path to that file.</p>
 geometry specification at the point where the hessian is computed must
 be the default &ldquo;geometry&rdquo; on the current run-time-data-base for the
 projection to work properly.</p>
-<h3 id="redefining-masses-of-elements">Redefining Masses of Elements</h3>
+<h3 id="redefining-masses-of-elements">Redefining Masses of Elements<a class="headerlink" href="#redefining-masses-of-elements" title="Permanent link">&para;</a></h3>
 <p>You may also modify the mass of a specific center or a group of centers
 via the input.</p>
 <p>To modify the mass of a specific center you can simply use:</p>
@@ -328,7 +328,7 @@ end
 task scf frequencies
 </code></pre>
 
-<h3 id="temp-or-temperature">Temp or Temperature</h3>
+<h3 id="temp-or-temperature">Temp or Temperature<a class="headerlink" href="#temp-or-temperature" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module can generate the vibrational analysis at various
 temperatures other than at standard room temperature. Either temp or
 temperature can be used to initiate this command.</p>
@@ -342,7 +342,7 @@ setting the temperatures in a previous &ldquo;VIB&rdquo; command, i.e.</p>
 <pre><code> temp 1 298.15
 </code></pre>
 
-<h3 id="animation">Animation</h3>
+<h3 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module also can generate mode animation input files in the
 standard xyz file format for graphics packages like RasMol or XMol There
 are scripts to automate this for RasMol in
@@ -370,7 +370,7 @@ of the six possible views down a Cartesian axis.</p>
 
 <p>It should be easy to modify the script to other file formats or
 animation tools.</p>
-<h4 id="controlling-the-step-size-along-the-mode-vector">Controlling the Step Size Along the Mode Vector</h4>
+<h4 id="controlling-the-step-size-along-the-mode-vector">Controlling the Step Size Along the Mode Vector<a class="headerlink" href="#controlling-the-step-size-along-the-mode-vector" title="Permanent link">&para;</a></h4>
 <p>By default, the step size used is 0.15 a.u. which will give reliable
 animations for most systems. This can be changed via the animate input
 directive, e.g.</p>
@@ -381,7 +381,7 @@ end
 
 <p>where <step_size> is the real number that is the magnitude of each step
 along the eigenvector of each nuclear hessian mode in atomic units.</p>
-<h3 id="specifying-filenames-for-animated-normal-modes">Specifying filenames for animated normal modes</h3>
+<h3 id="specifying-filenames-for-animated-normal-modes">Specifying filenames for animated normal modes<a class="headerlink" href="#specifying-filenames-for-animated-normal-modes" title="Permanent link">&para;</a></h3>
 <p>By default, normal modes will be stored in files that start with
 &ldquo;freq.m-<mode number>&ldquo;. This is inconvenient if more than vibrational
 analysis is run in a single input file. To specify different filename
@@ -393,7 +393,7 @@ for a particular vibrational analysis use the directive</p>
 filenames. In addition the code by default requires all files to be new
 files. When the option &ldquo;overwrite&rdquo; is provided any pre-existing files
 will simply be overwritten.</p>
-<h3 id="controlling-the-step-size-of-the-finite-difference-hessian">Controlling the Step Size of the Finite difference Hessian</h3>
+<h3 id="controlling-the-step-size-of-the-finite-difference-hessian">Controlling the Step Size of the Finite difference Hessian<a class="headerlink" href="#controlling-the-step-size-of-the-finite-difference-hessian" title="Permanent link">&para;</a></h3>
 <p>By default, the step size used for calculating the finite difference
 Hessian is 0.010 a.u. for DFT and NWPW modules, and 0.001 a.u. otherwise
 This can be changed via the fd_delta input directive, e.g.</p>
@@ -410,7 +410,7 @@ e.g.</p>
 <pre><code>set stpr_gen:delta 0.005
 </code></pre>
 
-<h3 id="an-example-input-deck">An Example Input Deck</h3>
+<h3 id="an-example-input-deck">An Example Input Deck<a class="headerlink" href="#an-example-input-deck" title="Permanent link">&para;</a></h3>
 <p>This example input deck will optimize the geometry for the given basis
 set, compute the frequencies for <img alt="$H_{2}O$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d7fc8f229a929f93c03b951b7fe40bf0.svg?invert_in_darkmode&sanitize=true" align=middle width="33.934725pt" height="22.38192pt"/>, <img alt="$H_{2}O$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d7fc8f229a929f93c03b951b7fe40bf0.svg?invert_in_darkmode&sanitize=true" align=middle width="33.934725pt" height="22.38192pt"/> at different
 temperatures, <img alt="$D_{2}O$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ce64a0239658825eb59f2dbb21363632.svg?invert_in_darkmode&sanitize=true" align=middle width="33.88011pt" height="22.38192pt"/>, HDO, and TDO.</p>
@@ -454,14 +454,15 @@ end
 task scf freq
 </code></pre>
 
-<h2 id="references">References</h2>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p><references/></p>
 <ol>
 <li>Johnson, B.G. and Frisch, M.J. (1994) &ldquo;An implementation of analytic
     second derivatives of the gradient-corrected density functional
     energy&rdquo;, <em>Journal of Chemical Physics</em> <strong>100</strong> 7429-7442,
-    <a href="doi:%5Bhttp://dx.doi.org/10.1063/1.466887.md">doi:[http://dx.doi.org/10.1063/1.466887</a>
-    10.1063/1.466887]</li>
+    [doi:<script type="math/tex; mode=display">http://dx.doi.org/10.1063/1.466887](doi:%5Bhttp://dx.doi.org/10.1063/1.466887.md)
+    10.1063/1.466887</script>
+</li>
 </ol>
               
             </div>
@@ -497,6 +498,7 @@ task scf freq
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

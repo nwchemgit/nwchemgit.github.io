@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="preparing-qmmm-calculations-from-scratch">Preparing QM/MM calculations from scratch</h2>
+                <h2 id="preparing-qmmm-calculations-from-scratch">Preparing QM/MM calculations from scratch<a class="headerlink" href="#preparing-qmmm-calculations-from-scratch" title="Permanent link">&para;</a></h2>
 <p>Setting up QM/MM calculations for a new system for which classical force
 analog is not readily available would typically involve the following
 steps</p>
@@ -142,7 +142,7 @@ steps</p>
 <li><a href="#Generation_of_new_parameter_files">Creation of parameter file if new atom types were
     defined</a></li>
 </ol>
-<h2 id="generation-of-the-proper-pdb-file">Generation of the proper PDB file</h2>
+<h2 id="generation-of-the-proper-pdb-file">Generation of the proper PDB file<a class="headerlink" href="#generation-of-the-proper-pdb-file" title="Permanent link">&para;</a></h2>
 <p>It is often the case that the input structure for the system comes in
 the form of the xyz file. Let us take a concrete example of N3O3-
 molecule, which we would like to embed in classical solvent and perform
@@ -243,7 +243,7 @@ necessary and could have been removed at any point leading to
 <code>ATOM      5  N3  NN3     2       1.958   1.906   1.488</code><br />
 <code>ATOM      6  O3  NN3     2       2.814   2.068   2.361</code><br />
 <code>END</code></p>
-<h2 id="generation-of-new-fragment-files">Generation of new fragment files</h2>
+<h2 id="generation-of-new-fragment-files">Generation of new fragment files<a class="headerlink" href="#generation-of-new-fragment-files" title="Permanent link">&para;</a></h2>
 <p>While setting up QM/MM calculations is often necessary to generate new
 fragment files for the molecules that are not available as part of
 standard set. The IMPORTANT assumption here is that these new
@@ -343,7 +343,7 @@ moves as a bit further this time</p>
 <code>**********</code></p>
 <p>complaining now that atom types OX and NX are not defined. This brings
 us to the next step of defining new parameter file for our calculation.</p>
-<h2 id="generation-of-new-parameter-files">Generation of new parameter files</h2>
+<h2 id="generation-of-new-parameter-files">Generation of new parameter files<a class="headerlink" href="#generation-of-new-parameter-files" title="Permanent link">&para;</a></h2>
 <p>Continuing with our fragment construction in <a href="#Generation_of_new_fragment_files">Generation of new fragment
 files</a> section, we now
 need to define VDW parameters for our new atom types NX and OX. The best
@@ -366,11 +366,11 @@ which I do not think anybody yet fully addressed. The practical strategy
 is to copy from known atom types, which are chemically similar to the
 ones in your system. In the case above I copied parameters from standard
 AMBER atom types N and OW.</p>
-<h2 id="format-of-nwchem-parameter-file">Format of NWChem parameter file</h2>
+<h2 id="format-of-nwchem-parameter-file">Format of NWChem parameter file<a class="headerlink" href="#format-of-nwchem-parameter-file" title="Permanent link">&para;</a></h2>
 <p>The format of NWChem parameter is illustrated on the figure below and
 also available as <a href="Media:parameter-file.pdf.md">pdf file</a>.</p>
 <p><img alt="Format of NWChem parameter file" src="Nwchem-parameter-file.png" /></p>
-<h2 id="conversion-of-standard-amber-program-parameter-files">Conversion of standard AMBER program parameter files</h2>
+<h2 id="conversion-of-standard-amber-program-parameter-files">Conversion of standard AMBER program parameter files<a class="headerlink" href="#conversion-of-standard-amber-program-parameter-files" title="Permanent link">&para;</a></h2>
 <p>Fortran code that performs conversion from AMBER program parameter file
 format to NWChem can be found <a href="Media:amber-helper.tgz.md">here</a>.
 It works by parsing out free format AMBER style parameter file contained
@@ -452,6 +452,7 @@ in amber.in</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

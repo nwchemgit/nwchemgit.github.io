@@ -130,10 +130,10 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="mp2">MP2</h1>
+                <h1 id="mp2">MP2<a class="headerlink" href="#mp2" title="Permanent link">&para;</a></h1>
 <p>There are (at least) three algorithms within NWChem that compute the
 Møller-Plesset (or many-body) perturbation theory second-order
-correction[1] to the Hartree-Fock energy (MP2). They vary in
+correction<script type="math/tex; mode=display">1</script> to the Hartree-Fock energy (MP2). They vary in
 capability, the size of system that can be treated and use of other
 approximations</p>
 <ul>
@@ -149,7 +149,7 @@ approximations</p>
 </code></pre>
 
 <ul>
-<li>Fully-direct[2] &ndash; this is of utility if only limited I/O
+<li>Fully-direct<script type="math/tex; mode=display">2</script> &ndash; this is of utility if only limited I/O
     resources are available (up to about 2800 functions). Only RHF
     references and energies are available. This is selected by
     specifying direct_mp2 on the task directive, e.g.</li>
@@ -158,7 +158,7 @@ approximations</p>
 </code></pre>
 
 <ul>
-<li>Resolution of the identity (RI) approximation MP2 (RI-MP2)[3] &ndash;
+<li>Resolution of the identity (RI) approximation MP2 (RI-MP2)<script type="math/tex; mode=display">3</script> &ndash;
     this uses the RI approximation and is therefore only exact in the
     limit of a complete fitting basis. However, with some care, high
     accuracy may be obtained with relatively modest fitting basis sets.
@@ -185,7 +185,7 @@ approximations</p>
  END
 </code></pre>
 
-<h2 id="freeze-freezing-orbitals">FREEZE &ndash; Freezing orbitals</h2>
+<h2 id="freeze-freezing-orbitals">FREEZE &ndash; Freezing orbitals<a class="headerlink" href="#freeze-freezing-orbitals" title="Permanent link">&para;</a></h2>
 <p>All MP2 modules support frozen core orbitals, however, only the direct
 MP2 and RI-MP2 modules support frozen virtual orbitals.</p>
 <p>By default, no orbitals are frozen. The atomic keyword causes orbitals
@@ -295,7 +295,7 @@ instance, to freeze the top 5 virtuals</p>
 
 <p>Again, note that this only works for the direct-MP2 and RI-MP2 energy
 codes.</p>
-<h2 id="tight-increased-precision">TIGHT &ndash; Increased precision</h2>
+<h2 id="tight-increased-precision">TIGHT &ndash; Increased precision<a class="headerlink" href="#tight-increased-precision" title="Permanent link">&para;</a></h2>
 <p>The TIGHT directive can be used to increase the precision in the MP2
 energy and gradients.</p>
 <p>By default the MP2 gradient package should compute energies accurate to
@@ -308,7 +308,7 @@ precision may be desirable.</p>
 <img alt="$10^{-6}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ec4c25dce67266d40679a50bf9d75e70.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/> to <img alt="$10^{-8}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3638e50463da9c60c05d8519c65d3982.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/>) and CPHF (from <img alt="$10^{-4}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6784e1fd68d75a57b35bd36247a1aefe.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/> to <img alt="$10^{-6}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ec4c25dce67266d40679a50bf9d75e70.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/>)
 are solved, and also tightens thresholds for computation of the AO and
 MO integrals (from <img alt="$10^{-9}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a9b53cbe5062c1d96ddd43e5494ce6cb.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/> to <img alt="$10^{-11}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bd2a39dedd522990e0b71f9f2eaa2bf.svg?invert_in_darkmode&sanitize=true" align=middle width="39.668805pt" height="26.70657pt"/>) within the MP2 code.</p>
-<h2 id="scratchdisk-limiting-io-usage">SCRATCHDISK &ndash; Limiting I/O usage</h2>
+<h2 id="scratchdisk-limiting-io-usage">SCRATCHDISK &ndash; Limiting I/O usage<a class="headerlink" href="#scratchdisk-limiting-io-usage" title="Permanent link">&para;</a></h2>
 <p>This directive - used only in the semi-direct algorithm - allows to
 limit the per process disk usage. Mandatory argument for this keyword is
 the maximum number of MBytes. For example, the following input line</p>
@@ -317,7 +317,7 @@ the maximum number of MBytes. For example, the following input line</p>
 
 <p>puts an upper limit of 512 MBytes to the semi-direct MP2 usage of disk
 (again, on a per process base).</p>
-<h2 id="print-and-noprint">PRINT and NOPRINT</h2>
+<h2 id="print-and-noprint">PRINT and NOPRINT<a class="headerlink" href="#print-and-noprint" title="Permanent link">&para;</a></h2>
 <p>The standard print control options are recognized. The list of
 recognized names are given in the table
 below.</p>
@@ -435,7 +435,7 @@ below.</p>
 </table>
 <p>Printable items in the MP2 modules and their default print levels</p>
 <p></center></p>
-<h2 id="vectors-mo-vectors">VECTORS &ndash; MO vectors</h2>
+<h2 id="vectors-mo-vectors">VECTORS &ndash; MO vectors<a class="headerlink" href="#vectors-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>All of the (supported) MP2 modules require use of converged canonical
 SCF (RHF or UHF) orbitals for correct results. The vectors are by
 default obtained from the preceding SCF calculation, but it is possible
@@ -455,7 +455,7 @@ orbital 7 into the 6th position. This is accomplished by</p>
 
 <p>The swap capability is examined in more detail in <a href="Hartree-Fock-Theory-for-Molecules.html#vectors----inputoutput-of-mo-vectors">Input/output of MO
 vectors</a>.</p>
-<h2 id="ri-mp2-fitting-basis">RI-MP2 fitting basis</h2>
+<h2 id="ri-mp2-fitting-basis">RI-MP2 fitting basis<a class="headerlink" href="#ri-mp2-fitting-basis" title="Permanent link">&para;</a></h2>
 <p>The RI-MP2 method requires a fitting basis, which must be specified with
 the name &ldquo;ri-mp2 basis&rdquo; (see <a href="Basis.html">Basis</a>). For instance,</p>
 <pre><code> basis &quot;ri-mp2 basis&quot;
@@ -483,7 +483,7 @@ with the name &ldquo;small fitting basis&rdquo; and then defines this to be the
 <pre><code> set &quot;ri-mp2 basis&quot; &quot;small fitting basis&quot;
 </code></pre>
 
-<h2 id="file3c-ri-mp2-3-center-integral-filename">FILE3C &ndash; RI-MP2 3-center integral filename</h2>
+<h2 id="file3c-ri-mp2-3-center-integral-filename">FILE3C &ndash; RI-MP2 3-center integral filename<a class="headerlink" href="#file3c-ri-mp2-3-center-integral-filename" title="Permanent link">&para;</a></h2>
 <p>The default name for the file used to store the transformed 3-center
 integrals is &ldquo;<img alt="$file\_prefix$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0f4e98d48616daeb64389f8f090dd95c.svg?invert_in_darkmode&sanitize=true" align=middle width="82.682655pt" height="22.74591pt"/>.mo3cint&rdquo; in the scratch directory. This may
 be overridden using the FILE3C directive. For instance, to specify the
@@ -491,15 +491,15 @@ file /scratch/h2o.3c, use this directive</p>
 <pre><code> file3c /scratch/h2o.3c
 </code></pre>
 
-<h2 id="riapprox-ri-mp2-approximation">RIAPPROX &ndash; RI-MP2 Approximation</h2>
+<h2 id="riapprox-ri-mp2-approximation">RIAPPROX &ndash; RI-MP2 Approximation<a class="headerlink" href="#riapprox-ri-mp2-approximation" title="Permanent link">&para;</a></h2>
 <p>The type of RI approximation used in the RI-MP2 calculation is
 controlled by means of the RIAPPROX directive. The two possible values
 are V and SVS (case sensitive), which correspond to the approximations
-with the same names described by Vahtras et al.[4]. The default is V.</p>
-<h2 id="advanced-options-for-ri-mp2">Advanced options for RI-MP2</h2>
+with the same names described by Vahtras et al.<script type="math/tex; mode=display">4</script>. The default is V.</p>
+<h2 id="advanced-options-for-ri-mp2">Advanced options for RI-MP2<a class="headerlink" href="#advanced-options-for-ri-mp2" title="Permanent link">&para;</a></h2>
 <p>These options, which functioned at the time of writing, are not
 currently supported.</p>
-<h3 id="control-of-linear-dependence">Control of linear dependence</h3>
+<h3 id="control-of-linear-dependence">Control of linear dependence<a class="headerlink" href="#control-of-linear-dependence" title="Permanent link">&para;</a></h3>
 <p>Construction of the RI fit requires the inversion of a matrix of fitting
 basis integrals which is carried out via diagonalization. If the fitting
 basis includes near linear dependencies, there will be small eigenvalues
@@ -511,7 +511,7 @@ instance, to set it to <img alt="$10^{-10}$" src="https://raw.githubusercontent.
 <pre><code> set &quot;mp2:fit min eval&quot; 1e-10
 </code></pre>
 
-<h3 id="reference-spin-mapping-for-ri-mp2-calculations">Reference Spin Mapping for RI-MP2 Calculations</h3>
+<h3 id="reference-spin-mapping-for-ri-mp2-calculations">Reference Spin Mapping for RI-MP2 Calculations<a class="headerlink" href="#reference-spin-mapping-for-ri-mp2-calculations" title="Permanent link">&para;</a></h3>
 <p>The user has the option of specifying that the RI-MP2 calculations are
 to be done with variations of the SCF reference wavefunction. This is
 accomplished with a SET directive of the form,</p>
@@ -548,7 +548,7 @@ flipped from the original SCF reference wavefunction is as follows,</p>
 <pre><code> set &quot;mp2:reference spin mapping&quot; 2 1
 </code></pre>
 
-<h3 id="batch-sizes-for-the-ri-mp2-calculation">Batch Sizes for the RI-MP2 Calculation</h3>
+<h3 id="batch-sizes-for-the-ri-mp2-calculation">Batch Sizes for the RI-MP2 Calculation<a class="headerlink" href="#batch-sizes-for-the-ri-mp2-calculation" title="Permanent link">&para;</a></h3>
 <p>The user can control the size of each batch in the transformation and
 energy evaluation in the MP2 calculation, and consequently the memory
 requirements and number of passes required. This is done using two SET
@@ -579,7 +579,7 @@ and <em>(<batch jsize> x vir)</em> by fit are read in from disk and multiplied
 together to produce <em><batch isize> <batch jsize> vir^2</em> approximate
 integrals. The compromise here is performance of the distributed matrix
 multiplication (which requires large matrices) versus memory space.</p>
-<h3 id="energy-memory-allocation-mode-ri-mp2-calculation">Energy Memory Allocation Mode: RI-MP2 Calculation</h3>
+<h3 id="energy-memory-allocation-mode-ri-mp2-calculation">Energy Memory Allocation Mode: RI-MP2 Calculation<a class="headerlink" href="#energy-memory-allocation-mode-ri-mp2-calculation" title="Permanent link">&para;</a></h3>
 <p>The user must choose a strategy for the memory allocation in the energy
 evaluation phase of the RI-MP2 calculation, either by minimizing the
 amount of I/O, or minimizing the amount of computation. This can be
@@ -596,7 +596,7 @@ integral files is as small as possible. When the option to minimize
 computation is selected, the blocks are chosen as close to square as
 possible so that permutational symmetry in the energy evaluation can be
 used most effectively.</p>
-<h3 id="local-memory-usage-in-three-center-transformation">Local Memory Usage in Three-Center Transformation</h3>
+<h3 id="local-memory-usage-in-three-center-transformation">Local Memory Usage in Three-Center Transformation<a class="headerlink" href="#local-memory-usage-in-three-center-transformation" title="Permanent link">&para;</a></h3>
 <p>For most applications, the code will be able to size the blocks without
 help from the user. Therefore, it is unlikely that users will have any
 reason to specify values for these entries except when doing very
@@ -623,7 +623,7 @@ functions on a node. The absolute minimum value for block size is the
 size of the largest shell in the appropriate basis. Batch size entries
 specified for max that are larger than these limits are automatically
 reset to an appropriate value.</p>
-<h2 id="one-electron-properties-and-natural-orbitals">One-electron properties and natural orbitals</h2>
+<h2 id="one-electron-properties-and-natural-orbitals">One-electron properties and natural orbitals<a class="headerlink" href="#one-electron-properties-and-natural-orbitals" title="Permanent link">&para;</a></h2>
 <p>If an MP2 energy gradient is computed, all contributions are available
 to form the MP2 linear-response density. This is the density that when
 contracted with any spin-free, one-electron operator yields the
@@ -633,7 +633,10 @@ external electric field and is not the expectation value of the operator
 over the wavefunction. It has been shown that evaluating the MP2 density
 through a derivative provides more accurate results, presumably because
 this matches the way experiments probe the electron density more
-closely[5][6][7][8].</p>
+closely<script type="math/tex; mode=display">5</script>
+<script type="math/tex; mode=display">6</script>
+<script type="math/tex; mode=display">7</script>
+<script type="math/tex; mode=display">8</script>.</p>
 <p>Only dipole moments are printed by the MP2 gradient code, but natural
 orbitals are produced and stored in the permanent directory with a file
 extension of &ldquo;.mp2nos&rdquo;. These may be fed into the <a href="Properties.html">property
@@ -666,10 +669,11 @@ task mp2 property
 <p>Note that the MP2 linear response density matrix is not necessarily positive
 definite so it is not unusual to see a few small negative natural
 orbital occupation numbers. Significant negative occupation numbers have
-been argued to be a sign that the system might be near degenerate[9].</p>
-<h2 id="scs-mp2-spin-component-scaled-mp2">SCS-MP2 &ndash; Spin-Component Scaled MP2</h2>
+been argued to be a sign that the system might be near degenerate<script type="math/tex; mode=display">9</script>.</p>
+<h2 id="scs-mp2-spin-component-scaled-mp2">SCS-MP2 &ndash; Spin-Component Scaled MP2<a class="headerlink" href="#scs-mp2-spin-component-scaled-mp2" title="Permanent link">&para;</a></h2>
 <p>Each MP2 output contains the calculation of the SCS-MP2 correlation
-energies as suggested by S.Grimme[10]</p>
+energies as suggested by S.Grimme<script type="math/tex; mode=display">10</script>
+</p>
 <p>The SCS keyword is only required for gradients calculations:</p>
 <pre><code> MP2  
    [SCS]  
@@ -688,7 +692,7 @@ end
 
 <p>Default values are FSS=1.2, FOS=0.3 for MP2, and FSS=1.13, FOS=1.27 for
 CCSD.</p>
-<h2 id="references">References</h2>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p><references/></p>
 <ol>
 <li>Møller, C. and Plesset, M.S. (1934) &ldquo;Note on an approximation
@@ -768,6 +772,7 @@ CCSD.</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

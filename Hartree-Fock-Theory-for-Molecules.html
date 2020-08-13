@@ -130,14 +130,14 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="hartree-fock">Hartree-Fock</h1>
+                <h1 id="hartree-fock">Hartree-Fock<a class="headerlink" href="#hartree-fock" title="Permanent link">&para;</a></h1>
 <p>The NWChem self-consistent field (SCF) module computes closed-shell
 restricted Hartree-Fock (RHF) wavefunctions, restricted high-spin
 open-shell Hartree-Fock (ROHF) wavefunctions, and spin-unrestricted
 Hartree-Fock (UHF) wavefunctions. The Hartree-Fock equations are solved
 using a conjugate-gradient method with an orbital Hessian based
-preconditioner[1]. The module supports both replicated data and
-distributed data Fock builders[2].</p>
+preconditioner<script type="math/tex; mode=display">1</script>. The module supports both replicated data and
+distributed data Fock builders<script type="math/tex; mode=display">2</script>.</p>
 <p>The SCF directive provides input to the SCF module and is a compound
 directive that encloses additional directives specific to the SCF
 module:</p>
@@ -146,7 +146,7 @@ module:</p>
  END
 </code></pre>
 
-<h2 id="wavefunction-type">Wavefunction type</h2>
+<h2 id="wavefunction-type">Wavefunction type<a class="headerlink" href="#wavefunction-type" title="Permanent link">&para;</a></h2>
 <p>A spin-restricted, closed shell RHF calculation is performed by default.
 An error results if the number of electrons is inconsistent with this
 assumption. The number of electrons is inferred from the total charge on
@@ -208,7 +208,7 @@ defeating the defaults by specifying the keywords
 may be necessary to specify these in order to modify the behavior of a
 previous calculation (see <a href="NWChem-Architecture.html">NWChem
 Architecture</a> for restart behavior).</p>
-<h2 id="sym-use-of-symmetry">SYM &ndash; use of symmetry</h2>
+<h2 id="sym-use-of-symmetry">SYM &ndash; use of symmetry<a class="headerlink" href="#sym-use-of-symmetry" title="Permanent link">&para;</a></h2>
 <pre><code>  SYM &lt;string (ON||OFF) default ON&gt;
 </code></pre>
 
@@ -222,7 +222,7 @@ directive</a>.</p>
 <pre><code> sym off
 </code></pre>
 
-<h2 id="adapt-symmetry-adaptation-of-mos">ADAPT - symmetry adaptation of MOs</h2>
+<h2 id="adapt-symmetry-adaptation-of-mos">ADAPT - symmetry adaptation of MOs<a class="headerlink" href="#adapt-symmetry-adaptation-of-mos" title="Permanent link">&para;</a></h2>
 <pre><code> ADAPT &lt;string (ON||OFF) default ON&gt;
 </code></pre>
 
@@ -237,7 +237,7 @@ are symmetry contaminated, this assumption may not be valid &ndash; which
 could result in incorrect energies and poor convergence of the
 calculation. It is thus advisable when specifying ADAPT OFF to also
 specify SYM OFF (<a href="#sym----use-of-symmetry">Use of Symmetry</a>).</p>
-<h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold</h2>
+<h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
 <pre><code> TOL2E &lt;real tol2e default min(10e-7 , 0.01*thresh)&gt;
 </code></pre>
 
@@ -263,7 +263,7 @@ is, for example:</p>
 be necessary to set this parameter. A value of 10<sup>-12</sup> is
 sufficient for nearly all such
 purposes.</p>
-<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS &ndash; input/output of MO vectors</h2>
+<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS &ndash; input/output of MO vectors<a class="headerlink" href="#vectors-inputoutput-of-mo-vectors" title="Permanent link">&para;</a></h2>
 <pre><code> VECTORS [[input] (&lt;string input_movecs default atomic&gt;) || \  
                   (project &lt;string basisname&gt; &lt;string filename&gt;) || \  
                   (fragment &lt;string file1&gt; [&lt;string file2&gt; ...])] \ 
@@ -359,7 +359,7 @@ final.movecs. The contents of &ldquo;initial.movecs&rdquo; will not be changed.<
 <p>This directive will cause the calculation to start from vectors in the
 file &ldquo;small.movecs&rdquo; which are in a basis named &ldquo;small basis&rdquo;. The output
 vectors will be written to the default file &ldquo;\&lt;file_prefix.movecs>&ldquo;.</p>
-<h3 id="vectors-swap-keyword">VECTORS SWAP keyword</h3>
+<h3 id="vectors-swap-keyword">VECTORS SWAP keyword<a class="headerlink" href="#vectors-swap-keyword" title="Permanent link">&para;</a></h3>
 <p>Once starting vectors have been obtained using any of the possible
 options, they may be reordered through use of the SWAP keyword. This
 optional keyword requires a list of orbital pairs that will be swapped.
@@ -391,7 +391,7 @@ the directive</p>
 <p>This input will result in the swapping of the 5-6 alpha orbital pair and
 the 4-5 beta orbital pair. (All other items in the input use the default
 values.)</p>
-<h3 id="vectors-lock-keyword">VECTORS LOCK keyword</h3>
+<h3 id="vectors-lock-keyword">VECTORS LOCK keyword<a class="headerlink" href="#vectors-lock-keyword" title="Permanent link">&para;</a></h3>
 <p>The LOCK keyword allows the user to specify that the ordering of
 orbitals will be locked to that of the initial vectors, insofar as
 possible. The default is to order by ascending orbital energies within
@@ -400,7 +400,7 @@ a calculation where it is necessary to preserve the ordering of a
 previous geometry, despite flipping of the orbital energies. For such a
 case, the LOCK directive can be used to prevent the SCF calculation from
 changing the ordering, even if the orbital energies change.</p>
-<h3 id="vectors-reorder-keyword">VECTORS REORDER keyword</h3>
+<h3 id="vectors-reorder-keyword">VECTORS REORDER keyword<a class="headerlink" href="#vectors-reorder-keyword" title="Permanent link">&para;</a></h3>
 <p>The mapping of the MO&rsquo;s to the nuclei can be changed using the REORDER
 keyword. Once starting vectors have been obtained using any of the
 possible options, the REORDER keyword moves the MO coefficients between
@@ -432,7 +432,7 @@ end
 task dft
 </code></pre>
 
-<h3 id="superposition-of-fragment-molecular-orbitals">Superposition of fragment molecular orbitals</h3>
+<h3 id="superposition-of-fragment-molecular-orbitals">Superposition of fragment molecular orbitals<a class="headerlink" href="#superposition-of-fragment-molecular-orbitals" title="Permanent link">&para;</a></h3>
 <p>The fragment initial guess is particularly useful in the following
 instances:</p>
 <ul>
@@ -698,7 +698,7 @@ end
 task scf
 </code></pre>
 
-<h3 id="example-of-projecting-smaller-basis-into-larger-basis">Example of projecting smaller basis into larger basis</h3>
+<h3 id="example-of-projecting-smaller-basis-into-larger-basis">Example of projecting smaller basis into larger basis<a class="headerlink" href="#example-of-projecting-smaller-basis-into-larger-basis" title="Permanent link">&para;</a></h3>
 <p>Key ingredient needed: definition of both the smaller and the larger
 basis set, plus mention of the small basis set in the &ldquo;<code>input project</code>&rdquo;
 line.</p>
@@ -729,7 +729,7 @@ line.</p>
     task scf
 </code></pre>
 
-<h3 id="atomic-guess-orbitals-with-charged-atoms">Atomic guess orbitals with charged atoms</h3>
+<h3 id="atomic-guess-orbitals-with-charged-atoms">Atomic guess orbitals with charged atoms<a class="headerlink" href="#atomic-guess-orbitals-with-charged-atoms" title="Permanent link">&para;</a></h3>
 <p>As noted above, the default guess vectors are based on superimposing the
 density matrices of the neutral atoms. If some atoms are significantly
 charged, this default guess may be improved upon by modifying the atomic
@@ -768,7 +768,7 @@ and that the modified settings will be used in subsequent atomic guess
 calculations unless the data is deleted from the database with the UNSET
 directive
 (<a href="UNSET.html">UNSET</a>).</p>
-<h2 id="accuracy-of-initial-guess">Accuracy of initial guess</h2>
+<h2 id="accuracy-of-initial-guess">Accuracy of initial guess<a class="headerlink" href="#accuracy-of-initial-guess" title="Permanent link">&para;</a></h2>
 <p>For SCF, the initial Fock-matrix construction from the atomic guess is
 performed to a default precision of 1e-7. However, other wavefunctions,
 notably DFT, use a lower precision. In charged, or diffuse basis sets,
@@ -779,7 +779,7 @@ following directive which should be inserted in the top-level of input
 <pre><code> set tolguess 1e-7
 </code></pre>
 
-<h2 id="thresh-convergence-threshold">THRESH &ndash; convergence threshold</h2>
+<h2 id="thresh-convergence-threshold">THRESH &ndash; convergence threshold<a class="headerlink" href="#thresh-convergence-threshold" title="Permanent link">&para;</a></h2>
 <pre><code> THRESH  &lt;real thresh default 1.0e-4&gt;
 </code></pre>
 
@@ -805,7 +805,7 @@ Hessian, and for post-Hartree-Fock calculations. A threshold of
 <img alt="$10^{-8}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3638e50463da9c60c05d8519c65d3982.svg?invert_in_darkmode&sanitize=true" align=middle width="33.140745pt" height="26.70657pt"/> might be necessary for very high accuracy or very weak
 interactions. A threshold of <img alt="$10^{-10}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7e66fb4017db9bbbc21f10b17fe18e42.svg?invert_in_darkmode&sanitize=true" align=middle width="39.668805pt" height="26.70657pt"/> should be regarded as the best
 that can be attained in most circumstances.</p>
-<h2 id="maxiter-iteration-limit">MAXITER &ndash; iteration limit</h2>
+<h2 id="maxiter-iteration-limit">MAXITER &ndash; iteration limit<a class="headerlink" href="#maxiter-iteration-limit" title="Permanent link">&para;</a></h2>
 <pre><code> MAXITER &lt;integer maxiter default 8&gt;
 </code></pre>
 
@@ -827,7 +827,7 @@ converge due to the presence of many states with similar energies.</p>
 <pre><code> maxiter 50
 </code></pre>
 
-<h2 id="profile-performance-profile">PROFILE &ndash; performance profile</h2>
+<h2 id="profile-performance-profile">PROFILE &ndash; performance profile<a class="headerlink" href="#profile-performance-profile" title="Permanent link">&para;</a></h2>
 <p>This directive allows the user to obtain timing and parallel execution
 information about the SCF module. It is specified by the simple keyword</p>
 <pre><code> PROFILE
@@ -837,7 +837,7 @@ information about the SCF module. It is specified by the simple keyword</p>
 performance of an SCF calculation. However, it can introduce a
 significant overhead on machines that have expensive timing routines,
 such as the SUN.</p>
-<h2 id="diis-diis-convergence">DIIS &ndash; DIIS convergence</h2>
+<h2 id="diis-diis-convergence">DIIS &ndash; DIIS convergence<a class="headerlink" href="#diis-diis-convergence" title="Permanent link">&para;</a></h2>
 <p>This directive allows the user to specify DIIS convergence rather than
 second-order convergence for the SCF calculation. The form of the
 directive is as follows:</p>
@@ -858,7 +858,7 @@ of the form:</p>
 <p>The default of 5 should be adequate for most applications, but may be
 increased if convergence is poor. On large systems, it may be necessary
 to specify a lower value for diisbas, to conserve memory.</p>
-<h2 id="direct-and-semidirect-recomputation-of-integrals">DIRECT and SEMIDIRECT &ndash; recomputation of integrals</h2>
+<h2 id="direct-and-semidirect-recomputation-of-integrals">DIRECT and SEMIDIRECT &ndash; recomputation of integrals<a class="headerlink" href="#direct-and-semidirect-recomputation-of-integrals" title="Permanent link">&para;</a></h2>
 <p>In the context of SCF calculations direct means that all integrals are
 recomputed as required and none are stored. The other extreme are disk-
 or memory-resident (sometimes termed conventional) calculations in which
@@ -934,7 +934,7 @@ by each process to 100 megawords (MW):</p>
 <p>The integral records are typically 32769 words long and any non-zero
 value for filesize or memsize should be enough to hold at least one
 record.</p>
-<h3 id="integral-file-size-and-format-for-the-scf-module">Integral File Size and Format for the SCF Module</h3>
+<h3 id="integral-file-size-and-format-for-the-scf-module">Integral File Size and Format for the SCF Module<a class="headerlink" href="#integral-file-size-and-format-for-the-scf-module" title="Permanent link">&para;</a></h3>
 <p>The file format is rather complex, since it accommodates a variety of
 packing and compression options and the distribution of data. This
 section presents some information that may help the user understand the
@@ -952,7 +952,7 @@ labels are always packed to 8 bits (the distributed blocks always being
 less than 256; labels are relative to the start of the block).</p>
 <p>Thus, the number (<em>W</em>) of 64-bit words required to store <em>N</em> integrals,
 may be computed as</p>
-<p><img alt="$W = &#10;\begin{cases} &#10;  N,  &amp; \mbox{8-bit labels and 32-bit values} \\&#10;  \frac{3}{2}N, &amp; \mbox{16-bit labels and 32-bit values} \\&#10;  \frac{3}{2}N, &amp; \mbox{8-bit labels and 64-bit values} \\&#10;  2N, &amp; \mbox{16-bit labels and 64-bit values}&#10;\end{cases}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/64578eecf7e7887527d86aa023d3995b.svg?invert_in_darkmode&sanitize=true" align=middle width="315.713145pt" height="96.98733pt"/></p>
+<p><img alt="$W = &#10;<script type="math/tex; mode=display">\begin{cases} &#10;  N,  &amp; \mbox{8-bit labels and 32-bit values} \\&#10;  \frac{3}{2}N, &amp; \mbox{16-bit labels and 32-bit values} \\&#10;  \frac{3}{2}N, &amp; \mbox{8-bit labels and 64-bit values} \\&#10;  2N, &amp; \mbox{16-bit labels and 64-bit values}&#10;\end{cases}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/64578eecf7e7887527d86aa023d3995b.svg?invert_in_darkmode&sanitize=true" align=middle width="315.713145pt" height="96.98733pt"/></p>
 <p>The actual number of words required can exceed this computed value by up
 to one percent, due to bookkeeping overhead, and because the file itself
 is organized into fixed-size records.</p>
@@ -990,7 +990,7 @@ final line indicates the total number of integral records stored by all
 processes.</p>
 <p>This information may be used to optimize subsequent calculations, for
 instance by assigning more memory or disk space.</p>
-<h2 id="scf-convergence-control-options">SCF Convergence Control Options</h2>
+<h2 id="scf-convergence-control-options">SCF Convergence Control Options<a class="headerlink" href="#scf-convergence-control-options" title="Permanent link">&para;</a></h2>
 <p>Note to users: It is desired that the SCF program converge reliably with
 the default options for a wide variety of molecules. In addition, it
 should be guaranteed to converge for any system, with sufficient
@@ -1081,7 +1081,7 @@ solution will do more macro-iterations, but each one should take less
 time than it would with the unshifted Hessian.</p>
 <p>The following sections describe the directives needed to disable the
 Newton-Raphson iteration and specify level-shifting.</p>
-<h2 id="nr-controlling-the-newton-raphson">NR &ndash; controlling the Newton-Raphson</h2>
+<h2 id="nr-controlling-the-newton-raphson">NR &ndash; controlling the Newton-Raphson<a class="headerlink" href="#nr-controlling-the-newton-raphson" title="Permanent link">&para;</a></h2>
 <pre><code>   NR &lt;real nr_switch default 0.1&gt;
 </code></pre>
 
@@ -1095,7 +1095,7 @@ to zero. The directive to accomplish this is as follows:</p>
 <pre><code> nr 0
 </code></pre>
 
-<h2 id="level-level-shifting-the-orbital-hessian">LEVEL &ndash; level-shifting the orbital Hessian</h2>
+<h2 id="level-level-shifting-the-orbital-hessian">LEVEL &ndash; level-shifting the orbital Hessian<a class="headerlink" href="#level-level-shifting-the-orbital-hessian" title="Permanent link">&para;</a></h2>
 <p>This directive allows the user to specify level-shifting to obtain a
 positive-definite preconditioning matrix for the SCF solution procedure.
 Separate level shifts can be set for the first-order convergent
@@ -1160,7 +1160,7 @@ zero.</p>
 <pre><code> level pcg 20 0.5 0 nr 0 0 0
 </code></pre>
 
-<h2 id="orbital-localization">Orbital Localization</h2>
+<h2 id="orbital-localization">Orbital Localization<a class="headerlink" href="#orbital-localization" title="Permanent link">&para;</a></h2>
 <p>The SCF module includes an experimental implementation of orbital
 localization, including Foster-Boys and Pipek-Mezey which only works for
 closed-shell (RHF) wavefunctions. There is currently no input in the SCF
@@ -1180,7 +1180,7 @@ core-orbitals is performed using the atomic information described in
 Section 16.1.</p>
 <p>In the next release, this functionality will be extended to included all
 wavefunctions using molecular orbitals.</p>
-<h2 id="printing-information-from-the-scf-module">Printing Information from the SCF Module</h2>
+<h2 id="printing-information-from-the-scf-module">Printing Information from the SCF Module<a class="headerlink" href="#printing-information-from-the-scf-module" title="Permanent link">&para;</a></h2>
 <p>All output from the SCF module is controlled using the PRINT directive
 described in <a href="Print_Noprint.html">Print
 control</a>.
@@ -1304,7 +1304,7 @@ one.</p>
 </tbody>
 </table>
 <p>Table 1: SCF Print Control Specifications  </p>
-<h2 id="hartree-fock-or-scf-mcscf-and-mp2-gradients">Hartree-Fock or SCF, MCSCF and MP2 Gradients</h2>
+<h2 id="hartree-fock-or-scf-mcscf-and-mp2-gradients">Hartree-Fock or SCF, MCSCF and MP2 Gradients<a class="headerlink" href="#hartree-fock-or-scf-mcscf-and-mp2-gradients" title="Permanent link">&para;</a></h2>
 <p>The input for this directive allows the user to adjust the print control
 for the SCF, UHF, ROHF, MCSCF and MP2 gradients. The form of the
 directive is as follows:</p>
@@ -1354,7 +1354,7 @@ explicitly invoked via print control. These are as follows:</p>
 </tbody>
 </table>
 <p>Table 2: Gradient Print Control Specifications  </p>
-<h2 id="references">References</h2>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p><references/></p>
 <ol>
 <li>Wong, A. T. and Harrison, R. J. (1995) &ldquo;Approaches to large-scale
@@ -1402,6 +1402,7 @@ explicitly invoked via print control. These are as follows:</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

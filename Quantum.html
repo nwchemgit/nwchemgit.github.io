@@ -136,7 +136,7 @@ outputs can be interpreted and formatted in
 <a href="https://en.wikipedia.org/wiki/YAML">YAML</a> files that include the
 integrals and basic information including initial wavefunction guesses
 for quantum algorithms. There are currently two options for integrals:</p>
-<h2 id="bare-hamiltonian">Bare Hamiltonian</h2>
+<h2 id="bare-hamiltonian">Bare Hamiltonian<a class="headerlink" href="#bare-hamiltonian" title="Permanent link">&para;</a></h2>
 <p>To print the bare Hamiltonian, you must set up a CCSD calculation with the following parameters: <br />
 <em> The symmetry must be declared as &lsquo;C1&rsquo; <br />
 </em> In the TCE block, you must include the following:   </p>
@@ -174,7 +174,7 @@ CC/EOMCC calculation. This is to ensure that leading CC/EOMCC
 excitations do not correspond to orbitals outside of the printed
 integrals.  </li>
 </ul>
-<h2 id="ducc-hamiltonian">DUCC Hamiltonian</h2>
+<h2 id="ducc-hamiltonian">DUCC Hamiltonian<a class="headerlink" href="#ducc-hamiltonian" title="Permanent link">&para;</a></h2>
 <p>The double unitary coupled-cluster (DUCC)
 Hamiltonian is a way of incorporating correlation effects (mainly
 dynamical) into a reduced dimensionality Hamiltonian based on a
@@ -211,14 +211,14 @@ release</a>.  </p>
 <li>Frozen core calculations should not be performed. There is nothing preventing such calculation from being executed, but the integrals will be incorrect.   </li>
 <li>Since the all-orbital coupled-cluster calculation must be performed, then there is a chance that a leading excitation outside of the active-space will be printed and therefore included in the initial wave function description in the YAML file. The user ought to be aware of this risk and make changes to the YAML file to exclude these excitations, which would include renormalizing the remaining amplitudes of the initial guess.  </li>
 </ul>
-<h2 id="yaml-interpreter">YAML Interpreter</h2>
+<h2 id="yaml-interpreter">YAML Interpreter<a class="headerlink" href="#yaml-interpreter" title="Permanent link">&para;</a></h2>
 <p>Once the calculation is completed, the integrals and basic information including initial wavefunction guesses for quantum algorithms can be extracted into a YAML file. To generate the YAML file, executed the following command:</p>
 <pre><code>python $NWCHEM_TOP/contrib/quasar/export_chem_library_yaml.py &lt; {NWChem output file} &gt; {YAML file name}
 </code></pre>
 
 <p><em>Note:</em>
 * the &lsquo;fci_energy&rsquo; in the YAML file is taken to be the energy of the correlated method, which, in either case, is the CCSD energy.</p>
-<h2 id="example-input-file-for-bare-hamiltonian">Example input file for Bare Hamiltonian</h2>
+<h2 id="example-input-file-for-bare-hamiltonian">Example input file for Bare Hamiltonian<a class="headerlink" href="#example-input-file-for-bare-hamiltonian" title="Permanent link">&para;</a></h2>
 <pre><code>echo
 
 start Lih
@@ -256,7 +256,7 @@ set tce:qelb 2
 task tce energy
 </code></pre>
 
-<h2 id="example-input-file-for-ducc">Example input file for DUCC</h2>
+<h2 id="example-input-file-for-ducc">Example input file for DUCC<a class="headerlink" href="#example-input-file-for-ducc" title="Permanent link">&para;</a></h2>
 <pre><code>echo
 
 start Lih
@@ -324,6 +324,7 @@ task tce energy
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

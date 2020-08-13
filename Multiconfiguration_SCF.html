@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="mcscf">MCSCF</h1>
+                <h1 id="mcscf">MCSCF<a class="headerlink" href="#mcscf" title="Permanent link">&para;</a></h1>
 <p>The NWChem multiconfiguration SCF (MCSCF) module can currently perform
 complete active space SCF (CASSCF) calculations with at most 20 active
 orbitals and about 500 basis
@@ -156,7 +156,7 @@ functions.</p>
 <p>Note that the ACTIVE, ACTELEC, and MULTIPLICITY directives are required.
 The symmetry and multiplicity may alternatively be entered using the
 STATE directive.</p>
-<h2 id="active-number-of-active-orbitals">ACTIVE &ndash; Number of active orbitals</h2>
+<h2 id="active-number-of-active-orbitals">ACTIVE &ndash; Number of active orbitals<a class="headerlink" href="#active-number-of-active-orbitals" title="Permanent link">&para;</a></h2>
 <p>The number of orbitals in the CASSCF active space must be specified
 using the ACTIVE directive.</p>
 <p>E.g.,</p>
@@ -172,7 +172,7 @@ must be arranged in order</p>
 <li>active orbitals, and</li>
 <li>unoccupied orbitals.</li>
 </ol>
-<h2 id="actelec-number-of-active-electrons">ACTELEC &ndash; Number of active electrons</h2>
+<h2 id="actelec-number-of-active-electrons">ACTELEC &ndash; Number of active electrons<a class="headerlink" href="#actelec-number-of-active-electrons" title="Permanent link">&para;</a></h2>
 <p>The number of electrons in the CASSCF active space must be specified
 using the ACTELEC directive. An error is reported if the number of
 active electrons and the multiplicity are inconsistent.</p>
@@ -180,14 +180,14 @@ active electrons and the multiplicity are inconsistent.</p>
 active electrons from the total number of electrons (which in turn is
 derived from the sum of the nuclear charges minus the total system
 charge).</p>
-<h2 id="multiplicity">MULTIPLICITY</h2>
+<h2 id="multiplicity">MULTIPLICITY<a class="headerlink" href="#multiplicity" title="Permanent link">&para;</a></h2>
 <p>The spin multiplicity must be specified and is enforced by projection of
 the determinant wavefunction.</p>
 <p>E.g., to obtain a triplet state</p>
 <pre><code> multiplicity 3
 </code></pre>
 
-<h2 id="symmetry-spatial-symmetry-of-the-wavefunction">SYMMETRY &ndash; Spatial symmetry of the wavefunction</h2>
+<h2 id="symmetry-spatial-symmetry-of-the-wavefunction">SYMMETRY &ndash; Spatial symmetry of the wavefunction<a class="headerlink" href="#symmetry-spatial-symmetry-of-the-wavefunction" title="Permanent link">&para;</a></h2>
 <p>This species the irreducible representation of the wavefunction as an
 integer in the range 1&ndash;8 using the same numbering of representations as
 output by the SCF program. Note that only Abelian point groups are
@@ -196,7 +196,7 @@ supported.</p>
 <pre><code> symmetry 3
 </code></pre>
 
-<h2 id="state-symmetry-and-multiplicity">STATE &ndash; Symmetry and multiplicity</h2>
+<h2 id="state-symmetry-and-multiplicity">STATE &ndash; Symmetry and multiplicity<a class="headerlink" href="#state-symmetry-and-multiplicity" title="Permanent link">&para;</a></h2>
 <p>The electronic state (spatial symmetry and multiplicity) may
 alternatively be specified using the conventional notation for an
 electronic state, such as <img alt="$^3B_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6e2161ad2ba92369ce803c5813cce493.svg?invert_in_darkmode&sanitize=true" align=middle width="26.324595pt" height="26.70657pt"/> for a triplet state of <img alt="$B_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2b7de9b9b655b068f97484efba8812fb.svg?invert_in_darkmode&sanitize=true" align=middle width="18.95025pt" height="22.38192pt"/>
@@ -209,7 +209,7 @@ symmetry. This would be accomplished with the input</p>
  multiplicity 3
 </code></pre>
 
-<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS &ndash; Input/output of MO vectors</h2>
+<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS &ndash; Input/output of MO vectors<a class="headerlink" href="#vectors-inputoutput-of-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>Calculations are best started from RHF/ROHF molecular orbitals (see
 <a href="Hartree-Fock-Theory-for-Molecules.html">SCF</a>), and by
 default vectors are taken from the previous MCSCF or SCF calculation. To
@@ -241,7 +241,7 @@ follows:</p>
     that in the case of degenerate occupations that this does not fully
     determine the orbitals.</li>
 </ul>
-<h2 id="hessian-select-preconditioner">HESSIAN &ndash; Select preconditioner</h2>
+<h2 id="hessian-select-preconditioner">HESSIAN &ndash; Select preconditioner<a class="headerlink" href="#hessian-select-preconditioner" title="Permanent link">&para;</a></h2>
 <p>The MCSCF will use a one-electron approximation to the orbital-orbital
 Hessian until some degree of convergence is obtained, whereupon it will
 attempt to use the exact orbital-orbital Hessian which makes the micro
@@ -252,7 +252,7 @@ by specifying the appropriate keyword on the HESSIAN directive.</p>
 <pre><code> hessian onel
 </code></pre>
 
-<h2 id="level-level-shift-for-convergence">LEVEL &ndash; Level shift for convergence</h2>
+<h2 id="level-level-shift-for-convergence">LEVEL &ndash; Level shift for convergence<a class="headerlink" href="#level-level-shift-for-convergence" title="Permanent link">&para;</a></h2>
 <p>The <a href="Hessians-and-Vibrational-Frequencies.html">Hessian</a>
 used in the MCSCF optimization is by default level shifted by 0.1 until
 the orbital gradient norm falls below 0.01, at which point the level
@@ -263,7 +263,7 @@ more stable in some instances.</p>
 <pre><code> level 0.5
 </code></pre>
 
-<h2 id="print-and-noprint">PRINT and NOPRINT</h2>
+<h2 id="print-and-noprint">PRINT and NOPRINT<a class="headerlink" href="#print-and-noprint" title="Permanent link">&para;</a></h2>
 <p>Specific output items can be selectively enabled or disabled using the
 <a href="Top-level.html#PRINT_.2F_NOPRINT">print control
 mechanism</a> with the
@@ -389,6 +389,7 @@ below.</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

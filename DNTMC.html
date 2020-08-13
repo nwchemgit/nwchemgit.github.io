@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="dynamical-nucleation-theory-monte-carlo">Dynamical Nucleation Theory Monte Carlo</h1>
+                <h1 id="dynamical-nucleation-theory-monte-carlo">Dynamical Nucleation Theory Monte Carlo<a class="headerlink" href="#dynamical-nucleation-theory-monte-carlo" title="Permanent link">&para;</a></h1>
 <ol>
 <li>Schenter, G. K.; Kathmann, S. M.; Garrett, B. C. J. Chem. Phys.
     (1999), 110, 7951. 2.)Crosby, L. D.; Kathmann, S. M.; Windus, T. L.
@@ -143,7 +143,7 @@ constants at a given temperature. The reactant is a molecular cluster of
 monomers plus a free monomer. A Metropolis Monte Carlo (MC) methodology
 is utilized to sample the configurational space of these <em>i</em> rigid
 monomers. Both homogenous and heterogenous clusters are supported.</p>
-<h2 id="subgroups">SubGroups</h2>
+<h2 id="subgroups">SubGroups<a class="headerlink" href="#subgroups" title="Permanent link">&para;</a></h2>
 <p>The DNTMC module supports the use of subgroups in the MC simulations.
 The number of subgroups is defined in the input through a set directive:</p>
 <p><code>set subgroup_number</code><integer number></p>
@@ -160,7 +160,7 @@ of various files whose names are of the form (*.#num). These files
 include restart files and other data files. The NWChem runtime database
 (RTDB) is used as input for these subgroups and must be globally
 accessible (set through the Permanent_Dir directive) to all processes.</p>
-<h2 id="input-syntax">Input Syntax</h2>
+<h2 id="input-syntax">Input Syntax<a class="headerlink" href="#input-syntax" title="Permanent link">&para;</a></h2>
 <p>The input block has the following form:</p>
 <p><code>DNTMC</code><br />
 <code>[nspecies</code><integer number><code>]</code><br />
@@ -184,7 +184,7 @@ accessible (set through the Permanent_Dir directive) to all processes.</p>
 <code></code><br />
 <code>[procrestart</code><integer number><code>]</code><br />
 <code>END</code></p>
-<h2 id="definition-of-monomers">Definition of Monomers</h2>
+<h2 id="definition-of-monomers">Definition of Monomers<a class="headerlink" href="#definition-of-monomers" title="Permanent link">&para;</a></h2>
 <p>Geometry information is required for each unique monomer (species). See
 the geometry input section 6 for more information. A unique label must
 be given for each monomer geometry. Additionally, the noautosym and
@@ -213,7 +213,7 @@ unique monomer in the molecular cluster given as a space delimited list
 <code>[nmol     &lt;list of integers number[nspecies]&gt;]</code></p>
 <p>An <a href="#Example">example</a> is shown for a 10 monomer cluster
 consisting of a 50/50 mixture of water and ammonia.</p>
-<h2 id="dntmc-runtime-options">DNTMC runtime options</h2>
+<h2 id="dntmc-runtime-options">DNTMC runtime options<a class="headerlink" href="#dntmc-runtime-options" title="Permanent link">&para;</a></h2>
 <p>Several options control the behavior of the DNTMC module. Some required
 options such as simulation temperature (temp), cluster radius (rmin and
 rmax), and maximum number of MC steps (mcsteps) are used to control the
@@ -273,7 +273,7 @@ available. This directory should be accessible by every process
 these files in the directory which NWChem is run (./). The keyword
 norestart turns off the production of restart files. By default restart
 files are produced every mprnt number of MC steps.</p>
-<h2 id="print-control">Print Control</h2>
+<h2 id="print-control">Print Control<a class="headerlink" href="#print-control" title="Permanent link">&para;</a></h2>
 <p>The DNTMC module supports the use of PRINT and NOPRINT Keywords. The
 specific labels which DNTMC recognizes are included
 below.</p>
@@ -330,7 +330,7 @@ below.</p>
 </tbody>
 </table>
 <p></center></p>
-<h2 id="selected-file-formats">Selected File Formats</h2>
+<h2 id="selected-file-formats">Selected File Formats<a class="headerlink" href="#selected-file-formats" title="Permanent link">&para;</a></h2>
 <p>Several output files are available in the DNTMC module. This section
 defines the format for some of these files.</p>
 <ol>
@@ -340,10 +340,11 @@ defines the format for some of these files.</p>
 printed out every mprnt MC steps. Each distribution is normalized
 (sum equal to one) with respect to the entire (all species)
 distribution. The error is the RMS deviation of the average at each
-point. Each entry is as follows: [1] # Total Configurations [2]
-Species number # [3](R coordinate in Angstroms.md) (Probability)
-(Error) [Repeats nob times] [2 and 3 Repeats for each species]
-[4] *** separator.  </p>
+point. Each entry is as follows: <script type="math/tex; mode=display">1</script> # Total Configurations <script type="math/tex; mode=display">2</script>
+Species number # <script type="math/tex; mode=display">3</script>(R coordinate in Angstroms.md) (Probability)
+(Error) <script type="math/tex; mode=display">Repeats nob times</script>
+<script type="math/tex; mode=display">2 and 3 Repeats for each species</script>
+<script type="math/tex; mode=display">4</script> *** separator.  </p>
 </li>
 <li>
 <p>*.MCdata.#  </p>
@@ -352,11 +353,13 @@ file corresponds to a single Markov chain. The dipole is set to zero
 for methods which do not produce a dipole moment with energy
 calculations. Rsim is either the radial extent of the cluster
 (r-config) or the simulation radius (r-simulation). Each entry is as
-follows: [1] (Atomic label) (X Coord.) (Y Coord.) (Z Coord.) [1
+follows: <script type="math/tex; mode=display">1</script> (Atomic label) (X Coord.) (Y Coord.) (Z Coord.) <script type="math/tex; mode=display">1
 Repeats for each atom in the cluster configuration, units are in
-angstroms] [2] Ucalc = # hartree [3] Dipole = (X) (Y) (Z) au
-[4] Rsim = # Angstrom [1 through 4 repeats for each accepted
-configuration]  </p>
+angstroms</script>
+<script type="math/tex; mode=display">2</script> Ucalc = # hartree <script type="math/tex; mode=display">3</script> Dipole = (X) (Y) (Z) au
+<script type="math/tex; mode=display">4</script> Rsim = # Angstrom <script type="math/tex; mode=display">1 through 4 repeats for each accepted
+configuration</script>
+</p>
 </li>
 <li>
 <p>*.MCout.#  </p>
@@ -384,21 +387,23 @@ potential energy Squared potential energy Dipole moment in au (x)
 (Y) (Z) Rmin and Rmax Rsim (Radius corresponds to r-config or r-sim
 methods) Array of nspecies length, value indicates the number of
 each type of monomer which lies at radius Rsim from the center of
-mass [r-simulation sets these to zero] Sum of Rsim Average of Rsim
+mass <script type="math/tex; mode=display">r-simulation sets these to zero</script> Sum of Rsim Average of Rsim
 Number of accepted translantional moves Number of accepted
 rotational moves Number of accepted volume moves Number of attempted
 moves (volume) (translational) (rotational) Number of accepted moves
 (Zero) Number of accepted moves (Zero) Number of MC steps completed
-[1] (Atom label) (X Coord.) (Y Coord.) (Z Coord.) [1 repeats for
-each atom in cluster configurations, units are in angstroms] [2]
-Array of nspecies length, number of configurations in bin [3]
+<script type="math/tex; mode=display">1</script> (Atom label) (X Coord.) (Y Coord.) (Z Coord.) <script type="math/tex; mode=display">1 repeats for
+each atom in cluster configurations, units are in angstroms</script>
+<script type="math/tex; mode=display">2</script>
+Array of nspecies length, number of configurations in bin <script type="math/tex; mode=display">3</script>
 Array of nspecies length, normalized number of configurations in
-each bin [4] (Value of bin in Angstroms) (Array of nspecies
-length, normalized probability of bin) [2 through 4 repeats nob
-times]</p>
+each bin <script type="math/tex; mode=display">4</script> (Value of bin in Angstroms) (Array of nspecies
+length, normalized probability of bin) <script type="math/tex; mode=display">2 through 4 repeats nob
+times</script>
+</p>
 </li>
 </ol>
-<h2 id="dntmc-restart">DNTMC Restart</h2>
+<h2 id="dntmc-restart">DNTMC Restart<a class="headerlink" href="#dntmc-restart" title="Permanent link">&para;</a></h2>
 <p><code>[procrestart</code><integer number><code>]</code></p>
 <p>Flag to indicate restart postprocessing. It is suggested that this
 postprocessing run is done utilizing only one processor.</p>
@@ -416,13 +421,13 @@ files. Task directives are ignored. You must have a RTDB present in your
 permanent directory.</p>
 <p>Once postprocessing is done a standard restart can be done from the RTDB
 by removing the procrestart keyword and including the restart directive.</p>
-<h2 id="task-directives">Task Directives</h2>
+<h2 id="task-directives">Task Directives<a class="headerlink" href="#task-directives" title="Permanent link">&para;</a></h2>
 <p>The DNTMC module can be used with any level of theory which can produce
 energies. Gradients and Hessians are not required within this
 methodology. If dipole moments are available, they are also utilized.
 The task directive for the DNTMC module is shown below:</p>
 <p><code>task</code><string theory><code>dntmc</code></p>
-<h2 id="example">Example</h2>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>This example is for a molecular cluster of 10 monomers. A 50/50 mixture
 of water and ammonia. The energies are done at the SCF/6-31++G** level
 of
@@ -539,6 +544,7 @@ theory.</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="controlling-nwchem-with-python">Controlling NWChem with Python</h1>
+                <h1 id="controlling-nwchem-with-python">Controlling NWChem with Python<a class="headerlink" href="#controlling-nwchem-with-python" title="Permanent link">&para;</a></h1>
 <p>Python (version 1.5.1) programs may be embedded into the NWChem input
 and used to control the execution of NWChem. Python is a very powerful
 and widely used scripting language that provides useful things such as
@@ -142,7 +142,7 @@ finite field, and simple molecular dynamics.</p>
 <p>Look in the NWChem contrib directory for useful scripts and examples.
 Visit the Python web-site <a href="http://www.python.org">http://www.python.org</a> for a full manual and
 lots of useful code and resources.</p>
-<h2 id="how-to-input-and-run-a-python-program-inside-nwchem">How to input and run a Python program inside NWChem</h2>
+<h2 id="how-to-input-and-run-a-python-program-inside-nwchem">How to input and run a Python program inside NWChem<a class="headerlink" href="#how-to-input-and-run-a-python-program-inside-nwchem" title="Permanent link">&para;</a></h2>
 <p>A Python program is input into NWChem inside a Python compound
 directive.</p>
 <p><code>python [print|noprint]</code><br />
@@ -205,7 +205,7 @@ there are some gotchas</p>
 <li>NWChem overrides certain default signal handlers so care must be
     taken when creating processes (see Section 38.3.11).</li>
 </ul>
-<h2 id="nwchem-extensions">NWChem extensions</h2>
+<h2 id="nwchem-extensions">NWChem extensions<a class="headerlink" href="#nwchem-extensions" title="Permanent link">&para;</a></h2>
 <p>Since we have little experience using Python, the NWChem-Python
 interface might change in a non-backwardly compatible fashion as we
 discover better ways of providing useful functionality. We would
@@ -252,10 +252,10 @@ Section 38.3.9).</p>
 below explains, in lieu of a Python wrapper for the geometry object, how
 to obtain the Cartesian molecular coordinates directly from the
 database.</p>
-<h2 id="examples">Examples</h2>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>Several examples will provide the best explanation of how the extensions
 are used, and how Python might prove useful.</p>
-<h3 id="hello-world">Hello world</h3>
+<h3 id="hello-world">Hello world<a class="headerlink" href="#hello-world" title="Permanent link">&para;</a></h3>
 <pre><code>python
   print ('Hello world from process %i'  % ga_nodeid())
 end
@@ -265,7 +265,7 @@ task python
 
 <p>This input prints the traditional greeting from each parallel
 process.</p>
-<h3 id="scanning-a-basis-exponent">Scanning a basis exponent</h3>
+<h3 id="scanning-a-basis-exponent">Scanning a basis exponent<a class="headerlink" href="#scanning-a-basis-exponent" title="Permanent link">&para;</a></h3>
 <pre><code>geometry units au
  O 0 0 0; H 0 1.430 -1.107; H 0 -1.430 -1.107
 end
@@ -301,7 +301,7 @@ you will see is the output from your Python program.</p>
 process execute the print statement inside the Python program.</p>
 <p>Look in the NWChem contrib directory for a routine that makes the above
 task easier.</p>
-<h3 id="scanning-a-basis-exponent-revisited">Scanning a basis exponent revisited</h3>
+<h3 id="scanning-a-basis-exponent-revisited">Scanning a basis exponent revisited<a class="headerlink" href="#scanning-a-basis-exponent-revisited" title="Permanent link">&para;</a></h3>
 <pre><code>geometry units au
 O 0 0 0; H 0 1.430 -1.107; H 0 -1.430 -1.107
 end
@@ -343,7 +343,7 @@ defined which given an exponent returns the energy. Next comes the main
 loop that scans the exponent through the desired range and prints the
 results to standard output and to the file. When the loop is finished
 the additional output file is closed.</p>
-<h3 id="scanning-a-geometric-variable">Scanning a geometric variable</h3>
+<h3 id="scanning-a-geometric-variable">Scanning a geometric variable<a class="headerlink" href="#scanning-a-geometric-variable" title="Permanent link">&para;</a></h3>
 <pre><code>python
    geometry = '''
      geometry noprint; symmetry d2h
@@ -372,7 +372,7 @@ length.</p>
 <p>Look in the NWChem contrib directory for a routine that makes the above
 task
 easier.</p>
-<h3 id="scan-using-the-bsse-counterpoise-corrected-energy">Scan using the BSSE counterpoise corrected energy</h3>
+<h3 id="scan-using-the-bsse-counterpoise-corrected-energy">Scan using the BSSE counterpoise corrected energy<a class="headerlink" href="#scan-using-the-bsse-counterpoise-corrected-energy" title="Permanent link">&para;</a></h3>
 <pre><code>basis spherical
   Ne library cc-pvdz; BqNe library Ne cc-pvdz
   He library cc-pvdz; BqHe library He cc-pvdz
@@ -423,7 +423,7 @@ standard energies, it is possible to compute the analytic derivatives
 term by term. Thus, combining this example and the next could yield the
 foundation of a BSSE corrected geometry optimization
 package.</p>
-<h3 id="scan-the-geometry-and-compute-the-energy-and-gradient">Scan the geometry and compute the energy and gradient</h3>
+<h3 id="scan-the-geometry-and-compute-the-energy-and-gradient">Scan the geometry and compute the energy and gradient<a class="headerlink" href="#scan-the-geometry-and-compute-the-energy-and-gradient" title="Permanent link">&para;</a></h3>
 <pre><code> basis noprint; H library sto-3g; O library sto-3g; end
 
  python
@@ -469,7 +469,7 @@ evaluated by calling <code>task_gradient()</code> which returns a tuple containi
 the energy (a scalar) and the gradient (a vector or list). These are
 printed out exploiting the Python convention that a print statement
 ending in a comma does not print end-of-line.</p>
-<h3 id="reaction-energies-varying-the-basis-set">Reaction energies varying the basis set</h3>
+<h3 id="reaction-energies-varying-the-basis-set">Reaction energies varying the basis set<a class="headerlink" href="#reaction-energies-varying-the-basis-set" title="Permanent link">&para;</a></h3>
 <pre><code>mp2; freeze atomic; end
 
 print none
@@ -506,7 +506,7 @@ fixed, but could be re-optimized in each basis. To illustrate the useful
 associative arrays in Python, the reaction energies are put into the
 associative array energies &ndash; note its declaration at the top of the
 program.</p>
-<h3 id="using-the-database">Using the database</h3>
+<h3 id="using-the-database">Using the database<a class="headerlink" href="#using-the-database" title="Permanent link">&para;</a></h3>
 <p><code>python</code><br />
 <code>rtdb_put("test_int2", 22)</code><br />
 <code>rtdb_put("test_int", [22, 10, 3],    INT)</code><br />
@@ -527,7 +527,7 @@ program.</p>
 <code></code><br />
 <code>task python</code></p>
 <p>This example illustrates how to access the database from Python.</p>
-<h3 id="handling-exceptions-from-nwchem">Handling exceptions from NWChem</h3>
+<h3 id="handling-exceptions-from-nwchem">Handling exceptions from NWChem<a class="headerlink" href="#handling-exceptions-from-nwchem" title="Permanent link">&para;</a></h3>
 <p><code>geometry; he 0 0 0; he 0 0 2; end</code><br />
 <code>basis; he library 3-21g; end</code><br />
 <code>scf; maxiter 1; end</code><br />
@@ -541,7 +541,7 @@ program.</p>
 <code></code><br />
 <code>task python</code></p>
 <p>The above test program shows how to handle exceptions generated by
-NWChem by forcing an SCF calculation on (He_2) to fail due to
+NWChem by forcing an SCF calculation on <script type="math/tex">He_2</script> to fail due to
 insufficient iterations.</p>
 <p>If an NWChem command fails it will raise the exception &ldquo;NWChemError&rdquo;
 (case sensitive) unless the error was fatal. If the exception is not
@@ -552,7 +552,7 @@ been handled.</p>
 <p>If your Python program detects an error, raise an unhandled exception.
 Do not call exit(1) since this may circumvent necessary clean-up of the
 NWChem execution environment.</p>
-<h3 id="accessing-geometry-information-a-temporary-hack">Accessing geometry information &ndash; a temporary hack</h3>
+<h3 id="accessing-geometry-information-a-temporary-hack">Accessing geometry information &ndash; a temporary hack<a class="headerlink" href="#accessing-geometry-information-a-temporary-hack" title="Permanent link">&para;</a></h3>
 <p>In an ideal world the geometry and basis set objects would have full
 Python wrappers, but until then a back-door solution will have to
 suffice. We&rsquo;ve already seen how to use input_parse() to put geometry
@@ -612,7 +612,7 @@ Where at all possible your Python program should generate standard
 NWChem input and pass it to input_parse() rather than setting
 parameters directly in the
 database.</p>
-<h3 id="scaning-a-basis-exponent-yet-again-plotting-and-handling-child-processes">Scaning a basis exponent yet again &ndash; plotting and handling child processes</h3>
+<h3 id="scaning-a-basis-exponent-yet-again-plotting-and-handling-child-processes">Scaning a basis exponent yet again &ndash; plotting and handling child processes<a class="headerlink" href="#scaning-a-basis-exponent-yet-again-plotting-and-handling-child-processes" title="Permanent link">&para;</a></h3>
 <pre><code> geometry units au  
    O 0 0 0; H 0 1.430 -1.107; H 0 -1.430 -1.107  
  end  
@@ -665,7 +665,7 @@ create child processes within Python, then the NWChem handler for
 SIGCHLD must be replaced with the default handler. There seems to be no
 easy way to restore the NWChem handler after the child has completed,
 but this should have no serious side effect.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>Common problems with Python programs inside NWChem.</p>
 <ol>
 <li>
@@ -721,6 +721,7 @@ the line.  </p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

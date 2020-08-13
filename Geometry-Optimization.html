@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="geometry-optimization-with-driver">Geometry Optimization with DRIVER</h1>
+                <h1 id="geometry-optimization-with-driver">Geometry Optimization with DRIVER<a class="headerlink" href="#geometry-optimization-with-driver" title="Permanent link">&para;</a></h1>
 <p>The DRIVER module is one of two drivers (also see documentation on
 <a href="Geometry-Optimization.html#geometry-optimization-with-stepper">STEPPER</a>)
 to perform a geometry optimization function on the molecule defined by
@@ -176,7 +176,7 @@ line search using following directive:</p>
 <pre><code> set driver:linopt 0
 </code></pre>
 
-<h2 id="convergence-criteria">Convergence criteria</h2>
+<h2 id="convergence-criteria">Convergence criteria<a class="headerlink" href="#convergence-criteria" title="Permanent link">&para;</a></h2>
 <pre><code>   (LOOSE || DEFAULT || TIGHT)  
    GMAX &lt;real value&gt;  
    GRMS &lt;real value&gt;  
@@ -238,7 +238,7 @@ coordinate systems.</p>
 <pre><code>  gmax 0.0008; grms 1; xrms 1; xmax 1
 </code></pre>
 
-<h2 id="available-precision">Available precision</h2>
+<h2 id="available-precision">Available precision<a class="headerlink" href="#available-precision" title="Permanent link">&para;</a></h2>
 <pre><code>   EPREC &lt;real eprec default 1e-7&gt;
 </code></pre>
 
@@ -247,7 +247,7 @@ energy (this has nothing to do with convergence criteria). The default
 value of 1e-7 should be adjusted if less, or more, precision is
 available. Note that the default EPREC for DFT calculations is 5e-6
 instead of 1e-7.</p>
-<h2 id="controlling-the-step-length">Controlling the step length</h2>
+<h2 id="controlling-the-step-length">Controlling the step length<a class="headerlink" href="#controlling-the-step-length" title="Permanent link">&para;</a></h2>
 <pre><code>   TRUST &lt;real trust default 0.3&gt;
    SADSTP &lt;real sadstp default 0.1&gt;
 </code></pre>
@@ -258,13 +258,13 @@ saddle-point searches. It defaults to 0.3 for minimizations and 0.1 for
 saddle-point searches. The parameter sadstp is the trust radius used for
 the mode being maximized during a saddle-point search and defaults to
 0.1.</p>
-<h2 id="maximum-number-of-steps">Maximum number of steps</h2>
+<h2 id="maximum-number-of-steps">Maximum number of steps<a class="headerlink" href="#maximum-number-of-steps" title="Permanent link">&para;</a></h2>
 <pre><code>   MAXITER &lt;integer maxiter default 20&gt;
 </code></pre>
 
 <p>By default at most 20 geometry optimization steps will be taken, but
 this may be modified with this directive.</p>
-<h2 id="discard-restart-information">Discard restart information</h2>
+<h2 id="discard-restart-information">Discard restart information<a class="headerlink" href="#discard-restart-information" title="Permanent link">&para;</a></h2>
 <pre><code>   CLEAR
 </code></pre>
 
@@ -272,14 +272,14 @@ this may be modified with this directive.</p>
 optimization, and, to facilitate a restart also stores which mode is
 being followed for a saddle-point search. This option deletes all
 restart data.</p>
-<h2 id="regenerate-internal-coordinates">Regenerate internal coordinates</h2>
+<h2 id="regenerate-internal-coordinates">Regenerate internal coordinates<a class="headerlink" href="#regenerate-internal-coordinates" title="Permanent link">&para;</a></h2>
 <pre><code>   REDOAUTOZ
 </code></pre>
 
 <p>Deletes Hessian data and regenerates internal coordinates at the current
 geometry. Useful if there has been a large change in the geometry that
 has rendered the current set of coordinates invalid or non-optimal.</p>
-<h2 id="initial-hessian">Initial Hessian</h2>
+<h2 id="initial-hessian">Initial Hessian<a class="headerlink" href="#initial-hessian" title="Permanent link">&para;</a></h2>
 <pre><code>   INHESS &lt;integer inhess default 0&gt;
 </code></pre>
 
@@ -311,7 +311,7 @@ using the directive</p>
 using SCF to start a large MP2 optimization. The SCF vibrational modes
 are expected to be stiffer than the MP2, so scaling the initial Hessian
 by a number less than one might be beneficial.</p>
-<h2 id="mode-or-variable-to-follow-to-saddle-point">Mode or variable to follow to saddle point</h2>
+<h2 id="mode-or-variable-to-follow-to-saddle-point">Mode or variable to follow to saddle point<a class="headerlink" href="#mode-or-variable-to-follow-to-saddle-point" title="Permanent link">&para;</a></h2>
 <pre><code>   (MODDIR || VARDIR) &lt;integer dir default 0&gt;  
    (FIRSTNEG || NOFIRSTNEG)
 </code></pre>
@@ -341,7 +341,7 @@ negative mode might not be the one of interest (e.g., transverse to the
 reaction direction). If NOFIRSTNEG is specified, the code will not take
 the first negative direction and will continue doing mode-following
 until that mode goes negative.</p>
-<h2 id="optimization-history-as-xyz-files">Optimization history as XYZ files</h2>
+<h2 id="optimization-history-as-xyz-files">Optimization history as XYZ files<a class="headerlink" href="#optimization-history-as-xyz-files" title="Permanent link">&para;</a></h2>
 <pre><code>   XYZ [&lt;string xyz default $fileprefix&gt;] 
    NOXYZ
 </code></pre>
@@ -358,7 +358,7 @@ filename. The NOXYZ directive turns this off.</p>
 permanent directory.</p>
 <p>The script rasmolmovie in the NWChem contrib directory can be used to
 turn these into an animated GIF movie.</p>
-<h2 id="i-pi-socket-communication">i-PI Socket communication</h2>
+<h2 id="i-pi-socket-communication">i-PI Socket communication<a class="headerlink" href="#i-pi-socket-communication" title="Permanent link">&para;</a></h2>
 <pre><code>   SOCKET (UNIX || IPI_CLIENT) &lt;string socketname default (see input description)&gt;  
 </code></pre>
 
@@ -380,7 +380,7 @@ sockets (<code>SOCKET IPI_CLIENT</code>):</p>
 software packages that support communication via the i-PI socket
 protocol. For more information, see the
 <a href="http://ipi-code.org/resources/documentation/">i-PI documentation</a>.</p>
-<h2 id="print-options">Print options</h2>
+<h2 id="print-options">Print options<a class="headerlink" href="#print-options" title="Permanent link">&para;</a></h2>
 <p>The UNIX command &ldquo;egrep &lsquo;^@&rsquo; \&lt; output&rdquo; will extract a pretty table
 summarizing the optimization.</p>
 <p>If you specify the NWChem input</p>
@@ -412,7 +412,7 @@ recognized</p>
 <li>sadmode (default) - print the mode being followed to the saddle
     point</li>
 </ul>
-<h1 id="geometry-optimization-with-stepper">Geometry Optimization with STEPPER</h1>
+<h1 id="geometry-optimization-with-stepper">Geometry Optimization with STEPPER<a class="headerlink" href="#geometry-optimization-with-stepper" title="Permanent link">&para;</a></h1>
 <p>The STEPPER module performs a search for critical points on the
 potential energy surface of the molecule defined by input using the
 <a href="Geometry.html">GEOMETRY</a> directive. Since STEPPER is
@@ -443,7 +443,7 @@ STEPPER compound directive. However, the user also has the option of
 defining different tasks for the STEPPER module, and can vary the number
 of iterations and the convergence criteria from the default values. The
 input for these options is described in the following sections.</p>
-<h2 id="min-and-ts-minimum-or-transition-state-search">MIN and TS &ndash; Minimum or transition state search</h2>
+<h2 id="min-and-ts-minimum-or-transition-state-search">MIN and TS &ndash; Minimum or transition state search<a class="headerlink" href="#min-and-ts-minimum-or-transition-state-search" title="Permanent link">&para;</a></h2>
 <p>The default is for STEPPER to minimize the energy with respect to the
 geometry of the system. This default behavior may be forced with the
 directive</p>
@@ -459,7 +459,7 @@ selected by specifying the directive</p>
 </code></pre>
 
 <p>in the STEPPER input.</p>
-<h2 id="track-mode-selection">TRACK &ndash; Mode selection</h2>
+<h2 id="track-mode-selection">TRACK &ndash; Mode selection<a class="headerlink" href="#track-mode-selection" title="Permanent link">&para;</a></h2>
 <p>STEPPER has the ability to ``track&rsquo;&lsquo; a specific mode during an
 optimization for a transition state search, the user can also have the
 module track the eigenvector corresponding to a specific mode. This is
@@ -473,7 +473,7 @@ this input is invalid for a minimization walk since following a specific
 eigenvector will not necessarily give the desired local minimum.) The
 step is constructed to go up in energy along the nmode eigenvector and
 down in all other degrees of freedom.</p>
-<h2 id="maxiter-maximum-number-of-steps">MAXITER &ndash; Maximum number of steps</h2>
+<h2 id="maxiter-maximum-number-of-steps">MAXITER &ndash; Maximum number of steps<a class="headerlink" href="#maxiter-maximum-number-of-steps" title="Permanent link">&para;</a></h2>
 <p>In most applications, 20 stepper iterations will be sufficient to obtain
 the energy minimization. However, the user has the option of specifying
 the maximum number of iterations allowed, using the input line,</p>
@@ -483,7 +483,7 @@ the maximum number of iterations allowed, using the input line,</p>
 <p>The value specified for the integer <maxiter> defines the maximum number
 of geometry optimization steps. The geometry optimization will restart
 automatically.</p>
-<h2 id="trust-trust-radius">TRUST &ndash; Trust radius</h2>
+<h2 id="trust-trust-radius">TRUST &ndash; Trust radius<a class="headerlink" href="#trust-trust-radius" title="Permanent link">&para;</a></h2>
 <p>The size of steps that can be taken in STEPPER is controlled by the
 trust radius which has a default value of 0.1. Steps are constrained to
 be no larger than the trust radius. The user has the option of
@@ -496,7 +496,7 @@ input line,</p>
 steps that can be taken by STEPPER. Experience has shown that for larger
 systems (i.e., those with 20 or more atoms), a value of 0.5, or greater,
 usually should be entered for <radius>.</p>
-<h2 id="convggm-convgg-and-convge-convergence-criteria">CONVGGM, CONVGG and CONVGE &ndash; Convergence criteria</h2>
+<h2 id="convggm-convgg-and-convge-convergence-criteria">CONVGGM, CONVGG and CONVGE &ndash; Convergence criteria<a class="headerlink" href="#convggm-convgg-and-convge-convergence-criteria" title="Permanent link">&para;</a></h2>
 <p>Three convergence criteria can be specified explicitly for the STEPPER
 calculations. The keyword CONVGGM allows the user to specify the
 convergence tolerance for the largest component of the gradient. This is
@@ -521,14 +521,14 @@ specified by input using a line of the following form,</p>
 <pre><code>  CONVGE &lt;real convge default 1.0d-04&gt;
 </code></pre>
 
-<h2 id="backstepping-in-stepper">Backstepping in STEPPER</h2>
+<h2 id="backstepping-in-stepper">Backstepping in STEPPER<a class="headerlink" href="#backstepping-in-stepper" title="Permanent link">&para;</a></h2>
 <p>If a step taken during the optimization is too large (e.g., the step
 causes the energy to go up for a minimization or down for a transition
 state search), the STEPPER optimizer will automatically &ldquo;backstep&rdquo;
 and correct the step based on information prior to the faulty step. If
 you have an optimization that &ldquo;backsteps&rdquo; frequently then the initial
 trust radius should most likely be decreased.</p>
-<h2 id="initial-nuclear-hessian-options">Initial Nuclear Hessian Options</h2>
+<h2 id="initial-nuclear-hessian-options">Initial Nuclear Hessian Options<a class="headerlink" href="#initial-nuclear-hessian-options" title="Permanent link">&para;</a></h2>
 <p>Stepper uses a modified Fletcher-Powell algorithm to find the transition
 state or energy minimum on the potential energy hypersurface.<br />
 There are
@@ -590,6 +590,7 @@ of choice and proceed with the optimization you desire.</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

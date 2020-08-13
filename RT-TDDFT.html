@@ -130,8 +130,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="real-time-tddft">Real-time TDDFT</h1>
-<h2 id="overview">Overview</h2>
+                <h1 id="real-time-tddft">Real-time TDDFT<a class="headerlink" href="#real-time-tddft" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Real-time time-dependent density functional theory (RT-TDDFT) is a
 DFT-based approach to electronic excited states based on integrating the
 time-dependent Kohn-Sham (TDKS) equations in time. The theoretical
@@ -163,7 +163,7 @@ implementation assumes frozen nuclei (Born-Oppenheimer approximation).</p>
 <li>Post-process resulting time-dependent observables (e.g., dipole
     moment)</li>
 </ol>
-<h2 id="units">Units</h2>
+<h2 id="units">Units<a class="headerlink" href="#units" title="Permanent link">&para;</a></h2>
 <p>Unless specified otherwise, all inputs and outputs are in <strong>atomic
 units</strong>. Some useful conversions are:</p>
 <table>
@@ -196,7 +196,7 @@ units</strong>. Some useful conversions are:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="syntax">Syntax</h2>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <p>The <a href="Charge.html">charge</a>, <a href="Geometry.html">geometry</a>, <a href="Basis.html">basis
 set</a>, and
 <a href="Density-Functional-Theory-for-Molecules.html">DFT</a> options are
@@ -231,7 +231,7 @@ afterwards.</p>
 END
 </code></pre>
 
-<h3 id="tmax-simulation-time">TMAX &ndash; Simulation time</h3>
+<h3 id="tmax-simulation-time">TMAX &ndash; Simulation time<a class="headerlink" href="#tmax-simulation-time" title="Permanent link">&para;</a></h3>
 <p>This option specifies the maximum time (in au) to run the simulation
 before stopping, which must be a positive real number. In practice, you
 can just stop the simulation early, so in most cases it is simplest to
@@ -247,7 +247,7 @@ to automatically stop at 500 au:</p>
 end
 </code></pre>
 
-<h3 id="dt-time-step">DT &ndash; Time step</h3>
+<h3 id="dt-time-step">DT &ndash; Time step<a class="headerlink" href="#dt-time-step" title="Permanent link">&para;</a></h3>
 <p>This specifies the electronic time step for time integration. A larger
 time step results in a faster simulation, but there are two issues which
 limit the size of the time step. First, the integration algorithm can
@@ -269,7 +269,7 @@ end
 
 <p>It is always good practice to check that your results are independent of
 time step.</p>
-<h3 id="tag-output-label">TAG &ndash; Output label</h3>
+<h3 id="tag-output-label">TAG &ndash; Output label<a class="headerlink" href="#tag-output-label" title="Permanent link">&para;</a></h3>
 <p>This option sets a label for the output for convenient parsing (e.g.,
 with &ldquo;grep&rdquo;). Every output line with time-dependent data will begin with
 this string (set to &ldquo;<rt_tddft>: &rdquo; by default). For example setting:</p>
@@ -286,7 +286,7 @@ nameofrun      2.20000  -7.589146713114E+001     # Etot
 ...
 </code></pre>
 
-<h3 id="nchecks-number-of-run-time-check-points">NCHECKS &ndash; Number of run-time check points</h3>
+<h3 id="nchecks-number-of-run-time-check-points">NCHECKS &ndash; Number of run-time check points<a class="headerlink" href="#nchecks-number-of-run-time-check-points" title="Permanent link">&para;</a></h3>
 <p>This option takes an integer number (default 10), or &ldquo;*&rdquo; which means
 every step, which sets the total of number of run-time checkpoints,
 where various sanity checks are made such as symmetries, idempotency,
@@ -300,7 +300,7 @@ execution.</p>
 end
 </code></pre>
 
-<h3 id="nprints-number-of-print-points">NPRINTS &ndash; Number of print points</h3>
+<h3 id="nprints-number-of-print-points">NPRINTS &ndash; Number of print points<a class="headerlink" href="#nprints-number-of-print-points" title="Permanent link">&para;</a></h3>
 <p>This sets the number of print points, i.e., the total number of
 time-dependent observables (e.g., dipole, charge, energy) that are
 computed and printed. It either takes an integer number or &ldquo;*&rdquo; which
@@ -314,7 +314,7 @@ usually no need to change this from &ldquo;*&ldquo;.</p>
 end
 </code></pre>
 
-<h3 id="nrestarts-number-of-restart-checkpoints">NRESTARTS &ndash; Number of restart checkpoints</h3>
+<h3 id="nrestarts-number-of-restart-checkpoints">NRESTARTS &ndash; Number of restart checkpoints<a class="headerlink" href="#nrestarts-number-of-restart-checkpoints" title="Permanent link">&para;</a></h3>
 <p>This sets the number of run-time check points where the time-dependent
 complex density matrix is saved to file, allowing the simulation to be
 <a href="RT-TDDFT.html#Restarts">restarted</a>) from that point. By
@@ -332,7 +332,7 @@ following example there will be 100 restart points, which corresponds to
 end
 </code></pre>
 
-<h3 id="tolerances-controlling-numerical-tolerances">TOLERANCES &ndash; Controlling numerical tolerances</h3>
+<h3 id="tolerances-controlling-numerical-tolerances">TOLERANCES &ndash; Controlling numerical tolerances<a class="headerlink" href="#tolerances-controlling-numerical-tolerances" title="Permanent link">&para;</a></h3>
 <p>This option controls various numerical tolerances:</p>
 <ul>
 <li>zero: threshold for checks that quantities are zero, e.g., in
@@ -352,7 +352,7 @@ defaults with a looser interpolation tolerance:</p>
 end
 </code></pre>
 
-<h3 id="propagator-selecting-the-integrator-method">PROPAGATOR &ndash; Selecting the integrator method</h3>
+<h3 id="propagator-selecting-the-integrator-method">PROPAGATOR &ndash; Selecting the integrator method<a class="headerlink" href="#propagator-selecting-the-integrator-method" title="Permanent link">&para;</a></h3>
 <p>This selects the propagator (i.e., time integrator) method. Possible
 choices include &ldquo;euler&rdquo; for Euler integration (terrible, you should
 never use this), &ldquo;rk4&rdquo; for 4th order Runge-Kutta, and &ldquo;magnus&rdquo; for 2nd
@@ -366,7 +366,7 @@ useful for debugging or simplicity (e.g., for code development).</p>
 end
 </code></pre>
 
-<h3 id="exp-selecting-the-matrix-exponentiation-method">EXP &ndash; Selecting the matrix exponentiation method</h3>
+<h3 id="exp-selecting-the-matrix-exponentiation-method">EXP &ndash; Selecting the matrix exponentiation method<a class="headerlink" href="#exp-selecting-the-matrix-exponentiation-method" title="Permanent link">&para;</a></h3>
 <p>This selects the method for exponentiation matrices. For now this can
 either be &ldquo;pseries&rdquo; for a contractive power series or &ldquo;diag&rdquo; for
 diagonalization. In general the power series (default) is faster.</p>
@@ -377,7 +377,7 @@ diagonalization. In general the power series (default) is faster.</p>
 end
 </code></pre>
 
-<h3 id="prof-run-time-profiling">PROF &ndash; Run-time profiling</h3>
+<h3 id="prof-run-time-profiling">PROF &ndash; Run-time profiling<a class="headerlink" href="#prof-run-time-profiling" title="Permanent link">&para;</a></h3>
 <p>This turns on run-time profiling, which will display time spent in each
 component of the code (e.g., building components of the TD Fock matrix,
 properites, etc). This slows code down slightly and results in very
@@ -389,7 +389,7 @@ verbose output.</p>
 end
 </code></pre>
 
-<h3 id="noprop-skipping-propagation">NOPROP &ndash; Skipping propagation</h3>
+<h3 id="noprop-skipping-propagation">NOPROP &ndash; Skipping propagation<a class="headerlink" href="#noprop-skipping-propagation" title="Permanent link">&para;</a></h3>
 <p>This options causes the RT-TDDFT module skip propagation, i.e., to
 initialize and finalize. For now this is largely useful for skipping to
 visualization post-processing without having to re-run a simulation.</p>
@@ -400,7 +400,7 @@ visualization post-processing without having to re-run a simulation.</p>
 end
 </code></pre>
 
-<h3 id="static-force-static-fock-matrix">STATIC &ndash; Force static Fock matrix</h3>
+<h3 id="static-force-static-fock-matrix">STATIC &ndash; Force static Fock matrix<a class="headerlink" href="#static-force-static-fock-matrix" title="Permanent link">&para;</a></h3>
 <p>This option sets the static Fock matrix flag, meaning the time-dependent
 Fock matrix will not be recalculated at each time, but instead use the
 t=0 value. This will drastically increase the simulation speed since the
@@ -416,7 +416,7 @@ few uses besides dry-runs and debugging.</p>
 end
 </code></pre>
 
-<h3 id="print-selecting-time-dependent-quantities-to-be-printed">PRINT &ndash; Selecting time-dependent quantities to be printed</h3>
+<h3 id="print-selecting-time-dependent-quantities-to-be-printed">PRINT &ndash; Selecting time-dependent quantities to be printed<a class="headerlink" href="#print-selecting-time-dependent-quantities-to-be-printed" title="Permanent link">&para;</a></h3>
 <p>This sets the various time-dependent properties that are to be computed
 and printed at each print point. Note that for many of these options,
 the values are computed and printed for each geometry specified in the
@@ -444,7 +444,7 @@ geometry &hellip;&rdquo; in the input deck). Possible choices are:</p>
 end
 </code></pre>
 
-<h3 id="field-sub-block-for-specifying-external-electric-fields">FIELD &ndash; Sub-block for specifying external electric fields</h3>
+<h3 id="field-sub-block-for-specifying-external-electric-fields">FIELD &ndash; Sub-block for specifying external electric fields<a class="headerlink" href="#field-sub-block-for-specifying-external-electric-fields" title="Permanent link">&para;</a></h3>
 <p>This sub-block is used to specify external electric fields, each of
 which must be given a unique name. Numerous fields can be specified, but
 each will applied to the system only if an appropriate <a href="RT-TDDFT.html#excite----excitation-rules">excitation
@@ -491,7 +491,7 @@ end
 end
 </code></pre>
 
-<h3 id="excite-excitation-rules">EXCITE &ndash; Excitation rules</h3>
+<h3 id="excite-excitation-rules">EXCITE &ndash; Excitation rules<a class="headerlink" href="#excite-excitation-rules" title="Permanent link">&para;</a></h3>
 <p>This sets the rules for applying external fields to the system. It takes
 the form &ldquo;excite <geom> with <field>&ldquo;, where <geom> is the name of a
 geometry fragment (defaults to &ldquo;geometry&rdquo; which is the default geometry
@@ -506,7 +506,7 @@ takes the form (note that quotes are optional and shown for clarity):</p>
 end
 </code></pre>
 
-<h3 id="visualization-sub-block-for-controlling-3d-visualization">VISUALIZATION &ndash; Sub-block for controlling 3D visualization</h3>
+<h3 id="visualization-sub-block-for-controlling-3d-visualization">VISUALIZATION &ndash; Sub-block for controlling 3D visualization<a class="headerlink" href="#visualization-sub-block-for-controlling-3d-visualization" title="Permanent link">&para;</a></h3>
 <p>This block is used to control visualization of the electronic charge
 density, which is typically used during a resonant excitation. This is a
 two stage process. During the propagation, a series of density matrices
@@ -523,7 +523,7 @@ files.</p>
 end
 </code></pre>
 
-<h3 id="load-restart">LOAD RESTART</h3>
+<h3 id="load-restart">LOAD RESTART<a class="headerlink" href="#load-restart" title="Permanent link">&para;</a></h3>
 <p>This keyword needs to be added to restart a calculation. In the following example, the calculation will restart from the previous calculation and extend the run to the new tmax</p>
 <pre><code>rt_tddft
   ...
@@ -532,8 +532,8 @@ end
 end
 </code></pre>
 
-<h2 id="worked-examples">Worked Examples</h2>
-<h3 id="absorption-spectrum-of-water">Absorption spectrum of water</h3>
+<h2 id="worked-examples">Worked Examples<a class="headerlink" href="#worked-examples" title="Permanent link">&para;</a></h2>
+<h3 id="absorption-spectrum-of-water">Absorption spectrum of water<a class="headerlink" href="#absorption-spectrum-of-water" title="Permanent link">&para;</a></h3>
 <p>Here, we compute the 6-31G/TD-PBE0 absorption spectrum of gas-phase
 water using RT-TDDFT. In the weak-field limit, these results are
 essentially identical to those obtained via traditional linear-response
@@ -699,7 +699,7 @@ field regime, the two are identical. Note the oscillator strengths are
 arbitrary and scaled, if not scaled the area under each RT-TDDFT curve
 should integrate to the linear response oscillator strength.</p>
 <p><img alt="Linear absorption spectrum" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/RT_TDDFT_h2o_abs_spectrum.png" align=middle with="262pt" height="200pt"/>  </p>
-<h3 id="resonant-ultraviolet-excitation-of-water">Resonant ultraviolet excitation of water</h3>
+<h3 id="resonant-ultraviolet-excitation-of-water">Resonant ultraviolet excitation of water<a class="headerlink" href="#resonant-ultraviolet-excitation-of-water" title="Permanent link">&para;</a></h3>
 <p>In this example we compute the time-dependent electron response to a
 quasi-monochromatic laser pulse tuned to a particular transition. We
 will use the results of the previous example (6-31G/PBE0 gas-phase
@@ -806,7 +806,7 @@ system into a superposition of the ground state and the one excited
 state, which manifests as monochromatic oscillations. After the field
 has passed the dipole oscillations continue forever as there is no
 damping in the system.</p>
-<h3 id="charge-transfer-between-a-tcne-dimer">Charge transfer between a TCNE dimer</h3>
+<h3 id="charge-transfer-between-a-tcne-dimer">Charge transfer between a TCNE dimer<a class="headerlink" href="#charge-transfer-between-a-tcne-dimer" title="Permanent link">&para;</a></h3>
 <p>Here we compute the time-dependent charge oscillations between a TCNE
 (tetracyanoethylene) dimer separated by 3 Angstroms, where the top
 molecule starts neutral and the bottom one starts with a -1 charge. This
@@ -1091,6 +1091,7 @@ simulation shows how charge dynamics simulations can be done.</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

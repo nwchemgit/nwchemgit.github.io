@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="vibrational-frequencies">Vibrational frequencies</h2>
+                <h2 id="vibrational-frequencies">Vibrational frequencies<a class="headerlink" href="#vibrational-frequencies" title="Permanent link">&para;</a></h2>
 <p>The nuclear hessian which is used to compute the vibrational frequencies
 can be computed by finite difference for any ab initio wave-function
 that has analytic gradients or by analytic methods for SCF and DFT (see
@@ -154,7 +154,7 @@ most abundant isotope of each element. If the abundance was roughly
 equal, the mass of the isotope with the longest half life was used.</p>
 <p>In addition, the vibrational analysis is given at the default standard
 temperature of 298.15 degrees.</p>
-<h1 id="vibrational-module-input">Vibrational Module Input</h1>
+<h1 id="vibrational-module-input">Vibrational Module Input<a class="headerlink" href="#vibrational-module-input" title="Permanent link">&para;</a></h1>
 <p>All input for the Vibrational Module is optional since the default
 definitions will compute the frequencies and IR intensities. The generic
 module input can begin with vib, freq, frequency and has the form:</p>
@@ -168,7 +168,7 @@ module input can begin with vib, freq, frequency and has the form:</p>
  end
 </code></pre>
 
-<h3 id="hessian-file-reuse">Hessian File Reuse</h3>
+<h3 id="hessian-file-reuse">Hessian File Reuse<a class="headerlink" href="#hessian-file-reuse" title="Permanent link">&para;</a></h3>
 <p>By default the task <theory> frequencies directive will recompute the
 hessian. To reuse the previously computed hessian you need only specify
 reuse in the module input block. If you have stored the hessian in an
@@ -181,7 +181,7 @@ specifying the path to that file.</p>
 geometry specification at the point where the hessian is computed must
 be the default &ldquo;geometry&rdquo; on the current run-time-data-base for the
 projection to work properly.</p>
-<h3 id="redefining-masses-of-elements">Redefining Masses of Elements</h3>
+<h3 id="redefining-masses-of-elements">Redefining Masses of Elements<a class="headerlink" href="#redefining-masses-of-elements" title="Permanent link">&para;</a></h3>
 <p>You may also modify the mass of a specific center or a group of centers
 via the input.</p>
 <p>To modify the mass of a specific center you can simply use:</p>
@@ -235,7 +235,7 @@ end
 task scf frequencies
 </code></pre>
 
-<h3 id="temp-or-temperature">Temp or Temperature</h3>
+<h3 id="temp-or-temperature">Temp or Temperature<a class="headerlink" href="#temp-or-temperature" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module can generate the vibrational analysis at various
 temperatures other than at standard room temperature. Either temp or
 temperature can be used to initiate this command.</p>
@@ -249,7 +249,7 @@ setting the temperatures in a previous &ldquo;VIB&rdquo; command, i.e.</p>
 <pre><code> temp 1 298.15
 </code></pre>
 
-<h3 id="animation">Animation</h3>
+<h3 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module also can generate mode animation input files in the
 standard xyz file format for graphics packages like RasMol or XMol There
 are scripts to automate this for RasMol in
@@ -263,7 +263,7 @@ mechanism simply use the following input directive</p>
 </code></pre>
 
 <p>anywhere in the frequency/vib input block.</p>
-<h4 id="controlling-the-step-size-along-the-mode-vector">Controlling the Step Size Along the Mode Vector</h4>
+<h4 id="controlling-the-step-size-along-the-mode-vector">Controlling the Step Size Along the Mode Vector<a class="headerlink" href="#controlling-the-step-size-along-the-mode-vector" title="Permanent link">&para;</a></h4>
 <p>By default, the step size used is 0.15 a.u. which will give reliable
 animations for most systems. This can be changed via the input directive</p>
 <pre><code> animate real &lt;step_size&gt;
@@ -271,7 +271,7 @@ animations for most systems. This can be changed via the input directive</p>
 
 <p>where <step_size> is the real number that is the magnitude of each step
 along the eigenvector of each nuclear hessian mode in atomic units.</p>
-<h3 id="an-example-input-deck">An Example Input Deck</h3>
+<h3 id="an-example-input-deck">An Example Input Deck<a class="headerlink" href="#an-example-input-deck" title="Permanent link">&para;</a></h3>
 <p>This example input deck will optimize the geometry for the given basis
 set, compute the frequencies for H<sub>2</sub>O, H<sub>2</sub>O at different
 temperatures, D<sub>2</sub>O, HDO, and TDO.</p>
@@ -348,6 +348,7 @@ task scf freq
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

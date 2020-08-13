@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="relativistic-all-electron-approximations">Relativistic all-electron approximations</h1>
+                <h1 id="relativistic-all-electron-approximations">Relativistic all-electron approximations<a class="headerlink" href="#relativistic-all-electron-approximations" title="Permanent link">&para;</a></h1>
 <p>All methods which include treatment of relativistic effects are
 ultimately based on the Dirac equation, which has a four component wave
 function. The solutions to the Dirac equation describe both positrons
@@ -146,13 +146,18 @@ be achieved using a transformation of the Dirac Hamiltonian known in
 general as a Foldy-Wouthuysen transformation. Unfortunately this
 transformation cannot be represented in closed form for a general
 potential, and must be approximated. One popular approach is that
-originally formulated by Douglas and Kroll[1] and developed by
-Hess[2][3]. This approach decouples the positive and negative energy
+originally formulated by Douglas and Kroll<script type="math/tex; mode=display">1</script> and developed by
+Hess<script type="math/tex; mode=display">2</script>
+<script type="math/tex; mode=display">3</script>. This approach decouples the positive and negative energy
 parts to second order in the external potential (and also fourth order
 in the fine structure constant, α). Other approaches include the Zeroth
-Order Regular Approximation (ZORA)[4][5][6][7] and modification
-of the Dirac equation by Dyall[8], and involves an exact FW
-transformation on the atomic basis set level[9][10].</p>
+Order Regular Approximation (ZORA)<script type="math/tex; mode=display">4</script>
+<script type="math/tex; mode=display">5</script>
+<script type="math/tex; mode=display">6</script>
+<script type="math/tex; mode=display">7</script> and modification
+of the Dirac equation by Dyall<script type="math/tex; mode=display">8</script>, and involves an exact FW
+transformation on the atomic basis set level<script type="math/tex; mode=display">9</script>
+<script type="math/tex; mode=display">10</script>.</p>
 <p>Since these approximations only modify the integrals, they can in
 principle be used at all levels of theory. At present the Douglas-Kroll
 and ZORA implementations can be used at all levels of theory whereas
@@ -182,7 +187,7 @@ the speed of light in atomic units:</p>
 
 <p>The following sections describe the optional sub-directives that can be
 specified within the RELATIVISTIC block.</p>
-<h2 id="douglas-kroll-approximation">Douglas-Kroll approximation</h2>
+<h2 id="douglas-kroll-approximation">Douglas-Kroll approximation<a class="headerlink" href="#douglas-kroll-approximation" title="Permanent link">&para;</a></h2>
 <p>The spin-free and spin-orbit one-electron Douglas-Kroll approximation
 have been implemented. The use of relativistic effects from this
 Douglas-Kroll approximation can be invoked by specifying:</p>
@@ -198,15 +203,16 @@ the user will need to define a new RELATIVISTIC block and turn the
 approximation OFF. The user could also simply put a blank RELATIVISTIC
 block in the input file and all options will be turned off.</p>
 <p>The FPP is the approximation based on free-particle projection
-operators[11] whereas the DKH and DKFULL approximations are based on
-external-field projection operators[12]. The latter two are
+operators<script type="math/tex; mode=display">11</script> whereas the DKH and DKFULL approximations are based on
+external-field projection operators<script type="math/tex; mode=display">12</script>. The latter two are
 considerably better approximations than the former. DKH is the
 Douglas-Kroll-Hess approach and is the approach that is generally
 implemented in quantum chemistry codes. DKFULL includes certain
 cross-product integral terms ignored in the DKH approach (see for
-example Häberlen and Rösch[13]). The third-order Douglas-Kroll
+example Häberlen and Rösch<script type="math/tex; mode=display">13</script>). The third-order Douglas-Kroll
 approximation has been implemented by T. Nakajima and K.
-Hirao[14][15]. This approximation can be called using DK3 (DK3
+Hirao<script type="math/tex; mode=display">14</script>
+<script type="math/tex; mode=display">15</script>. This approximation can be called using DK3 (DK3
 without cross-product integral terms) or DK3FULL (DK3 with cross-product
 integral terms).</p>
 <p>The contracted basis sets used in the calculations should reflect the
@@ -227,7 +233,7 @@ chemistry codes that include the Douglas-Kroll method. Additional
 flexibility is available to the user by explicitly specifying a
 Douglas-Kroll fitting basis set. This basis set must be named &ldquo;D-K
 basis&rdquo; (see <a href="Basis.html">Basis Sets</a>).</p>
-<h2 id="zeroth-order-regular-approximation-zora">Zeroth Order regular approximation (ZORA)</h2>
+<h2 id="zeroth-order-regular-approximation-zora">Zeroth Order regular approximation (ZORA)<a class="headerlink" href="#zeroth-order-regular-approximation-zora" title="Permanent link">&para;</a></h2>
 <p>The spin-free and spin-orbit one-electron zeroth-order regular
 approximation (ZORA) have been implemented. ZORA can be accessed only 
 via the DFT and SO-DFT modules. The use of relativistic
@@ -268,7 +274,7 @@ in the relativistic block</p>
 </code></pre>
 
 <p>Both approaches are comparable in accuracy and depends on the system.</p>
-<h2 id="dyalls-modified-dirac-hamitonian-approximation">Dyall&rsquo;s Modified Dirac Hamitonian approximation</h2>
+<h2 id="dyalls-modified-dirac-hamitonian-approximation">Dyall&rsquo;s Modified Dirac Hamitonian approximation<a class="headerlink" href="#dyalls-modified-dirac-hamitonian-approximation" title="Permanent link">&para;</a></h2>
 <p>The approximate methods described in this section are all based on
 Dyall&rsquo;s modified Dirac Hamiltonian. This Hamiltonian is entirely
 equivalent to the original Dirac Hamiltonian, and its solutions have the
@@ -428,7 +434,7 @@ nonrelativistic.</p>
  task scf
 </code></pre>
 
-<h3 id="references">References</h3>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Douglas, M.; Kroll, N.M. (1974). &ldquo;Quantum electrodynamical corrections to the fine structure of helium&rdquo;. Annals of Physics 82: 89-155. doi:10.1016/0003-4916(74)90333-9. ISSN 0003-4916. </li>
 <li>Hess, B.A. (1985). &ldquo;Applicability of the no-pair equation with free-particle projection operators to atomic and molecular structure calculations&rdquo;. Physical Review A 32: 756-763. doi:10.1103/PhysRevA.32.756. </li>
@@ -482,6 +488,7 @@ nonrelativistic.</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

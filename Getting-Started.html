@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="getting-started">Getting Started</h1>
+                <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
 <p>This section provides an overview of NWChem input and program
 architecture, and the syntax used to describe the input. See <a href="#simple-input-file----scf-geometry-optimization">Simple
 Input File</a>
@@ -178,7 +178,7 @@ defaults are noted, where applicable.</p>
 <p>The input file structure is described in the following sections, and
 illustrated with two examples. The input format and syntax for
 directives is also described in detail.</p>
-<h2 id="nwchemrc-for-environment-variables-and-libraries">.nwchemrc for environment variables and libraries</h2>
+<h2 id="nwchemrc-for-environment-variables-and-libraries">.nwchemrc for environment variables and libraries<a class="headerlink" href="#nwchemrc-for-environment-variables-and-libraries" title="Permanent link">&para;</a></h2>
 <p>Each user should have a .nwchemrc file to point to default data files,
 such as basis sets, pseudopotentials, and MD potentials.</p>
 <p>Contents of the default.nwchemrc file based on the above information
@@ -200,7 +200,7 @@ allow you to overwrite the value of nwchem_basis_library in your
 .nwchemrc file and point to the new basis library. For example:</p>
 <p><code>% setenv NWCHEM_BASIS_LIBRARY "$NWCHEM/data-5.0/libraries/"</code></p>
 <p>Do not forget the trailing &ldquo;/&rdquo;.</p>
-<h2 id="input-file-structure">Input File Structure</h2>
+<h2 id="input-file-structure">Input File Structure<a class="headerlink" href="#input-file-structure" title="Permanent link">&para;</a></h2>
 <p>The structure of an input file reflects the internal structure of
 NWChem. At the beginning of a calculation, NWChem needs to determine how
 much memory to use, the name of the database, whether it is a new or
@@ -242,7 +242,7 @@ nwchem.nw if no file name is provided), an error is reported and
 execution terminates. The following section presents two input files to
 illustrate the directive syntax and input file format for NWChem
 applications.</p>
-<h2 id="simple-input-file-scf-geometry-optimization">Simple Input File &ndash; SCF geometry optimization</h2>
+<h2 id="simple-input-file-scf-geometry-optimization">Simple Input File &ndash; SCF geometry optimization<a class="headerlink" href="#simple-input-file-scf-geometry-optimization" title="Permanent link">&para;</a></h2>
 <p>A simple example of an NWChem input file is an SCF geometry optimization
 of the nitrogen molecule, using a Dunning cc-pvdz basis set. This input
 file contains the bare minimum of information the user must specify to
@@ -282,7 +282,7 @@ a typical UNIX workstation is as follows:</p>
 <p><code>nwchem n2</code></p>
 <p>NWChem output is to UNIX standard output, and error messages are sent to
 both standard output and standard error.</p>
-<h2 id="water-molecule-sample-input-file">Water Molecule Sample Input File</h2>
+<h2 id="water-molecule-sample-input-file">Water Molecule Sample Input File<a class="headerlink" href="#water-molecule-sample-input-file" title="Permanent link">&para;</a></h2>
 <p>A more complex sample problem is the optimization of a positively
 charged water molecule using second-order Møller-Plesset perturbation
 theory (MP2), followed by a computation of frequencies at the optimized
@@ -372,7 +372,7 @@ The second derivatives of the energy are calculated as numerical
 derivatives of analytical gradients. The intermediate energies and
 gradients are not of interest in this case, so output from the SCF and
 MP2 modules is disabled with the PRINT directives.</p>
-<h2 id="input-format-and-syntax-for-directives">Input Format and Syntax for Directives</h2>
+<h2 id="input-format-and-syntax-for-directives">Input Format and Syntax for Directives<a class="headerlink" href="#input-format-and-syntax-for-directives" title="Permanent link">&para;</a></h2>
 <p>This section describes the input format and the syntax used in the rest
 of this documentation to describe the format of directives. The input
 format for the directives used in NWChem is similar to that of UNIX
@@ -383,7 +383,7 @@ enclosed in double quotes in order to be processed correctly. For
 example, the basis set with the descriptive name modified Dunning DZ
 must appear in a directive as &ldquo;modified Dunning DZ&rdquo;, since the name
 consists of three separate words.</p>
-<h3 id="input-format">Input Format</h3>
+<h3 id="input-format">Input Format<a class="headerlink" href="#input-format" title="Permanent link">&para;</a></h3>
 <p>A (physical) line in the input file is terminated with a newline
 character (also known as a `return&rsquo; or `enter&rsquo; character). A semicolon
 (;) can be also used to indicate the end of an input line, allowing a
@@ -427,7 +427,7 @@ logical or physical input line must be no longer than 1023 characters.</p>
     or until the string EOF (ignoring case) is encountered at the
     beginning of an input line.</li>
 </ul>
-<h3 id="format-and-syntax-of-directives">Format and syntax of directives</h3>
+<h3 id="format-and-syntax-of-directives">Format and syntax of directives<a class="headerlink" href="#format-and-syntax-of-directives" title="Permanent link">&para;</a></h3>
 <p>Directives consist of a directive name, keywords, and optional input,
 and may contain one line or many. Simple directives consist of a single
 line of input with one or more fields. Compound directives can have
@@ -460,7 +460,8 @@ conventions are used in the generic descriptions of the NWChem input.</p>
 <li>() is used to group items (the parentheses and other special symbols
     should not appear in the input).</li>
 <li>|| separate exclusive options, parameters, or formats.</li>
-<li>[  ] enclose optional entries that have a default value.</li>
+<li>
+<script type="math/tex; mode=display">  </script> enclose optional entries that have a default value.</li>
 <li>&lt; &gt; enclose a type, a name of a value to be specified, or a
     default value, if any.</li>
 <li>\ is used to concatenate lines in a description.</li>
@@ -570,6 +571,7 @@ particular directive.</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

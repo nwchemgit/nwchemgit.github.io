@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h5 id="contents">Contents</h5>
+                <h5 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h5>
 <ul>
 <li><a href="#pseudopotential-plane-wave-density-functional-theory-nwpw">1 Pseudopotential plane-wave density functional theory (NWPW)</a></li>
 <li><a href="#pspw-tasks---gamma-point-calculations">1.1 PSPW Tasks - Gamma Point Calculations</a><ul>
@@ -270,7 +270,7 @@
 <li><a href="#development-blog">1.32 Development Blog</a></li>
 <li><a href="#questions-and-difficulties">1.33 Questions and Difficulties</a></li>
 </ul>
-<h1 id="pseudopotential-plane-wave-density-functional-theory-nwpw">Pseudopotential plane-wave density functional theory (NWPW)</h1>
+<h1 id="pseudopotential-plane-wave-density-functional-theory-nwpw">Pseudopotential plane-wave density functional theory (NWPW)<a class="headerlink" href="#pseudopotential-plane-wave-density-functional-theory-nwpw" title="Permanent link">&para;</a></h1>
 <p>The NWChem plane-wave (NWPW) module uses pseudopotentials and plane-wave
 basis sets to perform Density Functional Theory calculations (simple
 introduction <a href="pw-lecture.pdf">pw-lecture.pdf</a>).
@@ -331,7 +331,7 @@ the BAND module. Unfortunately, the porting to BAND was not completed
 for the NWChem 6.6 release.</em> </span></p>
 <p>If you are a first time user of this module it is recommended that you
 skip the next five sections and proceed directly to the tutorials.</p>
-<h2 id="pspw-tasks-gamma-point-calculations">PSPW Tasks - Gamma Point Calculations</h2>
+<h2 id="pspw-tasks-gamma-point-calculations">PSPW Tasks - Gamma Point Calculations<a class="headerlink" href="#pspw-tasks-gamma-point-calculations" title="Permanent link">&para;</a></h2>
 <p>All input to the PSPW Tasks is contained within the compound PSPW block,</p>
 <pre><code>PSPW 
   ...
@@ -539,7 +539,7 @@ set nwpw:lcao_print .true. # Output produced during the generation of 
 set nwpw:lcao_iterations 2 #specifies the number of LCAO iterations.
 </code></pre>
 
-<h3 id="paw-potentials">PAW Potentials</h3>
+<h3 id="paw-potentials">PAW Potentials<a class="headerlink" href="#paw-potentials" title="Permanent link">&para;</a></h3>
 <p>The PSPW code can now handle PAW potentials. To use them the
 pseudopotentials input block is used to redirect the code to use the paw
 potentials located in the default paw potential library
@@ -574,7 +574,7 @@ set nwpw:stress_numerical .true.
 set nwpw:lstress_numerical .true.
 </code></pre>
 
-<h4 id="paw-implementation-notes">PAW Implementation Notes</h4>
+<h4 id="paw-implementation-notes">PAW Implementation Notes<a class="headerlink" href="#paw-implementation-notes" title="Permanent link">&para;</a></h4>
 <p>The main idea in the PAW method(Blochl 1994) is to project out the
 high-frequency components of the wavefunction in the atomic sphere
 region. Effectively this splits the original wavefunction into two
@@ -646,7 +646,7 @@ where</p>
 <p><img alt="$\tilde{E}_{xc-pw} = \frac{\Omega}{N_1 N_2 N_3} \sum_{\mathbf{r}} \tilde{\rho}(\mathbf{r}) \epsilon_{xc}(\tilde{\rho}(\mathbf{r}))$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b3516c11341b2721685de47027419b10.svg?invert_in_darkmode&sanitize=true" align=middle width="250.779045pt" height="30.18576pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$E_{ion-ion} = &amp;#10;\begin{matrix}&amp;#10; \frac{1}{2\Omega} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|^2} \exp(\frac{|\mathbf{G}|^2}{4\epsilon}) \sum_{I,J} Z_I \exp (-i \mathbf{G} \cdot \mathbf{R}_I) Z_J \exp ( -i  \mathbf{G} \cdot \mathbf{R}_J) \\&amp;#10;+ \frac{1}{2}\sum_{\mathbf{a}} \sum_{I,J \in |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} Z_I Z_J \frac{erf(\epsilon |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|)}{|\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} - \frac{\epsilon}{\pi}\sum_I Z_I^2 - \frac{\pi}{2\epsilon^2\Omega} \left( \sum_I Z_I \right)^2&amp;#10;\end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0df3a031b119b9a2b3c868b59e78f681.svg?invert_in_darkmode&sanitize=true" align=middle width="714.572595pt" height="60.10323pt"/></p>
+<p><img alt="$E_{ion-ion} = &amp;#10;<script type="math/tex; mode=display">\begin{matrix}&amp;#10; \frac{1}{2\Omega} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|^2} \exp(\frac{|\mathbf{G}|^2}{4\epsilon}) \sum_{I,J} Z_I \exp (-i \mathbf{G} \cdot \mathbf{R}_I) Z_J \exp ( -i  \mathbf{G} \cdot \mathbf{R}_J) \\&amp;#10;+ \frac{1}{2}\sum_{\mathbf{a}} \sum_{I,J \in |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} Z_I Z_J \frac{erf(\epsilon |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|)}{|\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} - \frac{\epsilon}{\pi}\sum_I Z_I^2 - \frac{\pi}{2\epsilon^2\Omega} \left( \sum_I Z_I \right)^2&amp;#10;\end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0df3a031b119b9a2b3c868b59e78f681.svg?invert_in_darkmode&sanitize=true" align=middle width="714.572595pt" height="60.10323pt"/></p>
 <p></center></p>
 <p>The local potential in the <img alt="$\tilde{E}_{vlocal-pw}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ed7e25bd59dfd54bb862a0196b05c232.svg?invert_in_darkmode&sanitize=true" align=middle width="73.65996pt" height="30.18576pt"/> term is the Fourier
 transform
@@ -748,15 +748,15 @@ are</p>
 <p><center></p>
 <p><img alt="$\tau_{l_\alpha m_\alpha,l_\beta m_\beta}^{lm}= \int_0^{2\pi} \int_0^{\pi} T_{lm} (\theta,\phi) T_{l_\alpha m_\alpha } (\theta,\phi) T_{l_\beta m_\beta } (\theta,\phi)  \sin(\theta) d\theta d\phi$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/aa22bd7b752349e96d6a8f4953dd5b90.svg?invert_in_darkmode&sanitize=true" align=middle width="452.729145pt" height="33.132pt"/></p>
 <p></center></p>
-<h3 id="exchange-correlation-potentials">Exchange-Correlation Potentials</h3>
-<h4 id="dft-u-corrections">DFT + U Corrections</h4>
+<h3 id="exchange-correlation-potentials">Exchange-Correlation Potentials<a class="headerlink" href="#exchange-correlation-potentials" title="Permanent link">&para;</a></h3>
+<h4 id="dft-u-corrections">DFT + U Corrections<a class="headerlink" href="#dft-u-corrections" title="Permanent link">&para;</a></h4>
 <p>TO DO</p>
 <pre><code>nwpw 
   uterm d 0.13634 0.0036749 1 
 end
 </code></pre>
 
-<h4 id="langreth-style-vdw-and-vdw-van-der-wall-functionals">Langreth style vdw and vdw van der Wall functionals</h4>
+<h4 id="langreth-style-vdw-and-vdw-van-der-wall-functionals">Langreth style vdw and vdw van der Wall functionals<a class="headerlink" href="#langreth-style-vdw-and-vdw-van-der-wall-functionals" title="Permanent link">&para;</a></h4>
 <p>These potenials that are used to augment standard exchange-correlation potentials area calculated from a double integral over a nonlocal interaction kernel,
 <img alt="img" src="http://latex.codecogs.com/svg.latex?%5Cphi%28%5Cmathbf%7Br%7D%2C%5Cmathbf%7Br%27%7D%29" />,</p>
 <p><img alt="img" src="http://latex.codecogs.com/svg.latex?E%5E%7Bvdw%7D%3D%5Cfrac%7B1%7D%7B2%7D%5Ciint%5Crho%28%5Cmathbf%7Br%7D%29%5Cphi%28%5Cmathbf%7Br%7D%2C%5Cmathbf%7Br%27%7D%29%5Crho%28%5Cmathbf%7Br%27%7D%29d%5Cmathbf%7Br%7Dd%5Cmathbf%7Br%27%7D" /></p>
@@ -782,7 +782,7 @@ end
 <p>the vdw and vdw2 functionals are defined in  </p>
 <p>(vdw) Dion M, Rydberg H, Schröder E, Langreth DC, Lundqvist BI. Van der Waals density functional for general geometries. Physical review letters. 2004 Jun 16;92(24):246401.</p>
 <p>(vdw2) K. Lee, E. D. Murray, L. Kong, B. I. Lundqvist, and D. C. Langreth, Phys. Rev. B 82, 081101 (2010).</p>
-<h4 id="grimme-dispersion-corrections">Grimme Dispersion Corrections</h4>
+<h4 id="grimme-dispersion-corrections">Grimme Dispersion Corrections<a class="headerlink" href="#grimme-dispersion-corrections" title="Permanent link">&para;</a></h4>
 <p>Grimme dispersion corrections are currently available for the PBE96,
 revPBE, PBEsol, BLYP, PBE0, revPBE0, HSE, and B3LYP exchange-correlation
 functionals. To use them the following keywords PBE96-Grimme2,
@@ -814,7 +814,7 @@ Ehrlich and L. Goerigk, J. Comput. Chem, 32 (2011), 1456-1465. This
 correction augments the Grimme3 correction by including BJ-damping.</p>
 <p>If these functionals are used in a publication please include in your
 citations the references to Grimme&rsquo;s work.</p>
-<h4 id="using-exchange-correlation-potentials-available-in-the-dft-module">Using Exchange-Correlation Potentials Available in the DFT Module</h4>
+<h4 id="using-exchange-correlation-potentials-available-in-the-dft-module">Using Exchange-Correlation Potentials Available in the DFT Module<a class="headerlink" href="#using-exchange-correlation-potentials-available-in-the-dft-module" title="Permanent link">&para;</a></h4>
 <p>(<span style="color: red;"><em>Warning - To use this capability in NWChem
 6.6 the user must explicitly include the nwxc module in the
 NWCHEM_MODULES list when compiling. Unfortunately, there was too much
@@ -884,8 +884,8 @@ as:</p>
 becke88 nonlocal 0.542  xperdew91 nonlocal 0.167
 </code></pre>
 
-<h4 id="exact-exchange">Exact Exchange</h4>
-<h4 id="self-interaction-corrections">Self-Interaction Corrections</h4>
+<h4 id="exact-exchange">Exact Exchange<a class="headerlink" href="#exact-exchange" title="Permanent link">&para;</a></h4>
+<h4 id="self-interaction-corrections">Self-Interaction Corrections<a class="headerlink" href="#self-interaction-corrections" title="Permanent link">&para;</a></h4>
 <p>The SET directive is used to specify the molecular orbitals contribute
 to the self-interaction-correction (SIC) term.</p>
 <p><code>set pspw:SIC_orbitals</code><integer list_of_molecular_orbital_numbers></p>
@@ -913,7 +913,7 @@ following SET directives:</p>
 set pspw:SIC_screening_power &lt;real rpower&gt;
 </code></pre>
 
-<h3 id="wannier">Wannier</h3>
+<h3 id="wannier">Wannier<a class="headerlink" href="#wannier" title="Permanent link">&para;</a></h3>
 <p>The pspw wannier task is generate maximally localized (Wannier)
 molecular orbitals. The algorithm proposed by Silvestrelli et al is use
 to generate the Wannier orbitals.</p>
@@ -947,8 +947,8 @@ END
 <li><output_wavefunctions> - name of pspw wavefunction file that will
     contain the Wannier orbitals.</li>
 </ul>
-<h3 id="mulliken-analysis">Mulliken Analysis</h3>
-<h3 id="density-of-states">Density of States</h3>
+<h3 id="mulliken-analysis">Mulliken Analysis<a class="headerlink" href="#mulliken-analysis" title="Permanent link">&para;</a></h3>
+<h3 id="density-of-states">Density of States<a class="headerlink" href="#density-of-states" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;dos&rdquo; option is used to turn on a density of states analysis. This
 option can be specified without additional parameters, i.e.</p>
 <pre><code>nwpw 
@@ -1009,7 +1009,7 @@ restricted calculations</p>
 determine weights for dos generation. If the variable is not set then
 all the atoms are used, e.g.</p>
 <p><code>set nwpw:dos:actlist 1 2 3 4</code></p>
-<h3 id="projected-density-of-states">Projected Density of States</h3>
+<h3 id="projected-density-of-states">Projected Density of States<a class="headerlink" href="#projected-density-of-states" title="Permanent link">&para;</a></h3>
 <p>For projected density of states the &ldquo;Mulliken&rdquo; keyword needs to be set,
 e.g.</p>
 <pre><code>nwpw 
@@ -1091,7 +1091,7 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_beta_all - total of projected density
     of states of virtual down states</li>
 </ul>
-<h3 id="point-charge-analysis">Point Charge Analysis</h3>
+<h3 id="point-charge-analysis">Point Charge Analysis<a class="headerlink" href="#point-charge-analysis" title="Permanent link">&para;</a></h3>
 <p>The MULLIKEN option can be used to generate derived atomic point charges
 from a plane-wave density. This analysis is based on a strategy
 suggested in the work of P.E. Blochl, J. Chem. Phys. vol. 103, page 7422
@@ -1111,7 +1111,7 @@ set nwpw_APC:nga 3
 set nwpw_APC:gamma 0.6 0.9 1.35  
 </code></pre>
 
-<h3 id="pspw_dplot-generate-gaussian-cube-files">PSPW_DPLOT - Generate Gaussian Cube Files</h3>
+<h3 id="pspw_dplot-generate-gaussian-cube-files">PSPW_DPLOT - Generate Gaussian Cube Files<a class="headerlink" href="#pspw_dplot-generate-gaussian-cube-files" title="Permanent link">&para;</a></h3>
 <p>The pspw dplot task is used to generate plots of various types of
 electron densities (or orbitals) of a molecule. The electron density is
 calculated on the specified set of grid points from a PSPW calculation.
@@ -1181,7 +1181,7 @@ defined by the input wavefunctions. Alternatively the user can use the
 LIMITXYZ sub-directive to specify other limits. The grid is generated
 using No_Of_Spacings + 1 points along each direction. The known names
 for Units are angstroms, au and bohr.</p>
-<h2 id="band-tasks-multiple-k-point-calculations">Band Tasks - Multiple k-point Calculations</h2>
+<h2 id="band-tasks-multiple-k-point-calculations">Band Tasks - Multiple k-point Calculations<a class="headerlink" href="#band-tasks-multiple-k-point-calculations" title="Permanent link">&para;</a></h2>
 <p>All input to the Band Tasks is contained within the compound NWPW block,</p>
 <pre><code>NWPW   
  ...  
@@ -1294,7 +1294,7 @@ END 
     minimizer. Several options are available for setting the density or
     potential mixing, and the type of Kohn-Sham minimizer.</li>
 </ul>
-<h3 id="brillouin-zone">Brillouin Zone</h3>
+<h3 id="brillouin-zone">Brillouin Zone<a class="headerlink" href="#brillouin-zone" title="Permanent link">&para;</a></h3>
 <p>To supply the special points of the Brillouin zone, the user defines a
 brillouin_zone sub-block within the NWPW block. Listed below is the
 format of a brillouin_zone
@@ -1320,7 +1320,7 @@ The following list describes the input in detail.</p>
     that the sum of all the weights for the entered special points adds
     up to unity.</li>
 </ul>
-<h4 id="band-structure-paths">Band Structure Paths</h4>
+<h4 id="band-structure-paths">Band Structure Paths<a class="headerlink" href="#band-structure-paths" title="Permanent link">&para;</a></h4>
 <p>SC: gamma, m, r, x</p>
 <p>FCC: gamma, k, l, u, w, x</p>
 <p>BCC: gamma, h, n, p</p>
@@ -1329,12 +1329,12 @@ The following list describes the input in detail.</p>
 <p>Simple Tetragonal: gamma, a, m, r, x, z</p>
 <p>Simple Orthorhombic: gamma, r, s, t, u, x, y, z</p>
 <p>Body-Centered Tetragonal: gamma, m, n, p, x</p>
-<h4 id="special-points-of-different-space-groups-conventional-cells">Special Points of Different Space Groups (Conventional Cells)</h4>
+<h4 id="special-points-of-different-space-groups-conventional-cells">Special Points of Different Space Groups (Conventional Cells)<a class="headerlink" href="#special-points-of-different-space-groups-conventional-cells" title="Permanent link">&para;</a></h4>
 <p>(1) P1</p>
 <p>(2) P-1</p>
 <p>(3)</p>
-<h3 id="screened-exchange">Screened Exchange</h3>
-<h3 id="density-of-states-and-projected-density-of-states">Density of States and Projected Density of States</h3>
+<h3 id="screened-exchange">Screened Exchange<a class="headerlink" href="#screened-exchange" title="Permanent link">&para;</a></h3>
+<h3 id="density-of-states-and-projected-density-of-states">Density of States and Projected Density of States<a class="headerlink" href="#density-of-states-and-projected-density-of-states" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;dos&rdquo; option is used to calculate density of states using broadening
 of the eigenvalues . This option can be specified without additional
 parameters, i.e.</p>
@@ -1477,8 +1477,8 @@ permanent_dir for restricted calculations</p>
 <li>file_prefix.mulliken_vdos_beta_all - total of projected density
     of states of virtual down states</li>
 </ul>
-<h3 id="two-component-wavefunctions-spin-orbit-zora">Two-Component Wavefunctions (Spin-Orbit ZORA)</h3>
-<h3 id="band_dplot-generate-gaussian-cube-files">BAND_DPLOT - Generate Gaussian Cube Files</h3>
+<h3 id="two-component-wavefunctions-spin-orbit-zora">Two-Component Wavefunctions (Spin-Orbit ZORA)<a class="headerlink" href="#two-component-wavefunctions-spin-orbit-zora" title="Permanent link">&para;</a></h3>
+<h3 id="band_dplot-generate-gaussian-cube-files">BAND_DPLOT - Generate Gaussian Cube Files<a class="headerlink" href="#band_dplot-generate-gaussian-cube-files" title="Permanent link">&para;</a></h3>
 <p>The BAND BAND_DPLOT task is used to generate plots of various types of
 electron densities (or orbitals) of a crystal. The electron density is
 calculated on the specified set of grid points from a Band calculation.
@@ -1547,7 +1547,7 @@ defined by the input wavefunctions. Alternatively the user can use the
 LIMITXYZ sub-directive to specify other limits. The grid is generated
 using No_Of_Spacings + 1 points along each direction. The known names
 for Units are angstroms, au and bohr.</p>
-<h2 id="car-parrinello">Car-Parrinello</h2>
+<h2 id="car-parrinello">Car-Parrinello<a class="headerlink" href="#car-parrinello" title="Permanent link">&para;</a></h2>
 <p>The Car-Parrinello task is used to perform ab initio molecular dynamics
 using the scheme developed by Car and Parrinello. In this unified ab
 initio molecular dynamics scheme the motion of the ion cores is coupled
@@ -1702,7 +1702,7 @@ END
 <li>MULLIKEN - optional keyword which if specified causes an omotion
     motion file to be created.</li>
 <li><omotion_filename> - name of the omotion motion file. See section
-    [[#OMOTION motion file|OMOTION motion file] for a description of
+    <script type="math/tex; mode=display">\[\#OMOTION motion file|OMOTION motion file</script> for a description of
     the datafile.</li>
 </ul>
 <p>When a DPLOT sub-block is specified the following SET directive can be
@@ -1714,7 +1714,7 @@ with the specified iteration number.</p>
 3,10,11,12,13,14,15, and 50 iterations Gaussian cube files are to be
 produced.</p>
 <p><code>set pspw_dplot:iteration_list 3,10:15,50</code></p>
-<h3 id="adding-geometry-constraints-to-a-car-parrinello-simulation">Adding Geometry Constraints to a Car-Parrinello Simulation</h3>
+<h3 id="adding-geometry-constraints-to-a-car-parrinello-simulation">Adding Geometry Constraints to a Car-Parrinello Simulation<a class="headerlink" href="#adding-geometry-constraints-to-a-car-parrinello-simulation" title="Permanent link">&para;</a></h3>
 <p>The Car-Parrinello module allows users to freeze the cartesian
 coordinates in a simulation (Note - the Car-Parrinello code recognizes
 Cartesian constraints, but it does not recognize internal coordinate
@@ -1748,8 +1748,8 @@ bohrs. Note that this input only recognizes bohrs.</p>
 <p>When using constraints it is usually necessary to turn off center of
 mass shifting. This can be done by the following +SET+ directive.</p>
 <p><code>set nwpw:com_shift .false.</code></p>
-<h3 id="car-parrinello-output-datafiles">Car-Parrinello Output Datafiles</h3>
-<h4 id="xyz-motion-file">XYZ motion file</h4>
+<h3 id="car-parrinello-output-datafiles">Car-Parrinello Output Datafiles<a class="headerlink" href="#car-parrinello-output-datafiles" title="Permanent link">&para;</a></h3>
+<h4 id="xyz-motion-file">XYZ motion file<a class="headerlink" href="#xyz-motion-file" title="Permanent link">&para;</a></h4>
 <p>Data file that stores ion positions and velocities as a function of time
 in XYZ
 format.</p>
@@ -1764,7 +1764,7 @@ end do
 [line 2*n_ion+4: ] ....
 </code></pre>
 
-<h4 id="ion_motion-motion-file">ION_MOTION motion file</h4>
+<h4 id="ion_motion-motion-file">ION_MOTION motion file<a class="headerlink" href="#ion_motion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that stores ion positions and velocities as a function of
 time</p>
 <pre><code>[line 1: ] it_out, n_ion, omega, a1.x,a1.y,a1.z, a2.x,a2,y,a2.z, a3.x,a3.y,a3.z 
@@ -1779,7 +1779,7 @@ end do
 [line 2*n_ion+4: ] ....
 </code></pre>
 
-<h4 id="emotion-motion-file">EMOTION motion file</h4>
+<h4 id="emotion-motion-file">EMOTION motion file<a class="headerlink" href="#emotion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that store energies as a function of
 time.</p>
 <pre><code>[line 1: ] time, E1,E2,E3,E4,E5,E6,E7,E8,(E9,E10, if Nose-Hoover),eave,evar,have,hvar,ion_Temp 
@@ -1802,7 +1802,7 @@ hvar = variance of total energy
 ion_Temp = temperature
 </code></pre>
 
-<h4 id="hmotion-motion-file">HMOTION motion file</h4>
+<h4 id="hmotion-motion-file">HMOTION motion file<a class="headerlink" href="#hmotion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that stores the rotation matrix as a function of time.</p>
 <pre><code>[line 1: ] time
 [line 2: ] ms,ne(ms),ne(ms)
@@ -1813,18 +1813,18 @@ end do
 [line 4+ne(ms): ] ....
 </code></pre>
 
-<h4 id="eigmotion-motion-file">EIGMOTION motion file</h4>
+<h4 id="eigmotion-motion-file">EIGMOTION motion file<a class="headerlink" href="#eigmotion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that stores the eigenvalues for the one-electron orbitals as a
 function of time.</p>
 <pre><code>[line 1: ] time, (eig(i), i=1,number_orbitals) 
 [line 2: ] ...
 </code></pre>
 
-<h4 id="omotion-motion-file">OMOTION motion file</h4>
+<h4 id="omotion-motion-file">OMOTION motion file<a class="headerlink" href="#omotion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that stores a reduced representation of the one-electron
 orbitals. To be used with a molecular orbital viewer that will be ported
 to NWChem in the near future.</p>
-<h2 id="born-oppenheimer-molecular-dynamics">Born-Oppenheimer Molecular Dynamics</h2>
+<h2 id="born-oppenheimer-molecular-dynamics">Born-Oppenheimer Molecular Dynamics<a class="headerlink" href="#born-oppenheimer-molecular-dynamics" title="Permanent link">&para;</a></h2>
 <pre><code>NWPW
 ...
   BO_STEPS &lt;integer bo_inner_iteration bo_outer_iteration default 10 100&gt; 
@@ -1834,7 +1834,7 @@ to NWChem in the near future.</p>
 END
 </code></pre>
 
-<h2 id="i-pi-socket-communication">i-PI Socket Communication</h2>
+<h2 id="i-pi-socket-communication">i-PI Socket Communication<a class="headerlink" href="#i-pi-socket-communication" title="Permanent link">&para;</a></h2>
 <pre><code>NWPW
    SOCKET (UNIX || IPI_CLIENT) &lt;string socketname default (see input description)&gt;
 END
@@ -1848,15 +1848,15 @@ The <code>NWPW</code> implementation of the <code>SOCKET</code> directive is bet
 plane-wave calculations.</p>
 <p>For proper behavior, the <code>TASK</code> directive should be set to <code>GRADIENT</code>,
 e.g. <code>TASK PSPW GRADIENT</code> or <code>TASK BAND GRADIENT</code>.</p>
-<h2 id="metropolis-monte-carlo">Metropolis Monte-Carlo</h2>
+<h2 id="metropolis-monte-carlo">Metropolis Monte-Carlo<a class="headerlink" href="#metropolis-monte-carlo" title="Permanent link">&para;</a></h2>
 <pre><code>NWPW
 ...
   MC_STEPS &lt;integer mc_inner_iteration mc_outer_iteration default 10 100&gt; 
 END
 </code></pre>
 
-<h2 id="free-energy-simulations">Free Energy Simulations</h2>
-<h3 id="metadynamics">MetaDynamics</h3>
+<h2 id="free-energy-simulations">Free Energy Simulations<a class="headerlink" href="#free-energy-simulations" title="Permanent link">&para;</a></h2>
+<h3 id="metadynamics">MetaDynamics<a class="headerlink" href="#metadynamics" title="Permanent link">&para;</a></h3>
 <p><img alt="Metadynamics bias potential. Courtesy of Raymond Atta-Fynn" src="ray2.gif" title="Metadynamics bias potential. Courtesy of Raymond Atta-Fynn&quot;.md) ![Metadynamics simulation of the first hydrolysis of U(IV) from 1.  Courtesy of Raymond Atta-Fynn](ray.gif &quot;Metadynamics simulation of the first hydrolysis of U(IV.md) from 1. Courtesy of Raymond Atta-Fynn" />
 Metadynamics<a href="http://en.wikipedia.org/wiki/Metadynamics">2</a><a href="http://iopscience.iop.org/0034-4885/71/12/126601">3</a><a href="http://people.sissa.it/~laio/Research/Res_metadynamics.php">4</a>
 is a powerful, non-equilibrium molecular dynamics method which
@@ -1916,7 +1916,7 @@ which <img alt="$0&amp;lt;W(t)\le W_0$" src="https://raw.githubusercontent.com/w
 surface, <img alt="$F(\bold{s})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/063f008708730bb84ce011fd262fe8c6.svg?invert_in_darkmode&sanitize=true" align=middle width="32.98086pt" height="24.56553pt"/>, along <img alt="$\bold{S}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7ff7f7f69e6fa5b699da44dd00bd6af0.svg?invert_in_darkmode&sanitize=true" align=middle width="10.46298pt" height="22.473pt"/> and an unbiased estimator
 of F(s) is given by</p>
 <p><img alt="$F(\bold{s}) = -\left(1+\frac{T}{T_{tempered}}\right)\lim_{t \to \infty} V_{meta}(\bold{s},t)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/76a69f25685ddfb910031c5a10b6fb10.svg?invert_in_darkmode&sanitize=true" align=middle width="314.238045pt" height="37.80348pt"/></p>
-<h4 id="input">Input</h4>
+<h4 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h4>
 <p>Input to a metadynamics simulation is contained within the METADYNAMICS
 sub-block. Listed below is the the format of a METADYNAMICS
 sub-block,</p>
@@ -1974,18 +1974,18 @@ END
 </code></pre>
 
 <p>will produce a two-dimensional potential energy surface.</p>
-<h3 id="tamd-temperature-accelerated-molecular-dynamics">TAMD - Temperature Accelerated Molecular Dynamics</h3>
-<h4 id="input_1">Input</h4>
-<h3 id="collective-variables">Collective Variables</h3>
-<h4 id="bond-distance-collective-variable">Bond Distance Collective Variable</h4>
+<h3 id="tamd-temperature-accelerated-molecular-dynamics">TAMD - Temperature Accelerated Molecular Dynamics<a class="headerlink" href="#tamd-temperature-accelerated-molecular-dynamics" title="Permanent link">&para;</a></h3>
+<h4 id="input_1">Input<a class="headerlink" href="#input_1" title="Permanent link">&para;</a></h4>
+<h3 id="collective-variables">Collective Variables<a class="headerlink" href="#collective-variables" title="Permanent link">&para;</a></h3>
+<h4 id="bond-distance-collective-variable">Bond Distance Collective Variable<a class="headerlink" href="#bond-distance-collective-variable" title="Permanent link">&para;</a></h4>
 <p>This describes the bond distance between any pair of atoms <img alt="$i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> and
 <img alt="$j$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/36b5afebdba34564d884d347484ac0c7.svg?invert_in_darkmode&sanitize=true" align=middle width="7.6816575pt" height="21.60213pt"/>:</p>
 <p><img alt="$s\left(r_{ij}\right) = \left \vert \bold{r}_{i}-\bold{r}_j\right\vert = r_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/762bbee86acf8585c59ad9d10c3085cd.svg?invert_in_darkmode&sanitize=true" align=middle width="161.231895pt" height="24.56553pt"/></p>
-<h4 id="angle-collective-variable">Angle Collective Variable</h4>
+<h4 id="angle-collective-variable">Angle Collective Variable<a class="headerlink" href="#angle-collective-variable" title="Permanent link">&para;</a></h4>
 <p>This describes the bond angle formed at <img alt="$i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> by the triplet
 <img alt="$&amp;lt;jik&amp;gt;$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8cb7383c6dd45f500dfd0bb39264b7f8.svg?invert_in_darkmode&sanitize=true" align=middle width="59.6475pt" height="22.74591pt"/>&ldquo;</p>
 <p><img alt="$s\left(r_{ij},r_{ik}\right) = \frac{\bold{r}_{ij}\cdot\bold{r}_{ik}}{r_{ij}r_{ik}}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/37f0e0317abf31f95c5902d1b0c10c3b.svg?invert_in_darkmode&sanitize=true" align=middle width="131.80266pt" height="27.3438pt"/></p>
-<h4 id="coordination-collective-variable">Coordination Collective Variable</h4>
+<h4 id="coordination-collective-variable">Coordination Collective Variable<a class="headerlink" href="#coordination-collective-variable" title="Permanent link">&para;</a></h4>
 <p>The coordination number collective variable is defined as</p>
 <p><img alt="$s\left(r_{ij},r_{0}\right) =\sum_{i,j}\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c5bdbbe7fc39d51bb9d6f9ab718cbcf7.svg?invert_in_darkmode&sanitize=true" align=middle width="139.61475pt" height="24.65793pt"/></p>
 <p>where the summation over <img alt="$i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> and <img alt="$j$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/36b5afebdba34564d884d347484ac0c7.svg?invert_in_darkmode&sanitize=true" align=middle width="7.6816575pt" height="21.60213pt"/> runs over two types of atoms,
@@ -2027,7 +2027,7 @@ respectively. In practice
 For example, a good set
 of parameters of the O-H coordination in water is <img alt="$r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/> =1.4 Å and
 <img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> =10 Å <img alt="$^{-1}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2351d2e88576cfc62e0f3db8a8ab779c.svg?invert_in_darkmode&sanitize=true" align=middle width="16.76367pt" height="26.70657pt"/>.</p>
-<h4 id="n-plane-collective-variable">N-Plane Collective Variable</h4>
+<h4 id="n-plane-collective-variable">N-Plane Collective Variable<a class="headerlink" href="#n-plane-collective-variable" title="Permanent link">&para;</a></h4>
 <p>The N-Plane collective variable is useful for probing the adsorption of
 adatom/admolecules to a surface. It is defined as the <em>average distance</em>
 of the adatom/admolecule from a given layer in the slab along the
@@ -2043,10 +2043,10 @@ atoms at
 <img alt="$Z_i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ed35373880183d013fc1bba898b2e3ae.svg?invert_in_darkmode&sanitize=true" align=middle width="15.813105pt" height="22.38192pt"/> which form the layer. The layer could be on the face or in the
 interior of the
 slab.</p>
-<h4 id="user-defined-collective-variable">User defined Collective Variable</h4>
-<h2 id="extended-x-ray-absorption-fine-structure-exafs-integration-with-feff6l">Extended X-Ray Absorption Fine Structure (EXAFS) - Integration with FEFF6L</h2>
-<h2 id="frozen-phonon-calculations">Frozen Phonon Calculations</h2>
-<h2 id="steepest-descent">Steepest Descent</h2>
+<h4 id="user-defined-collective-variable">User defined Collective Variable<a class="headerlink" href="#user-defined-collective-variable" title="Permanent link">&para;</a></h4>
+<h2 id="extended-x-ray-absorption-fine-structure-exafs-integration-with-feff6l">Extended X-Ray Absorption Fine Structure (EXAFS) - Integration with FEFF6L<a class="headerlink" href="#extended-x-ray-absorption-fine-structure-exafs-integration-with-feff6l" title="Permanent link">&para;</a></h2>
+<h2 id="frozen-phonon-calculations">Frozen Phonon Calculations<a class="headerlink" href="#frozen-phonon-calculations" title="Permanent link">&para;</a></h2>
+<h2 id="steepest-descent">Steepest Descent<a class="headerlink" href="#steepest-descent" title="Permanent link">&para;</a></h2>
 <p>The functionality of this task is now performed automatically by the
 PSPW and BAND. For backward compatibility, we provide a description of
 the input to this task.</p>
@@ -2141,7 +2141,7 @@ sub-block.</p>
 <li>MULLIKEN - optional keyword which if specified causes a Mulliken
     analysis to be performed at the end of the simulation.</li>
 </ul>
-<h2 id="simulation-cell">Simulation Cell</h2>
+<h2 id="simulation-cell">Simulation Cell<a class="headerlink" href="#simulation-cell" title="Permanent link">&para;</a></h2>
 <p>The simulation cell parameters are entered by defining a
 simulation_cell sub-block within the PSPW block. Listed below is the
 format of a simulation_cell sub-block.</p>
@@ -2245,14 +2245,14 @@ end
 <p>Warning - Currently only the &ldquo;system crystal&rdquo; option is recognized by
 NWPW. The &ldquo;system slab&rdquo; and &ldquo;system polymer&rdquo; options will be supported
 in the future.</p>
-<h2 id="unit-cell-optimization">Unit Cell Optimization</h2>
+<h2 id="unit-cell-optimization">Unit Cell Optimization<a class="headerlink" href="#unit-cell-optimization" title="Permanent link">&para;</a></h2>
 <p>The PSPW module using the DRIVER geometry optimizer can optimize a
 crystal unit cell. Currently this type of optimization works only if the
 geometry is specified in fractional coordinates. The following SET
 directive is used to tell the DRIVER geometry optimizer to optimize the
 crystal unit cell in addition to the geometry.</p>
 <p><code>set includestress .true.</code></p>
-<h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR - Fractional Occupation of the Molecular Orbitals</h2>
+<h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR - Fractional Occupation of the Molecular Orbitals<a class="headerlink" href="#smear-fractional-occupation-of-the-molecular-orbitals" title="Permanent link">&para;</a></h2>
 <p>The smear keyword to turn on fractional occupation of the molecular
 orbitals in PSPW and BAND
 calculations</p>
@@ -2267,7 +2267,7 @@ orbitals to be used in the calculation. Note to use this option the user
 must currently use the SCF minimizer. The following SCF options are
 recommended for running fractional occupation</p>
 <p><code>SCF Anderson outer_iterations 0 Kerker 2.0</code></p>
-<h2 id="spin-penalty-functions">Spin Penalty Functions</h2>
+<h2 id="spin-penalty-functions">Spin Penalty Functions<a class="headerlink" href="#spin-penalty-functions" title="Permanent link">&para;</a></h2>
 <p>Spin-penalty functions makes it easier to define antiferromagnetic
 structures. These functions are implemented by adding a scaling factor
 to the non-local psp for up/down spins on atoms and angular momentum
@@ -2338,7 +2338,7 @@ task pspw energy
 task pspw pspw_dplot
 </code></pre>
 
-<h2 id="aimdmm-qmmm">AIMD/MM (QM/MM)</h2>
+<h2 id="aimdmm-qmmm">AIMD/MM (QM/MM)<a class="headerlink" href="#aimdmm-qmmm" title="Permanent link">&para;</a></h2>
 <p>A QM/MM capability is available that is integrated with PSPW module and
 can be used with Car-Parrinello simulations. Currently, the input is not
 very robust but it is straightforward. The first step to run a QM/MM
@@ -2395,7 +2395,7 @@ END 
 contained in the geometry blocks. The following local pseudopotential
 suggested by Laio, VandeVondele and Rothlisberger can be automatically
 generated.</p>
-<p><img alt="$\begin{matrix}V(\vec{r}) = -Z_{ion}\frac{{r_c}^{n_{\sigma}} - r^{n_{\sigma}}}{-sign(Z_{ion})*{r_c}^{n_{\sigma}+1}-r^{n_{\sigma}+1}}\end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/17086f550a410c207428802b573b51b2.svg?invert_in_darkmode&sanitize=true" align=middle width="270.767145pt" height="31.97766pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{matrix}V(\vec{r}) = -Z_{ion}\frac{{r_c}^{n_{\sigma}} - r^{n_{\sigma}}}{-sign(Z_{ion})*{r_c}^{n_{\sigma}+1}-r^{n_{\sigma}+1}}\end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/17086f550a410c207428802b573b51b2.svg?invert_in_darkmode&sanitize=true" align=middle width="270.767145pt" height="31.97766pt"/></p>
 <p>The following input To define this pseudopo the O^ MM atom using the
 following input</p>
 <pre><code>NWPW   
@@ -2486,7 +2486,7 @@ follows.</p>
 END
 </code></pre>
 
-<h2 id="psp_generator">PSP_GENERATOR</h2>
+<h2 id="psp_generator">PSP_GENERATOR<a class="headerlink" href="#psp_generator" title="Permanent link">&para;</a></h2>
 <p>A one-dimensional pseudopotential code has been integrated into NWChem.
 This code allows the user to modify and develop pseudopotentials.
 Currently, only the Hamann and Troullier-Martins norm-conserving
@@ -2545,7 +2545,7 @@ END
 <li>CUTOFF:....(see below)</li>
 <li><rcore> - value for the semicore radius (see below)</li>
 </ul>
-<h3 id="atomic_filling-block">ATOMIC_FILLING Block</h3>
+<h3 id="atomic_filling-block">ATOMIC_FILLING Block<a class="headerlink" href="#atomic_filling-block" title="Permanent link">&para;</a></h3>
 <p>This required block is used to define the reference atom which is used
 to define the pseudopotential. After the ATOMIC_FILLING: <ncore>
 <nvalence> line, the core states are listed (one per line), and then the
@@ -2571,7 +2571,7 @@ block</p>
 </code></pre>
 
 <p>could be used for a pseudopotential with no valence electrons.</p>
-<h3 id="cutoff">CUTOFF</h3>
+<h3 id="cutoff">CUTOFF<a class="headerlink" href="#cutoff" title="Permanent link">&para;</a></h3>
 <p>This optional block specifies the cutoff distances used to match the
 all-electron atom to the pseudopotential atom. For Hamann
 pseudopotentials <img alt="$r_{cut}(l)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3900e93dc26b755c3479ab08de679b08.svg?invert_in_darkmode&sanitize=true" align=middle width="44.77077pt" height="24.56553pt"/> defines the distance where the
@@ -2605,7 +2605,7 @@ CUTOFF: 2 
  d 1.275
 </code></pre>
 
-<h3 id="semicore_radius">SEMICORE_RADIUS</h3>
+<h3 id="semicore_radius">SEMICORE_RADIUS<a class="headerlink" href="#semicore_radius" title="Permanent link">&para;</a></h3>
 <p>Specifying the SEMICORE_RADIUS option turns on the semicore correction
 approximation proposed by Louie et al (S.G. Louie, S. Froyen, and M.L.
 Cohen, Phys. Rev. B, <strong>26</strong>(, 1738, (1982)). This approximation is known
@@ -2614,12 +2614,12 @@ transition metal atoms.</p>
 <p>The implementation in the PSPW module defines the semi-core density,
 <img alt="$\rho_{semicore}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/cdd27902cf8366f23ed927a19a3fc1fe.svg?invert_in_darkmode&sanitize=true" align=middle width="62.082075pt" height="14.10255pt"/> in terms of the core density, <img alt="$\rho_{core}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/37e9fdd7359c2b306266e517ccec656b.svg?invert_in_darkmode&sanitize=true" align=middle width="33.432465pt" height="14.10255pt"/>, by
 using the sixth-order polynomial</p>
-<p><img alt="$\rho_{semicore}(r) =&amp;#10;\begin{cases} &amp;#10;\rho_{core} &amp;amp; \mbox{if } r \ge r_{semicore} \\&amp;#10;c_0 + c_3 r^3 + c_4 r^4 + c_5 r^5 + c_6 r^6 &amp;amp; \mbox{if } r &amp;lt; r_{semicore} &amp;#10;\end{cases}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/aec56e1a9871a4fda4c457c9a9c601f3.svg?invert_in_darkmode&sanitize=true" align=middle width="542.063445pt" height="126.57645pt"/></p>
+<p><img alt="$\rho_{semicore}(r) =&amp;#10;<script type="math/tex; mode=display">\begin{cases} &amp;#10;\rho_{core} &amp;amp; \mbox{if } r \ge r_{semicore} \\&amp;#10;c_0 + c_3 r^3 + c_4 r^4 + c_5 r^5 + c_6 r^6 &amp;amp; \mbox{if } r &amp;lt; r_{semicore} &amp;#10;\end{cases}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/aec56e1a9871a4fda4c457c9a9c601f3.svg?invert_in_darkmode&sanitize=true" align=middle width="542.063445pt" height="126.57645pt"/></p>
 <p>This expansion was suggested by Fuchs and Scheffler (M. Fuchs, and M.
 Scheffler, Comp. Phys. Comm.,<strong>119</strong>,67 (1999)), and is better behaved
 for taking derivatives (i.e. calculating ionic forces) than the
 expansion suggested by Louie et al.</p>
-<h2 id="paw-tasks-legacy-implementation">PAW Tasks - Legacy Implementation</h2>
+<h2 id="paw-tasks-legacy-implementation">PAW Tasks - Legacy Implementation<a class="headerlink" href="#paw-tasks-legacy-implementation" title="Permanent link">&para;</a></h2>
 <p>(<span style="color: red;"><em>This capability is now available in PSPW. It
 is recommended that this module only be used for testing purposes.</em>
 </span>)</p>
@@ -2722,12 +2722,12 @@ END 
     the spin multiplicity of the system</li>
 <li>INTEGRATE_MULT_L - optional keyword which if specified allows the
     user to define the angular XC integration of the augmented region</li>
-<li>SIMULATION_CELL (see [[#Simulation Cell|Simulation Cell])</li>
-<li>CAR-PARRINELLO(see [[#Car-Parrinello|Car-Parrinello])</li>
+<li>SIMULATION_CELL (see <script type="math/tex; mode=display">\[\#Simulation Cell|Simulation Cell</script>)</li>
+<li>CAR-PARRINELLO(see <script type="math/tex; mode=display">\[\#Car-Parrinello|Car-Parrinello</script>)</li>
 <li><mapping> - for a value of 1 slab FFT is used, for a value of 2 a
     2d-Hilbert FFT is used.</li>
 </ul>
-<h2 id="pseudopotential-and-paw-basis-libraries">Pseudopotential and PAW basis Libraries</h2>
+<h2 id="pseudopotential-and-paw-basis-libraries">Pseudopotential and PAW basis Libraries<a class="headerlink" href="#pseudopotential-and-paw-basis-libraries" title="Permanent link">&para;</a></h2>
 <p>A library of pseudopotentials used by PSPW and BAND is currently
 available in the directory $NWCHEM_TOP/src/nwpw/libraryp/pspw_default</p>
 <p>The elements listed in the following table are
@@ -2835,7 +2835,7 @@ e.g. c.teter have to be prepended with the &ldquo;<TETER>&rdquo; keyword.</p>
 <p>If you wish to redirect the code to a different directory other than the
 default one, you need to set the environmental variable
 NWCHEM_NWPW_LIBRARY to the new location of the libraryps directory.</p>
-<h2 id="nwpw-rtdb-entries-and-miscellaneous-datafiles">NWPW RTDB Entries and Miscellaneous DataFiles</h2>
+<h2 id="nwpw-rtdb-entries-and-miscellaneous-datafiles">NWPW RTDB Entries and Miscellaneous DataFiles<a class="headerlink" href="#nwpw-rtdb-entries-and-miscellaneous-datafiles" title="Permanent link">&para;</a></h2>
 <p>Input to the PSPW and Band modules are contained in both the RTDB and
 datafiles. The RTDB is used to store input that the user will need to
 directly specify. Input of this kind includes ion positions, ion
@@ -2844,29 +2844,29 @@ store input, such the one-electron orbitals, one-electron orbital
 velocities, formatted pseudopotentials, and one-dimensional
 pseudopotentials, that the user will in most cases run a program to
 generate.</p>
-<h3 id="ion-positions">Ion Positions</h3>
+<h3 id="ion-positions">Ion Positions<a class="headerlink" href="#ion-positions" title="Permanent link">&para;</a></h3>
 <p>The positions of the ions are stored in the default geometry structure
 in the RTDB and must be specified using the GEOMETRY directive.</p>
-<h3 id="ion-velocities">Ion Velocities</h3>
+<h3 id="ion-velocities">Ion Velocities<a class="headerlink" href="#ion-velocities" title="Permanent link">&para;</a></h3>
 <p>The velocities of the ions are stored in the default geometry structure
 in the RTDB, and must be specified using the GEOMETRY directive.</p>
-<h3 id="wavefunction-datafile">Wavefunction Datafile</h3>
+<h3 id="wavefunction-datafile">Wavefunction Datafile<a class="headerlink" href="#wavefunction-datafile" title="Permanent link">&para;</a></h3>
 <p>The one-electron orbitals are stored in a wavefunction datafile. This is
 a binary file and cannot be directly edited. This datafile is used by
 steepest_descent and Car-Parrinello tasks and can be generated using
 the wavefunction_initializer or wavefunction_expander tasks.</p>
-<h3 id="velocity-wavefunction-datafile">Velocity Wavefunction Datafile</h3>
+<h3 id="velocity-wavefunction-datafile">Velocity Wavefunction Datafile<a class="headerlink" href="#velocity-wavefunction-datafile" title="Permanent link">&para;</a></h3>
 <p>The one-electron orbital velocities are stored in a velocity
 wavefunction datafile. This is a binary file and cannot be directly
 edited. This datafile is automatically generated the first time a
 Car-Parrinello task is run.</p>
-<h3 id="formatted-pseudopotential-datafile">Formatted Pseudopotential Datafile</h3>
+<h3 id="formatted-pseudopotential-datafile">Formatted Pseudopotential Datafile<a class="headerlink" href="#formatted-pseudopotential-datafile" title="Permanent link">&para;</a></h3>
 <p>The pseudopotentials in Kleinman-Bylander form expanded on a simulation
 cell (3d grid) are stored in a formatted pseudopotential datafile
 (PSPW-&ldquo;atomname.vpp&rdquo;, BAND-&ldquo;atomname.cpp&rdquo;, PAW-&ldquo;atomname.jpp&rdquo;). These
 are binary files and cannot be directly edited. These datafiles are
 automatically generated.</p>
-<h3 id="one-dimensional-pseudopotential-datafile">One-Dimensional Pseudopotential Datafile</h3>
+<h3 id="one-dimensional-pseudopotential-datafile">One-Dimensional Pseudopotential Datafile<a class="headerlink" href="#one-dimensional-pseudopotential-datafile" title="Permanent link">&para;</a></h3>
 <p>The one-dimensional pseudopotentials are stored in a one-dimensional
 pseudopotential file (&ldquo;atomname.psp&rdquo;). This is an ASCII file and can be
 directly edited with a text editor or can be generated using the
@@ -2904,7 +2904,7 @@ if (r_semicore read) then
 end if
 </code></pre>
 
-<h2 id="car-parrinello-scheme-for-ab-initio-molecular-dynamics">Car-Parrinello Scheme for Ab Initio Molecular Dynamics</h2>
+<h2 id="car-parrinello-scheme-for-ab-initio-molecular-dynamics">Car-Parrinello Scheme for Ab Initio Molecular Dynamics<a class="headerlink" href="#car-parrinello-scheme-for-ab-initio-molecular-dynamics" title="Permanent link">&para;</a></h2>
 <p>Car and Parrinello developed a unified scheme for doing <em>ab initio</em>
 molecular dynamics by combining the motion of the ion cores and a
 fictitious motion for the Kohn-Sham orbitals of density-functional
@@ -2914,16 +2914,16 @@ theory (R. Car and M. Parrinello, Phys. Rev. Lett. <strong>55</strong>, 2471, (1
 heart of this method they introduced a fictitious kinetic energy
 functional for the Kohn-Sham
 orbitals.</p>
-<p><img alt="$\begin{align}KE \left ( \left { \psi_{i,\sigma}(\vec{r}) \right } \right ) = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2\end{align}$&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
+<p><img alt="$\begin{align}KE \left ( \left \{ \psi_{i,\sigma}(\vec{r}) \right \} \right ) = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2\end{align}$&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
 <p>Given this kinetic energy the constrained equations of motion are found
 by taking the first variation of the auxiliary Lagrangian.</p>
-<p><img alt="$\begin{align} = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2;     + \frac{1}{2} \sum_{I} M_I \left | \dot{\vec{R}}_{I} \right | ^2 - E \left [ \left { \psi_{i,\sigma}(\vec{r}) \right } , \left { \vec{R}_I \right } \right ] \ + \sum_{ij,\sigma} \Lambda_{ij,\sigma} \left ( \int d\vec{r}\ \psi_{i,\sigma}^{*}(\vec{r}) \psi_{j,\sigma}(\vec{r}) - \delta_{ij\sigma} \right )\end{align}$" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
+<p><img alt="$\begin{align} = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2;     + \frac{1}{2} \sum_{I} M_I \left | \dot{\vec{R}}_{I} \right | ^2 - E \left [ \left \{ \psi_{i,\sigma}(\vec{r}) \right \} , \left \{ \vec{R}_I \right \} \right ] \\ + \sum_{ij,\sigma} \Lambda_{ij,\sigma} \left ( \int d\vec{r}\ \psi_{i,\sigma}^{*}(\vec{r}) \psi_{j,\sigma}(\vec{r}) - \delta_{ij\sigma} \right )\end{align}$" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
 <p>Which generates a dynamics for the wavefunctions
 <img alt="$\psi_{i,\sigma}(\vec{r})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/730a1523e8e8ba1c187f863f8d4f37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="48.685725pt" height="24.56553pt"/> and atoms positions <img alt="$\vec{R}_I$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/57ac99f1caf72f8bb91bbfe4da0441aa.svg?invert_in_darkmode&sanitize=true" align=middle width="19.1301pt" height="31.71135pt"/> through
 the constrained equations of
 motion:</p>
-<p><img alt="$\begin{matrix}\mu \ddot{\psi}_{i,\sigma}(\vec{r},t) = -\frac{\delta E}{\delta \psi_{i,\sigma }^{*} \left( \vec{r},t \right) } + \sum\limits_j \Lambda_{ij,\sigma} \psi_{j,\sigma} \left( \vec{r},t \right) \end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9fc48fe3d7afa9e8921d0c7bcce12b91.svg?invert_in_darkmode&sanitize=true" align=middle width="306.720645pt" height="41.79813pt"/></p>
-<p><img alt="$\begin{matrix}M_I \ddot{\vec{R}}_I = -\frac{\partial E}{\partial \vec{R}_I} \end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5bf48f56312232664b93e4d81224d37f.svg?invert_in_darkmode&sanitize=true" align=middle width="104.222085pt" height="37.64607pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{matrix}\mu \ddot{\psi}_{i,\sigma}(\vec{r},t) = -\frac{\delta E}{\delta \psi_{i,\sigma }^{*} \left( \vec{r},t \right) } + \sum\limits_j \Lambda_{ij,\sigma} \psi_{j,\sigma} \left( \vec{r},t \right) \end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9fc48fe3d7afa9e8921d0c7bcce12b91.svg?invert_in_darkmode&sanitize=true" align=middle width="306.720645pt" height="41.79813pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{matrix}M_I \ddot{\vec{R}}_I = -\frac{\partial E}{\partial \vec{R}_I} \end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5bf48f56312232664b93e4d81224d37f.svg?invert_in_darkmode&sanitize=true" align=middle width="104.222085pt" height="37.64607pt"/></p>
 <p>where <img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is the fictitious mass for the electronic degrees of
 freedom and <img alt="$M_I$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/00cbfe86d6a32a76c7a606e0c0d804da.svg?invert_in_darkmode&sanitize=true" align=middle width="22.58322pt" height="22.38192pt"/> are the ionic masses. The adjustable parameter
 <img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is used to describe the relative rate at which the wavefunctions
@@ -2948,32 +2948,32 @@ states that are nearly degenerate. This kind of failure often occurs in
 the study of chemical reactions. This kind of failure is not easily
 fixed and requires the use of a more sophisticated density-functional
 energy that accounts for low-lying excited electronic states.</p>
-<h3 id="verlet-algorithm-for-integration">Verlet Algorithm for Integration</h3>
+<h3 id="verlet-algorithm-for-integration">Verlet Algorithm for Integration<a class="headerlink" href="#verlet-algorithm-for-integration" title="Permanent link">&para;</a></h3>
 <p>Integrating the Eqns. above using the Verlet algorithm results
 in</p>
-<p><img alt="$\begin{matrix}\psi_{i,\sigma}^{t+ \Delta t} \leftarrow 2 \psi_{i,\sigma}^{t} - \psi_{i,\sigma}^{t-\Delta t} + \frac{(\Delta t)^2}{\mu} \left[ \frac{\delta E}{\delta \psi_{i,\sigma}^{*}} + \sum_{j} \psi_{j,\sigma} \Lambda_{ji,\sigma} \right]_{t} \end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ae7f42c9d9a286ca640e3f918cd2c5e0.svg?invert_in_darkmode&sanitize=true" align=middle width="393.358845pt" height="38.95716pt"/></p>
-<p><img alt="$\begin{matrix}\vec{R}_I^{t+\Delta t} \leftarrow 2 \vec{R}_I^{t} - \vec{R}_I^{t-\Delta t} + \frac{(\Delta t)^2}{M_I} \frac{\partial E}{\partial \vec{R}_I}\end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ddbdce8efc0a315bf3066edd35078948.svg?invert_in_darkmode&sanitize=true" align=middle width="245.103045pt" height="36.1185pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{matrix}\psi_{i,\sigma}^{t+ \Delta t} \leftarrow 2 \psi_{i,\sigma}^{t} - \psi_{i,\sigma}^{t-\Delta t} + \frac{(\Delta t)^2}{\mu} \left[ \frac{\delta E}{\delta \psi_{i,\sigma}^{*}} + \sum_{j} \psi_{j,\sigma} \Lambda_{ji,\sigma} \right]_{t} \end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ae7f42c9d9a286ca640e3f918cd2c5e0.svg?invert_in_darkmode&sanitize=true" align=middle width="393.358845pt" height="38.95716pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{matrix}\vec{R}_I^{t+\Delta t} \leftarrow 2 \vec{R}_I^{t} - \vec{R}_I^{t-\Delta t} + \frac{(\Delta t)^2}{M_I} \frac{\partial E}{\partial \vec{R}_I}\end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ddbdce8efc0a315bf3066edd35078948.svg?invert_in_darkmode&sanitize=true" align=middle width="245.103045pt" height="36.1185pt"/></p>
 <p>In this molecular dynamic procedure we have to know variational
 derivative
-<img alt="$\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}\end{align}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8c6bc16ec2cb4c1a003913b820345407.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/>
+<img alt="$<script type="math/tex; mode=display">\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}\end{align}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8c6bc16ec2cb4c1a003913b820345407.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/>
 and the matrix <img alt="$\Lambda_{ij,\sigma}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bfbdae12ad4ca99f779237e04cd6148.svg?invert_in_darkmode&sanitize=true" align=middle width="33.272745pt" height="22.38192pt"/>. The variational derivative
-<img alt="$\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}\end{align}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8c6bc16ec2cb4c1a003913b820345407.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/>
+<img alt="$<script type="math/tex; mode=display">\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}\end{align}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8c6bc16ec2cb4c1a003913b820345407.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/>
 can be analytically found and
 is</p>
-<p><img alt="$\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}} &amp;amp; = -\frac{1}{2} \nabla^2 \psi_{i,\sigma}(\vec{r}) \\ &amp;#10;&amp;amp; + \int d\vec{r^{\prime}} W_{ext}(\vec{r},\vec{r^{\prime}}) \psi_{i,\sigma}(\vec{r^{\prime}}) \\ &amp;#10;&amp;amp; + \int d\vec{r^{\prime}} \frac{n(\vec{r^{\prime}})}{|\vec{r}-\vec{r^{\prime}}|} \psi_{i,\sigma}(\vec{r})\\ &amp;#10;&amp;amp; + \mu_{xc}^{\sigma}(\vec{r}) \psi_{i,\sigma}(\vec{r}) \\ &amp;#10;&amp;amp; \equiv \hat{H} \psi_{i,\sigma} &amp;#10;\end{align}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/dd46e8b24d0b388163cc0d7c95ef404b.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}} &amp;amp; = -\frac{1}{2} \nabla^2 \psi_{i,\sigma}(\vec{r}) \\ &amp;#10;&amp;amp; + \int d\vec{r^{\prime}} W_{ext}(\vec{r},\vec{r^{\prime}}) \psi_{i,\sigma}(\vec{r^{\prime}}) \\ &amp;#10;&amp;amp; + \int d\vec{r^{\prime}} \frac{n(\vec{r^{\prime}})}{|\vec{r}-\vec{r^{\prime}}|} \psi_{i,\sigma}(\vec{r})\\ &amp;#10;&amp;amp; + \mu_{xc}^{\sigma}(\vec{r}) \psi_{i,\sigma}(\vec{r}) \\ &amp;#10;&amp;amp; \equiv \hat{H} \psi_{i,\sigma} &amp;#10;\end{align}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/dd46e8b24d0b388163cc0d7c95ef404b.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
 <p>To find the matrix <img alt="$\Lambda_{ij,\sigma}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bfbdae12ad4ca99f779237e04cd6148.svg?invert_in_darkmode&sanitize=true" align=middle width="33.272745pt" height="22.38192pt"/> we impose the orthonormality
 constraint on <img alt="$\psi_{i,\sigma}^{t+\Delta t}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f5a90d4417795f4ac627995a6be27500.svg?invert_in_darkmode&sanitize=true" align=middle width="41.964615pt" height="29.73135pt"/> to obtain a matrix
 Riccatti equation, and then Riccatti equation is solved by an iterative
 solution.</p>
-<h3 id="constant-temperature-simulations-nose-hoover-thermostats">Constant Temperature Simulations: Nose-Hoover Thermostats</h3>
+<h3 id="constant-temperature-simulations-nose-hoover-thermostats">Constant Temperature Simulations: Nose-Hoover Thermostats<a class="headerlink" href="#constant-temperature-simulations-nose-hoover-thermostats" title="Permanent link">&para;</a></h3>
 <p>Nose-Hoover Thermostats for the electrons and ions can also be added to
 the Car-Parrinello simulation. In this type of simulation thermostats
 variables <img alt="$x_e$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a2132016f1d31f96de56a06d8cdf390f.svg?invert_in_darkmode&sanitize=true" align=middle width="15.573525pt" height="14.10255pt"/> and <img alt="$x_R$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c096d689340fd96e5e112ea66a4b2abd.svg?invert_in_darkmode&sanitize=true" align=middle width="19.28454pt" height="14.10255pt"/> are added to the simulation by adding the
 auxiliary energy functionals to the total
 energy.</p>
-<p><img alt="$\begin{align}ION\_THERMOSTAT(x_R) &amp;amp; = \frac{1}{2} Q_R \dot{x_R} + E_{R0}x_R \\ ELECTRON\_THERMOSTAT(x_e) &amp;amp; = \frac{1}{2} Q_e \dot{x_e} + E_{e0}x_e \end{align}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d025d24075586c8555a8402a0cc5d8cc.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{align}ION\_THERMOSTAT(x_R) &amp;amp; = \frac{1}{2} Q_R \dot{x_R} + E_{R0}x_R \\ ELECTRON\_THERMOSTAT(x_e) &amp;amp; = \frac{1}{2} Q_e \dot{x_e} + E_{e0}x_e \end{align}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d025d24075586c8555a8402a0cc5d8cc.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
 <p>In these equations, the average kinetic energy for the ions is</p>
-<p><img alt="$\begin{matrix}E_{R0} = \frac{1}{2} f k_B T \end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d627accb7a5ff35307c4491e887851a9.svg?invert_in_darkmode&sanitize=true" align=middle width="103.26591pt" height="27.96948pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{matrix}E_{R0} = \frac{1}{2} f k_B T \end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d627accb7a5ff35307c4491e887851a9.svg?invert_in_darkmode&sanitize=true" align=middle width="103.26591pt" height="27.96948pt"/></p>
 <p>where <img alt="$f$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/190083ef7a1625fbc75f243cffb9c96d.svg?invert_in_darkmode&sanitize=true" align=middle width="9.780705pt" height="22.74591pt"/> is the number of atomic degrees of freedom, <img alt="$k_B$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bad54364b5669c56b4b0a72d42c7da00.svg?invert_in_darkmode&sanitize=true" align=middle width="18.979455pt" height="22.74591pt"/> is
 Boltzmann&rsquo;s constant, and T is the desired t emperature. Defining the
 average fictitious kinetic energy of the electrons is not as
@@ -2981,29 +2981,29 @@ straightforward. Blöchl and Parrinello (P.E. Blöchl and M. Parrinello,
 Phys. Rev. B, <strong>45</strong>, 9413, (1992)) have suggested the following formula
 for determining the average fictitious kinetic
 energy</p>
-<p><img alt="$\begin{matrix}E_{e0} = 4 k_B T \frac{\mu}{M} \sum_{i} &amp;lt;\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}&amp;gt; \end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f9c6fab6fdc47636f9d77ce51f261c64.svg?invert_in_darkmode&sanitize=true" align=middle width="294.289545pt" height="27.96948pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{matrix}E_{e0} = 4 k_B T \frac{\mu}{M} \sum_{i} &amp;lt;\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}&amp;gt; \end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f9c6fab6fdc47636f9d77ce51f261c64.svg?invert_in_darkmode&sanitize=true" align=middle width="294.289545pt" height="27.96948pt"/></p>
 <p>where <img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is the fictitious electronic mass, <img alt="$M$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fb97d38bcc19230b0acd442e17db879c.svg?invert_in_darkmode&sanitize=true" align=middle width="17.67348pt" height="22.38192pt"/> is average mass
 of one atom, and
-<img alt="$\begin{matrix}\sum_{i} &amp;lt;\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}&amp;gt; \end{matrix}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a02d75a5d1e0d0611051e3d157228621.svg?invert_in_darkmode&sanitize=true" align=middle width="186.191445pt" height="27.96948pt"/>
+<img alt="$<script type="math/tex; mode=display">\begin{matrix}\sum_{i} &amp;lt;\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}&amp;gt; \end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a02d75a5d1e0d0611051e3d157228621.svg?invert_in_darkmode&sanitize=true" align=middle width="186.191445pt" height="27.96948pt"/>
 is the kinetic energy of the electrons.</p>
 <p>Blöchl and Parrinello suggested that the choice of mass parameters,
 <img alt="$Q_e$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/25d99aa5082492b57d3beef5928ffac3.svg?invert_in_darkmode&sanitize=true" align=middle width="19.16046pt" height="22.38192pt"/>, and <img alt="$Q_R$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3ed261b38de3a90e4d91fe27c8f513b1.svg?invert_in_darkmode&sanitize=true" align=middle width="22.871475pt" height="22.38192pt"/> should be made such that the period of oscillating
 thermostats should be chosen larger than the typical time scale for the
 dynamical events of interest but shorter than the simulation
 time.</p>
-<p><img alt="$\begin{align}P_{ion} &amp;amp; = 2\pi \sqrt{\frac{Q_R}{4E_{R0}}}\\P_{electron} &amp;amp; = 2\pi \sqrt{\frac{Q_e}{4E_{e0}}}&amp;#10;\end{align}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bb3c80b1405d8e3bc4a7bee75662d936.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{align}P_{ion} &amp;amp; = 2\pi \sqrt{\frac{Q_R}{4E_{R0}}}\\P_{electron} &amp;amp; = 2\pi \sqrt{\frac{Q_e}{4E_{e0}}}&amp;#10;\end{align}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bb3c80b1405d8e3bc4a7bee75662d936.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
 <p>where <img alt="$P_{ion}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a4e38e59b681f3b803b72b09f581f67f.svg?invert_in_darkmode&sanitize=true" align=middle width="29.707755pt" height="22.38192pt"/> and <img alt="$P_{electron}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e29a4bd79ecd185b4b23ff25948575c7.svg?invert_in_darkmode&sanitize=true" align=middle width="58.94427pt" height="22.38192pt"/> are the periods of oscillation
 for the ionic and fictitious electronic thermostats.</p>
 <p>In simulated annealing simulations the electronic and ionic Temperatures
 are scaled according to an exponential cooling
 schedule,</p>
-<p><img alt="$\begin{align}T_e(t) &amp;amp; = T_e^0 \exp^{-\frac{t}{\tau_e}}\\T_{ionic}(t) &amp;amp; = T_{ionic}^0 \exp^{-\frac{t}{\tau_{ionic}}}&amp;#10;\end{align}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/95dabe03135a55d1f4c0ff696a8e366b.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{align}T_e(t) &amp;amp; = T_e^0 \exp^{-\frac{t}{\tau_e}}\\T_{ionic}(t) &amp;amp; = T_{ionic}^0 \exp^{-\frac{t}{\tau_{ionic}}}&amp;#10;\end{align}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/95dabe03135a55d1f4c0ff696a8e366b.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
 <p>where <img alt="$T_e^0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/02f92fea930bab9b0cb5b411829b7bf4.svg?invert_in_darkmode&sanitize=true" align=middle width="18.381495pt" height="26.70657pt"/> and <img alt="$T_{ionic}^0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2d76ae8eb00a93d64de686b4f03b596d.svg?invert_in_darkmode&sanitize=true" align=middle width="39.2502pt" height="26.70657pt"/> are the initial temperatures, and
 <img alt="$\tau_e$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e34a134b05ac6daa10ed56dc39d42035.svg?invert_in_darkmode&sanitize=true" align=middle width="13.37292pt" height="14.10255pt"/> and <img alt="$\tau_{ionic}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a8fa93ce0ad82bb2691c5d3740bcf14a.svg?invert_in_darkmode&sanitize=true" align=middle width="36.839055pt" height="14.10255pt"/> are the cooling rates in atomic units.</p>
-<h2 id="nwpw-tutorial-1-s2-dimer-examples-with-pspw">NWPW Tutorial 1: S<sub>2</sub> dimer examples with PSPW</h2>
+<h2 id="nwpw-tutorial-1-s2-dimer-examples-with-pspw">NWPW Tutorial 1: S<sub>2</sub> dimer examples with PSPW<a class="headerlink" href="#nwpw-tutorial-1-s2-dimer-examples-with-pspw" title="Permanent link">&para;</a></h2>
 <p>A description of all the examples in NWPW Tutorial 1 can be found in the
 attached pdf <a href="nwpwexample1.pdf">nwpwexample1.pdf</a></p>
-<h3 id="total-energy-of-s2-dimer-with-lda-approximation">Total energy of S<sub>2</sub> dimer with LDA approximation</h3>
+<h3 id="total-energy-of-s2-dimer-with-lda-approximation">Total energy of S<sub>2</sub> dimer with LDA approximation<a class="headerlink" href="#total-energy-of-s2-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="s2-example1.nw">Media:s2-example1.nw</a>,
 output:<a href="s2-example1.nwout">Media:s2-example1.nwout</a>)</p>
 <p>In this example, the total energy of the S<sub>2</sub> dimer using LDA
@@ -3062,7 +3062,7 @@ be</p>
  ...
 </code></pre>
 
-<h3 id="structural-optimization-of-s-dimer-with-lda-approximation">Structural optimization of S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer with LDA approximation</h3>
+<h3 id="structural-optimization-of-s-dimer-with-lda-approximation">Structural optimization of S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer with LDA approximation<a class="headerlink" href="#structural-optimization-of-s-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="s2-example2.nw">Media:s2-example2.nw</a>,
 output:<a href="s2-example2.nwout">Media:s2-example2.nwout</a>)</p>
 <p>In this example, the structure of the S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using results
@@ -3143,7 +3143,7 @@ be</p>
  ...
 </code></pre>
 
-<h3 id="frequency-calculation-of-s-dimer-with-lda-approximation">Frequency calculation of S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer with LDA approximation</h3>
+<h3 id="frequency-calculation-of-s-dimer-with-lda-approximation">Frequency calculation of S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer with LDA approximation<a class="headerlink" href="#frequency-calculation-of-s-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="s2-example3.nw">Media:s2-example3.nw</a>,
 output:<a href="s2-example3.nwout">Media:s2-example3.nwout</a>)</p>
 <p>In this example, the vibrational frequency of the S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using
@@ -3198,7 +3198,7 @@ generated</p>
  ...
 </code></pre>
 
-<h3 id="ab-initio-molecular-dynamics-simulation-car-parrinello-of-s-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Car-Parrinello) of S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using the LDA approximation</h3>
+<h3 id="ab-initio-molecular-dynamics-simulation-car-parrinello-of-s-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Car-Parrinello) of S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using the LDA approximation<a class="headerlink" href="#ab-initio-molecular-dynamics-simulation-car-parrinello-of-s-dimer-using-the-lda-approximation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="s2-example4.nw">Media:s2-example4.nw</a>,
 output:<a href="s2-example4.nwout">Media:s2-example4.nwout</a>
 <a href="s2-md.xyz">Media:s2-md.xyz</a>
@@ -3273,7 +3273,7 @@ i.e.,</p>
 energy surface generated from the
 simulation.</p>
 <p><img alt="s2-md" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/s2-md.png" align=middle with="600pt" height="450pt"/>  </p>
-<h3 id="ab-initio-molecular-dynamics-simulation-born-oppenheimer-of-ssub2-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Born-Oppenheimer) of S&lt;sub2</sub> dimer using the LDA approximation</h3>
+<h3 id="ab-initio-molecular-dynamics-simulation-born-oppenheimer-of-ssub2-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Born-Oppenheimer) of S&lt;sub2</sub> dimer using the LDA approximation<a class="headerlink" href="#ab-initio-molecular-dynamics-simulation-born-oppenheimer-of-ssub2-dimer-using-the-lda-approximation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="s2-example5.nw">Media:s2-example5.nw</a>,
 output:<a href="s2-example5.nwout">Media:s2-example5.nwout</a>
 <a href="s2-bomd.xyz">Media:s2-bomd.xyz</a>
@@ -3315,7 +3315,7 @@ task pspw born-oppenheimer
 generated from the
 simulation.</p>
 <p><img alt="s2-bomd" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/s2-bomd.png" align=middle with="600pt" height="450pt"/>  </p>
-<h2 id="nwpw-tutorial-2-using-pspw-car-parrinello-simulated-annealing-simulations-to-optimize-structures">NWPW Tutorial 2: Using PSPW Car-Parrinello Simulated Annealing Simulations to Optimize Structures</h2>
+<h2 id="nwpw-tutorial-2-using-pspw-car-parrinello-simulated-annealing-simulations-to-optimize-structures">NWPW Tutorial 2: Using PSPW Car-Parrinello Simulated Annealing Simulations to Optimize Structures<a class="headerlink" href="#nwpw-tutorial-2-using-pspw-car-parrinello-simulated-annealing-simulations-to-optimize-structures" title="Permanent link">&para;</a></h2>
 <p>In principle quantum mechanical calculations can be used to determine
 the structure of any chemical system. One chooses a structure,
 calculates the total energy of the system, and repeats the calculation
@@ -3346,7 +3346,7 @@ prevalence, ab initio calculations performed by several researchers have
 suggested that B<img alt="$_{12}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b969a189f1d72cb1b766b0414d53d618.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="14.10255pt"/>, as well as B<img alt="$_{12}^+$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9688308038c1d0faef7ec46d707cd750.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="28.25757pt"/> and B<img alt="$_{12}^-$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/76b163dea42b9afe111cd4adae744905.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="28.25757pt"/>,
 will have a more open geometry.</p>
 <p><img alt="boron" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/boron.png" align=middle with="600pt" height="246pt"/>  </p>
-<h3 id="simulated-annealing-using-constant-energy-simulation">Simulated Annealing Using Constant Energy Simulation</h3>
+<h3 id="simulated-annealing-using-constant-energy-simulation">Simulated Annealing Using Constant Energy Simulation<a class="headerlink" href="#simulated-annealing-using-constant-energy-simulation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="b12-example2a.nw">Media:b12-example2a.nw</a>,
 output:<a href="b12-example2a.nwout">Media:b12-example2a.nwout</a>
 <a href="b12.00.xyz">Media:b12.00.xyz</a>
@@ -3412,7 +3412,7 @@ off this feature set the following</p>
 
 <p>or</p>
 <p><code>set nwpw:com_shift .false.</code></p>
-<h3 id="simulated-annealing-using-constant-temperature-simulation">Simulated Annealing Using Constant Temperature Simulation</h3>
+<h3 id="simulated-annealing-using-constant-temperature-simulation">Simulated Annealing Using Constant Temperature Simulation<a class="headerlink" href="#simulated-annealing-using-constant-temperature-simulation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="b12-example2b.nw">Media:b12-example2b.nw</a>,
 output:<a href="b12-example2b.nwout">Media:b12-example2b.nwout</a>
 <a href="b12.10.xyz">Media:b12.10.xyz</a>
@@ -3443,7 +3443,7 @@ Input</p>
  ….
 </code></pre>
 
-<h2 id="nwpw-tutorial-3-using-isodesmic-reaction-energies-to-estimate-gas-phase-thermodynamics">NWPW Tutorial 3: using isodesmic reaction energies to estimate gas-phase thermodynamics</h2>
+<h2 id="nwpw-tutorial-3-using-isodesmic-reaction-energies-to-estimate-gas-phase-thermodynamics">NWPW Tutorial 3: using isodesmic reaction energies to estimate gas-phase thermodynamics<a class="headerlink" href="#nwpw-tutorial-3-using-isodesmic-reaction-energies-to-estimate-gas-phase-thermodynamics" title="Permanent link">&para;</a></h2>
 <p>(<a href="isodesmic.pdf">isodesmic.pdf</a>
 <a href="isodesmic.tgz">isodesmic.tgz</a>)</p>
 <p>The development of a computational scheme that can accurately predict
@@ -3507,7 +3507,7 @@ theory.</p>
 </table>
 <p>Table 1: Standard enthalpy of formation (ΔH<img alt="$_f^o$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K) for
 CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH in kcal/mol from atomization energies with various
-electronic structure methods. Results taken from reference [2].</p>
+electronic structure methods. Results taken from reference <script type="math/tex; mode=display">2</script>.</p>
 <p></center></p>
 <p>Differences of up to 106.5 kcal/mol are found between different levels
 of theory. This example demonstrates that care must be taken in choosing
@@ -3515,7 +3515,7 @@ the appropriate method for calculating the heats of formation from total
 atomization energies.</p>
 <p>The difficulties associated with calculating absolute heats of formation
 from atomization energies can be avoided by using a set of isodesmic
-reactions[1]. The defining property of an isodesmic reaction - that
+reactions<script type="math/tex; mode=display">1</script>. The defining property of an isodesmic reaction - that
 there are an equal number of like bonds on the left-hand and right-hand
 sides of the reaction - helps to minimize the error in the reaction
 energy. These reactions are designed to separate out the interactions
@@ -3675,7 +3675,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 </table>
 <p>Table 2: Gas-phase standard enthalpies of formation ( ΔH<img alt="$_f^o$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K))
 in kcal/mol from isodesmic reactions and G2 Theory calculations taken
-from [3].</p>
+from <script type="math/tex; mode=display">3</script>.</p>
 <p></center></p>
 <p><center></p>
 <table>
@@ -3737,7 +3737,7 @@ from [3].</p>
 </tbody>
 </table>
 <p>Table 3: Miscellaneous experimental gas-phase enthalpies of formation
-(kcal/mol) taken from [3].</p>
+(kcal/mol) taken from <script type="math/tex; mode=display">3</script>.</p>
 <p></center></p>
 <ol>
 <li>Hehre, W. J., L. Radom, P.v.R. Schleyer, and J.A. Pople Ab Initio
@@ -3749,7 +3749,7 @@ from [3].</p>
 <li>Chase, M. W., Jr. Phys. Chem. Ref. Data, Monograph No. 9 1998, 9,
     1-1951.</li>
 </ol>
-<h2 id="nwpw-tutorial-4-aimdmm-simulation-of-ccl-64-ho">NWPW Tutorial 4: AIMD/MM simulation of CCl<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> + 64 H<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>O</h2>
+<h2 id="nwpw-tutorial-4-aimdmm-simulation-of-ccl-64-ho">NWPW Tutorial 4: AIMD/MM simulation of CCl<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> + 64 H<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>O<a class="headerlink" href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl-64-ho" title="Permanent link">&para;</a></h2>
 <p>(input:<a href="ccl4-64water.nw">Media:ccl4-64water.nw</a>,
 output:<a href="ccl4-64water.nwout">Media:ccl4-64water.nwout</a>)</p>
 <p>In this section we show how use the PSPW module to perform a
@@ -3763,13 +3763,13 @@ correlation functional is PBE96, The boundary condition is periodic, and
 with a side length of 23.577 Bohrs and has a cutoff energy is 50 Ry).
 The time step and fake mass for the Car-Parrinello run are specified to
 be 5.0 au and 600.0 au, respectively.</p>
-<h2 id="nwpw-tutorial-5-optimizing-the-unit-cell-and-geometry-of-diamond">NWPW Tutorial 5: Optimizing the Unit Cell and Geometry of Diamond</h2>
+<h2 id="nwpw-tutorial-5-optimizing-the-unit-cell-and-geometry-of-diamond">NWPW Tutorial 5: Optimizing the Unit Cell and Geometry of Diamond<a class="headerlink" href="#nwpw-tutorial-5-optimizing-the-unit-cell-and-geometry-of-diamond" title="Permanent link">&para;</a></h2>
 <p><img alt="diamong" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/diamond.png" align=left with="200pt" height="190pt"/>   The PSPW and BAND
 codes can be used to determine structures and energies for a wide range
 of crystalline systems. It can also be used to generate band structure
 and density of state
 plots.</p>
-<h3 id="optimizing-the-unit-cell-and-geometry-for-an-8-atom-supercell-of-diamond-with-pspw">Optimizing the Unit Cell and Geometry for an 8 Atom Supercell of Diamond with PSPW</h3>
+<h3 id="optimizing-the-unit-cell-and-geometry-for-an-8-atom-supercell-of-diamond-with-pspw">Optimizing the Unit Cell and Geometry for an 8 Atom Supercell of Diamond with PSPW<a class="headerlink" href="#optimizing-the-unit-cell-and-geometry-for-an-8-atom-supercell-of-diamond-with-pspw" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="diamond-pspw.nw">Media:diamond-pspw.nw</a>,
 output:<a href="diamond-pspw.nwout">Media:diamond-pspw.nwout</a>,
 <a href="diamond.opt.cif">Media:diamond.opt.cif</a>)</p>
@@ -3960,14 +3960,14 @@ task pspw energy
 <p>Using this energy and energy of diamond the cohesive energy per atom is
 calculated to
 be</p>
-<p><img alt="$\begin{align} E_{coh}= -\left( -45.07688304au/8 - (-5.421213534au)  \right)= 0.2133968 au = 5.8 eV \end{align}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ec76cf3f87afd9c5cf7c8262eb3f6658.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
+<p><img alt="$<script type="math/tex; mode=display">\begin{align} E_{coh}= -\left( -45.07688304au/8 - (-5.421213534au)  \right)= 0.2133968 au = 5.8 eV \end{align}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ec76cf3f87afd9c5cf7c8262eb3f6658.svg?invert_in_darkmode&sanitize=true" align=middle width="8.1885045pt" height="14.10255pt"/></p>
 <p>This value is substantially lower than the experimental value of
 <img alt="$7.37eV$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/74d9051358c1ca8aaea0239dcd57965a.svg?invert_in_darkmode&sanitize=true" align=middle width="49.932795pt" height="22.38192pt"/>! It turns out this error is a result of the unit cell being
 too small for the diamond calculation (or too small of a Brillioun zone
 sampling). In the next section, we show how increasing the Brillouin
 zone sampling reduces the error in the calculated cohesive
 energy.</p>
-<h3 id="optimizing-the-unit-cell-for-an-8-atom-supercell-of-diamond-with-band">Optimizing the Unit Cell for an 8 Atom Supercell of Diamond with BAND</h3>
+<h3 id="optimizing-the-unit-cell-for-an-8-atom-supercell-of-diamond-with-band">Optimizing the Unit Cell for an 8 Atom Supercell of Diamond with BAND<a class="headerlink" href="#optimizing-the-unit-cell-for-an-8-atom-supercell-of-diamond-with-band" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="diamond-band.nw">Media:diamond-band.nw</a>,
 output:<a href="diamond-band.nwout">Media:diamond-band.nwout</a>)</p>
 <p>In this example the BAND module is used to optimize the unit cell and
@@ -4057,7 +4057,7 @@ Angs.</p>
 <p><center></p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/ecohdist.png" align=middle with="792pt" height="612pt"/>  </p>
 <p></center></p>
-<h3 id="using-band-to-optimize-the-unit-cell-for-a-2-atom-primitive-cell-of-diamond">Using BAND to Optimize the Unit Cell for a 2 Atom Primitive Cell of Diamond</h3>
+<h3 id="using-band-to-optimize-the-unit-cell-for-a-2-atom-primitive-cell-of-diamond">Using BAND to Optimize the Unit Cell for a 2 Atom Primitive Cell of Diamond<a class="headerlink" href="#using-band-to-optimize-the-unit-cell-for-a-2-atom-primitive-cell-of-diamond" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="diamond-fcc.nw">Media:diamond-fcc.nw</a>,
 output:<a href="diamond-fcc.nwout.gz">Media:diamond-fcc.nwout.gz</a>)</p>
 <p>In this example the BAND module is used to optimize a 2 atom unit cell
@@ -4125,7 +4125,7 @@ distance versus the Brillouin zone sampling for the 8 atom SC unit cell
 and the 2 atom FCC unit
 cell.</p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/band-fcc.png" align=middle with="792pt" height="612pt"/>  </p>
-<h3 id="using-band-to-calculate-the-band-structures-of-diamond">Using BAND to Calculate the Band Structures of Diamond</h3>
+<h3 id="using-band-to-calculate-the-band-structures-of-diamond">Using BAND to Calculate the Band Structures of Diamond<a class="headerlink" href="#using-band-to-calculate-the-band-structures-of-diamond" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="diamond-structure.nw">Media:diamond-structure.nw</a>,
 output:<a href="diamond-structure.nwout">Media:diamond-structure.nwout</a>,
 <a href="diamondfcc.restricted_band.dat">file:diamondfcc.restricted_band.dat</a>)</p>
@@ -4189,7 +4189,7 @@ xmgrace) can be used to display the band structure.</p>
 <p><center></p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/band-structure.png" align=middle with="792pt" height="612pt"/>  </p>
 <p></center></p>
-<h3 id="using-band-to-calculate-the-density-of-states-of-diamond">Using BAND to Calculate the Density of States of Diamond</h3>
+<h3 id="using-band-to-calculate-the-density-of-states-of-diamond">Using BAND to Calculate the Density of States of Diamond<a class="headerlink" href="#using-band-to-calculate-the-density-of-states-of-diamond" title="Permanent link">&para;</a></h3>
 <p>(2 atom cell -
 input:<a href="diamond-dos.nw">diamond-dos.nw</a>
 output:<a href="diamond-dos.nwout">diamond-dos.nwout</a>,
@@ -4290,7 +4290,7 @@ states.</p>
 <p><center></p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/band-dos.png" align=middle with="792pt" height="612pt"/>  </p>
 <p></center></p>
-<h3 id="calculate-the-phonon-spectrum-of-diamond">Calculate the Phonon Spectrum of Diamond</h3>
+<h3 id="calculate-the-phonon-spectrum-of-diamond">Calculate the Phonon Spectrum of Diamond<a class="headerlink" href="#calculate-the-phonon-spectrum-of-diamond" title="Permanent link">&para;</a></h3>
 <pre><code>title &quot;Diamond 2 atom fcc cell Brillouin sampling=9x9x9 M-P - Phonon spectra&quot;  
 echo  
 
@@ -4329,7 +4329,7 @@ task band freq
 
 </code></pre>
 
-<h2 id="nwpw-tutorial-6-optimizing-the-unit-cell-of-nickel-with-fractional-occupation">NWPW Tutorial 6: optimizing the unit cell of nickel with fractional occupation</h2>
+<h2 id="nwpw-tutorial-6-optimizing-the-unit-cell-of-nickel-with-fractional-occupation">NWPW Tutorial 6: optimizing the unit cell of nickel with fractional occupation<a class="headerlink" href="#nwpw-tutorial-6-optimizing-the-unit-cell-of-nickel-with-fractional-occupation" title="Permanent link">&para;</a></h2>
 <p>(input:<a href="Ni-band.nw">Media:Ni-band.nw</a>
 output:<a href="Ni-band.nwout">Media:Ni-band.nwout</a>) The
 following example demonstrates how to uses the BAND module to optimize
@@ -4426,7 +4426,7 @@ Angs.</p>
 <p><center></p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/niecohdist.png" align=middle with="792pt" height="612pt"/>  </p>
 <p></center></p>
-<h2 id="nwpw-tutorial-7-optimizing-the-unit-cells-with-symmetry-diamond-with-fd-3m-symmetry-and-brucite-with-p-3m1-symmetry">NWPW Tutorial 7: Optimizing the unit cells with symmetry: Diamond with Fd-3m symmetry and Brucite with P-3m1 symmetry</h2>
+<h2 id="nwpw-tutorial-7-optimizing-the-unit-cells-with-symmetry-diamond-with-fd-3m-symmetry-and-brucite-with-p-3m1-symmetry">NWPW Tutorial 7: Optimizing the unit cells with symmetry: Diamond with Fd-3m symmetry and Brucite with P-3m1 symmetry<a class="headerlink" href="#nwpw-tutorial-7-optimizing-the-unit-cells-with-symmetry-diamond-with-fd-3m-symmetry-and-brucite-with-p-3m1-symmetry" title="Permanent link">&para;</a></h2>
 <p>(Diamond example,
 input:<a href="diamond-symmetry.nw">Media:diamond-symmetry.nw</a>,
 output:<a href="diamond-symmetry.nwout">Media:diamond-symmetry.nwout</a>)</p>
@@ -4678,7 +4678,7 @@ output:<a href="brucite-nosymmetry.nwout">Media:brucite-nosymmetry.nwout</a>).</
 ...
 </code></pre>
 
-<h2 id="nwpw-tutorial-8-nvt-metropolis-monte-carlo-simulations">NWPW Tutorial 8: NVT Metropolis Monte-Carlo Simulations</h2>
+<h2 id="nwpw-tutorial-8-nvt-metropolis-monte-carlo-simulations">NWPW Tutorial 8: NVT Metropolis Monte-Carlo Simulations<a class="headerlink" href="#nwpw-tutorial-8-nvt-metropolis-monte-carlo-simulations" title="Permanent link">&para;</a></h2>
 <p>In this example the PSPW module is used to run an NVT simulation for a
 diamond crystal using the a Metropolis Monte-Carlo algorithm.</p>
 <!-- (input:[Media:diamond-nvt.nw](diamond-nvt.nw.md),
@@ -4757,7 +4757,7 @@ end
 task pspw Metropolis
 </code></pre>
 
-<h2 id="nwpw-tutorial-9-npt-metropolis-monte-carlo-simulations">NWPW Tutorial 9: NPT Metropolis Monte-Carlo Simulations</h2>
+<h2 id="nwpw-tutorial-9-npt-metropolis-monte-carlo-simulations">NWPW Tutorial 9: NPT Metropolis Monte-Carlo Simulations<a class="headerlink" href="#nwpw-tutorial-9-npt-metropolis-monte-carlo-simulations" title="Permanent link">&para;</a></h2>
 <p>In this example the PSPW module is used to run an NPT simulation for a
 diamond crystal using the a Metropolis Monte-Carlo
 algorithm.</p>
@@ -4937,13 +4937,13 @@ Hausdorff distribution parameters:
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/diamond-e-histogram.png" align=middle with="640pt" height="480pt"/><br />
 <img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/diamond-v-histogram.png" align=middle with="640pt" height="480pt"/>  </p>
 <p></center></p>
-<h2 id="nwpw-tutorial-9-free-energy-simulations">NWPW Tutorial 9: Free Energy Simulations</h2>
+<h2 id="nwpw-tutorial-9-free-energy-simulations">NWPW Tutorial 9: Free Energy Simulations<a class="headerlink" href="#nwpw-tutorial-9-free-energy-simulations" title="Permanent link">&para;</a></h2>
 <p>A description of using the WHAM method for generating free energy of the
 gas-phase dissociation reaction CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>Cl <img alt="$\rightarrow$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e5d134f35dc4949fab12ec64d186248a.svg?invert_in_darkmode&sanitize=true" align=middle width="16.377075pt" height="14.10255pt"/> CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>+Cl
 can be found in the attached pdf
 (<a href="nwchem-new-pmf.pdf">nwchem-new-pmf.pdf</a>)</p>
-<h2 id="paw-tutorial">PAW Tutorial</h2>
-<h3 id="optimizing-a-water-molecule">Optimizing a water molecule</h3>
+<h2 id="paw-tutorial">PAW Tutorial<a class="headerlink" href="#paw-tutorial" title="Permanent link">&para;</a></h2>
+<h3 id="optimizing-a-water-molecule">Optimizing a water molecule<a class="headerlink" href="#optimizing-a-water-molecule" title="Permanent link">&para;</a></h3>
 <p>The following input deck performs for a water molecule a PSPW energy
 calculation followed by a PAW energy calculation and a PAW geometry
 optimization calculation. The default unit cell parameters are used
@@ -4977,7 +4977,7 @@ task paw steepest_descent
 task paw optimize
 </code></pre>
 
-<h3 id="optimizing-a-unit-cell-and-geometry-for-silicon-carbide">Optimizing a unit cell and geometry for Silicon-Carbide</h3>
+<h3 id="optimizing-a-unit-cell-and-geometry-for-silicon-carbide">Optimizing a unit cell and geometry for Silicon-Carbide<a class="headerlink" href="#optimizing-a-unit-cell-and-geometry-for-silicon-carbide" title="Permanent link">&para;</a></h3>
 <p>The following example demonstrates how to uses the PAW module to
 optimize the unit cell and geometry for a silicon-carbide
 crystal.</p>
@@ -5020,7 +5020,7 @@ set nwpw:stress_numerical .true. #currently only numerical stresses imple
 task paw optimize
 </code></pre>
 
-<h3 id="running-a-car-parrinello-simulation">Running a Car-Parrinello Simulation</h3>
+<h3 id="running-a-car-parrinello-simulation">Running a Car-Parrinello Simulation<a class="headerlink" href="#running-a-car-parrinello-simulation" title="Permanent link">&para;</a></h3>
 <p>In this section we show how use the PAW module to perform a
 Car-Parrinello molecular dynamic simulation for a <img alt="$C_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/85f3e1190907b9a8e94ce25bec4ec435.svg?invert_in_darkmode&sanitize=true" align=middle width="18.232995pt" height="22.38192pt"/> molecule at
 the LDA level. Before running a PAW Car-Parrinello simulation the system
@@ -5066,13 +5066,13 @@ task paw energy
 task paw Car-Parrinello
 </code></pre>
 
-<h2 id="nwpw-capabilities-and-limitations">NWPW Capabilities and Limitations</h2>
+<h2 id="nwpw-capabilities-and-limitations">NWPW Capabilities and Limitations<a class="headerlink" href="#nwpw-capabilities-and-limitations" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Hybrid Functionals (e.g. PBE0, LDA-SIC) only work in PSPW.</li>
 <li>Wannier orbital task only works in PSPW.</li>
 <li>AIMD/MM simulation only works with PSPW.</li>
 </ul>
-<h2 id="questions-and-difficulties">Questions and Difficulties</h2>
+<h2 id="questions-and-difficulties">Questions and Difficulties<a class="headerlink" href="#questions-and-difficulties" title="Permanent link">&para;</a></h2>
 <p>Questions and encountered problems should be reported to the <a href="Forum.html">NWChem
 Community Forum</a> or to Eric J. Bylaska,
 Eric.Bylaska@pnl.gov</p>
@@ -5110,6 +5110,7 @@ Eric.Bylaska@pnl.gov</p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {
