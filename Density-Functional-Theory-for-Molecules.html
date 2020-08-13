@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="density-functional-theory-dft">Density Functional Theory (DFT)</h1>
+                <h1 id="density-functional-theory-dft">Density Functional Theory (DFT)<a class="headerlink" href="#density-functional-theory-dft" title="Permanent link">&para;</a></h1>
 <p>The NWChem density functional theory (DFT) module uses the Gaussian
 basis set approach to compute closed shell and open shell densities and
 Kohn-Sham orbitals in the:</p>
@@ -264,7 +264,7 @@ are:</p>
 
 <p>The following sections describe these keywords and optional
 sub-directives that can be specified for a DFT calculation in NWChem.</p>
-<h2 id="specification-of-basis-sets-for-the-dft-module">Specification of Basis Sets for the DFT Module</h2>
+<h2 id="specification-of-basis-sets-for-the-dft-module">Specification of Basis Sets for the DFT Module<a class="headerlink" href="#specification-of-basis-sets-for-the-dft-module" title="Permanent link">&para;</a></h2>
 <p>The DFT module requires at a minimum the basis set for the Kohn-Sham
 molecular orbitals. This basis set must be in the default basis set
 named &ldquo;ao basis&rdquo;, or it must be assigned to this default name using the
@@ -293,13 +293,13 @@ given calculation can be summarized as follows;</p>
 <li>&ldquo;xc basis&rdquo; - exchange-correlation (XC) fitting basis set; optional,
     and usually not recommended</li>
 </ul>
-<h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL &ndash; KS-MO Vectors</h2>
+<h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL &ndash; KS-MO Vectors<a class="headerlink" href="#vectors-and-max_ovl-ks-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>The VECTORS directive is the same as that in the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors----inputoutput-of-mo-vectors">SCF</a> module. Currently, the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-lock-keyword">LOCK</a> keyword is not supported by the DFT module, however the directive</p>
 <pre><code> MAX_OVL
 </code></pre>
 
 <p>has the same effect.</p>
-<h2 id="xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash; Exchange-Correlation Potentials</h2>
+<h2 id="xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash; Exchange-Correlation Potentials<a class="headerlink" href="#xc-and-decomp-exchange-correlation-potentials" title="Permanent link">&para;</a></h2>
 <pre><code> XC [[acm] [b3lyp] [beckehandh] [pbe0] [bhlyp]\  
     [becke97]  [becke97-1] [becke97-2] [becke97-3] [becke98] [hcth] [hcth120] [hcth147] \  
      [hcth407] [becke97gga1] [hcth407p] \  
@@ -359,7 +359,7 @@ input</a>.</p>
 <p>Many alternative exchange and correlation functionals are available to
 the user as listed in the table below. The following sections describe
 how to use these options.</p>
-<h3 id="exchange-correlation-functionals">Exchange-Correlation Functionals</h3>
+<h3 id="exchange-correlation-functionals">Exchange-Correlation Functionals<a class="headerlink" href="#exchange-correlation-functionals" title="Permanent link">&para;</a></h3>
 <p>There are several Exchange and Correlation functionals in addition to
 the default slater and vwn_5 functionals. These are either local or
 gradient-corrected functionals (GCA); a full list can be found in the
@@ -396,7 +396,7 @@ as:</p>
 becke88 nonlocal 0.542  xperdew91 nonlocal 0.167
 </code></pre>
 
-<h3 id="setting-up-common-exchange-correlation-functionals">Setting up common exchange-correlation functionals</h3>
+<h3 id="setting-up-common-exchange-correlation-functionals">Setting up common exchange-correlation functionals<a class="headerlink" href="#setting-up-common-exchange-correlation-functionals" title="Permanent link">&para;</a></h3>
 <ul>
 <li>B3LYP: xc b3lyp</li>
 <li>PBE0: xc pbe0</li>
@@ -423,7 +423,7 @@ becke88 nonlocal 0.542  xperdew91 nonlocal 0.167
 </ul>
 <p>Analytic second derivatives are not supported with the Minnesota
 functionals yet.</p>
-<h3 id="combined-exchange-and-correlation-functionals">Combined Exchange and Correlation Functionals</h3>
+<h3 id="combined-exchange-and-correlation-functionals">Combined Exchange and Correlation Functionals<a class="headerlink" href="#combined-exchange-and-correlation-functionals" title="Permanent link">&para;</a></h3>
 <p>In addition to the options listed above for the exchange and correlation
 functionals, the user has the alternative of specifying combined
 exchange and correlation functionals.</p>
@@ -453,7 +453,7 @@ computed as</p>
  a<sub>C</sub>&delta;E<sub>C</sub><sup>LYP</sup>  </p>
 <p>where  </p>
 <p>a<sub>0</sub> = 0.20, a<sub>X</sub> = 0.72, a<sub>C</sub> = 0.81  </p>
-<h2 id="xc-functionals-summary">XC Functionals Summary</h2>
+<h2 id="xc-functionals-summary">XC Functionals Summary<a class="headerlink" href="#xc-functionals-summary" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -476,7 +476,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[1]</td>
+<td>
+<script type="math/tex; mode=display">1</script>
+</td>
 </tr>
 <tr>
 <td>vwn_1</td>
@@ -486,7 +488,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[2]</td>
+<td>
+<script type="math/tex; mode=display">2</script>
+</td>
 </tr>
 <tr>
 <td>vwn_2</td>
@@ -496,7 +500,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[2]</td>
+<td>
+<script type="math/tex; mode=display">2</script>
+</td>
 </tr>
 <tr>
 <td>vwn_3</td>
@@ -506,7 +512,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[2]</td>
+<td>
+<script type="math/tex; mode=display">2</script>
+</td>
 </tr>
 <tr>
 <td>vwn_4</td>
@@ -516,7 +524,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[2]</td>
+<td>
+<script type="math/tex; mode=display">2</script>
+</td>
 </tr>
 <tr>
 <td>vwn_5</td>
@@ -526,7 +536,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[2]</td>
+<td>
+<script type="math/tex; mode=display">2</script>
+</td>
 </tr>
 <tr>
 <td>vwn_1_rpa</td>
@@ -536,7 +548,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[2]</td>
+<td>
+<script type="math/tex; mode=display">2</script>
+</td>
 </tr>
 <tr>
 <td>perdew81</td>
@@ -546,7 +560,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[3]</td>
+<td>
+<script type="math/tex; mode=display">3</script>
+</td>
 </tr>
 <tr>
 <td>pw91lda</td>
@@ -556,7 +572,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[4]</td>
+<td>
+<script type="math/tex; mode=display">4</script>
+</td>
 </tr>
 <tr>
 <td>xbecke86b</td>
@@ -566,7 +584,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[54]</td>
+<td>
+<script type="math/tex; mode=display">54</script>
+</td>
 </tr>
 <tr>
 <td>becke88</td>
@@ -576,7 +596,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[5]</td>
+<td>
+<script type="math/tex; mode=display">5</script>
+</td>
 </tr>
 <tr>
 <td>xperdew86</td>
@@ -586,7 +608,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[53]</td>
+<td>
+<script type="math/tex; mode=display">53</script>
+</td>
 </tr>
 <tr>
 <td>xperdew91</td>
@@ -596,7 +620,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[6]</td>
+<td>
+<script type="math/tex; mode=display">6</script>
+</td>
 </tr>
 <tr>
 <td>xpbe96</td>
@@ -606,7 +632,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[7]</td>
+<td>
+<script type="math/tex; mode=display">7</script>
+</td>
 </tr>
 <tr>
 <td>gill96</td>
@@ -616,7 +644,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[8]</td>
+<td>
+<script type="math/tex; mode=display">8</script>
+</td>
 </tr>
 <tr>
 <td>optx</td>
@@ -626,7 +656,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[20]</td>
+<td>
+<script type="math/tex; mode=display">20</script>
+</td>
 </tr>
 <tr>
 <td>mpw91</td>
@@ -636,7 +668,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[23]</td>
+<td>
+<script type="math/tex; mode=display">23</script>
+</td>
 </tr>
 <tr>
 <td>xft97</td>
@@ -646,7 +680,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[24]</td>
+<td>
+<script type="math/tex; mode=display">24</script>
+</td>
 </tr>
 <tr>
 <td>rpbe</td>
@@ -656,7 +692,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[33]</td>
+<td>
+<script type="math/tex; mode=display">33</script>
+</td>
 </tr>
 <tr>
 <td>revpbe</td>
@@ -666,7 +704,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[34]</td>
+<td>
+<script type="math/tex; mode=display">34</script>
+</td>
 </tr>
 <tr>
 <td>xpw6b95</td>
@@ -676,7 +716,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[36]</td>
+<td>
+<script type="math/tex; mode=display">36</script>
+</td>
 </tr>
 <tr>
 <td>xpwb6k</td>
@@ -686,7 +728,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[36]</td>
+<td>
+<script type="math/tex; mode=display">36</script>
+</td>
 </tr>
 <tr>
 <td>perdew86</td>
@@ -696,7 +740,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[9]</td>
+<td>
+<script type="math/tex; mode=display">9</script>
+</td>
 </tr>
 <tr>
 <td>lyp</td>
@@ -706,7 +752,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[10]</td>
+<td>
+<script type="math/tex; mode=display">10</script>
+</td>
 </tr>
 <tr>
 <td>perdew91</td>
@@ -716,7 +764,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[6]</td>
+<td>
+<script type="math/tex; mode=display">6</script>
+</td>
 </tr>
 <tr>
 <td>cpbe96</td>
@@ -726,7 +776,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[7]</td>
+<td>
+<script type="math/tex; mode=display">7</script>
+</td>
 </tr>
 <tr>
 <td>cft97</td>
@@ -736,7 +788,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[24]</td>
+<td>
+<script type="math/tex; mode=display">24</script>
+</td>
 </tr>
 <tr>
 <td>op</td>
@@ -746,7 +800,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[31]</td>
+<td>
+<script type="math/tex; mode=display">31</script>
+</td>
 </tr>
 <tr>
 <td>hcth</td>
@@ -756,7 +812,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[11]</td>
+<td>
+<script type="math/tex; mode=display">11</script>
+</td>
 </tr>
 <tr>
 <td>hcth120</td>
@@ -766,7 +824,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[12]</td>
+<td>
+<script type="math/tex; mode=display">12</script>
+</td>
 </tr>
 <tr>
 <td>hcth147</td>
@@ -776,7 +836,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[12]</td>
+<td>
+<script type="math/tex; mode=display">12</script>
+</td>
 </tr>
 <tr>
 <td>hcth407</td>
@@ -786,7 +848,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[19]</td>
+<td>
+<script type="math/tex; mode=display">19</script>
+</td>
 </tr>
 <tr>
 <td>becke97gga1</td>
@@ -796,7 +860,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[18]</td>
+<td>
+<script type="math/tex; mode=display">18</script>
+</td>
 </tr>
 <tr>
 <td>hcthp14</td>
@@ -806,7 +872,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[21]</td>
+<td>
+<script type="math/tex; mode=display">21</script>
+</td>
 </tr>
 <tr>
 <td>ft97</td>
@@ -816,7 +884,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[24]</td>
+<td>
+<script type="math/tex; mode=display">24</script>
+</td>
 </tr>
 <tr>
 <td>htch407p</td>
@@ -826,7 +896,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[27]</td>
+<td>
+<script type="math/tex; mode=display">27</script>
+</td>
 </tr>
 <tr>
 <td>bop</td>
@@ -836,7 +908,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[31]</td>
+<td>
+<script type="math/tex; mode=display">31</script>
+</td>
 </tr>
 <tr>
 <td>pbeop</td>
@@ -846,7 +920,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[32]</td>
+<td>
+<script type="math/tex; mode=display">32</script>
+</td>
 </tr>
 <tr>
 <td>xpkzb99</td>
@@ -856,7 +932,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[26]</td>
+<td>
+<script type="math/tex; mode=display">26</script>
+</td>
 </tr>
 <tr>
 <td>cpkzb99</td>
@@ -866,7 +944,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[26]</td>
+<td>
+<script type="math/tex; mode=display">26</script>
+</td>
 </tr>
 <tr>
 <td>xtpss03</td>
@@ -876,7 +956,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[28]</td>
+<td>
+<script type="math/tex; mode=display">28</script>
+</td>
 </tr>
 <tr>
 <td>ctpss03</td>
@@ -886,7 +968,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[28]</td>
+<td>
+<script type="math/tex; mode=display">28</script>
+</td>
 </tr>
 <tr>
 <td>bc95</td>
@@ -896,7 +980,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[33]</td>
+<td>
+<script type="math/tex; mode=display">33</script>
+</td>
 </tr>
 <tr>
 <td>cpw6b95</td>
@@ -906,7 +992,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[36]</td>
+<td>
+<script type="math/tex; mode=display">36</script>
+</td>
 </tr>
 <tr>
 <td>cpwb6k</td>
@@ -916,7 +1004,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[36]</td>
+<td>
+<script type="math/tex; mode=display">36</script>
+</td>
 </tr>
 <tr>
 <td>xm05</td>
@@ -926,7 +1016,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[37]</td>
+<td>
+<script type="math/tex; mode=display">37</script>
+</td>
 </tr>
 <tr>
 <td>cm05</td>
@@ -936,7 +1028,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[37]</td>
+<td>
+<script type="math/tex; mode=display">37</script>
+</td>
 </tr>
 <tr>
 <td>m05-2x</td>
@@ -946,7 +1040,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[38]</td>
+<td>
+<script type="math/tex; mode=display">38</script>
+</td>
 </tr>
 <tr>
 <td>xm05-2x</td>
@@ -956,7 +1052,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[38]</td>
+<td>
+<script type="math/tex; mode=display">38</script>
+</td>
 </tr>
 <tr>
 <td>cm05-2x</td>
@@ -966,7 +1064,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[38]</td>
+<td>
+<script type="math/tex; mode=display">38</script>
+</td>
 </tr>
 <tr>
 <td>xctpssh</td>
@@ -976,7 +1076,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[29]</td>
+<td>
+<script type="math/tex; mode=display">29</script>
+</td>
 </tr>
 <tr>
 <td>bb1k</td>
@@ -986,7 +1088,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[34]</td>
+<td>
+<script type="math/tex; mode=display">34</script>
+</td>
 </tr>
 <tr>
 <td>mpw1b95</td>
@@ -996,7 +1100,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[35]</td>
+<td>
+<script type="math/tex; mode=display">35</script>
+</td>
 </tr>
 <tr>
 <td>mpwb1k</td>
@@ -1006,7 +1112,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[35]</td>
+<td>
+<script type="math/tex; mode=display">35</script>
+</td>
 </tr>
 <tr>
 <td>pw6b95</td>
@@ -1016,7 +1124,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[36]</td>
+<td>
+<script type="math/tex; mode=display">36</script>
+</td>
 </tr>
 <tr>
 <td>pwb6k</td>
@@ -1026,7 +1136,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[36]</td>
+<td>
+<script type="math/tex; mode=display">36</script>
+</td>
 </tr>
 <tr>
 <td>m05</td>
@@ -1036,7 +1148,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[37]</td>
+<td>
+<script type="math/tex; mode=display">37</script>
+</td>
 </tr>
 <tr>
 <td>vs98</td>
@@ -1046,7 +1160,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[41]</td>
+<td>
+<script type="math/tex; mode=display">41</script>
+</td>
 </tr>
 <tr>
 <td>xvs98</td>
@@ -1056,7 +1172,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[41]</td>
+<td>
+<script type="math/tex; mode=display">41</script>
+</td>
 </tr>
 <tr>
 <td>cvs98</td>
@@ -1066,7 +1184,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[41]</td>
+<td>
+<script type="math/tex; mode=display">41</script>
+</td>
 </tr>
 <tr>
 <td>m06-L</td>
@@ -1076,7 +1196,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[40]</td>
+<td>
+<script type="math/tex; mode=display">40</script>
+</td>
 </tr>
 <tr>
 <td>xm06-L</td>
@@ -1086,7 +1208,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[40]</td>
+<td>
+<script type="math/tex; mode=display">40</script>
+</td>
 </tr>
 <tr>
 <td>cm06-L</td>
@@ -1096,7 +1220,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[40]</td>
+<td>
+<script type="math/tex; mode=display">40</script>
+</td>
 </tr>
 <tr>
 <td>m06-hf</td>
@@ -1106,7 +1232,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[41]</td>
+<td>
+<script type="math/tex; mode=display">41</script>
+</td>
 </tr>
 <tr>
 <td>xm06-hf</td>
@@ -1116,7 +1244,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[41]</td>
+<td>
+<script type="math/tex; mode=display">41</script>
+</td>
 </tr>
 <tr>
 <td>cm06-hf</td>
@@ -1126,7 +1256,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[41]</td>
+<td>
+<script type="math/tex; mode=display">41</script>
+</td>
 </tr>
 <tr>
 <td>m06</td>
@@ -1136,7 +1268,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[42]</td>
+<td>
+<script type="math/tex; mode=display">42</script>
+</td>
 </tr>
 <tr>
 <td>xm06</td>
@@ -1146,7 +1280,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[42]</td>
+<td>
+<script type="math/tex; mode=display">42</script>
+</td>
 </tr>
 <tr>
 <td>cm06</td>
@@ -1156,7 +1292,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[42]</td>
+<td>
+<script type="math/tex; mode=display">42</script>
+</td>
 </tr>
 <tr>
 <td>m06-2x</td>
@@ -1166,7 +1304,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[42]</td>
+<td>
+<script type="math/tex; mode=display">42</script>
+</td>
 </tr>
 <tr>
 <td>xm06-2x</td>
@@ -1176,7 +1316,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[42]</td>
+<td>
+<script type="math/tex; mode=display">42</script>
+</td>
 </tr>
 <tr>
 <td>cm06-2x</td>
@@ -1186,7 +1328,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[42]</td>
+<td>
+<script type="math/tex; mode=display">42</script>
+</td>
 </tr>
 <tr>
 <td>cm08-hx</td>
@@ -1196,7 +1340,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[46]</td>
+<td>
+<script type="math/tex; mode=display">46</script>
+</td>
 </tr>
 <tr>
 <td>xm08-hx</td>
@@ -1206,7 +1352,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[46]</td>
+<td>
+<script type="math/tex; mode=display">46</script>
+</td>
 </tr>
 <tr>
 <td>m08-hx</td>
@@ -1216,7 +1364,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[46]</td>
+<td>
+<script type="math/tex; mode=display">46</script>
+</td>
 </tr>
 <tr>
 <td>cm08-so</td>
@@ -1226,7 +1376,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[46]</td>
+<td>
+<script type="math/tex; mode=display">46</script>
+</td>
 </tr>
 <tr>
 <td>xm08-so</td>
@@ -1236,7 +1388,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[46]</td>
+<td>
+<script type="math/tex; mode=display">46</script>
+</td>
 </tr>
 <tr>
 <td>m08-so</td>
@@ -1246,7 +1400,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[46]</td>
+<td>
+<script type="math/tex; mode=display">46</script>
+</td>
 </tr>
 <tr>
 <td>cm11</td>
@@ -1256,7 +1412,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[47]</td>
+<td>
+<script type="math/tex; mode=display">47</script>
+</td>
 </tr>
 <tr>
 <td>xm11</td>
@@ -1266,7 +1424,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[47]</td>
+<td>
+<script type="math/tex; mode=display">47</script>
+</td>
 </tr>
 <tr>
 <td>m11</td>
@@ -1276,7 +1436,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[47]</td>
+<td>
+<script type="math/tex; mode=display">47</script>
+</td>
 </tr>
 <tr>
 <td>cm11-l</td>
@@ -1286,7 +1448,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[48]</td>
+<td>
+<script type="math/tex; mode=display">48</script>
+</td>
 </tr>
 <tr>
 <td>xm11-l</td>
@@ -1296,7 +1460,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[48]</td>
+<td>
+<script type="math/tex; mode=display">48</script>
+</td>
 </tr>
 <tr>
 <td>m11-l</td>
@@ -1306,7 +1472,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[48]</td>
+<td>
+<script type="math/tex; mode=display">48</script>
+</td>
 </tr>
 <tr>
 <td>csogga</td>
@@ -1316,7 +1484,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[49]</td>
+<td>
+<script type="math/tex; mode=display">49</script>
+</td>
 </tr>
 <tr>
 <td>xsogga</td>
@@ -1326,7 +1496,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[49]</td>
+<td>
+<script type="math/tex; mode=display">49</script>
+</td>
 </tr>
 <tr>
 <td>sogga</td>
@@ -1336,7 +1508,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[49]</td>
+<td>
+<script type="math/tex; mode=display">49</script>
+</td>
 </tr>
 <tr>
 <td>csogga11</td>
@@ -1346,7 +1520,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[50]</td>
+<td>
+<script type="math/tex; mode=display">50</script>
+</td>
 </tr>
 <tr>
 <td>xsogga11</td>
@@ -1356,7 +1532,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[50]</td>
+<td>
+<script type="math/tex; mode=display">50</script>
+</td>
 </tr>
 <tr>
 <td>sogga11</td>
@@ -1366,7 +1544,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[50]</td>
+<td>
+<script type="math/tex; mode=display">50</script>
+</td>
 </tr>
 <tr>
 <td>csogga11-x</td>
@@ -1376,7 +1556,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[51]</td>
+<td>
+<script type="math/tex; mode=display">51</script>
+</td>
 </tr>
 <tr>
 <td>xsogga11-x</td>
@@ -1386,7 +1568,9 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[51]</td>
+<td>
+<script type="math/tex; mode=display">51</script>
+</td>
 </tr>
 <tr>
 <td>sogga11-x</td>
@@ -1396,7 +1580,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>[51]</td>
+<td>
+<script type="math/tex; mode=display">51</script>
+</td>
 </tr>
 <tr>
 <td>dldf</td>
@@ -1406,7 +1592,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[52]</td>
+<td>
+<script type="math/tex; mode=display">52</script>
+</td>
 </tr>
 <tr>
 <td>beckehandh</td>
@@ -1416,7 +1604,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>[13]</td>
+<td>
+<script type="math/tex; mode=display">13</script>
+</td>
 </tr>
 <tr>
 <td>b3lyp</td>
@@ -1426,7 +1616,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>[14]</td>
+<td>
+<script type="math/tex; mode=display">14</script>
+</td>
 </tr>
 <tr>
 <td>acm</td>
@@ -1436,7 +1628,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>[14]</td>
+<td>
+<script type="math/tex; mode=display">14</script>
+</td>
 </tr>
 <tr>
 <td>becke97</td>
@@ -1446,7 +1640,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>[15]</td>
+<td>
+<script type="math/tex; mode=display">15</script>
+</td>
 </tr>
 <tr>
 <td>becke97-1</td>
@@ -1456,7 +1652,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>[11]</td>
+<td>
+<script type="math/tex; mode=display">11</script>
+</td>
 </tr>
 <tr>
 <td>becke97-2</td>
@@ -1466,7 +1664,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>[22]</td>
+<td>
+<script type="math/tex; mode=display">22</script>
+</td>
 </tr>
 <tr>
 <td>becke97-3</td>
@@ -1476,7 +1676,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>[30]</td>
+<td>
+<script type="math/tex; mode=display">30</script>
+</td>
 </tr>
 <tr>
 <td>becke97-d</td>
@@ -1486,7 +1688,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>[45]</td>
+<td>
+<script type="math/tex; mode=display">45</script>
+</td>
 </tr>
 <tr>
 <td>becke98</td>
@@ -1496,7 +1700,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>[16]</td>
+<td>
+<script type="math/tex; mode=display">16</script>
+</td>
 </tr>
 <tr>
 <td>pbe0</td>
@@ -1506,7 +1712,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>[17]</td>
+<td>
+<script type="math/tex; mode=display">17</script>
+</td>
 </tr>
 <tr>
 <td>mpw1k</td>
@@ -1516,7 +1724,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>[25]</td>
+<td>
+<script type="math/tex; mode=display">25</script>
+</td>
 </tr>
 <tr>
 <td>xmvs15</td>
@@ -1526,7 +1736,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[55]</td>
+<td>
+<script type="math/tex; mode=display">55</script>
+</td>
 </tr>
 <tr>
 <td>hle16</td>
@@ -1536,7 +1748,9 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td>[56]</td>
+<td>
+<script type="math/tex; mode=display">56</script>
+</td>
 </tr>
 <tr>
 <td>scan</td>
@@ -1546,7 +1760,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[57]</td>
+<td>
+<script type="math/tex; mode=display">57</script>
+</td>
 </tr>
 <tr>
 <td>scanl</td>
@@ -1556,7 +1772,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[58]</td>
+<td>
+<script type="math/tex; mode=display">58</script>
+</td>
 </tr>
 <tr>
 <td>revm06-L</td>
@@ -1566,7 +1784,9 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td>[59]</td>
+<td>
+<script type="math/tex; mode=display">59</script>
+</td>
 </tr>
 <tr>
 <td>revm06</td>
@@ -1576,7 +1796,9 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td>[60]</td>
+<td>
+<script type="math/tex; mode=display">60</script>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1664,7 +1886,7 @@ to nuclear position.</p>
 <li>Y. Wang, X. Jin, H. S. Yu, D. G. Truhlar, X. He, PNAS  114, 8487 (2017).</li>
 <li>Y. Wang, P. Verma, X. Jin, D. G. Truhlar, and X. He, PNAS 115, 10257 (2018).</li>
 </ol>
-<h3 id="meta-gga-functionals">Meta-GGA Functionals</h3>
+<h3 id="meta-gga-functionals">Meta-GGA Functionals<a class="headerlink" href="#meta-gga-functionals" title="Permanent link">&para;</a></h3>
 <p>One way to calculate meta-GGA energies is to use orbitals and densities
 from fully self-consistent GGA or LDA calculations and run them in one
 iteration in the meta-GGA functional. It is expected that meta-GGA
@@ -1680,15 +1902,15 @@ calculated self-consistently and geometry is optimized using the
 analytical gradients.</p>
 <p>(For more information on metaGGAs, see S. Kurth, J. Perdew, P. Blaha,
 Int. J. Quant. Chem 75, 889 (1999) for a brief description of meta-GGAs,
-and citations 14-27 therein for thorough background )</p>
+and citations 14-27 therein for thorough background)</p>
 <p>Note: both TPSS and PKZB correlation require the PBE GGA CORRELATION
 (which is itself dependent on an LDA). The decision has been made to use
 these functionals with the accompanying local PW91LDA. The user does not
 have the ability to set the local part of these metaGGA functionals.</p>
-<h3 id="range-separated-functionals">Range-Separated Functionals</h3>
+<h3 id="range-separated-functionals">Range-Separated Functionals<a class="headerlink" href="#range-separated-functionals" title="Permanent link">&para;</a></h3>
 <p>Using the Ewald
 decomposition</p>
-<p><img alt="$\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} +  &#10;\frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/702839e7c548f54d8f5b49f0a3ad6824.svg?invert_in_darkmode&sanitize=true" align=middle width="254.98902pt" height="33.14091pt"/></p>
+<p><img alt="$\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/702839e7c548f54d8f5b49f0a3ad6824.svg?invert_in_darkmode&sanitize=true" align=middle width="254.98902pt" height="33.14091pt"/></p>
 <p>we can split the the Exchange interaction as</p>
 <p><img alt="$E_{X} = E_X^{LR} + E_X^{SR}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7b23a639e12d5c9a1bfa2148db98ab10.svg?invert_in_darkmode&sanitize=true" align=middle width="130.9704pt" height="27.59823pt"/></p>
 <p>Therefore the long-range HF Exchange energy
@@ -1834,7 +2056,7 @@ end
 task dft energy
 </code></pre>
 
-<h3 id="ssb-d-functional">SSB-D functional</h3>
+<h3 id="ssb-d-functional">SSB-D functional<a class="headerlink" href="#ssb-d-functional" title="Permanent link">&para;</a></h3>
 <p>The recently developed SSB-D is a small correction to the non-empirical
 PBE functional and includes a portion of Grimme&rsquo;s dispersion correction
 (s6=0.847455). It is designed to reproduce the good results of OPBE for
@@ -1853,7 +2075,7 @@ stacked adenine dimers), and for NMR chemical shieldings.</p>
 <pre><code>xc ssb-d
 </code></pre>
 
-<h3 id="semi-empirical-hybrid-dft-combined-with-perturbative-mp2">Semi-empirical hybrid DFT combined with perturbative MP2</h3>
+<h3 id="semi-empirical-hybrid-dft-combined-with-perturbative-mp2">Semi-empirical hybrid DFT combined with perturbative MP2<a class="headerlink" href="#semi-empirical-hybrid-dft-combined-with-perturbative-mp2" title="Permanent link">&para;</a></h3>
 <p>This theory combines hybrid density functional theory with MP2
 semi-empirically. The B2PLYP functional, which is an example of this
 approximation, can be specified as:</p>
@@ -1882,7 +2104,7 @@ end
     perturbative second-order correlation&rdquo; Journal of Chemical Physics
     124, 034108 (2006)</li>
 </ol>
-<h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00 &ndash; Asymptotic correction</h3>
+<h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00 &ndash; Asymptotic correction<a class="headerlink" href="#lb94-and-cs00-asymptotic-correction" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>LB94</code> will correct the asymptotic region of the XC definition
 of exchange-correlation potential by the van-Leeuwen-Baerends
 exchange-correlation potential that has the correct <img alt="$-1/r$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3053de24294b49c2329426a84757d7d1.svg?invert_in_darkmode&sanitize=true" align=middle width="36.958185pt" height="24.56553pt"/> asymptotic
@@ -1907,7 +2129,7 @@ use of any other functional.</p>
 <p>Sample input files of asymptotically corrected TDDFT calculations can be
 found in the corresponding
 <a href="Excited-State-Calculations.html">section</a>.</p>
-<h2 id="sample-input-file">Sample input file</h2>
+<h2 id="sample-input-file">Sample input file<a class="headerlink" href="#sample-input-file" title="Permanent link">&para;</a></h2>
 <p>A simple example calculates the geometry of water, using the metaGGA
 functionals xtpss03 and ctpss03. This also highlights some of the print
 features in the DFT module. Note that you must use the line task dft
@@ -1934,7 +2156,7 @@ task dft optimize 
 task dft freq numerical
 </code></pre>
 
-<h2 id="iterations-or-maxiter-number-of-scf-iterations">ITERATIONS or MAXITER &ndash; Number of SCF iterations</h2>
+<h2 id="iterations-or-maxiter-number-of-scf-iterations">ITERATIONS or MAXITER &ndash; Number of SCF iterations<a class="headerlink" href="#iterations-or-maxiter-number-of-scf-iterations" title="Permanent link">&para;</a></h2>
 <pre><code> ITERATIONS or MAXITER &lt;integer iterations default 30&gt;
 </code></pre>
 
@@ -1953,7 +2175,7 @@ the following general form,</p>
 iterations is reached or convergence is met. See an example that uses
 this directive in <a href="#sample-input-file">Sample input
 file</a>.</p>
-<h2 id="convergence-scf-convergence-control">CONVERGENCE &ndash; SCF Convergence Control</h2>
+<h2 id="convergence-scf-convergence-control">CONVERGENCE &ndash; SCF Convergence Control<a class="headerlink" href="#convergence-scf-convergence-control" title="Permanent link">&para;</a></h2>
 <pre><code> CONVERGENCE [energy &lt;real energy default 1e-6&gt;] \  
              [density &lt;real density default 1e-5&gt;] \  
              [gradient &lt;real gradient default 5e-4&gt;] \  
@@ -2090,7 +2312,7 @@ the following line</p>
 <pre><code> CONVERGENCE rabuck 30
 </code></pre>
 
-<h2 id="cdft-constrained-dft">CDFT &ndash; Constrained DFT</h2>
+<h2 id="cdft-constrained-dft">CDFT &ndash; Constrained DFT<a class="headerlink" href="#cdft-constrained-dft" title="Permanent link">&para;</a></h2>
 <p>This option enables the constrained DFT formalism by Wu and Van Voorhis
 described in the paper: Q. Wu, T. Van Voorhis, Phys. Rev. A 72, 024502
 (2005).</p>
@@ -2144,7 +2366,7 @@ end
 task dft
 </code></pre>
 
-<h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR &ndash; Fractional Occupation of the Molecular Orbitals</h2>
+<h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR &ndash; Fractional Occupation of the Molecular Orbitals<a class="headerlink" href="#smear-fractional-occupation-of-the-molecular-orbitals" title="Permanent link">&para;</a></h2>
 <p>The SMEAR keyword is useful in cases with many degenerate states near
 the HOMO (eg metallic clusters)</p>
 <pre><code> SMEAR &lt;real smear default 0.001&gt;
@@ -2155,8 +2377,8 @@ Gaussian broadening function of exponent smear is used as described in
 the paper: R.W. Warren and B.I. Dunlap, Chem. Phys. Letters 262, 384
 (1996). The user must be aware that an additional energy term is added
 to the total energy in order to have energies and gradients consistent.</p>
-<h2 id="fon-calculations-with-fractional-numbers-of-electrons">FON &ndash; Calculations with fractional numbers of electrons</h2>
-<h3 id="restricted">Restricted</h3>
+<h2 id="fon-calculations-with-fractional-numbers-of-electrons">FON &ndash; Calculations with fractional numbers of electrons<a class="headerlink" href="#fon-calculations-with-fractional-numbers-of-electrons" title="Permanent link">&para;</a></h2>
+<h3 id="restricted">Restricted<a class="headerlink" href="#restricted" title="Permanent link">&para;</a></h3>
 <pre><code>fon partial 3 electrons 1.8 filled 2
 </code></pre>
 
@@ -2183,7 +2405,7 @@ end
 task dft energy
 </code></pre>
 
-<h3 id="unrestricted">Unrestricted</h3>
+<h3 id="unrestricted">Unrestricted<a class="headerlink" href="#unrestricted" title="Permanent link">&para;</a></h3>
 <pre><code>fon alpha partial 3 electrons 0.9 filled 2 
 fon beta partial 3 electrons 0.9 filled 2
 </code></pre>
@@ -2227,7 +2449,7 @@ end
 task dft
 </code></pre>
 
-<h2 id="occup-controlling-the-occupations-of-molecular-orbitals">OCCUP &ndash; Controlling the occupations of molecular orbitals</h2>
+<h2 id="occup-controlling-the-occupations-of-molecular-orbitals">OCCUP &ndash; Controlling the occupations of molecular orbitals<a class="headerlink" href="#occup-controlling-the-occupations-of-molecular-orbitals" title="Permanent link">&para;</a></h2>
 <p>Example:</p>
 <pre><code>echo  
 start h2o_core_hole  
@@ -2258,7 +2480,7 @@ end
 task dft
 </code></pre>
 
-<h2 id="grid-numerical-integration-of-the-xc-potential">GRID &ndash; Numerical Integration of the XC Potential</h2>
+<h2 id="grid-numerical-integration-of-the-xc-potential">GRID &ndash; Numerical Integration of the XC Potential<a class="headerlink" href="#grid-numerical-integration-of-the-xc-potential" title="Permanent link">&para;</a></h2>
 <pre><code> GRID [(xcoarse||coarse||medium||fine||xfine||huge) default medium] \  
       [(gausleg||lebedev ) default lebedev ] \  
       [(becke||erf1||erf2||ssf) default erf1] \  
@@ -2516,12 +2738,12 @@ accuracies.</p>
 <p>Program default number of radial and angular shells empirically
 determined for Row 4 atoms (Rb &rarr; I) to reach the desired
 accuracies.</p>
-<h3 id="angular-grids">Angular grids</h3>
+<h3 id="angular-grids">Angular grids<a class="headerlink" href="#angular-grids" title="Permanent link">&para;</a></h3>
 <p>In addition to the simple keyword specifying the desired accuracy as
 described above, the user has the option of specifying a custom
 quadrature of this type in which ALL atoms have the same grid
 specification. This is accomplished by using the gausleg keyword.</p>
-<h4 id="gauss-legendre-angular-grid">Gauss-Legendre angular grid</h4>
+<h4 id="gauss-legendre-angular-grid">Gauss-Legendre angular grid<a class="headerlink" href="#gauss-legendre-angular-grid" title="Permanent link">&para;</a></h4>
 <pre><code> GRID gausleg &lt;integer nradpts default 50&gt; &lt;integer nagrid default 10&gt;
 </code></pre>
 
@@ -2532,7 +2754,7 @@ theta points. So, for example, a specification of,</p>
 
 <p>would be interpreted as 80 radial points, 20 theta points, and 40 phi
 points per center (or 64000 points per center before pruning).</p>
-<h4 id="lebedev-angular-grid">Lebedev angular grid</h4>
+<h4 id="lebedev-angular-grid">Lebedev angular grid<a class="headerlink" href="#lebedev-angular-grid" title="Permanent link">&para;</a></h4>
 <p>A second quadrature is the Lebedev scheme for the angular
 components11.6. Within this numerical integration procedure various
 levels of accuracy have also been defined and are available to the user.
@@ -2710,7 +2932,7 @@ molecule</p>
 <pre><code>grid lebedev 80 11 H 70 8  O 90 11
 </code></pre>
 
-<h3 id="partitioning-functions">Partitioning functions</h3>
+<h3 id="partitioning-functions">Partitioning functions<a class="headerlink" href="#partitioning-functions" title="Permanent link">&para;</a></h3>
 <pre><code>GRID [(becke||erf1||erf2||ssf) default erf1]
 </code></pre>
 
@@ -2722,8 +2944,8 @@ molecule</p>
 <li>erf2 : modified ssf</li>
 </ul>
 <p>Erf<em>n</em> partitioning functions</p>
-<p><img alt="$\begin{array}{lcl}&#10;  w_A(r) &amp; = &amp; \prod_{B\neq A}\frac{1}{2} \left[1 \ - \ erf(\mu^\prime_{AB})\right] \\&#10;  \mu^\prime_{AB} &amp; = &amp; \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\&#10;  \mu_{AB} &amp; = &amp; \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|}&#10;\end{array}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a6929e5f4f1fbe470b2d9bf0fe184888.svg?invert_in_darkmode&sanitize=true" align=middle width="268.96155pt" height="75.55119pt"/></p>
-<h3 id="radial-grids">Radial grids</h3>
+<p><img alt="$<script type="math/tex; mode=display">\begin{array}{lcl}&#10;  w_A(r) &amp; = &amp; \prod_{B\neq A}\frac{1}{2} \left[1 \ - \ erf(\mu^\prime_{AB})\right] \\&#10;  \mu^\prime_{AB} &amp; = &amp; \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\&#10;  \mu_{AB} &amp; = &amp; \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|}&#10;\end{array}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a6929e5f4f1fbe470b2d9bf0fe184888.svg?invert_in_darkmode&sanitize=true" align=middle width="268.96155pt" height="75.55119pt"/></p>
+<h3 id="radial-grids">Radial grids<a class="headerlink" href="#radial-grids" title="Permanent link">&para;</a></h3>
 <pre><code> GRID [[euler||mura||treutler]  default mura]
 </code></pre>
 
@@ -2736,12 +2958,12 @@ molecule</p>
 <li>treutler : Gauss-Chebyshev using the transformation suggested by
     O.Treutler and R.Alrhichs, J.Chem.Phys 102, 346 (1995).</li>
 </ul>
-<h3 id="disk-usage-for-grid">Disk usage for Grid</h3>
+<h3 id="disk-usage-for-grid">Disk usage for Grid<a class="headerlink" href="#disk-usage-for-grid" title="Permanent link">&para;</a></h3>
 <pre><code> NODISK
 </code></pre>
 
 <p>This keyword turns off storage of grid points and weights on disk.</p>
-<h2 id="tolerances-screening-tolerances">TOLERANCES &ndash; Screening tolerances</h2>
+<h2 id="tolerances-screening-tolerances">TOLERANCES &ndash; Screening tolerances<a class="headerlink" href="#tolerances-screening-tolerances" title="Permanent link">&para;</a></h2>
 <pre><code> TOLERANCES [[tight] [tol_rho &lt;real tol_rho default 1e-10&gt;] \  
              [accCoul &lt;integer accCoul default 8&gt;] \  
              [radius &lt;real radius default 25.0&gt;]]
@@ -2782,7 +3004,7 @@ initial sleazy tolerances the user can invoke the tight option:</p>
 <p>This option sets all tolerances to their default/user specified values
 at the very first
 iteration.</p>
-<h2 id="direct-semidirect-and-noio-hardware-resource-control">DIRECT, SEMIDIRECT and NOIO &ndash; Hardware Resource Control</h2>
+<h2 id="direct-semidirect-and-noio-hardware-resource-control">DIRECT, SEMIDIRECT and NOIO &ndash; Hardware Resource Control<a class="headerlink" href="#direct-semidirect-and-noio-hardware-resource-control" title="Permanent link">&para;</a></h2>
 <pre><code> DIRECT||INCORE  
  SEMIDIRECT [filesize &lt;integer filesize default disksize&gt;]  
             [memsize  &lt;integer memsize default available&gt;]  
@@ -2807,7 +3029,7 @@ with the option <code>DIRECT</code> in which case all integrals are computed
 of this option is described in the <a href="Hartree-Fock-Theory-for-Molecules.html#direct-and-semidirect----recomputation-of-integrals">Hartree-Fock</a> section. Some functionality
 which is only compatible with the <code>DIRECT</code> option will not, at present,
 work when using <code>SEMIDIRECT</code>.</p>
-<h2 id="odft-and-mult-open-shell-systems">ODFT and MULT &ndash; Open shell systems</h2>
+<h2 id="odft-and-mult-open-shell-systems">ODFT and MULT &ndash; Open shell systems<a class="headerlink" href="#odft-and-mult-open-shell-systems" title="Permanent link">&para;</a></h2>
 <pre><code> ODFT
  MULT &lt;integer mult default 1&gt;
 </code></pre>
@@ -2829,14 +3051,14 @@ preferentially occupied.</p>
 <p>The keyword <code>ODFT</code> is unnecessary except in the context of forcing a
 singlet system to be computed as an open shell system (i.e., using a
 spin-unrestricted wavefunction).</p>
-<h2 id="cgmin-quadratic-convergence-algorithm">CGMIN &ndash; Quadratic convergence algorithm</h2>
+<h2 id="cgmin-quadratic-convergence-algorithm">CGMIN &ndash; Quadratic convergence algorithm<a class="headerlink" href="#cgmin-quadratic-convergence-algorithm" title="Permanent link">&para;</a></h2>
 <p>The cgmin keyword will use the quadratic convergence algorithm. It is
 possible to turn the use of the quadratic convergence algorithm off with
 the nocgmin keyword.</p>
-<h2 id="rodft-restricted-open-shell-dft">RODFT &ndash; Restricted open-shell DFT</h2>
+<h2 id="rodft-restricted-open-shell-dft">RODFT &ndash; Restricted open-shell DFT<a class="headerlink" href="#rodft-restricted-open-shell-dft" title="Permanent link">&para;</a></h2>
 <p>The rodft keyword will perform restricted open-shell calculations. This
 keyword can only be used with the CGMIN keyword.</p>
-<h2 id="sic-self-interaction-correction">SIC &ndash; Self-Interaction Correction</h2>
+<h2 id="sic-self-interaction-correction">SIC &ndash; Self-Interaction Correction<a class="headerlink" href="#sic-self-interaction-correction" title="Permanent link">&para;</a></h2>
 <pre><code>sic [perturbative || oep || oep-loc ]
 &lt;default perturbative&gt;
 </code></pre>
@@ -2873,7 +3095,7 @@ sic energy can be printed out using:</p>
 <pre><code>print &quot;SIC information&quot;
 </code></pre>
 
-<h2 id="mulliken-mulliken-analysis">MULLIKEN &ndash; Mulliken analysis</h2>
+<h2 id="mulliken-mulliken-analysis">MULLIKEN &ndash; Mulliken analysis<a class="headerlink" href="#mulliken-mulliken-analysis" title="Permanent link">&para;</a></h2>
 <p>Mulliken analysis of the charge distribution is invoked by the keyword:</p>
 <pre><code> MULLIKEN
 </code></pre>
@@ -2889,7 +3111,7 @@ end
 task dft
 </code></pre>
 
-<h2 id="fukui-fukui-indices">FUKUI &ndash; Fukui Indices</h2>
+<h2 id="fukui-fukui-indices">FUKUI &ndash; Fukui Indices<a class="headerlink" href="#fukui-fukui-indices" title="Permanent link">&para;</a></h2>
 <p>Fukui inidces analysis is invked by the keyword:</p>
 <pre><code> FUKUI
 </code></pre>
@@ -2904,7 +3126,7 @@ analysis can be obtained using the following</p>
  task dft
 </code></pre>
 
-<h2 id="bsse-basis-set-superposition-error">BSSE &ndash; Basis Set Superposition Error</h2>
+<h2 id="bsse-basis-set-superposition-error">BSSE &ndash; Basis Set Superposition Error<a class="headerlink" href="#bsse-basis-set-superposition-error" title="Permanent link">&para;</a></h2>
 <p>Particular care is required to compute BSSE by the counter-poise method
 for the DFT module. In order to include terms deriving from the
 numerical grid used in the XC integration, the user must label the ghost
@@ -2929,7 +3151,7 @@ end
 
 <p>Please note that the <q>ghost</q> oxygen atom has been labeled bqO, and
 not just bq.</p>
-<h2 id="disp-empirical-long-range-contribution-vdw">DISP &ndash; Empirical Long-range Contribution (vdW)</h2>
+<h2 id="disp-empirical-long-range-contribution-vdw">DISP &ndash; Empirical Long-range Contribution (vdW)<a class="headerlink" href="#disp-empirical-long-range-contribution-vdw" title="Permanent link">&para;</a></h2>
 <pre><code> DISP \
       [ vdw &lt;real vdw integer default 2]] \
       [[s6 &lt;real s6 default depends on XC functional&gt;] \
@@ -2997,7 +3219,7 @@ Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010).</p>
 </ul>
 <p>This capability is also supported for energy gradients and Hessian. Is
 possible to be deactivated with OFF.</p>
-<h2 id="noscf-non-self-consistent-calculations">NOSCF &ndash;Non Self-Consistent Calculations</h2>
+<h2 id="noscf-non-self-consistent-calculations">NOSCF &ndash;Non Self-Consistent Calculations<a class="headerlink" href="#noscf-non-self-consistent-calculations" title="Permanent link">&para;</a></h2>
 <p>The noscf keyword allows one to calculate the non self-consistent energy
 for a set of input vectors. For example, the following input shows how a
 non self-consistent B3LYP energy can be calculated using a
@@ -3026,7 +3248,7 @@ end
 task dft energy
 </code></pre>
 
-<h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM &ndash; Exchange-hole dipole moment dispersion model</h2>
+<h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM &ndash; Exchange-hole dipole moment dispersion model<a class="headerlink" href="#xdm-exchange-hole-dipole-moment-dispersion-model" title="Permanent link">&para;</a></h2>
 <pre><code>XDM  [ a1 &lt;real a1&gt; ]   [ a2 &lt;real a2&gt; ]
 </code></pre>
 
@@ -3055,7 +3277,7 @@ and the website <a href="http://gatsby.ucmerced.edu/wiki/XDM">http://gatsby.ucme
     task dft optimize
 </code></pre>
 
-<h2 id="print-control">Print Control</h2>
+<h2 id="print-control">Print Control<a class="headerlink" href="#print-control" title="Permanent link">&para;</a></h2>
 <pre><code> PRINT||NOPRINT
 </code></pre>
 
@@ -3212,7 +3434,7 @@ are:</p>
 </table>
 <p>DFT Print Control Specifications</p>
 <p></center></p>
-<h1 id="spin-orbit-density-functional-theory-sodft">Spin-Orbit Density Functional Theory (SODFT)</h1>
+<h1 id="spin-orbit-density-functional-theory-sodft">Spin-Orbit Density Functional Theory (SODFT)<a class="headerlink" href="#spin-orbit-density-functional-theory-sodft" title="Permanent link">&para;</a></h1>
 <p>The spin-orbit DFT module (SODFT) in the NWChem code allows for the variational <br />
 treatment of the one-electron spin-orbit operator within the DFT framework. Calculations <br />
 can be performed either with an electron relativistic approach (ZORA) or with an  <br />
@@ -3398,6 +3620,7 @@ task sodft
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="properties">Properties</h1>
+                <h1 id="properties">Properties<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h1>
 <p>Properties can be calculated for both the Hartree-Fock and DFT wave
 functions. The properties that are available are:</p>
 <ul>
@@ -162,13 +162,13 @@ form:</p>
 RHF, open-shell ROHF, and open-shell UHF), and DFT (closed-shell and
 open-shell spin unrestricted) wavefunctions. The NMR hyperfine and
 indirect spin-spin coupling require a UHF or ODFT wave function.</p>
-<h2 id="vectors-keyword">Vectors keyword</h2>
+<h2 id="vectors-keyword">Vectors keyword<a class="headerlink" href="#vectors-keyword" title="Permanent link">&para;</a></h2>
 <pre><code> VECTORS [ (&lt;string input_movecs &gt;)]
 </code></pre>
 
 <p>The VECTORS directive allows the user to specify the input molecular
 orbital vectors for the property calculation</p>
-<h2 id="property-keywords">Property keywords</h2>
+<h2 id="property-keywords">Property keywords<a class="headerlink" href="#property-keywords" title="Permanent link">&para;</a></h2>
 <p>Each property can be requested by defining one of the following
 keywords:</p>
 <pre><code> NBOFILE  
@@ -192,7 +192,7 @@ keywords:</p>
 </code></pre>
 
 <p>The &ldquo;ALL&rdquo; keyword generates all currently available properties.</p>
-<h3 id="nmr-and-epr">NMR and EPR</h3>
+<h3 id="nmr-and-epr">NMR and EPR<a class="headerlink" href="#nmr-and-epr" title="Permanent link">&para;</a></h3>
 <p>Both the NMR shielding and spin-spin coupling have additional optional
 parameters that can be defined in the input. For the shielding the user
 can define the number of atoms for which the shielding tensor should be
@@ -233,7 +233,7 @@ dipole, quadrupole, and octupole calculations.</p>
 0.0, 0.0) and arb is any arbitrary point which must be accompanied by
 the coordinated to be used. Currently the x, y, and z coordinates must
 be given in the same units as UNITS in <a href="Geometry.html">GEOMETRY</a>.</p>
-<h3 id="response-calculations">Response Calculations</h3>
+<h3 id="response-calculations">Response Calculations<a class="headerlink" href="#response-calculations" title="Permanent link">&para;</a></h3>
 <p>Response calculations can be calculated as
 follows:</p>
 <pre><code>property
@@ -255,8 +255,8 @@ and optical rotation tensors (alpha, beta for optical rotation) in
 atomic units. If the &lsquo;velocity&rsquo; or &lsquo;giao&rsquo; keywords are absent, the
 dipole-length form will be used for the dipole integrals. This is a bit
 faster. The isotropic optical rotation is origin independent when using
-the velocity gauge or with GIAOs [1]. With the keyword &lsquo;bdtensor&rsquo;, a
-fully origin-invariant optical rotation tensor is calculated [1,6].
+the velocity gauge or with GIAOs <script type="math/tex; mode=display">1</script>. With the keyword &lsquo;bdtensor&rsquo;, a
+fully origin-invariant optical rotation tensor is calculated <script type="math/tex; mode=display">1,6</script>.
 Note that &lsquo;velocity&rsquo; and &lsquo;orbeta&rsquo; are incompatible. An input line &lsquo;set
 prop:newaoresp 0&rsquo; outside of the &lsquo;properties&rsquo; block forces the use of an
 older version of the response code, which has fewer features (in
@@ -267,7 +267,7 @@ response tensors in terms of molecular orbitals. If the property input
 block also contains the keyword &lsquo;pmlocalization&rsquo;, then the analysis is
 performed in terms of Pipek-Mezey localized MOs, otherwise the canonical
 set is used (this feature may currently not work, please check the sum
-of the analysis carefully). See Ref. [6] for an example. Works with HF
+of the analysis carefully). See Ref. <script type="math/tex; mode=display">6</script> for an example. Works with HF
 and density functionals for which linear response kernels are
 implemented in NWChem.</p>
 <p>Please refer to the following papers for further details:</p>
@@ -282,7 +282,7 @@ implemented in NWChem.</p>
 <li>B. Moore II, M. Srebro, J. Autschbach, J. Chem. Theory Comput. 8
     (2012), 4336-4346</li>
 </ol>
-<h3 id="raman">Raman</h3>
+<h3 id="raman">Raman<a class="headerlink" href="#raman" title="Permanent link">&para;</a></h3>
 <p>Raman calculations can be performed by specifying the Raman block. These
 calculations are performed in conjunction with polarizability
 calculations. Detailed description of input parameters at
@@ -315,7 +315,7 @@ raman
 end
 </code></pre>
 
-<h4 id="raman-keywords">Raman Keywords</h4>
+<h4 id="raman-keywords">Raman Keywords<a class="headerlink" href="#raman-keywords" title="Permanent link">&para;</a></h4>
 <ul>
 <li>NORMAL and RESONANCE: Type of Raman plot to make.</li>
 <li>LORENTZIAN and GAUSSIAN: Generation of smoothed spectra (rather than
@@ -333,14 +333,14 @@ end
     DQ is 0.01. It is related to the step size dR used in numerical
     evaluation of polarizability derivative</li>
 </ul>
-<h4 id="raman-output">Raman Output</h4>
+<h4 id="raman-output">Raman Output<a class="headerlink" href="#raman-output" title="Permanent link">&para;</a></h4>
 <p>Raman spectrum in stick format and smoothed using Lorentzians or
-Gaussians stored in a filename with format [fname].normal.<br />
+Gaussians stored in a filename with format <script type="math/tex; mode=display">fname</script>.normal.<br />
 The number of points is 1000 by default. This value can be changed by adding the following <a href="SET.html">SET</a> directive to the input file</p>
 <pre><code>set raman:numpts &lt;integer&gt;
 </code></pre>
 
-<h4 id="raman-references">Raman References</h4>
+<h4 id="raman-references">Raman References<a class="headerlink" href="#raman-references" title="Permanent link">&para;</a></h4>
 <p>Please refer to the following papers for further details:</p>
 <ol>
 <li>J. M. Mullin, J. Autschbach, G. C. Schatz, Computational and
@@ -349,7 +349,7 @@ The number of points is 1000 by default. This value can be changed by adding the
 <li>F. W. Aquino and G. C. Schatz, The Journal of Physical Chemistry A
     118 , 517 (2014). DOI: 10.1021/jp411039m</li>
 </ol>
-<h3 id="nbofile">Nbofile</h3>
+<h3 id="nbofile">Nbofile<a class="headerlink" href="#nbofile" title="Permanent link">&para;</a></h3>
 <p>The keyword NBOFILE does not execute the Natural Bond Analysis code, but
 simply creates an input file to be used as input to the stand-alone NBO
 code. All other properties are calculated upon request.</p>
@@ -363,7 +363,7 @@ input deck may be edited to provide additional options to the NBO
 calculation, (see the NBO user&rsquo;s manual for details.)</p>
 <p>Users that have their own NBO version can compile and link the code into
 the NWChem software. See the INSTALL file in the source for details.</p>
-<h2 id="gaussian-cube-files">Gaussian Cube Files</h2>
+<h2 id="gaussian-cube-files">Gaussian Cube Files<a class="headerlink" href="#gaussian-cube-files" title="Permanent link">&para;</a></h2>
 <p>Electrostatic potential (keyword <em>esp</em>) and the magnitude of the
 electric field (keyword <em>efield</em>) on the grid can be generated in the
 form of the Gaussian Cube File. This behavior is triggered by the
@@ -374,7 +374,7 @@ below</p>
 
 <p>where</p>
 <ul>
-<li>pad dx [dy dz] - specifies amount of padding (in angstroms) in
+<li>pad dx <script type="math/tex; mode=display">dy dz</script> - specifies amount of padding (in angstroms) in
     x,y, and z dimensions that will be applied in the automatic
     construction of the rectangular grid volume based on the geometry of
     the system. If only one number is provided then the same amount of
@@ -398,7 +398,7 @@ below</p>
 <!-- end list -->
 
 <ul>
-<li>ngrid nx [ny nz] - specifies number of grid points along each
+<li>ngrid nx <script type="math/tex; mode=display">ny nz</script> - specifies number of grid points along each
     dimension. If only one number is provided then the same number of
     grid points are assumed all dimensions. In the absence of this
     directive the number of grid points would be computed such that grid
@@ -463,7 +463,7 @@ below</p>
   task dft property
 </code></pre>
 
-<h2 id="aimfile">Aimfile</h2>
+<h2 id="aimfile">Aimfile<a class="headerlink" href="#aimfile" title="Permanent link">&para;</a></h2>
 <p>This keyword generates AIM Wavefunction files. The resulting AIM
 wavefunction file (.wfn/.wfx) can be post-processed with a variety of
 codes, e.g.</p>
@@ -476,7 +476,7 @@ codes, e.g.</p>
 <p>More details at
 <a href="https://sites.google.com/site/alvarovazquezmayagoitia/goals/codes/nwchem-notes/generator-of-aim-wavefunction-files-nwchem">https://sites.google.com/site/alvarovazquezmayagoitia/goals/codes/nwchem-notes/generator-of-aim-wavefunction-files-nwchem</a><br />
 <strong>WARNING:</strong> Since we have discovered issues in generating .WFN files with this module (e.g. systems with ECPs), the recommended method for generating .WFN file is to first generate a Molden file with the <a href="Properties.html#moldenfile">Moldenfile</a> option, then convert the Molden file into a WFN file by using the <a href="http://zorkzou.github.io/Molden2AIM">Molden2AIM</a> program.</p>
-<h2 id="moldenfile">Moldenfile</h2>
+<h2 id="moldenfile">Moldenfile<a class="headerlink" href="#moldenfile" title="Permanent link">&para;</a></h2>
 <pre><code>MOLDENFILE
 MOLDEN_NORM (JANPA | | NWCHEM || NONE)
 </code></pre>
@@ -558,6 +558,7 @@ be named <code>h2o.molden</code></p>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

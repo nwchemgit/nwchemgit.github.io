@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="hybrid-calculations-with-oniom">Hybrid Calculations with ONIOM</h1>
+                <h1 id="hybrid-calculations-with-oniom">Hybrid Calculations with ONIOM<a class="headerlink" href="#hybrid-calculations-with-oniom" title="Permanent link">&para;</a></h1>
 <p>ONIOM is the hybrid method of Morokuma and co-workers that enables
 different levels of theory to be applied to different parts of a
 molecule/system and combined to produce a consistent energy expression.
@@ -208,7 +208,7 @@ follows</p>
 <p>For better validation of user input, the HIGH, LOW and MODEL directives
 must always be specified. If the one of the MEDIUM or INTER directives
 are specified, then so must the other.</p>
-<h2 id="real-model-and-intermediate-geometries">Real, model and intermediate geometries</h2>
+<h2 id="real-model-and-intermediate-geometries">Real, model and intermediate geometries<a class="headerlink" href="#real-model-and-intermediate-geometries" title="Permanent link">&para;</a></h2>
 <p>The geometry and total charge of the full or real system should be
 specified as normal using the <a href="Geometry.html">geometry</a> directive.
 If <img alt="$N_{model}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e739a8a9732a54838b9b1d5173730d5a.svg?invert_in_darkmode&sanitize=true" align=middle width="48.48327pt" height="22.38192pt"/> of the atoms are to be included in the model system,
@@ -235,7 +235,7 @@ potassium (the model) first.</p>
 <p>and the following directive in the ONIOM input block indicates that one
 atom (implicitly the first in the geometry) is in the model system</p>
 <p><code>model 1</code></p>
-<h3 id="link-atoms">Link atoms</h3>
+<h3 id="link-atoms">Link atoms<a class="headerlink" href="#link-atoms" title="Permanent link">&para;</a></h3>
 <p>Link atoms for bonds spanning two regions are automatically generated
 from the bond information. The additional parameters on the MODEL and
 INTER directives describe the broken bonds including scale factors for
@@ -284,17 +284,17 @@ specify the ``H&rsquo;&lsquo;.</p>
 <p>See also the
 <a href="ONIOM.html#a-three-layer-example">ONIOM#a-three-layer-example</a>
 for a more complex example.</p>
-<h3 id="numbering-of-the-link-atoms">Numbering of the link atoms</h3>
+<h3 id="numbering-of-the-link-atoms">Numbering of the link atoms<a class="headerlink" href="#numbering-of-the-link-atoms" title="Permanent link">&para;</a></h3>
 <p>The link atoms are appended to the atoms of the model or intermediate
 systems in the order that the broken bonds are specified in the input.
 This is of importance only if manually constructing an initial guess.</p>
-<h2 id="high-medium-and-low-theories">High, medium and low theories</h2>
+<h2 id="high-medium-and-low-theories">High, medium and low theories<a class="headerlink" href="#high-medium-and-low-theories" title="Permanent link">&para;</a></h2>
 <p>The two-layer model requires both the high-level and low-level theories
 be specified. The three-layer model also requires the medium-level
 theory. Each of these includes a theory (such as SCF, MP2, DFT, CCSD,
 CCSD(T), etc.), an optional basis set, an optional ECP, and an optional
 string containing general NWChem input.</p>
-<h3 id="basis-specification">Basis specification</h3>
+<h3 id="basis-specification">Basis specification<a class="headerlink" href="#basis-specification" title="Permanent link">&para;</a></h3>
 <p>The basis name on the theory directive (high, medium, or low) is that
 specified on a basis set directive (see Section 7) and not the name of a
 standard basis in the library. If not specified, the basis set for the
@@ -303,7 +303,7 @@ medium level defaults to the high-level basis, and the low-level basis
 defaults to the medium-level basis. Other wavefunction parameters are
 obtained from the standard wavefunction input blocks. See <a href="#effective-core-potential">Effective
 core potential</a> for an example.</p>
-<h3 id="effective-core-potentials">Effective core potentials</h3>
+<h3 id="effective-core-potentials">Effective core potentials<a class="headerlink" href="#effective-core-potentials" title="Permanent link">&para;</a></h3>
 <p>If an <a href="ECP.html">effective core potential</a> is specified in the
 usual fashion outside of the ONIOM input then this will be used in all
 calculations. If an alternative ECP name (the name specified on the ECP
@@ -312,7 +312,7 @@ of the theory directives, then this ECP will be used in preference for
 that level of theory. See the
 <a href="ONIOM.html#a-three-layer-example">ONIOM#a-three-layer-example</a>
 for sample input.</p>
-<h3 id="general-input-strings">General input strings</h3>
+<h3 id="general-input-strings">General input strings<a class="headerlink" href="#general-input-strings" title="Permanent link">&para;</a></h3>
 <p>For many purposes, the ability to specify the theory, basis and
 effective core potential is adequate. All of the options for each theory
 are determined from their independent input blocks. However, if the same
@@ -340,13 +340,13 @@ special interpretation.</p>
 <p>See <a href="#dft-with-and-without-charge-fitting">|DFT with and without charge
 fitting</a> for another
 example.</p>
-<h2 id="use-of-symmetry">Use of symmetry</h2>
+<h2 id="use-of-symmetry">Use of symmetry<a class="headerlink" href="#use-of-symmetry" title="Permanent link">&para;</a></h2>
 <p>Symmetry should work just fine as long as the model and intermediate
 regions respect the symmetry &ndash; i.e., symmetry equivalent atoms need to
 be treated equivalently. If symmetry equivalent atoms must be treated in
 separate regions then the symmetry must be lowered (or completely
 switched off).</p>
-<h2 id="molecular-orbital-files">Molecular orbital files</h2>
+<h2 id="molecular-orbital-files">Molecular orbital files<a class="headerlink" href="#molecular-orbital-files" title="Permanent link">&para;</a></h2>
 <p>The VECTORS directive in the ONIOM block is different to that elsewhere
 in NWChem. For each of the necessary combinations of theory and geometry
 you can specify a different file for the molecular orbitals. By default
@@ -391,7 +391,7 @@ described above in this section), in which case no additional input is
 necessary. If an alternative name is desired, then the VECTORS directive
 may be used as follows</p>
 <p><code>vectors low-real /u/rjh/jobs/fe_ether_water.mos</code></p>
-<h2 id="restarting">Restarting</h2>
+<h2 id="restarting">Restarting<a class="headerlink" href="#restarting" title="Permanent link">&para;</a></h2>
 <p>Restart of ONIOM calculations does not currently work as smoothly as we
 would like. For geometry optimizations that terminated gracefully by
 running out of iterations, the restart will work as normal. Otherwise,
@@ -400,8 +400,8 @@ optimization. The Hessian information will be reused and the calculation
 should proceed losing at most the cost of one ONIOM gradient evaluation.
 For energy or frequency calculations, restart may not currently be
 possible.</p>
-<h2 id="examples">Examples</h2>
-<h3 id="hydrocarbon-bond-energy">Hydrocarbon bond energy</h3>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="hydrocarbon-bond-energy">Hydrocarbon bond energy<a class="headerlink" href="#hydrocarbon-bond-energy" title="Permanent link">&para;</a></h3>
 <p>A simple two-layer model changing just the wavefunction with one link
 atom.</p>
 <p>This reproduces the two-layer ONIOM (MP2:HF) result from Dapprich et al.
@@ -527,7 +527,7 @@ apparent if we write
 <code>end</code><br />
 <code></code><br />
 <code>task oniom</code></p>
-<h3 id="optimization-and-frequencies">Optimization and frequencies</h3>
+<h3 id="optimization-and-frequencies">Optimization and frequencies<a class="headerlink" href="#optimization-and-frequencies" title="Permanent link">&para;</a></h3>
 <p>A two-layer model including modification of theory, basis, ECP and total
 charge and no link atoms.</p>
 <p>This input reproduces the ONIOM optimization and vibrational frequency
@@ -598,7 +598,7 @@ database.</p>
 <code></code><br />
 <code>task oniom optimize</code><br />
 <code>task oniom freq</code></p>
-<h3 id="a-three-layer-example">A three-layer example</h3>
+<h3 id="a-three-layer-example">A three-layer example<a class="headerlink" href="#a-three-layer-example" title="Permanent link">&para;</a></h3>
 <p>A three layer example combining CCSD(T), and MP2 with two different
 quality basis sets, and using multiple link atoms.</p>
 <p>The full system is tetra-dimethyl-amino-ethylene (TAME) or
@@ -657,7 +657,7 @@ factor could be chosen differently for each of the bonds.</p>
 <code>end</code><br />
 <code></code><br />
 <code>task oniom</code></p>
-<h3 id="dft-with-and-without-charge-fitting">DFT with and without charge fitting</h3>
+<h3 id="dft-with-and-without-charge-fitting">DFT with and without charge fitting<a class="headerlink" href="#dft-with-and-without-charge-fitting" title="Permanent link">&para;</a></h3>
 <p>Demonstrates use of general input strings.</p>
 <p>A two-layer model for anthracene (a linear chain of three fused benzene
 rings) using benzene as the model system. The high-level theory is
@@ -756,6 +756,7 @@ it.</li>
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

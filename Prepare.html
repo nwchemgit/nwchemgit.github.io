@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="prepare">Prepare</h1>
+                <h1 id="prepare">Prepare<a class="headerlink" href="#prepare" title="Permanent link">&para;</a></h1>
 <p>The prepare module is used to set up the necessary files for a molecular dynamics simulation with NWChem. User supplied coordinates can be used to generate topology and restart files. The topology file contains all static information about a molecular system, such as lists of atoms, bonded interactions and force field parameters. The restart file contains all dynamic information about a molecular system, such as coordinates, velocities and properties.</p>
 <p>Without any input, the prepare module checks the existence of a topology and restart file for the molecular systems. If these files exist, the module returns to the main task level without action. The module will generate these files when they do not exist. Without any input to the module, the generated system will be for a non-solvated isolated solute system.</p>
 <p>To update existing files, including solvation, the module requires input directives read from an input deck,</p>
@@ -177,7 +177,7 @@ end
 <ol>
 <li>Parameters for atom types or bonded interactions do not exist in the force field. When this happens, additional parameters may be defined in the parameter files, or the segment file may be edited to include explicit parameters.</li>
 </ol>
-<h2 id="default-database-directories">Default database directories</h2>
+<h2 id="default-database-directories">Default database directories<a class="headerlink" href="#default-database-directories" title="Permanent link">&para;</a></h2>
 <p>The file $HOME/.nwchemrc may contain the following entries that determine which files are used by the prepare module.</p>
 <pre><code>ffield &lt;string ffname&gt;
 </code></pre>
@@ -207,7 +207,7 @@ charmm_1 /soft/nwchem/share/charmm/charmm_s/
 charmm_2 /soft/nwchem/share/charmm/charmm_x/
 </code></pre>
 
-<h2 id="system-name-and-coordinate-source">System name and coordinate source</h2>
+<h2 id="system-name-and-coordinate-source">System name and coordinate source<a class="headerlink" href="#system-name-and-coordinate-source" title="Permanent link">&para;</a></h2>
 <pre><code>system &lt;string sys_calc&gt;
 </code></pre>
 
@@ -240,7 +240,7 @@ charmm_2 /soft/nwchem/share/charmm/charmm_x/
 <pre><code>directory_(1-9) &lt;string ffdir&gt; [&lt;string parfile&gt;]
 </code></pre>
 
-<h2 id="sequence-file-generation">Sequence file generation</h2>
+<h2 id="sequence-file-generation">Sequence file generation<a class="headerlink" href="#sequence-file-generation" title="Permanent link">&para;</a></h2>
 <p>If no existing sequence file is present in the current directory, or if the new_seq keyword was specified in the prepare input deck, a new sequence file is generated from information from the pdb file, and the following input directives.</p>
 <pre><code>maxscf &lt;integer maxscf default 20&gt;
 </code></pre>
@@ -278,7 +278,7 @@ charmm_2 /soft/nwchem/share/charmm/charmm_x/
 </code></pre>
 
 <p>This directive scales the counter ion charge by the specified factor in the determination of counter ions positions.</p>
-<h2 id="topology-file-generation">Topology file generation</h2>
+<h2 id="topology-file-generation">Topology file generation<a class="headerlink" href="#topology-file-generation" title="Permanent link">&para;</a></h2>
 <pre><code>new_top [ new_seq ]
 </code></pre>
 
@@ -345,7 +345,7 @@ current &lt;string dir_c&gt;[&lt;string par_c&gt;]
 </code></pre>
 
 <p>Note that keywords free, qhop and qhop are mutually exclusive.</p>
-<h2 id="appending-to-an-existing-topology-file">Appending to an existing topology file</h2>
+<h2 id="appending-to-an-existing-topology-file">Appending to an existing topology file<a class="headerlink" href="#appending-to-an-existing-topology-file" title="Permanent link">&para;</a></h2>
 <pre><code>noe &lt;string atom1&gt; &lt;string atom3&gt; \
 
  &lt;real dist1&gt; &lt;real dist2&gt;  &lt;real dist3&gt; &lt;real forc1&gt; &lt;real forc2&gt;
@@ -377,7 +377,7 @@ pmf [bias] (zaxis | zaxis-cog) &lt;integer isel&gt; &lt;integer jsel&gt; 
 </code></pre>
 
 <p>Directive pmf specifies a potential of mean force potential in terms of the specified atom selection. Option zalign specifies the atoms in the selection to be restrained to a line parallel to the z-axis. Option xyplane specifies the atoms in the selection to be restrained to a plane perpendicular to the z-axis. Options distance, angle and torsion, are defined in terms of the center of geometry of the specified atom selections. Keyword basepair is used to specify a harmonic potential between residues isel and jsel. Keywords zaxis and zaxis-cog can be used to pull atoms toward the z-axis. Option all may be specified to apply an equivalent pmf to each of the equivalent solute molecules in the system. Option combine may be specified to apply the specified pmf to the atoms in all of the equivalent solute molecules. Option constraint may be specified to a distance pmf to treat the distance as a constraint. Option bias may be specified to indicate that this function should be treated as a biasing potential. Appropriate corrections to free energy results will be evaluated.</p>
-<h2 id="generating-a-restart-file">Generating a restart file</h2>
+<h2 id="generating-a-restart-file">Generating a restart file<a class="headerlink" href="#generating-a-restart-file" title="Permanent link">&para;</a></h2>
 <pre><code>new_rst
 </code></pre>
 
@@ -416,7 +416,7 @@ write [rst | [solute [&lt;integer nsolvent&gt;]] ( [large] pdb | xyz)]�
 <pre><code>scale &lt;real scale default -1.0&gt;
 </code></pre>
 
-<p>This directive scales the volume and coordinates written to povray files. A negative value of scale (default) scales the coordinates to lie in [-1:1].</p>
+<p>This directive scales the volume and coordinates written to povray files. A negative value of scale (default) scales the coordinates to lie in <script type="math/tex; mode=display">-1:1</script>.</p>
 <pre><code>cpk [&lt;real cpk default 1.0&gt;]
 </code></pre>
 
@@ -532,6 +532,7 @@ write [rst | [solute [&lt;integer nsolvent&gt;]] ( [large] pdb | xyz)]�
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

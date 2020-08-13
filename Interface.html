@@ -130,12 +130,12 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="interfaces-to-other-programs">Interfaces to Other Programs</h1>
+                <h1 id="interfaces-to-other-programs">Interfaces to Other Programs<a class="headerlink" href="#interfaces-to-other-programs" title="Permanent link">&para;</a></h1>
 <p>NWChem has interfaces to several different packages which are listed
 below. In general, the NWChem authors work with the authors of the other
 packages to make sure that the interface works. However, any problems
 with the interface should be reported through the github issue page https://github.com/nwchemgit/nwchem/issues</p>
-<h2 id="dirdyvtst-direct-dynamics-for-variational-transition-state-theory">DIRDYVTST &ndash; DIRect Dynamics for Variational Transition State Theory</h2>
+<h2 id="dirdyvtst-direct-dynamics-for-variational-transition-state-theory">DIRDYVTST &ndash; DIRect Dynamics for Variational Transition State Theory<a class="headerlink" href="#dirdyvtst-direct-dynamics-for-variational-transition-state-theory" title="Permanent link">&para;</a></h2>
 <p>by Bruce C. Garrett, Environmental Molecular Sciences Laboratory,
 Pacific Northwest Laboratory, Richland, Washington</p>
 <p>Yao-Yuan Chuang and Donald G. Truhlar, Department of Chemistry and Super
@@ -154,7 +154,7 @@ citation:</p>
    Pacific Northwest Laboratory. `
 </code></pre>
 
-<h3 id="introduction">Introduction</h3>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
 <p>By using DIRDYVTST, a user can carry out electronic structure
 calculations with NWChem and use the resulting energies, gradients, and
 Hessians for direct dynamics calculations with <a href="https://comp.chem.umn.edu/polyrate/" title="link">POLYRATE</a>. 
@@ -180,7 +180,7 @@ local quadratic approximation (LQA), the corrected LQA (CLQA), and the
 cubic (CUBE) algorithm. The PM methods are implemented so that the
 Hessian can be reused at intermediate steps at which only the gradient
 is updated.</p>
-<h3 id="files">Files</h3>
+<h3 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
 <p>Test runs are located in directories in $NWCHEM_TOP/QA/tests. Test runs
 are available for two systems: H + H<sub>2</sub> and OH + H<sub>2</sub>.</p>
 <p>The H + H<sub>2</sub> test uses the Euler integration method at the SCF/3-21G
@@ -195,7 +195,7 @@ can be used. The initial hessian calculations at the reactants, products
 and saddle point can cause some problems when numerical hessians are
 required (especially when there is symmetry breaking in the
 wavefunction).</p>
-<h3 id="detailed-description-of-the-input">Detailed description of the input</h3>
+<h3 id="detailed-description-of-the-input">Detailed description of the input<a class="headerlink" href="#detailed-description-of-the-input" title="Permanent link">&para;</a></h3>
 <p>The input consists of keywords for NWChem and keywords related to
 POLYRATE input. The first set of inputs are for NWChem with the general
 input block of the
@@ -209,7 +209,7 @@ form:</p>
  END
 </code></pre>
 
-<h4 id="use-of-symmetry">Use of symmetry</h4>
+<h4 id="use-of-symmetry">Use of symmetry<a class="headerlink" href="#use-of-symmetry" title="Permanent link">&para;</a></h4>
 <p>The use of symmetry in the calculation is controlled by the keyword
 <code>autosym | noautosym</code> which is used as described in the
 <a href="Geometry.html">geometry</a> directive. <code>Autosym</code> is on by
@@ -226,19 +226,19 @@ doesn&rsquo;t produce the desired results. In the case that autosym is used,
 the user does not need to worry about the different alignment of the
 molecule between NWChem and POLYRATE, this is taken care of internally
 in the DIRDYVTST module.</p>
-<h4 id="basis-specification">Basis specification</h4>
+<h4 id="basis-specification">Basis specification<a class="headerlink" href="#basis-specification" title="Permanent link">&para;</a></h4>
 <p>The basis name on the theory or sptheory directive is that specified on
 a <a href="Release66:Basis.md">basis set directive</a> and not the name of
 a standard basis in the library. If not specified, the basis set for the
 sptheory defaults to the theory basis which defaults to &ldquo;ao basis&rdquo;.</p>
-<h4 id="effective-core-potentials">Effective core potentials</h4>
+<h4 id="effective-core-potentials">Effective core potentials<a class="headerlink" href="#effective-core-potentials" title="Permanent link">&para;</a></h4>
 <p>If an <a href="Release66:ECP.md">effective core potential</a> is specified
 in the usual fashion outside of the DIRDYVTST input then this will be
 used in all calculations. If an alternative ECP name (the name specified
 on the ECP directive in the same manner as done for basis sets) is
 specified on one of the theory directives, then this ECP will be used in
 preference for that level of theory.</p>
-<h4 id="general-input-strings">General input strings</h4>
+<h4 id="general-input-strings">General input strings<a class="headerlink" href="#general-input-strings" title="Permanent link">&para;</a></h4>
 <p>For many purposes, the ability to specify the theory, basis and
 effective core potential is adequate. All of the options for each theory
 are determined from their independent input blocks. However, if the same
@@ -265,11 +265,11 @@ model is DFT/B3LYP/6-311g**, the DIRDYVTST input might look like this</p>
 functional</a>.
 Note that semi-colons and other quotation marks inside the input string
 must be preceded by a backslash to avoid special interpretation.</p>
-<h4 id="polyrate-related-options">POLYRATE related options</h4>
+<h4 id="polyrate-related-options">POLYRATE related options<a class="headerlink" href="#polyrate-related-options" title="Permanent link">&para;</a></h4>
 <p>These keyword options are simlar to the POLYRATE input format, except
 there are no ENERGETICS, OPTIMIZATION, SECOND, TUNNELING, and RATE
 sections.</p>
-<h5 id="general-section">GENERAL section</h5>
+<h5 id="general-section">GENERAL section<a class="headerlink" href="#general-section" title="Permanent link">&para;</a></h5>
 <p>The GENERAL section has the following format:</p>
 <pre><code>  * GENERAL
 
@@ -308,7 +308,7 @@ sptheory line.</p>
 Allowed values of variable input to SAVEFILE are vecs, hess, and spc for
 saving the files base theory movecs, base theory hessian and singlepoint
 calculation movecs.</p>
-<h5 id="react1-react2-prod1-prod2-and-start-sections">REACT1, REACT2, PROD1, PROD2, and START sections</h5>
+<h5 id="react1-react2-prod1-prod2-and-start-sections">REACT1, REACT2, PROD1, PROD2, and START sections<a class="headerlink" href="#react1-react2-prod1-prod2-and-start-sections" title="Permanent link">&para;</a></h5>
 <p>These sections have the following
 format:</p>
 <pre><code>*(REACT1 || REACT2 || PROD1 || PROD2 || START)  
@@ -339,7 +339,7 @@ or product), NONLINRP (nonlinear reactant or product), LINTS (linear
 transition state), and NONLINTS (nonlinear transition state).</p>
 <p>For example:</p>
 <p><code>SPECIES atomic</code></p>
-<h5 id="path-section">PATH section</h5>
+<h5 id="path-section">PATH section<a class="headerlink" href="#path-section" title="Permanent link">&para;</a></h5>
 <p>The Path section has the format:</p>
 <pre><code>*PATH  
  [SCALEMASS &lt;real scalemass default 1.0&gt;]  
@@ -388,7 +388,7 @@ eigenvector points toward the reactant side.</p>
 to follow the reaction path. Options are: EULER, LQA, CLQA, and CUBE.</p>
 <p>PRINTFREQ is a variable keyword that indicates that projected
 frequencies and eigenvectors will be printed along the MEP.</p>
-<h4 id="restart">Restart</h4>
+<h4 id="restart">Restart<a class="headerlink" href="#restart" title="Permanent link">&para;</a></h4>
 <p>DIRDYVTST calculations should be
 <a href="Release66:Top-level.md#START_and_RESTART_--_Start-up_mode">restarted</a>
 through the normal NWChem mechanism. The user needs to change the start
@@ -396,7 +396,7 @@ directive to a restart directive and get rid of any information that
 will overwrite important information in the RTDB. The file.db and
 file.file30 need to be available for the calculation to restart
 properly.</p>
-<h4 id="example">Example</h4>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
 <p>This is an example that creates the file30 file for POLYRATE for
 H + H<sub>2</sub>. Note that the multiplicity is that of the entire
 supermolecule, a doublet. In this example, the initial energies,
@@ -521,6 +521,7 @@ task dirdyvtst
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

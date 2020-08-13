@@ -130,7 +130,7 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="task">TASK</h2>
+                <h2 id="task">TASK<a class="headerlink" href="#task" title="Permanent link">&para;</a></h2>
 <p>The TASK directive is used to tell the code what to do. The input
 directives are parsed sequentially until a TASK directive is
 encountered, as described in <a href="Getting-Started.html#input-file-structure">Input File
@@ -161,7 +161,7 @@ task. An example of this feature is given in the <a href="Density-Functional-The
 file</a>.</p>
 <p>The input options, keywords, and defaults for each of these four forms
 for the TASK directive are discussed in the following sections.</p>
-<h3 id="task-directive-for-electronic-structure">TASK Directive for Electronic Structure</h3>
+<h3 id="task-directive-for-electronic-structure">TASK Directive for Electronic Structure<a class="headerlink" href="#task-directive-for-electronic-structure" title="Permanent link">&para;</a></h3>
 <p>This is the most commonly used version of the TASK directive, and it has
 the following form:</p>
 <pre><code>TASK &lt;string theory&gt; [&lt;string operation default energy&gt;] [ignore]
@@ -259,7 +259,7 @@ theory, the TASK directive is</p>
 even if the task fails, as discussed above. An example with the keyword
 ignore can be found in the <a href="Density-Functional-Theory-for-Molecules.html#sample-input-file">DFT
 example</a>.</p>
-<h3 id="task-directive-for-special-operations">TASK Directive for Special Operations</h3>
+<h3 id="task-directive-for-special-operations">TASK Directive for Special Operations<a class="headerlink" href="#task-directive-for-special-operations" title="Permanent link">&para;</a></h3>
 <p>This form of the TASK directive is used in instances where the task to
 be performed does not fit the model of the previous version (such as
 execution of a <a href="Python.html">Python program</a>), or if the operation
@@ -284,7 +284,7 @@ variable</p>
 </ul>
 <p>This directive also recognizes the keyword ignore, which allows
 execution to continue after a task has failed.</p>
-<h3 id="task-directive-for-bourne-shell">TASK Directive for Bourne Shell</h3>
+<h3 id="task-directive-for-bourne-shell">TASK Directive for Bourne Shell<a class="headerlink" href="#task-directive-for-bourne-shell" title="Permanent link">&para;</a></h3>
 <p>This form of the TASK directive is supported only on machines with a
 fully UNIX-style operating system. This directive causes specified
 processes to be executed using the Bourne shell. This form of the task
@@ -321,7 +321,7 @@ the current directory is as follows:</p>
 limited when compared with that of the Bourne shell. To execute all but
 the simplest UNIX commands, it is usually much easier to put the shell
 script in a file and execute the file from within NWChem.</p>
-<h3 id="task-directive-for-qmmm-simulations">TASK Directive for QM/MM simulations</h3>
+<h3 id="task-directive-for-qmmm-simulations">TASK Directive for QM/MM simulations<a class="headerlink" href="#task-directive-for-qmmm-simulations" title="Permanent link">&para;</a></h3>
 <p>This is very similar to the most commonly used version of the <a href="TASK.html">TASK
 directive</a>,
 and it has the following
@@ -358,7 +358,7 @@ level of theory the task directive input would be</p>
 <p><code>task qmmm scf dynamics</code></p>
 <p>The optional keyword ignore can be used to allow execution to continue
 even if the task fails, as discussed above.</p>
-<h3 id="task-directive-for-bsse-calculations">TASK Directive for BSSE calculations</h3>
+<h3 id="task-directive-for-bsse-calculations">TASK Directive for BSSE calculations<a class="headerlink" href="#task-directive-for-bsse-calculations" title="Permanent link">&para;</a></h3>
 <p>NWChem computes the basis set superposition error (BSSE) when two or
 more fragments are interacting by using the counterpoise method. This
 directive is performed if the BSSE section is present. Single point
@@ -392,13 +392,13 @@ a monomer and it must be consistent with the total charge in the whole
 system (see Section <a href="Charge.html">Charge</a>). The options OFF and ON turns off and
 on any BSSE calculation.</p>
 <p>The energy evaluation involves 1 + 2N calculations, i.e. one for the
-supermolecule and two for the N monomers. [S. Simon, M. Duran, J. J.
-Dannenberg, J. Chem. Phys., 105, 11024 (1996)] NWChem stores the vector
+supermolecule and two for the N monomers. <script type="math/tex; mode=display">S. Simon, M. Duran, J. J.
+Dannenberg, J. Chem. Phys., 105, 11024 (1996)</script> NWChem stores the vector
 files for each calculation (<string monomer name>.bsse.movecs), and one
 hessian file (<string monomer name>.bsse.hess). The code does not assign
 automatically the basis set for the ghost atoms, you must assign the
 corresponding bqX for each element, instead.</p>
-<h3 id="examples">Examples</h3>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <p>The dimer (FH)<sub>2</sub></p>
 <pre><code>title dimer  
 start dimer  
@@ -487,6 +487,7 @@ task mp2 optimize
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {

@@ -130,13 +130,13 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="sample-input-files">Sample input files</h1>
-<h2 id="water-scf-calculation-and-geometry-optimization-in-a-6-31g-basis">Water SCF calculation and geometry optimization in a 6-31g basis</h2>
+                <h1 id="sample-input-files">Sample input files<a class="headerlink" href="#sample-input-files" title="Permanent link">&para;</a></h1>
+<h2 id="water-scf-calculation-and-geometry-optimization-in-a-6-31g-basis">Water SCF calculation and geometry optimization in a 6-31g basis<a class="headerlink" href="#water-scf-calculation-and-geometry-optimization-in-a-6-31g-basis" title="Permanent link">&para;</a></h2>
 <p>The <a href="Getting-Started.html">Getting Started</a> input file performs a
 geometry optimization in a single task. A single point SCF energy
 calculation is performed and then restarted to perform the optimization
 (both could of course be performed in a single task).</p>
-<h3 id="job-1-single-point-scf-energy">Job 1. Single point SCF energy</h3>
+<h3 id="job-1-single-point-scf-energy">Job 1. Single point SCF energy<a class="headerlink" href="#job-1-single-point-scf-energy" title="Permanent link">&para;</a></h3>
 <pre><code> start h2o 
  title &quot;Water in 6-31g basis set&quot; 
 
@@ -153,7 +153,7 @@ calculation is performed and then restarted to perform the optimization
 </code></pre>
 
 <p>The final energy should be -75.983998.</p>
-<h3 id="job-2-restarting-and-perform-a-geometry-optimization">Job 2. Restarting and perform a geometry optimization</h3>
+<h3 id="job-2-restarting-and-perform-a-geometry-optimization">Job 2. Restarting and perform a geometry optimization<a class="headerlink" href="#job-2-restarting-and-perform-a-geometry-optimization" title="Permanent link">&para;</a></h3>
 <pre><code> restart h2o
  title &quot;Water geometry optimization&quot;
  
@@ -162,8 +162,8 @@ calculation is performed and then restarted to perform the optimization
 
 <p>There is no need to specify anything that has not changed from the
 previous input deck, though it will do no harm to repeat it.</p>
-<h2 id="compute-the-polarizability-of-ne-using-finite-field">Compute the polarizability of Ne using finite field</h2>
-<h3 id="job-1-compute-the-atomic-energy">Job 1. Compute the atomic energy</h3>
+<h2 id="compute-the-polarizability-of-ne-using-finite-field">Compute the polarizability of Ne using finite field<a class="headerlink" href="#compute-the-polarizability-of-ne-using-finite-field" title="Permanent link">&para;</a></h2>
+<h3 id="job-1-compute-the-atomic-energy">Job 1. Compute the atomic energy<a class="headerlink" href="#job-1-compute-the-atomic-energy" title="Permanent link">&para;</a></h3>
 <pre><code> start ne
  title &quot;Neon&quot;
  geometry; ne 0 0 0; end
@@ -175,7 +175,7 @@ previous input deck, though it will do no harm to repeat it.</p>
 </code></pre>
 
 <p>The final energy should be -128.496350.</p>
-<h3 id="job-2-compute-the-energy-with-applied-field">Job 2. Compute the energy with applied field</h3>
+<h3 id="job-2-compute-the-energy-with-applied-field">Job 2. Compute the energy with applied field<a class="headerlink" href="#job-2-compute-the-energy-with-applied-field" title="Permanent link">&para;</a></h3>
 <p>An external field may be simulated with point charges. The charges here
 apply a field of magnitude 0.01 atomic units to the atom at the origin.
 Since the basis functions have not been reordered by the additional
@@ -196,7 +196,7 @@ field-free result yields an estimate for the polarizability of 1.83
 atomic units. Note that by <a href="Geometry.html">default</a> NWChem does
 not include the interaction between the two point charges in the total
 energy.</p>
-<h2 id="scf-energy-of-h2co-using-ecps-for-c-and-o">SCF energy of H<sub>2</sub>CO using ECPs for C and O</h2>
+<h2 id="scf-energy-of-h2co-using-ecps-for-c-and-o">SCF energy of H<sub>2</sub>CO using ECPs for C and O<a class="headerlink" href="#scf-energy-of-h2co-using-ecps-for-c-and-o" title="Permanent link">&para;</a></h2>
 <p>The following will compute the SCF energy for formaldehyde with ECPs on
 the Carbon and Oxygen centers.</p>
 <pre><code>title &quot;formaldehyde ECP deck&quot;  
@@ -284,7 +284,7 @@ task scf
 Nuclear repulsion energy =     17.798842925142
 </code></pre>
 
-<h2 id="mp2-optimization-and-ccsdt-on-nitrogen">MP2 optimization and CCSD(T) on nitrogen</h2>
+<h2 id="mp2-optimization-and-ccsdt-on-nitrogen">MP2 optimization and CCSD(T) on nitrogen<a class="headerlink" href="#mp2-optimization-and-ccsdt-on-nitrogen" title="Permanent link">&para;</a></h2>
 <p>The following performs an MP2 geometry optimization followed by a
 CCSD(T) energy evaluation at the converged geometry. A Dunning
 correlation-consistent triple-zeta basis is used. The default of
@@ -350,6 +350,7 @@ task ccsd(t)
 </div>
     <script>var base_url = '.';</script>
     <script src="js/theme.js" defer></script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
     <script defer>
         window.onload = function () {
