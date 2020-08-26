@@ -130,21 +130,40 @@
           <div role="main">
             <div class="section">
               
-                <p>__NOTITLE__ __NOTOC__</p>
-<hr />
-<p>{{template:QMMM_Restart_and_Topology_Files_Links}}</p>
-<hr />
-<p>Fixing atoms outside a certain distance from the QM region can also be
+                <p>Fixing atoms outside a certain distance from the QM region can also be
 accomplished using prepare module. These constraints will then be
 permanently embedded in the resulting restart file, which may be
 advantageous for certain types of QM/MM simulations. The actual format
 for the constraint directive to fix whole residues
 is</p>
-<p><code>fix segments beyond</code><real radius><code></code><integer residue number><code>:</code><string atom name></p>
+<pre><code>fix segments beyond  &lt;real radius&gt;  &lt;integer residue number&gt;:&lt;string atom name&gt;
+</code></pre>
+
 <p>or to fix on atom
 basis</p>
-<p><code>fix atoms beyond</code><real radius><code></code><integer residue number><code>:</code><string atom name></p>
-<p>{{:qmmm_prepare_fix_example}}</p>
+<pre><code>fix atoms beyond  &lt;real radius&gt;  &lt;integer residue number&gt;:&lt;string atom name&gt;
+</code></pre>
+
+<p>This example illustrates the use of permanent fix directives during preparation stage  </p>
+<pre><code>start etl
+prepare
+source etl0.pdb
+new_top new_seq
+new_rst
+center
+orient
+#solvation in 40 A cubic box
+solvate cube 4.0
+modify segment 1 quantum
+#fix residues more than 20 A away from ethanol oxygen atom
+fix segments beyond 2.0 1:_O
+update lists
+ignore
+write etl_ref.rst
+write etl_ref.pdb
+end
+task prepare
+</code></pre>
               
             </div>
           </div>
