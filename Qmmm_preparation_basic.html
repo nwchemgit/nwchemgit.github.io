@@ -130,16 +130,17 @@
           <div role="main">
             <div class="section">
               
-                <hr />
-<p>{{template:QMMM_Restart_and_Topology_Files_Links}}</p>
-<hr />
-<p>One of major required pieces of information that has to be provided in
+                <p>One of major required pieces of information that has to be provided in
 the prepare block for QM/MM simulations is the definition of the QM
 region. This can be accomplished using <em>modify</em> directive used either
 per atom</p>
-<p><code>modify atom</code><integer isgm><code>:</code><string atomname><code>quantum</code></p>
+<pre><code>modify atom &lt;integer isgm&gt;:&lt;string atomname&gt; quantum
+</code></pre>
+
 <p>or per segment/residue basis</p>
-<p><code>modify segment</code><integer isgm><code>quantum</code></p>
+<pre><code>modify segment &lt;integer isgm&gt; quantum
+</code></pre>
+
 <p>Here <em>isgm</em> and <em>atomname</em> refer to the residue number and atom name
 record as given in the PDB file. It is important to note that that the
 leading blanks in atom name record should be indicated with underscores.
@@ -153,33 +154,34 @@ then it has to redeclared to be solute. The definition of QM region
 should be accompanied by <em>update lists</em> and <em>ignore</em> directives.
 <span id="example"></span> Here is an example input file that will
 generate QM/MM restart and topology files for the ethanol molecule:</p>
-<p><code>title "Prepare QM/MM calculation of ethanol"</code><br />
-<code>start etl</code>  </p>
-<p><a href="Prepare.html"><code>prepare</code></a><br />
-<code>#--</code><em><code>name`` ``of`` ``the`` ``pdb``
-``file</code></em><br />
-<code>source</code><a href="media:Etl0.pdb.md"><code>etl0.pdb</code></a><code></code><br />
-<code>#--</code><em><code>generate`` ``new`` ``topology`` ``and`` ``sequence`` ``file</code></em><br />
-<code>new_top new_seq</code><br />
-<code>#--</code><em><code>generate`` ``new`` ``restart`` ``file</code></em><br />
-<code>new_rst</code><br />
-<code>#--</code><em><code>define`` ``quantum`` ``region`` ``(note`` ``the`` ``use`` ``of``
-``underscore)</code></em><br />
-<code>modify atom 1:_C1  quantum</code><br />
-<code>modify atom 1:2H1  quantum</code><br />
-<code>modify atom 1:3H1  quantum</code><br />
-<code>modify atom 1:4H1  quantum</code><br />
-<code>update lists</code><br />
-<code>ignore</code><br />
-<code>#--</code><em><code>save`` ``restart`` ``file</code></em><code></code><br />
-<code>write etl_ref.rst</code><br />
-<code>#--</code><em><code>generate`` ``pdb`` ``file</code></em><br />
-<code>write</code><a href="media:etl_ref.pdb.md"><code>etl_ref.pdb</code></a><br />
-<code>end</code><br />
-<code>task prepare</code></p>
+<pre><code>title &quot;Prepare QM/MM calculation of ethanol&quot;  
+start etl  
+
+[prepare](Prepare.md)  
+#--*name of the pdbfile*  
+   source [etl0.pdb](media:Etl0.pdb.md)                      
+#--*generate new topology and sequence file*  
+   new_top new_seq                      
+#--*generate new restart file*  
+   new_rst                              
+#--*define quantum region (note the use of underscore)*  
+   modify atom 1:_C1  quantum           
+   modify atom 1:2H1  quantum           
+   modify atom 1:3H1  quantum            
+   modify atom 1:4H1  quantum           
+   update lists  
+   ignore  
+#--*save restart file*     
+   write etl_ref.rst  
+#--*generate pdb file*  
+   write [etl_ref.pdb](media:etl_ref.pdb.md)  
+end   
+task prepare
+</code></pre>
+
 <p>Running the input shown above will produce (among other things) the
 topology file (etl.top), the restart file (etl_ref.rst), and the pdb
-file (etl_ref.pdb). The prefix for the topology file follows after the
+file <a href="Etl_ref.pdb">etl_ref.pdb</a>. The prefix for the topology file follows after the
 rtdb name specified in the start directive in the input (i.e. &ldquo;start
 etl&rdquo;), while the names for the restart and pdb files were specified
 explicitly in the input file. In the absence of the explicit write
