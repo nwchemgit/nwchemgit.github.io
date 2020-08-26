@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://nwchemgit.github.io/qmmm_mm_charges.html">
+  <link rel="canonical" href="https://nwchemgit.github.io/qmmm_example3.html">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Qmmm mm charges - NWChem</title>
+  <title>Qmmm example3 - NWChem</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -18,9 +18,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Qmmm mm charges";
-    var mkdocs_page_input_path = "qmmm_mm_charges.md";
-    var mkdocs_page_url = "/qmmm_mm_charges.html";
+    var mkdocs_page_name = "Qmmm example3";
+    var mkdocs_page_input_path = "qmmm_example3.md";
+    var mkdocs_page_url = "/qmmm_example3.html";
   </script>
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
@@ -116,10 +116,10 @@
     
       
     
-    <li>Qmmm mm charges</li>
+    <li>Qmmm example3</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/qmmm_mm_charges.md"
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/qmmm_example3.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -130,38 +130,47 @@
           <div role="main">
             <div class="section">
               
-                <pre><code>mm_charges [exclude &lt;(none||all||linkbond||linkbond_H) default none&gt;]
-           [expand  &lt;none||all||solute||solvent&gt; default none]
-           [update  &lt;integer default 0&gt;]
-</code></pre>
+                <p>The example below illustrates single point energy calculation at DFT/B3LYP level for ethanol molecule embedded into 20 angstrom box of SPCE/E water molecules.</p>
+<pre><code>  start etl
 
-<p>This directive controls treatment of classical point (MM) charges that
-are interacting with QM region. For most QM/MM applications the use of
-directive will be not be necessary. Its absence would be simply mean
-that all MM charges within the cuttof distance ( as specified by cutoff
-) as well those belonging to the charges groups directly bonded to QM
-region will be allowed to interact with QM region.</p>
-<p>Keyword exclude specifies the subset MM charges that will be
-specifically excluded from interacting with QM region.</p>
-<ul>
-<li>none default value reverts to the original set of MM charges as
-    described above.</li>
-<li>all excludes all MM charges from interacting with QM region (&ldquo;gas
-    phase&rdquo; calculation).</li>
-<li>linkbond excludes MM charges that are connected to a quantum region
-    by at most two bonds,</li>
-<li>linkbond_H similar to linkbond but excludes only hydrogen atoms.</li>
-</ul>
-<p>Keyword expand expands the set MM charges interacting with QM region
-beyond the limits imposed by cutoff value.</p>
-<ul>
-<li>none default value reverts to the original set of MM charges</li>
-<li>solute expands electrostatic interaction to all solute MM charges</li>
-<li>solvent expands electrostatic interaction to all solvent MM charges</li>
-<li>all expands electrostatic interaction to all MM charges</li>
-</ul>
-<p>Keyword update specifies how often list of MM charges will be updated in
-the course of the calculation. Default behavior is not to update.</p>
+  permanent_dir ./perm
+  scratch_dir ./data
+
+  prepare
+  source etl0.pdb
+  new_top new_seq
+  new_rst
+  modify atom 1:_C1  quantum
+  modify atom 1:2H1  quantum
+  modify atom 1:3H1  quantum
+  modify atom 1:4H1  quantum
+  center
+  orient
+  solvate box 3.0
+  update lists
+  ignore
+  write etl_ref.rst
+  write etl_ref.pdb
+  end
+  task prepare
+
+  md
+  system etl_ref
+  end
+
+  basis
+  * library &quot;6-31G&quot;
+  end
+  dft
+  xc b3lyp
+  end
+
+  qmmm
+    link_atoms hydrogen
+  end
+
+  task qmmm dft energy
+</code></pre>
               
             </div>
           </div>

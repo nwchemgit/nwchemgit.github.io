@@ -141,9 +141,13 @@ occurring (e.g. bond making and breaking). The rest of the system, whose
 chemical identity remains essentially the same, is treated at the
 approximate classical molecular mechanics (MM)
 level.</p>
-<p>The QM/MM module in NWChem is built as a top level interface between the classical MD module and various QM modules,managing initialization, data transfer, and various high level operations. The size of the system (10^3 - 10^5 atoms)and the need for classical force field parameters precludes description of the system through just the geometry input block as would be done in pure QM simulations. 
-Instead a separate <a href="QMMM_Restart_and_Topology_Files.html">preparation stage</a> is required. 
-In a typical setting this <a href="QMMM_Restart_and_Topology_Files.html">preparation run</a> will be done separately from the main QM/MM simulations resulting in the generation of topology and restart files. The topology file contains a list of all relevant force field interactions encountered in the system but has no information about the actual atom positions. Typically the topology file will be generated once and reused throughout the entire simulation. The actual structural information about the system is contained in the restart file, which will be changing as the system coordinates are updated during the course of the simulation.</p>
+<p>The QM/MM module in NWChem is built as a top level interface between the classical MD module and various QM modules,managing initialization, data transfer, and various high level operations. The size of the system (10^3 - 10^5 atoms)
+and the need for classical force field parameters precludes description of the system through just the geometry input
+block as would be done in pure QM simulations.<br />
+Instead a separate <a href="QMMM_Restart_and_Topology_Files.html">preparation
+stage</a> is required. 
+In a typical setting this <a href="QMMM_Restart_and_Topology_Files.html">preparation
+run</a> will be done separately from the main QM/MM simulations resulting in the generation of topology and restart files. The topology file contains a list of all relevant force field interactions encountered in the system but has no information about the actual atom positions. Typically the topology file will be generated once and reused throughout the entire simulation. The actual structural information about the system is contained in the restart file, which will be changing as the system coordinates are updated during the course of the simulation.</p>
 <p>Once restart and topology files are generated, the QM/MM simulation can
 be initiated by defining the specifics of the
 <a href="QM_Parameters.html">QM</a> and <a href="MM_Parameters.html">MM</a>
@@ -151,7 +155,9 @@ descriptions, and if necessary <a href="QMMM_Parameters.html">QM/MM</a>
 interface parameters.</p>
 <p>The actual QM/MM calculation is invoked with the following task
 directive.</p>
-<p><code>task qmmm</code><string qmtheory><code></code><string operation><code>[numerical] [ignore]</code></p>
+<pre><code> task qmmm &lt;string qmtheory&gt; &lt;string operation&gt; [numerical] [ignore]
+</code></pre>
+
 <p>where qmtheory specifies quantum method for the calculation of the
 quantum region. It is expected that most of QM/MM simulations will be
 performed with with HF, DFT. or <a href="TCE.html">CC</a> theories, but any
