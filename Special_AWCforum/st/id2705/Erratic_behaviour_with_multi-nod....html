@@ -1060,7 +1060,9 @@ padding: 2px 5px;
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">Hi all,<br />
 <br />
-I've tried some calculations with NWCHEM (version 6.5) on a local multi-node cluster and I get some weird results and a lot of abnormal terminations...<br>
+I've tried some calculations with NWCHEM (version 6.5)<br>
+  on a local multi-node cluster and I get some weird results<br>
+    and a lot of abnormal terminations...<br>
 The following simple calculation should converge in 5 steps.<br />
 <br />
 
@@ -1116,7 +1118,8 @@ end
 task scf energy
 </pre> <br />
 <br />
-When I run it on a single node, I get the proper convergence (also checked with my workstation and another HPC cluster I have access on):<br />
+When I run it on a single node, I get the proper convergence <br>
+  (also checked with my workstation and another HPC cluster I have access on):<br />
 <br />
 
 <pre>
@@ -1130,7 +1133,8 @@ When I run it on a single node, I get the proper convergence (also checked with 
 </pre><br />
 <br />
 When trying multiple nodes, I have convergence issues. Of course for this simple case it does not matter.<br>
-Larger, more demanding runs that combine SCF and DFT runs just crash... This is an example of an erratic behaviour:<br />
+  Larger, more demanding runs that combine SCF and DFT runs just crash... <br>
+    This is an example of an erratic behaviour:<br />
 <br />
 
 <pre>
@@ -1189,7 +1193,8 @@ module list
 mpirun -np $NSLOTS -machinefile $TMPDIR/machines nwchem rhf.nw 
 </pre><br />
 <br />
-We managed to fix the issue with the machinefile, but the calculations do not behave as they should...<br />
+We managed to fix the issue with the machinefile, <br>
+  but the calculations do not behave as they should...<br />
 <br />
 Any suggestions will be greatly appreciated!!!<br />
 <br />
