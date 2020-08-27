@@ -147,10 +147,12 @@ https://github.com/nwchemgit/nwchem/</p>
 <li><strong>Downloading</strong></li>
 </ul>
 <p>The development version (git master branch) of NWChem can be downloaded using the command</p>
-<p><code>% git clone https://github.com/nwchemgit/nwchem</code></p>
+<pre><code>    % git clone https://github.com/nwchemgit/nwchem
+</code></pre>
+
 <p>A branch version cane be downloaded by using the -b option of git clone. For example,
 the hotfix/release-6-8 branch can be downloaded with the command</p>
-<pre><code>git clone -b hotfix/release-6-8  \
+<pre><code>git clone -b hotfix/release-6-8  \
 https://github.com/nwchemgit/nwchem nwchem-6.8.1
 </code></pre>
 
@@ -176,7 +178,10 @@ command</p>
 restricted. New potential developers should contact members of the
 NWChem Core Developer
 Team.</p>
-<p>Before contributions from this new developer can be incorporated into NWChem, this person will have to provide written feedback that the contributions can be released within NWChem under a [ECL 2.0 open-source license(http://www.opensource.org/licenses/ecl2.php).</p>
+<p>Before contributions from this new developer can be incorporated into
+NWChem, this person will have to provide written feedback that the
+contributions can be released within NWChem under a
+<a href="http://www.opensource.org/licenses/ecl2.php">ECL 2.0 open-source license</a>.</p>
 <p>A (Trusted) Developer will receive the appropriate access to the
 nwchemgit github repository. If a Developer consistently incorporates
 code changes that negatively affect the development tree, access to the
@@ -289,12 +294,18 @@ script has been created in</p>
 will automatically adapt the Doxygen configuration file for the
 directory it is run in and generate documentation for that directory and
 all its children. The documentation is generated in a subdirectory</p>
-<p><code>doxydocs</code></p>
+<pre><code> doxydocs
+</code></pre>
+
 <p>and can be viewed, for example, by running</p>
-<p><code>% firefox doxydocs/html/index.html</code></p>
+<pre><code> % firefox doxydocs/html/index.html
+</code></pre>
+
 <p>Doxygen has many capabilities and a number of them can be driven through
 the run_doxygen script. Run</p>
-<p><code>% run_doxygen -h</code></p>
+<pre><code>  % run_doxygen -h
+</code></pre>
+
 <p>for more details.</p>
 <h2 id="module-specific-details">Module specific details<a class="headerlink" href="#module-specific-details" title="Permanent link">&para;</a></h2>
 <h3 id="the-nwxc-module-higher-order-derivatives-of-density-functionals">The NWXC module: higher order derivatives of density functionals<a class="headerlink" href="#the-nwxc-module-higher-order-derivatives-of-density-functionals" title="Permanent link">&para;</a></h3>
@@ -448,8 +459,8 @@ The appropriate subroutine calls need to be added in these places.</p>
 </ul>
 <h4 id="generating-code-for-a-functional">Generating code for a functional<a class="headerlink" href="#generating-code-for-a-functional" title="Permanent link">&para;</a></h4>
 <p>One way to generate the code for a new functional to add is shown in
-workflow schematic <a href="file:Code_generation_workflow.jpg.md">center|500px|NWXC code generation
-workflow</a></p>
+workflow schematic
+<a href="Code_generation_workflow.jpg">NWXC code generation workflow</a></p>
 <p>The step involved can be summarized as:</p>
 <ul>
 <li>Create an automatic differentiation implementation<ul>
