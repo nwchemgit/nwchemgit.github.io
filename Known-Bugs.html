@@ -83,6 +83,18 @@
                     <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
                     </li>
                 </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="Known-Bugs.html">Known Bugs</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-report-bugs">How to report bugs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bugs-present-in-nwchem-binary-packages">Bugs present in NWChem binary packages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#known-bugs-for-nwchem-68">Known bugs for NWChem 6.8</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a>
                     </li>
@@ -125,18 +137,44 @@
     </li>
   </ul>
   
+    <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+        <a href="Tutorials.html" class="btn btn-neutral float-right" title="Tutorials">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="Benchmarks.html" class="btn btn-neutral" title="Benchmarks performed with NWChem"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+  
   <hr/>
 </div>
           <div role="main">
             <div class="section">
               
-                <p>Use our &ldquo;issue tracker&rdquo;:https://github.com/nwchemgit/nwchem/issues to report new bugs. </p>
+                <h1 id="known-bugs">Known Bugs<a class="headerlink" href="#known-bugs" title="Permanent link">&para;</a></h1>
+<h3 id="how-to-report-bugs">How to report bugs<a class="headerlink" href="#how-to-report-bugs" title="Permanent link">&para;</a></h3>
+<p>Use our <a href="https://github.com/nwchemgit/nwchem/issues">Github issue tracker</a> to report new bugs. </p>
 <p>Also check there for other issues that may not have made it into these lists. </p>
-<p>See [[FAQ]] for solutions to common issues.</p>
-<h2 id="known-bugs-for-nwchem-68">Known bugs for NWChem 6.8<a class="headerlink" href="#known-bugs-for-nwchem-68" title="Permanent link">&para;</a></h2>
+<p>See the <a href="FAQ.html">FAQ page</a> for solutions to common issues.</p>
+<h3 id="bugs-present-in-nwchem-binary-packages">Bugs present in NWChem binary packages<a class="headerlink" href="#bugs-present-in-nwchem-binary-packages" title="Permanent link">&para;</a></h3>
 <ul>
-<li><em>AR failure on Mac OSX</em> <br />
-https://github.com/nwchemgit/nwchem/issues/5<br />
+<li>The packages shipped with Ubuntu Bionic 18.04 are buggy. Calculations  stop with the error</li>
+</ul>
+<pre><code>spcart_bra2etran: nbf_xj.ne.nbf_sj  (xj-sj) =                   5
+</code></pre>
+
+<p><a href="https://nwchemgit.github.io/Special_AWCforum/st/id3386/Ubuntu_18.html">https://nwchemgit.github.io/Special_AWCforum/st/id3386/Ubuntu_18.html</a>
+<a href="https://bugs.launchpad.net/ubuntu/+source/nwchem/+bug/1675817">https://bugs.launchpad.net/ubuntu/+source/nwchem/+bug/1675817</a></p>
+<p>Please use commands to install an updated version (as described
+at the <a href="https://github.com/nwchemgit/nwchem/releases/tag/v7.0.0-release">NWChem 7.0.0 release page</a>)</p>
+<pre><code>sudo apt -y install curl  python3-dev gfortran  mpi-default-bin mpi-default-dev libopenblas-dev ssh
+
+curl -LJO https://github.com/nwchemgit/nwchem/releases/download/v7.0.0-release/nwchem-data_7.0.0-3_all.ubuntu_bionic.deb
+curl -LJO https://github.com/nwchemgit/nwchem/releases/download/v7.0.0-release/nwchem_7.0.0-3_amd64.ubuntu_bionic.deb
+
+sudo dpkg -i nwchem_7.0.0-3*_bionic.deb
+</code></pre>
+
+<h3 id="known-bugs-for-nwchem-68">Known bugs for NWChem 6.8<a class="headerlink" href="#known-bugs-for-nwchem-68" title="Permanent link">&para;</a></h3>
+<ul>
+<li><em>AR comppilation failure on Mac OSX</em> <br />
+<a href="https://github.com/nwchemgit/nwchem/issues/5">https://github.com/nwchemgit/nwchem/issues/5</a>
 Temporary fix: set the env. variable USE_ARUR=n, e.g.</li>
 </ul>
 <pre><code>make USE_ARUR=n
@@ -145,13 +183,22 @@ Temporary fix: set the env. variable USE_ARUR=n, e.g.</li>
 <p>Fix   available in  the branches master and hotfix/release-6-8</p>
 <ul>
 <li><em>Moldenfile property bug when symmetry and linear dependencies are present</em> <br />
-https://github.com/nwchemgit/nwchem/issues/7<br />
+<a href="https://github.com/nwchemgit/nwchem/issues/7">https://github.com/nwchemgit/nwchem/issues/7</a>
 Workaround described in the issue entry</li>
 </ul>
               
             </div>
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Tutorials.html" class="btn btn-neutral float-right" title="Tutorials">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="Benchmarks.html" class="btn btn-neutral" title="Benchmarks performed with NWChem"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -177,6 +224,10 @@ Workaround described in the issue entry</li>
           <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
+        <span><a href="Benchmarks.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="Tutorials.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
