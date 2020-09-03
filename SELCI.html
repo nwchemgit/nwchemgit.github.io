@@ -136,7 +136,7 @@
               
                 <h1 id="selected-ci">Selected CI<a class="headerlink" href="#selected-ci" title="Permanent link">&para;</a></h1>
 <p>The selected CI module is integrated into NWChem but as yet no input
-module has been written<script type="math/tex; mode=display">1</script>. The input thus consists of setting the
+module has been written [1]. The input thus consists of setting the
 appropriate variables in the database.</p>
 <p>It is assumed that an initial SCF/MCSCF calculation has completed, and
 that MO vectors are available. These will be used to perform a
@@ -462,7 +462,9 @@ as a separate integer array</p>
 must be formatted with n in I2 format. Each set specifies a list of
 creation-annihilation operator pairs (in that order). So for instance,
 in the above example each set is the same and causes the excitations</p>
-<p><code>4-&gt;5   4-&gt;6   3-&gt;5   3-&gt;6</code></p>
+<pre><code> 4-&gt;5   4-&gt;6   3-&gt;5   3-&gt;6
+</code></pre>
+
 <p>If orbitals 3 and 4 were initially doubly occupied, and orbitals 5 and 6
 initially unoccupied, then the application of this set of operators four
 times in succession is sufficient to generate the four electron in four
@@ -483,7 +485,9 @@ orbital complete active space.</p>
 <p>By default no excitation is applied to the reference configurations. If,
 for instance, you wanted to generate a single excitation CI space from
 the current configuration list, specify</p>
-<p><code>set selci:exci 1</code></p>
+<pre><code> set selci:exci 1
+</code></pre>
+
 <p>Any excitation level may be applied, but since the list of
 configurations is explicitly generated, as is the CI Hamiltonian matrix,
 you will run out of disk space if you attempt to use more than a few
@@ -491,7 +495,9 @@ tens of thousands of configurations.</p>
 <h2 id="number-of-roots">Number of roots<a class="headerlink" href="#number-of-roots" title="Permanent link">&para;</a></h2>
 <p>By default, only one root is generated in the CI diagonalization or
 perturbation selection. The following requests that 2 roots be generated</p>
-<p><code>set selci:nroot 2</code></p>
+<pre><code> set selci:nroot 2
+</code></pre>
+
 <p>There is no imposed upper limit. If many roots are required, then, to
 minimize root skipping problems, it helps to perform an initial
 approximate diagonalization with several more roots than required, and
@@ -502,7 +508,9 @@ obtained.</p>
 <script type="math/tex">10^{-6}</script> which provides similar accuracy in the perturbation
 corrections to the energy, and much higher accuracy in the CI
 eigenvalues. This may be adjusted with</p>
-<p><code>set "selci:diag tol" 1d-3</code></p>
+<pre><code>set &quot;selci:diag tol&quot; 1d-3
+</code></pre>
+
 <p>the example setting much lower precision, appropriate for the
 approximate diagonalization discussed in the preceding section.</p>
 <h2 id="selection-thresholds">Selection thresholds<a class="headerlink" href="#selection-thresholds" title="Permanent link">&para;</a></h2>
@@ -520,23 +528,25 @@ than <em>T</em>. The list of selection thresholds is specified as follows</p>
 <p>By default the program runs in &ldquo;ci+davids&rdquo; mode and just determines the
 CI eigenvectors/values in the current configuration space. To perform a
 selected-CI with perturbation correction use the following</p>
-<p><code>set selci:mode select</code></p>
+<pre><code> set selci:mode select
+</code></pre>
+
 <p>and remember to define the selection thresholds.</p>
 <h2 id="memory-requirements">Memory requirements<a class="headerlink" href="#memory-requirements" title="Permanent link">&para;</a></h2>
 <p>No global arrays are used inside the selected-CI, though the four-index
 transformation can be automatically invoked and it does use GAs. The
 selected CI replicates inside each
-process</p>
-<pre><code>   * all unique two-electron integrals in the MO basis that are non-zero by symmetry, and
-   * all CI information, including the CI vectors.
-</code></pre>
-
+process  </p>
+<p>* all unique two-electron integrals in the MO basis that are non-zero by symmetry, and <br />
+   * all CI information, including the CI vectors.</p>
 <p>These large data structures are allocated on the local stack. A fatal
 error will result if insufficient memory is available.</p>
 <h2 id="forcing-regeneration-of-the-mo-integrals">Forcing regeneration of the MO integrals<a class="headerlink" href="#forcing-regeneration-of-the-mo-integrals" title="Permanent link">&para;</a></h2>
 <p>When scanning a potential energy surface or optimizing a geometry the MO
 integrals need to be regenerated each time. Specify</p>
-<p><code>set selci:moints:force logical .true.</code></p>
+<pre><code> set selci:moints:force logical .true.
+</code></pre>
+
 <p>to accomplish this.</p>
 <h2 id="disabling-update-of-the-configuration-list">Disabling update of the configuration list<a class="headerlink" href="#disabling-update-of-the-configuration-list" title="Permanent link">&para;</a></h2>
 <p>When computing CI+PT energy the reference configuration list is normally
@@ -545,7 +555,9 @@ specified threshold. This is usually desirable. But when scanning a
 potential energy surface or optimizing a geometry the reference list
 must be kept fixed to keep the potential energy surface continuous and
 well defined. To do this specify</p>
-<p><code>set selci:update logical .false.</code></p>
+<pre><code> set selci:update logical .false.
+</code></pre>
+
 <h2 id="orbital-locking-in-ci-geometry-optimization">Orbital locking in CI geometry optimization<a class="headerlink" href="#orbital-locking-in-ci-geometry-optimization" title="Permanent link">&para;</a></h2>
 <p>The selected CI wavefunction is not invariant to orbital rotations or to
 swapping two or more orbitals. Orbitals could be swapped or rotated when
