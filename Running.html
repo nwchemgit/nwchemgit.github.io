@@ -148,20 +148,15 @@ current directory, though this may be <a href="Top-level.html#SCRATCH_DIR_.2F_PE
 input</a>.</p>
 <p>Generally, one will run a job with the following
 command:</p>
-<p><code>nwchem input.nw &gt;&amp; input.out &amp;</code></p>
+<pre><code>  nwchem input.nw &gt;&amp; input.out &amp;
+</code></pre>
+
 <h2 id="parallel-execution-on-unix-based-parallel-machines-including-workstation-clusters-using-mpi">Parallel execution on UNIX-based parallel machines including workstation clusters using MPI<a class="headerlink" href="#parallel-execution-on-unix-based-parallel-machines-including-workstation-clusters-using-mpi" title="Permanent link">&para;</a></h2>
 <p>To run with MPI, parallel should not be used. The way we usually run
 nwchem under MPI are the following</p>
 <ul>
-<li>
-<p>using mpirun:  </p>
-<p>mpirun -np 8 $NWCHEM_TOP/bin/$NWCHEM_TARGET/nwchem input.nw  </p>
-</li>
-<li>
-<p>If you have all nodes connected via shared memory and you have
-    installed the ch_shmem version of MPICH, you can do  </p>
-<p>$NWCHEM_TOP/bin/$NWCHEM_TARGET/nwchem -np 8 h2o.nw  </p>
-</li>
+<li>using mpirun:<br />
+<code>mpirun -np 8 $NWCHEM_TOP/bin/$NWCHEM_TARGET/nwchem input.nw</code>    </li>
 </ul>
 <h2 id="parallel-execution-on-mpps">Parallel execution on MPPs<a class="headerlink" href="#parallel-execution-on-mpps" title="Permanent link">&para;</a></h2>
 <p>All of these machines require use of different commands in order to gain
