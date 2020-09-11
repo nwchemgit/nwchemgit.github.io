@@ -1058,7 +1058,8 @@ padding: 2px 5px;
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2">We are trying to get NWChem 6.6 working with fully patched 64 bit Centos 7.2 systems, but are having some trouble.  It compiles and links cleanly, but seg faults and crashes immediately upon running.<br />
+		                      <td valign="top" class="post_body" height="65" colspan="2">We are trying to get NWChem 6.6 working with fully patched 64 bit Centos 7.2 systems, but are having some trouble.
+					<br>It compiles and links cleanly, but seg faults and crashes immediately upon running.<br />
 <br />
 If compiled against OpenMPI, we see:<br />
 <br />
@@ -1185,7 +1186,9 @@ Any hints would be appreciated, thanks!<br />
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2">Followup:  Apparently NWChem will only run on the same type of CPU as it is compiled.  We have a mix of AMD and Intel systems on our HPC Grid, and due to current Grid usage, the job was always getting assigned to an AMD node but the machine that things are compiled on is an Intel box.  <br />
+		                      <td valign="top" class="post_body" height="65" colspan="2">Followup:  Apparently NWChem will only run on the same type of CPU as it is compiled.
+					<br>We have a mix of AMD and Intel systems on our HPC Grid, and due to current Grid usage,
+					  <br>the job was always getting assigned to an AMD node but the machine that things are compiled on is an Intel box.  <br />
 <br />
 If anyone else runs into a similar issue, this might be something to check.<br />
 <br />
@@ -1261,7 +1264,8 @@ Tools_lib64.patch<br />
 <br />
 Otherwise I followed the NWChem Installation instructions for CentOS7.1 and NWChem 6.6.<br />
 <br />
-I have to include the compat-openmpi16 libraries for the libmpi_f77.so.1 and libmpi_f90.so.1 because those are apparently missing from the lib64/opempi libraries<br />
+I have to include the compat-openmpi16 libraries for the libmpi_f77.so.1 and libmpi_f90.so.1
+<br>because those are apparently missing from the lib64/opempi libraries<br />
 <br />
 using:<br />
 <br />
@@ -1395,7 +1399,8 @@ Tools_lib64.patch<br />
 <br />
 Otherwise I followed the NWChem Installation instructions for CentOS7.1 and NWChem 6.6.<br />
 <br />
-I have to include the compat-openmpi16 libraries for the libmpi_f77.so.1 and libmpi_f90.so.1 because those are apparently missing from the lib64/opempi libraries<br />
+I have to include the compat-openmpi16 libraries for the libmpi_f77.so.1 and libmpi_f90.so.1
+<br> because those are apparently missing from the lib64/opempi libraries<br />
 <br />
 using:<br />
 <br />
@@ -1790,7 +1795,9 @@ I trying now with Marcin Dulak's compilation instructions for the EPEL nwchem fo
 		                        <td valign="top" class="post_body" height="65" colspan="2">I think that your build has some components that require the older OpenMPI libraries (now shipped with compat-openmpi16),<br />
 therefore you are forced to add /usr/lib64/compat-openmpi16/lib to your LD_LIBRARY_PATH and this will eventually cause the SIGSEGV crash<br />
 <br />
-I was able to reproduce this behavior in my Centos 7 installation (in my case if was the ELPA library still using the old 1.6 Openmpi libraries; once I removed ELPA from my build, I no longer needed compat-openmpi16 and the SIGSEGV vanished).<br />
+I was able to reproduce this behavior in my Centos 7 installation
+<br>(in my case if was the ELPA library still using the old 1.6 Openmpi libraries;
+  <br>once I removed ELPA from my build, I no longer needed compat-openmpi16 and the SIGSEGV vanished).<br />
 <br />
 If you upload the following files to a public website, I might be able to help you<br />
 <br />
