@@ -179,7 +179,7 @@ particularly well balanced in describing Rydberg excited states, in
 contrast to TDDFT. However, for open-shell systems, the errors in the
 CIS and TDHF excitation energies are often excessive, primarily due to
 the multi-determinantal character of the ground and excited state wave
-functions of open-shell systems in a HF reference.<script type="math/tex; mode=display">ref</script> The scaling of
+functions of open-shell systems in a HF reference. The scaling of
 the computational cost of a CIS or TDHF calculation per state with
 respect to the system size is the same as that for a HF calculation for
 the ground state, since the critical step of the both methods are the
@@ -195,7 +195,7 @@ and Rydberg excited states in particular, TDDFT employing these
 conventional functionals breaks down and the excitation energies are
 substantially underestimated. This is because of the fact that the
 exchange-correlation potentials generated from these functionals decay
-too rapidly (exponentially) as opposed to the slow <img alt="$-1/r$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3053de24294b49c2329426a84757d7d1.svg?invert_in_darkmode&sanitize=true" align=middle width="36.958185pt" height="24.56553pt"/> asymptotic
+too rapidly (exponentially) as opposed to the slow <em>-1/r</em>  asymptotic
 decay of the true potential. A rough but useful index is the negative of
 the highest occupied KS orbital energy; when the calculated excitation
 energies become close to this threshold, these numbers are most likely
@@ -210,12 +210,12 @@ scales as the same as the ground state DFT calculations, although the
 prefactor of the scaling may be much greater in the former.</p>
 <p>A very simple and effecive way to rectify the TDDFT&rsquo;s failure for
 Rydberg excited states has been proposed by Tozer and Handy[8] and by Casida and
-Salahub[5]. They proposed to splice a <img alt="$-1/r$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3053de24294b49c2329426a84757d7d1.svg?invert_in_darkmode&sanitize=true" align=middle width="36.958185pt" height="24.56553pt"/>
+Salahub[5]. They proposed to splice a <em>-1/r</em>
 asymptotic tail to an exchange-correlation potential that does not have
 the correct asymptotic behavior. Because the approximate
 exchange-correlation potentials are too shallow everywhere, a negative
-constant must be added to them before they can be spliced to the
-<img alt="$-1/r$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3053de24294b49c2329426a84757d7d1.svg?invert_in_darkmode&sanitize=true" align=middle width="36.958185pt" height="24.56553pt"/> tail seamlessly in a region that is not sensitive to chemical
+constant must be added to them before they can be spliced to the <em>-1/r</em>
+ tail seamlessly in a region that is not sensitive to chemical
 effects or to the long-range behavior. The negative constant or the
 shift is usually taken to be the difference of the HOMO energy from the
 true ionization potential, which can be obtained either from experiment
@@ -689,10 +689,7 @@ TASK TDDFT ENERGY
 </code></pre>
 
 <p>TDDFT for core states. The following example illustrates the usage of an
-energy cutoff and energy and orbital windows.</p>
-<p>K. Lopata, B. E. Van Kuiken, M. Khalil, N. Govind, &ldquo;Linear-Response and  <br />
-Real-Time Time-Dependent Density Functional Theory Studies of Core-Level <br />
-Near-Edge X-Ray Absorption&rdquo;, J. Chem. Theory Comput., 2012, 8 (9), pp 3284–3292</p>
+energy cutoff and energy and orbital windows.[9]</p>
 <pre><code>echo  
 start h2o_core  
 memory 1000 mb  
@@ -743,11 +740,7 @@ end
 task tddft
 </code></pre>
 
-<p>TDDFT optimization with LDA of Pyridine with the 6-31G basis</p>
-<p>D. W. Silverstein, N. Govind,  H. J. J. van Dam, L. Jensen, &ldquo;Simulating One-Photon <br />
-Absorption and Resonance Raman Scattering Spectra Using Analytical Excited State <br />
-Energy Gradients within Time-Dependent Density Functional Theory&rdquo; <br />
-J. Chem. Theory Comput., 2013, 9 (12), pp 5490–5503</p>
+<p>TDDFT optimization with LDA of Pyridine with the 6-31G basis[10]</p>
 <pre><code>echo  
 start tddftgrad_pyridine_opt  
 title &quot;TDDFT/LDA geometry optimization of Pyridine with 6-31G&quot;  
@@ -862,10 +855,7 @@ end
 task dplot
 </code></pre>
 
-<p>TDDFT protocol for calculating the valence-to-core (1s) X-ray emission spectrum </p>
-<p>Y. Zhang, S. Mukamel, M. Khalil, N. Govind, &ldquo;Simulating Valence-to-Core X-ray Emission  <br />
-Spectroscopy of Transition Metal&rdquo;, J. Chem. Theory Comput., 2015, 11 (12), pp 5804–5809<br />
-DOI: 10.1021/acs.jctc.5b00763</p>
+<p>TDDFT protocol for calculating the valence-to-core (1s) X-ray emission spectrum [11]</p>
 <ol>
 <li>Calculate the neutral ground state.   </li>
 <li>Calculate a full core hole (FCH) ionized state self-consistently, where the<br />
@@ -920,6 +910,16 @@ R. Bauernschmitt, M. Häser, O. Treutler, and R. Ahlrichs, <em>Chem. Phys. Lett.
 <li>M. E. Casida, C. Jamorski, K. C. Casida, and D. R. Salahub, <em>J. Chem. Phys.</em> <strong>108</strong>, 4439 (1998).</li>
 <li>S. Hirata, C.-G. Zhan, E. Aprà, T. L. Windus, and D. A. Dixon, <em>J. Phys. Chem. A</em> <strong>107</strong>, 10154 (2003).</li>
 <li>D. J. Tozer and N. C. Handy, <em>J. Chem. Phys.</em> <strong>109</strong>, 10180 (1998).</li>
+<li>K. Lopata, B. E. Van Kuiken, M. Khalil, N. Govind, &ldquo;Linear-Response and  <br />
+Real-Time Time-Dependent Density Functional Theory Studies of Core-Level <br />
+Near-Edge X-Ray Absorption&rdquo;, <em>J. Chem. Theory Comput.</em>, 2012, <strong>8</strong> (9), pp 3284–3292</li>
+<li>D. W. Silverstein, N. Govind,  H. J. J. van Dam, L. Jensen, &ldquo;Simulating One-Photon <br />
+Absorption and Resonance Raman Scattering Spectra Using Analytical Excited State <br />
+Energy Gradients within Time-Dependent Density Functional Theory&rdquo; <br />
+<em>J. Chem. Theory Comput.</em>, 2013, <strong>9</strong> (12), pp 5490–5503</li>
+<li>Y. Zhang, S. Mukamel, M. Khalil, N. Govind, &ldquo;Simulating Valence-to-Core X-ray Emission  <br />
+Spectroscopy of Transition Metal&rdquo;, <em>J. Chem. Theory Comput</em>., 2015, <strong>11</strong> (12), pp 5804–5809<br />
+DOI: 10.1021/acs.jctc.5b00763</li>
 </ol>
               
             </div>
