@@ -147,18 +147,18 @@ library</a> that is included in the release
 of NWChem. Alternatively, the user can specify particular functions
 explicitly in the input, to define a particular basis set.</p>
 <p>The general form of the BASIS directive is as follows:</p>
-<pre><code> BASIS [&lt;string name default &quot;ao basis&quot;&gt;] \  
-       [(spherical || cartesian) default cartesian] \  
-       [(print || noprint) default print]  
-       [rel]  
-    &lt;string tag&gt; library [&lt;string tag_in_lib&gt;] \  
-                 &lt;string standard_set&gt; [file &lt;filename&gt;] \  
-                 [except &lt;string tag list&gt;] [rel]  
-       ...  
-    &lt;string tag&gt; &lt;string shell_type&gt; [rel]  
-       &lt;real exponent&gt; &lt;real list_of_coefficients&gt;  
-       ...  
- END
+<pre><code> BASIS [&lt;string name default &quot;ao basis&quot;&gt;] \  
+       [(spherical || cartesian) default cartesian] \  
+       [(print || noprint) default print]  
+       [rel]  
+    &lt;string tag&gt; library [&lt;string tag_in_lib&gt;] \  
+                 &lt;string standard_set&gt; [file &lt;filename&gt;] \  
+                 [except &lt;string tag list&gt;] [rel]  
+       ...  
+    &lt;string tag&gt; &lt;string shell_type&gt; [rel]  
+       &lt;real exponent&gt; &lt;real list_of_coefficients&gt;  
+       ...  
+ END
 </code></pre>
 
 <p>Examining the keywords on the first line of the BASIS directive:</p>
@@ -358,28 +358,28 @@ Exchange</a> for naming conventions and
 their specifications.</p>
 <p>The general form of the input line requesting basis sets from the NWChem
 basis set library is:</p>
-<pre><code>    &lt;string tag&gt; library [&lt;string tag_in_lib&gt;] \  
-                 &lt;string standard set&gt; [file &lt; filename&gt; \  
-                 [except &lt;string tag list&gt;] [rel] 
-       ...
+<pre><code>    &lt;string tag&gt; library [&lt;string tag_in_lib&gt;] \  
+                 &lt;string standard set&gt; [file &lt; filename&gt; \  
+                 [except &lt;string tag list&gt;] [rel] 
+       ...
 </code></pre>
 
 <p>For example, the NWChem basis set library contains the Dunning cc-pvdz
 basis set. These may be used as follows</p>
-<pre><code> basis  
-   oxygen library cc-pvdz  
-   hydrogen library cc-pvdz  
- end
+<pre><code> basis  
+   oxygen library cc-pvdz  
+   hydrogen library cc-pvdz  
+ end
 </code></pre>
 
 <p>A default path of the NWChem basis set libraries is provided on
 installation of the code, but a different path can be defined by
 specifying the keyword file, and one can explicitly name the file to be
 accessed for the basis functions. For example,</p>
-<pre><code> basis 
-   o  library 3-21g file /usr/d3g681/nwchem/library 
-   si library 6-31g file /usr/d3g681/nwchem/libraries/  
- end
+<pre><code> basis 
+   o  library 3-21g file /usr/d3g681/nwchem/library 
+   si library 6-31g file /usr/d3g681/nwchem/libraries/  
+ end
 </code></pre>
 
 <p>This directive tells the code to use the basis set 3-21g in the file
@@ -389,27 +389,27 @@ look for them in the default libraries. When a directory is defined the
 code will search for the basis set in a file with the name 6-31g.</p>
 <p>The &ldquo;*&rdquo; tag can be used to efficiently define basis set input
 directives for large numbers of atoms. An example is:</p>
-<pre><code> basis  
-   *  library 3-21g 
- end
+<pre><code> basis  
+   *  library 3-21g 
+ end
 </code></pre>
 
 <p>This directive tells the code to assign the basis sets 3-21g to all the
 atom tags defined in the geometry. If one wants to place a different
 basis set on one of the atoms defined in the geometry, the following
 directive can be used:</p>
-<pre><code> basis  
-   *  library 3-21g except H 
- end
+<pre><code> basis  
+   *  library 3-21g except H 
+ end
 </code></pre>
 
 <p>This directive tells the code to assign the basis sets 3-21g to all the
 atoms in the geometry, except the hydrogen atoms. Remember that the user
 will have to explicitly define the hydrogen basis set in this
 directive! One may also define tags that end with a &ldquo;*&ldquo;:</p>
-<pre><code> basis  
-   oxy*  library 3-21g   
- end
+<pre><code> basis  
+   oxy*  library 3-21g   
+ end
 </code></pre>
 
 <p>This directive tells the code to assign the basis sets 3-21g to all atom
@@ -422,12 +422,12 @@ For example: To specify the cc-pvdz basis for a calculation on the water
 monomer in the dimer basis, where the dummy oxygen and dummy hydrogen
 centers have been identified as <code>bqo</code> and <code>bqh</code> respectively, the <code>BASIS</code>
 directive is as follows:</p>
-<pre><code> basis  
-   o   library cc-pvdz  
-   h   library cc-pvdz  
-   bqo library o cc-pvdz  
-   bqh library h cc-pvdz  
- end
+<pre><code> basis  
+   o   library cc-pvdz  
+   h   library cc-pvdz  
+   bqo library o cc-pvdz  
+   bqh library h cc-pvdz  
+ end
 </code></pre>
 
 <p>A special dummy center tag is <code>bq*</code>, which will assign the same basis set
@@ -451,10 +451,11 @@ information.</p>
 <h2 id="how-to-use-basis-files-from-httpswwwbasissetexchangeorg-new-in-2019">How to use basis files from https://www.basissetexchange.org (NEW in 2019)<a class="headerlink" href="#how-to-use-basis-files-from-httpswwwbasissetexchangeorg-new-in-2019" title="Permanent link">&para;</a></h2>
 <p>In order to ensure compatibility with the existing basis libraries available in NWChem, we suggest the user  to 
 select the &ldquo;Advanced Options&rdquo; menu and tick the boxes &ldquo;Optimize General Contractions&rdquo; and &ldquo;Uncontract General&rdquo;,
-as in the image below, when downloading basis files from https://www.basissetexchange.org
+as in the image below,
+when downloading basis files from <a href="https://www.basissetexchange.org">www.basissetexchange.org</a><br />
 <img alt="How to download" src="BSE_NWChem_selection.png" /></p>
 <p>As an alternative,  basis set files downloaded from the basissetexchange.org website are available in
-the NWChem source code (after release 7.0.0). In order to switch from the default basis libraries to the library formed by files downloaded from basissetexchange.org,
+the NWChem source code (after release 7.0.0). In order to switch from the default basis libraries to the library formed by files downloaded from <a href="https://www.basissetexchange.org">www.basissetexchange.org</a>,
 the following environment variable setting is required</p>
 <pre><code>NWCHEM_BASIS_LIBRARY=$NWCHEM_TOP/src/basis/libraries.bse/
 </code></pre>
@@ -464,9 +465,9 @@ the following environment variable setting is required</p>
 are not suitable for a given calculation, the basis set may be
 explicitly defined. A generally contracted Gaussian basis function is
 associated with a center using an input line of the following form:</p>
-<pre><code>    &lt;string tag&gt; &lt;string shell_type&gt; [rel]  
-       &lt;real exponent&gt; &lt;real list_of_coefficients&gt;  
-       ...
+<pre><code>    &lt;string tag&gt; &lt;string shell_type&gt; [rel]  
+       &lt;real exponent&gt; &lt;real list_of_coefficients&gt;  
+       ...
 </code></pre>
 
 <p>The variable <shell_type> identifies the angular momentum of the shell,
@@ -478,44 +479,44 @@ details. Subsequent lines define the primitive function exponents and
 contraction coefficients. General contractions are specified by
 including multiple columns of coefficients.</p>
 <p>The following example defines basis sets for the water molecule:</p>
-<pre><code> basis spherical   
-   oxygen s  
-     11720.0000    0.000710  -0.000160  
-      1759.0000    0.005470  -0.001263  
-       400.8000    0.027837  -0.006267  
-       113.7000    0.104800  -0.025716  
-        37.0300    0.283062  -0.070924  
-        13.2700    0.448719  -0.165411  
-         5.0250    0.270952  -0.116955  
-         1.0130    0.015458   0.557368  
-         0.3023   -0.002585   0.572759  
-   oxygen s                  
-         0.3023    1.000000  
-   oxygen p                  
-        17.7000    0.043018  
-         3.8540    0.228913  
-         1.0460    0.508728  
-         0.2753    0.460531  
-   oxygen p                  
-         0.2753    1.000000  
-   oxygen d  
-         1.1850    1.000000  
-   hydrogen s  
-        13.0100    0.019685  
-         1.9620    0.137977  
-         0.4446    0.478148  
-         0.1220    0.501240  
-   hydrogen s    
-         0.1220    1.000000  
-   hydrogen p    
-         0.7270    1.000000  
-   oxygen s  
-         0.01      1.0  
-   hydrogen s  
-         0.02974   1.0  
-   hydrogen p  
-         0.141      1.0  
- end
+<pre><code> basis spherical   
+   oxygen s  
+     11720.0000    0.000710  -0.000160  
+      1759.0000    0.005470  -0.001263  
+       400.8000    0.027837  -0.006267  
+       113.7000    0.104800  -0.025716  
+        37.0300    0.283062  -0.070924  
+        13.2700    0.448719  -0.165411  
+         5.0250    0.270952  -0.116955  
+         1.0130    0.015458   0.557368  
+         0.3023   -0.002585   0.572759  
+   oxygen s                  
+         0.3023    1.000000  
+   oxygen p                  
+        17.7000    0.043018  
+         3.8540    0.228913  
+         1.0460    0.508728  
+         0.2753    0.460531  
+   oxygen p                  
+         0.2753    1.000000  
+   oxygen d  
+         1.1850    1.000000  
+   hydrogen s  
+        13.0100    0.019685  
+         1.9620    0.137977  
+         0.4446    0.478148  
+         0.1220    0.501240  
+   hydrogen s    
+         0.1220    1.000000  
+   hydrogen p    
+         0.7270    1.000000  
+   oxygen s  
+         0.01      1.0  
+   hydrogen s  
+         0.02974   1.0  
+   hydrogen p  
+         0.141      1.0  
+ end
 </code></pre>
 
 <p>Explicit basis set specifications are available from the <a href="https://www.basissetexchange.org/">basis set
@@ -526,13 +527,13 @@ to define the basis sets used on the various atoms.</p>
 <p>For example, the following BASIS directive augments the Dunning cc-pvdz
 basis set for the water molecule with a diffuse s-shell on oxygen and
 adds the aug-cc-pVDZ diffuse functions onto the hydrogen.</p>
-<pre><code> basis spherical   
-   oxygen library cc-pvdz  
-   hydrogen library cc-pvdz  
-   oxygen s  
-     0.01 1.0  
-   hydrogen library &quot;aug-cc-pVDZ Diffuse&quot;  
- end
+<pre><code> basis spherical   
+   oxygen library cc-pvdz  
+   hydrogen library cc-pvdz  
+   oxygen s  
+     0.01 1.0  
+   hydrogen library &quot;aug-cc-pVDZ Diffuse&quot;  
+ end
 </code></pre>
 
 <p>The resulting basis set defined is identical to the one defined above in

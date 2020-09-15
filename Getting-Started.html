@@ -183,26 +183,30 @@ defaults are noted, where applicable.</p>
 illustrated with two examples. The input format and syntax for
 directives is also described in detail.</p>
 <h2 id="nwchemrc-for-environment-variables-and-libraries">.nwchemrc for environment variables and libraries<a class="headerlink" href="#nwchemrc-for-environment-variables-and-libraries" title="Permanent link">&para;</a></h2>
-<p>Each user should have a .nwchemrc file to point to default data files,
+<p>Each user should have a <code>.nwchemrc</code> file to point to default data files,
 such as basis sets, pseudopotentials, and MD potentials.</p>
 <p>Contents of the default.nwchemrc file based on the above information
 should
 be:</p>
-<p><code>nwchem_basis_library</code><location of NWChem installation><code>/src/basis/libraries/</code><br />
-<code>nwchem_nwpw_library</code><location of NWChem installation><code>/src/nwpw/libraryps/</code><br />
-<code>ffield amber</code><br />
-<code>amber_1</code><location of NWChem installation><code>/src/data/amber_s/</code><br />
-<code>amber_2</code><location of NWChem installation><code>/src/data/amber_q/</code><br />
-<code>amber_3</code><location of NWChem installation><code>/src/data/amber_x/</code><br />
-<code>amber_4</code><location of NWChem installation><code>/src/data/amber_u/</code><br />
-<code>spce</code><location of NWChem installation><code>/src/data/solvents/spce.rst</code><br />
-<code>charmm_s</code><location of NWChem installation><code>/src/data/charmm_s/</code><br />
-<code>charmm_x</code><location of NWChem installation><code>/src/data/charmm_x/</code></p>
+<pre><code> nwchem_basis_library &lt;location of NWChem installation&gt;/src/basis/libraries/  
+ nwchem_nwpw_library &lt;location of NWChem installation&gt;/src/nwpw/libraryps/  
+ ffield amber  
+ amber_1 &lt;location of NWChem installation&gt;/src/data/amber_s/  
+ amber_2 &lt;location of NWChem installation&gt;/src/data/amber_q/  
+ amber_3 &lt;location of NWChem installation&gt;/src/data/amber_x/  
+ amber_4 &lt;location of NWChem installation&gt;/src/data/amber_u/  
+ spce   &lt;location of NWChem installation&gt;/src/data/solvents/spce.rst  
+ charmm_s &lt;location of NWChem installation&gt;/src/data/charmm_s/  
+ charmm_x &lt;location of NWChem installation&gt;/src/data/charmm_x/
+</code></pre>
+
 <p>It is can also be useful to use the NWCHEM_BASIS_LIBRARY environment
 variable when testing a new libraries in your own directory. This will
 allow you to overwrite the value of nwchem_basis_library in your
 .nwchemrc file and point to the new basis library. For example:</p>
-<p><code>% setenv NWCHEM_BASIS_LIBRARY "$NWCHEM/data-5.0/libraries/"</code></p>
+<pre><code>   % setenv NWCHEM_BASIS_LIBRARY &quot;$NWCHEM/data-5.0/libraries/&quot;
+</code></pre>
+
 <p>Do not forget the trailing &ldquo;/&rdquo;.</p>
 <h2 id="input-file-structure">Input File Structure<a class="headerlink" href="#input-file-structure" title="Permanent link">&para;</a></h2>
 <p>The structure of an input file reflects the internal structure of
@@ -213,12 +217,14 @@ necessary to put this information at the top of the input file, however.
 NWChem will read through the entire input file looking for the start-up
 directives. In this first pass, all other directives are ignored.</p>
 <p>The start-up directives are</p>
-<p><code>START</code><br />
-<code>RESTART</code><br />
-<code>SCRATCH_DIR</code><br />
-<code>PERMANENT_DIR</code><br />
-<code>MEMORY</code><br />
-<code>ECHO</code></p>
+<pre><code>START  
+RESTART  
+SCRATCH_DIR  
+PERMANENT_DIR  
+MEMORY  
+ECHO
+</code></pre>
+
 <p>After the input file has been scanned for the start-up directives, it is
 rewound and read sequentially. Input is processed either by the
 top-level parser (for the directives listed in <a href="Top-level.html">Top-level
@@ -237,11 +243,13 @@ file.</p>
 <p>The name of the input file is usually provided as an argument to the
 execute command for NWChem. That is, the execute command looks something
 like the following</p>
-<p><code>nwchem input_file</code></p>
-<p>The default name for the input file is nwchem.nw. If an input file name
-input_file is specified without an extension, the code assumes .nw as a
-default extension, and the input filename becomes input_file.nw. If the
-code cannot locate a file named either input_file or input_file.nw (or
+<pre><code> nwchem input_file
+</code></pre>
+
+<p>The default name for the input file is <code>nwchem.nw</code>. If an input file name
+<code>input_file</code> is specified without an extension, the code assumes .nw as a
+default extension, and the input filename becomes <code>input_file.nw</code>. If the
+code cannot locate a file named either <code>input_file</code> or <code>input_file.nw</code> (or
 nwchem.nw if no file name is provided), an error is reported and
 execution terminates. The following section presents two input files to
 illustrate the directive syntax and input file format for NWChem
@@ -251,15 +259,17 @@ applications.</p>
 of the nitrogen molecule, using a Dunning cc-pvdz basis set. This input
 file contains the bare minimum of information the user must specify to
 run this type of problem &ndash; fewer than ten lines of input, as follows:</p>
-<p><code>title "Nitrogen cc-pvdz SCF geometry optimization"</code><br />
-<code>geometry</code><br />
-<code>n 0 0 0</code><br />
-<code>n 0 0 1.08</code><br />
-<code>end</code><br />
-<code>basis</code><br />
-<code>n library cc-pvdz</code><br />
-<code>end</code><br />
-<code>task scf optimize</code></p>
+<pre><code> title &quot;Nitrogen cc-pvdz SCF geometry optimization&quot;  
+ geometry    
+   n 0 0 0  
+   n 0 0 1.08  
+ end  
+ basis  
+   n library cc-pvdz  
+ end  
+ task scf optimize
+</code></pre>
+
 <p>Examining the input line by line, it can be seen that it contains only
 four directives; TITLE, GEOMETRY, BASIS, and TASK. The TITLE directive
 is optional, and is provided as a means for the user to more easily
@@ -274,16 +284,18 @@ Z-matrix format). The input blocks for the BASIS and GEOMETRY directives
 are structured in similar fashion, i.e., name, keyword, &hellip;, end (In
 this simple example, there are no keywords). The BASIS input block must
 contain basis set information for every atom type in the geometry with
-which it will be used. Refer to Sections 7 and 8, and Appendix A for a
+which it will be used. Refer to <a href="Basis.html">Basis</a> for a
 description of available basis sets and a discussion of how to define
 new ones.</p>
 <p>The last line of this sample input file (task scf optimize) tells the
 program to optimize the molecular geometry by minimizing the SCF energy.
 (For a description of possible tasks and the format of the TASK
 directive, refer to <a href="TASK.html">Tasks</a>)</p>
-<p>If the input is stored in the file n2.nw, the command to run this job on
+<p>If the input is stored in the file <code>n2.nw</code>, the command to run this job on
 a typical UNIX workstation is as follows:</p>
-<p><code>nwchem n2</code></p>
+<pre><code> nwchem n2
+</code></pre>
+
 <p>NWChem output is to UNIX standard output, and error messages are sent to
 both standard output and standard error.</p>
 <h2 id="water-molecule-sample-input-file">Water Molecule Sample Input File<a class="headerlink" href="#water-molecule-sample-input-file" title="Permanent link">&para;</a></h2>
@@ -298,33 +310,35 @@ optimization is finished using MP2 and a basis set with polarization
 functions. The final task is to calculate the MP2 vibrational
 frequencies. The input file to accomplish these three tasks is as
 follows:</p>
-<p><code>start h2o_freq</code><br />
-<code>charge 1</code><br />
-<code>geometry units angstroms</code><br />
-<code>O       0.0  0.0  0.0</code><br />
-<code>H       0.0  0.0  1.0</code><br />
-<code>H       0.0  1.0  0.0</code><br />
-<code>end</code><br />
-<code>basis</code><br />
-<code>H library sto-3g</code><br />
-<code>O library sto-3g</code><br />
-<code>end</code><br />
-<code>scf</code><br />
-<code>uhf; doublet</code><br />
-<code>print low</code><br />
-<code>end</code><br />
-<code>title "H2O+ : STO-3G UHF geometry optimization"</code><br />
-<code>task scf optimize</code><br />
-<code>basis</code><br />
-<code>H library 6-31g**</code><br />
-<code>O library 6-31g**</code><br />
-<code>end</code><br />
-<code>title "H2O+ : 6-31g** UMP2 geometry optimization"</code><br />
-<code>task mp2 optimize</code><br />
-<code>mp2; print none; end</code><br />
-<code>scf; print none; end</code><br />
-<code>title "H2O+ : 6-31g** UMP2 frequencies"</code><br />
-<code>task mp2 freq</code></p>
+<pre><code>start h2o_freq  
+charge 1  
+geometry units angstroms  
+ O       0.0  0.0  0.0  
+ H       0.0  0.0  1.0  
+ H       0.0  1.0  0.0  
+end  
+basis  
+ H library sto-3g  
+ O library sto-3g  
+end  
+scf  
+ uhf; doublet  
+ print low  
+end  
+title &quot;H2O+ : STO-3G UHF geometry optimization&quot;  
+task scf optimize  
+basis  
+ H library 6-31g**  
+ O library 6-31g**  
+end  
+title &quot;H2O+ : 6-31g** UMP2 geometry optimization&quot;  
+task mp2 optimize  
+mp2; print none; end  
+scf; print none; end  
+title &quot;H2O+ : 6-31g** UMP2 frequencies&quot;  
+task mp2 freq
+</code></pre>
+
 <p>The START directive
 (<a href="Start_Restart.html">START/RESTART</a> tells
 NWChem that this run is to be started from the beginning. This directive
@@ -394,13 +408,17 @@ character (also known as a `return&rsquo; or `enter&rsquo; character). A semicol
 single physical line of input to contain multiple logical lines of
 input. For example, five lines of input for the GEOMETRY directive can
 be entered as follows;</p>
-<p><code>geometry</code><br />
-<code>O 0  0     0</code><br />
-<code>H 0  1.430 1.107</code><br />
-<code>H 0 -1.430 1.107</code><br />
-<code>end</code></p>
+<pre><code> geometry  
+  O 0  0     0  
+  H 0  1.430 1.107  
+  H 0 -1.430 1.107  
+ end
+</code></pre>
+
 <p>These same five lines could be entered on a single line, as</p>
-<p><code>geometry; O 0 0 0; H 0 1.430 1.107; H 0 -1.430 1.107; end</code></p>
+<pre><code> geometry; O 0 0 0; H 0 1.430 1.107; H 0 -1.430 1.107; end
+</code></pre>
+
 <p>This one physical input line comprises five logical input lines. Each
 logical or physical input line must be no longer than 1023 characters.</p>
 <p>In the input file:</p>
@@ -420,7 +438,7 @@ logical or physical input line must be no longer than 1023 characters.</p>
 <li># (the hash or pound symbol) is the comment character. All
     characters following # (up to the end of the physical line) are
     ignored.</li>
-<li>If any input line (excluding Python programs, Section 38) begins
+<li>If any input line (excluding <a href="Python.html">Python programs</a> begins
     with the string INCLUDE (ignoring case) and is followed by a valid
     file name, then the data in that file are read as if they were
     included into the current input file at the current line. Up to
@@ -458,14 +476,13 @@ conventions are used in the generic descriptions of the NWChem input.</p>
     swap, print, units, bqbq).</li>
 <li>variable names always appear in lower case, in computer typeface,
     and enclosed in angle brackets to distinguish them from keywords
-    (e.g., <input_filename>, <basisname>, <tag>).</li>
+    (e.g., <code>&lt;input_filename&gt;</code>, <code>&lt;basisname&gt;</code>, <code>&lt;tag&gt;</code>).</li>
 <li>$variable$ is used to indicate the substitution of the value of a
     variable.</li>
 <li>() is used to group items (the parentheses and other special symbols
     should not appear in the input).</li>
 <li>|| separate exclusive options, parameters, or formats.</li>
-<li>
-<script type="math/tex; mode=display">  </script> enclose optional entries that have a default value.</li>
+<li>[  ] enclose optional entries that have a default value.</li>
 <li>&lt; &gt; enclose a type, a name of a value to be specified, or a
     default value, if any.</li>
 <li>\ is used to concatenate lines in a description.</li>
@@ -486,19 +503,19 @@ assumed to be of type ``string&rsquo;&lsquo;.</p>
 notation, which interprets lo:hi:inc as lo, lo+inc, lo+2*inc, &hellip;, hi.
 For example, where a list of integers is expected in the input, the
 following two lines are equivalent</p>
-<pre><code>  7 10 21:27:2 1:3 99  
-  7 10 21 23 25 27 1 2 3 99
+<pre><code>  7 10 21:27:2 1:3 99  
+  7 10 21 23 25 27 1 2 3 99
 </code></pre>
 
 <p>(In Fortran triplet notation, the increment, if unstated, is 1; e.g.,
 1:3 = 1:3:1.)</p>
-<p>The directive VECTORS (Section 10.5) is presented here as an example of
+<p>The directive <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">VECTORS</a> is presented here as an example of
 an NWChem input directive. The general form of the directive is as
 follows:</p>
-<pre><code> VECTORS [input (&lt;string input_movecs default atomic&gt;) || \  
-                  (project &lt;string basisname&gt; &lt;string filename&gt;)] \ 
-         [swap [(alpha||beta)] &lt;integer vec1 vec2&gt; ...] \ 
-         [output &lt;string output_movecs default $file_prefix$.movecs&gt;]
+<pre><code> VECTORS [input (&lt;string input_movecs default atomic&gt;) || \  
+                  (project &lt;string basisname&gt; &lt;string filename&gt;)] \ 
+         [swap [(alpha||beta)] &lt;integer vec1 vec2&gt; ...] \ 
+         [output &lt;string output_movecs default $file_prefix$.movecs&gt;]
 </code></pre>
 
 <p>This directive contains three optional keywords, as indicated by the
@@ -507,37 +524,39 @@ and output. The keyword input allows the user to specify the source of
 the molecular orbital vectors. There are two mutually exclusive options
 for specifying the vectors, as indicated by the || symbol separating the
 option descriptions;</p>
-<pre><code> (&lt;string input_movecs default atomic&gt;) || \ 
-                 (project &lt;string basisname&gt; &lt;string filename&gt;) \
+<pre><code> (&lt;string input_movecs default atomic&gt;) || \ 
+                 (project &lt;string basisname&gt; &lt;string filename&gt;) \
 </code></pre>
 
-<p>The first option, (<string input_movecs default atomic>), allows the
-user to specify an ASCII character string for the parameter
-input_movecs. If no entry is specified, the code uses the default
-atomic (i.e., atomic guess). The second option, (project
-<string basisname> <string filename>), contains the keyword project,
+<p>The first option, <code>&lt;string input_movecs default atomic&gt;</code>, can be
+used to specify an ASCII character string for the parameter
+<code>input_movecs</code>. If no entry is specified, the code uses the default
+<code>atomic</code> (i.e., atomic guess). The second option, <code>project
+&lt;string basisname&gt; &lt;string filename&gt;</code>, contains the keyword <code>project</code>,
 which takes two string arguments. When this keyword is used, the vectors
-in file <filename> will be projected from the (smaller) basis
-<basisname> into the current atomic orbital (AO) basis.</p>
-<p>The second keyword, swap, allows the user to re-order the starting
+in file <code>&lt;filename&gt;</code> will be projected from the (smaller) basis
+<code>&lt;basisname&gt;</code> into the current atomic orbital (AO) basis.</p>
+<p>The second keyword, <code>swap</code>, can be used to re-order the starting
 vectors, specifying the pairs of vectors to be swapped. As many pairs as
-the user wishes to have swapped can be listed for \&lt;integer vec1 vec2
-&hellip; >. The optional keywords alpha and beta allow the user to swap the
+the user wishes to have swapped can be listed for <integer vec1 vec2
+... >. The optional keywords alpha and beta allow the user to swap the
 alpha or beta spin orbitals.</p>
-<p>The third keyword, output, allows the user to tell the code where to
+<p>The third keyword, <code>output</code>, allows the user to tell the code where to
 store the vectors, by specifying an ASCII string for the parameter
-output_movecs. If no entry is specified for this parameter, the default
+<code>output_movecs</code>. If no entry is specified for this parameter, the default
 is to write the vectors back into either the user- specified MO vectors
 input file or, if this is not available, the file $file_prefix$.movecs.</p>
 <p>A particular example of the VECTORS directive is shown below. It
 specifies both the input and output keywords, but does not use the swap
 option.</p>
-<p><code>vectors input project "small basis" small_basis.movecs \</code><br />
-<code>output large_basis.movecs</code></p>
+<pre><code> vectors input project &quot;small basis&quot; small_basis.movecs \
+         output large_basis.movecs
+</code></pre>
+
 <p>This directive tells the code to generate input vectors by projecting
 from vectors in a smaller basis named &ldquo;small basis&rdquo;, which is stored in
-the file small_basis.movecs. The output vectors will be stored in the
-file large_basis.movecs.</p>
+the file <code>small_basis.movecs</code>. The output vectors will be stored in the
+file <code>large_basis.movecs</code>.</p>
 <p>The order of keyed optional entries within a directive should not
 matter, unless noted otherwise in the specific instructions for a
 particular directive.</p>
