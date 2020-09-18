@@ -160,8 +160,7 @@ this is the best option for the NWChem user. However, in cases where an
 native implementation of ARMCI is not available or is not reliable, the
 user should consider using one of the MPI-based implementations.</p>
 <p>There are many different ways to use MPI as the communication runtime of
-Global
-Arrays:</p>
+Global Arrays:</p>
 <p><center></p>
 <table>
 <thead>
@@ -221,24 +220,22 @@ Arrays:</p>
 <p>It is difficult to provide complete guidance to the user as to which
 option to choose. However, we observe the following:</p>
 <ul>
-<li>ARMCI_NETWORK=MPI-PR is stable and performs well on many platforms
-    (including Cray XC platforms, e.g. NERSC Edison). This port will use
+<li><code>ARMCI\_NETWORK=MPI-PR</code> is stable and performs well on many platforms
+    (including Cray XC platforms, e.g. NERSC Cori). This port will use
     one processes on each node for communication, therefore subtracting
     one process (again on each node) for NWChem. Therefore, when
     executing on a single node (i.e. the case of desktop execution) you
     would need to ask for n+1 processes; in other words, a serial
-    execution would require the following mpirun invocation <code>mpirun
-    -np 2 ...</code></li>
-<li>On Intel True Scale and Omni Path systems, MPI-PR is more reliable
-    than OPENIB or MPI-SPAWN. ARMCI-MPI with Casper and Intel MPI is
-    also recommended. See <a href="https://github.com/jeffhammond/HPCInfo/blob/master/ofi/NWChem-OPA.md">this
-    page</a>
+    execution would require the following mpirun invocation <code>mpirun -np 2 ...</code>  </li>
+<li>On Intel True Scale and Omni Path systems, <code>MPI-PR</code> is more reliable
+    than <code>OPENIB</code> or <code>MPI-SPAWN</code>. <code>ARMCI-MPI</code> with Casper and Intel MPI is
+    also recommended. See <a href="https://github.com/jeffhammond/HPCInfo/blob/master/ofi/NWChem-OPA.md">this page</a>
     for details. Contact <a href="mailto:jeff.r.hammond@intel.com">Jeff Hammond</a>
     for assistance.</li>
-<li>On IBM Blue Gene/Q, one must use the <em>mpi2rma</em> branch of ARMCI-MPI
+<li>On IBM Blue Gene/Q, one must use the <em>mpi2rma</em> branch of <code>ARMCI-MPI</code>
     because MPI-3 is not fully supported. On all other platforms, the
-    ARMCI-MPI branch <em>mpi3rma</em> is recommended.</li>
-<li>The performance of ARMCI-MPI is greatly enhanced by
+    <code>ARMCI-MPI</code> branch <em>mpi3rma</em> is recommended.</li>
+<li>The performance of <code>ARMCI-MPI</code> is greatly enhanced by
     <a href="http://www.mcs.anl.gov/project/casper/">Casper</a>. See <a href="http://www.mcs.anl.gov/publication/casper-asynchronous-progress-model-mpi-rma-many-core-architectures">this
     link</a>
     for design details and <a href="https://wiki.mpich.org/armci-mpi/index.php/Casper">this
@@ -258,7 +255,8 @@ an Intel product.</em></p>
 <h2 id="automated-installation-of-armci-mpi">Automated installation of ARMCI-MPI<a class="headerlink" href="#automated-installation-of-armci-mpi" title="Permanent link">&para;</a></h2>
 <p>If you wish to use ARMCI-MPI, a script is available to automatically
 install it:</p>
-<p><code>cd $NWCHEM_TOP/tools &amp;&amp; ./install-armci-mpi</code></p>
+<pre><code>cd $NWCHEM_TOP/tools &amp;&amp; ./install-armci-mpi
+</code></pre>
               
             </div>
           </div>
