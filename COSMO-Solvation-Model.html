@@ -137,8 +137,8 @@
                 <h1 id="cosmo-solvation-model">COSMO Solvation Model<a class="headerlink" href="#cosmo-solvation-model" title="Permanent link">&para;</a></h1>
 <p>COSMO is the continuum solvation &lsquo;COnductor-like Screening MOdel&rsquo; of A.
 Klamt and G. Schüürmann to describe dielectric screening effects in
-solvents<script type="math/tex; mode=display">1</script>. This model has been enhanced by D.M. York and M.
-Karplus<script type="math/tex; mode=display">2</script> to create a smooth potential energy surface. The latter
+solvents[1]. This model has been enhanced by D.M. York and M.
+Karplus[2] to create a smooth potential energy surface. The latter
 facilitates geometry optimization and dynamics and the implementation
 has been adapted to take advantage of those ideas.</p>
 <p>The NWChem COSMO module implements algorithm for calculation of the
@@ -181,22 +181,22 @@ experimental data is made.</p>
 <p>Invoking the COSMO solvation model is done by specifying the input COSMO
 input block with the input options as:</p>
 <pre><code>cosmo  
-  [off]  
-  [dielec  &lt;real dielec default 78.4&gt;]  
-  [parameters &lt;filename&gt;]  
-  [radius  &lt;real atom1&gt;  
-           &lt;real atom2&gt;  
-      . . .  
-           &lt;real atomN&gt;]  
-  [iscren  &lt;integer iscren default 0&gt;]  
-  [minbem  &lt;integer minbem default 2&gt;]  
-  [ificos  &lt;integer ificos default 0&gt;]  
-  [lineq   &lt;integer lineq default 1&gt;]  
-  [zeta &lt;real zeta default 0.98&gt;]  
-  [gamma_s &lt;real gammas default 1.0&gt;]  
-  [sw_tol &lt;real swtol default 1.0e-4&gt;]  
-  [do_gasphase  &lt;logical do_gasphase default True&gt;] 
-  [do_cosmo_ks]  
+u [off]  
+  [dielec  &lt;real dielec default 78.4&gt;]  
+  [parameters &lt;filename&gt;]  
+  [radius  &lt;real atom1&gt;  
+           &lt;real atom2&gt;  
+      . . .  
+           &lt;real atomN&gt;]  
+  [iscren  &lt;integer iscren default 0&gt;]  
+  [minbem  &lt;integer minbem default 2&gt;]  
+  [ificos  &lt;integer ificos default 0&gt;]  
+  [lineq   &lt;integer lineq default 1&gt;]  
+  [zeta &lt;real zeta default 0.98&gt;]  
+  [gamma_s &lt;real gammas default 1.0&gt;]  
+  [sw_tol &lt;real swtol default 1.0e-4&gt;]  
+  [do_gasphase  &lt;logical do_gasphase default True&gt;] 
+  [do_cosmo_ks]  
 end
 </code></pre>
 
@@ -227,39 +227,36 @@ COSMO parameter file (if any) Default values are Van der Waals radii.
 Values are in units of angstroms. The codes uses the following Van der
 Waals radii by default:</p>
 <p>Default radii provided by Andreas Klamt (Cosmologic)</p>
-<p>vdw radii: 1.17 (+/- 0.02) * Bondi radius<script type="math/tex; mode=display">3</script>
-</p>
-<p>optimal vdw radii for H, C, N, O, F, S, Cl, Br, I<script type="math/tex; mode=display">4</script>
-</p>
+<p>vdw radii: 1.17 (+/- 0.02) * Bondi radius[3]</p>
+<p>optimal vdw radii for H, C, N, O, F, S, Cl, Br, I[4]</p>
 <p>for heavy elements: 1.17*1.9</p>
-<pre><code>     data (vander(i),i=1,102)  
-    1 / 1.300,1.638,1.404,1.053,2.0475,2.00,  
-    2   1.830,1.720,1.720,1.8018,1.755,1.638,  
-    3   1.404,2.457,2.106,2.160,2.05,2.223,  
-    4   2.223,2.223,2.223,2.223,2.223,2.223,  
-    5   2.223,2.223,2.223,2.223,2.223,2.223,  
-    6   2.223,2.223,2.223,2.223,2.160,2.223,  
-    7   2.223,2.223,2.223,2.223,2.223,2.223,  
-    8   2.223,2.223,2.223,2.223,2.223,2.223,  
-    9   2.223,2.223,2.223,2.223,2.320,2.223,  
-    1   2.223,2.223,2.223,2.223,2.223,2.223,  
-    2   2.223,2.223,2.223,2.223,2.223,2.223,  
-    3   2.223,2.223,2.223,2.223,2.223,2.223,  
-    4   2.223,2.223,2.223,2.223,2.223,2.223,  
-    5   2.223,2.223,2.223,2.223,2.223,2.223,  
-    6   2.223,2.223,2.223,2.223,2.223,2.223,  
-    7   2.223,2.223,2.223,2.223,2.223,2.223,  
-    7   2.223,2.223,2.223,2.223,2.223,2.223/
+<pre><code>     data (vander(i),i=1,102)  
+    1 / 1.300,1.638,1.404,1.053,2.0475,2.00,  
+    2   1.830,1.720,1.720,1.8018,1.755,1.638,  
+    3   1.404,2.457,2.106,2.160,2.05,2.223,  
+    4   2.223,2.223,2.223,2.223,2.223,2.223,  
+    5   2.223,2.223,2.223,2.223,2.223,2.223,  
+    6   2.223,2.223,2.223,2.223,2.160,2.223,  
+    7   2.223,2.223,2.223,2.223,2.223,2.223,  
+    8   2.223,2.223,2.223,2.223,2.223,2.223,  
+    9   2.223,2.223,2.223,2.223,2.320,2.223,  
+    1   2.223,2.223,2.223,2.223,2.223,2.223,  
+    2   2.223,2.223,2.223,2.223,2.223,2.223,  
+    3   2.223,2.223,2.223,2.223,2.223,2.223,  
+    4   2.223,2.223,2.223,2.223,2.223,2.223,  
+    5   2.223,2.223,2.223,2.223,2.223,2.223,  
+    6   2.223,2.223,2.223,2.223,2.223,2.223,  
+    7   2.223,2.223,2.223,2.223,2.223,2.223,  
+    7   2.223,2.223,2.223,2.223,2.223,2.223/
 </code></pre>
 
-<p>For examples see Stefanovich et al.<script type="math/tex; mode=display">5</script> and Barone et al.<script type="math/tex; mode=display">6</script>
-</p>
+<p>For examples see Stefanovich et al.[5] and Barone et al.[6]</p>
 <p>&ldquo;Rsolv&rdquo; is no longer used.</p>
 <p>&ldquo;Iscren&rdquo; is a flag to define the dielectric charge scaling option.
 &ldquo;iscren 1&rdquo; implies the original scaling from Klamt and Schüürmann,
 mainly &ldquo;(&epsilon;-1)/(&epsilon;+1/2)&rdquo;, where &epsilon; is the
 dielectric constant. &ldquo;iscren 0&rdquo; implies the modified scaling suggested
-by Stefanovich and Truong<script type="math/tex; mode=display">7</script>, mainly &ldquo;(&epsilon;-1)/&epsilon;&ldquo;.
+by Stefanovich and Truong[7], mainly &ldquo;(&epsilon;-1)/&epsilon;&ldquo;.
 Default is to use the modified scaling. For high dielectric the
 difference between the scaling is not significant.</p>
 <p>The next two parameters define the tesselation of the unit sphere. The
@@ -312,29 +309,29 @@ unphysical charges that lock the calculation into strange electron
 distributions.</p>
 <p>&ldquo;do_cosmo_ks&rdquo; is a flag to turn on the Klamt-Schuurmann model</p>
 <p>&ldquo;do_cosmo_yk&rdquo; is a flag to turn on the York-Karplus model (default)</p>
-<p>The following example is for a water molecule in `water&rsquo;, using the
+<p>The following example is for a water molecule in &lsquo;water&rsquo;, using the
 HF/6-31G** level of
 theory:</p>
 <pre><code>start  
 echo  
- title &quot;h2o&quot;  
+ title &quot;h2o&quot;  
 geometry  
- o                  .0000000000         .0000000000        -.0486020332  
- h                  .7545655371         .0000000000         .5243010666  
- h                 -.7545655371         .0000000000         .5243010666  
+ o                  .0000000000         .0000000000        -.0486020332  
+ h                  .7545655371         .0000000000         .5243010666  
+ h                 -.7545655371         .0000000000         .5243010666  
 end  
-basis segment cartesian  
- o library 6-31g**  
- h library 6-31g**  
+basis segment cartesian  
+ o library 6-31g**  
+ h library 6-31g**  
 end  
 cosmo  
- dielec 78.0  
- radius 1.40  
-        1.16  
-        1.16  
- lineq  0  
+ dielec 78.0  
+ radius 1.40  
+        1.16  
+        1.16  
+ lineq  0  
 end  
-task scf energy
+task scf energy
 </code></pre>
 
 <p>Alternatively, instead of listing COSMO radii parameters in the input,
@@ -342,36 +339,36 @@ the former can be loaded using an external file through the &ldquo;parameters&rd
 directive</p>
 <pre><code>start  
 echo  
- title &quot;h2o&quot;  
+ title &quot;h2o&quot;  
 geometry  
- ow                  .0000000000         .0000000000        -.0486020332  
- hw                  .7545655371         .0000000000         .5243010666  
- h                  -.7545655371         .0000000000         .5243010666  
+ ow                  .0000000000         .0000000000        -.0486020332  
+ hw                  .7545655371         .0000000000         .5243010666  
+ h                  -.7545655371         .0000000000         .5243010666  
 end  
-basis segment cartesian  
- * library 6-31g**  
+basis segment cartesian  
+ * library 6-31g**  
 end
 
 cosmo  
- dielec 78.0  
- lineq  0  
- parameters water.par  
+ dielec 78.0  
+ lineq  0  
+ parameters water.par  
 end
 
-task scf energy
+task scf energy
 </code></pre>
 
 <p>where &ldquo;water.par&rdquo; may the following form:</p>
-<pre><code>O 1.40
-H 1.16
+<pre><code>O 1.40
+H 1.16
 </code></pre>
 
 <p>This will set radii of all oxygen atoms to 1.4 and all hydrogen atoms to
 1.16. More fine grained control may be achieved using specific atom
 names. For example, the following parameter file</p>
-<pre><code>O    1.40
-H    1.16
-HW  1.06
+<pre><code>O    1.40
+H    1.16
+HW  1.06
 </code></pre>
 
 <p>will set a different radii of 1.06 to hydrogen atoms named HW. Note
