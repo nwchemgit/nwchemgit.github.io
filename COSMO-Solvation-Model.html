@@ -181,7 +181,7 @@ experimental data is made.</p>
 <p>Invoking the COSMO solvation model is done by specifying the input COSMO
 input block with the input options as:</p>
 <pre><code>cosmo  
-u [off]  
+  [off]  
   [dielec  &lt;real dielec default 78.4&gt;]  
   [parameters &lt;filename&gt;]  
   [radius  &lt;real atom1&gt;  
@@ -201,15 +201,15 @@ end
 </code></pre>
 
 <p>followed by the task directive specifying the wavefunction and type of
-calculation, e.g., &ldquo;task scf energy&rdquo;, &ldquo;task mp2 energy&rdquo;, &ldquo;task dft
-optimize&rdquo;, etc.</p>
-<p>&ldquo;off&rsquo; can be used to turn off COSMO in a compound (multiple task) run.
+calculation, e.g., <code>task scf energy</code>, <code>task mp2 energy</code>, <code>task dft
+optimize</code>, etc.</p>
+<p><code>off</code> can be used to turn off COSMO in a compound (multiple task) run.
 By default, once the COSMO solvation model has been defined it will be
-used in subsequent calculations. Add the keyword &ldquo;off&rdquo; if COSMO is not
+used in subsequent calculations. Add the keyword <code>off</code> if COSMO is not
 needed in subsequent calculations.</p>
-<p>&ldquo;Dielec&rdquo; is the value of the dielectric constant of the medium, with a
+<p><code>dielec</code> is the value of the dielectric constant of the medium, with a
 default value of 78.4 (the dielectric constant for water).</p>
-<p>&ldquo;parameters&rdquo; specifies COSMO radii parameters file that stores custom
+<p><code>parameters</code> specifies COSMO radii parameters file that stores custom
 setting for COSMO parameters. The format for such file consists of the
 atom or element name followed by the radii. The program will first
 attempt to match based on atom name and only then the element name.
@@ -220,7 +220,7 @@ NWCHEM_COSMO_LIBRARY, permanent directory, and run directory. This
 directive is replacing previous facility of loading COSMO radii
 parameters through &ldquo;set cosmo:map cosmo.par&rdquo; directive. See example at
 the end of this section.</p>
-<p>&ldquo;Radius&rdquo; is an array that specifies the radius of the spheres associated
+<p><code>radius</code> is an array that specifies the radius of the spheres associated
 with each atom and that make up the molecule-shaped cavity. These values
 will override default radii setting including those specified in the
 COSMO parameter file (if any) Default values are Van der Waals radii.
@@ -252,7 +252,7 @@ Waals radii by default:</p>
 
 <p>For examples see Stefanovich et al.[5] and Barone et al.[6]</p>
 <p>&ldquo;Rsolv&rdquo; is no longer used.</p>
-<p>&ldquo;Iscren&rdquo; is a flag to define the dielectric charge scaling option.
+<p><code>iscren</code> is a flag to define the dielectric charge scaling option.
 &ldquo;iscren 1&rdquo; implies the original scaling from Klamt and Schüürmann,
 mainly &ldquo;(&epsilon;-1)/(&epsilon;+1/2)&rdquo;, where &epsilon; is the
 dielectric constant. &ldquo;iscren 0&rdquo; implies the modified scaling suggested
@@ -261,54 +261,54 @@ Default is to use the modified scaling. For high dielectric the
 difference between the scaling is not significant.</p>
 <p>The next two parameters define the tesselation of the unit sphere. The
 approach still follows the original proposal by Klamt and Schüürmann to
-some degree. Basically a tesselation is generated from &ldquo;minbem&rdquo; refining
+some degree. Basically a tesselation is generated from <code>minbem</code> refining
 passes starting from either an octahedron or an icosahedron. Each level
 of refinement partitions the triangles of the current tesselation into
 four triangles. This procedure is repeated recursively until the desired
 granularity of the tesselation is reached. The induced point charges
 from the polarization of the medium are assigned to the centers of the
-tesselation. The default value is &ldquo;minbem 2&rdquo;. The flag +ificos+ serves
-to select the original tesselation, &ldquo;ificos 0&rdquo; for an octahedron
-(default) and &ldquo;ificos 1&rdquo; for an icoshedron. Starting from an icosahedron
+tesselation. The default value is <code>minbem 2</code>. The flag <code>ificos</code> serves
+to select the original tesselation, <code>ificos 0</code> for an octahedron
+(default) and <code>ificos 1</code> for an icoshedron. Starting from an icosahedron
 yields a somewhat finer tesselation that converges somewhat faster.
 Solvation energies are not really sensitive to this choice for
 sufficiently fine tesselations. The old &ldquo;maxbem&rdquo; directive is no longer
 used.</p>
-<p>The &ldquo;lineq&rdquo; parameter serves to select the numerical algorithm to solve
+<p>The <code>lineq</code> parameter serves to select the numerical algorithm to solve
 the linear equations yielding the effective charges that represent the
-polarization of the medium. &ldquo;lineq 0&rdquo; selects an iterative method
-(default), &ldquo;lineq 1&rdquo; selects a dense matrix linear equation solver. For
+polarization of the medium. <code>lineq 0"</code>selects an iterative method
+(default), <code>lineq 1</code> selects a dense matrix linear equation solver. For
 large molecules where the number of effective charges is large, the
 codes selects the iterative method.</p>
-<p>&ldquo;zeta&rdquo; sets the width of the Gaussian charge distributions that were
+<p><code>zeta</code> sets the width of the Gaussian charge distributions that were
 suggested by York and Karplus to avoid singularities when two surface
 charges coincide. The default value is &ldquo;zeta 0.98&rdquo; this value was chosen
 to ensure that the results of the current implementation are as close as
 possible to those of the original Klamt and Schuurmann based
 implementation.</p>
-<p>&ldquo;gamma_s&rdquo; modifies the width of the smooth switching function that
+<p><code>gamma_s</code> modifies the width of the smooth switching function that
 eliminates surface charges when their positions move into the sphere of
-a neighboring atom. &ldquo;gamma_s 0.0&rdquo; leads to a heavyside or abrupt
-switching function, whereas &ldquo;gamma_s 1.0&rdquo; maximizes the width of the
-switching function. The default value is &ldquo;gamma_s 1.0&rdquo;.</p>
-<p>&ldquo;sw_tol&rdquo; specifies the cutoff of the switching function below which a
+a neighboring atom. <code>gamma_s 0.0</code> leads to a heavyside or abrupt
+switching function, whereas <code>gamma_s 1.0</code> maximizes the width of the
+switching function. The default value is <code>gamma_s 1.0</code>.</p>
+<p><code>sw_tol</code> specifies the cutoff of the switching function below which a
 surface charge at a particular point is eliminated. The values of the
 switching function lie in the domain from 0 to 1. This value should not
 be set too small as that leads to instabilities in the linear system
-solvers. The default value is &ldquo;sw_tol 1.0e-4&rdquo;.</p>
-<p>&ldquo;do_gasphase&rdquo; is a flag to control whether the calculation of the
+solvers. The default value is <code>sw_tol 1.0e-4</code>.</p>
+<p><code>do_gasphase</code> is a flag to control whether the calculation of the
 solvation energy is preceded by a gas phase calculation. The default is
 to always perform a gas phase calculation first and then calculate the
 solvation starting from the converged gas phase electron density.
 However, in geometry optimizations this approach can double the cost. In
-such a case setting &ldquo;do_gasphase false&rdquo; suppresses the gas phase
+such a case setting <code>do_gasphase false</code> suppresses the gas phase
 calculations and only the solvated system calculations are performed.
 This option needs to be used with care as in some cases starting the
 COSMO solvation from an unconverged electron density can generate
 unphysical charges that lock the calculation into strange electron
 distributions.</p>
-<p>&ldquo;do_cosmo_ks&rdquo; is a flag to turn on the Klamt-Schuurmann model</p>
-<p>&ldquo;do_cosmo_yk&rdquo; is a flag to turn on the York-Karplus model (default)</p>
+<p><code>do_cosmo_ks</code> is a flag to turn on the Klamt-Schuurmann model</p>
+<p><code>do_cosmo_yk</code> is a flag to turn on the York-Karplus model (default)</p>
 <p>The following example is for a water molecule in &lsquo;water&rsquo;, using the
 HF/6-31G** level of
 theory:</p>
