@@ -136,9 +136,8 @@
               
                 <h1 id="coupled-cluster-calculations">Coupled Cluster Calculations<a class="headerlink" href="#coupled-cluster-calculations" title="Permanent link">&para;</a></h1>
 <p>The NWChem coupled cluster energy module is primarily the work of
-Alistair Rendell and Rika Kobayashi<script type="math/tex; mode=display">1</script>
-<script type="math/tex; mode=display">2</script>, with contributions from
-Bert de Jong, David Bernholdt and Edoardo Aprà<script type="math/tex; mode=display">3</script>.</p>
+Alistair Rendell and Rika Kobayashi[1][2], with contributions from
+Bert de Jong, David Bernholdt and Edoardo Aprà[3].</p>
 <p>The coupled cluster code can perform calculations with full iterative
 treatment of single and double excitations and non-iterative inclusion
 of triple excitation effects. It is presently limited to closed-shell
@@ -151,16 +150,16 @@ with other programs.</p>
 <p>The operation of the coupled cluster code is controlled by the input
 block</p>
 <pre><code>CCSD
-  [MAXITER &lt;integer maxiter default 20&gt;]
-  [THRESH  &lt;real thresh default 1e-6&gt;]
-  [TOL2E &lt;real tol2e default min(1e-12 , 0.01**`thresh`*`)&gt;]
-  [DIISBAS  &lt;integer diisbas default 5&gt;]
-  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
-          [virtual &lt;integer nfzv default 0&gt;]]
-  [NODISK]
-  [IPRT  &lt;integer IPRT default 0&gt;]
-  [PRINT ...]
-  [NOPRINT ...]
+  [MAXITER &lt;integer maxiter default 20&gt;]
+  [THRESH  &lt;real thresh default 1e-6&gt;]
+  [TOL2E &lt;real tol2e default min(1e-12 , 0.01**`thresh`*`)&gt;]
+  [DIISBAS  &lt;integer diisbas default 5&gt;]
+  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
+          [virtual &lt;integer nfzv default 0&gt;]]
+  [NODISK]
+  [IPRT  &lt;integer IPRT default 0&gt;]
+  [PRINT ...]
+  [NOPRINT ...]
 END
 </code></pre>
 
@@ -171,18 +170,18 @@ following directives are recognized within the CCSD group.</p>
 <p>The maximum number of iterations is set to 20 by default. This should be
 quite enough for most calculations, although particularly troublesome
 cases may require more.</p>
-<pre><code> MAXITER  &lt;integer maxiter default 20&gt;
+<pre><code> MAXITER  &lt;integer maxiter default 20&gt;
 </code></pre>
 
 <h2 id="thresh-convergence-threshold">THRESH &ndash; Convergence threshold<a class="headerlink" href="#thresh-convergence-threshold" title="Permanent link">&para;</a></h2>
 <p>Controls the convergence threshold for the iterative part of the
 calculation. Both the RMS error in the amplitudes and the change in
 energy must be less than thresh.</p>
-<pre><code> THRESH  &lt;real thresh default 1e-6&gt;
+<pre><code> THRESH  &lt;real thresh default 1e-6&gt;
 </code></pre>
 
 <h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
-<pre><code> TOL2E &lt;real tol2e default min(1e-12, 0.01*thresh)&gt;
+<pre><code> TOL2E &lt;real tol2e default min(1e-12, 0.01*thresh)&gt;
 </code></pre>
 
 <p>The variable tol2e is used in determining the integral screening
@@ -203,12 +202,12 @@ reduce DIISBAS for large calculations.</p>
 <p>Measures to alleviate this problem, including more compact storage of
 the quantities involved, and the possibility of disk storage are being
 considered, but have not yet been implemented.</p>
-<pre><code> DIISBAS  &lt;integer diisbas default 5&gt;
+<pre><code> DIISBAS  &lt;integer diisbas default 5&gt;
 </code></pre>
 
 <h2 id="freeze-freezing-orbitals">FREEZE &ndash; Freezing orbitals<a class="headerlink" href="#freeze-freezing-orbitals" title="Permanent link">&para;</a></h2>
-<pre><code>  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
-          [virtual &lt;integer nfzv default 0&gt;]]
+<pre><code>  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
+          [virtual &lt;integer nfzv default 0&gt;]]
 </code></pre>
 
 <p>This directive is identical to that used in the <a href="MP2.html">MP2</a>
@@ -222,7 +221,7 @@ integrals. To avoid this kind of I/O operations, specify the keyword
 facilitate debugging and the like. The larger the value, the more output
 printed. From looking at the source code, the interesting values seem to
 be IPRT > 5, 10, and 50.</p>
-<pre><code> IPRT  &lt;integer IPRT default 0&gt;
+<pre><code> IPRT  &lt;integer IPRT default 0&gt;
 </code></pre>
 
 <h2 id="print-and-noprint">PRINT and NOPRINT<a class="headerlink" href="#print-and-noprint" title="Permanent link">&para;</a></h2>
@@ -267,14 +266,14 @@ yet.</p>
 <p>Currently available methods
 are</p>
 <ul>
-<li>CCSD - Full iterative inclusion of single and double excitations</li>
-<li>CCSD+T(CCSD) - The fourth order triples contribution computed with converged<br> singles and doubles amplitudes</li>
-<li>CCSD(T) - The linearized triples approximation due to Raghavachari.</li>
+<li>CCSD - Full iterative inclusion of single and double excitations</li>
+<li>CCSD+T(CCSD) - The fourth order triples contribution computed with converged<br> singles and doubles amplitudes</li>
+<li>CCSD(T) - The linearized triples approximation due to Raghavachari.</li>
 </ul>
 <p>The calculation is invoked using the TASK directive, so to perform a
 CCSD+T(CCSD) calculation, for example, the input file should include the
 directive</p>
-<pre><code> TASK CCSD+T(CCSD)
+<pre><code> TASK CCSD+T(CCSD)
 </code></pre>
 
 <p>Lower-level results which come as by-products (such as MP3/MP4) of the
@@ -297,13 +296,13 @@ details of how the arrays are interpreted.</p>
 switches&rdquo; print option. The values are checked against the defaults at
 run-time and a warning is printed to draw attention to the fact that the
 calculation does not correspond precisely to the requested method.</p>
-<pre><code>DOA  &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
-DOB  &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
-DOG  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
-DOH  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
-DOJK &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
-DOS  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
-DOD  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
+<pre><code>DOA  &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
+DOB  &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
+DOG  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
+DOH  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
+DOJK &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
+DOS  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
+DOD  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
 </code></pre>
 
 <h2 id="alternative-implementations-of-triples">Alternative Implementations of Triples<a class="headerlink" href="#alternative-implementations-of-triples" title="Permanent link">&para;</a></h2>
@@ -320,7 +319,7 @@ directives, which are specified outside of the CCSD input block.</p>
 Arrays get operations. It may improve communication overlap at large
 node code, provided that nonblocking communication makes asynchronous
 progress.</p>
-<pre><code> set ccsd:use_trpdrv_nb T
+<pre><code> set ccsd:use_trpdrv_nb T
 </code></pre>
 
 <h3 id="openmp">OpenMP<a class="headerlink" href="#openmp" title="Permanent link">&para;</a></h3>
@@ -330,8 +329,8 @@ OpenMP threaded kernels and attempts to run multiple DGEMM calls
 simultaneously. The CCSD iteration uses OpenMP threading in kernels with
 a relatively small number of parallel regions. It also uses nonblocking
 Global Arrays get operations.</p>
-<pre><code>set ccsd:use_ccsd_omp T
-set ccsd:use_trpdrv_omp T
+<pre><code>set ccsd:use_ccsd_omp T
+set ccsd:use_trpdrv_omp T
 </code></pre>
 
 <p>If one runs with only the (T) portion of the code using threads, the
@@ -358,11 +357,10 @@ coprocessors (Knights Corner family), in addition to the aforementioned
 OpenMP and nonblocking features. This implementation has not been tested
 extensively and a recommendation concerning the right number of
 processes and threads is not available.</p>
-<pre><code> set ccsd:use_trpdrv_offload T
+<pre><code> set ccsd:use_trpdrv_offload T
 </code></pre>
 
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<p><references/></p>
 <ol>
 <li>Rendell, A.P., Lee, T.J., Komornicki, A., and Wilson, S. (1992)
     &ldquo;Evaluation of the contribution from triply excited intermediates to
