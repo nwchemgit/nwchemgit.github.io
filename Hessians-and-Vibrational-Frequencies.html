@@ -137,7 +137,7 @@
                 <h1 id="hessians">Hessians<a class="headerlink" href="#hessians" title="Permanent link">&para;</a></h1>
 <p>This section relates to the computation of analytic hessians which are
 available for open and closed shell SCF, except ROHF and for closed
-shell and unrestricted open shell DFT <script type="math/tex; mode=display">1</script>. Analytic hessians are not
+shell and unrestricted open shell DFT [1]. Analytic hessians are not
 currently available for SCF or DFT calculations relativistic
 all-electron methodologies or for charge fitting with DFT. The current
 algorithm is fully in-core and does not use symmetry.</p>
@@ -148,11 +148,11 @@ frequencies, please see the <a href="Vibration.html">Vibrational</a> module.</p>
 <p>All input for the Hessian Module is optional since the default
 definitions are usually correct for most purposes. The generic module
 input begins with hessian and has the form:</p>
-<pre><code> hessian  
-   thresh &lt;real tol default 1d-6&gt;
-   print ... 
-   profile  
- end
+<pre><code> hessian  
+   thresh &lt;real tol default 1d-6&gt;
+   print ... 
+   profile  
+ end
 </code></pre>
 
 <h3 id="defining-the-wavefunction-threshold">Defining the wavefunction threshold<a class="headerlink" href="#defining-the-wavefunction-threshold" title="Permanent link">&para;</a></h3>
@@ -166,7 +166,7 @@ wavefunction for single point and gradient calculations is generally not
 tight enough for analytic hessians. Therefore, the hessian, by default,
 tightens these up to 1d-6 and runs an additional energy point if needed.
 If, during an analytic hessian calculation, you encounter an error:</p>
-<pre><code> cphf_solve:the available MOs do not satisfy the SCF equations
+<pre><code> cphf_solve:the available MOs do not satisfy the SCF equations
 </code></pre>
 
 <p>the convergence criteria of the wavefunction generally needs to be
@@ -253,16 +253,16 @@ temperature of 298.15 degrees.</p>
 <p>All input for the Vibrational Module is optional since the default
 definitions will compute the frequencies and IR intensities. The generic
 module input can begin with vib, freq, frequency and has the form:</p>
-<pre><code> {freq || vib || frequency}` 
-   [reuse [&lt;string hessian_filename&gt;]]  
-   [mass &lt;integer lexical_index&gt; &lt;real new_mass&gt;]  
-   [mass &lt;string tag_identifier&gt; &lt;real new_mass&gt;]  
-   [{temp || temperature} &lt;integer number_of_temperatures&gt;\ 
-         &lt;real temperature1 temperature2 ...&gt;] 
-   [animate [&lt;real step_size_for_animation&gt;]]  
-   [fd_delta [&lt;real step_size_for_fd_hessian&gt;]]  
-   [filename &lt;string file_set_name&gt; [overwrite]]  
- end
+<pre><code> {freq || vib || frequency}` 
+   [reuse [&lt;string hessian_filename&gt;]]  
+   [mass &lt;integer lexical_index&gt; &lt;real new_mass&gt;]  
+   [mass &lt;string tag_identifier&gt; &lt;real new_mass&gt;]  
+   [{temp || temperature} &lt;integer number_of_temperatures&gt;\ 
+         &lt;real temperature1 temperature2 ...&gt;] 
+   [animate [&lt;real step_size_for_animation&gt;]]  
+   [fd_delta [&lt;real step_size_for_fd_hessian&gt;]]  
+   [filename &lt;string file_set_name&gt; [overwrite]]  
+ end
 </code></pre>
 
 <h3 id="hessian-file-reuse">Hessian File Reuse<a class="headerlink" href="#hessian-file-reuse" title="Permanent link">&para;</a></h3>
@@ -271,7 +271,7 @@ hessian. To reuse the previously computed hessian you need only specify
 reuse in the module input block. If you have stored the hessian in an
 alternate place you may redirect the reuse directive to that file by
 specifying the path to that file.</p>
-<pre><code> reuse /path_to_hessian_file
+<pre><code> reuse /path_to_hessian_file
 </code></pre>
 
 <p>This will reuse your saved Hessian data but one caveat is that the
@@ -282,14 +282,14 @@ projection to work properly.</p>
 <p>You may also modify the mass of a specific center or a group of centers
 via the input.</p>
 <p>To modify the mass of a specific center you can simply use:</p>
-<pre><code> mass 3 4.00260324
+<pre><code> mass 3 4.00260324
 </code></pre>
 
 <p>which will set the mass of center 3 to 4.00260324 AMUs. The lexical
 index of centers is determined by the geometry object.</p>
 <p>To modify all Hydrogen atoms in a molecule you may use the tag based
 mechanism:</p>
-<pre><code> mass hydrogen 2.014101779
+<pre><code> mass hydrogen 2.014101779
 </code></pre>
 
 <p>The mass redefinitions always start with the default masses and change
@@ -304,15 +304,15 @@ run-time-data-base. Each input block that redefines masses will
 invalidate the mass definitions of the previous input block. For
 example,</p>
 <pre><code>freq
-  reuse
-  mass hydrogen 2.014101779
+  reuse
+  mass hydrogen 2.014101779
 end
-task scf frequencies
+task scf frequencies
 freq
-  reuse
-  mass oxygen 17.9991603
+  reuse
+  mass oxygen 17.9991603
 end
-task scf frequencies
+task scf frequencies
 </code></pre>
 
 <p>will use the new mass for all hydrogens in the first frequency analysis.
@@ -320,16 +320,16 @@ The mass of the oxygen atoms will be redefined in the second frequency
 analysis but the hydrogen atoms will use the default mass. To get a
 modified oxygen and hydrogen analysis you would have to use:</p>
 <pre><code>freq
-  reuse
-  mass hydrogen 2.014101779
+  reuse
+  mass hydrogen 2.014101779
 end
-task scf frequencies
+task scf frequencies
 freq
-  reuse
-  mass hydrogen 2.014101779
-  mass oxygen 17.9991603
+  reuse
+  mass hydrogen 2.014101779
+  mass oxygen 17.9991603
 end
-task scf frequencies
+task scf frequencies
 </code></pre>
 
 <h3 id="temp-or-temperature">Temp or Temperature<a class="headerlink" href="#temp-or-temperature" title="Permanent link">&para;</a></h3>
@@ -337,13 +337,13 @@ task scf frequencies
 temperatures other than at standard room temperature. Either temp or
 temperature can be used to initiate this command.</p>
 <p>To modify the temperature of the computation you can simply use:</p>
-<pre><code> temp 4 298.15 300.0 350.0 400.0
+<pre><code> temp 4 298.15 300.0 350.0 400.0
 </code></pre>
 
 <p>At this point, the temperatures are persistant and so the user must
 &ldquo;reset&rdquo; the temperature if the standard behavior is required after
 setting the temperatures in a previous &ldquo;VIB&rdquo; command, i.e.</p>
-<pre><code> temp 1 298.15
+<pre><code> temp 1 298.15
 </code></pre>
 
 <h3 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">&para;</a></h3>
@@ -356,7 +356,7 @@ positive direction of the mode vector, back to 5 steps in the negative
 direction of the mode vector, and finally back to the equilibrium
 geometry. By default these files are not generated. To activate this
 mechanism simply use the following input directive</p>
-<pre><code> animate
+<pre><code> animate
 </code></pre>
 
 <p>anywhere in the frequency/vib input block.</p>
@@ -364,12 +364,12 @@ mechanism simply use the following input directive</p>
 format, the rasmolmovie shell script generates an animated gif for each
 of the six possible views down a Cartesian axis.</p>
 <p>It uses the free utilities</p>
-<pre><code> - rasmol 
-   (http://www.umass.edu/microbio/rasmol) 
-   to manipulate the molecule and generate the individual frames
- - convert from ImageMagick 
-   (http://www.imagemagick.org/)
-   to combine the frames into an animated gif
+<pre><code> - rasmol 
+   (http://www.umass.edu/microbio/rasmol) 
+   to manipulate the molecule and generate the individual frames
+ - convert from ImageMagick 
+   (http://www.imagemagick.org/)
+   to combine the frames into an animated gif
 </code></pre>
 
 <p>It should be easy to modify the script to other file formats or
@@ -379,7 +379,7 @@ animation tools.</p>
 animations for most systems. This can be changed via the animate input
 directive, e.g.</p>
 <pre><code>vib
-   animate 0.20
+   animate 0.20
 end
 </code></pre>
 
@@ -390,7 +390,7 @@ along the eigenvector of each nuclear hessian mode in atomic units.</p>
 &ldquo;freq.m-<mode number>&ldquo;. This is inconvenient if more than vibrational
 analysis is run in a single input file. To specify different filename
 for a particular vibrational analysis use the directive</p>
-<pre><code>filename &lt;file_set_name&gt; [overwrite]
+<pre><code>filename &lt;file_set_name&gt; [overwrite]
 </code></pre>
 
 <p>where <file_set_name> is the name that will be prepended to the usual
@@ -402,7 +402,7 @@ will simply be overwritten.</p>
 Hessian is 0.010 a.u. for DFT and NWPW modules, and 0.001 a.u. otherwise
 This can be changed via the fd_delta input directive, e.g.</p>
 <pre><code>vib
-   fd_delta 0.005
+   fd_delta 0.005
 end
 </code></pre>
 
@@ -411,51 +411,51 @@ each displacement in atomic units for the calculation of the finite
 difference Hessian. For older versions of NWChem without the fd_delta
 option just set the &ldquo;stpr_gen:delta&rdquo; value on the runtime database,
 e.g.</p>
-<pre><code>set stpr_gen:delta 0.005
+<pre><code>set stpr_gen:delta 0.005
 </code></pre>
 
 <h3 id="an-example-input-deck">An Example Input Deck<a class="headerlink" href="#an-example-input-deck" title="Permanent link">&para;</a></h3>
 <p>This example input deck will optimize the geometry for the given basis
 set, compute the frequencies for <img alt="$H_{2}O$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d7fc8f229a929f93c03b951b7fe40bf0.svg?invert_in_darkmode&sanitize=true" align=middle width="33.934725pt" height="22.38192pt"/>, <img alt="$H_{2}O$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d7fc8f229a929f93c03b951b7fe40bf0.svg?invert_in_darkmode&sanitize=true" align=middle width="33.934725pt" height="22.38192pt"/> at different
 temperatures, <img alt="$D_{2}O$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ce64a0239658825eb59f2dbb21363632.svg?invert_in_darkmode&sanitize=true" align=middle width="33.88011pt" height="22.38192pt"/>, HDO, and TDO.</p>
-<pre><code>start  h2o
-title Water 
-geometry units au autosym
-  O      0.00000000    0.00000000    0.00000000
-  H      0.00000000    1.93042809   -1.10715266
-  H      0.00000000   -1.93042809   -1.10715266
+<pre><code>start  h2o
+title Water 
+geometry units au autosym
+  O      0.00000000    0.00000000    0.00000000
+  H      0.00000000    1.93042809   -1.10715266
+  H      0.00000000   -1.93042809   -1.10715266
 end
-basis noprint
-  H library sto-3g 
-  O library sto-3g
+basis noprint
+  H library sto-3g 
+  O library sto-3g
 end
-scf; thresh 1e-6; end
-driver; tight; end
-task scf optimize
+scf; thresh 1e-6; end
+driver; tight; end
+task scf optimize
 
-scf; thresh 1e-8; print none; end
-task scf freq 
-
-freq
- reuse; temp 4 298.15 300.0 350.0 400.0
-end
-task scf freq
-
-freq 
- reuse; mass H 2.014101779
- temp 1 298.15
-end
-task scf freq
+scf; thresh 1e-8; print none; end
+task scf freq 
 
 freq
- reuse; mass 2 2.014101779
+ reuse; temp 4 298.15 300.0 350.0 400.0
 end
-task scf freq
+task scf freq
+
+freq 
+ reuse; mass H 2.014101779
+ temp 1 298.15
+end
+task scf freq
 
 freq
- reuse; mass 2 2.014101779 ; mass 3 3.01604927
+ reuse; mass 2 2.014101779
 end
-task scf freq
+task scf freq
+
+freq
+ reuse; mass 2 2.014101779 ; mass 3 3.01604927
+end
+task scf freq
 </code></pre>
 
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
@@ -464,9 +464,7 @@ task scf freq
 <li>Johnson, B.G. and Frisch, M.J. (1994) &ldquo;An implementation of analytic
     second derivatives of the gradient-corrected density functional
     energy&rdquo;, <em>Journal of Chemical Physics</em> <strong>100</strong> 7429-7442,
-    [doi:<script type="math/tex; mode=display">http://dx.doi.org/10.1063/1.466887](doi:%5Bhttp://dx.doi.org/10.1063/1.466887.md)
-    10.1063/1.466887</script>
-</li>
+    DOI:<a href="http://dx.doi.org/10.1063/1.466887">10.1063/1.466887</a></li>
 </ol>
               
             </div>

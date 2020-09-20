@@ -684,24 +684,25 @@ but this should have no serious side effect.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <p>Common problems with Python programs inside NWChem.</p>
 <ol>
-<li>
-<p>You get the message  </p>
-<p>0:python_input: indentation must be >= that of first line: 4  </p>
-<p>This indicates that NWChem thinks that a line is less indented than
+<li>You get the message  </li>
+</ol>
+<pre><code>    0:python_input: indentation must be &gt;= that of first line: 4  
+</code></pre>
+
+<pre><code>This indicates that NWChem thinks that a line is less indented than
 the first line. If this is not the case then perhaps there is a tab
 in your input which NWChem treats as a single space character but
 appears to you as more spaces. Try running untabify in Emacs. The
 problem could also be the END directive that terminates the PYTHON
-compound directive &ndash; since Python also has an end statement. To
+compound directive -- since Python also has an end statement. To
 avoid confusion the END directive for NWChem must be at the start of
-the line.  </p>
-</li>
-<li>
-<p>Your program hangs or deadlocks &ndash; most likely you have a piece of
+the line.
+</code></pre>
+<ol>
+<li>Your program hangs or deadlocks &ndash; most likely you have a piece of
     code that is restricted to executing on a subset of the processors
     (perhaps just node 0) but is calling (perhaps indirectly) a function
-    that must execute on all nodes.</p>
-</li>
+    that must execute on all nodes.</li>
 </ol>
               
             </div>
