@@ -1,0 +1,1266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="Why TDDFT doesn't work even after running too long time You are viewing a single post from the thread title above" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_sp_id8022 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >Why TDDFT doesn't work even after running too long time</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"><b><a href='../st/id2279.html'>Click here for full thread</a></b></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_8022"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_8022" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap>10:32:40 AM PDT - Mon, Mar 13th 2017 </td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I have tried with Triplet, since that job didn't complete by comparatively long time, I have tried with NOTRIPLET to see if it is consuming time because of triplet calculation. But still didn't get normal termination after running comparative too long time in compare with TDDFT in gaussian09. <br />
+<br />
+OUTPUT:   It is calculating "DFT Final Molecular Orbital Analysis", and Written Vector components. Before that it ran DFT module, and written following result: <br />
+<br />
+
+<pre>        Total DFT energy =    -4248.468494625104<br />
+     One electron energy =   -45760.931014405549<br />
+          Coulomb energy =    22054.077830249404<br />
+   Exchange-Corr. energy =     -605.383023952063<br />
+Nuclear repulsion energy =    20063.767713483103<br />
+</pre>
+<br />
+
+<pre>Numeric. integr. density =      708.000447352360<br />
+</pre>
+<br />
+
+<pre>    Total iterative time =   2604.5s<br />
+</pre>
+<br />
+<br />
+Following is my geometry: <br />
+<br />
+C        -9.037785556873     -9.510911495981     -4.969118354110<br />
+
+<pre>C        -7.674013396361     -9.233544080815     -5.020624368781<br />
+C        -7.183341015114     -8.199442303291     -5.827706097104<br />
+C        -8.103337514290     -7.420161926607     -6.598973278141<br />
+C        -9.495842051314     -7.712402672439     -6.521788619418<br />
+C        -9.941005959023     -8.763785141429     -5.707942522538<br />
+C        -5.797748689664     -7.853088579649     -5.984648583500<br />
+C        -7.658998825036     -6.331244104227     -7.415214267922<br />
+C        -6.275267633549     -6.005539161436     -7.531080064750<br />
+C        -5.349876750710     -6.875548645751     -6.862088180229<br />
+C        -5.894868766881     -4.843745806728     -8.201648785418<br />
+H        -4.852863902445     -4.554169174534     -8.187661183454<br />
+C        -6.840950735773     -4.050361745196     -8.845854549153<br />
+C        -8.182696538876     -4.399746022507     -8.819438296060<br />
+C        -8.613945401051     -5.522661811951     -8.097499302863<br />
+C       -10.003484652170     -5.861286319820     -8.013765696684<br />
+C       -10.423727734346     -6.913321430767     -7.266675499234<br />
+H       -11.480378305034     -7.160647252983     -7.203701780343<br />
+H       -10.717348264661     -5.248172344976     -8.558005594515<br />
+H        -9.390615893949    -10.322173115525     -4.338911716289<br />
+H        -6.996785002172     -9.836671059168     -4.430389464685<br />
+H       -11.005098301865     -8.979844834967     -5.658477234237<br />
+H        -6.522934572526     -3.152247806676     -9.367875334973<br />
+H        -8.920379235311     -3.789266273269     -9.333979321722<br />
+N        -4.660415693130     -8.392693310271     -5.401473985102<br />
+C        -4.607780166167     -9.426734145966     -4.414429924593<br />
+C        -4.754802561581     -9.095595860558     -3.069303105894<br />
+C        -4.408820773765    -10.744713824072     -4.818694798863<br />
+C        -4.702525017005    -10.106713224339     -2.113806656120<br />
+H        -4.906844481865     -8.059352340201     -2.782990017385<br />
+C        -4.357041822224    -11.748097136638     -3.854977050015<br />
+H        -4.299059550459    -10.973204464004     -5.874659153795<br />
+C        -4.504020513804    -11.430086502521     -2.505599103551<br />
+H        -4.815644246925     -9.859125120714     -1.062704705923<br />
+H        -4.202387737664    -12.778740262536     -4.159668906554<br />
+H        -4.463517351864    -12.215742510509     -1.756910713007<br />
+C        -3.579963829638     -7.771021629395     -5.944050247732<br />
+C        -2.161639272502     -7.919529278386     -5.684541082080<br />
+C        -1.383091632766     -7.161930157657     -6.597627745875<br />
+C        -1.570377171746     -8.667642359773     -4.654801270714<br />
+C         0.006598949628     -7.180834322551     -6.418765938745<br />
+C        -0.189282115973     -8.665788810839     -4.514611794195<br />
+H        -2.174172875258     -9.238597396181     -3.959253900745<br />
+C         0.596001021451     -7.921186372379     -5.396174884239<br />
+H         0.640772858932     -6.610357818667     -7.091744047756<br />
+H         0.272886422227     -9.239006311411     -3.716161960278<br />
+H         1.677507588552     -7.915574670769     -5.282359266408<br />
+N        -3.970583612019     -6.875685901823     -6.862261282110<br />
+N        -0.668234291141     -5.496160214392     -9.015142788746<br />
+C         0.178284184173     -5.835294804316    -10.050006823196<br />
+C        -0.463724568310     -4.197086157650     -8.753417034321<br />
+C         0.844817089440     -4.694853217776    -10.475854334734<br />
+C         0.480316489329     -7.119870237317    -10.615278321712<br />
+N         0.437523420770     -3.675495141278     -9.627358434376<br />
+C        -1.186501037780     -3.591972428214     -7.652343714188<br />
+C         1.714653279653     -4.668653000947    -11.619131413938<br />
+C         1.321309448320     -7.130397440791    -11.767229135362<br />
+C         0.065781277624     -8.327448246386    -10.054319394505<br />
+C         0.864662543849     -2.310365978906     -9.654910727093<br />
+C        -2.154381739464     -4.479337496226     -7.114969583244<br />
+C        -0.977449871162     -2.313753720748     -7.111766302582<br />
+C         2.337969552873     -3.526590742129    -12.137386369611<br />
+C         1.907816746722     -5.926647774961    -12.273702411639<br />
+C         1.611809450010     -8.376910899301    -12.393883942143<br />
+H        -0.475901458377     -8.307153461319     -9.118268856633<br />
+C         0.376758444215     -9.540294189853    -10.664093525593<br />
+C         2.047776293776     -1.952057805214     -9.012586079588<br />
+C         0.088302637735     -1.366280074344    -10.322785300083<br />
+C        -2.887929946013     -4.029491110634     -6.009226886280<br />
+C        -1.728937237084     -1.902138129076     -6.019440930315<br />
+H        -0.230641602780     -1.646270517265     -7.525396929828<br />
+C         3.132501452310     -3.604490403278    -13.278430225848<br />
+H         2.202723142345     -2.564608671679    -11.660883904431<br />
+C         2.734338474793     -5.986294640366    -13.432824200684<br />
+C         1.115664092562     -9.565214719656    -11.837302580840<br />
+C         2.427658438186     -8.393954810751    -13.571426042829<br />
+H         0.040127429746    -10.469772544849    -10.213535569105<br />
+C         2.457704132104     -0.621943374519     -9.041710413290<br />
+H         2.633148147614     -2.708933755011     -8.499350652431<br />
+C         0.506527362039     -0.038522783101    -10.344539001985<br />
+H        -0.827452502481     -1.674596884572    -10.818301782776<br />
+C        -2.681858878340     -2.761521862478     -5.470136291371<br />
+H        -3.635791156858     -4.678878616047     -5.562840993290<br />
+H        -1.567614741196     -0.915827444069     -5.594157602748<br />
+C         3.330934512079     -4.815495972037    -13.921833567024<br />
+H         3.600018088450     -2.702212304873    -13.661972475633<br />
+C         2.957334111608     -7.249414040143    -14.072405419066<br />
+H         1.345989933388    -10.510323404727    -12.322428442338<br />
+H         2.621206095553     -9.350176107580    -14.050963689401<br />
+C         1.688575752915      0.332962633875     -9.705628499529<br />
+H         3.378029107973     -0.332265651332     -8.543737796797<br />
+H        -0.091973127142      0.705060373128    -10.862062611782<br />
+H        -3.266485011012     -2.440498334974     -4.611169317745<br />
+H         3.957599906970     -4.872064277416    -14.808117128459<br />
+H         3.580483786741     -7.271156111571    -14.962842042625<br />
+H         2.011564863200      1.369657276620     -9.725056963889<br />
+Ir       -2.382468029760     -6.229395529246     -8.061582743839<br />
+N        -2.934045718398     -8.018629715383     -9.220085441534<br />
+C        -3.554807253852     -7.784039741377    -10.400814214855<br />
+C        -2.800938234670     -9.269310579212     -8.792535119947<br />
+C        -4.011629927676     -8.842765932033    -11.234520332405<br />
+C        -3.719403319298     -6.401593023737    -10.779420068601<br />
+C        -3.247110261845    -10.365444301008     -9.533909775866<br />
+H        -2.300393780432     -9.402470219874     -7.838790091553<br />
+C        -3.836153015992    -10.158434437025    -10.762845471881<br />
+C        -4.590556808315     -8.452669031205    -12.483074288730<br />
+C        -4.260797424742     -6.057174792399    -12.035438380105<br />
+N        -3.330791793114     -5.456380569531     -9.888924816012<br />
+H        -3.107945426007    -11.367636284190     -9.143537004292<br />
+H        -4.161930581180    -11.003346553954    -11.356271655971<br />
+C        -4.684843912116     -7.124940047957    -12.884225988847<br />
+N        -5.108372591256     -9.177768327095    -13.538999809732<br />
+C        -4.350732474696     -4.699431034467    -12.379013526302<br />
+C        -3.413683220076     -4.176405142504    -10.236707478297<br />
+N        -5.223833613880     -7.020973253410    -14.127000175314<br />
+C        -5.153528337699    -10.603214186308    -13.640488859918<br />
+C        -5.470134960862     -8.262334277242    -14.512106839625<br />
+H        -4.760513752927     -4.420482796332    -13.344417881040<br />
+C        -3.910942904369     -3.755379503953    -11.475669940982<br />
+H        -3.086931954703     -3.455332960964     -9.493714625045<br />
+C        -4.177020968945    -11.266275124491    -14.379882263300<br />
+C        -6.168249424827    -11.307341580225    -12.992296372901<br />
+C        -6.023989534112     -8.582332336049    -15.827059926331<br />
+H        -3.955063000452     -2.694871222019    -11.698691834235<br />
+C        -4.220854070130    -12.655047716967    -14.473290687441<br />
+H        -3.396056034779    -10.695522498676    -14.872953287856<br />
+C        -6.199728527035    -12.695908090583    -13.086806175606<br />
+H        -6.919807441197    -10.766976817683    -12.423993251228<br />
+C        -5.800668509048     -7.661794183863    -16.864340236771<br />
+C        -6.793434082349     -9.718998861000    -16.116131066885<br />
+C        -5.228424916598    -13.368939346587    -13.827473224792<br />
+H        -3.463802952703    -13.178509882019    -15.049447367980<br />
+H        -6.986185775211    -13.251005331807    -12.584401464260<br />
+C        -6.300600009464     -7.872201108847    -18.136650302519<br />
+H        -5.206159924373     -6.777046658685    -16.659699287514<br />
+C        -7.306041006065     -9.930076400987    -17.386391360405<br />
+H        -7.031597149095    -10.437772180321    -15.340563655763<br />
+H        -5.257897179489    -14.452051622141    -13.901205456345<br />
+C        -7.063775929423     -9.016879944069    -18.425236552887<br />
+H        -6.090842931735     -7.153124211150    -18.921822502110<br />
+H        -7.915660337949    -10.807686737585    -17.575441244739<br />
+N        -7.570923765602     -9.239654450038    -19.709910999209<br />
+C        -7.921959250426     -8.151182942260    -20.548249207898<br />
+C        -7.742256891387    -10.559419778798    -20.199833845583<br />
+C        -7.545215835651     -8.153399870019    -21.896095829014<br />
+C        -8.661253468871     -7.074533168756    -20.044485249911<br />
+C        -6.732040564699    -11.515022516727    -20.038678406304<br />
+C        -8.919890780239    -10.912687585312    -20.868275942604<br />
+C        -7.907813668840     -7.096339817290    -22.724627726845<br />
+H        -6.969269780589     -8.986415091463    -22.288371407974<br />
+C        -9.004231068425     -6.013097392535    -20.875806092486<br />
+H        -8.966027649826     -7.075260819644    -19.001960880789<br />
+C        -6.906974838017    -12.805535309671    -20.527744827300<br />
+H        -5.811265293401    -11.240854706365    -19.532001165831<br />
+C        -9.079223845669    -12.200513007100    -21.369866886456<br />
+H        -9.705906387310    -10.173495273406    -20.992211196403<br />
+C        -8.634123477664     -6.019005165307    -22.219799275900<br />
+H        -7.608724108489     -7.111215079015    -23.769186465682<br />
+H        -9.578617785062     -5.183969840715    -20.471595776813<br />
+C        -8.077791554155    -13.154920287660    -21.198998412450<br />
+H        -6.114287980164    -13.537121786477    -20.396350958644<br />
+H        -9.998625607673    -12.461071743642    -21.887111271622<br />
+H        -8.910497178121     -5.192409669076    -22.867930076921<br />
+H        -8.207721932239    -14.161130469268    -21.586811031379<br />
+</pre>
+end<br />
+<br />
+<br />
+Thanks in advance
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />      <br />
+</body> 
+</html> 

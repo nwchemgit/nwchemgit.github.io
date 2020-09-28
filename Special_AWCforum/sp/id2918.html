@@ -1,0 +1,1253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="Memory Problem in TDDFT Calculation using NWChem 6.1.1 You are viewing a single post from the thread title above" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_sp_id2918 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >Memory Problem in TDDFT Calculation using NWChem 6.1.1</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"><b><a href='../st/id792.html'>Click here for full thread</a></b></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_2918"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_2918" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap>7:51:16 AM PDT - Mon, Apr 15th 2013 </td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Dear All, I tried to perform a TDDFT calculation on a molecule of 124 atoms with 488 electrons at b3lyp/6-31g* level (1158 AOs). The task has been running on a workstation equipped with 4-cpu/48-cores and 128 GB of RAM (and also 5 HDDs of 2 TB each). This is the input deck I used:<br />
+<br />
+echo<br />
+START PB_166<br />
+TITLE "TDDFT B3LYP/6-31G* PB_166"<br />
+memory heap 100 mb stack 1000 mb global 1000 mb<br />
+geometry units angstroms<br />
+
+<pre>CARBON         3.2593623488  -1.8892593764  -0.0894787160<br />
+CARBON        -3.2593623488   1.8892593764  -0.0894787160<br />
+CARBON        -2.7926481739   0.5667699406  -0.2553721756<br />
+CARBON         2.7926481739  -0.5667699406  -0.2553721756<br />
+CARBON        -1.3944736870   0.2917225452  -0.1570899000<br />
+CARBON         1.3944736870  -0.2917225452  -0.1570899000<br />
+CARBON         0.4695910920  -1.3813690147  -0.0063436639<br />
+CARBON        -0.4695910920   1.3813690147  -0.0063436639<br />
+CARBON         0.9773255072  -2.6733511057   0.2570667557<br />
+CARBON        -0.9773255072   2.6733511057   0.2570667557<br />
+CARBON         2.3692061833  -2.8995829680   0.1993350845<br />
+CARBON        -2.3692061833   2.8995829680   0.1993350845<br />
+CARBON        -0.9589992126  -1.0752484664  -0.2194695571<br />
+CARBON         0.9589992126   1.0752484664  -0.2194695571<br />
+CARBON        -3.7127238835  -0.4700449582  -0.5234397154<br />
+CARBON         3.7127238835   0.4700449582  -0.5234397154<br />
+CARBON        -3.2563500645  -1.7634899097  -0.6915626710<br />
+CARBON         3.2563500645   1.7634899097  -0.6915626710<br />
+CARBON        -1.9002769128  -2.0634516737  -0.5278175573<br />
+CARBON         1.9002769128   2.0634516737  -0.5278175573<br />
+CARBON        -4.6985971253   2.2158772668  -0.1773315252<br />
+CARBON         4.6985971253  -2.2158772668  -0.1773315252<br />
+NITROGEN      -5.5640030722   1.1437720602  -0.4611081692<br />
+NITROGEN       5.5640030722  -1.1437720602  -0.4611081692<br />
+CARBON        -5.1616118913  -0.2042474749  -0.6488670978<br />
+CARBON         5.1616118913   0.2042474749  -0.6488670978<br />
+CARBON        -6.9901907994   1.4291743262  -0.5696580305<br />
+CARBON         6.9901907994  -1.4291743262  -0.5696580305<br />
+CARBON        -7.5226614334   1.7756191846  -1.8232994341<br />
+CARBON         7.5226614334  -1.7756191846  -1.8232994341<br />
+CARBON        -8.8970755269   2.0263340006  -1.9099279667<br />
+CARBON         8.8970755269  -2.0263340006  -1.9099279667<br />
+CARBON        -9.7109450781   1.9358613719  -0.7835536110<br />
+CARBON         9.7109450781  -1.9358613719  -0.7835536110<br />
+CARBON        -9.1611152029   1.6059619342   0.4527283456<br />
+CARBON         9.1611152029  -1.6059619342   0.4527283456<br />
+CARBON        -7.7918634839   1.3459009154   0.5818634389<br />
+CARBON         7.7918634839  -1.3459009154   0.5818634389<br />
+CARBON         0.1428367894  -3.8409708502   0.6659093569<br />
+CARBON        -0.1428367894   3.8409708502   0.6659093569<br />
+CARBON         0.1747853200  -5.0403770944  -0.0687302078<br />
+CARBON        -0.1747853200   5.0403770944  -0.0687302078<br />
+CARBON        -0.5658948364  -6.1416651146   0.3379799031<br />
+CARBON         0.5658948364   6.1416651146   0.3379799031<br />
+CARBON        -1.3510424808  -6.0815073593   1.4994059874<br />
+CARBON         1.3510424808   6.0815073593   1.4994059874<br />
+CARBON        -1.3754632525  -4.8970247768   2.2456454811<br />
+CARBON         1.3754632525   4.8970247768   2.2456454811<br />
+CARBON        -0.6353726211  -3.7916743849   1.8292129681<br />
+CARBON         0.6353726211   3.7916743849   1.8292129681<br />
+CARBON        -7.1802943259   1.0744724459   1.9550249719<br />
+CARBON         7.1802943259  -1.0744724459   1.9550249719<br />
+CARBON        -6.9922187839   2.4291238870   2.6916012476<br />
+CARBON         6.9922187839  -2.4291238870   2.6916012476<br />
+CARBON        -8.0153384136   0.0888412047   2.8027367733<br />
+CARBON         8.0153384136  -0.0888412047   2.8027367733<br />
+CARBON        -6.6213059790   1.9719338033  -3.0408348761<br />
+CARBON         6.6213059790  -1.9719338033  -3.0408348761<br />
+CARBON        -7.2188988461   1.3782266105  -4.3361458258<br />
+CARBON         7.2188988461  -1.3782266105  -4.3361458258<br />
+CARBON        -6.3321915977   3.4897769504  -3.2029782515<br />
+CARBON         6.3321915977  -3.4897769504  -3.2029782515<br />
+OXYGEN        -2.0487336823  -7.2306317435   1.8148895163<br />
+OXYGEN         2.0487336823   7.2306317435   1.8148895163<br />
+CARBON        -2.8862683489  -7.2244397281   3.0125202682<br />
+CARBON         2.8862683489   7.2244397281   3.0125202682<br />
+OXYGEN        -5.9868713061  -1.0894713451  -0.8999664913<br />
+OXYGEN         5.9868713061   1.0894713451  -0.8999664913<br />
+OXYGEN         5.1306971980  -3.3698489594  -0.0115046054<br />
+OXYGEN        -5.1306971980   3.3698489594  -0.0115046054<br />
+HYDROGEN       2.7610226683  -3.8910556460   0.3887768618<br />
+HYDROGEN      -2.7610226683   3.8910556460   0.3887768618<br />
+HYDROGEN      -3.9739725269  -2.5377333729  -0.9313730981<br />
+HYDROGEN       3.9739725269   2.5377333729  -0.9313730981<br />
+HYDROGEN      -1.5777173701  -3.0864013999  -0.6291200936<br />
+HYDROGEN       1.5777173701   3.0864013999  -0.6291200936<br />
+HYDROGEN      -9.3303033301   2.2988264405  -2.8642220154<br />
+HYDROGEN       9.3303033301  -2.2988264405  -2.8642220154<br />
+HYDROGEN     -10.7738923321   2.1319777109  -0.8674824826<br />
+HYDROGEN      10.7738923321  -2.1319777109  -0.8674824826<br />
+HYDROGEN      -9.7989108611   1.5547033918   1.3263264928<br />
+HYDROGEN       9.7989108611  -1.5547033918   1.3263264928<br />
+HYDROGEN       0.7737081962  -5.0979816565  -0.9705805093<br />
+HYDROGEN      -0.7737081962   5.0979816565  -0.9705805093<br />
+HYDROGEN      -0.5581945138  -7.0665670931  -0.2230100521<br />
+HYDROGEN       0.5581945138   7.0665670931  -0.2230100521<br />
+HYDROGEN      -1.9611691692  -4.8275038497   3.1521817279<br />
+HYDROGEN       1.9611691692   4.8275038497   3.1521817279<br />
+HYDROGEN      -0.6615299883  -2.8791033556   2.4126597947<br />
+HYDROGEN       0.6615299883   2.8791033556   2.4126597947<br />
+HYDROGEN      -6.1919261949   0.6310951637   1.8034301693<br />
+HYDROGEN       6.1919261949  -0.6310951637   1.8034301693<br />
+HYDROGEN      -6.4820413902   2.2767312976   3.6503269121<br />
+HYDROGEN       6.4820413902  -2.2767312976   3.6503269121<br />
+HYDROGEN      -6.4043222673   3.1117586012   2.0713120330<br />
+HYDROGEN       6.4043222673  -3.1117586012   2.0713120330<br />
+HYDROGEN      -7.9694465516   2.8860288974   2.8843527574<br />
+HYDROGEN       7.9694465516  -2.8860288974   2.8843527574<br />
+HYDROGEN      -7.4954764107  -0.1188951546   3.7450872602<br />
+HYDROGEN       7.4954764107   0.1188951546   3.7450872602<br />
+HYDROGEN      -8.9960342771   0.5102250480   3.0481768046<br />
+HYDROGEN       8.9960342771  -0.5102250480   3.0481768046<br />
+HYDROGEN      -8.1638216525  -0.8546151965   2.2673842319<br />
+HYDROGEN       8.1638216525   0.8546151965   2.2673842319<br />
+HYDROGEN      -5.6722477685   1.4646077386  -2.8454093509<br />
+HYDROGEN       5.6722477685  -1.4646077386  -2.8454093509<br />
+HYDROGEN      -6.4988451482   1.4822194466  -5.1558116842<br />
+HYDROGEN       6.4988451482  -1.4822194466  -5.1558116842<br />
+HYDROGEN      -7.4520691544   0.3164879704  -4.2060273377<br />
+HYDROGEN       7.4520691544  -0.3164879704  -4.2060273377<br />
+HYDROGEN      -8.1339532424   1.9056419745  -4.6259165433<br />
+HYDROGEN       8.1339532424  -1.9056419745  -4.6259165433<br />
+HYDROGEN      -5.6227350238   3.6592272990  -4.0218459547<br />
+HYDROGEN       5.6227350238  -3.6592272990  -4.0218459547<br />
+HYDROGEN      -7.2627913122   4.0217761026  -3.4307826487<br />
+HYDROGEN       7.2627913122  -4.0217761026  -3.4307826487<br />
+HYDROGEN      -5.9187339480   3.8925177666  -2.2738657114<br />
+HYDROGEN       5.9187339480  -3.8925177666  -2.2738657114<br />
+HYDROGEN      -3.3307439871  -8.2188446571   3.0482985312<br />
+HYDROGEN       3.3307439871   8.2188446571   3.0482985312<br />
+HYDROGEN      -2.2922203656  -7.0516634523   3.9177694867<br />
+HYDROGEN       2.2922203656   7.0516634523   3.9177694867<br />
+HYDROGEN      -3.6767177395  -6.4675081919   2.9461738576<br />
+HYDROGEN       3.6767177395   6.4675081919   2.9461738576<br />
+</pre>
+end<br />
+BASIS<br />
+
+<pre>* library 6-31G*<br />
+</pre>
+END<br />
+DFT<br />
+
+<pre>direct<br />
+iterations 100<br />
+XC B3LYP<br />
+vectors input PB_166.movecs<br />
+</pre>
+END<br />
+TDDFT<br />
+
+<pre>NROOTS 30<br />
+notriplet<br />
+thresh 1.0d-05<br />
+maxiter 200<br />
+</pre>
+END<br />
+task tddft energy<br />
+permanent_dir /media/DSK_1/pernwc<br />
+scratch_dir   /media/DSK_2/scrnwc<br />
+<br />
+After the completion of the scf cycles, as soon as the the code enters the TDDFT procedure, the following error occurs:<br />
+<br />
+ARMCI INFO<br />
+The application attempted to allocate a shared memory segment of 5045551104 bytes in size. This might be in addition to segments that were allocated succesfully previously. The current system configuration does not allow enough shared memory to be allocated to the application.<br />
+This is most often caused by:<br />
+1) system parameter SHMMAX (largest shared memory segment) being too small or<br />
+2) insufficient swap space.<br />
+Please ask your system administrator to verify if SHMMAX matches the amount of memory needed by your application and the system has sufficient amount of swap space. Most UNIX systems can be easily reconfigured to allow larger shared memory segments,<br />
+see <a target='blank' href="http://www.emsl.pnl.gov/docs/global/support.html" class="external free">http://www.emsl.pnl.gov/docs/global/support.html</a><br />
+In some cases, the problem might be caused by insufficient swap space.<br />
+<br />
+0:allocate: failed to create shared region&nbsp;: -1<br />
+(rank:0 hostname:gundam pid:10579):ARMCI DASSERT fail. ../../ga-5-1/armci/src/memory/shmem.c:armci_allocate():1117 cond:0<br />
+<br />
+I was running the task using 24 cores having specified kernel.shmmax = 8589934592 (8192 MB)<br />
+and ARMCI_DEFAULT_SHMMAX=4096 (I also tried with ARMCI_DEFAULT_SHMMAX=8192 but nothing changes).<br />
+<br />
+<br />
+If someone can put me in the right direction, I really appreciate.<br />
+Thanks a lot,<br />
+Davide
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />      <br />
+</body> 
+</html> 
