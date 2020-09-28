@@ -1,0 +1,1505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="ARMCI Errors with MKL ScaLAPACK You are viewing a single post from the thread title above" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_sp_id2845 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >ARMCI Errors with MKL ScaLAPACK</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"><b><a href='../st/id771.html'>Click here for full thread</a></b></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_2845"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_2845" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap>11:51:47 AM PDT - Wed, Mar 13th 2013 </td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi All. Although this is the "running NWChem" section, it may be that my problem lies in compilations. I've been trying to compile and run NWChem with Intel MKL BLAS and ScaLAPACK. Both compile successfully, and with BLAS alone the code runs successfully also. For ScaLAPACK however, I get a number of error messages. I've searched for these messages in other threads, but haven't found solutions. Here is the out file from the point that I start to receive warnings and errors (as compared to the non-ScaLAPACK run that works):<br />
+<br />
+
+<pre>
+WARNING&nbsp;: Found   702 linear dependencies 
+ S eigenvalue threshold:     1.00000E-05
+ Smallest S eigenvalue&nbsp;:     0.00000E+00
+ Largest  S eigenvalue&nbsp;:     0.00000E+00
+ 
+
+ !! The overlap matrix has 702 vectors deemed linearly dependent with
+    eigenvalues:
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00 0.00D+00
+ 
+0:0:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:0 hostname:n017 pid:15607):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+2:2:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:2 hostname:n017 pid:15609):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+5:5:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:5 hostname:n018 pid:15898):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+12:12:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:12 hostname:n008 pid:30328):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+11:11:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:11 hostname:n019 pid:13369):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+23:23:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:23 hostname:n016 pid:18750):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+29:29:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:29 hostname:n009 pid:124701):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+13:13:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:13 hostname:n008 pid:30330):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+1:1:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:1 hostname:n017 pid:15606):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+6:6:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:6 hostname:n018 pid:15896):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+24:24:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:24 hostname:n015 pid:23657):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+28:28:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:28 hostname:n009 pid:124700):ARMCI Drank 21 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 21: killed by signal 9 
+ASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+14:14:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:14 hostname:n008 pid:30329):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+25:25:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:25 hostname:n015 pid:23659):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+26:26:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:26 hostname:n015 pid:23658):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+3:3:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:3 hostname:n017 pid:15608):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+8:8:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:8 hostname:n019 pid:13371):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+17:17:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:17 hostname:n014 pid:24858):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+7:7:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:7 hostname:n018 pid:15899):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+16:16:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:16 hostname:n014 pid:24857):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+15:15:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:15 hostname:n008 pid:30331):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+31:31:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:31 hostname:n009 pid:124703):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+18:18:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:18 hostname:n014 pid:24860):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+4:4:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:4 hostname:n018 pid:15897):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+10:10:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:10 hostname:n019 pid:13372):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+21:21:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:21 hostname:n016 pid:18751):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+22:22:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:22 hostname:n016 pid:18752):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+9:9:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:9 hostname:n019 pid:13370):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+30:30:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:30 hostname:n009 pid:124702):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+27:27:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:27 hostname:n015 pid:23656):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+19:19:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:19 hostname:n014 pid:24859):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+20:20:pnga_create_config:ga_set_data:wrong dimension specified:: 0
+(rank:20 hostname:n016 pid:18749):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0
+rank 27 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 27: killed by signal 9 
+rank 31 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 31: killed by signal 9 
+rank 29 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 29: killed by signal 9 
+rank 11 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 11: killed by signal 9 
+rank 19 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 19: killed by signal 9 
+rank 7 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 7: killed by signal 9 
+rank 6 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 6: killed by signal 9 
+rank 15 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 15: killed by signal 9 
+rank 13 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 13: killed by signal 9 
+rank 3 in job 1  n017_37473   caused collective abort of all ranks
+  exit status of rank 3: killed by signal 9 
+</pre><br />
+<br />
+Any ideas? Here is my submission file:<br />
+
+<pre>
+RESTART comp1-arm
+SCRATCH_DIR   ./tmp
+PERMANENT_DIR ./perm
+MEMORY total 4 gb
+ECCE_PRINT ./ecce/react
+ECHO
+#
+geometry noautosym nocenter
+ o                   -10.28637712     4.61966189    -5.39287590
+ c                   -11.11768366     5.42635357    -4.95534853
+ n                   -12.34472699     5.02944581    -4.54153201
+ c                   -12.79877547     3.64703492    -4.58111847
+ c                   -10.80560699     6.90779147    -4.84320506
+ h                   -12.98964026     5.73432269    -4.21361480
+ h                   -13.67842060     3.54590380    -5.22564896
+ h                   -13.04967199     3.29232606    -3.57572536
+ h                   -11.98682453     3.04302516    -4.98545846
+ h                   -11.65514108     7.51228854    -4.51277437
+ h                   -10.46778430     7.27176047    -5.81797717
+ h                    -9.98227841     7.04496553    -4.13418092
+ C                    -4.12932144    -1.32356068    -0.51535190
+ C                    -3.11469791    -0.28811770    -0.49542853
+ N                    -1.87026718    -0.87349486    -0.39190481
+ C                    -2.06822120    -2.23092771    -0.34033812
+ C                    -3.48615111    -2.51869935    -0.41109388
+ C                    -3.39702040     1.08771162    -0.54440414
+ C                    -2.39781435     2.07556797    -0.45055101
+ N                    -1.02576984     1.85740329    -0.41186836
+ C                    -0.41919738     3.09892718    -0.31296902
+ C                    -1.43386732     4.12245305    -0.29056459
+ C                    -2.64492263     3.49390384    -0.38012744
+ C                     0.96612659     3.33031608    -0.28899847
+ C                     1.96136004     2.35654679    -0.29525918
+ N                     1.76104914     1.00039198    -0.31206960
+ C                     3.01421343     0.42929712    -0.23521765
+ C                     4.02563850     1.46345288    -0.19640032
+ C                     3.37605648     2.65695569    -0.23517723
+ Fe                   -0.06215314     0.06114262    -0.34777075
+ S                    -0.08783199    -0.07132045     1.94350118
+ C                     0.03880520     1.60548511     2.66619446
+ C                     3.29661517    -0.93523022    -0.16698766
+ C                     2.27956424    -1.91587252    -0.18863847
+ N                     0.91501850    -1.70975770    -0.29360814
+ C                     0.31239074    -2.94511637    -0.22200728
+ C                     1.32835229    -3.96998988    -0.09661871
+ C                     2.53390641    -3.33803953    -0.07738927
+ C                    -1.06943901    -3.20815061    -0.24027885
+ H                     4.32763725    -1.26001754    -0.08622430
+ H                     1.12776273    -5.03219751    -0.02706819
+ H                     5.09124752     1.27771733    -0.14045103
+ H                     3.79516289     3.65547020    -0.21660655
+ H                     1.28680157     4.36707453    -0.24805465
+ H                    -1.23748736     5.18528484    -0.21728631
+ H                    -3.62905082     3.94727847    -0.38989322
+ H                    -4.43251381     1.40415345    -0.60321816
+ H                    -5.19459805    -1.13963899    -0.58757060
+ H                    -3.91602916    -3.51268692    -0.38476153
+ H                    -1.38090029    -4.24615634    -0.18399558
+ H                     3.51906181    -3.77996159     0.01034955
+ H                     0.03011143     1.49274866     3.75568550
+ H                     0.97150940     2.09821362     2.37530399
+ H                    -0.80232522     2.24157464     2.37456831
+ O                    -0.13370537    -0.07547497    -2.29722943
+ C                    -2.62791541    -0.75800577    -4.55346316
+ C                    -3.27850339     0.57341869    -4.32153024
+ O                    -2.57553401     1.55451272    -3.88680579
+ O                    -4.50001955     0.68508625    -4.61712346
+ H                    -2.11322403    -0.72883836    -5.52262805
+ H                    -3.38079880    -1.54673871    -4.58476177
+ H                    -1.87517665    -0.96646837    -3.78492054
+ N                    -5.82960322     2.76932443    -4.77491187
+ C                    -5.39516066     4.01123413    -5.17312018
+ C                    -6.48868822     4.79512904    -5.44191116
+ N                    -7.59023544     3.99606843    -5.19137545
+ C                    -7.15587179     2.78306122    -4.79876330
+ C                    -6.55138622     6.21336318    -5.90979152
+ H                    -7.05292302     6.86430989    -5.18302896
+ H                    -5.53789700     6.59508129    -6.05593078
+ H                    -7.08689056     6.30304463    -6.86254586
+ H                    -8.57714003     4.27840823    -5.29310307
+ H                    -7.79727665     1.95152453    -4.55076624
+ H                    -5.14630186     1.84290928    -4.60452876
+ H                    -4.34254451     4.24233399    -5.23347655
+ O                    -0.33248569     1.22934597    -2.99542758
+ H                    -0.41818518     1.81839853    -2.21030302
+ H                    -1.50545023     1.29045642    -3.48991824
+ bqH                  -0.11986114     6.35784586    -3.69020299
+ bqH                  -1.22429083     5.82823172    -4.79548340
+ bqH                  -0.21443627     5.72879747    -4.46131480
+end
+#
+geometry adjust noautosym nocenter
+ZCOORD
+# O-O scission
+bond 55 76  
+# His:N-H
+bond 63 74   
+# Glu:O2-H
+bond 58 78 
+# distal O-H
+bond 76 78 
+# Fe-O
+bond 30 55
+#System Orientation Constraints
+bond 18 79 constant
+bond 24 79 constant
+bond 33 79 constant
+bond 39 79 constant
+bond 56 79 constant
+bond 68 79 constant
+angle 18 79 80 constant
+angle 24 79 80 constant
+angle 33 79 80 constant
+angle 39 79 80 constant
+angle 56 79 80 constant
+angle 68 79 80 constant
+torsion 18 79 80 81 constant
+torsion 24 79 80 81 constant
+torsion 33 79 80 81 constant
+torsion 39 79 80 81 constant
+torsion 56 79 80 81 constant
+torsion 68 79 80 81 constant
+angle 68 65 80 constant
+#fix ghost atoms as well
+bond 56 80 constant
+bond 56 81 constant
+bond 68 80 constant
+bond 68 81 constant
+bond 80 18 constant
+bond 81 18 constant
+angle 81 18 24 constant
+angle 80 18 24 constant
+angle 81 18 24 constant
+torsion 79 18 24 33 constant
+torsion 80 18 24 33 constant
+torsion 81 18 24 33 constant
+#
+bond 80 79 constant
+bond 81 79 constant
+bond 80 81 constant
+#
+#fix orientation of ASP
+angle 2 66 67 constant
+angle 3 66 67 constant
+angle 5 66 67 constant
+torsion 5 2 66 67 constant
+torsion 3 2 66 67 constant
+end
+end
+#
+BASIS spherical
+* library 6-31G* except Fe
+bqH library H 6-31G
+Fe library LANL2DZ_ecp
+END
+ECP
+Fe library LANL2DZ_ecp
+END
+########################################
+DFT
+CONVERGENCE energy   1e-7
+CONVERGENCE density  1e-6
+CONVERGENCE gradient 5e-6
+vectors output 11.mos
+# direct
+semidirect memsize 100000000 filesize 0
+iterations 500
+xc b3lyp
+odft
+mult 2
+#  grid lebedev 160 18 H 90 14 C 100 17 N 100 17 O 100 17 S 125 18 Fe 160 18
+ grid lebedev 125 18 H 75 11 C 90 14 N 90 14 O 90 14 S 90 14 Fe 125 18
+# grid lebedev 90 14 H 75 11 C 75 11
+grid  ssf  euler
+END
+driver
+#GMAX   0.0015
+#GRMS   0.0010
+#XMAX   0.0024
+#XRMS   0.0018
+ trust 0.015
+ default; maxiter 1500; eprec 1e-7; xyz ./XYZ/react
+END
+title &quot;react search&quot;
+task dft optimize
+task dft property		 
+</pre><br />
+<br />
+In case it's relevant, here is the script I used to compile NWChem:<br />
+
+<pre>
+#!/bin/bash
+
+#---For details, visit the following pages:
+#---http://www.nwchem-sw.org/index.php/Compiling_NWChem
+#---http://www.hpcadvisorycouncil.com/pdf/NWChem_Best_Practice.pdf
+
+. $MODULESHOME/../global/profile.modules
+module load make
+module load gcc/4.6.2
+module load intel/13.0.1
+
+export NWCHEM_TOP=`pwd`
+export LARGE_FILES=TRUE
+export NWCHEM_TARGET=LINUX64
+export NWCHEM_MODULES=all
+export ENABLE_COMPONENT=yes
+export TCGRSH=/usr/bin/ssh
+
+export USE_MPI=y
+export USE_MPIF=y
+export USE_MPIF4=y
+export MPI_HOME=$I_MPI_ROOT
+export MPI_LOC=$I_MPI_ROOT
+export LIBMPI=&quot;-lmpigf -lmpigi -lmpi_ilp64 -lmpi&quot;
+export MPI_LIB=$I_MPI_ROOT/lib64
+export MPI_INCLUDE=$I_MPI_ROOT/include64
+
+export MKL_INCLUDE=$MKLROOT/include/intel64/ilp64
+
+#---If the following is removed, the code compiles and runs. Otherwise,
+#---the code compiles but fails to run with ARMCI errors
+export USE_SCALAPACK=y
+export SCALAPACK=&quot;-L$MKLROOT/lib/intel64 -lmkl_scalapack_ilp64 -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_ilp64 -lpthread
+ -lm&quot;
+#--------------------------------------------------------------------------
+
+export BLASOPT=&quot;-L$MKLROOT/lib/intel64 -L$MKLROOT/lib/intel64/libmkl_blas95_ilp64.a -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lpthread -lm&quot;
+export FOPTIMIZE=&quot;-O3 -xSSE2,SSE3,SSSE3,SSE4.1,SSE4.2 -no-prec-div -funroll-loops -unroll-aggressive&quot;
+
+cd $NWCHEM_TOP/src
+make realclean
+
+cp util/*.fh include/
+
+make nwchem_config
+make FC=ifort
+</pre><br />
+<br />
+Any ideas? Sorry for the long post.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />      <br />
+</body> 
+</html> 

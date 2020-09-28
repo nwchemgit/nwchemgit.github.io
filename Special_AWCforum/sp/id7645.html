@@ -1,0 +1,1372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="Bug during b3lyp optimization You are viewing a single post from the thread title above" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_sp_id7645 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >Bug during b3lyp optimization</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"><b><a href='../st/id2175.html'>Click here for full thread</a></b></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_7645"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_7645" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap>10:59:07 AM PDT - Thu, Oct 20th 2016 </td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi...<br />
+I'm using NWChem-6.6 and I have applied all 20 patch in order as they appeared. Then, I done a simple b3lyp optimization for tartaric acid and this is what I got<br />
+
+<hr /><br />
+<br />
+INPUT FILE:<br />
+<br />
+<br />
+echo<br />
+<br />
+start molecule<br />
+<br />
+title "Tartaric Acid"<br />
+charge 0<br />
+<br />
+geometry units angstroms print xyz autosym<br />
+
+<pre>  O       -2.62014       -0.94784        0.24280<br />
+  C       -2.46312        0.24289        0.00934<br />
+  C       -1.15883        0.84386       -0.49410<br />
+  C       -0.01246        0.26157        0.34196<br />
+  C        1.29193        0.86272       -0.16104<br />
+  O        1.44858        2.05331       -0.39548<br />
+  O        2.25658       -0.07054       -0.34014<br />
+  H        1.85536       -0.95279       -0.13882<br />
+  O        0.12523       -1.16790        0.20133<br />
+  H       -0.75972       -1.56248        0.38148<br />
+  H       -0.10589        0.49775        1.40729<br />
+  O       -1.29640        2.27336       -0.35357<br />
+  H       -0.41151        2.66785       -0.53421<br />
+  H       -1.06561        0.60754       -1.55942<br />
+  O       -3.42756        1.17628        0.18891<br />
+  H       -3.02624        2.05849       -0.01236<br />
+</pre>
+end<br />
+<br />
+basis<br />
+
+<pre> * library 6-31G*<br />
+</pre>
+end<br />
+<br />
+dft<br />
+
+<pre> xc b3lyp<br />
+ mult 1<br />
+</pre>
+end<br />
+<br />
+task dft optimize<br />
+
+<hr /><br />
+<br />
+OUTPUT FILE:<br />
+<br />
+
+<pre>          Memory utilization after 1st SCF pass: <br />
+          Heap Space remaining (MW):       94.38            94384542<br />
+         Stack Space remaining (MW):      123.37           123366596<br />
+</pre>
+<br />
+
+<pre>  convergence    iter        energy       DeltaE   RMS-Dens  Diis-err    time<br />
+---------------- ----- ----------------- --------- --------- ---------  ------<br />
+d= 0,ls=0.0,diis     1   -607.3859414149 -1.18D+03  5.59D-05  4.26D-05   577.7<br />
+d= 0,ls=0.0          2               NaN       NaN  2.53D-03             582.7<br />
+d= 0,ls=0.0          3   -607.3759831778       NaN  2.82D-03             587.3<br />
+d= 0,ls=0.0,diis     4   -607.3844754988 -8.49D-03  5.73D-04  1.27D-02   592.1<br />
+d= 0,ls=0.0,diis     5   -607.3859506493 -1.48D-03  1.31D-05  1.71D-06   597.0<br />
+d= 0,ls=0.0,diis     6   -607.3859504144  2.35D-07  7.78D-06  4.98D-06   602.3<br />
+</pre>
+<br />
+
+<pre>                        DFT ENERGY GRADIENTS<br />
+</pre>
+<br />
+
+<pre>   atom               coordinates                        gradient<br />
+                x          y          z           x          y          z<br />
+  1 O      -2.722163   3.965332  -0.096206   -0.000242   0.000026        NaN<br />
+  2 C      -0.446187   3.626429  -0.151085    0.000184   0.000036        NaN<br />
+  3 C       0.710903   1.039053  -0.747258   -0.000400   0.000557  -0.000091<br />
+  4 C      -0.710903  -1.039053   0.747258    0.000400  -0.000557   0.000091<br />
+  5 C       0.446187  -3.626429   0.151085         NaN        NaN        NaN<br />
+  6 O       2.722163  -3.965332   0.096206         NaN        NaN        NaN<br />
+  7 O      -1.211068  -5.462902  -0.290552   -0.000279  -0.000203   0.000299<br />
+  8 H      -2.895660  -4.683507  -0.283496    0.000333  -0.000066  -0.000046<br />
+  9 O      -3.301454  -1.143834   0.124106    0.000086   0.000459   0.000076<br />
+ 10 H      -3.915921   0.608361   0.051944   -0.000107  -0.000061  -0.000155<br />
+ 11 H      -0.420588  -0.683736   2.779197   -0.000385   0.000178  -0.000100<br />
+ 12 O       3.301454   1.143834  -0.124106   -0.000086  -0.000459  -0.000076<br />
+ 13 H       3.915921  -0.608361  -0.051944    0.000107   0.000061   0.000155<br />
+ 14 H       0.420588   0.683736  -2.779197    0.000385  -0.000178   0.000100<br />
+ 15 O       1.211068   5.462902   0.290552    0.000279   0.000203  -0.000299<br />
+ 16 H       2.895660   4.683507   0.283496   -0.000333   0.000066   0.000046<br />
+</pre>
+<br />
+
+<pre>                ----------------------------------------<br />
+                |  Time  |  1-e(secs)   |  2-e(secs)   |<br />
+                ----------------------------------------<br />
+                |  CPU   |       0.02   |       4.04   |<br />
+                ----------------------------------------<br />
+                |  WALL  |       0.05   |       4.13   |<br />
+                ----------------------------------------<br />
+</pre>
+<br />
+
+<pre> Step       Energy      Delta E   Gmax     Grms     Xrms     Xmax   Walltime<br />
+ ---- ---------------- -------- -------- -------- -------- -------- --------<br />
+</pre>
+@    9    -607.38596631 -2.4D-05      NaN      NaN  0.00724  0.01978   1358.3<br />
+<br />
+<br />
+<br />
+AT THE END OUTPUT FILE SHOW:<br />
+<br />
+
+<pre>     Type          Name      I     J     K     L     M      Value     Gradient<br />
+     ----------- --------  ----- ----- ----- ----- ----- ---------- ----------<br />
+   1 Stretch                  1     2                       1.21802        NaN<br />
+   2 Stretch                  2     3                       1.53268        NaN<br />
+   3 Stretch                  2    15                       1.32972        NaN<br />
+   4 Stretch                  3     4                       1.54947        NaN<br />
+   5 Stretch                  3    12                       1.41105        NaN<br />
+   6 Stretch                  3    14                       1.10233        NaN<br />
+   7 Stretch                  4     5                       1.53268        NaN<br />
+   8 Stretch                  4     9                       1.41105        NaN<br />
+   9 Stretch                  4    11                       1.10233        NaN<br />
+  10 Stretch                  5     6                       1.21802        NaN<br />
+  11 Stretch                  5     7                       1.32972        NaN<br />
+  12 Stretch                  7     8                       0.98224        NaN<br />
+  13 Stretch                  9    10                       0.98333        NaN<br />
+  14 Stretch                 12    13                       0.98333        NaN<br />
+  15 Stretch                 15    16                       0.98224        NaN<br />
+  16 Bend                     1     2     3               122.10493        NaN<br />
+  17 Bend                     1     2    15               122.70731        NaN<br />
+  18 Bend                     2     3     4               109.57005        NaN<br />
+  19 Bend                     2     3    12               107.75300        NaN<br />
+  20 Bend                     2     3    14               107.30628        NaN<br />
+  21 Bend                     2    15    16               106.91872        NaN<br />
+  22 Bend                     3     2    15               115.18741        NaN<br />
+  23 Bend                     3     4     5               109.57005        NaN<br />
+  24 Bend                     3     4     9               112.35556        NaN<br />
+  25 Bend                     3     4    11               108.00757        NaN<br />
+  26 Bend                     3    12    13               107.05434        NaN<br />
+  27 Bend                     4     3    12               112.35556        NaN<br />
+  28 Bend                     4     3    14               108.00757        NaN<br />
+  29 Bend                     4     5     6               122.10493        NaN<br />
+  30 Bend                     4     5     7               115.18741        NaN<br />
+  31 Bend                     4     9    10               107.05434        NaN<br />
+  32 Bend                     5     4     9               107.75300        NaN<br />
+  33 Bend                     5     4    11               107.30628        NaN<br />
+  34 Bend                     5     7     8               106.91872        NaN<br />
+  35 Bend                     6     5     7               122.70731        NaN<br />
+  36 Bend                     9     4    11               111.71909        NaN<br />
+  37 Bend                    12     3    14               111.71909        NaN<br />
+  38 Torsion                  1     2     3     4         -44.85103        NaN<br />
+  39 Torsion                  1     2     3    12        -167.37631        NaN<br />
+  40 Torsion                  1     2     3    14          72.17665        NaN<br />
+  41 Torsion                  1     2    15    16         175.09818        NaN<br />
+  42 Torsion                  2     3     4     5        -180.00000        NaN<br />
+  43 Torsion                  2     3     4     9          60.25711        NaN<br />
+  44 Torsion                  2     3     4    11         -63.41412        NaN<br />
+  45 Torsion                  2     3    12    13         164.41952        NaN<br />
+  46 Torsion                  3     2    15    16          -5.11401        NaN<br />
+  47 Torsion                  3     4     5     6          44.85103        NaN<br />
+  48 Torsion                  3     4     5     7        -135.35975        NaN<br />
+  49 Torsion                  3     4     9    10         -43.62507        NaN<br />
+  50 Torsion                  4     3     2    15         135.35975        NaN<br />
+  51 Torsion                  4     3    12    13          43.62507        NaN<br />
+  52 Torsion                  4     5     7     8           5.11401        NaN<br />
+  53 Torsion                  5     4     3    12         -60.25711        NaN<br />
+  54 Torsion                  5     4     3    14          63.41412        NaN<br />
+  55 Torsion                  5     4     9    10        -164.41952        NaN<br />
+  56 Torsion                  6     5     4     9         167.37631        NaN<br />
+  57 Torsion                  6     5     4    11         -72.17665        NaN<br />
+  58 Torsion                  6     5     7     8        -175.09818        NaN<br />
+  59 Torsion                  7     5     4     9         -12.83447        NaN<br />
+  60 Torsion                  7     5     4    11         107.61258        NaN<br />
+  61 Torsion                  9     4     3    12         180.00000        NaN<br />
+  62 Torsion                  9     4     3    14         -56.32877        NaN<br />
+  63 Torsion                 10     9     4    11          77.95091        NaN<br />
+  64 Torsion                 11     4     3    12          56.32877        NaN<br />
+  65 Torsion                 11     4     3    14         180.00000        NaN<br />
+  66 Torsion                 12     3     2    15          12.83447        NaN<br />
+  67 Torsion                 13    12     3    14         -77.95091        NaN<br />
+  68 Torsion                 14     3     2    15        -107.61258        NaN<br />
+</pre>
+<br />
+
+<pre>!! There are insufficient internal variables: expected    56 got    42<br />
+!! Either AUTOZ failed or your geometry has changed so much that the<br />
+!! coordinates should be regenerated.<br />
+geom_binvr: #indep variables incorrect             5600042<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error related to the specified geometry<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+</pre>
+2:2:geom_binvr: #indep variables incorrect:: 5600042<br />
+Last System Error Message from Task 2:: Numerical result out of range<br />
+
+<pre>------------------------------------------------------------------------<br />
+geom_binvr: #indep variables incorrect             5600042<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+   36: task dft optimize<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error related to the specified geometry<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+</pre>
+0:0:geom_binvr: #indep variables incorrect:: 5600042<br />
+Last System Error Message from Task 0:: Numerical result out of range<br />
+
+<pre>geom_binvr: #indep variables incorrect             5600042<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error related to the specified geometry<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+</pre>
+1:1:geom_binvr: #indep variables incorrect:: 5600042<br />
+Last System Error Message from Task 1:: Numerical result out of range<br />
+
+<hr /><br />
+MPI_ABORT was invoked on rank 2 in communicator MPI COMMUNICATOR 4 DUP FROM 0 <br />
+with errorcode 5600042.<br />
+<br />
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.<br />
+You may or may not see output from other processes, depending on<br />
+exactly when Open MPI kills them.<br />
+
+<hr /><br />
+<pre>geom_binvr: #indep variables incorrect             5600042<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error related to the specified geometry<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+</pre>
+3:3:geom_binvr: #indep variables incorrect:: 5600042<br />
+Last System Error Message from Task 3:: Numerical result out of range<br />
+
+<hr /><br />
+mpirun has exited due to process rank 2 with PID 2240 on<br />
+node pc-0 exiting improperly. There are two reasons this could occur:<br />
+<br />
+1. this process did not call "init" before exiting, but others in<br />
+the job did. This can cause a job to hang indefinitely while it waits<br />
+for all processes to call "init". By rule, if one process calls "init",<br />
+then ALL processes must call "init" prior to termination.<br />
+<br />
+2. this process called "init", but exited without calling "finalize".<br />
+By rule, all processes that call "init" MUST call "finalize" prior to<br />
+exiting or it will be considered an "abnormal termination"<br />
+<br />
+This may have caused other processes in the application to be<br />
+terminated by signals sent by mpirun (as reported here).<br />
+
+<hr /><br />
+[pc-0:02237] 3 more processes have sent help message help-mpi-api.txt / mpi-abort<br />
+[pc-0:02237] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />      <br />
+</body> 
+</html> 

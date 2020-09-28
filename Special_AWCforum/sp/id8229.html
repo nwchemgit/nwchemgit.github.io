@@ -1,0 +1,1787 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="NaN energies in PSPW optimization You are viewing a single post from the thread title above" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_sp_id8229 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >NaN energies in PSPW optimization</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"><b><a href='../st/id2366.html'>Click here for full thread</a></b></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_8229"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_8229" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap>8:08:54 AM PDT - Thu, Jun 15th 2017 </td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi,<br />
+<br />
+I have been running into a weired problem while performing PSPW optimization. I get NaN energies after some steps. <br />
+Input file:<br />
+
+<pre>
+geometry units angstroms center noautosym noautoz print  
+ system crystal 
+   lat_a 5.1614d0 
+   lat_b 8.9576d0 
+   lat_c 8.5d0 
+   alpha 91.03d0 
+   beta 100.37d0 
+   gamma 89.75d0 
+ end
+symmetry group P1
+Al	0.50000	0.16700	0.00000
+Si	0.74800	0.00000	0.31794
+Si	0.75900	0.33100	0.31794
+O	0.67100	0.00400	0.12431
+O	0.72100	0.31900	0.12431
+O	0.22100	0.18600	0.12431
+O	0.05500	0.38700	0.38835
+O	0.72400	0.16700	0.38835
+O	0.55000	0.44800	0.36964
+Al	0.00000	0.66700	0.00000
+Al	0.50000	0.83300	0.00000
+Al	0.00000	0.33300	0.00000
+Si	0.24800	0.50000	0.31794
+Si	0.25200	0.00000	0.78219
+Si	0.75200	0.50000	0.78219
+Si	0.25900	0.83100	0.31794
+Si	0.24100	0.66900	0.78219
+Si	0.74100	0.16900	0.78219
+O	0.17100	0.50400	0.12431
+O	0.32900	0.99600	0.97581
+O	0.82900	0.49600	0.97581
+O	0.22100	0.81900	0.12431
+O	0.27900	0.68100	0.97581
+O	0.77900	0.18100	0.97581
+O	0.72100	0.68600	0.12431
+O	0.77900	0.81400	0.97581
+O	0.27900	0.31400	0.97581
+O	0.55500	0.88700	0.38835
+O	0.94500	0.61300	0.71178
+O	0.44500	0.11300	0.71178
+O	0.22400	0.66700	0.38835
+O	0.27600	0.83300	0.71178
+O	0.77600	0.33300	0.71178
+O	0.05000	0.94800	0.36964
+O	0.45000	0.55200	0.73049
+O	0.95000	0.05200	0.73049
+H	0.39073	0.18936	0.20026
+H	0.88509	0.68784	0.20528
+H	0.60592	0.79940	0.91223
+H	0.11037	0.32205	0.90566                                            
+end
+
+
+nwpw
+# lmbfgs
+ XC pw91
+ dft
+ mult 1
+ ewald_rcut 3.0
+ ewald_ncut 8
+# monkhorst-pack 2 2 2
+ cutoff 40.0
+end
+
+driver; clear; maxiter 200; end; task pspw optimize ignore
+</pre><br />
+<br />
+<br />
+Output is large, the first 21 steps look fine, this is the last one:<br />
+<br />
+
+<pre>          ****************************************************
+          *                                                  *
+          *               NWPW PSPW Calculation              *
+          *                                                  *
+          * [ (Grassmann/Stiefel manifold implementation)  ] *
+          *                                                  *
+          *      [ NorthWest Chemistry implementation ]      *
+          *                                                  *
+          *            version #5.10   06/12/02              *
+          *                                                  *
+          *    This code was developed by Eric J. Bylaska,   *
+          *    and was based upon algorithms and code        *
+          *    developed by the group of Prof. John H. Weare *
+          *                                                  *
+          ****************************************************
+     &gt;&gt;&gt;  JOB STARTED       AT Wed Jun 14 21:37:41 2017  &lt;&lt;&lt;
+          ================ input data ========================
+ pseudopotential is not correctly formatted:
+ Al.vpp                                            
+ 
+ Generated formatted_filename: /lustre/work/chme412/kkoocheki/PPL/perm/Al.vpp
+ pseudopotential is not correctly formatted:
+ Si.vpp                                            
+ 
+ Generated formatted_filename: /lustre/work/chme412/kkoocheki/PPL/perm/Si.vpp
+ pseudopotential is not correctly formatted:
+ O.vpp                                             
+ 
+ Generated formatted_filename: /lustre/work/chme412/kkoocheki/PPL/perm/O.vpp
+ pseudopotential is not correctly formatted:
+ H.vpp                                             
+ 
+ Generated formatted_filename: /lustre/work/chme412/kkoocheki/PPL/perm/H.vpp
+
+ input psi filename:/lustre/work/chme412/kkoocheki/PPL/perm/pplopt.movecs
+
+ number of processors used:        32
+ processor grid          &nbsp;:  32 x   1
+ parallel mapping        &nbsp;:2d hilbert
+ parallel mapping        &nbsp;:  balanced
+ number of threads       &nbsp;:         1
+ parallel io             &nbsp;:       off
+
+ options:
+      boundary conditions  = periodic    (version3)
+      electron spin        = restricted
+      exchange-correlation = LDA (Vosko et al) parameterization
+
+ elements involved in the cluster:
+      1: Al  valence charge:  3.0000  lmax=  2
+             comment   &nbsp;: Hamann pseudopotential
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   2
+             local potential used          &nbsp;:   2
+             number of non-local projections:   4
+             cutoff =   1.241   1.577   1.577
+ 
+      2: Si  valence charge:  4.0000  lmax=  2
+             comment   &nbsp;: Hamann pseudopotential
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   2
+             local potential used          &nbsp;:   2
+             number of non-local projections:   4
+             cutoff =   1.070   1.286   1.286
+ 
+      3: O   valence charge:  6.0000  lmax=  2
+             comment   &nbsp;: Parameterized (Chem.Phys.Lett., vol 322, page 447) Hamman psp
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   2
+             local potential used          &nbsp;:   2
+             number of non-local projections:   4
+             cutoff =   0.700   0.700   0.700
+ 
+      4: S   valence charge:  6.0000  lmax=  2
+             comment   &nbsp;: Hamann pseudopotential
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   2
+             local potential used          &nbsp;:   2
+             number of non-local projections:   4
+             cutoff =   0.843   0.955   0.955
+ 
+      5: H   valence charge:  1.0000  lmax=  1
+             comment   &nbsp;: Parameterized (Chem.Phys.Lett., vol 322, page 447) Hamman psp
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   1
+             local potential used          &nbsp;:   1
+             number of non-local projections:   1
+             cutoff =   0.800   0.800
+ 
+
+ total charge:   0.000
+
+ atomic composition:
+     Al &nbsp;:    4     Si &nbsp;:    8     O  &nbsp;:   20     S  &nbsp;:    4     H  &nbsp;:    4
+
+ number of electrons: spin up=    96 (  96 per task)  down=    96 (  96 per task) (Fourier space)
+ number of orbitals&nbsp;: spin up=    96 (  96 per task)  down=    96 (  96 per task) (Fourier space)
+
+ supercell:
+      cell_name:  cell_default                                      
+      lattice:    a1=&lt;   9.754   0.043   0.000 &gt;
+                  a2=&lt;   0.000  16.927   0.000 &gt;
+                  a3=&lt;  -2.890  -0.289  15.798 &gt;
+      reciprocal: b1=&lt;   0.644   0.000   0.118 &gt;
+                  b2=&lt;  -0.002   0.371   0.006 &gt;
+                  b3=&lt;   0.000   0.000   0.398 &gt;
+      lattice:    a=       9.754 b=     16.927 c=      16.063
+                  alpha=  91.030 beta= 100.370 gamma=  89.750
+                  omega=      2608.3
+
+      density cutoff= 80.000  fft= 40x 70x 70(    44574 waves     1392 per task)
+      wavefnc cutoff= 40.000  fft= 40x 70x 70(    15743 waves      491 per task)
+      Ewald summation: cut radius=    3.00  and  8
+                       Madelung Wigner-Seitz= 1.59020812 (alpha= 2.56340270 rs= 8.53927591)
+
+ technical parameters:
+      time step=      5.80     ficticious mass=  400000.0
+      tolerance=0.100E-06 (energy)   0.100E-06 (density)
+      maximum iterations =      1000 (   10 inner    100 outer )
+
+
+
+
+
+== Energy Calculation ==
+
+
+          ====== Grassmann conjugate gradient iteration ======
+     &gt;&gt;&gt;  ITERATION STARTED AT Wed Jun 14 21:37:44 2017  &lt;&lt;&lt;
+    iter.           Energy         DeltaE       DeltaRho 
+    ------------------------------------------------------
+      10   -0.4029871877E+03   -0.67218E-04    0.10371E-05
+      20   -0.4029873303E+03   -0.35802E-05    0.17251E-06
+      30   -0.4029873364E+03   -0.17360E-06    0.98356E-09
+      40   -0.4029873366E+03   -0.96578E-07    0.32746E-09
+  *** tolerance ok. iteration terminated
+     &gt;&gt;&gt;  ITERATION ENDED   AT Wed Jun 14 21:38:10 2017  &lt;&lt;&lt;
+
+
+==  Summary Of Results  ==
+ 
+ number of electrons: spin up=   96.00000  down=   96.00000 (real space)
+
+ total     energy   &nbsp;:  -0.4029873366E+03 (   -0.10075E+02/ion)
+ total orbital energy:  -0.5061941624E+01 (   -0.52729E-01/electron)
+ hartree   energy   &nbsp;:   0.1099651422E+03 (    0.11455E+01/electron)
+ exc-corr  energy   &nbsp;:  -0.9468591481E+02 (   -0.98631E+00/electron)
+ ion-ion   energy   &nbsp;:  -0.3173108631E+03 (   -0.79328E+01/ion)
+
+ kinetic (planewave)&nbsp;:   0.2615317017E+03 (    0.27243E+01/electron)
+ V_local (planewave)&nbsp;:  -0.3611204507E+03 (   -0.37617E+01/electron)
+ V_nl    (planewave)&nbsp;:  -0.1366951897E+01 (   -0.14239E-01/electron)
+ V_Coul  (planewave)&nbsp;:   0.2199302844E+03 (    0.22909E+01/electron)
+ V_xc.   (planewave)&nbsp;:  -0.1240365251E+03 (   -0.12920E+01/electron)
+ Virial Coefficient &nbsp;:  -0.1019354983E+01
+
+ orbital energies:
+     0.2678365E+00 (   7.288eV)
+     0.2620996E+00 (   7.132eV)
+     0.2617912E+00 (   7.124eV)
+     0.2507476E+00 (   6.823eV)
+     0.2464072E+00 (   6.705eV)
+     0.2356103E+00 (   6.411eV)
+     0.2323930E+00 (   6.324eV)
+     0.2230283E+00 (   6.069eV)
+     0.2034513E+00 (   5.536eV)
+     0.1958812E+00 (   5.330eV)
+     0.1957282E+00 (   5.326eV)
+     0.1950014E+00 (   5.306eV)
+     0.1927615E+00 (   5.245eV)
+     0.1840187E+00 (   5.007eV)
+     0.1822683E+00 (   4.960eV)
+     0.1779693E+00 (   4.843eV)
+     0.1743748E+00 (   4.745eV)
+     0.1726303E+00 (   4.698eV)
+     0.1664157E+00 (   4.528eV)
+     0.1642215E+00 (   4.469eV)
+     0.1620864E+00 (   4.411eV)
+     0.1603094E+00 (   4.362eV)
+     0.1567161E+00 (   4.264eV)
+     0.1559281E+00 (   4.243eV)
+     0.1546516E+00 (   4.208eV)
+     0.1463360E+00 (   3.982eV)
+     0.1458108E+00 (   3.968eV)
+     0.1400328E+00 (   3.811eV)
+     0.1399160E+00 (   3.807eV)
+     0.1378867E+00 (   3.752eV)
+     0.1297862E+00 (   3.532eV)
+     0.1236684E+00 (   3.365eV)
+     0.1136894E+00 (   3.094eV)
+     0.1130217E+00 (   3.076eV)
+     0.1095816E+00 (   2.982eV)
+     0.1085418E+00 (   2.954eV)
+     0.1041635E+00 (   2.834eV)
+     0.1031785E+00 (   2.808eV)
+     0.1028597E+00 (   2.799eV)
+     0.9994219E-01 (   2.720eV)
+     0.9706594E-01 (   2.641eV)
+     0.9522845E-01 (   2.591eV)
+     0.8671942E-01 (   2.360eV)
+     0.7629984E-01 (   2.076eV)
+     0.7189196E-01 (   1.956eV)
+     0.6756477E-01 (   1.839eV)
+     0.6705345E-01 (   1.825eV)
+     0.6522039E-01 (   1.775eV)
+     0.6399573E-01 (   1.741eV)
+     0.5466736E-01 (   1.488eV)
+     0.5160421E-01 (   1.404eV)
+     0.4958333E-01 (   1.349eV)
+     0.4114776E-01 (   1.120eV)
+     0.3578985E-01 (   0.974eV)
+     0.2935532E-01 (   0.799eV)
+     0.2832390E-01 (   0.771eV)
+     0.2120174E-01 (   0.577eV)
+     0.1607140E-01 (   0.437eV)
+     0.1302053E-01 (   0.354eV)
+     0.1038132E-01 (   0.282eV)
+     0.5105994E-02 (   0.139eV)
+    -0.5802300E-02 (  -0.158eV)
+    -0.1046128E-01 (  -0.285eV)
+    -0.1147962E-01 (  -0.312eV)
+    -0.1166140E-01 (  -0.317eV)
+    -0.3878305E-01 (  -1.055eV)
+    -0.4681664E-01 (  -1.274eV)
+    -0.5004673E-01 (  -1.362eV)
+    -0.7984783E-01 (  -2.173eV)
+    -0.8397646E-01 (  -2.285eV)
+    -0.1224578E+00 (  -3.332eV)
+    -0.1235577E+00 (  -3.362eV)
+    -0.1731054E+00 (  -4.710eV)
+    -0.1790317E+00 (  -4.872eV)
+    -0.1848998E+00 (  -5.031eV)
+    -0.1956548E+00 (  -5.324eV)
+    -0.4143606E+00 ( -11.275eV)
+    -0.4162708E+00 ( -11.327eV)
+    -0.4184511E+00 ( -11.387eV)
+    -0.4210953E+00 ( -11.459eV)
+    -0.4338260E+00 ( -11.805eV)
+    -0.4383924E+00 ( -11.929eV)
+    -0.4386163E+00 ( -11.935eV)
+    -0.4393032E+00 ( -11.954eV)
+    -0.4412795E+00 ( -12.008eV)
+    -0.4421186E+00 ( -12.031eV)
+    -0.4431775E+00 ( -12.060eV)
+    -0.4445694E+00 ( -12.097eV)
+    -0.4462950E+00 ( -12.144eV)
+    -0.4558728E+00 ( -12.405eV)
+    -0.4677403E+00 ( -12.728eV)
+    -0.4761988E+00 ( -12.958eV)
+    -0.4931514E+00 ( -13.419eV)
+    -0.4990317E+00 ( -13.579eV)
+    -0.4994515E+00 ( -13.591eV)
+    -0.5242216E+00 ( -14.265eV)
+
+ Total PSPW energy    &nbsp;:  -0.4029873366E+03
+
+
+=== Spin Contamination ===
+ 
+ &lt;Sexact^2&gt; =   0.000000000000000E+000
+ &lt;S^2&gt;      =   0.000000000000000E+000
+ 
+
+
+== Center of Charge ==
+
+spin up     (    0.0406,    0.0307,    0.0249 )
+spin down   (    0.0406,    0.0307,    0.0249 )
+     total  (    0.0406,    0.0307,    0.0249 )
+ionic       (    0.0229,    0.2544,    0.0066 )
+crystal     (    0.0011,    0.0060,    0.0038 )
+
+
+== Crystal Dipole ==
+
+mu   =  (   -7.5823,   -4.7401,   -4.0516 ) au
+|mu| =     9.8171 au,      24.9512 Debye
+
+
+== Molecular Dipole wrt Center of Mass ==
+
+mu   =  (   -3.3922,   42.9590,   -3.5111 ) au
+|mu| =    43.2356 au,     109.8875 Debye
+
+
+Translation force removed: (   -0.00018    0.00031    0.00005)
+
+
+          =============  Ion Gradients =================
+ Ion Forces:
+        1 Al   (   -0.001674    0.003095    0.000476 )
+        2 Si   (    0.000964   -0.000768    0.000026 )
+        3 Si   (   -0.000370   -0.001025    0.001860 )
+        4 O    (    0.000616    0.002075   -0.000066 )
+        5 O    (   -0.001484   -0.002547   -0.000414 )
+        6 S    (    0.001722    0.002717    0.000622 )
+        7 O    (   -0.001784   -0.001018   -0.000051 )
+        8 O    (    0.000179   -0.001875   -0.001774 )
+        9 O    (    0.000416   -0.000921   -0.000723 )
+       10 Al   (   -0.001135    0.003047    0.000652 )
+       11 Al   (   -0.002821    0.002837   -0.001868 )
+       12 Al   (   -0.000902    0.002560   -0.002555 )
+       13 Si   (    0.000817    0.000448    0.000836 )
+       14 Si   (   -0.001755   -0.000604    0.000673 )
+       15 Si   (   -0.002290   -0.001585    0.000297 )
+       16 Si   (   -0.000178   -0.000680    0.000933 )
+       17 Si   (    0.001288    0.001669   -0.000200 )
+       18 Si   (    0.001334    0.002298    0.000052 )
+       19 O    (    0.000491    0.002099   -0.000785 )
+       20 O    (    0.000226   -0.000491    0.001375 )
+       21 O    (   -0.000031   -0.000529    0.000292 )
+       22 O    (   -0.001516   -0.002208    0.000546 )
+       23 O    (   -0.001210   -0.002850    0.000942 )
+       24 O    (   -0.001359   -0.002423    0.001283 )
+       25 S    (    0.001891    0.002832   -0.000709 )
+       26 S    (    0.001576   -0.003445   -0.000206 )
+       27 S    (    0.002521   -0.002031    0.001316 )
+       28 O    (   -0.001551   -0.001053    0.000193 )
+       29 O    (   -0.000968    0.000024   -0.001731 )
+       30 O    (   -0.000790    0.000660   -0.002400 )
+       31 O    (    0.000014   -0.002877   -0.002249 )
+       32 O    (    0.000878   -0.001747   -0.001790 )
+       33 O    (    0.000625   -0.000960   -0.001275 )
+       34 O    (    0.000277   -0.000918   -0.001199 )
+       35 O    (    0.000917   -0.000480    0.003077 )
+       36 O    (    0.001519   -0.000784    0.002379 )
+       37 H    (    0.000178   -0.001286   -0.001624 )
+       38 H    (   -0.000046   -0.001392   -0.000878 )
+       39 H    (    0.004351   -0.002127    0.002743 )
+       40 H    (    0.003019   -0.000853    0.000647 )
+        C.O.M. (    0.000000    0.000000    0.000000 )
+          ===============================================
+          |F|       =   0.175303E-01
+          |F|/nion  =   0.438257E-03
+          max|Fatom|=   0.556619E-02 (   0.286eV/Angstrom)
+
+
+
+ output psi filename:/lustre/work/chme412/kkoocheki/PPL/perm/pplopt.movecs
+
+
+== Timing ==
+
+cputime in seconds
+  prologue   &nbsp;:   0.226687E+01
+  main loop  &nbsp;:   0.260513E+02
+  epilogue   &nbsp;:   0.252847E+01
+  total      &nbsp;:   0.308466E+02
+  cputime/step:   0.201948E+00       (     129 evalulations,      32 linesearches)
+
+
+Time spent doing                        total          step       percent
+  total time                &nbsp;:   0.308504E+02  0.239150E+00       100.0&nbsp;%
+  i/o time                  &nbsp;:   0.391458E+01  0.303456E-01        12.7&nbsp;%
+  FFTs                      &nbsp;:   0.332675E+00  0.257887E-02         1.1&nbsp;%
+  dot products              &nbsp;:   0.114924E+01  0.890886E-02         3.7&nbsp;%
+  geodesic                  &nbsp;:   0.965824E+00  0.748701E-02         3.1&nbsp;%
+  ffm_dgemm                 &nbsp;:   0.172802E+00  0.133955E-02         0.6&nbsp;%
+  fmf_dgemm                 &nbsp;:   0.650563E+00  0.504312E-02         2.1&nbsp;%
+  m_diagonalize             &nbsp;:   0.650866E-01  0.504547E-03         0.2&nbsp;%
+  exchange correlation      &nbsp;:   0.423030E+00  0.327930E-02         1.4&nbsp;%
+  local pseudopotentials    &nbsp;:   0.917196E-03  0.711005E-05         0.0&nbsp;%
+  non-local pseudopotentials&nbsp;:   0.134238E+01  0.104061E-01         4.4&nbsp;%
+  hartree potentials        &nbsp;:   0.983763E-02  0.762607E-04         0.0&nbsp;%
+  ion-ion interaction       &nbsp;:   0.100725E+00  0.780813E-03         0.3&nbsp;%
+  structure factors         &nbsp;:   0.194015E-01  0.150399E-03         0.1&nbsp;%
+  phase factors             &nbsp;:   0.989427E-04  0.766998E-06         0.0&nbsp;%
+  masking and packing       &nbsp;:   0.317727E+01  0.246300E-01        10.3&nbsp;%
+  queue fft                 &nbsp;:   0.219517E+02  0.170168E+00        71.2&nbsp;%
+  queue fft (serial)        &nbsp;:   0.403896E+01  0.313098E-01        13.1&nbsp;%
+  queue fft (message passing):   0.177802E+02  0.137831E+00        57.6&nbsp;%
+ 
+     &gt;&gt;&gt;  JOB COMPLETED     AT Wed Jun 14 21:38:12 2017  &lt;&lt;&lt;
+
+  Step       Energy      Delta E   Gmax     Grms     Xrms     Xmax   Walltime
+  ---- ---------------- -------- -------- -------- -------- -------- --------
+@   21    -402.98733661 -9.2D-04  0.05831  0.02359  0.00132  0.00646   2113.0</pre><br />
+<br />
+This is where I get the NaN energies:<br />
+<br />
+
+<pre>
+          --------
+          Step  22
+          --------
+ 
+ 
+                         Geometry &quot;geometry&quot; -&gt; &quot;geometry&quot;
+                         ---------------------------------
+ 
+ Output coordinates in angstroms (scale by  1.889725989 to convert to a.u.)
+ 
+  No.       Tag          Charge          X              Y              Z
+ ---- ---------------- ---------- -------------- -------------- --------------
+    1 Al                  13.0000     2.81901480     1.36253440     0.01863815
+    2 Si                  14.0000     3.51796527     8.85209956     2.64390883
+    3 Si                  14.0000     3.56867102     2.90858034     2.63887588
+    4 O                    8.0000     3.39686681     8.81796065     1.02019881
+    5 O                    8.0000     3.59803767     2.80396194     1.00768026
+    6 S                   16.0000     0.88932145     1.26019029     1.27346361
+    7 O                    8.0000    -0.14326436     3.29501680     3.25360849
+    8 O                    8.0000     3.20485958     1.40645490     3.15414811
+    9 O                    8.0000     2.42891555     3.96787867     3.09278317
+   10 Al                  13.0000     0.24093700     5.82828499     0.01653505
+   11 Al                  13.0000     1.07033834     7.31022544     8.34291340
+   12 Al                  13.0000    -1.52404105     2.82211917     8.34732764
+   13 Si                  14.0000     0.94040425     4.36163785     2.64292379
+   14 Si                  14.0000     0.28895549     8.83546019     5.73619205
+   15 Si                  14.0000     2.87370756     4.37096155     5.73551224
+   16 Si                  14.0000     0.98692078     7.37635957     2.63359365
+   17 Si                  14.0000     0.24712927     5.82156045     5.71884794
+   18 Si                  14.0000     2.82388340     1.35334174     5.71793788
+   19 O                    8.0000     0.81922027     4.32665465     1.01895260
+   20 O                    8.0000     0.45202981     8.83053570     7.35689927
+   21 O                    8.0000     3.02875385     4.36454402     7.35867783
+   22 O                    8.0000     1.02220667     7.26831579     1.00139830
+   23 O                    8.0000     0.25183695     5.91738873     7.35385678
+   24 O                    8.0000     2.82705041     1.44707794     7.35385705
+   25 S                   16.0000     3.47486968     5.75122973     1.27991570
+   26 S                   16.0000     2.95119994     7.44454551     7.07222769
+   27 S                   16.0000     0.36122457     2.94616971     7.07387994
+   28 O                    8.0000     2.43340768     7.78704348     3.25390389
+   29 O                    8.0000     3.96351071     5.42786887     5.11652239
+   30 O                    8.0000     1.38017994     0.93264750     5.11421655
+   31 O                    8.0000     0.62837693     5.87478286     3.15419958
+   32 O                    8.0000     0.60434816     7.32860846     5.21474492
+   33 O                    8.0000     3.18782402     2.86095811     5.21600371
+   34 O                    8.0000    -0.15450170     8.43394578     3.09320065
+   35 O                    8.0000     1.38872875     4.76186608     5.26116502
+   36 O                    8.0000     3.96643339     0.29470854     5.26446040
+   37 H                    1.0000     1.17080853     1.76134188     2.48413372
+   38 H                    1.0000     3.77191084     6.26600251     2.47937084
+   39 H                    1.0000     2.48586383     7.07197489     5.85998368
+   40 H                    1.0000    -0.06571002     2.52529147     5.87016592
+ 
+      Lattice Parameters 
+      ------------------ 
+ 
+      lattice vectors in angstroms (scale by  1.889725989 to convert to a.u.)
+ 
+      a1=&lt;   5.161   0.023   0.000 &gt;
+      a2=&lt;   0.000   8.958   0.000 &gt;
+      a3=&lt;  -1.529  -0.153   8.360 &gt;
+      a=       5.161 b=      8.958 c=       8.500
+      alpha=  91.030 beta= 100.370 gamma=  89.750
+      omega=   386.5
+ 
+      reciprocal lattice vectors in a.u.
+ 
+      b1=&lt;   0.644   0.000   0.118 &gt;
+      b2=&lt;  -0.002   0.371   0.006 &gt;
+      b3=&lt;   0.000   0.000   0.398 &gt;
+ 
+      Atomic Mass 
+      ----------- 
+ 
+      Al                26.981540
+      Si                27.976930
+      O                 15.994910
+      S                 31.972070
+      H                  1.007825
+ 
+ 
+          ****************************************************
+          *                                                  *
+          *               NWPW PSPW Calculation              *
+          *                                                  *
+          * [ (Grassmann/Stiefel manifold implementation)  ] *
+          *                                                  *
+          *      [ NorthWest Chemistry implementation ]      *
+          *                                                  *
+          *            version #5.10   06/12/02              *
+          *                                                  *
+          *    This code was developed by Eric J. Bylaska,   *
+          *    and was based upon algorithms and code        *
+          *    developed by the group of Prof. John H. Weare *
+          *                                                  *
+          ****************************************************
+     &gt;&gt;&gt;  JOB STARTED       AT Wed Jun 14 21:38:50 2017  &lt;&lt;&lt;
+          ================ input data ========================
+ pseudopotential is not correctly formatted:
+ Al.vpp                                            
+ 
+ Generated formatted_filename: /lustre/work/chme412/kkoocheki/PPL/perm/Al.vpp
+ wavefunction adjust, new psi:pplopt.movecs                                     
+ -   spin, nalpha, nbeta:                     1                    80
+                     0
+
+ input psi filename:/lustre/work/chme412/kkoocheki/PPL/perm/pplopt.movecs
+
+ number of processors used:        32
+ processor grid          &nbsp;:  32 x   1
+ parallel mapping        &nbsp;:2d hilbert
+ parallel mapping        &nbsp;:  balanced
+ number of threads       &nbsp;:         1
+ parallel io             &nbsp;:       off
+
+ options:
+      boundary conditions  = periodic    (version3)
+      electron spin        = restricted
+      exchange-correlation = LDA (Vosko et al) parameterization
+
+ elements involved in the cluster:
+      1: Al  valence charge:  3.0000  lmax=  2
+             comment   &nbsp;: Hamann pseudopotential
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   2
+             local potential used          &nbsp;:   2
+             number of non-local projections:   4
+             cutoff =   1.241   1.577   1.577
+ 
+      2: Si  valence charge:  0.0000  lmax=  2
+             comment   &nbsp;: Hamann pseudopotential
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   2
+             local potential used          &nbsp;:   2
+             number of non-local projections:   4
+             cutoff =   0.000   0.000   0.000
+ 
+      3: O   valence charge:  6.0000  lmax=  2
+             comment   &nbsp;: Parameterized (Chem.Phys.Lett., vol 322, page 447) Hamman psp
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   2
+             local potential used          &nbsp;:   2
+             number of non-local projections:   4
+             cutoff =   0.700   0.700   0.700
+ 
+      4: S   valence charge:  6.0000  lmax=  2
+             comment   &nbsp;: Hamann pseudopotential
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   2
+             local potential used          &nbsp;:   2
+             number of non-local projections:   4
+             cutoff =   0.843   0.955   0.955
+ 
+      5: H   valence charge:  1.0000  lmax=  1
+             comment   &nbsp;: Parameterized (Chem.Phys.Lett., vol 322, page 447) Hamman psp
+             pseudpotential type           &nbsp;:   0
+             highest angular component     &nbsp;:   1
+             local potential used          &nbsp;:   1
+             number of non-local projections:   1
+             cutoff =   0.800   0.800
+ 
+
+ total charge:   0.000
+
+ atomic composition:
+     Al &nbsp;:    4     Si &nbsp;:    8     O  &nbsp;:   20     S  &nbsp;:    4     H  &nbsp;:    4
+
+ number of electrons: spin up=    80 (  80 per task)  down=    80 (  80 per task) (Fourier space)
+ number of orbitals&nbsp;: spin up=    80 (  80 per task)  down=    80 (  80 per task) (Fourier space)
+
+ supercell:
+      cell_name:  cell_default                                      
+      lattice:    a1=&lt;   9.754   0.043   0.000 &gt;
+                  a2=&lt;   0.000  16.927   0.000 &gt;
+                  a3=&lt;  -2.890  -0.289  15.798 &gt;
+      reciprocal: b1=&lt;   0.644   0.000   0.118 &gt;
+                  b2=&lt;  -0.002   0.371   0.006 &gt;
+                  b3=&lt;   0.000   0.000   0.398 &gt;
+      lattice:    a=       9.754 b=     16.927 c=      16.063
+                  alpha=  91.030 beta= 100.370 gamma=  89.750
+                  omega=      2608.3
+
+      density cutoff= 80.000  fft= 40x 70x 70(    44574 waves     1392 per task)
+      wavefnc cutoff= 40.000  fft= 40x 70x 70(    15743 waves      491 per task)
+      Ewald summation: cut radius=    3.00  and  8
+                       Madelung Wigner-Seitz= 1.59020812 (alpha= 2.56340270 rs= 8.53927591)
+
+ technical parameters:
+      time step=      5.80     ficticious mass=  400000.0
+      tolerance=0.100E-06 (energy)   0.100E-06 (density)
+      maximum iterations =      1000 (   10 inner    100 outer )
+
+
+
+
+
+== Energy Calculation ==
+
+
+          ====== Grassmann conjugate gradient iteration ======
+     &gt;&gt;&gt;  ITERATION STARTED AT Wed Jun 14 21:38:52 2017  &lt;&lt;&lt;
+    iter.           Energy         DeltaE       DeltaRho 
+    ------------------------------------------------------
+     -  15 steepest descent iterations performed
+      10                 NaN            NaN            NaN
+      20                 NaN            NaN            NaN
+      30                 NaN            NaN            NaN
+      40                 NaN            NaN            NaN
+      50                 NaN            NaN            NaN
+      60                 NaN            NaN            NaN
+      70                 NaN            NaN            NaN
+      80                 NaN            NaN            NaN
+      90                 NaN            NaN            NaN
+     100                 NaN            NaN            NaN
+     110                 NaN            NaN            NaN
+     120                 NaN            NaN            NaN
+     130                 NaN            NaN            NaN
+     140                 NaN            NaN            NaN
+     150                 NaN            NaN            NaN
+     160                 NaN            NaN            NaN
+     170                 NaN            NaN            NaN
+     180                 NaN            NaN            NaN
+     190                 NaN            NaN            NaN
+     200                 NaN            NaN            NaN
+     210                 NaN            NaN            NaN
+     220                 NaN            NaN            NaN
+     230                 NaN            NaN            NaN
+     240                 NaN            NaN            NaN
+     250                 NaN            NaN            NaN
+     260                 NaN            NaN            NaN
+     270                 NaN            NaN            NaN
+     280                 NaN            NaN            NaN
+     290                 NaN            NaN            NaN
+     300                 NaN            NaN            NaN
+     310                 NaN            NaN            NaN
+     320                 NaN            NaN            NaN
+     330                 NaN            NaN            NaN
+     340                 NaN            NaN            NaN
+     350                 NaN            NaN            NaN
+     360                 NaN            NaN            NaN
+     370                 NaN            NaN            NaN
+     380                 NaN            NaN            NaN
+     390                 NaN            NaN            NaN
+     400                 NaN            NaN            NaN
+     410                 NaN            NaN            NaN
+     420                 NaN            NaN            NaN
+     430                 NaN            NaN            NaN
+     440                 NaN            NaN            NaN
+     450                 NaN            NaN            NaN
+</pre><br />
+<br />
+Any help appreciated.
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />      <br />
+</body> 
+</html> 
