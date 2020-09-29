@@ -163,23 +163,23 @@ parameters determine the selection of grid points.</p>
 
 <p>is given, the grid and the electrostatic potential is recalculated.</p>
 <ul>
-<li>The extent of the grid is determined by</li>
+<li>The extent of the grid is determined by the <code>range</code> keyword</li>
 </ul>
 <pre><code>       range &lt;real rcut&gt; 
 </code></pre>
 
-<p>where rcut is the maximum distance in nm between a grid point and any of the atomic centers. 
+<p>where <code>rcut</code> is the maximum distance in nm between a grid point and any of the atomic centers. 
 When omitted, a default value for rcut of 0.3 nm is used.</p>
 <ul>
-<li>The grid spacing is specified by</li>
+<li>The grid spacing is specified by the <code>spacing</code> keyword</li>
 </ul>
 <pre><code>       spacing &lt;real spac&gt;  
 </code></pre>
 
-<p>where spac is the grid spacing in <em>nm</em> for the regularly spaced grid points.
+<p>where <code>spac</code> is the grid spacing in <em>nm</em> for the regularly spaced grid points.
 If not specified, a default spacing of 0.05 nm is used.</p>
 <ul>
-<li>The van der Waals radius of an element can be specified by</li>
+<li>The van der Waals <code>radius</code> of an element can be specified by</li>
 </ul>
 <pre><code>       radius &lt;integer iatnum&gt; &lt;real atrad&gt;  
 </code></pre>
@@ -187,21 +187,19 @@ If not specified, a default spacing of 0.05 nm is used.</p>
 <p>where iatnum is the atomic number for which a van der Waals radius of atrad in nm will be used in the grid point determination.<br />
 Default values will be used for atoms not specified.</p>
 <ul>
-<li>The probe radius in nm determining the envelope around the molecule
-    is specified by</li>
+<li>The <code>probe</code> radius in nm determining the envelope around the molecule is specified by</li>
 </ul>
 <pre><code>       probe &lt;real probe default 0.07&gt;
 </code></pre>
 
 <ul>
 <li>The distance between atomic center and probe center can be
-    multiplied by a constant factor specified
-by</li>
+    multiplied by a constant <code>factor</code> specified by</li>
 </ul>
 <pre><code>       factor &lt;real factor default 1.0&gt;
 </code></pre>
 
-<p>All grid points are discarded that lie within a distance factor<em>(radius(i)+probe) from any atom </em><em>i</em>*.</p>
+<p>All grid points are discarded that lie within a distance <code>factor*(radius(i)+probe)</code> from any atom <strong>i</strong>.</p>
 <ul>
 <li>Schwarz screening is applied using</li>
 </ul>
@@ -218,7 +216,7 @@ using</li>
 <pre><code>       constrain &lt;real charge {&lt;integer iatom&gt;}
 </code></pre>
 
-<p>where charge is the net charge of the set of atoms {iatom}. A negative atom number iatom can be<br />
+<p>where <code>charge</code> is the net charge of the set of atoms <code>{iatom}</code>. A negative atom number iatom can be<br />
 used to specify that the partial charge of that atom is substracted in the sum for the set.</p>
 <ul>
 <li>The net charge of a sequence of atoms can be constrained using</li>
@@ -226,7 +224,7 @@ used to specify that the partial charge of that atom is substracted in the sum f
 <pre><code>       constrain &lt;real charge&gt; &lt;integer iatom&gt; through &lt;integer jatom&gt; 
 </code></pre>
 
-<p>where charge is the net charge of the set of atoms {[iatom:jatom]}.</p>
+<p>where charge is the net charge of the set of atoms <code>{[iatom:jatom]}</code>.</p>
 <ul>
 <li>A group of atoms can be constrained to have the same charge with</li>
 </ul>
@@ -247,7 +245,9 @@ with</li>
 <pre><code>       constrain xhn  &lt;integer iatom&gt; {&lt;integer jatom&gt;}
 </code></pre>
 
-<p>can be used to constrain the set {iatom,{jatom}} to zero charge, and constrain all atoms  in {jatom} to have the same charge. This can be used, for example, to restrain a methyl    group to zero charge, and have all hydrogen carrying identical charges.</p>
+<p>can be used to constrain the set <code>{iatom,{jatom}}</code> to zero charge, and constrain all atoms  in <code>{jatom}</code>
+to have the same charge. This can be used, for example, to restrain a methyl    group to zero charge,
+and have all hydrogen carrying identical charges.</p>
 <h2 id="restraints">Restraints<a class="headerlink" href="#restraints" title="Permanent link">&para;</a></h2>
 <p>Restraints can be applied to each partial charge using the RESP charge
 fitting procedure.</p>
@@ -259,43 +259,16 @@ fitting procedure.</p>
        [maxiter &lt;integer maxit&gt;]  [tolerance &lt;real toler&gt;])
 </code></pre>
 
-<p>Here hfree can be specified to exclude hydrogen atoms from the
-restaining procedure. Variable scale is the strength of the restraint
-potential, with a default of 0.005 au for the harmonic restraint and a
-default value of 0.001 au for the hyperbolic restraint. For the
-hyperbolic restraints the tightness tight can be specified to change the
+<p>Here <code>hfree</code> can be specified to exclude hydrogen atoms from the
+restraining procedure. Variable <code>scale</code> is the strength of the restraint
+potential, with a default of 0.005 au for the <code>harmonic</code> restraint and a
+default value of 0.001 au for the <code>hyperbolic</code> restraint. For the
+hyperbolic restraints the tightness <code>tight</code> can be specified to change the
 default value of 0.1 e. The iteration count that needs to be carried out
 for the hyperbolic restraint is determined by the maximum number of
-allowed iterations maxiter, with a default value of 25, and the
-tolerance in the convergence of the partial charges toler, with a
+allowed iterations <code>maxiter</code>, with a default value of 25, and the
+<code>tolerance</code> in the convergence of the partial charges <code>toler</code>, with a
 default of 0.001 e.</p>
-<h2 id="plotting">Plotting<a class="headerlink" href="#plotting" title="Permanent link">&para;</a></h2>
-<p>The electrostatic potential computed on a grid can be displayed using
-the  <a href="https://research.csc.fi/-/gopenmol_download">gOpenMol</a>  code.</p>
-<p>A necessary step requires to convert the .plt file computed by the ESP
-module from human readable to machine readable format; this can be
-achieved by using the gOpenMol Pltfile converter.</p>
-<p>In practice, you would need to follow the following steps</p>
-<ol>
-<li>rename <em>filename.plt</em> to <em>filename.plt.txt</em></li>
-<li>start gOpenMol</li>
-<li>open the <strong><ins>R</ins>un</strong> menu</li>
-<li>select the <strong>Pltfile (conversion)</strong> utility</li>
-<li>choose <em>filename.plt.txt</em> as input file name and <em>filename.plt</em> as
-    the output file name</li>
-<li>select <strong>Formatted ==> Unformatted</strong></li>
-<li>read the <em>filename.xyz</em> file by going to: <strong>File -> Import ->
-    Coord -> Browse -> Apply</strong>; you should see your system in the main
-    graphical window as connections between atoms</li>
-<li>plot the density by going to <strong>Plot -> Contour</strong></li>
-<li>first click <strong><ins>B</ins>rowse</strong> and read the gOpenMol filename.plt
-    file:</li>
-<li>then click <strong>Import</strong></li>
-<li>define desired <strong>Contour level</strong></li>
-<li>click <strong><ins>A</ins>pply</strong></li>
-</ol>
-<p>More details at:
-<a href="http://nms.kcl.ac.uk/lev.kantorovitch/codes/lev00/node71.html">http://nms.kcl.ac.uk/lev.kantorovitch/codes/lev00/node71.html</a></p>
               
             </div>
           </div>
