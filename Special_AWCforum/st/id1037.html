@@ -1,0 +1,1398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="Error in CPHF module during SCF hessian calculaciton Viewed 1635 times, With a total of 0 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id1037 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >Error in CPHF module during SCF hessian calculaciton</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_3770"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3770" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id3770.html">4:19:27 PM PDT - Wed, Oct 30th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Dear NWChem developers,<br />
+<br />
+I was trying to calculate initial hessian for geometry optimization of large polyene molecule (rhodopine glucoside) using SCF/cc-pvdz. However, calculation fails at the CPHF stage with error:  "lkain: failed allocating subspace4      354".<br />
+I attached a part of output and input file below for reference^<br />
+<div class='quote_title'>Quote:username<div class='quote'>                                NWChem CPHF Module<br />
+
+<pre>                               ------------------<br />
+</pre>
+<br />
+<br />
+
+<pre> scftype          =     RHF <br />
+ nclosed          =      195<br />
+ nopen            =        0<br />
+ variables        =   178425<br />
+ # of vectors     =      354<br />
+ tolerance        = 0.10D-03<br />
+ level shift      = 0.00D+00<br />
+ max iterations   =       50<br />
+ max subspace     =     3540<br />
+</pre>
+<br />
+
+<pre>SCF residual:    7.2974634289027011E-007<br />
+</pre>
+<br />
+<br />
+Iterative solution of linear equations<br />
+
+<pre> No. of variables   178425<br />
+ No. of equations      354<br />
+ Maximum subspace     3540<br />
+       Iterations       50<br />
+      Convergence  1.0D-04<br />
+       Start time  25036.4<br />
+</pre>
+<br />
+
+<pre>------------------------------------------------------------------------<br />
+lkain: failed allocating subspace4      354<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+lkain: failed allocating subspace4      354<br />
+lkain: failed allocating subspace4      354<br />
+ current input line&nbsp;: <br />
+  151: TASK scf hessian<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+For further details see manual section:                                                                                                                                                                                                                                                                <br />
+lkain: failed allocating subspace4      354<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+</pre>
+0:0:lkain: failed allocating subspace4:: 354<br />
+(rank:0 hostname:daniilkh pid:4081):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0<br />
+Last System Error Message from Task 0:: No such file or directory<br />
+
+<hr /><br />
+MPI_ABORT was invoked on rank 0 in communicator MPI COMMUNICATOR 4 DUP FROM 0 <br />
+with errorcode 354.<br />
+<br />
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.<br />
+You may or may not see output from other processes, depending on<br />
+exactly when Open MPI kills them.<br />
+
+<hr /><br />
+<pre>    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+</pre>
+1:1:lkain: failed allocating subspace4:: 354<br />
+(rank:1 hostname:daniilkh pid:4082):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0<br />
+
+<pre>    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+</pre>
+2:2:lkain: failed allocating subspace4:: 354<br />
+(rank:2 hostname:daniilkh pid:4083):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0<br />
+
+<pre>    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+</pre>
+3:3:lkain: failed allocating subspace4:: 354<br />
+(rank:3 hostname:daniilkh pid:4084):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/armci.c:ARMCI_Error():208 cond:0<br />
+Last System Error Message from Task 1:: No such file or directory<br />
+Last System Error Message from Task 2:: No such file or directory<br />
+Last System Error Message from Task 3:: No such file or directory<br />
+
+<hr /><br />
+mpirun has exited due to process rank 2 with PID 4083 on<br />
+node daniilkh exiting improperly. There are two reasons this could occur:<br />
+<br />
+1. this process did not call "init" before exiting, but others in<br />
+the job did. This can cause a job to hang indefinitely while it waits<br />
+for all processes to call "init". By rule, if one process calls "init",<br />
+then ALL processes must call "init" prior to termination.<br />
+<br />
+2. this process called "init", but exited without calling "finalize".<br />
+By rule, all processes that call "init" MUST call "finalize" prior to<br />
+exiting or it will be considered an "abnormal termination"<br />
+<br />
+This may have caused other processes in the application to be<br />
+terminated by signals sent by mpirun (as reported here).<br />
+
+<hr /><br />
+[daniilkh:04080] 3 more processes have sent help message help-mpi-api.txt / mpi-abort<br />
+[daniilkh:04080] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages<br />
+</div id="quote"></div id="quote"><br />
+<br />
+Input:<br />
+<div class='quote_title'>Quote:username<div class='quote'>TITLE "Rhodopine glucoside geometry DFT B3LYP/CC-PVDZ optimization"<br />
+START RG1_opt<br />
+MEMORY 700 mw<br />
+<br />
+CHARGE 0<br />
+<br />
+GEOMETRY units an<br />
+
+<pre>C    1.9845662868   0.8506136590  -5.6939107751<br />
+C    2.0055176263   2.3472442708  -6.0247098616<br />
+O    2.6775709374   0.6130392630  -4.4728598764<br />
+C    4.0612686384   0.9861580957  -4.4796308203<br />
+C    4.1417313464   2.5019941923  -4.7097790211<br />
+C    3.4473233690   2.8389555898  -6.0294353814<br />
+O    2.5370337186   0.1922322185  -6.7928979590<br />
+H    0.9585731910   0.5048599898  -5.4870880413<br />
+H    1.4570942604   2.8800368614  -5.2317934285<br />
+O    1.4215627912   2.5993406145  -7.3069945139<br />
+H    4.6010556742   0.4592375174  -5.2849879072<br />
+C    4.6817778587   0.5335244874  -3.1733122440<br />
+O    5.5002223416   2.9163104021  -4.7450031338<br />
+H    3.5939771353   3.0023974747  -3.8806743309<br />
+H    3.9909236831   2.3240112357  -6.8433141105<br />
+O    3.5256463409   4.2537753828  -6.2113280741<br />
+C    2.2033201284  -1.2077486215  -7.0076490008<br />
+O    4.8976420816  -0.8699997897  -3.2716072275<br />
+H    0.6797843824   3.2098703242  -7.1795241293<br />
+H    5.6317349682   1.0874636648  -3.0278279941<br />
+H    3.9908210085   0.7888215779  -2.3468668575<br />
+H    5.4702586684   3.8241457964  -5.0916297518<br />
+H    3.2320437811   4.4112475948  -7.1238370476<br />
+C    2.6950058459  -2.0628366956  -5.8300662140<br />
+C    0.6866172013  -1.3668492122  -7.2030778816<br />
+C    2.9561639905  -1.5201511230  -8.3283924518<br />
+H    5.2417702562  -1.1817933648  -2.4214836338<br />
+C    3.0588875904  -3.0210123938  -8.5702451171<br />
+C    3.7911553735  -3.5326091420  -9.8158634444<br />
+C    3.9068257148  -5.0584464848  -9.8291774882<br />
+H    2.3635436319  -3.1075821047  -5.9373445251<br />
+H    3.7931115616  -2.0523939900  -5.7607616937<br />
+H    2.3127089517  -1.6772024321  -4.8784778586<br />
+H    0.4619813500  -2.3779408595  -7.5728459684<br />
+H    0.1324523205  -1.2493349432  -6.2597292438<br />
+H    0.3132046049  -0.6306869499  -7.9334874097<br />
+H    2.4424217357  -0.9993828887  -9.1551089608<br />
+H    3.9585250495  -1.0706491217  -8.2398762413<br />
+H    3.5753387261  -3.4413161085  -7.7003859333<br />
+H    2.0452076706  -3.4527360674  -8.5639968326<br />
+H    3.2803912877  -3.1943979176 -10.7349782086<br />
+H    4.8028613686  -3.0902865758  -9.8633100925<br />
+C    3.3052647826  -5.7808017514  -8.6406756033<br />
+C    4.5154638731  -5.7221782093 -10.8497132724<br />
+H    4.9428550290  -5.1450991738 -11.6781053978<br />
+H    3.3979209033  -6.8684750033  -8.6731498307<br />
+H    3.7806514657  -5.4474153174  -7.7043457085<br />
+H    2.2322960144  -5.5491086305  -8.5461953271<br />
+C    4.6092329945  -7.1623073553 -10.9043540967<br />
+C    5.1594818412  -7.9786012219 -11.8398643040<br />
+H    4.1483100566  -7.6709418135 -10.0617791030<br />
+C    5.1146480104  -9.4270135346 -11.7364504406<br />
+H    5.6550086825  -7.5603912590 -12.7265426646<br />
+C    4.4213083799 -10.0325965929 -10.5345275174<br />
+C    5.6772204020 -10.2030752312 -12.7150308266<br />
+C    5.6778096349 -11.6338904852 -12.7377671731<br />
+H    6.1666276406  -9.6984529640 -13.5551060428<br />
+H    4.4303497667 -11.1268586286 -10.5448618379<br />
+H    4.8994454252  -9.7184952782  -9.5906530278<br />
+H    3.3635280159  -9.7225014345 -10.4790242253<br />
+C    6.2186272605 -12.4377377752 -13.6996113195<br />
+C    6.1863340552 -13.8801836547 -13.6552571139<br />
+C    6.7678229470 -14.5915955573 -14.6828972451<br />
+H    5.1933547033 -12.1344118791 -11.8991992964<br />
+H    6.7137034764 -11.9847704317 -14.5678503765<br />
+C    6.8493512849 -16.0049737415 -14.8258058737<br />
+H    7.2287121296 -14.0131308210 -15.4928014673<br />
+C    5.5183417870 -14.5468844797 -12.4765390265<br />
+H    5.5548414050 -15.6392009416 -12.5284725552<br />
+H    5.9941865491 -14.2447903139 -11.5296883063<br />
+H    4.4584232863 -14.2542640428 -12.4044107968<br />
+C    7.4646767263 -16.6226322740 -15.8836704997<br />
+H    6.4062461930 -16.6494857057 -14.0625540045<br />
+C    7.5314158731 -18.0373121086 -16.0227842552<br />
+H    7.9257227828 -15.9930486354 -16.6481226651<br />
+C    8.1657323025 -18.7306049699 -17.0316847051<br />
+H    7.0379069847 -18.6184902640 -15.2342700229<br />
+C    8.1332580601 -20.1711029517 -17.0150737749<br />
+C    8.8601229236 -17.9680116979 -18.1386747535<br />
+C    8.7919060351 -20.9951256267 -17.8872588077<br />
+H    7.5125829115 -20.6204740809 -16.2304824399<br />
+H    9.2520104542 -18.6128853384 -18.9336836597<br />
+H    8.1578608434 -17.2645998506 -18.6142007651<br />
+H    9.7005889558 -17.3740050621 -17.7469957497<br />
+C    8.7022450216 -22.4185801427 -17.9533907239<br />
+H    9.4293934382 -20.5164633005 -18.6321519431<br />
+C    9.3156891634 -23.1744002960 -18.9334451240<br />
+C    10.2006448607 -22.4830563259 -19.9519259927<br />
+C    9.0682681481 -24.5910294499 -19.0333425917<br />
+H    8.0678831789 -22.9237336667 -17.2195709401<br />
+H    10.7252930232 -23.1810252459 -20.6152320579<br />
+H    9.6124295987 -21.8050162562 -20.5931476192<br />
+H    10.9728877587 -21.8757171701 -19.4567838464<br />
+C    9.5519432232 -25.3914718310 -20.0392174629<br />
+H    8.4203893392 -25.0280381077 -18.2625459208<br />
+C    9.3345935692 -26.7845356561 -20.2777452584<br />
+H    10.1790064970 -24.8961137073 -20.7765286466<br />
+C    9.8851408514 -27.4524719148 -21.3482457355<br />
+H    8.6970049978 -27.3407559818 -19.5839572010<br />
+C    9.6139069942 -28.8590696580 -21.5451762692<br />
+C    10.7782282690 -26.7133989928 -22.3269472357<br />
+H    11.1693775786 -27.3565959910 -23.1235969611<br />
+H    10.2335542198 -25.8915163476 -22.8173560544<br />
+H    11.6476930621 -26.2661480334 -21.8205621241<br />
+C    10.1111086628 -29.6437585400 -22.5478261123<br />
+H    8.9449644477 -29.3254360832 -20.8076480177<br />
+C    9.8449036191 -31.0435503744 -22.7455477032<br />
+H    10.7822936739 -29.1854672898 -23.2744903299<br />
+C    10.3949227765 -31.7961373035 -23.7350390051<br />
+H    9.1574678771 -31.5272319536 -22.0439273584<br />
+C    10.0619224097 -33.2709586413 -23.8292669165<br />
+C    11.3536011982 -31.2139552474 -24.7562234122<br />
+H    10.5718262127 -33.7569259573 -24.6744678070<br />
+H    10.3583376228 -33.8082578426 -22.9124518466<br />
+H    8.9785862913 -33.4362702128 -23.9547651988<br />
+H    11.6952307817 -31.9792247485 -25.4673757617<br />
+H    10.8926359642 -30.4013875234 -25.3445204223<br />
+H    12.2525483712 -30.7801975436 -24.2849738347<br />
+<br />
+ZCOORD<br />
+</pre>
+	cvr_scaling 1.7<br />
+
+<pre>END<br />
+</pre>
+END<br />
+<br />
+<br />
+<br />
+BASIS<br />
+
+<pre>H  library cc-pvdz<br />
+O  library cc-pvdz<br />
+C  library cc-pvdz<br />
+</pre>
+END<br />
+<br />
+DFT<br />
+
+<pre>iterations 50<br />
+XC b3lyp<br />
+direct<br />
+</pre>
+END<br />
+<br />
+DRIVER<br />
+
+<pre>maxiter 50<br />
+inhess 2<br />
+</pre>
+END<br />
+<br />
+TASK scf hessian<br />
+TASK dft optimize<br />
+<br />
+</div id="quote"></div id="quote"><br />
+<br />
+Task was performed on Intel 4-core i5 with 24 Gb of memory.<br />
+<br />
+Could you please help me with this problem?<br />
+Thanks in advance.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../index.html">Forum</a> &gt;&gt; <a href="../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../sf/id5.html">Running NWChem</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />
+</body> 
+</html> 

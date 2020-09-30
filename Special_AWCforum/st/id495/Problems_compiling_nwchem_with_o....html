@@ -1,0 +1,2133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="Problems compiling nwchem with openSUSE, gcc, openmpi Viewed 10011 times, With a total of 12 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id495_Problems_compiling_nwchem_with_o_html skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >Problems compiling nwchem with openSUSE, gcc, openmpi</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_1713"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1713" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1713.html">9:12:12 PM PDT - Fri, Jul 6th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi,<br />
+<br />
+I am trying to kompile nwchem-6.1.1 using the method described on the nwchem website. My systems are openSUSE 12.1, openmpi, gcc. The environment variables have been set as follows:<br />
+<br />
+`<br />
+export NWCHEM_TOP=/usr/local/nwchem<br />
+export NWCHEM_TARGET=LINUX64<br />
+export USE_MPI=y<br />
+export USE_MPIF=y<br />
+export USEMPIF4=y<br />
+export LIBMPI="-lmpi_f90 -lmpi_f77 -lmpi -lpthread"<br />
+export MPI_LOC=/usr/lib64/mpi/gcc/openmpi/bin<br />
+export MPI_LIB=/usr/lib64/mpi/gcc/openmpi/lib64<br />
+export MPI_INCLUDE=/usr/lib64/mpi/gcc/openmpi<br />
+export NWCHEM_MODULES="all"<br />
+export USE_NOFSCHECK=TRUE<br />
+export FC=gcc-fortran<br />
+export CC=gcc<br />
+`<br />
+The make.log refers to config.log where the first "bad news" <br />
+is down about 150 lines:<br />
+<br />
+`<br />
+Thread model: posix<br />
+gcc version 4.6.2 (SUSE Linux) <br />
+configure:4684: $? = 0<br />
+configure:4673: gcc -V &gt;&amp;5<br />
+gcc: error: unrecognized option '-V'<br />
+gcc: fatal error: no input files<br />
+compilation terminated.<br />
+configure:4684: $? = 1<br />
+configure:4673: gcc -qversion &gt;&amp;5<br />
+gcc: error: unrecognized option '-qversion'<br />
+gcc: fatal error: no input files<br />
+compilation terminated.<br />
+`<br />
+<br />
+Is there anybody out there who has successfully kompiled nwchem with the combination of programs?<br />
+<br />
+Thanks,<br />
+John Keller
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1715"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1715" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1715.html">10:50:57 AM PDT - Mon, Jul 9th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">More information on kompiling nwchem with openSUSE openmpi and gcc<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">On several systems running openSUSE 11.4 or 12.1, the config.log also refers to "failed program confdefs.h" and the Global Arrays (GA) package.  The relevant lines in the config.log are as follows. What is my next step is getting NWChem to kompile?- install a different, earlier, version of gcc? <br />
+<br />
+`<br />
+configure:5285: checking how to run the C preprocessor<br />
+configure:5316: gcc -E  conftest.c<br />
+configure:5316: $? = 0<br />
+configure:5330: gcc -E  conftest.c<br />
+conftest.c:17:28: fatal error: ac_nonexistent.h: No such file or directory<br />
+compilation terminated.<br />
+configure:5330: $? = 1<br />
+configure: failed program was:<br />
+| /* confdefs.h */<br />
+| #define PACKAGE_NAME "Global Arrays (GA)"<br />
+| #define PACKAGE_TARNAME "ga"<br />
+| #define PACKAGE_VERSION "5.1"<br />
+| #define PACKAGE_STRING "Global Arrays (GA) 5.1"<br />
+| #define PACKAGE_BUGREPORT "hpctools@pnl.gov"<br />
+| #define PACKAGE_URL "<a target='blank' href="http://www.emsl.pnl.gov/docs/global/" class="external free">http://www.emsl.pnl.gov/docs/global/</a>"<br />
+| #define LINUX 1<br />
+| #define SYSV 1<br />
+| #define PACKAGE "ga"<br />
+| #define VERSION "5.1"<br />
+| #define MSG_COMMS_TCGMSGMPI 1<br />
+| #define MSG_COMMS_MPI 1<br />
+| #define ENABLE_PEIGS 1<br />
+| #define ENABLE_PROFILING 0<br />
+| /* end confdefs.h.  */<br />
+| #include &lt;ac_nonexistent.h&gt;<br />
+`
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1717"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1717" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1717.html">10:50:44 AM PDT - Tue, Jul 10th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">PNNL compiles NWChem with Radhat Linux64, gfortran and gcc.<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi again - I am answering my own posts as information becomes available, in the absence of feedback from PNNL.<br />
+According to the NWChem Developers page:<br />
+"1.Code will be build nightly on a Redhat Linux64 Platform using gfortran and gcc."<br />
+So there should be no need to invest in other fortran or C compilers. <br />
+The question is: which version of gfortran and gcc is being used successfully at PNNL?<br />
+John Keller
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1719"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1719" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Regular</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1719.html">12:14:13 PM PDT - Tue, Jul 10th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi John,<br />
+<br />
+Sorry about the delay. First of all let me fill you in on the compilers I am using. I have a used a variety of GNU compilers ranging from the older versions 4.1.2 on my Redhat desktop system and the combination of gcc 4.2.1 with gfortran 4.6.0 on a Macintosh. In both cases I could generate a working executable.<br />
+<br />
+As for the environment settings in your original posting most of them seem alright. One that worries me is<br />
+<br />
+
+<pre>    export FC=gcc-fortran<br />
+</pre>
+<br />
+The issue here is that NWChem's configuration mechanism will try and guess what compiler flags to use based on the compiler name. NWChem will recognize "gfortran" but has no idea what "gcc-fortran" is. Hence it is likely to wrongly guess which compiler flags to use.<br />
+<br />
+Another one that worries my is your NWCHEM_TOP. Our build procedure insists that the release number is present in the directory name. So the directory would have to be something like nwchem-6.1.1 or nwchem-6.1.1-john. The directory name /usr/local/nwchem would usually cause the build to fail. However, getting as far as you have you might already have addressed that.<br />
+<br />
+However, I will have a closer look at your issue. The reason being that your compilation does not fail in compiling actual NWChem code. Instead the compilation fails well before that in the Global Array configuration phase. It is not immediately obvious to me why that happens.<br />
+<br />
+These are just my initial two cents. I will try and establish where the particular configuration failure comes from.<br />
+<br />
+Best wishes,  Huub
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1723"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1723" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1723.html">3:13:27 PM PDT - Tue, Jul 10th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">Thanks, Huub<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Huub,<br />
+Thank you for the input. Yes, I have changed the "gcc-fortran" to just "gfortran", but I am having basically the same result as shown. My consultants at the Arctic Region S.C. have experience compiling NWChem with openmpi/gcc/gfortran and today they made some suggestions also - if they pan out, I will report immediately.<br />
+John Keller
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1752"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1752" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem6" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1752.html">12:26:34 PM PDT - Mon, Jul 16th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">Still having problems. also with openSUSE 11.1, gcc v. 4.3 and openmpi 1.2.8<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi,<br />
+The following environment variables were set:<br />
+<br />
+export NWCHEM_TOP=/usr/local/nwchem-6.1.1<br />
+export NWCHEM_TARGET=LINUX64<br />
+export USE_MPI=y<br />
+export USE_MPIF=y<br />
+export USE_MPIF4=y<br />
+export LIBMPI "-lmpi_f90 -lmpi_f77 -lmpi -ldl -Wl,--export-dynamic -lnsl -lutil"<br />
+export MPI_LOC=/usr/lib64/mpi/gcc/openmpi/bin<br />
+export MPI_LIB=/usr/lib64/mpi/gcc/openmpi/lib64<br />
+export MPI_INCLUDE=usr/lib64/mpi/gcc/openmpi<br />
+export NWCHEM_MODULES="all"<br />
+export USE_NOFSCHECK=TRUE<br />
+export FC=gfortran<br />
+export CC=gcc<br />
+<br />
+Then I did<br />
+&gt; cd NWCHEM_TOP/src<br />
+&gt; make realclean;<br />
+&gt; make &gt;&amp; make.log<br />
+<br />
+In the resulting make.log file, lines 31-end are as follows:<br />
+<br />
+make[1]: warning: -jN forced in submake: disabling jobserver mode.<br />
+<br />
+
+<ul><li><ul><li><ul><li> Configuring Parallel Tools ****<br />
+</li></ul>
+</li></ul>
+</li></ul>
+<br />
+../ga-5-1/configure --prefix=/usr/local/nwchem-6.1.1/src/tools/install --with-tcgmsg --with-mpi=-Iusr/lib64/mpi/gcc/openmpi -L/usr/lib64/mpi/gcc/openmpi/lib64 -lmpi /usr/lib64/mpi/gcc/openmpi/bin --enable-peigs --enable-underscoring --disable-mpi-tests --without-scalapack --without-lapack --without-blas CC=gcc F77=gfortran<br />
+checking build system type... x86_64-unknown-linux-gnu<br />
+checking host system type... x86_64-unknown-linux-gnu<br />
+checking for TARGET base (64bit-ness checked later)... LINUX<br />
+checking whether we think this system is what we call SYSV... yes<br />
+checking whether we are cross compiling... no<br />
+checking for a BSD-compatible install... /usr/bin/install -c<br />
+checking whether build environment is sane... yes<br />
+checking for a thread-safe mkdir -p... /bin/mkdir -p<br />
+checking for gawk... gawk<br />
+checking whether make sets $(MAKE)... yes<br />
+checking whether to enable maintainer-specific portions of Makefiles... no<br />
+configure: Detected VPATH build<br />
+configure: <br />
+configure: C compiler<br />
+configure: <br />
+checking for style of include used by make... GNU<br />
+checking whether the C compiler works... no<br />
+configure: error: in `/usr/local/nwchem-6.1.1/src/tools/build':<br />
+configure: error: C compiler cannot create executables<br />
+See `config.log' for more details<br />
+make[1]: *** [build/config.status] Error 1<br />
+make: *** [libraries] Error 1<br />
+<br />
+There is probably something dumb I am doing as a nwchem/linux newbie here. Can I send the make.log and config.log files to try and glean a clue about what to do next?<br />
+John Keller
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1753"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1753" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem7" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1753.html">2:53:25 PM PDT - Mon, Jul 16th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Can you send the tools/build/config.log to bert.dejong@pnl.gov .<br />
+<br />
+Have you tried just typing gcc or "which gcc" to see if the configure script can actually find the compiler?<br />
+<br />
+Bert<br />
+<br />
+<br />
+<div class='quote_title'>Quote:Jwkeller <a target='blank' href="../../sp/id1752.html" title="Special:AWCforum/sp/id1752">Jul 16th 7:26 pm</a><div class='quote'>Hi,<br />
+The following environment variables were set:<br />
+<br />
+export NWCHEM_TOP=/usr/local/nwchem-6.1.1<br />
+export NWCHEM_TARGET=LINUX64<br />
+export USE_MPI=y<br />
+export USE_MPIF=y<br />
+export USE_MPIF4=y<br />
+export LIBMPI "-lmpi_f90 -lmpi_f77 -lmpi -ldl -Wl,--export-dynamic -lnsl -lutil"<br />
+export MPI_LOC=/usr/lib64/mpi/gcc/openmpi/bin<br />
+export MPI_LIB=/usr/lib64/mpi/gcc/openmpi/lib64<br />
+export MPI_INCLUDE=usr/lib64/mpi/gcc/openmpi<br />
+export NWCHEM_MODULES="all"<br />
+export USE_NOFSCHECK=TRUE<br />
+export FC=gfortran<br />
+export CC=gcc<br />
+<br />
+Then I did<br />
+&gt; cd NWCHEM_TOP/src<br />
+&gt; make realclean;<br />
+&gt; make &gt;&amp; make.log<br />
+<br />
+In the resulting make.log file, lines 31-end are as follows:<br />
+<br />
+make[1]: warning: -jN forced in submake: disabling jobserver mode.<br />
+<br />
+
+<ul><li><ul><li><ul><li> Configuring Parallel Tools ****<br />
+</li></ul>
+</li></ul>
+</li></ul>
+<br />
+../ga-5-1/configure --prefix=/usr/local/nwchem-6.1.1/src/tools/install --with-tcgmsg --with-mpi=-Iusr/lib64/mpi/gcc/openmpi -L/usr/lib64/mpi/gcc/openmpi/lib64 -lmpi /usr/lib64/mpi/gcc/openmpi/bin --enable-peigs --enable-underscoring --disable-mpi-tests --without-scalapack --without-lapack --without-blas CC=gcc F77=gfortran<br />
+checking build system type... x86_64-unknown-linux-gnu<br />
+checking host system type... x86_64-unknown-linux-gnu<br />
+checking for TARGET base (64bit-ness checked later)... LINUX<br />
+checking whether we think this system is what we call SYSV... yes<br />
+checking whether we are cross compiling... no<br />
+checking for a BSD-compatible install... /usr/bin/install -c<br />
+checking whether build environment is sane... yes<br />
+checking for a thread-safe mkdir -p... /bin/mkdir -p<br />
+checking for gawk... gawk<br />
+checking whether make sets $(MAKE)... yes<br />
+checking whether to enable maintainer-specific portions of Makefiles... no<br />
+configure: Detected VPATH build<br />
+configure: <br />
+configure: C compiler<br />
+configure: <br />
+checking for style of include used by make... GNU<br />
+checking whether the C compiler works... no<br />
+configure: error: in `/usr/local/nwchem-6.1.1/src/tools/build':<br />
+configure: error: C compiler cannot create executables<br />
+See `config.log' for more details<br />
+make[1]: *** [build/config.status] Error 1<br />
+make: *** [libraries] Error 1<br />
+<br />
+There is probably something dumb I am doing as a nwchem/linux newbie here. Can I send the make.log and config.log files to try and glean a clue about what to do next?<br />
+John Keller</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1796"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1796" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem8" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1796.html">4:32:37 PM PDT - Fri, Jul 20th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">progress compiling nwchem on opensuse 12.1 system<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I had not installed openmpi-devel  or gcc-fortran, thnking that "openmpi" and "gcc" were sufficient. So now that was done<br />
+<br />
+`<br />
+% export NWCHEM_TOP=/usr/local/nwchem<br />
+% export NWCHEM_TARGET=LINUX64<br />
+% export USE_MPI=y<br />
+% export USE_MPIF=y<br />
+% export USE_MPIF4=y<br />
+% export LIBMPI="-I/usr/lib64/mpi/gcc/openmpi/include -I/usr/lib64/mpi/gcc/openmpi/include/openmpi -pthread -L/usr/lib64/mpi/gcc/openmpi/lib64 -lmpi -lopen-rte -lopen-pal -ldl -Wl,--export-dynamic -lnsl -lutil -lm -ldl"<br />
+% export MPI_LOC=/usr/lib64/mpi/gcc/openmpi/bin<br />
+% export MPI_LIB=/usr/lib64/mpi/gcc/openmpi/lib64<br />
+% export MPI_INCLUDE=/usr/lib64/mpi/gcc/openmpi/include<br />
+% export NWCHEM_MODULES="all"<br />
+% export USE_NOFSCHECK=TRUE<br />
+% export FC=gfortran<br />
+% export CC=gcc<br />
+<br />
+% which gcc<br />
+/usr/bin/gcc<br />
+<br />
+%which gfortran<br />
+/usr/bin/gfortran<br />
+<br />
+% cd /usr/local/nwchem-6.1.1/src<br />
+% make nwchem_config<br />
+% make &gt;&amp; make.log<br />
+`<br />
+The last command above now runs for about 15 min. /usr/local/nwchem-6.1.1/bin/LINUX64 contains a single file, depend.x<br />
+Many files and folders have been created in /usr/local/nwchem-6.1.1/src .<br />
+<br />
+The make.log file is about 2 mb; the config.log file is about 150 kb.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1797"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1797" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem9" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1797.html">11:37:42 PM PDT - Fri, Jul 20th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">Same result on openSUSE 11.4 and 12.1<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Two recent versions of openSUSE having different versions of openmpi, gcc, and gfortran both give essentially the same result. The target directory NWCHEM_TARGET=LINUX64 contains only a depend.x file.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1813"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1813" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem10" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1813.html">2:52:03 PM PDT - Tue, Jul 24th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">Same result<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi all,<br />
+<br />
+As Jwkeller, I have the same results with the same OS (openSUSE 12.1) and compilers (gcc, gfortran):  depend.x single file.  Therefore, the error does not depend on the hardware.  I will have this thread under surveillance just in case someone answers this question...
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1817"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1817" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem11" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1817.html">9:28:59 AM PDT - Wed, Jul 25th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">So far we have identified two problems that we are working through with John:<br />
+<br />
+1. Looks like there is a bug that has been updated in the development version, and that gets caught by some strict compilers (and not by others). In src/nwpw/nwpwlib/DMatrix/DMatrix-mpi.F, one has to replace at line 1363<br />
+<br />
+
+<pre>     stupid_msglen = 7*7<br />
+     call MPI_AllReduce(VV,VV2,stupid_msglen,<br />
+    &gt;                      stupid_double,stupid_sum,<br />
+    &gt;                      stupid_world,stupid_ierr)<br />
+</pre>
+<br />
+with<br />
+<br />
+
+<ol><li>ifdef MPI4<br />
+</li></ol>
+<pre>     stupid_msglen = 7*7<br />
+     call MPI_AllReduce(VV,VV2,stupid_msglen,<br />
+    &gt;                      stupid_double,stupid_sum,<br />
+    &gt;                      stupid_world,stupid_ierr)<br />
+</pre>
+<ol><li>else<br />
+</li></ol>
+<pre>     call MPI_AllReduce(VV,VV2,7*7,<br />
+    &gt;                   MPI_DOUBLE_PRECISION,MPI_SUM,<br />
+    &gt;                   MPI_COMM_WORLD,ierr)<br />
+</pre>
+<ol><li>endif<br />
+</li></ol>
+<br />
+<br />
+2. On his system the CONFIG_SITE environment variable is set and our configure is picking this up and puts the libraries generated in tools into lib64 instead of the lib we expect. We'll fix this for future releases. One approach is to change the LIBPATH line (line 107 for me) in $NWCHEM_TOP/config/makefile.h to<br />
+<br />
+
+<pre>LIBPATH = -L$(SRCDIR)/tools/install/lib -L$(SRCDIR)/tools/install/lib64<br />
+</pre>
+<br />
+<br />
+Bert<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class='quote_title'>Quote:Sefonorio <a target='blank' href="../../sp/id1813.html" title="Special:AWCforum/sp/id1813">Jul 24th 9:52 pm</a><div class='quote'>Hi all,<br />
+<br />
+As Jwkeller, I have the same results with the same OS (openSUSE 12.1) and compilers (gcc, gfortran):  depend.x single file.  Therefore, the error does not depend on the hardware.  I will have this thread under surveillance just in case someone answers this question...</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1885"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1885" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem12" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1885.html">11:28:30 AM PDT - Thu, Aug 9th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">These changes were inserted, maybe, but the result is the same<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I made the above changes in the two files that were mentioned. I did this two ways: one with the "1." line numbers, and one without. Either way the make.log file ends with many error lines referring to DMatrix-mpi.F file. And only the depend.x file appears in /usr/local/nwchem-6.1.1/bin/LINUC_64 folder. Here are the last 40 lines or so of make.log:<br />
+`<br />
+....<br />
+Error: Unclassifiable statement at (1)<br />
+DMatrix-mpi.F:1373.5:<br />
+<br />
+
+<pre>   &gt;                   MPI_DOUBLE_PRECISION,MPI_SUM,                   <br />
+    1<br />
+</pre>
+Error: Non-numeric character in statement label at (1)<br />
+DMatrix-mpi.F:1373.5:<br />
+<br />
+
+<pre>   &gt;                   MPI_DOUBLE_PRECISION,MPI_SUM,                   <br />
+    1<br />
+</pre>
+Error: Unclassifiable statement at (1)<br />
+DMatrix-mpi.F:1374.5:<br />
+<br />
+
+<pre>   &gt;                   MPI_COMM_WORLD,ierr)                            <br />
+    1<br />
+</pre>
+Error: Non-numeric character in statement label at (1)<br />
+DMatrix-mpi.F:1374.5:<br />
+<br />
+
+<pre>   &gt;                   MPI_COMM_WORLD,ierr)                            <br />
+    1<br />
+</pre>
+Error: Unclassifiable statement at (1)<br />
+DMatrix-mpi.F:1375.1:<br />
+<br />
+endif                                                                   <br />
+
+<pre>1<br />
+</pre>
+Error: Non-numeric character in statement label at (1)<br />
+DMatrix-mpi.F:1375.1:<br />
+<br />
+endif                                                                   <br />
+
+<pre>1<br />
+</pre>
+Error: Unclassifiable statement at (1)<br />
+make[4]: *** [/usr/local/nwchem-6.1.1/lib/LINUX64/libnwpwlib.a(DMatrix-mpi.o)] Error 1<br />
+make[4]: *** Waiting for unfinished jobs....<br />
+make[3]: *** [optimized] Error 2<br />
+make[2]: *** [subdirs] Error 1<br />
+make[1]: *** [subdirs] Error 1<br />
+make: *** [libraries] Error 1<br />
+`
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1886"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1886" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem13" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1886.html">2:34:36 PM PDT - Thu, Aug 9th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Obviously,<br />
+<br />
+"1. ifdef MPI4" should be "#ifdef MPI4" and "1. else" should be "#else" and "1. endif" should be "#endif" as in the 7/23 email that was send to you. The Wiki messes is up. <br />
+<br />
+There is another instance that is around line 2387.<br />
+<br />
+<br />
+Thanks,<br />
+<br />
+Bert<br />
+<br />
+<br />
+
+<pre>[QUOTE=Jwkeller <a href="../../sp/id1885.html" title="Special:AWCforum/sp/id1885">Aug 9th 6:28 pm</a>]I made the above changes in the two files that were mentioned. I did this two ways: one with the "1." line numbers, and one without. Either way the make.log file ends with many error lines referring to DMatrix-mpi.F file. And only the depend.x file appears in /usr/local/nwchem-6.1.1/bin/LINUC_64 folder. Here are the last 40 lines or so of make.log:<br />
+</pre>
+`<br />
+....<br />
+Error: Unclassifiable statement at (1)<br />
+DMatrix-mpi.F:1373.5:<br />
+<br />
+
+<pre>   &gt;                   MPI_DOUBLE_PRECISION,MPI_SUM,                   <br />
+    1<br />
+</pre>
+Error: Non-numeric character in statement label at (1)<br />
+DMatrix-mpi.F:1373.5:<br />
+<br />
+
+<pre>   &gt;                   MPI_DOUBLE_PRECISION,MPI_SUM,                   <br />
+    1<br />
+</pre>
+Error: Unclassifiable statement at (1)<br />
+DMatrix-mpi.F:1374.5:<br />
+<br />
+
+<pre>   &gt;                   MPI_COMM_WORLD,ierr)                            <br />
+    1<br />
+</pre>
+Error: Non-numeric character in statement label at (1)<br />
+DMatrix-mpi.F:1374.5:<br />
+<br />
+
+<pre>   &gt;                   MPI_COMM_WORLD,ierr)                            <br />
+    1<br />
+</pre>
+Error: Unclassifiable statement at (1)<br />
+DMatrix-mpi.F:1375.1:<br />
+<br />
+endif                                                                   <br />
+
+<pre>1<br />
+</pre>
+Error: Non-numeric character in statement label at (1)<br />
+DMatrix-mpi.F:1375.1:<br />
+<br />
+endif                                                                   <br />
+
+<pre>1<br />
+</pre>
+Error: Unclassifiable statement at (1)<br />
+make[4]: *** [/usr/local/nwchem-6.1.1/lib/LINUX64/libnwpwlib.a(DMatrix-mpi.o)] Error 1<br />
+make[4]: *** Waiting for unfinished jobs....<br />
+make[3]: *** [optimized] Error 2<br />
+make[2]: *** [subdirs] Error 1<br />
+make[1]: *** [subdirs] Error 1<br />
+make: *** [libraries] Error 1<br />
+`</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../../index.html">Forum</a> &gt;&gt; <a href="../../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../../sf/id4.html">Compiling NWChem</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />
+</body> 
+</html> 

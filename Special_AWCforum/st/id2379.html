@@ -1,0 +1,1725 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="Failure to converge DFT geometry opt after ~40 steps Viewed 1185 times, With a total of 1 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id2379 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >Failure to converge DFT geometry opt after ~40 steps</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_8269"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_8269" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id8269.html">10:31:00 PM PDT - Thu, Jul 6th 2017 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi all, <br />
+I am trying to optimize a 10mer. My input file looks like the following:<br />
+<br />
+start input<br />
+memory total 56000 mb<br />
+<br />
+<br />
+
+<pre>geometry noautoz<br />
+C                    -0.22558294    54.61587325     1.76093421<br />
+C                    -1.39146878    55.20610555     2.26432311<br />
+C                    -1.34605793    56.61127182     2.31814141<br />
+C                    -0.11463949    57.11157198     1.87052025<br />
+S                     0.97453067    55.88234583     1.35097261<br />
+H                    -2.22495843    54.60497370     2.59001861<br />
+C                    -0.22566375    60.97244931     2.42444426<br />
+C                    -1.37373380    60.33612655     2.82275782<br />
+C                    -1.30056556    58.93094371     2.62215034<br />
+C                    -0.09623846    58.53276422     2.04515533<br />
+S                     0.96803244    59.86943360     1.77046909<br />
+H                    -2.21796863    60.86421207     3.25125190<br />
+C                    -2.17352609    57.75005419     2.79356780<br />
+C                    -5.62920826    54.80374312     2.70229426<br />
+C                    -6.50518281    54.93106080     3.78642615<br />
+C                    -6.35441938    55.94415869     4.74577186<br />
+C                    -5.31617538    56.85839888     4.58170261<br />
+C                    -4.43197420    56.78056872     3.48722808<br />
+C                    -4.67745478    55.81596445     2.49404795<br />
+H                    -7.23780531    54.13471506     3.92823283<br />
+H                    -5.21740498    57.71376225     5.25082114<br />
+H                    -4.00435982    55.74301146     1.64628000<br />
+C                    -3.42976507    57.83499348     3.30358515<br />
+C                    -5.88286277    53.77951010     1.61637660<br />
+H                    -6.63088722    53.04802890     1.93743889<br />
+H                    -4.94889364    53.24802147     1.40153034<br />
+H                    -6.23107943    54.21016744     0.67226176<br />
+C                    -7.25460938    56.00584965     5.95804119<br />
+H                    -7.02466991    55.27123710     6.73594233<br />
+H                    -8.29796341    55.85191572     5.65409368<br />
+H                    -7.19822229    56.98921903     6.43950598<br />
+C                     0.59593771    50.24410727     1.26949497<br />
+C                    -0.64585273    50.76451016     1.76846481<br />
+C                    -0.92991217    52.19296371     1.92673361<br />
+C                     0.03236534    53.20384498     1.58801190<br />
+C                     1.25510521    52.67649542     1.08173663<br />
+C                     1.54575082    51.26292581     0.93992094<br />
+N                    -2.16126532    52.42100833     2.40763970<br />
+N                    -1.67108696    49.99043250     2.14254730<br />
+S                    -2.88003507    50.97001343     2.64375351<br />
+H                    -3.69987922    58.80435873     3.72102378<br />
+N                     2.77801427    50.90056582     0.47184842<br />
+N                     2.20069220    53.58509119     0.70882156<br />
+C                     3.66718721    51.80273603     0.13510184<br />
+C                     3.36358323    53.20586813     0.24294812<br />
+C                     4.35181449    54.26530749    -0.16464931<br />
+H                     3.89510755    55.25060198    -0.06920304<br />
+H                     4.68266304    54.12462761    -1.20003727<br />
+H                     5.25012775    54.23304204     0.46359684<br />
+C                     5.00403066    51.33122056    -0.37346710<br />
+H                     5.10820484    50.25885607    -0.20261734<br />
+H                     5.83075138    51.85065862     0.12169497<br />
+H                     5.10662217    51.52087062    -1.44938245<br />
+H                     0.00301561    62.02801268     2.47133683<br />
+C                     0.58128500    42.43596336     0.51319404<br />
+C                     1.79435955    43.07110771     0.19954138<br />
+C                     1.79660731    44.45070469     0.43107163<br />
+C                     0.55043889    44.90993141     0.90985102<br />
+S                    -0.60420026    43.64071119     1.11081152<br />
+H                     2.61922338    42.50507422    -0.19773635<br />
+C                     0.81979497    48.82439572     1.11797451<br />
+C                     1.97402909    48.16655355     0.66383265<br />
+C                     1.84706779    46.77767476     0.61166202<br />
+C                     0.58330100    46.32473446     1.02208270<br />
+S                    -0.45931065    47.61590235     1.49571429<br />
+H                     2.85115469    48.73046412     0.39076052<br />
+C                     2.68514724    45.62045694     0.23506392<br />
+C                     6.04322645    42.56611844    -0.13329903<br />
+C                     6.97168345    42.87412286    -1.13276152<br />
+C                     6.95770808    44.10941126    -1.80486046<br />
+C                     5.90323276    44.98580778    -1.54298452<br />
+C                     5.04474448    44.78226685    -0.43568185<br />
+C                     5.01686597    43.47915489     0.12806990<br />
+H                     7.74692674    42.14522970    -1.35627631<br />
+H                     5.86263768    45.94321633    -2.06042123<br />
+H                     4.39237488    43.34000677     1.01136452<br />
+C                     3.94319901    45.73772989    -0.24789840<br />
+C                     6.20858829    41.33524237     0.73160416<br />
+H                     6.91074013    40.63036950     0.27602005<br />
+H                     5.24098549    40.83094677     0.83227759<br />
+H                     6.56846646    41.55013777     1.74226505<br />
+C                     7.89658139    44.35527889    -2.96569887<br />
+H                     7.66698638    43.77557240    -3.86579683<br />
+H                     8.91748583    44.09475344    -2.66357174<br />
+H                     7.89208316    45.41273012    -3.24686013<br />
+C                    -0.37312350    38.09702152     0.02752351<br />
+C                     0.91249568    38.66158939    -0.27734580<br />
+C                     1.24321566    40.07896847    -0.11456210<br />
+C                     0.28405847    41.03470377     0.37122476<br />
+C                    -0.98649730    40.46082562     0.68067402<br />
+C                    -1.32080934    39.06272943     0.50296237<br />
+N                     2.50791500    40.35257879    -0.46155537<br />
+N                     1.93896973    37.94218955    -0.74282089<br />
+S                     3.20583550    38.95526019    -0.95508369<br />
+H                     4.29929952    46.76525695    -0.37417568<br />
+N                    -2.59154057    38.66028572     0.79963171<br />
+N                    -1.92851464    41.30758555     1.17855614<br />
+C                    -3.48017664    39.50879063     1.26113274<br />
+C                    -3.13305094    40.88637978     1.47767943<br />
+C                    -4.11702264    41.87614942     2.04051436<br />
+H                    -3.62543563    42.83708334     2.19499863<br />
+H                    -4.52685712    41.52969008     2.99608107<br />
+H                    -4.96744325    42.02069464     1.36342178<br />
+C                    -4.86278315    38.99520529     1.56589608<br />
+H                    -4.97533728    37.98289783     1.17568656<br />
+H                    -5.63705603    39.63311680     1.12727844<br />
+H                    -5.04491964    38.97077524     2.64758578<br />
+C                    -0.55792115    30.31340599    -0.87532996<br />
+C                    -1.77447391    30.90176438    -0.48518520<br />
+C                    -1.74082557    32.29858065    -0.42169160<br />
+C                    -0.46501957    32.81366090    -0.74356982<br />
+S                     0.67331807    31.58420440    -1.16443053<br />
+H                    -2.62517619    30.28679564    -0.24480589<br />
+C                    -0.63789849    36.68831197    -0.13010242<br />
+C                    -1.82815093    35.98525624     0.12967225<br />
+C                    -1.73513718    34.61456131    -0.10818557<br />
+C                    -0.46395008    34.21842194    -0.55795604<br />
+S                     0.62969367    35.54517467    -0.70362662<br />
+H                    -2.70392221    36.50674750     0.48108890<br />
+C                    -2.61276943    33.42864525    -0.01807649<br />
+C                    -6.00426824    30.41762608    -0.37025940<br />
+C                    -7.03153901    30.60501067     0.56984735<br />
+C                    -6.92012121    31.57124993     1.58140004<br />
+C                    -5.93385435    32.54979925     1.45403893<br />
+C                    -4.93832886    32.45689385     0.46172593<br />
+C                    -5.01526814    31.40614911    -0.46649850<br />
+H                    -7.80635898    29.84333893     0.62246282<br />
+H                    -5.86594631    33.31253854     2.22786125<br />
+H                    -4.34252410    31.40680917    -1.32276926<br />
+C                    -3.89083276    33.47831663     0.42716935<br />
+C                    -6.20707821    29.44402526    -1.52127567<br />
+H                    -6.91091852    28.65850318    -1.22748500<br />
+H                    -5.23811863    28.97709594    -1.72862595<br />
+H                    -6.57125752    29.87134265    -2.45916374<br />
+C                    -8.02701571    31.72357909     2.60855114<br />
+H                    -7.82949292    30.92060542     3.34385974<br />
+H                    -9.03448670    31.54378807     2.23527056<br />
+H                    -8.00024620    32.69000594     3.11275724<br />
+C                     0.33945809    25.94674148    -1.17335296<br />
+C                    -0.96142440    26.46483702    -0.84889342<br />
+C                    -1.27656953    27.89303356    -0.76640788<br />
+C                    -0.28483220    28.90750516    -1.00700716<br />
+C                     0.99310265    28.38127899    -1.37157315<br />
+C                     1.30994226    26.96990492    -1.44047617<br />
+N                    -2.55903410    28.11761901    -0.45260773<br />
+N                    -2.01756599    25.68764426    -0.58839338<br />
+S                    -3.29258216    26.66343076    -0.27094309<br />
+H                    -4.22879116    34.46337874     0.75815489<br />
+N                     2.58453419    26.61072350    -1.77196133<br />
+N                     1.95956919    29.29073605    -1.67050577<br />
+C                     3.49497769    27.51622514    -2.04533587<br />
+C                     3.16999192    28.91464124    -2.00666964<br />
+C                     4.18133199    29.97710404    -2.34339564<br />
+H                     3.70355966    30.95699442    -2.33109853<br />
+H                     4.62341946    29.80828178    -3.33220228<br />
+H                     5.01110053    29.98224058    -1.62609992<br />
+C                     4.87836516    27.04728483    -2.41174138<br />
+H                     4.97659405    25.98134571    -2.20085717<br />
+H                     5.64939566    27.59078042    -1.85602106<br />
+H                     5.07966217    27.20725267    -3.47838584<br />
+C                     0.55753359    18.10942209    -1.35783388<br />
+C                     1.79157098    18.75156375    -1.57082491<br />
+C                     1.73652014    20.14490270    -1.46392971<br />
+C                     0.42981343    20.60595017    -1.18293424<br />
+S                    -0.71819537    19.32448401    -1.02245041<br />
+H                     2.67654051    18.18465318    -1.80978243<br />
+C                     0.59976117    24.52988468    -1.22143333<br />
+C                     1.81427558    23.87125085    -1.48811060<br />
+C                     1.71758250    22.48104149    -1.46607970<br />
+C                     0.42054187    22.02261516    -1.17664523<br />
+S                    -0.69621205    23.31499171    -0.92488511<br />
+H                     2.70828824    24.43958155    -1.68762502<br />
+C                     2.62043671    21.32312472    -1.64050507<br />
+C                     6.13455281    18.42902244    -1.27706010<br />
+C                     7.10054276    18.61858075    -2.27422492<br />
+C                     7.11008854    19.77321549    -3.07292584<br />
+C                     6.09596565    20.71109765    -2.89093532<br />
+C                     4.97664340    20.42405099    -2.07687200<br />
+C                     5.03988563    19.30270801    -1.23439755<br />
+H                     7.96125935    17.95356249    -2.32713747<br />
+H                     6.03251462    21.53893110    -3.58714285<br />
+H                     4.28622379    19.15859707    -0.46491448<br />
+C                     3.93401152    21.44608448    -1.94958328<br />
+C                     6.16307442    17.20248429    -0.39372571<br />
+H                     6.87745022    16.46137816    -0.76313444<br />
+H                     5.18040663    16.72692570    -0.31459907<br />
+H                     6.46989259    17.47837909     0.62311484<br />
+C                     8.23271877    20.01263630    -4.05735816<br />
+H                     8.07708326    19.35441286    -4.92856447<br />
+H                     9.21720332    19.75994956    -3.66074548<br />
+H                     8.23797921    21.04111848    -4.42458291<br />
+C                    -0.25126767    13.71691985    -1.51754856<br />
+C                     1.05661741    14.28679529    -1.69108084<br />
+C                     1.33826474    15.72345376    -1.63661869<br />
+C                     0.30310652    16.69472239    -1.39868569<br />
+C                    -0.99128697    16.11584620    -1.21511542<br />
+C                    -1.27443330    14.69764127    -1.28921616<br />
+N                     2.63530207    15.99945024    -1.82383767<br />
+N                     2.15129995    13.55485274    -1.92126967<br />
+S                     3.42070924    14.57946529    -2.05527873<br />
+H                     4.27080274    22.46592031    -2.14313229<br />
+N                    -2.56716311    14.28885561    -1.13239034<br />
+N                    -2.00869025    16.97892212    -0.95054040<br />
+C                    -3.52730242    15.15200080    -0.89316252<br />
+C                    -3.23788596    16.55393136    -0.78101272<br />
+C                    -4.30821201    17.56651501    -0.47488146<br />
+H                    -3.85866681    18.55237715    -0.35399808<br />
+H                    -4.85084121    17.30806835     0.44180088<br />
+H                    -5.05486034    17.61640642    -1.27669732<br />
+C                    -4.92967973    14.62743306    -0.72917754<br />
+H                    -4.97634073    13.58666363    -1.05262800<br />
+H                    -5.65130678    15.21195731    -1.30859796<br />
+H                    -5.24794956    14.67526395     0.31981469<br />
+C                    -0.22893689     5.87495747    -1.50241351<br />
+C                    -1.49838698     6.47701704    -1.42099319<br />
+C                    -1.47523511     7.87083218    -1.52069970<br />
+C                    -0.16204892     8.37670096    -1.65903053<br />
+S                     1.03556359     7.13037822    -1.70723433<br />
+H                    -2.38622645     5.88402292    -1.27383889<br />
+C                    -0.46902651    12.29301448    -1.55872981<br />
+C                    -1.68183854    11.58957149    -1.44066088<br />
+C                    -1.53583474    10.20486303    -1.48701469<br />
+C                    -0.20043763     9.79332343    -1.64644253<br />
+S                     0.89089247    11.12770238    -1.75302662<br />
+H                    -2.61091120    12.12266690    -1.31925347<br />
+C                    -2.41113626     9.01638716    -1.42588901<br />
+C                    -5.67885773     5.92281092    -2.10280575<br />
+C                    -6.84839541     6.16527188    -1.36892749<br />
+C                    -6.94927750     7.25335248    -0.48834856<br />
+C                    -5.94088534     8.21459733    -0.51192676<br />
+C                    -4.75482739     8.01294285    -1.24548264<br />
+C                    -4.73171140     6.96427281    -2.19172204<br />
+H                    -7.64989369     5.42927329    -1.38664581<br />
+H                    -6.02838698     9.09469796     0.11987303<br />
+H                    -3.84348359     6.81411787    -2.79721749<br />
+C                    -3.75415803     9.08466051    -1.26300285<br />
+C                    -5.63930423     4.79916274    -3.12173507<br />
+H                    -6.39235575     4.04608413    -2.86260241<br />
+H                    -4.64776315     4.33142716    -3.06427357<br />
+H                    -5.80186936     5.08366910    -4.16316102<br />
+C                    -8.20795509     7.46470606     0.32464603<br />
+H                    -8.14859302     6.79788908     1.19993450<br />
+H                    -9.12777341     7.20264960    -0.20078685<br />
+H                    -8.29036615     8.48713228     0.70010745<br />
+C                     0.68971613     1.51990081    -1.11049936<br />
+C                    -0.64602648     2.05048041    -1.10460636<br />
+C                    -0.96281919     3.47313346    -1.24924141<br />
+C                     0.06261231     4.47006649    -1.41199010<br />
+C                     1.38447737     3.92677267    -1.45899191<br />
+C                     1.69986294     2.52242156    -1.29724934<br />
+N                    -2.28022958     3.71132019    -1.21535643<br />
+N                    -1.73722114     1.29123626    -0.96381315<br />
+S                    -3.04390045     2.27566019    -1.01143785<br />
+H                    -4.15186480    10.08716423    -1.09740415<br />
+N                     3.01188996     2.14823500    -1.32538653<br />
+N                     2.39603644     4.81054256    -1.67343458<br />
+C                     3.96427340     3.03037174    -1.52369869<br />
+C                     3.64665607     4.41701194    -1.72153598<br />
+C                     4.70881472     5.44929196    -1.99009007<br />
+H                     4.24125272     6.41368427    -2.19037991<br />
+H                     5.32865044     5.16931181    -2.84978421<br />
+H                     5.38539108     5.56200265    -1.13443216<br />
+C                     5.38793309     2.53909864    -1.55453874<br />
+H                     5.43900593     1.52743513    -1.14925803<br />
+H                     6.05429327     3.18747599    -0.97709516<br />
+H                     5.77300691     2.51521497    -2.58194046<br />
+C                     0.84113112    -6.29001757    -0.46677855<br />
+C                     2.10245238    -5.66559759    -0.48024823<br />
+C                     2.05043138    -4.26819919    -0.51543566<br />
+C                     0.72065266    -3.78941825    -0.55496913<br />
+S                    -0.45647399    -5.05326627    -0.51325467<br />
+H                     3.00533651    -6.25359993    -0.47902246<br />
+C                     0.94361510     0.11009444    -0.95143901<br />
+C                     2.18013653    -0.56021977    -0.89288519<br />
+C                     2.06549739    -1.94254670    -0.74921671<br />
+C                     0.73073853    -2.38003121    -0.68846130<br />
+S                    -0.39908471    -1.08075790    -0.80251450<br />
+H                     3.10214830    -0.00580064    -0.96331920<br />
+C                     2.96880911    -3.10716006    -0.61830789<br />
+C                     6.26023515    -5.96628532     0.72483296<br />
+C                     7.45384859    -5.81041693     0.01411914<br />
+C                     7.61179556    -4.80466433    -0.95415510<br />
+C                     6.61630180    -3.82286854    -1.04026129<br />
+C                     5.37524566    -3.98545217    -0.39358089<br />
+C                     5.20315553    -5.08860675     0.45898103<br />
+H                     8.25441219    -6.53185433     0.16771542<br />
+H                     6.73501560    -3.01270476    -1.75570848<br />
+H                     4.29855660    -5.15466210     1.05675186<br />
+C                     4.31998209    -3.00372291    -0.64692631<br />
+C                     6.09498432    -7.07785531     1.73531174<br />
+H                     6.86360375    -7.84475295     1.59729189<br />
+H                     5.11341543    -7.55303610     1.63856867<br />
+H                     6.17896155    -6.70885854     2.76361145<br />
+C                     8.95273990    -4.60266016    -1.62915921<br />
+H                     9.00670917    -5.34077875    -2.44685890<br />
+H                     9.81619677    -4.79243315    -0.99040916<br />
+H                     9.05033544    -3.61054389    -2.07451729<br />
+C                     0.00976840   -10.68023659    -0.47414073<br />
+C                     1.33395432   -10.12836069    -0.39262232<br />
+C                     1.62229027    -8.69189990    -0.37529408<br />
+C                     0.57791952    -7.70334924    -0.43844244<br />
+C                    -0.73681962    -8.26428537    -0.47721922<br />
+C                    -1.02247225    -9.68339982    -0.50794341<br />
+N                     2.93343990    -8.43325785    -0.29055226<br />
+N                     2.43895653   -10.87789331    -0.32573435<br />
+S                     3.72492159    -9.86813574    -0.24544511<br />
+H                     4.70227234    -2.00445446    -0.86420125<br />
+N                    -2.32803097   -10.07700612    -0.56578262<br />
+N                    -1.77210308    -7.38228891    -0.48276943<br />
+C                    -3.30277239    -9.19737517    -0.57440125<br />
+C                    -3.01790981    -7.79105987    -0.52061243<br />
+C                    -4.11027133    -6.75547790    -0.51601289<br />
+H                    -3.67314268    -5.76286758    -0.40384310<br />
+H                    -4.82555311    -6.92446955     0.29714078<br />
+H                    -4.68816693    -6.78407512    -1.44835741<br />
+C                    -4.71908872    -9.70795226    -0.62951439<br />
+H                    -4.72060432   -10.76921200    -0.88144044<br />
+H                    -5.31640535    -9.16595997    -1.36991954<br />
+H                    -5.21980412    -9.58726443     0.33914476<br />
+C                    -0.14503123   -18.52032098    -0.18592036<br />
+C                    -1.37817357   -17.89531081    -0.44587530<br />
+C                    -1.29908959   -16.50621226    -0.57519672<br />
+C                     0.01735824   -16.02519738    -0.38828611<br />
+S                     1.15857937   -17.29146059    -0.09393398<br />
+H                    -2.28877282   -18.46761381    -0.51466840<br />
+C                    -0.21926266   -12.10287855    -0.50485507<br />
+C                    -1.43689111   -12.78686145    -0.67078210<br />
+C                    -1.31469885   -14.17400731    -0.62612157<br />
+C                     0.00858568   -14.60773503    -0.42925956<br />
+S                     1.12048320   -13.29059649    -0.30892454<br />
+H                    -2.35489743   -12.23843809    -0.80603323<br />
+C                    -2.20461173   -15.34695155    -0.75473140<br />
+C                    -5.26428238   -18.38862301    -2.20902835<br />
+C                    -6.56138201   -18.14406159    -1.74613094<br />
+C                    -6.85097814   -17.04352997    -0.92071264<br />
+C                    -5.86769026   -16.05998510    -0.77540155<br />
+C                    -4.53933639   -16.29462956    -1.18402438<br />
+C                    -4.28548887   -17.40403875    -2.01028618<br />
+H                    -7.33219253   -18.88663716    -1.93953104<br />
+H                    -6.08884248   -15.16981331    -0.19383318<br />
+H                    -3.28287925   -17.56884451    -2.38962483<br />
+C                    -3.54228907   -15.24373202    -0.95706217<br />
+C                    -4.96950125   -19.58206393    -3.09007268<br />
+H                    -5.77394769   -20.32075443    -3.02946969<br />
+H                    -4.03726406   -20.06000543    -2.77311376<br />
+H                    -4.85091774   -19.31272213    -4.14621968<br />
+C                    -8.27318626   -16.78307732    -0.47170899<br />
+H                    -8.46837305   -17.42081932     0.40286461<br />
+H                    -9.03105240   -17.03600955    -1.21692332<br />
+H                    -8.42919345   -15.74703801    -0.16024232<br />
+C                     0.54644124   -22.88957308     0.45099715<br />
+C                    -0.73980591   -22.32751440     0.14314307<br />
+C                    -0.97851649   -20.89959906    -0.07753481<br />
+C                     0.08062759   -19.92805364     0.00209796<br />
+C                     1.35775157   -20.49916600     0.29618261<br />
+C                     1.59118020   -21.90932068     0.53259980<br />
+N                    -2.26095460   -20.63099990    -0.35470638<br />
+N                    -1.85217320   -23.05994189     0.02721574<br />
+S                    -3.08630651   -22.04628909    -0.32894384<br />
+H                    -3.94245433   -14.23122240    -0.91032106<br />
+N                     2.85756335   -22.31102994     0.84711405<br />
+N                     2.40921787   -19.63715414     0.34805840<br />
+C                     3.84556020   -21.44841121     0.90579525<br />
+C                     3.61975799   -20.05734247     0.62765563<br />
+C                     4.73888439   -19.05150995     0.64874590<br />
+H                     4.36556767   -18.07816630     0.32954815<br />
+H                     5.55711130   -19.35365499    -0.01487980<br />
+H                     5.16480326   -18.95091991     1.65439127<br />
+C                     5.21727857   -21.96008065     1.25972398<br />
+H                     5.15374223   -23.00110881     1.57879274<br />
+H                     5.67118374   -21.37132757     2.06397120<br />
+H                     5.89387488   -21.90074684     0.39812212<br />
+C                     0.36794106   -30.70893847     0.91824744<br />
+C                     1.61920211   -30.12233760     1.18151011<br />
+C                     1.60889613   -28.72359581     1.18208840<br />
+C                     0.32739813   -28.20512659     0.88848674<br />
+S                    -0.86436924   -29.43371147     0.65512342<br />
+H                     2.48827880   -30.73782013     1.34433475<br />
+C                     0.72543816   -24.30785354     0.63765076<br />
+C                     1.90590239   -25.01437515     0.93465735<br />
+C                     1.72910857   -26.39515036     1.02196617<br />
+C                     0.39987862   -26.79377153     0.79868701<br />
+S                    -0.64841343   -25.46129432     0.48042012<br />
+H                     2.83591150   -24.48565802     1.06860187<br />
+C                     2.55753043   -27.58871323     1.30228183<br />
+C                     5.42030588   -30.57589311     3.22299187<br />
+C                     6.72901358   -30.46957938     2.74521702<br />
+C                     7.12438360   -29.42591498     1.89410446<br />
+C                     6.18470317   -28.44401534     1.57921124<br />
+C                     4.83994970   -28.55412268     1.98444020<br />
+C                     4.45763683   -29.68070020     2.73364445<br />
+H                     7.48188469   -31.18200326     3.06605631<br />
+H                     6.47108892   -27.63645485     0.91113434<br />
+H                     3.45790948   -29.70077103     3.16514310<br />
+C                     3.88979279   -27.53053437     1.54580646<br />
+C                     5.00636803   -31.71593974     4.12407594<br />
+H                     5.78091788   -32.48586246     4.17790192<br />
+H                     4.07398389   -32.18361218     3.79337245<br />
+H                     4.83743678   -31.34779303     5.14358618<br />
+C                     8.56783944   -29.29829594     1.46172877<br />
+H                     8.76710475   -30.05633311     0.68717054<br />
+H                     9.28192221   -29.49218042     2.26454145<br />
+H                     8.77766670   -28.31697663     1.03135321<br />
+C                    -0.52960725   -35.06879441     0.53845837<br />
+C                     0.76531723   -34.55786692     0.89346111<br />
+C                     1.07121876   -33.13283081     1.03897946<br />
+C                     0.07597958   -32.11435372     0.83165584<br />
+C                    -1.21724315   -32.63619070     0.51865191<br />
+C                    -1.51671565   -34.04383935     0.35789045<br />
+N                     2.34786548   -32.91469066     1.37967318<br />
+N                     1.82506225   -35.33949387     1.12593165<br />
+S                     3.09073512   -34.37067793     1.49613166<br />
+H                     4.33676667   -26.53987913     1.44148966<br />
+N                    -2.79148236   -34.39743175     0.01917070<br />
+N                    -2.21720960   -31.72625691     0.36756384<br />
+C                    -3.72845994   -33.49086005    -0.13231072<br />
+C                    -3.43754438   -32.09812570     0.06491495<br />
+C                    -4.49676544   -31.03743422    -0.06865152<br />
+H                    -4.07974224   -30.06558990     0.19668207<br />
+H                    -5.35394943   -31.24625436     0.58172803<br />
+H                    -4.88132442   -30.98671135    -1.09464474<br />
+C                    -5.11312098   -33.95408556    -0.50388120<br />
+H                    -5.09115913   -35.01293468    -0.76427641<br />
+H                    -5.51229108   -33.38944832    -1.35304571<br />
+H                    -5.80835603   -33.81666753     0.33364358<br />
+C                    -0.80214911   -42.90478099     0.33405773<br />
+C                    -1.98558148   -42.24784441    -0.04470223<br />
+C                    -1.88130720   -40.85377406    -0.07987267<br />
+C                    -0.59730572   -40.40762252     0.30602938<br />
+S                     0.48724653   -41.70420745     0.66600894<br />
+H                    -2.88254208   -42.80365011    -0.26227712<br />
+C                    -0.77366378   -36.48313707     0.39657140<br />
+C                    -1.96495516   -37.13160874     0.02662833<br />
+C                    -1.86415460   -38.52201307     0.00028143<br />
+C                    -0.58639235   -38.98979046     0.34958508<br />
+S                     0.51105609   -37.70592773     0.70716983<br />
+H                    -2.84815636   -36.55784197    -0.20282629<br />
+C                    -2.74071479   -39.66973186    -0.31710132<br />
+C                    -5.62837090   -42.51826968    -2.41358930<br />
+C                    -6.95710150   -42.33570161    -2.01234956<br />
+C                    -7.36699328   -41.16316133    -1.35234058<br />
+C                    -6.37933446   -40.29398011    -0.89252783<br />
+C                    -5.02248242   -40.46406391    -1.24590229<br />
+C                    -4.65031659   -41.67247418    -1.87015458<br />
+H                    -7.72824514   -42.98831023    -2.40898563<br />
+H                    -6.66483159   -39.44410470    -0.28026325<br />
+H                    -3.61754712   -41.78629450    -2.19017933<br />
+C                    -4.04362707   -39.53650283    -0.66460661<br />
+C                    -5.21743846   -43.72322731    -3.22799333<br />
+H                    -6.03634312   -44.44174761    -3.32184760<br />
+H                    -4.35480958   -44.24063684    -2.79515248<br />
+H                    -4.93316847   -43.41083077    -4.23989728<br />
+C                    -8.81602002   -40.97960607    -0.95925252<br />
+H                    -9.13439904   -41.67003590    -0.16744212<br />
+H                    -9.46991307   -41.16458609    -1.81710595<br />
+H                    -8.99685225   -39.96352609    -0.59791208<br />
+C                    -0.21717808   -47.31359900     0.77338479<br />
+C                    -1.46068288   -46.71648697     0.37634754<br />
+C                    -1.66417524   -45.27463141     0.22182167<br />
+C                    -0.61122277   -44.32528164     0.46640272<br />
+C                     0.62126891   -44.93050115     0.85813376<br />
+C                     0.81728338   -46.35665773     1.02615939<br />
+N                    -2.91109500   -44.97094832    -0.16271231<br />
+N                    -2.56354220   -47.42427608     0.10620513<br />
+S                    -3.74545803   -46.37241801    -0.30576201<br />
+H                    -4.42532171   -38.51236287    -0.63843078<br />
+N                     2.04221143   -46.79550314     1.44415347<br />
+N                     1.66867306   -44.08852207     1.07555529<br />
+C                     3.02386314   -45.95319635     1.66006118<br />
+C                     2.83952034   -44.54222893     1.45077397<br />
+C                     3.95786184   -43.55573568     1.65252385<br />
+H                     3.62456624   -42.55781606     1.36678663<br />
+H                     4.83595712   -43.82209302     1.05317900<br />
+H                     4.28252859   -43.53069424     2.69977263<br />
+C                     4.34882741   -46.50918006     2.11230089<br />
+H                     4.23348727   -47.55594866     2.39634684<br />
+H                     4.74918024   -45.95338785     2.96605600<br />
+H                     5.08851187   -46.44701269     1.30398863<br />
+C                    -0.43805369   -55.14320675     0.55975708<br />
+C                     0.77174062   -54.59648286     1.00686684<br />
+C                     0.75510710   -53.20010812     1.13896023<br />
+C                    -0.48572831   -52.65168289     0.75816652<br />
+S                    -1.64068950   -53.84416050     0.28896954<br />
+H                     1.62417130   -55.22645141     1.20210588<br />
+C                    -0.06342945   -48.74749446     0.87633201<br />
+C                     1.07447642   -49.48406873     1.24193166<br />
+C                     0.88844713   -50.86889590     1.19582615<br />
+C                    -0.40634529   -51.23274427     0.80130475<br />
+S                    -1.41311185   -49.87031849     0.48342671<br />
+H                     1.98636035   -48.97818953     1.51521140<br />
+C                     1.68458853   -52.08929978     1.45602250<br />
+C                     4.32488959   -55.28218794     3.35097700<br />
+C                     5.69851416   -55.06604724     3.16622271<br />
+C                     6.17382861   -53.96573638     2.43413997<br />
+C                     5.26585446   -52.97267260     2.06953309<br />
+C                     3.87754310   -53.14675499     2.25304850<br />
+C                     3.43207470   -54.28482100     2.94301850<br />
+H                     6.38748394   -55.88342963     3.39202418<br />
+H                     5.61630105   -52.10106340     1.52022877<br />
+H                     2.38178294   -54.37390646     3.20138688<br />
+C                     2.97961904   -52.05817117     1.85883827<br />
+C                     3.82697212   -56.48052462     4.12571783<br />
+H                     4.61431235   -57.23288637     4.22840076<br />
+H                     2.98275926   -56.94462842     3.60288936<br />
+H                     3.48296945   -56.21671687     5.13115617<br />
+C                     7.64689689   -53.83084810     2.12486690<br />
+H                     7.93495271   -54.50068460     1.30194229<br />
+H                     8.27370549   -54.10794134     2.97716111<br />
+H                     7.89950439   -52.81229878     1.81931739<br />
+C                    -1.25369824   -59.38377127    -0.30012151<br />
+C                     0.00076827   -58.97219144     0.17829413<br />
+C                     0.28218308   -57.56850084     0.48875183<br />
+C                    -0.71598464   -56.53962018     0.30612484<br />
+C                    -1.97499789   -57.01607204    -0.15868374<br />
+C                    -2.22871040   -58.41039489    -0.46033445<br />
+N                     1.53286083   -57.38862041     0.93886189<br />
+N                     1.04510593   -59.79311306     0.39852683<br />
+S                     2.26480808   -58.85530264     0.95169459<br />
+H                     3.43385015   -51.06772752     1.88502101<br />
+N                    -3.46599583   -58.80434720    -0.92505325<br />
+N                    -2.98440541   -56.11313569    -0.32811270<br />
+C                    -4.39892343   -57.90234136    -1.07660715<br />
+C                    -4.15627154   -56.50515863    -0.76005470<br />
+C                    -5.23798886   -55.47189911    -0.92157136<br />
+H                    -4.87057645   -54.50057422    -0.58942189<br />
+H                    -6.12921325   -55.73305804    -0.33889600<br />
+H                    -5.55662065   -55.39047212    -1.96795050<br />
+C                    -5.74235926   -58.35537539    -1.58392676<br />
+H                    -5.69764903   -59.42052029    -1.81400827<br />
+H                    -6.03787350   -57.80706741    -2.48537352<br />
+H                    -6.52435499   -58.18913532    -0.83342184<br />
+H                    -1.46243772   -60.41915655    -0.53592956<br />
+</pre>
+end<br />
+<br />
+basis<br />
+C library 6-31G*<br />
+S library 6-31G*<br />
+H library 6-31G*<br />
+N library 6-31G*<br />
+end<br />
+<br />
+dft<br />
+XC B3LYP<br />
+NOIO<br />
+NOPRINT<br />
+DIRECT<br />
+MAXITER 150<br />
+end<br />
+<br />
+task dft optimize<br />
+<br />
+<br />
+<br />
+The odd thing is that after ~40 steps, I get the following error:<br />
+<br />
+
+<hr /><br />
+<pre>dft optimize failed                                                                                0<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;:<br />
+    3: task dft optimize<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+This type of error is most commonly associated with calculations not reaching<br />
+convergence criteria<br />
+-----------------------------<br />
+</pre>
+<br />
+This is despite the fact that the energy, in general, appears to be converging. The energy appeared to be converged up to the tenths decimal place prior to the error message.  In order to show this, I tried attaching the resulting output file, but it does not look like there is an option for this forum. Any ideas on what is going on and how I can fix this issue?<br />
+<br />
+Cheers,<br />
+Zack
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_8271"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_8271" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Regular</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id8271.html">4:10:33 AM PDT - Fri, Jul 7th 2017 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Did the calculation actually fail during the SCF procedure or did you run out of geometry optimization steps? If you ran out of geometry optimization steps, just add<br />
+<br />
+driver<br />
+maxiter 200<br />
+end<br />
+<br />
+to your input to increase the number of geometry optimization steps. If it failed during the SCF without using the 150 SCF steps that you specified in your input, then copy and paste the information from the output around the last SCF cycle, i.e. the bit that shows the energy and other convergence information per step but before the output of the orbital information.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../index.html">Forum</a> &gt;&gt; <a href="../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../sf/id5.html">Running NWChem</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />
+</body> 
+</html> 

@@ -1,0 +1,2169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="NWChem 6.1 scalapack compilation fails Viewed 9168 times, With a total of 14 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id329_NWChem_6_1_scalapack_compilation_html skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >NWChem 6.1 scalapack compilation fails</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_1067"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1067" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                     Guest -  <font class="group_text"></font>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class=""></div><!-- /member_title -->
+                                
+                                
+                                                              
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="15">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1067.html">6:11:58 AM PST - Wed, Feb 1st 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="5" colspan="2">I have successfully compiled NWChem v. 6.1, but when going forward to switch on support for scalapack, the last linking stage fails with unresolved symbols:<br />
+"""<br />
+/home/raber/NWChem/gcc/nwchem-6.1/lib/LINUX64/libnwdft.a(dft_diagn.o): In function `dft_scaleig_':<br />
+/home/raber/NWChem/gcc/nwchem-6.1/src/nwdft/scf_dft/dft_diagn.F:210: undefined reference to `ga_pdsyev_'<br />
+/home/raber/NWChem/gcc/nwchem-6.1/src/nwdft/scf_dft/dft_diagn.F:212: undefined reference to `ga_pdsyevx_'<br />
+/home/raber/NWChem/gcc/nwchem-6.1/src/nwdft/scf_dft/dft_diagn.F:214: undefined reference to `ga_pdsyevd_'<br />
+collect2: ld returned 1 exit status<br />
+"""<br />
+<br />
+The script I use to compile NWChem is:<br />
+
+<hr /><br />
+<ol><li>!/bin/bash<br />
+</li></ol>
+<br />
+export IB_HOME=/usr<br />
+export IB_INCLUDE=/usr/include/infiniband/<br />
+export IB_LIB=/usr/lib64<br />
+export IB_LIB_NAME="-libumad -libverbs -lpthread"<br />
+export ARMCI_NETWORK=OPENIB<br />
+<br />
+export USE_SUBGROUPS=yes<br />
+export LARGE_FILES=yes<br />
+<br />
+export USE_MPI=yes<br />
+export USE_MPIF=yes<br />
+export MSG_COMMS=MPI<br />
+export MPI_LOC=/usr/local/openmpi/gcc/1.4.4<br />
+export MPI_INCLUDE=$MPI_LOC/include<br />
+export MPI_LIB=$MPI_LOC/lib<br />
+export LIBMPI="-Wl,-rpath,/usr/local/openmpi/gcc/1.4.4/lib -lmpi -lmpi_f77 -lpthread -lz -lssl -static-libgcc" <br />
+<br />
+export USE_PYTHON=yes<br />
+export PYTHONHOME=/usr<br />
+export PYTHONVERSION=2.6<br />
+export PYTHONPATH=./:$NWCHEM_TOP/contrib/python/<br />
+<br />
+export NWCHEM_TARGET=LINUX64<br />
+
+<ol><li>export NWCHEM_MODULES="all python"<br />
+</li></ol>
+export NWCHEM_MODULES="pnnl"<br />
+export NWCHEM_TOP=/home/raber/NWChem/gcc/nwchem-6.1<br />
+export NWCHEM_EXECUTABLE=$NWCHEM_TOP/bin/LINUX64/nwchem<br />
+<br />
+export HAS_BLAS=yes<br />
+export USE_SCALAPACK=yes<br />
+export BLASOPT="-Wl,-rpath,/home/intel/composer_xe_2011_sp1.7.256/composer_xe_2012_sp1.7.256/mkl/lib/intel64 -L/home/intel/composer_xe_2011_sp1.7.256/composer_xe_2011_sp1.7.256/mkl/lib/intel64 -Wl,--start-group -lmkl_gf_ilp64 -lmkl_core -lmkl_sequential -lmkl_blacs_openmpi_ilp64 -lmkl_scalapack_ilp64 -Wl,--end-group"<br />
+<br />
+cd $NWCHEM_TOP/src<br />
+<br />
+make DIAG=PAR FC=gfortran CC=gcc FOPTIMIZE="-O3 -march=native" COPTIMIZE="-O3 -march=native" nwchem_config<br />
+make DIAG=PAR FC=gfortran CC=gcc FOPTIMIZE="-O3 -march=native" COPTIMIZE="-O3 -march=native" $1<br />
+
+<hr /><br />
+<br />
+I think I have followed the install instructions wrt scalapack but maybe I'm missing something. I find the subroutines in the code (i.e.  ga_pdsyev{x,d}_ ), for instance in the files ~/nwchem-6.1/src/tools/{,ga-5-1}/global/src/scalapack.F but I can't find them in any of the link libraries or other object files( simple, brute force "grep"). Please advice.<br />
+<br />
+Cheers,<br />
+Johan
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1068"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1068" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                     Guest -  <font class="group_text"></font>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class=""></div><!-- /member_title -->
+                                
+                                
+                                                              
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="15">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1068.html">6:16:07 AM PST - Wed, Feb 1st 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">s/1./#/ in the parent<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="5" colspan="2">This wiki extension apparently change hash characters for '1.', please turn on your internal filters.<br />
+<br />
+/Johan
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1075"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1075" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1075.html">10:52:48 AM PST - Wed, Feb 1st 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I assume you did a make realclean before you build.<br />
+<br />
+Can you check the src/tools/build/config.log to see if it actually picked up the SCALAPACK libraries? If you can figure it out, send me the config.log file at bert.dejong@pnnl.gov.<br />
+<br />
+Bert<br />
+<br />
+
+<pre>[QUOTE= <a href="../../sp/id1067.html" title="Special:AWCforum/sp/id1067">Feb 1st 1:11 pm</a>]I have successfully compiled NWChem v. 6.1, but when going forward to switch on support for scalapack, the last linking stage fails with unresolved symbols:<br />
+</pre>
+"""<br />
+/home/raber/NWChem/gcc/nwchem-6.1/lib/LINUX64/libnwdft.a(dft_diagn.o): In function `dft_scaleig_':<br />
+/home/raber/NWChem/gcc/nwchem-6.1/src/nwdft/scf_dft/dft_diagn.F:210: undefined reference to `ga_pdsyev_'<br />
+/home/raber/NWChem/gcc/nwchem-6.1/src/nwdft/scf_dft/dft_diagn.F:212: undefined reference to `ga_pdsyevx_'<br />
+/home/raber/NWChem/gcc/nwchem-6.1/src/nwdft/scf_dft/dft_diagn.F:214: undefined reference to `ga_pdsyevd_'<br />
+collect2: ld returned 1 exit status<br />
+"""<br />
+<br />
+The script I use to compile NWChem is:<br />
+
+<hr /><br />
+<ol><li>!/bin/bash<br />
+</li></ol>
+<br />
+export IB_HOME=/usr<br />
+export IB_INCLUDE=/usr/include/infiniband/<br />
+export IB_LIB=/usr/lib64<br />
+export IB_LIB_NAME="-libumad -libverbs -lpthread"<br />
+export ARMCI_NETWORK=OPENIB<br />
+<br />
+export USE_SUBGROUPS=yes<br />
+export LARGE_FILES=yes<br />
+<br />
+export USE_MPI=yes<br />
+export USE_MPIF=yes<br />
+export MSG_COMMS=MPI<br />
+export MPI_LOC=/usr/local/openmpi/gcc/1.4.4<br />
+export MPI_INCLUDE=$MPI_LOC/include<br />
+export MPI_LIB=$MPI_LOC/lib<br />
+export LIBMPI="-Wl,-rpath,/usr/local/openmpi/gcc/1.4.4/lib -lmpi -lmpi_f77 -lpthread -lz -lssl -static-libgcc" <br />
+<br />
+export USE_PYTHON=yes<br />
+export PYTHONHOME=/usr<br />
+export PYTHONVERSION=2.6<br />
+export PYTHONPATH=./:$NWCHEM_TOP/contrib/python/<br />
+<br />
+export NWCHEM_TARGET=LINUX64<br />
+
+<ol><li>export NWCHEM_MODULES="all python"<br />
+</li></ol>
+export NWCHEM_MODULES="pnnl"<br />
+export NWCHEM_TOP=/home/raber/NWChem/gcc/nwchem-6.1<br />
+export NWCHEM_EXECUTABLE=$NWCHEM_TOP/bin/LINUX64/nwchem<br />
+<br />
+export HAS_BLAS=yes<br />
+export USE_SCALAPACK=yes<br />
+export BLASOPT="-Wl,-rpath,/home/intel/composer_xe_2011_sp1.7.256/composer_xe_2012_sp1.7.256/mkl/lib/intel64 -L/home/intel/composer_xe_2011_sp1.7.256/composer_xe_2011_sp1.7.256/mkl/lib/intel64 -Wl,--start-group -lmkl_gf_ilp64 -lmkl_core -lmkl_sequential -lmkl_blacs_openmpi_ilp64 -lmkl_scalapack_ilp64 -Wl,--end-group"<br />
+<br />
+cd $NWCHEM_TOP/src<br />
+<br />
+make DIAG=PAR FC=gfortran CC=gcc FOPTIMIZE="-O3 -march=native" COPTIMIZE="-O3 -march=native" nwchem_config<br />
+make DIAG=PAR FC=gfortran CC=gcc FOPTIMIZE="-O3 -march=native" COPTIMIZE="-O3 -march=native" $1<br />
+
+<hr /><br />
+<br />
+I think I have followed the install instructions wrt scalapack but maybe I'm missing something. I find the subroutines in the code (i.e.  ga_pdsyev{x,d}_ ), for instance in the files ~/nwchem-6.1/src/tools/{,ga-5-1}/global/src/scalapack.F but I can't find them in any of the link libraries or other object files( simple, brute force "grep"). Please advice.<br />
+<br />
+Cheers,<br />
+Johan</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1077"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1077" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                     Guest -  <font class="group_text"></font>
+                                    <div id="mem4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class=""></div><!-- /member_title -->
+                                
+                                
+                                                              
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="15">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1077.html">2:15:43 PM PST - Wed, Feb 1st 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">NWChem 6.1 scalapack compilation fails (follow-up)<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="5" colspan="2">Thanks a lot for helping me out.<br />
+<br />
+I did a "make realclean" as I recall, and just in case I misremembered, I untarred a fresh copy and tried again. The result was the same.<br />
+<br />
+I will send you the log file out of band. I'm having some trouble interpreting the log but I think the BLASOPT variable is being misinterpreted and the scalapack library isn't found. I'll experiment a bit with the format of the variable I use and see if my luck turns better.<br />
+<br />
+Best regards,<br />
+Johan
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1109"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1109" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1109.html">7:24:08 AM PST - Mon, Feb 6th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Yes, i have a similar impression. I had to put a full link line related to scalapack (see point 3) into BLAS_LIB <br />
+(i guess BLASOPT would work too) variable<br />
+in oder to src/tools/ga-5-1/configure to find scalapack. On Fedora 16 x86_64:<br />
+0. yum install scalapack-openmpi-devel blacs-openmpi-devel openmpi-devel atlas-devel<br />
+1. cd src/tools/ga-5-1/<br />
+2. run:<br />
+<br />
+./configure '--with-mpi=-I/usr/include/openmpi-x86_64 -L/usr/lib64/openmpi/lib' '--with-blas4=-L/usr/lib64/atlas -llapack -lf77blas -lcblas -latlas' '--with-scalapack=-L/usr/lib64/openmpi/lib -lmpiblacsF77init -lmpiblacs -lscalapack' 'CC=gcc' 'F77=gfortran' 'MPIEXEC=/usr/lib64/openmpi/bin/mpiexec'<br />
+<br />
+Error in config.log:<br />
+<br />
+configure:20768: checking for pdgetrs_ in -lscalapack
+configure:20801: gcc -o conftest       -L/usr/lib64/atlas  conftest.c -lscalapack  -L/usr/lib/gcc/x86_64-redhat-linux/4.6.2 -L/usr/lib/gcc/x86_64-redhat-linux/4.6.2/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.6.2/../../.. -lgfortran -lm -lquadmath -lm  &gt;&amp;5
+/usr/bin/ld: cannot find -lscalapack
+collect2: ld returned 1 exit status<br />
+<br />
+3. Adding blas/lapack and openmpi libs into --with-scalapack does not work, and the following configure line works (note the complete absence of --with-scalapack!):<br />
+<br />
+./configure '--with-mpi=-I/usr/include/openmpi-x86_64 -L/usr/lib64/openmpi/lib' '--with-blas4=-L/usr/lib64/atlas -llapack -lf77blas -lcblas -latlas -L/usr/lib64/openmpi/lib -lmpiblacsF77init -lmpiblacs -lscalapack -L/usr/lib64/openmpi/lib -lmpi -lopen-pal -lopen-rte -lmpi_f90 -lmpi_f77' 'CC=gcc' 'F77=gfortran' 'MPIEXEC=/usr/lib64/openmpi/bin/mpiexec'<br />
+<br />
+By the way, are there any scalapack tests in QA directory?
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1111"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1111" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem6" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1111.html">5:41:05 PM PST - Mon, Feb 6th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">The only scalapack routines used are those for the eigensolver, which is used in the DFT calculations. So, running DFT tests will do a QA on scalapack.<br />
+<br />
+Bert<br />
+<br />
+<div class='quote_title'>Quote:Marcindulak <a target='blank' href="../../sp/id1109.html" title="Special:AWCforum/sp/id1109">Feb 6th 2:24 pm</a><div class='quote'>Yes, i have a similar impression. I had to put a full link line related to scalapack (see point 3) into BLAS_LIB <br />
+(i guess BLASOPT would work too) variable<br />
+in oder to src/tools/ga-5-1/configure to find scalapack. On Fedora 16 x86_64:<br />
+0. yum install scalapack-openmpi-devel blacs-openmpi-devel openmpi-devel atlas-devel<br />
+1. cd src/tools/ga-5-1/<br />
+2. run:<br />
+<br />
+./configure '--with-mpi=-I/usr/include/openmpi-x86_64 -L/usr/lib64/openmpi/lib' '--with-blas4=-L/usr/lib64/atlas -llapack -lf77blas -lcblas -latlas' '--with-scalapack=-L/usr/lib64/openmpi/lib -lmpiblacsF77init -lmpiblacs -lscalapack' 'CC=gcc' 'F77=gfortran' 'MPIEXEC=/usr/lib64/openmpi/bin/mpiexec'<br />
+<br />
+Error in config.log:<br />
+<br />
+configure:20768: checking for pdgetrs_ in -lscalapack
+configure:20801: gcc -o conftest       -L/usr/lib64/atlas  conftest.c -lscalapack  -L/usr/lib/gcc/x86_64-redhat-linux/4.6.2 -L/usr/lib/gcc/x86_64-redhat-linux/4.6.2/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.6.2/../../.. -lgfortran -lm -lquadmath -lm  &gt;&amp;5
+/usr/bin/ld: cannot find -lscalapack
+collect2: ld returned 1 exit status<br />
+<br />
+3. Adding blas/lapack and openmpi libs into --with-scalapack does not work, and the following configure line works (note the complete absence of --with-scalapack!):<br />
+<br />
+./configure '--with-mpi=-I/usr/include/openmpi-x86_64 -L/usr/lib64/openmpi/lib' '--with-blas4=-L/usr/lib64/atlas -llapack -lf77blas -lcblas -latlas -L/usr/lib64/openmpi/lib -lmpiblacsF77init -lmpiblacs -lscalapack -L/usr/lib64/openmpi/lib -lmpi -lopen-pal -lopen-rte -lmpi_f90 -lmpi_f77' 'CC=gcc' 'F77=gfortran' 'MPIEXEC=/usr/lib64/openmpi/bin/mpiexec'<br />
+<br />
+By the way, are there any scalapack tests in QA directory?</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1139"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1139" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem7" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1139.html">1:56:25 PM PST - Wed, Feb 8th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">new tarball available with fixes for tools compilation<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">We have just uploaded a new 6.1 source tarball that should address most of the problems you have encountered trying to link Scalapack. Please use just the following settings (and neither BLAS_LIB nor SCALAPACK_LIB)<br />
+USE_SCALAPACK=y<br />
+SCALAPACK="Scalapack and Blacs library location"<br />
+BLASOPT="Blas and Lapack library location"
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1142"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1142" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem8" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1142.html">3:54:13 AM PST - Thu, Feb 9th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Could you when making changes to the source release it as 6.1.1 etc?<br />
+This will help to avoid confusion about which version people are referring to,<br />
+and it's a standard practice for installed software by package managers, like yum , yast, apt-get.<br />
+They recognize that a new version is available by comparing versions.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1146"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1146" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem9" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1146.html">11:17:22 AM PST - Thu, Feb 9th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Marcin,<br />
+Thank you for your suggestion.<br />
+The sub-sub version numbering you are mentioning refers to RPMs, PKGs, etc ..., while we are simply releasing a source code tarball. We are think of releasing source RPMs and I think your suggestion would be appropriate in that context.<br />
+Edo<br />
+<div class='quote_title'>Quote:Marcindulak <a target='blank' href="../../sp/id1142.html" title="Special:AWCforum/sp/id1142">Feb 9th 2:54 am</a><div class='quote'>Could you when making changes to the source release it as 6.1.1 etc?<br />
+This will help to avoid confusion about which version people are referring to,<br />
+and it's a standard practice for installed software by package managers, like yum , yast, apt-get.<br />
+They recognize that a new version is available by comparing versions.</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1147"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1147" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem10" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1147.html">11:33:48 AM PST - Thu, Feb 9th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Sub versioning would facilitate my work - i'm in fact working on getting RPMS on 6.1<br />
+(see the bottom of <a target='blank' href="http://www.nwchem-sw.org/index.php/Special:AWCforum/st/id331/how_to_use_ASE%27s_nebcode_and_nwc....html" class="external free">http://www.nwchem-sw.org/index.php/Special:AWCforum/st/id331/how_to_use_ASE%27s_nebcode_an...</a>)
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1148"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1148" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem11" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1148.html">11:58:00 AM PST - Thu, Feb 9th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Edoapra <a target='blank' href="../../sp/id1146.html" title="Special:AWCforum/sp/id1146">Feb 9th 6:17 pm</a><div class='quote'>Marcin,<br />
+Thank you for your suggestion.<br />
+The sub-sub version numbering you are mentioning refers to RPMs, PKGs, etc ..., while we are simply releasing a source code tarball. We are think of releasing source RPMs and I think your suggestion would be appropriate in that context.<br />
+Edo<br />
+<div class='quote_title'>Quote:Marcindulak <a target='blank' href="../../sp/id1142.html" title="Special:AWCforum/sp/id1142">Feb 9th 2:54 am</a><div class='quote'>Could you when making changes to the source release it as 6.1.1 etc?<br />
+This will help to avoid confusion about which version people are referring to,<br />
+and it's a standard practice for installed software by package managers, like yum , yast, apt-get.<br />
+They recognize that a new version is available by comparing versions.</div id="quote"></div id="quote"></div id="quote"></div id="quote"><br />
+<br />
+The problem with not changing the tarball is that we will not know which version it is used.<br />
+I mean shall we start using something like nwchem-6.1-before-Feb.-8 or nwchem-6.1-post-Feb.-8?<br />
+I believe that Marcindulak suggestion is sensible.<br />
+<br />
+Thanks a lot, anyway, for your continuum support.<br />
+<br />
+Best regards,<br />
+<br />
+Rafael R. Pappalardo
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1153"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1153" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem12" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1153.html">3:56:48 PM PST - Thu, Feb 9th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Sure, we will try to follow a similar convention for release tarballs.<br />
+<br />
+Edo<br />
+<br />
+<div class='quote_title'>Quote:Rafapa <a target='blank' href="../../sp/id1148.html" title="Special:AWCforum/sp/id1148">Feb 9th 10:58 am</a><div class='quote'><br />
+<br />
+The problem with not changing the tarball is that we will not know which version it is used.<br />
+I mean shall we start using something like nwchem-6.1-before-Feb.-8 or nwchem-6.1-post-Feb.-8?<br />
+I believe that Marcindulak suggestion is sensible.<br />
+<br />
+Thanks a lot, anyway, for your continuum support.<br />
+<br />
+Best regards,<br />
+<br />
+Rafael R. Pappalardo</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1164"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1164" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem13" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1164.html">4:01:05 AM PST - Sat, Feb 11th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I would like us to consider another change in the naming convention.<br />
+Instead of: Nwchem-6.1-2012-Feb-10.tar.gz<br />
+could you use the most common way: Nwchem-6.1.0.tar.gz?<br />
+<br />
+The current naming causes really a lot of troubles when packaging an RPM.<br />
+Apart from an unnecessary complication in the spec file (i don't think it's the right place to describe all the details,<br />
+still I describe some of them below)<br />
+i feel Nwchem-6.1.2012.02.10-X.{i686,x86_64}.rpm looks ugly compared to Nwchem-6.1.0-X.{i686,x86_64}.rpm<br />
+<br />
+On a positive side i have (experimental) RPMS of 6.1 version (Feb 8) ready. They are accessible through software package managers,<br />
+for example for CentOS5:<br />
+<br />
+$ yum install wget<br />
+$ cd /etc/yum.repos.d/<br />
+$ wget <a target='blank' href="http://download.opensuse.org/repositories/home:/marcindulak/CentOS_CentOS-5/home:marcindulak.repo" class="external free">http://download.opensuse.org/repositories/home:/marcindulak/CentOS_CentOS-5/home:marcindul...</a><br />
+<br />
+It's good to set enabled=0 in /etc/yum.repos.d/home:marcindulak.repo so you don't get other updates from there,<br />
+and then:<br />
+<br />
+$ yum install nwchem --enablerepo=home_marcindulak<br />
+<br />
+or as direct download <a target='blank' href="http://download.opensuse.org/repositories/home:/marcindulak/CentOS_CentOS-5/" class="external free">http://download.opensuse.org/repositories/home:/marcindulak/CentOS_CentOS-5/</a><br />
+Build logs are avaliable (i run a small set of tests during build), for example<br />
+<a target='blank' href="https://build.opensuse.org/package/rawlog?arch=i586&amp;package=nwchem-6.1&amp;project=home%3Amarcindulak&amp;repository=CentOS_CentOS-5" class="external free">https://build.opensuse.org/package/rawlog?arch=i586&amp;package=nwchem-6.1&amp;project=hom...</a><br />
+<br />
+For yast on openSUSE see <a target='blank' href="https://wiki.fysik.dtu.dk/cmr/install/install.html#installation-with-a-package-manger" class="external free">https://wiki.fysik.dtu.dk/cmr/install/install.html#installation-with-a-package-manger</a><br />
+<br />
+Let me explain some of the problems caused by the current name of the source.<br />
+RPM assumes naming of name-version-release.{i686,x86_64}.rpm, where release traditionally denotes a change in RPM build process,<br />
+not in the source (see <a target='blank' href="http://www.rpm.org/max-rpm/ch-rpm-file-format.html" class="external free">http://www.rpm.org/max-rpm/ch-rpm-file-format.html</a>).<br />
+Dashes are not allowed in version nor release.<br />
+Due to this requirement Nwchem-6.1-2012-Feb-10-X.{i686,x86_64}.rpm would be interpreted as:<br />
+name=Nwchem-6.1-2012-Feb<br />
+version=10<br />
+release=X<br />
+so package managers like (yum, yast, ...) would consider different nwchem RPMS as different programs, not different<br />
+versions of the same program!<br />
+Therefore i would choose to name the RPM Nwchem-6.1.2012.Feb.10-X.{i686,x86_64}.rpm (note the dots instead of dashes).<br />
+The problem would be that a future December 2012 Nwchem-6.1.2012.Dec.DD-Y would be considered earlier than the February release.<br />
+Therefore I would create an internal (in the RPM spec file) table of numeric values of months so the name would become<br />
+Nwchem-6.1.2012.02.10-X.{i686,x86_64}.rpm.<br />
+<br />
+Marcin
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1183"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1183" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem14" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1183.html">7:34:04 AM PST - Fri, Feb 17th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I would like to go back to the main subject of the thread.<br />
+<a target='blank' href="http://www.nwchem-sw.org/images/Nwchem-6.1-2012-Feb-10.tar.gz" class="external free">http://www.nwchem-sw.org/images/Nwchem-6.1-2012-Feb-10.tar.gz</a> compiles with scalapack<br />
+on Fedora 16 x86_64 with the following commands:<br />
+<br />
+export MPIEXEC=/usr/lib64/openmpi/bin/mpiexec<br />
+export LARGE_FILES=TRUE<br />
+export USE_NOFSCHECK=TRUE<br />
+export TCGRSH=ssh<br />
+export NWCHEM_TOP=/rpmbuild/BUILD/nwchem-6.1.test<br />
+export NWCHEM_TARGET=LINUX64<br />
+export USE_MPI=y<br />
+export USE_MPIF=y<br />
+export USE_MPIF4=y<br />
+export MPI_LOC=/usr/lib64/openmpi/<br />
+export MPI_LIB=/usr/lib64/openmpi/lib<br />
+export MPI_INCLUDE=/usr/include/openmpi-x86_64<br />
+export PYTHONHOME=/usr<br />
+export PYTHONVERSION=2.7<br />
+export USE_PYTHON64=y<br />
+export 'LIBMPI=-L/usr/lib64/openmpi/lib -lmpi -lmpi_f90 -lmpi_f77'<br />
+export HAS_BLAS=yes<br />
+export 'BLASOPT=-L/usr/lib64/atlas -llapack -lf77blas -lcblas -latlas'<br />
+export USE_SCALAPACK=yes<br />
+export 'SCALAPACK=$(MPI_LIB)/libscalapack.a $(MPI_LIB)/libmpiblacsCinit.a $(MPI_LIB)/libmpiblacsF77init.a $(MPI_LIB)/libmpiblacs.a'<br />
+export CC=gcc<br />
+export FC=gfortran<br />
+export PYTHONLIBTYPE=so<br />
+sed -i 's/libpython$(PYTHONVERSION).a/libpython$(PYTHONVERSION).$(PYTHONLIBTYPE)/g' config/makefile.h<br />
+make nwchem_config 'NWCHEM_MODULES=all python' 2&gt;&amp;1 | tee make.nwchem_config.log<br />
+make 64_to_32 2&gt;&amp;1 | tee make.64_to_32.log<br />
+make USE_64TO32=y 2&gt;&amp;1 | tee make.log<br />
+<br />
+Nevertheless, I have doubts, and would like to suggest two improvements:<br />
+<br />
+4. the symbols are there:<br />
+nm -a /rpmbuild/BUILD/nwchem-6.1.test/bin/LINUX64/nwchem | grep pdsye <br />
+00000000029542e6 T ga_pdsyev_<br />
+...<br />
+0000000002a382c0 T pdsyev_<br />
+<br />
+and QA/tests/h2o_opt test runs, but maybe it would be better if nwchem prints in the out file<br />
+if is actually uses scalapack or not (especially due to the point 5. below).<br />
+<br />
+5. ga still does not fully finds scalapack, with src/tools/build/config.log:<br />
+<br />
+configure:21122: checking whether SCALAPACK implements pdsyevr<br />
+configure:21181: gfortran -o conftest      -L/usr/lib64/atlas  -L/usr/lib64/openmpi/lib -L/usr/lib64/openmpi/lib -L/usr/lib64/openmpi//lib  conftest.f  /usr/lib64/openmpi/lib/libscalapack.a /usr/lib64/openmpi/lib/libmpiblacsCinit.a /usr/lib64/openmpi/lib/libmpiblacsF77init.a /usr/lib64/openmpi/lib/libmpiblacs.a   -llapack -lf77blas -lcblas -latlas  -lmpi -lmpi_f90 -lmpi_f77 -lm  &gt;&amp;5<br />
+/tmp/ccKwIYKk.o: In function `MAIN__':<br />
+conftest.f:(.text+0xa): undefined reference to `pdsyevr_'<br />
+collect2: ld returned 1 exit status<br />
+<br />
+pdsyevr (<a target='blank' href="http://icl.cs.utk.edu/lapack-forum/archives/scalapack/msg00159.html" class="external free">http://icl.cs.utk.edu/lapack-forum/archives/scalapack/msg00159.html</a>) is a relatively new<br />
+addition to netlib scalapack, has become a part of scalapack 2.0.0 <a target='blank' href="http://netlib.org/scalapack/scalapack-2.0.0.html" class="external free">http://netlib.org/scalapack/scalapack-2.0.0.html</a>,<br />
+and i'm not sure if/when intel mkl will have it (10.3.4.191 does not have it).<br />
+A warning in nwchem runs, when pdsyevr is supposed to be used and not available, would be nice in stderr.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1186"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1186" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem15" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1186.html">10:23:56 AM PST - Fri, Feb 17th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">pdsyevr never used by default<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Marcin,<br />
+pdsyevr is never used by default.<br />
+You have to explicitly set a flag in the input file to have NWChem use pdsyevr (instead of the default pdsyevd).<br />
+What I just said deals with the runtime behavior.<br />
+As far as installation is concerned, NWChem is not automatically linking pdsyevr.<br />
+The tools configure does check for the existence of pdsyevr (as you have noticed yourself). If pdsyer is available in the supplied<br />
+Scalapack library, the tools build the GA interface to it (ga_pdsyevr).<br />
+Then, another bit of automation is needed to get nwchem to insert a call ga_pdsyevr (this is not there yet).<br />
+Anyhow, even when the call to ga_pdsyevr is inserted in NWChem, pdsyevd remains the default.<br />
+<br />
+I hope I made clear enough that the support for pdsyevr in NWChem 6.1 is completely experimental, unsupported and not advertised (yet).<br />
+Edo
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../../index.html">Forum</a> &gt;&gt; <a href="../../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../../sf/id4.html">Compiling NWChem</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />
+</body> 
+</html> 

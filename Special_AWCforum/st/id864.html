@@ -1,0 +1,1767 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="DFT input parse error Viewed 4048 times, With a total of 5 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id864 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >DFT input parse error</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_3186"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3186" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id3186.html">1:28:58 AM PDT - Sat, Jun 15th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi,<br />
+<br />
+I tried to run the following job with GRID computing. The job always ends with error. I tried several tweaks but never worked.<br />
+<br />
+Here's the input<br />
+<br />
+START PO1DFT1<br />
+MEMORY stack 600 mb heap 200 mb global 800 mb<br />
+TITLE "PO1 OPT B3LYP 6-31G"<br />
+GEOMETRY units angstroms print xyz autosym<br />
+
+<pre>P                  5.37709400    0.52591800   -0.76676200<br />
+O                  5.81883900    1.25546900   -1.99955300<br />
+C                  5.90247700    1.36508400    0.77619700<br />
+C                  6.04677400    2.75682500    0.72149200<br />
+C                  6.17235800    0.69117700    1.97234600<br />
+C                  6.43799300    3.46443600    1.85451200<br />
+H                  5.86871800    3.27129800   -0.21564100<br />
+C                  6.56253000    1.40365100    3.10469100<br />
+H                  6.09760300   -0.38920400    2.01895300<br />
+C                  6.69248700    2.78971300    3.04742500<br />
+H                  6.55103800    4.54155000    1.80435200<br />
+H                  6.77476000    0.87500600    4.02725000<br />
+H                  7.00078100    3.34190600    3.92819500<br />
+C                  6.04702200   -1.17776500   -0.67699500<br />
+C                  5.38292600   -2.24055200   -0.05480600<br />
+C                  7.28884700   -1.40190400   -1.28402000<br />
+C                  5.96369200   -3.50690400   -0.02301100<br />
+H                  4.40580500   -2.08891300    0.38928400<br />
+C                  7.86506200   -2.66841400   -1.25055400<br />
+H                  7.78428700   -0.58398200   -1.79404900<br />
+C                  7.20563000   -3.72062400   -0.61713000<br />
+H                  5.44162800   -4.32731300    0.45653000<br />
+H                  8.82539800   -2.83578100   -1.72509100<br />
+H                  7.65422400   -4.70751100   -0.59533300<br />
+C                  3.55435600    0.36279400   -0.66113700<br />
+C                  2.85073200    0.27029400   -1.86793900<br />
+C                  2.83971400    0.34460300    0.54080600<br />
+C                  1.46735300    0.14297100   -1.86898300<br />
+H                  3.39470500    0.30937200   -2.80454100<br />
+C                  1.45468500    0.21531800    0.53567400<br />
+H                  3.35800200    0.45679400    1.48608200<br />
+C                  0.74317800    0.10866000   -0.66776700<br />
+H                  0.94328300    0.04902900   -2.81306400<br />
+H                  0.91616300    0.23209700    1.47624700<br />
+C                 -0.73437700   -0.02707400   -0.66983700<br />
+C                 -1.51905600    0.62802800   -1.63231400<br />
+C                 -1.38698700   -0.81546700    0.28664200<br />
+C                 -2.90119500    0.50257000   -1.63316100<br />
+H                 -1.04189800    1.25919600   -2.37297100<br />
+C                 -2.77283600   -0.94348100    0.28803600<br />
+H                 -0.80363900   -1.35888900    1.02098600<br />
+C                 -3.54861900   -0.27934000   -0.66626100<br />
+H                 -3.48237200    1.01910000   -2.38891300<br />
+H                 -3.24713900   -1.57285100    1.03106100<br />
+P                 -5.36702400   -0.47189900   -0.79166600<br />
+O                 -5.82740500   -1.11102500   -2.06771600<br />
+C                 -6.04351300    1.21717000   -0.57259300<br />
+C                 -5.43229600    2.19517800    0.22048400<br />
+C                 -7.23690200    1.51686300   -1.23947500<br />
+C                 -6.01737300    3.45204400    0.35736900<br />
+H                 -4.49054100    1.98620400    0.71560400<br />
+C                 -7.81754000    2.77481000   -1.10152900<br />
+H                 -7.68902300    0.76421900   -1.87487100<br />
+C                 -7.21120000    3.74124100   -0.30097800<br />
+H                 -5.53692100    4.20700800    0.96953200<br />
+H                 -8.73995700    3.00253700   -1.62378600<br />
+H                 -7.66335500    4.72126900   -0.19698800<br />
+C                 -5.88989500   -1.43652100    0.67785900<br />
+C                 -6.30241200   -2.75396900    0.45111000<br />
+C                 -5.90985600   -0.92197800    1.97956500<br />
+C                 -6.71594500   -3.55094100    1.51652700<br />
+H                 -6.30706000   -3.13469100   -0.56360100<br />
+C                 -6.32307200   -1.72174400    3.04158300<br />
+H                 -5.61722100    0.10453400    2.16825000<br />
+C                 -6.72380000   -3.03741500    2.81131800<br />
+H                 -7.03674900   -4.57029400    1.33355800<br />
+H                 -6.33994000   -1.31634700    4.04705800<br />
+H                 -7.04873700   -3.65720100    3.63960000<br />
+</pre>
+END<br />
+BASIS "ao basis" PRINT<br />
+
+<ol><li>BASIS SET: (4s) -&gt; [2s]<br />
+</li></ol>
+H    S<br />
+
+<pre>    18.7311370              0.03349460       <br />
+     2.8253937              0.23472695       <br />
+     0.6401217              0.81375733       <br />
+</pre>
+H    S<br />
+
+<pre>     0.1612778              1.0000000        <br />
+</pre>
+<ol><li>BASIS SET: (10s,4p) -&gt; [3s,2p]<br />
+</li></ol>
+C    S<br />
+
+<pre>  3047.5249000              0.0018347        <br />
+   457.3695100              0.0140373        <br />
+   103.9486900              0.0688426        <br />
+    29.2101550              0.2321844        <br />
+     9.2866630              0.4679413        <br />
+     3.1639270              0.3623120        <br />
+</pre>
+C    SP<br />
+
+<pre>     7.8682724             -0.1193324              0.0689991        <br />
+     1.8812885             -0.1608542              0.3164240        <br />
+     0.5442493              1.1434564              0.7443083        <br />
+</pre>
+C    SP<br />
+
+<pre>     0.1687144              1.0000000              1.0000000        <br />
+</pre>
+<ol><li>BASIS SET: (10s,4p) -&gt; [3s,2p]<br />
+</li></ol>
+N    S<br />
+
+<pre>  4173.5110000              0.0018348        <br />
+   627.4579000              0.0139950        <br />
+   142.9021000              0.0685870        <br />
+    40.2343300              0.2322410        <br />
+    12.8202100              0.4690700        <br />
+     4.3904370              0.3604550        <br />
+</pre>
+N    SP<br />
+
+<pre>    11.6263580             -0.1149610              0.0675800        <br />
+     2.7162800             -0.1691180              0.3239070        <br />
+     0.7722180              1.1458520              0.7408950        <br />
+</pre>
+N    SP<br />
+
+<pre>     0.2120313              1.0000000              1.0000000        <br />
+</pre>
+<ol><li>BASIS SET: (10s,4p) -&gt; [3s,2p]<br />
+</li></ol>
+O    S<br />
+
+<pre>  5484.6717000              0.0018311        <br />
+   825.2349500              0.0139501        <br />
+   188.0469600              0.0684451        <br />
+    52.9645000              0.2327143        <br />
+    16.8975700              0.4701930        <br />
+     5.7996353              0.3585209        <br />
+</pre>
+O    SP<br />
+
+<pre>    15.5396160             -0.1107775              0.0708743        <br />
+     3.5999336             -0.1480263              0.3397528        <br />
+     1.0137618              1.1307670              0.7271586        <br />
+</pre>
+O    SP<br />
+
+<pre>     0.2700058              1.0000000              1.0000000        <br />
+</pre>
+<ol><li>BASIS SET: (16s,10p) -&gt; [4s,3p]<br />
+</li></ol>
+P    S<br />
+
+<pre> 19413.3000000              0.0018516        <br />
+  2909.4200000              0.0142062        <br />
+   661.3640000              0.0699995        <br />
+   185.7590000              0.2400790        <br />
+    59.1943000              0.4847620        <br />
+    20.0310000              0.3352000        <br />
+</pre>
+P    SP<br />
+
+<pre>   339.4780000             -0.00278217             0.00456462       <br />
+    81.0101000             -0.0360499              0.03369360       <br />
+    25.8780000             -0.1166310              0.13975500       <br />
+     9.4522100              0.0968328              0.33936200       <br />
+     3.6656600              0.6144180              0.45092100       <br />
+     1.4674600              0.4037980              0.23858600       <br />
+</pre>
+P    SP<br />
+
+<pre>     2.1562300             -0.2529230             -0.01776530       <br />
+     0.7489970              0.0328517              0.27405800       <br />
+     0.2831450              1.0812500              0.78542100       <br />
+</pre>
+P    SP<br />
+
+<pre>     0.0998317              1.0000000              1.00000000       <br />
+</pre>
+END<br />
+	xc b3lyp<br />
+	direct<br />
+	iterations 200<br />
+END<br />
+TASK DFT OPTIMIZE<br />
+<br />
+<br />
+<br />
+Here's part of the output:<br />
+<br />
+<br />
+<br />
+
+<pre>Summary of "ao basis" -&gt; "" (cartesian)<br />
+------------------------------------------------------------------------------<br />
+      Tag                 Description            Shells   Functions and Types<br />
+---------------- ------------------------------  ------  ---------------------<br />
+H                       user specified              2        2   2s<br />
+C                       user specified              5        9   3s2p<br />
+N                       user specified              5        9   3s2p<br />
+O                       user specified              5        9   3s2p<br />
+P                       user specified              7       13   4s3p<br />
+</pre>
+<br />
+<br />
+
+<pre>------------------------------------------------------------------------<br />
+input_parse: unknown directive xc                                                                                                                                                                                                                                                                     0<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+  146: 	xc b3lyp<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error in the input file<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <br />
+<a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section: <br />
+                                                                               <br />
+                                                                               <br />
+                                                                               <br />
+                  <br />
+</pre>
+0:0:input_parse: unknown directive xc:: 0<br />
+(rank:0 hostname:wn-gb-001.biruni.upm.my pid:2991):ARMCI DASSERT fail. armci.c:ARMCI_Error():260 cond:0<br />
+<br />
+<br />
+I was running this job parallel with 4 processors.<br />
+<br />
+Thanks!
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_3187"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3187" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id3187.html">7:23:12 PM PDT - Sat, Jun 15th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2"><pre>END
+xc b3lyp
+direct
+iterations 200
+END</pre><br />
+This bit of input file is very strange. No begining of DFT section but END.<br />
+"xc b3lyp" directive is unknown outside DFT section.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_3188"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3188" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id3188.html">4:47:47 AM PDT - Sun, Jun 16th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Thanks!<br />
+<br />
+I corrected the input by including 'DFT' before xc b3lyp.<br />
+<br />
+Here's the latest error i received:<br />
+<br />
+
+<pre>     Non-variational initial energy<br />
+     ------------------------------<br />
+</pre>
+<br />
+
+<pre>Total energy =   -2228.208898<br />
+1-e energy   =  -11498.711514<br />
+2-e energy   =    5000.573294<br />
+HOMO         =      -0.244912<br />
+LUMO         =      -0.029180<br />
+<br />
+  Time after variat. SCF:     25.5<br />
+  Time prior to 1st pass:     25.5<br />
+</pre>
+<br />
+
+<pre>Grid_pts file          = ./PO1DFT1.gridpts.0<br />
+Record size in doubles =  12289        No. of grid_pts per rec  =   3070<br />
+Max. records in memory =    176        Max. recs in file   =   4099025<br />
+</pre>
+<br />
+<br />
+
+<pre>          Memory utilization after 1st SCF pass: <br />
+          Heap Space remaining (MW):       24.00            23996640<br />
+         Stack Space remaining (MW):       78.64            78635869<br />
+</pre>
+<br />
+
+<pre>  convergence    iter        energy       DeltaE   RMS-Dens  Diis-err    time<br />
+---------------- ----- ----------------- --------- --------- ---------  ------<br />
+d= 0,ls=0.0,diis     1  -2220.7493438715 -6.49D+03  1.90D-02  4.67D+00    77.7<br />
+d= 0,ls=0.0,diis     2  -2218.8258627910  1.92D+00  1.58D-02  2.24D+01   142.2<br />
+ ME =                      0  Exiting via <br />
+</pre>
+0:0: peigs error: mxpend:: 0<br />
+(rank:0 hostname:wn-gb-001.biruni.upm.my pid:8258):ARMCI DASSERT fail. armci.c:ARMCI_Error():260 cond:0<br />
+
+<pre> ME =                      1  Exiting via <br />
+</pre>
+1:1: peigs error: mxpend:: 0<br />
+(rank:1 hostname:wn-gb-001.biruni.upm.my pid:8259):ARMCI DASSERT fail. armci.c:ARMCI_Error():260 cond:0<br />
+
+<pre> ME =                      2  Exiting via <br />
+</pre>
+2:2: peigs error: mxpend:: 0<br />
+(rank:2 hostname:wn-gb-001.biruni.upm.my pid:8260):ARMCI DASSERT fail. armci.c:ARMCI_Error():260 cond:0<br />
+
+<pre> ME =                      3  Exiting via <br />
+</pre>
+3:3: peigs error: mxpend:: 0<br />
+(rank:3 hostname:wn-gb-001.biruni.upm.my pid:8261):ARMCI DASSERT fail. armci.c:ARMCI_Error():260 cond:0
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_3192"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3192" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id3192.html">6:32:25 PM PDT - Sun, Jun 16th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Let me google that for you.<br />
+<a target='blank' href="http://lmgtfy.com/?q=ARMCI+DASSERT+fail.+armci.c%3AARMCI_Error()%3A260+cond%3A0" class="external free">http://lmgtfy.com/?q=ARMCI+DASSERT+fail.+armci.c%3AARMCI_Error()%3A260+cond%3A0</a><br />
+<br />
+I think the memory is not enought.
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_3268"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3268" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id3268.html">7:17:49 AM PDT - Sun, Jun 30th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Here's the latest error after recompile nwchem with gcc.<br />
+<br />
+
+<hr /><br />
+<pre>                           number of included internuclear angles:        120<br />
+==============================================================================
+</pre>
+<br />
+<br />
+<br />
+
+<pre>------------------------------------------------------------------------<br />
+dft optimize failed                                                                     0<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+  150: TASK DFT OPTIMIZE<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+This type of error is most commonly associatated with calculations not reaching convergence criteria<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+</pre>
+0:0:dft optimize failed:: 0<br />
+(rank:0 hostname:wn-ib-004.biruni.upm.my pid:29788):ARMCI DASSERT fail. armci.c:ARMCI_Error():260 cond:0<br />
+<br />
+<br />
+Last System Error Message from Task 0:: Inappropriate ioctl for device<br />
+
+<hr /><br />
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD <br />
+with errorcode 0.<br />
+<br />
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.<br />
+You may or may not see output from other processes, depending on<br />
+exactly when Open MPI kills them.<br />
+
+<hr /><br />
+<hr /><br />
+mpiexec has exited due to process rank 0 with PID 29788 on<br />
+node wn-ib-004.biruni.upm.my exiting without calling "finalize". This may<br />
+have caused other processes in the application to be<br />
+terminated by signals sent by mpiexec (as reported here).<br />
+
+<hr />
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_3321"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3321" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem6" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id3321.html">9:20:16 AM PDT - Wed, Jul 10th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">It looks like NWChem is running successfully, despite the error message. The key output is "dft optimize failed". This could be because the DFT energy did not converge because it needs more iterations (default is 30) or that the optimization did not convergence because it needs more iterations (default is 20 I think). You should look through the last part of your output file (for example search for @, this should give you the information for the optimization steps taken. If there is no @ it means the DFT energy failed to converge)<br />
+<br />
+Bert<br />
+<br />
+<br />
+
+<pre>[QUOTE=Bk.ong <a href="../sp/id3268.html" title="Special:AWCforum/sp/id3268">Jun 30th 2:17 pm</a>]Here's the latest error after recompile nwchem with gcc.<br />
+</pre>
+<br />
+
+<hr /><br />
+<pre>                           number of included internuclear angles:        120<br />
+==============================================================================
+</pre>
+<br />
+<br />
+<br />
+
+<pre>------------------------------------------------------------------------<br />
+dft optimize failed                                                                     0<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+  150: TASK DFT OPTIMIZE<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+This type of error is most commonly associatated with calculations not reaching convergence criteria<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+</pre>
+0:0:dft optimize failed:: 0<br />
+(rank:0 hostname:wn-ib-004.biruni.upm.my pid:29788):ARMCI DASSERT fail. armci.c:ARMCI_Error():260 cond:0<br />
+<br />
+<br />
+Last System Error Message from Task 0:: Inappropriate ioctl for device<br />
+
+<hr /><br />
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD <br />
+with errorcode 0.<br />
+<br />
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.<br />
+You may or may not see output from other processes, depending on<br />
+exactly when Open MPI kills them.<br />
+
+<hr /><br />
+<hr /><br />
+mpiexec has exited due to process rank 0 with PID 29788 on<br />
+node wn-ib-004.biruni.upm.my exiting without calling "finalize". This may<br />
+have caused other processes in the application to be<br />
+terminated by signals sent by mpiexec (as reported here).<br />
+
+<hr /></div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../index.html">Forum</a> &gt;&gt; <a href="../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../sf/id5.html">Running NWChem</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />
+</body> 
+</html> 
