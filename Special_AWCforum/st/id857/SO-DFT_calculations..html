@@ -1,0 +1,1804 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="SO-DFT calculations. Viewed 2697 times, With a total of 2 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id857_SO-DFT_calculations_html skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >SO-DFT calculations.</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_3174"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3174" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id3174.html">10:54:57 AM PDT - Fri, Jun 7th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi All, <br />
+
+<pre>    I am new user of NWChem. I am using SO-DFT module in NWChem package, where I am trying to estimate two states of dinuclear complex (High Spin and Broken Symmetry) to estimate the magnetic exchange. I have designed the SO basis set for the Gd, where I have used the (CSDZ ECP) basis set. To compute the High spin and Broken Symmetry states, I have fragmented the complex in order to generate the proper guess orbitals to compute these states. Task SODFT is working properly when I fragmented the system and .mos generated properly. But When I am combining the .mos to compute the particular spin states, it end up with error. <br />
+</pre>
+<br />
+It seems that I have problem with technical issues. could some one suggest the me how to solve this problem...<br />
+<br />
+
+<pre>NWChem DFT Module<br />
+                                -----------------<br />
+</pre>
+<br />
+<br />
+
+<pre>                               SO-VGD-calculations<br />
+</pre>
+<br />
+<br />
+
+<pre>------------------------------------------------------------------------<br />
+bas_ecce_print_basis: fatal error:stype      911<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;:<br />
+  327: task sodft energy<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error in the specified basis set<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                        <br />
+</pre>
+0:0:bas_ecce_print_basis: fatal error:stype:: 911<br />
+(rank:0 hostname:singlet.chem.iitb.ac.in pid:5246):ARMCI DASSERT fail. armci.c:ARMCI_Error():260 cond:0<br />
+Last System Error Message from Task 0:: No such file or directory<br />
+
+<pre> 0: ARMCI aborting 0 (0).<br />
+ 0: ARMCI aborting 0 (0).<br />
+</pre>
+system error message: Invalid argument<br />
+
+<pre>------------------------------------------------------------------------<br />
+bas_ecce_print_basis: fatal error:stype      911<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;:<br />
+  327: task sodft energy<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error in the specified basis set<br />
+------------------------------------------------------------------------
+</pre></td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_3176"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3176" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id3176.html">2:14:59 PM PDT - Fri, Jun 7th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Could you rerun this with the "ecce_print" keyword removed from the input deck. If this does not resolve the issue, please post the input deck.<br />
+<br />
+Bert
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_3237"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_3237" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id3237.html">11:26:37 PM PDT - Thu, Jun 20th 2013 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">SODFT Calculations<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Thanks for your reply, I tried to run without the ecce_print keyword but still there is a problem. I am not sure what is the actual error in my input. So I am just posting the input file.<br />
+<br />
+Title "CRGD-calculations"<br />
+<br />
+start CRGD<br />
+memory 1000 mb<br />
+echo<br />
+<br />
+set tolguess 1.0e-7<br />
+<br />
+geometry Gd noautoz<br />
+GD        0.00000        8.31870        4.27930<br />
+end<br />
+geometry Crup noautoz<br />
+CR        0.00000        4.88840        4.27930<br />
+end<br />
+geometry Crdn noautoz<br />
+CR        0.00000        4.88840        4.27930<br />
+end<br />
+geometry ligand noautoz<br />
+
+<pre> N        0.15210        3.38970        2.83390<br />
+ N        2.05080        4.69790        4.17350<br />
+ C        1.80200        2.04350        1.65420<br />
+ C        1.44550        3.02460        2.59310<br />
+ C       -0.80620        2.80460        2.12170<br />
+ H       -1.71150        3.03180        2.30050<br />
+ C        3.81810        3.37020        3.15260<br />
+ C        2.46490        3.70440        3.32710<br />
+ C       -0.53520        1.86560        1.11860<br />
+ H       -1.24250        1.49430        0.60590<br />
+ C        0.75830        1.48710        0.88390<br />
+ H        0.95420        0.85260        0.20540<br />
+ C        2.96900        5.39830        4.83560<br />
+ H        2.68810        6.10070        5.40900<br />
+ C        4.76090        4.11990        3.88040<br />
+ H        5.68670        3.92760        3.79830<br />
+ C        3.18930        1.68660        1.51660<br />
+ H        3.43520        1.00070        0.90720<br />
+ C        4.15410        2.31190        2.23890<br />
+ H        5.06140        2.04760        2.13960<br />
+ C        4.34390        5.12570        4.70870<br />
+ H        4.97820        5.63890        5.19500<br />
+ N       -0.15210        3.38970        5.72460<br />
+ N       -2.05080        4.69790        4.38510<br />
+ C       -1.80200        2.04350        6.90440<br />
+ C       -1.44550        3.02460        5.96550<br />
+ C        0.80620        2.80460        6.43690<br />
+ H        1.71150        3.03180        6.25800<br />
+ C       -3.81810        3.37020        5.40590<br />
+ C       -2.46490        3.70440        5.23150<br />
+ C        0.53520        1.86560        7.43990<br />
+ H        1.24250        1.49430        7.95260<br />
+ C       -0.75830        1.48710        7.67460<br />
+ H       -0.95420        0.85260        8.35310<br />
+ C       -2.96900        5.39830        3.72300<br />
+ H       -2.68810        6.10070        3.14950<br />
+ C       -4.76090        4.11990        4.67810<br />
+ H       -5.68670        3.92760        4.76030<br />
+ C       -3.18930        1.68660        7.04200<br />
+ H       -3.43520        1.00070        7.65130<br />
+ C       -4.15410        2.31190        6.31960<br />
+ H       -5.06140        2.04760        6.41890<br />
+ C       -4.34390        5.12570        3.84980<br />
+ H       -4.97820        5.63890        3.36350<br />
+</pre>
+end<br />
+geometry bridge noautoz<br />
+
+<pre> O       -0.14070        6.33480        3.02900<br />
+ C       -0.11550        6.16860        1.61070<br />
+ H       -0.18880        5.21520        1.39160<br />
+ H        0.72680        6.52030        1.25470<br />
+ H       -0.86690        6.65400        1.21190<br />
+ O        0.14070        6.33480        5.52950<br />
+ C        0.11550        6.16860        6.94780<br />
+ H        0.18880        5.21520        7.16690<br />
+ H       -0.72680        6.52030        7.30390<br />
+ H        0.86690        6.65400        7.34670<br />
+</pre>
+end<br />
+geometry Nitrate noautoz<br />
+
+<pre> N       -2.09400        9.83910        2.86850<br />
+ O       -2.97960       10.48190        2.30770<br />
+ O       -1.84410        8.63990        2.54360<br />
+ O       -1.38560       10.34200        3.80140<br />
+ N        2.09300        8.57100        2.22920<br />
+ O        2.33320        7.96010        3.31520<br />
+ O        0.92800        9.05850        2.09430<br />
+ O        2.94300        8.69240        1.34640<br />
+ N        2.09400        9.83910        5.69010<br />
+ O        2.97960       10.48190        6.25080<br />
+ O        1.84410        8.63990        6.01490<br />
+ O        1.38560       10.34200        4.75720<br />
+ N       -2.09300        8.57100        6.32940<br />
+ O       -2.33320        7.96010        5.24330<br />
+ O       -0.92800        9.05850        6.46430<br />
+ O       -2.94300        8.69240        7.21210<br />
+</pre>
+end<br />
+<br />
+geometry full noautoz<br />
+GD        0.00000        8.31870        4.27930<br />
+CR        0.00000        4.88840        4.27930<br />
+
+<pre> N        0.15210        3.38970        2.83390<br />
+ N        2.05080        4.69790        4.17350<br />
+ C        1.80200        2.04350        1.65420<br />
+ C        1.44550        3.02460        2.59310<br />
+ C       -0.80620        2.80460        2.12170<br />
+ H       -1.71150        3.03180        2.30050<br />
+ C        3.81810        3.37020        3.15260<br />
+ C        2.46490        3.70440        3.32710<br />
+ C       -0.53520        1.86560        1.11860<br />
+ H       -1.24250        1.49430        0.60590<br />
+ C        0.75830        1.48710        0.88390<br />
+ H        0.95420        0.85260        0.20540<br />
+ C        2.96900        5.39830        4.83560<br />
+ H        2.68810        6.10070        5.40900<br />
+ C        4.76090        4.11990        3.88040<br />
+ H        5.68670        3.92760        3.79830<br />
+ C        3.18930        1.68660        1.51660<br />
+ H        3.43520        1.00070        0.90720<br />
+ C        4.15410        2.31190        2.23890<br />
+ H        5.06140        2.04760        2.13960<br />
+ C        4.34390        5.12570        4.70870<br />
+ H        4.97820        5.63890        5.19500<br />
+ N       -0.15210        3.38970        5.72460<br />
+ N       -2.05080        4.69790        4.38510<br />
+ C       -1.80200        2.04350        6.90440<br />
+ C       -1.44550        3.02460        5.96550<br />
+ C        0.80620        2.80460        6.43690<br />
+ H        1.71150        3.03180        6.25800<br />
+ C       -3.81810        3.37020        5.40590<br />
+ C       -2.46490        3.70440        5.23150<br />
+ C        0.53520        1.86560        7.43990<br />
+ H        1.24250        1.49430        7.95260<br />
+ C       -0.75830        1.48710        7.67460<br />
+ H       -0.95420        0.85260        8.35310<br />
+ C       -2.96900        5.39830        3.72300<br />
+ H       -2.68810        6.10070        3.14950<br />
+ C       -4.76090        4.11990        4.67810<br />
+ H       -5.68670        3.92760        4.76030<br />
+ C       -3.18930        1.68660        7.04200<br />
+ H       -3.43520        1.00070        7.65130<br />
+ C       -4.15410        2.31190        6.31960<br />
+ H       -5.06140        2.04760        6.41890<br />
+ C       -4.34390        5.12570        3.84980<br />
+ H       -4.97820        5.63890        3.36350<br />
+O       -0.14070        6.33480        3.02900<br />
+ C       -0.11550        6.16860        1.61070<br />
+ H       -0.18880        5.21520        1.39160<br />
+ H        0.72680        6.52030        1.25470<br />
+ H       -0.86690        6.65400        1.21190<br />
+ O        0.14070        6.33480        5.52950<br />
+ C        0.11550        6.16860        6.94780<br />
+ H        0.18880        5.21520        7.16690<br />
+ H       -0.72680        6.52030        7.30390<br />
+ H        0.86690        6.65400        7.34670<br />
+N       -2.09400        9.83910        2.86850<br />
+ O       -2.97960       10.48190        2.30770<br />
+ O       -1.84410        8.63990        2.54360<br />
+ O       -1.38560       10.34200        3.80140<br />
+ N        2.09300        8.57100        2.22920<br />
+ O        2.33320        7.96010        3.31520<br />
+ O        0.92800        9.05850        2.09430<br />
+ O        2.94300        8.69240        1.34640<br />
+ N        2.09400        9.83910        5.69010<br />
+ O        2.97960       10.48190        6.25080<br />
+ O        1.84410        8.63990        6.01490<br />
+ O        1.38560       10.34200        4.75720<br />
+ N       -2.09300        8.57100        6.32940<br />
+ O       -2.33320        7.96010        5.24330<br />
+ O       -0.92800        9.05850        6.46430<br />
+ O       -2.94300        8.69240        7.21210<br />
+</pre>
+end<br />
+<br />
+BASIS "ao basis" print<br />
+Gd   SP<br />
+
+<pre>  17.2400000000000       3.607000091537422E-003 -2.072870013100241E-002<br />
+  3.34600000000000       0.737570618717857       0.519148703280945<br />
+  2.42900000000000       -1.71492784352095       -1.48838220940636<br />
+</pre>
+Gd   SP<br />
+
+<pre> 0.934900000000000        1.00000000000000        1.00000000000000<br />
+</pre>
+Gd   SP<br />
+
+<pre> 0.358800000000000        1.00000000000000        1.00000000000000<br />
+</pre>
+Gd   SP<br />
+
+<pre> 8.105000000000000E-002   1.00000000000000        1.00000000000000<br />
+</pre>
+Gd   D<br />
+
+<pre> 0.857300000000000       0.305193173183232<br />
+ 0.412800000000000       0.739945149015201<br />
+</pre>
+Gd   D<br />
+
+<pre> 0.151900000000000        1.00000000000000<br />
+</pre>
+Gd   F<br />
+
+<pre>  77.6000000000000       1.583755898700157E-002<br />
+  28.6100000000000       9.647586944747537E-002<br />
+  12.1300000000000       0.235859801924552<br />
+  5.23900000000000       0.380304259854489<br />
+  2.30500000000000       0.373451413617453<br />
+ 0.994200000000000       0.241992063517626<br />
+</pre>
+Gd   F<br />
+
+<pre> 0.403100000000000        1.00000000000000<br />
+</pre>
+Cr    S<br />
+
+<pre>254477.8070400              0.23386945693E-03      <br />
+ 38131.7970540              0.18142601800E-02      <br />
+  8675.2930607              0.94363925721E-02      <br />
+  2455.0099848              0.38343639367E-01      <br />
+   799.16217787             0.12459194837    <br />
+   286.90021489             0.29489696029    <br />
+   111.25413232             0.41846149607    <br />
+    43.864152636            0.21633763420    <br />
+</pre>
+Cr    S<br />
+
+<pre>   279.32669173            -0.23450908111E-01      <br />
+    86.274732376           -0.11080370027    <br />
+    13.555756113            0.53028965842    <br />
+     5.6978112751           0.51603516947    <br />
+</pre>
+Cr    S<br />
+
+<pre>     8.5636582615          -0.38109545675    <br />
+     1.3988296768           1.1991591436     <br />
+</pre>
+Cr    S<br />
+
+<pre>     0.57288171116          1.0000000        <br />
+</pre>
+Cr    S<br />
+
+<pre>     0.090096171317         1.0000000        <br />
+</pre>
+Cr    S<br />
+
+<pre>     0.034125885135         1.0000000        <br />
+</pre>
+Cr    P<br />
+
+<pre>  1306.4398864              0.24277326185E-02      <br />
+   309.25311441             0.19544041017E-01      <br />
+    98.996273963            0.90651794553E-01      <br />
+    36.756916451            0.25699279154    <br />
+    14.566657077            0.40935504891    <br />
+     5.8739937432           0.23729388849    <br />
+</pre>
+Cr    P<br />
+
+<pre>    22.890999695           -0.28166026613E-01      <br />
+     3.0855001822           0.56034120148    <br />
+     1.2132329118           0.98119019650    <br />
+</pre>
+Cr    P<br />
+
+<pre>     0.44931680699          1.0000000        <br />
+</pre>
+Cr    D<br />
+
+<pre>    43.720074476            0.13622964026E-01      <br />
+    12.391242652            0.78935180133E-01      <br />
+     4.2639442006           0.23833840000    <br />
+     1.5525221790           0.39526851122    <br />
+</pre>
+Cr    D<br />
+
+<pre>     0.53761929485          1.0000000        <br />
+</pre>
+Cr    D<br />
+
+<pre>     0.16493173074          1.0000000        <br />
+</pre>
+H    S<br />
+
+<pre>        18.7311370              0.03349460<br />
+         2.8253937              0.23472695<br />
+         0.6401217              0.81375733<br />
+</pre>
+H    S<br />
+
+<pre>         0.1612778              1.00000000<br />
+</pre>
+C    S<br />
+
+<pre>      3047.5249000              0.0018347<br />
+       457.3695100              0.0140373<br />
+       103.9486900              0.0688426<br />
+        29.2101550              0.2321844<br />
+         9.2866630              0.4679413<br />
+         3.1639270              0.3623120<br />
+</pre>
+C    SP<br />
+
+<pre>         7.8682724             -0.1193324              0.0689991<br />
+         1.8812885             -0.1608542              0.3164240<br />
+         0.5442493              1.1434564              0.7443083<br />
+</pre>
+C    SP<br />
+
+<pre>         0.1687144              1.0000000              1.0000000<br />
+</pre>
+N    S<br />
+
+<pre>      4173.5110000              0.0018348<br />
+       627.4579000              0.0139950<br />
+       142.9021000              0.0685870<br />
+        40.2343300              0.2322410<br />
+        12.8202100              0.4690700<br />
+         4.3904370              0.3604550<br />
+</pre>
+N    SP<br />
+
+<pre>        11.6263580             -0.1149610              0.0675800<br />
+         2.7162800             -0.1691180              0.3239070<br />
+         0.7722180              1.1458520              0.7408950<br />
+</pre>
+N    SP<br />
+
+<pre>         0.2120313              1.0000000              1.0000000<br />
+</pre>
+O    S<br />
+
+<pre>      5484.6717000              0.0018311<br />
+       825.2349500              0.0139501<br />
+       188.0469600              0.0684451<br />
+        52.9645000              0.2327143<br />
+        16.8975700              0.4701930<br />
+         5.7996353              0.3585209<br />
+</pre>
+O    SP<br />
+
+<pre>        15.5396160             -0.1107775              0.0708743<br />
+         3.5999336             -0.1480263              0.3397528<br />
+         1.0137618              1.1307670              0.7271586<br />
+</pre>
+O    SP<br />
+
+<pre>         0.2700058              1.0000000              1.0000000<br />
+</pre>
+END<br />
+<br />
+ECP<br />
+Gd nelec 46<br />
+Gd       ul<br />
+
+<pre>   1    13.095090800   -15.786726000<br />
+   1     2.569738560    -6.127778140<br />
+</pre>
+Gd      s<br />
+
+<pre>   2     2.702265230  -137.902125000<br />
+   2     2.933477410   208.964540000<br />
+   0     9.850809640    16.858693600<br />
+</pre>
+Gd      p<br />
+
+<pre>   0    10.256201200    11.130834300<br />
+   2     2.452732130   131.651321000<br />
+   2     2.196934270   -77.444300800<br />
+</pre>
+Gd      d<br />
+
+<pre>   2     2.247169230    31.466411800<br />
+   0     6.430643690     8.345072860<br />
+</pre>
+END<br />
+<br />
+SO<br />
+Gd ul<br />
+
+<pre> 2     0.1936     -0.002991<br />
+ 2     0.7674     0.016336<br />
+ 2     2.6746     -0.054906<br />
+ 2     10.6942    0.231773<br />
+ 2     54.9518    -0.308907<br />
+ 1     168.3198   0.744017<br />
+</pre>
+Gd P<br />
+
+<pre> 2      0.5348      7.656000<br />
+ 2      0.7927      -37.030000<br />
+ 2      1.1057      64.505654<br />
+ 2      1.6420      -62.416736<br />
+ 2      2.6371      43.005868<br />
+ 2      4.7790      -26.468036<br />
+ 1      6.1238      3.420000<br />
+ 0      18.1064     -0.325904<br />
+</pre>
+Gd D<br />
+
+<pre> 2      0.9454   -1.175800<br />
+ 2      1.0870   -0.622737<br />
+ 2      1.3824   10.067101<br />
+ 2      1.9103   -20.624451<br />
+ 2      2.7984   21.943850<br />
+ 2      4.0477   -8.987886<br />
+ 1      9.7598   0.297823<br />
+ 0      15.5826  -0.002343<br />
+</pre>
+end<br />
+<br />
+set geometry Gd <br />
+charge 3.0<br />
+dft<br />
+
+<pre>xc B3lyp<br />
+odft<br />
+iterations 400<br />
+convergence  energy 1e-6 density 5e-4 gradient 5e-4 \<br />
+             ncydp 0 damp 80 dampon 1d9 dampoff 1d-1  \<br />
+             ncyds 0 diis 5  diison 1d-2<br />
+mult 8<br />
+mulliken<br />
+vectors input atomic \<br />
+        output Gd_SO.mos<br />
+</pre>
+end<br />
+task sodft energy<br />
+<br />
+set geometry Crup <br />
+charge 3.0<br />
+dft<br />
+
+<pre>xc B3lyp<br />
+odft<br />
+iterations 400<br />
+convergence  energy 1e-6 density 1e-4 gradient 5e-4 \<br />
+             ncydp 0 damp 80 dampon 1d9 dampoff 1d-1  \<br />
+             ncyds 0 diis 5  diison 1d-2<br />
+mult 4<br />
+mulliken<br />
+vectors input atomic \<br />
+        output Crup_SO.mos<br />
+</pre>
+end<br />
+task sodft energy<br />
+<br />
+set geometry Crdn<br />
+charge 3.0<br />
+dft<br />
+
+<pre>xc B3lyp<br />
+odft<br />
+iterations 400<br />
+convergence  energy 1e-6 density 1e-4 gradient 5e-4 \<br />
+             ncydp 0 damp 80 dampon 1d9 dampoff 1d-1  \<br />
+             ncyds 0 diis 5  diison 1d-2<br />
+mult -4<br />
+mulliken<br />
+vectors input atomic \<br />
+        output Crdn_SO.mos<br />
+</pre>
+end<br />
+task sodft energy<br />
+<br />
+set geometry ligand<br />
+charge 0.0<br />
+dft<br />
+
+<pre>xc B3lyp<br />
+odft<br />
+iterations 400<br />
+convergence  energy 1e-6 density 1e-4 gradient 5e-4 \<br />
+             ncydp 0 damp 80 dampon 1d9 dampoff 1d-1  \<br />
+             ncyds 0 diis 5  diison 1d-2<br />
+mult 1<br />
+mulliken<br />
+vectors input atomic \<br />
+        output ligand_SO.mos<br />
+</pre>
+end<br />
+task sodft energy<br />
+<br />
+set geometry bridge<br />
+charge -2<br />
+dft<br />
+
+<pre>xc B3lyp<br />
+odft<br />
+iterations 400<br />
+convergence  energy 1e-6 density 1e-4 gradient 5e-4 \<br />
+             ncydp 0 damp 80 dampon 1d9 dampoff 1d-1  \<br />
+             ncyds 0 diis 5  diison 1d-2<br />
+mult 1<br />
+mulliken<br />
+vectors input atomic \<br />
+        output bridge_SO.mos<br />
+</pre>
+end<br />
+task sodft energy<br />
+<br />
+set geometry Nitrate<br />
+charge -4.0<br />
+dft<br />
+
+<pre>xc B3lyp<br />
+odft<br />
+iterations 400<br />
+convergence  energy 1e-6 density 1e-4 gradient 5e-4 \<br />
+             ncydp 0 damp 80 dampon 1d9 dampoff 1d-1  \<br />
+             ncyds 0 diis 5  diison 1d-2<br />
+mult 1<br />
+mulliken<br />
+vectors input atomic \<br />
+        output Nitrate_SO.mos<br />
+</pre>
+end<br />
+task sodft energy<br />
+<br />
+set geometry full<br />
+charge 0.0<br />
+dft<br />
+
+<pre>xc B3lyp<br />
+odft<br />
+iterations 800<br />
+convergence  energy 1e-6 density 5e-4 gradient 5e-4 \<br />
+             ncydp 0 damp 80 dampon 1d9 dampoff 1d-1  \<br />
+             ncyds 0 diis 5  diison 1d-2<br />
+</pre>
+mult 11<br />
+mulliken<br />
+vectors input fragment Gd_SO.mos Crup_SO.mos ligand_SO.mos bridge_SO.mos Nitrate_SO.mos output Full-SO-CrGd-HS.mos<br />
+end<br />
+task sodft <br />
+<br />
+set geometry full<br />
+charge 0.0<br />
+dft<br />
+
+<pre>xc B3lyp<br />
+odft<br />
+iterations 800<br />
+convergence  energy 1e-6 density 5e-4 gradient 5e-4 \<br />
+             ncydp 0 damp 80 dampon 1d9 dampoff 1d-1  \<br />
+             ncyds 0 diis 5  diison 1d-2<br />
+</pre>
+mult 5<br />
+mulliken<br />
+vectors input fragment Gd_SO.mos Crdn_SO.mos ligand_SO.mos bridge_SO.mos Nitrate_SO.mos output Full-SO-CrGd-HS.mos<br />
+end<br />
+task sodft
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../../index.html">Forum</a> &gt;&gt; <a href="../../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../../sf/id3.html">General Topics</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />
+</body> 
+</html> 

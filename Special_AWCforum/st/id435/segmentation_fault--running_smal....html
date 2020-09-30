@@ -1,0 +1,2851 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="segmentation fault--running small test case, compiled with gfortran Viewed 10933 times, With a total of 12 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id435_segmentation_fault--running_smal_html skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >segmentation fault--running small test case, compiled with gfortran</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_1458"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1458" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1458.html">1:54:01 PM PDT - Tue, May 1st 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Dear NWChem users,<br />
+<br />
+I have compiled a serial version of NWchem 6.1 using the gfortran compiler. I am working in a LINUX64 platform. <br />
+<br />
+I tried running the sample file for water, but receive the following "segmentation fault" error. My input/output files are pasted below. <br />
+<br />
+ERROR: <br />
+<br />
+Last System Error Message from Task 0:: Inappropriate ioctl for device<br />
+0:Segmentation Violation error, status=: 11<br />
+(rank:0 hostname:r2c4n10 pid:16635):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/signaltrap.c:SigSegvHandler():310 cond:0<br />
+
+<pre> 0: ARMCI aborting 11 (0xb).<br />
+ 0: ARMCI aborting 11 (0xb).<br />
+</pre>
+system error message: Invalid argument<br />
+
+<pre>                                        <br />
+</pre>
+INPUT:<br />
+<br />
+
+<pre>start h2o<br />
+title "Water in 6-31g basis set"<br />
+</pre>
+<br />
+
+<pre>geometry units au<br />
+  O      0.00000000    0.00000000    0.00000000<br />
+  H      0.00000000    1.43042809   -1.10715266<br />
+  H      0.00000000   -1.43042809   -1.10715266<br />
+end<br />
+basis<br />
+  H library 6-31g<br />
+  O library 6-31g<br />
+end<br />
+task scf<br />
+</pre>
+<br />
+<br />
+OUTPUT: <br />
+<br />
+<br />
+<br />
+<br />
+
+<pre>             Northwest Computational Chemistry Package (NWChem) 6.1<br />
+             ------------------------------------------------------<br />
+</pre>
+<br />
+<br />
+
+<pre>                   Environmental Molecular Sciences Laboratory<br />
+                      Pacific Northwest National Laboratory<br />
+                               Richland, WA 99352<br />
+</pre>
+<br />
+
+<pre>                             Copyright (c) 1994-2010<br />
+                      Pacific Northwest National Laboratory<br />
+                           Battelle Memorial Institute<br />
+</pre>
+<br />
+
+<pre>            NWChem is an open-source computational chemistry package<br />
+                       distributed under the terms of the<br />
+                     Educational Community License (ECL) 2.0<br />
+            A copy of the license is included with this distribution<br />
+                             in the LICENSE.TXT file<br />
+</pre>
+<br />
+
+<pre>                                 ACKNOWLEDGMENT<br />
+                                 --------------<br />
+</pre>
+<br />
+
+<pre>           This software and its documentation were developed at the<br />
+           EMSL at Pacific Northwest National Laboratory, a multiprogram<br />
+           national laboratory, operated for the U.S. Department of Energy<br />
+           by Battelle under Contract Number DE-AC05-76RL01830. Support<br />
+           for this work was provided by the Department of Energy Office<br />
+           of Biological and Environmental Research, Office of Basic<br />
+           Energy Sciences, and the Office of Advanced Scientific Computing.<br />
+</pre>
+<br />
+<br />
+
+<pre>          Job information<br />
+          ---------------<br />
+</pre>
+<br />
+
+<pre>   hostname      = r2c4n10<br />
+   program       = /tigress-hsm/dkanan/software/nwchem-6.1-gcc/bin/LINUX64/nwchem<br />
+   date          = Tue May  1 16:49:39 2012<br />
+</pre>
+<br />
+
+<pre>   compiled      = Mon_Apr_30_17:38:24_2012<br />
+   source        = /tigress-hsm/dkanan/software/nwchem-6.1-gcc/<br />
+   nwchem branch = 6.1<br />
+   input         = water.nw<br />
+   prefix        = h2o.<br />
+   data base     = ./h2o.db<br />
+   status        = startup<br />
+   nproc         =        1<br />
+   time left     =     -1s<br />
+</pre>
+<br />
+<br />
+
+<pre>          Memory information<br />
+          ------------------<br />
+</pre>
+<br />
+
+<pre>   heap     =   13107201 doubles =    100.0 Mbytes<br />
+   stack    =   13107201 doubles =    100.0 Mbytes<br />
+   global   =   26214400 doubles =    200.0 Mbytes (distinct from heap &amp; stack)<br />
+   total    =   52428802 doubles =    400.0 Mbytes<br />
+   verify   = yes<br />
+   hardfail = no<br />
+</pre>
+<br />
+<br />
+
+<pre>          Directory information<br />
+          ---------------------<br />
+</pre>
+<br />
+
+<pre> 0 permanent = .<br />
+ 0 scratch   = .<br />
+</pre>
+<br />
+<br />
+<br />
+<br />
+
+<pre>                               NWChem Input Module<br />
+                               -------------------<br />
+</pre>
+<br />
+<br />
+
+<pre>                            Water in 6-31g basis set<br />
+                            ------------------------<br />
+C2V symmetry detected<br />
+</pre>
+<br />
+
+<pre>         ------<br />
+         auto-z<br />
+         ------<br />
+</pre>
+<br />
+<br />
+
+<pre>                            Geometry "geometry" -&gt; ""<br />
+                            -------------------------<br />
+</pre>
+<br />
+
+<pre>Output coordinates in a.u. (scale by  1.000000000 to convert to a.u.)<br />
+</pre>
+<br />
+
+<pre> No.       Tag          Charge          X              Y              Z<br />
+---- ---------------- ---------- -------------- -------------- --------------<br />
+   1 O                    8.0000     0.00000000     0.00000000     0.22143053<br />
+   2 H                    1.0000    -1.43042809     0.00000000    -0.88572213<br />
+   3 H                    1.0000     1.43042809     0.00000000    -0.88572213<br />
+</pre>
+<br />
+
+<pre>     Atomic Mass<br />
+     -----------<br />
+</pre>
+<br />
+
+<pre>     O                 15.994910<br />
+     H                  1.007825<br />
+Effective nuclear repulsion energy (a.u.)       9.1949809303<br />
+</pre>
+<br />
+
+<pre>           Nuclear Dipole moment (a.u.)<br />
+           ----------------------------<br />
+       X                 Y               Z<br />
+---------------- ---------------- ----------------<br />
+    0.0000000000     0.0000000000     0.0000000000<br />
+</pre>
+<br />
+
+<pre>     Symmetry information<br />
+     --------------------<br />
+</pre>
+<br />
+
+<pre>Group name             C2v<br />
+Group number             16<br />
+Group order               4<br />
+No. of unique centers     2<br />
+</pre>
+<br />
+
+<pre>     Symmetry unique atoms<br />
+</pre>
+<br />
+
+<pre>    1    2<br />
+</pre>
+<br />
+<br />
+<br />
+
+<pre>                               Z-matrix (autoz)<br />
+                               --------<br />
+</pre>
+<br />
+
+<pre>Units are Angstrom for bonds and degrees for angles<br />
+</pre>
+<br />
+
+<pre>     Type          Name      I     J     K     L     M      Value<br />
+     ----------- --------  ----- ----- ----- ----- ----- ----------<br />
+   1 Stretch                  1     2                       0.95720<br />
+   2 Stretch                  1     3                       0.95720<br />
+   3 Bend                     2     1     3               104.52019<br />
+</pre>
+<br />
+<br />
+
+<pre>           XYZ format geometry<br />
+           -------------------<br />
+    3<br />
+geometry<br />
+O                     0.00000000     0.00000000     0.11717600<br />
+H                    -0.75695000     0.00000000    -0.46870400<br />
+H                     0.75695000     0.00000000    -0.46870400<br />
+</pre>
+<br />
+
+<pre>==============================================================================
+                               internuclear distances<br />
+------------------------------------------------------------------------------<br />
+      center one      |      center two      | atomic units |       a.u.<br />
+------------------------------------------------------------------------------<br />
+   2 H                |   1 O                |     1.80884  |     1.80884<br />
+   3 H                |   1 O                |     1.80884  |     1.80884<br />
+------------------------------------------------------------------------------<br />
+                        number of included internuclear distances:          2<br />
+==============================================================================
+</pre>
+<br />
+
+<pre>==============================================================================
+                                internuclear angles<br />
+------------------------------------------------------------------------------<br />
+       center 1       |       center 2       |       center 3       |  degrees<br />
+------------------------------------------------------------------------------<br />
+   2 H                |   1 O                |   3 H                |   104.52<br />
+------------------------------------------------------------------------------<br />
+                           number of included internuclear angles:          1<br />
+==============================================================================
+</pre>
+<br />
+<br />
+<br />
+
+<pre>                     Basis "ao basis" -&gt; "" (cartesian)<br />
+                     -----<br />
+ H (Hydrogen)<br />
+ ------------<br />
+           Exponent  Coefficients<br />
+      -------------- ---------------------------------------------------------<br />
+ 1 S  1.87311370E+01  0.033495<br />
+ 1 S  2.82539370E+00  0.234727<br />
+ 1 S  6.40121700E-01  0.813757<br />
+</pre>
+<br />
+
+<pre> 2 S  1.61277800E-01  1.000000<br />
+</pre>
+<br />
+
+<pre> O (Oxygen)<br />
+ ----------<br />
+           Exponent  Coefficients<br />
+      -------------- ---------------------------------------------------------<br />
+ 1 S  5.48467170E+03  0.001831<br />
+ 1 S  8.25234950E+02  0.013950<br />
+ 1 S  1.88046960E+02  0.068445<br />
+ 1 S  5.29645000E+01  0.232714<br />
+ 1 S  1.68975700E+01  0.470193<br />
+ 1 S  5.79963530E+00  0.358521<br />
+</pre>
+<br />
+
+<pre> 2 S  1.55396160E+01 -0.110778<br />
+ 2 S  3.59993360E+00 -0.148026<br />
+ 2 S  1.01376180E+00  1.130767<br />
+</pre>
+<br />
+
+<pre> 3 P  1.55396160E+01  0.070874<br />
+ 3 P  3.59993360E+00  0.339753<br />
+ 3 P  1.01376180E+00  0.727159<br />
+</pre>
+<br />
+
+<pre> 4 S  2.70005800E-01  1.000000<br />
+</pre>
+<br />
+
+<pre> 5 P  2.70005800E-01  1.000000<br />
+</pre>
+<br />
+
+<pre>Summary of "ao basis" -&gt; "" (cartesian)<br />
+------------------------------------------------------------------------------<br />
+      Tag                 Description            Shells   Functions and Types<br />
+---------------- ------------------------------  ------  ---------------------<br />
+H                           6-31g                   2        2   2s<br />
+O                           6-31g                   5        9   3s2p<br />
+</pre>
+<br />
+<br />
+
+<pre>                                NWChem SCF Module<br />
+                                -----------------<br />
+</pre>
+<br />
+<br />
+
+<pre>                            Water in 6-31g basis set<br />
+</pre>
+<br />
+<br />
+<br />
+
+<pre> ao basis        = "ao basis"<br />
+ functions       =    13<br />
+ atoms           =     3<br />
+ closed shells   =     5<br />
+ open shells     =     0<br />
+ charge          =   0.00<br />
+ wavefunction    = RHF<br />
+ input vectors   = atomic<br />
+ output vectors  = ./h2o.movecs<br />
+ use symmetry    = T<br />
+ symmetry adapt  = T<br />
+</pre>
+<br />
+<br />
+
+<pre>Summary of "ao basis" -&gt; "ao basis" (cartesian)<br />
+------------------------------------------------------------------------------<br />
+      Tag                 Description            Shells   Functions and Types<br />
+---------------- ------------------------------  ------  ---------------------<br />
+H                           6-31g                   2        2   2s<br />
+O                           6-31g                   5        9   3s2p<br />
+</pre>
+<br />
+<br />
+
+<pre>     Symmetry analysis of basis<br />
+     --------------------------<br />
+</pre>
+<br />
+
+<pre>       a1          7<br />
+       a2          0<br />
+       b1          4<br />
+       b2          2<br />
+</pre>
+<br />
+<br />
+
+<pre>Forming initial guess at       0.5s<br />
+</pre>
+<br />
+<br />
+
+<pre>     Superposition of Atomic Density Guess<br />
+     -------------------------------------<br />
+Sum of atomic energies:         -75.75081731<br />
+</pre>
+Last System Error Message from Task 0:: Inappropriate ioctl for device<br />
+0:Segmentation Violation error, status=: 11<br />
+(rank:0 hostname:r2c4n10 pid:16635):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/signaltrap.c:SigSegvHandler():310 cond:0<br />
+
+<pre> 0: ARMCI aborting 11 (0xb).<br />
+ 0: ARMCI aborting 11 (0xb).<br />
+</pre>
+system error message: Invalid argument
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1467"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1467" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1467.html">9:58:57 AM PDT - Wed, May 2nd 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">Problem resolved<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I resolved the issue by recompiling with another compiled (ifort), thanks everyone!
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1489"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1489" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1489.html">11:36:06 AM PDT - Thu, May 3rd 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi,<br />
+I have the same problem. What are the versions of gfort and ifort on your system?<br />
+Regards,<br />
+Alex
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1531"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1531" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1531.html">6:26:50 PM PDT - Sat, May 12th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I'm having the same problem. Compilation works flawlessly on a ROCKS5.4.3 system (GNU Fortran (GCC) 4.1.2 20080704 (Red Hat 4.1.2-50)) but yields segfaulting binaries (same error as shown in posts above) on debian testing (GNU Fortran (Debian 4.6.3-1) 4.6.3). An added twist is that 32 bit binaries built on 32 bit debian testing work fine.<br />
+<br />
+A bit more detail:<br />
+0:Segmentation Violation error, status=: 11<br />
+(rank:0 hostname:tantalum pid:19676):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/signaltrap.c:SigSegvHandler():310 cond:0<br />
+application called MPI_Abort(comm=0x84000001, 11) - process 0<br />
+
+<ul><li><ul><li><ul><li> glibc detected *** nwchem: corrupted double-linked list: 0x000000010ac34880 ***<br />
+</li></ul>
+</li></ul>
+</li></ul>
+<h6> <span class="mw-headline" id=".3D_Backtrace:_.3D.3D.3D">= Backtrace: ===</span></h6>
+/lib/x86_64-linux-gnu/libc.so.6(+0x75ab6)[0x7f597b129ab6]<br />
+/lib/x86_64-linux-gnu/libc.so.6(+0x7754c)[0x7f597b12b54c]<br />
+/lib/x86_64-linux-gnu/libc.so.6(cfree+0x6c)[0x7f597b12e7ec]<br />
+/usr/lib/x86_64-linux-gnu/libgfortran.so.3(+0xcc811)[0x7f597bbd5811]<br />
+/usr/lib/x86_64-linux-gnu/libgfortran.so.3(+0xdba7f)[0x7f597bbe4a7f]<br />
+/usr/lib/x86_64-linux-gnu/libgfortran.so.3(+0xdbbaa)[0x7f597bbe4baa]<br />
+/usr/lib/x86_64-linux-gnu/libgfortran.so.3(+0x1ab09)[0x7f597bb23b09]<br />
+/lib64/ld-linux-x86-64.so.2(+0xe21c)[0x7f597c42421c]<br />
+/lib/x86_64-linux-gnu/libc.so.6(+0x36df2)[0x7f597b0eadf2]<br />
+/lib/x86_64-linux-gnu/libc.so.6(+0x36e45)[0x7f597b0eae45]
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1532"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1532" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1532.html">9:17:17 AM PDT - Mon, May 14th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Ohlincha,<br />
+Could you please send <br />
+1) the environmental variables you set for compilation and the compilation command line you used and<br />
+2) the output of the ldd command for you nwchem binary.<br />
+<br />
+Thanks, Edo<br />
+<br />
+<div class='quote_title'>Quote:Ohlincha <a target='blank' href="../../sp/id1531.html" title="Special:AWCforum/sp/id1531">May 12th 5:26 pm</a><div class='quote'>I'm having the same problem. Compilation works flawlessly on a ROCKS5.4.3 system (GNU Fortran (GCC) 4.1.2 20080704 (Red Hat 4.1.2-50)) but yields segfaulting binaries (same error as shown in posts above) on debian testing (GNU Fortran (Debian 4.6.3-1) 4.6.3). An added twist is that 32 bit binaries built on 32 bit debian testing work fine.<br />
+<br />
+A bit more detail:<br />
+0:Segmentation Violation error, status=: 11<br />
+(rank:0 hostname:tantalum pid:19676):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/signaltrap.c:SigSegvHandler():310 cond:0<br />
+application called MPI_Abort(comm=0x84000001, 11) - process 0<br />
+
+<ul><li><ul><li><ul><li> glibc detected *** nwchem: corrupted double-linked list: 0x000000010ac34880 ***<br />
+</li></ul>
+</li></ul>
+</li></ul>
+<h6> <span class="mw-headline" id=".3D_Backtrace:_.3D.3D.3D">= Backtrace: ===</span></h6>
+/lib/x86_64-linux-gnu/libc.so.6(+0x75ab6)[0x7f597b129ab6]<br />
+/lib/x86_64-linux-gnu/libc.so.6(+0x7754c)[0x7f597b12b54c]<br />
+/lib/x86_64-linux-gnu/libc.so.6(cfree+0x6c)[0x7f597b12e7ec]<br />
+/usr/lib/x86_64-linux-gnu/libgfortran.so.3(+0xcc811)[0x7f597bbd5811]<br />
+/usr/lib/x86_64-linux-gnu/libgfortran.so.3(+0xdba7f)[0x7f597bbe4a7f]<br />
+/usr/lib/x86_64-linux-gnu/libgfortran.so.3(+0xdbbaa)[0x7f597bbe4baa]<br />
+/usr/lib/x86_64-linux-gnu/libgfortran.so.3(+0x1ab09)[0x7f597bb23b09]<br />
+/lib64/ld-linux-x86-64.so.2(+0xe21c)[0x7f597c42421c]<br />
+/lib/x86_64-linux-gnu/libc.so.6(+0x36df2)[0x7f597b0eadf2]<br />
+/lib/x86_64-linux-gnu/libc.so.6(+0x36e45)[0x7f597b0eae45]</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1537"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1537" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem6" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1537.html">9:32:38 PM PDT - Tue, May 15th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Edo,<br />
+It's such a classical thing: suddenly it works....(with external blas libs -- not internal). Internal libs are still throwing a seg violation.<br />
+<br />
+The errors I posted came from a post (<a target='blank' href="http://verahill.blogspot.com.au/2012/02/debian-testing-wheezy-64-problems-with.html" class="external autonumber">[1]</a>)  that  I wrote a long time ago -- binaries which I don't have at hand anymore, and which were compiled without external blas libs.<br />
+<br />
+In order to get the data you asked for I recompiled nwchem-6.1 with and without external BLAS libs on three different machines. I've done it repeatedly and have never had success running the binaries..<b>.until now</b>. Suddenly I managed to get it working with external blas libs, but without external blas it still segfaults. I find it a bit puzzling, but that's fine -- it now works with openblas which is free and accessible to everyone.<br />
+<br />
+It'd still be nice to have it working without external libs and I've posted a lot more detail from the segfaulting build (scripts, ldd output, errors, strace, ltrace, ar t libncwutil.a etc.) here:  <a target='blank' href="http://verahill.blogspot.com.au/2012/05/nwchem-61-diagnostic-data.html" class="external free">http://verahill.blogspot.com.au/2012/05/nwchem-61-diagnostic-data.html</a><br />
+<br />
+__Good__ (edit src/config/makefile.h, line 1914 and add -lz -lssl for python support)<br />
+export LARGE_FILES=TRUE<br />
+export TCGRSH=/usr/bin/ssh<br />
+export NWCHEM_TOP=`pwd`<br />
+export NWCHEM_TARGET=LINUX64<br />
+export NWCHEM_MODULES="all python"<br />
+export PYTHONVERSION=2.7<br />
+export PYTHONHOME=/usr<br />
+export BLASOPT="-L/opt/openblas/lib -lopenblas -lopenblas_barcelona-r0.1.1"<br />
+export USE_MPI=y<br />
+export USE_MPIF=y<br />
+export USE_MPIF4=y<br />
+export MPI_LOC=/usr/lib/openmpi/lib<br />
+export MPI_INCLUDE=/usr/lib/openmpi/include<br />
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/lib/openmpi/lib<br />
+export LIBMPI="-lmpi -lopen-rte -lopen-pal -ldl -lmpi_f77 -lpthread"<br />
+cd $NWCHEM_TOP/src<br />
+make clean<br />
+make nwchem_config<br />
+make FC=gfortran<br />
+<br />
+ldd nwchem<br />
+
+<pre>       linux-vdso.so.1 =&gt;  (0x00007fff925ff000)<br />
+       libopenblas.so.0 =&gt; /opt/openblas/lib/libopenblas.so.0 (0x00002ab79d8a8000)<br />
+       libmpi.so.0 =&gt; /usr/lib/libmpi.so.0 (0x00002ab79e6b5000)<br />
+       libopen-rte.so.0 =&gt; /usr/lib/libopen-rte.so.0 (0x00002ab79e968000)<br />
+       libopen-pal.so.0 =&gt; /usr/lib/libopen-pal.so.0 (0x00002ab79ebb7000)<br />
+       libdl.so.2 =&gt; /lib/x86_64-linux-gnu/libdl.so.2 (0x00002ab79ee0f000)<br />
+       libmpi_f77.so.0 =&gt; /usr/lib/libmpi_f77.so.0 (0x00002ab79f013000)<br />
+       libpthread.so.0 =&gt; /lib/x86_64-linux-gnu/libpthread.so.0 (0x00002ab79f24b000)<br />
+       libutil.so.1 =&gt; /lib/x86_64-linux-gnu/libutil.so.1 (0x00002ab79f468000)<br />
+       libz.so.1 =&gt; /usr/lib/x86_64-linux-gnu/libz.so.1 (0x00002ab79f66b000)<br />
+       libssl.so.1.0.0 =&gt; /usr/lib/x86_64-linux-gnu/libssl.so.1.0.0 (0x00002ab79f881000)<br />
+       libgfortran.so.3 =&gt; /usr/lib/x86_64-linux-gnu/libgfortran.so.3 (0x00002ab79fae0000)<br />
+       libm.so.6 =&gt; /lib/x86_64-linux-gnu/libm.so.6 (0x00002ab79fdf6000)<br />
+       libgcc_s.so.1 =&gt; /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00002ab7a0078000)<br />
+       libquadmath.so.0 =&gt; /usr/lib/x86_64-linux-gnu/libquadmath.so.0 (0x00002ab7a028f000)<br />
+       libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00002ab7a04c4000)<br />
+       libcrypto.so.1.0.0 =&gt; /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0 (0x00002ab7a084b000)<br />
+       libnsl.so.1 =&gt; /lib/x86_64-linux-gnu/libnsl.so.1 (0x00002ab7a0c30000)<br />
+       /lib64/ld-linux-x86-64.so.2 (0x00002ab79d686000)<br />
+</pre>
+<br />
+__Bad___ (edit src/config/makefile.h, line 1914 and add -lz -lssl for python support)<br />
+export LARGE_FILES=TRUE<br />
+export TCGRSH=/usr/bin/ssh<br />
+export NWCHEM_TOP=`pwd`<br />
+export NWCHEM_TARGET=LINUX64<br />
+export NWCHEM_MODULES="all python"<br />
+export PYTHONHOME=/usr<br />
+export PYTHONVERSION=2.7<br />
+export USE_MPI=y<br />
+export USE_MPIF=y<br />
+export USE_MPIF4=y<br />
+export MPI_LOC=/usr/lib/openmpi/lib<br />
+export MPI_INCLUDE=/usr/lib/openmpi/include<br />
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/lib/openmpi/lib<br />
+export LIBMPI="-lmpi -lopen-rte -lopen-pal -ldl -lmpi_f77 -lpthread"<br />
+cd $NWCHEM_TOP/src<br />
+make clean<br />
+make nwchem_config<br />
+make FC=gfortran<br />
+<br />
+ldd nwchem <br />
+
+<pre>       linux-vdso.so.1 =&gt;  (0x00007fffccbff000)<br />
+       libmpi.so.0 =&gt; /usr/lib/libmpi.so.0 (0x00002b7624cd9000)<br />
+       libopen-rte.so.0 =&gt; /usr/lib/libopen-rte.so.0 (0x00002b7624f8d000)<br />
+       libopen-pal.so.0 =&gt; /usr/lib/libopen-pal.so.0 (0x00002b76251dc000)<br />
+       libdl.so.2 =&gt; /lib/x86_64-linux-gnu/libdl.so.2 (0x00002b7625433000)<br />
+       libmpi_f77.so.0 =&gt; /usr/lib/libmpi_f77.so.0 (0x00002b7625638000)<br />
+       libpthread.so.0 =&gt; /lib/x86_64-linux-gnu/libpthread.so.0 (0x00002b7625870000)<br />
+       libutil.so.1 =&gt; /lib/x86_64-linux-gnu/libutil.so.1 (0x00002b7625a8c000)<br />
+       libz.so.1 =&gt; /usr/lib/x86_64-linux-gnu/libz.so.1 (0x00002b7625c90000)<br />
+       libssl.so.1.0.0 =&gt; /usr/lib/x86_64-linux-gnu/libssl.so.1.0.0 (0x00002b7625ea6000)<br />
+       libgfortran.so.3 =&gt; /usr/lib/x86_64-linux-gnu/libgfortran.so.3 (0x00002b7626104000)<br />
+       libm.so.6 =&gt; /lib/x86_64-linux-gnu/libm.so.6 (0x00002b762641b000)<br />
+       libgcc_s.so.1 =&gt; /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00002b762669d000)<br />
+       libquadmath.so.0 =&gt; /usr/lib/x86_64-linux-gnu/libquadmath.so.0 (0x00002b76268b3000)<br />
+       libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00002b7626ae9000)<br />
+       libcrypto.so.1.0.0 =&gt; /usr/lib/x86_64-linux-gnu/libcrypto.so.1.0.0 (0x00002b7626e70000)<br />
+       libnsl.so.1 =&gt; /lib/x86_64-linux-gnu/libnsl.so.1 (0x00002b7627254000)<br />
+       /lib64/ld-linux-x86-64.so.2 (0x00002b7624ab7000)
+</pre></td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1545"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1545" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem7" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1545.html">3:41:02 PM PDT - Wed, May 16th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">libblas-dev might be the culprit<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Ohlincha,<br />
+I have manage to reproduce your failure.<br />
+It is due to the fact that the tools autoconf detects the presence of /usr/lib/libblas.a and make some decisions accordingly that<br />
+conflicts with what happens on the nwchem side (unfortunately!)<br />
+<br />
+There are two ways to solve this problem (they both require to re-compile the tools directory).<br />
+<br />
+1st Solution: you need patch the tools makefile by doing the following<br />
+1) cd $NWCHEM_TOP/src/tools<br />
+2) wget <a target='blank' href="http://www.nwchem-sw.org/images/Toolsmakefile.patch.gz" class="external free">http://www.nwchem-sw.org/images/Toolsmakefile.patch.gz</a><br />
+3) gzip -d Toolsmakefile.patch<br />
+4) patch -p0 &lt; Toolsmakefile.patch<br />
+5) make clean<br />
+6) make FC=gfortran<br />
+7) cd ..<br />
+8) make FC=gfortran link<br />
+<br />
+<br />
+2nd solution: you need to remove the blas system library<br />
+1) sudo apt-get remove libblas-dev (you might be forces to remove libatlas-dev, too)<br />
+2) cd $NWCHEM_TOP/src/tools<br />
+3) make clean<br />
+4) make FC=gfortran<br />
+5) ..<br />
+6) make FC=gfortran link<br />
+<br />
+Please me know if this solves this problem that seems to have affected several NWChem users.<br />
+<br />
+Thanks, Edo
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1550"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1550" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem8" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1550.html">7:02:47 PM PDT - Wed, May 16th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I went for the first solution since e.g. Octave wants/needs atlas/blas.<br />
+<br />
+I think I patched it ok:<br />
+
+<pre>diff nwchem-6.1_internal/src/tools/GNUmakefile nwchem-6.1_external/src/tools/GNUmakefile <br />
+</pre>
+359c359<br />
+&lt;         MAYBE_BLAS = --without-blas<br />
+---<br />
+&gt;         MAYBE_BLAS = --with-blas8="$(strip $(BLAS_LIB))"<br />
+<br />
+I patched it and then used the 'bad' makefile in my earlier post (sans python) to do a full compile on a freshly extracted copy. That didn't work. <br />
+<br />
+Odd observation -- first time I run it (./nwchem test.nw) I get something about a missing file:<br />
+0:Segmentation Violation error, status=: 11<br />
+(rank:0 hostname:beryllium pid:7129):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/signaltrap.c:SigSegvHandler():310 cond:0<br />
+<b>Last System Error Message from Task 0:: No such file or directory</b><br />
+<br />
+If I re-run immediately after I don't:<br />
+0:Segmentation Violation error, status=: 11<br />
+(rank:0 hostname:beryllium pid:7282):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/signaltrap.c:SigSegvHandler():310 cond:0<br />
+nwchem: malloc.c:3096: sYSMALLOc: Assertion `(old_top == (((mbinptr) (((char *) &amp;((av)-&gt;bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) &amp;&amp; old_size == 0) || ((unsigned long) (old_size) &gt;= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 * (sizeof(size_t))) - 1)) &amp; ~((2 * (sizeof(size_t))) - 1))) &amp;&amp; ((old_top)-&gt;size &amp; 0x1) &amp;&amp; ((unsigned long)old_end &amp; pagemask) == 0)' failed.<br />
+[beryllium:07282] *** Process received signal ***<br />
+<br />
+The only difference is the presence of *.drv.hess and *.db -- my input is at the end of this post<br />
+<br />
+To cover all bases, I then did (steps 5-8, solution 1) make clean in the tools dir, followed by make link in the src dir (after setting all the env vars).<br />
+<br />
+Execution still fails though -- and looking at config.log it seems that it's still picking up the blas libs (see below).<br />
+<b>./nwchem test.nw</b><br />
+0:Segmentation Violation error, status=: 11<br />
+(rank:0 hostname:beryllium pid:1235):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/signaltrap.c:SigSegvHandler():310 cond:0<br />
+nwchem: malloc.c:3096: sYSMALLOc: Assertion `(old_top == (((mbinptr) (((char *) &amp;((av)-&gt;bins[((1) - 1) * 2])) - __builtin_offsetof (struct malloc_chunk, fd)))) &amp;&amp; old_size == 0) || ((unsigned long) (old_size) &gt;= (unsigned long)((((__builtin_offsetof (struct malloc_chunk, fd_nextsize))+((2 * (sizeof(size_t))) - 1)) &amp; ~((2 * (sizeof(size_t))) - 1))) &amp;&amp; ((old_top)-&gt;size &amp; 0x1) &amp;&amp; ((unsigned long)old_end &amp; pagemask) == 0)' failed.<br />
+[beryllium:01235] *** Process received signal ***<br />
+[beryllium:01235] Signal: Aborted (6)<br />
+[beryllium:01235] Signal code:  (-6)<br />
+[beryllium:01235] [ 0] /lib/x86_64-linux-gnu/libpthread.so.0(+0xf030) [0x2ad650d12030]<br />
+[beryllium:01235] [ 1] /lib/x86_64-linux-gnu/libc.so.6(gsignal+0x35) [0x2ad651936475]<br />
+[beryllium:01235] [ 2] /lib/x86_64-linux-gnu/libc.so.6(abort+0x180) [0x2ad6519396f0]<br />
+[beryllium:01235] [ 3] /lib/x86_64-linux-gnu/libc.so.6(+0x75d4a) [0x2ad651979d4a]<br />
+[beryllium:01235] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x78c73) [0x2ad65197cc73]<br />
+[beryllium:01235] [ 5] /lib/x86_64-linux-gnu/libc.so.6(__libc_malloc+0x70) [0x2ad65197e960]<br />
+[beryllium:01235] [ 6] /usr/lib/libopen-pal.so.0(+0x31d1d) [0x2ad6506a0d1d]<br />
+[beryllium:01235] [ 7] /usr/lib/libopen-pal.so.0(opal_show_help_vstring+0xac) [0x2ad65069ec0c]<br />
+[beryllium:01235] [ 8] /usr/lib/libopen-rte.so.0(orte_show_help+0xaf) [0x2ad65043bcbf]<br />
+[beryllium:01235] [ 9] /usr/lib/libmpi.so.0(MPI_Abort+0x74) [0x2ad6501b8d54]<br />
+[beryllium:01235] [10] ./nwchem() [0x29073e2]<br />
+[beryllium:01235] [11] ./nwchem() [0x28f4703]<br />
+[beryllium:01235] [12] /lib/x86_64-linux-gnu/libc.so.6(+0x324f0) [0x2ad6519364f0]<br />
+[beryllium:01235] [13] ./nwchem() [0x2a1821f]<br />
+[beryllium:01235] [14] ./nwchem() [0x2811320]<br />
+[beryllium:01235] [15] ./nwchem() [0x28147d5]<br />
+[beryllium:01235] [16] ./nwchem() [0x27857ab]<br />
+[beryllium:01235] [17] ./nwchem() [0x5d3dda]<br />
+[beryllium:01235] [18] ./nwchem() [0x5b86d8]<br />
+[beryllium:01235] [19] ./nwchem() [0x5ae0f5]<br />
+[beryllium:01235] [20] ./nwchem() [0x586edb]<br />
+[beryllium:01235] [21] ./nwchem() [0x41b347]<br />
+[beryllium:01235] [22] ./nwchem() [0x41c7c7]<br />
+[beryllium:01235] [23] ./nwchem() [0x527b85]<br />
+[beryllium:01235] [24] ./nwchem() [0x41d23b]<br />
+[beryllium:01235] [25] ./nwchem() [0x40e227]<br />
+[beryllium:01235] [26] ./nwchem() [0x406f2c]<br />
+[beryllium:01235] [27] ./nwchem() [0x40742d]<br />
+[beryllium:01235] [28] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xfd) [0x2ad651922ead]<br />
+[beryllium:01235] [29] ./nwchem() [0x405639]<br />
+[beryllium:01235] *** End of error message ***<br />
+Aborted<br />
+<br />
+<b>ldd nwchem</b> <br />
+
+<pre>       linux-vdso.so.1 =&gt;  (0x00007fffd11a1000)<br />
+       libmpi.so.0 =&gt; /usr/lib/libmpi.so.0 (0x00002abd73a64000)<br />
+       libopen-rte.so.0 =&gt; /usr/lib/libopen-rte.so.0 (0x00002abd73d17000)<br />
+       libopen-pal.so.0 =&gt; /usr/lib/libopen-pal.so.0 (0x00002abd73f65000)<br />
+       libdl.so.2 =&gt; /lib/x86_64-linux-gnu/libdl.so.2 (0x00002abd741bc000)<br />
+       libmpi_f77.so.0 =&gt; /usr/lib/libmpi_f77.so.0 (0x00002abd743c1000)<br />
+       libpthread.so.0 =&gt; /lib/x86_64-linux-gnu/libpthread.so.0 (0x00002abd745f9000)<br />
+       libgfortran.so.3 =&gt; /usr/lib/x86_64-linux-gnu/libgfortran.so.3 (0x00002abd74815000)<br />
+       libm.so.6 =&gt; /lib/x86_64-linux-gnu/libm.so.6 (0x00002abd74b2c000)<br />
+       libgcc_s.so.1 =&gt; /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00002abd74dae000)<br />
+       libquadmath.so.0 =&gt; /usr/lib/x86_64-linux-gnu/libquadmath.so.0 (0x00002abd74fc4000)<br />
+       libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00002abd751fa000)<br />
+       libnsl.so.1 =&gt; /lib/x86_64-linux-gnu/libnsl.so.1 (0x00002abd75581000)<br />
+       libutil.so.1 =&gt; /lib/x86_64-linux-gnu/libutil.so.1 (0x00002abd75799000)<br />
+       /lib64/ld-linux-x86-64.so.2 (0x00002abd73842000)<br />
+</pre>
+<br />
+<br />
+<b>cat src/tools/build/config.log|egrep "atlas|ATLAS|blas|BLAS"</b><br />
+configure:18162: Checks for BLAS,LAPACK,ScaLAPACK<br />
+configure:18408: Attempting to locate BLAS library<br />
+configure:18414: checking for BLAS with user-supplied flags<br />
+configure:18546: checking for BLAS in AMD Core Math Library<br />
+configure:18682: checking for BLAS in Intel Math Kernel Library<br />
+configure:18818: checking for BLAS in ATLAS<br />
+configure:18939: gfortran -o conftest     conftest.f -lf77blas -latlas -lm  &gt;&amp;5<br />
+/usr/bin/ld: cannot find -lf77blas<br />
+/usr/bin/ld: cannot find -latlas<br />
+configure:18961: checking for BLAS in PhiPACK libraries<br />
+configure:19079: gfortran -o conftest     conftest.f -lsgemm -ldgemm -lblas -lm  &gt;&amp;5<br />
+configure:19101: checking for BLAS in Apple Accelerate.framework<br />
+configure:19227: checking for BLAS in Apple vecLib.framework<br />
+configure:19353: checking for BLAS in Alpha CXML library<br />
+configure:19608: checking for BLAS in Sun Performance Library<br />
+configure:19861: checking for BLAS in SGI/Cray Scientific Library<br />
+configure:19987: checking for BLAS in SGIMATH library<br />
+configure:20113: checking for BLAS in IBM ESSL library<br />
+configure:20224: gfortran -o conftest     conftest.f -lessl -lblas -lm  &gt;&amp;5<br />
+configure:20246: checking for BLAS in generic library<br />
+configure:20344: gfortran -o conftest     conftest.f -lblas -lm  &gt;&amp;5<br />
+configure:20652: gfortran -o conftest      conftest.f  -lblas -lm  &gt;&amp;5<br />
+configure:20709: cc -o conftest        conftest.c -llapack  -L/usr/lib/openmpi/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.6 -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/openmpi/lib -L/usr/lib/gcc/x86_64-linux-gnu/4.6/../../.. -lgfortran -lm -lquadmath -lblas -lm  &gt;&amp;5<br />
+configure:20992: gfortran -o conftest       -L/usr/lib/openmpi/lib  conftest.f  -llapack -lblas  -lmpi -lopen-rte -lopen-pal -ldl -lmpi_f77 -lpthread -lm  &gt;&amp;5<br />
+configure:21081: gfortran -o conftest       -L/usr/lib/openmpi/lib  conftest.f -lscalapack -llapack -lblas  -lmpi -lopen-rte -lopen-pal -ldl -lmpi_f77 -lpthread -lm  &gt;&amp;5<br />
+| #define HAVE_BLAS 1<br />
+| #define BLAS_SIZE 4<br />
+| #define HAVE_BLAS 1<br />
+| #define BLAS_SIZE 4<br />
+configure:38904:           BLAS_LDFLAGS=
+configure:38906:              BLAS_LIBS=-lblas<br />
+configure:38908:          BLAS_CPPFLAGS=
+BLAS_CPPFLAGS=<i><br /></i>
+BLAS_LDFLAGS=<i><br /></i>
+<b>BLAS_LIBS='-lblas'</b><br />
+HAVE_BLAS_FALSE='#'<br />
+HAVE_BLAS_TRUE=<i><br /></i>
+
+<ol><li>define HAVE_BLAS 1<br />
+</li><li>define BLAS_SIZE 4<br />
+</li></ol>
+<br />
+As for debian atlas/blas:<br />
+i   libblas-dev                     - Basic Linear Algebra Subroutines 3, static<br />
+i A libblas3gf                      - Basic Linear Algebra Reference implementat<br />
+i   libatlas-dev                    - Automatically Tuned Linear Algebra Softwar<br />
+i A libatlas3gf-base             - Automatically Tuned Linear Algebra Softwar<br />
+EDIT: in the interest of full disclosure, I've also got my own ATLAS and acml5.1.0 installed and present in my LD_LIBRARY_PATH which I've used in conjunctino with nwchem 6.0 -- again,  I would presume that NOT specifying BLASOPT should FORCE the use of internal libs.<br />
+<br />
+Nwchem 6.1 is in the debian repos, and they have supplied the following set of patches -- some which I understand and some which I don't: <a target='blank' href="http://ftp.de.debian.org/debian/pool/main/n/nwchem/nwchem_6.1-3.debian.tar.gz" class="external free">http://ftp.de.debian.org/debian/pool/main/n/nwchem/nwchem_6.1-3.debian.tar.gz</a><br />
+Also, some of the patches (.e.g01_hardcode_basis-sets_location.patch) are clearly referencing nwchem-6.0, while the source (looking at nwchem.F) is 6.1. <br />
+<br />
+My test file:<br />
+<br />
+scratch_dir /scratch<br />
+memory 2000 mb<br />
+start benzene <br />
+<br />
+geometry units angstroms<br />
+C  0.100  1.396  0.000<br />
+C  1.209  0.698  0.000<br />
+C  1.209 -0.698  0.000<br />
+C  0.000 -1.396  0.000<br />
+C -1.209 -0.698  0.000<br />
+C -1.209  0.698  0.000<br />
+H  0.000  2.479  0.000<br />
+H  2.147  1.240  0.000<br />
+H  2.147 -1.240  0.000<br />
+H  0.400 -2.479  0.000<br />
+H -2.147 -1.240  0.000<br />
+H -2.147  1.240  0.000<br />
+end<br />
+basis <br />
+
+<pre>H library "6-311++g**" <br />
+c library "6-311++g**"<br />
+</pre>
+end<br />
+dft<br />
+
+<pre>       direct<br />
+</pre>
+end<br />
+<br />
+dft<br />
+
+<pre>   xc b3lyp<br />
+</pre>
+end<br />
+task dft optimize
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1552"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1552" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem9" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1552.html">9:40:07 AM PDT - Thu, May 17th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">tools/GNUmakefile did not work as expected<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">The patch I gave you for the tools GNUmakefile did not work as expected and I am not sure why.<br />
+Could you please send<br />
+1) full set of environmental variables<br />
+2) first 20 lines of $NWCHEM_TOP/src/tools/build/config.log (e.g.<br />
+head -20 NWCHEM_TOP/src/tools/build/config.log<br />
+<br />
+Since I am not 100% sure the patch I gave you worked correctly, <br />
+I have uploaded the complete version of $NWCHEM_TOP/src/tools/GNUmakefile as<br />
+<a target='blank' href="http://www.nwchem-sw.org/images/GNUmakefile.tools61patched.gz" class="external free">http://www.nwchem-sw.org/images/GNUmakefile.tools61patched.gz</a><br />
+To install<br />
+1) cd $NWCHEM_TOP/src/tools<br />
+2) wget http://www.nwchem-sw.org/images/GNUmakefile.tools61patched.gz<br />
+3) gzip -d GNUmakefile.tools61patched<br />
+4) mv GNUmakefile GNUmakefile.old<br />
+5) cp GNUmakefile.tools61patched GNUmakefile
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1558"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1558" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem10" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Gets Around</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1558.html">5:52:13 PM PDT - Thu, May 17th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Morning Edo,<br />
+It works! It was down to PEBKAC -- I misread the patch and edited line 359 rather than adding the extra else structure.  That's what I get for trying to be clever and not follow instructions verbatim. I'm afraid that I've caused you to lose more time on this unnecessarily.<br />
+<br />
+For those who are still struggling, I've posted the full build instructions with internal libraries on debian using gfortran <a target='blank' href="http://verahill.blogspot.com.au/2012/05/compiling-nwchem-61-with-internal-libs.html" class="external text">here</a> and what works for me with gfortran with external libs on debian is described <a target='blank' href="http://verahill.blogspot.com.au/2012/05/building-nwchem-61-on-debian.html" class="external text">here</a>.<br />
+<br />
+Thanks Edo! And again, I apologise.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_1562"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_1562" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem11" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id1562.html">9:40:06 AM PDT - Fri, May 18th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Thanks a lot for the feedback. I was very confused by the previous development.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_2186"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_2186" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem12" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id2186.html">2:50:04 AM PDT - Sat, Oct 13th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                    <tr><td valign="top" height="1px" colspan="2">A similar kind of problem but not resolved by changing the BLASOPT to external libraries<hr /></td></tr>                 
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Dear all,<br />
+I am facing the same problem even-after exporting BLASOPT from the specified directory (as shown below). There is no error in the make.log file but when executing 'nwchem' executable then the following error is coming:<br />
+<br />
+<i>0:Segmentation Violation error, status=: 11<br /></i>
+(rank:0 hostname:n138 pid:6781):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/signaltrap.c:SigSegvHandler():310 cond:0<br />
+Last System Error Message from Task 0:: Inappropriate ioctl for device<i><br /></i>
+<br />
+Please, help me in this regard.<br />
+<br />
+Thanking you all in advance,<br />
+Chaitanya.<br />
+<br />
+The complete output is as follows:<br />
+
+<pre><br />
+            Northwest Computational Chemistry Package (NWChem) 6.1.1<br />
+            --------------------------------------------------------<br />
+<br />
+<br />
+                   Environmental Molecular Sciences Laboratory<br />
+                      Pacific Northwest National Laboratory<br />
+                               Richland, WA 99352<br />
+<br />
+                             Copyright (c) 1994-2012<br />
+                      Pacific Northwest National Laboratory<br />
+                           Battelle Memorial Institute<br />
+<br />
+            NWChem is an open-source computational chemistry package<br />
+                       distributed under the terms of the<br />
+                     Educational Community License (ECL) 2.0<br />
+            A copy of the license is included with this distribution<br />
+                             in the LICENSE.TXT file<br />
+<br />
+                                 ACKNOWLEDGMENT<br />
+                                 --------------<br />
+</pre>
+<br />
+
+<pre>           This software and its documentation were developed at the<br />
+           EMSL at Pacific Northwest National Laboratory, a multiprogram<br />
+           national laboratory, operated for the U.S. Department of Energy<br />
+           by Battelle under Contract Number DE-AC05-76RL01830. Support<br />
+           for this work was provided by the Department of Energy Office<br />
+           of Biological and Environmental Research, Office of Basic<br />
+           Energy Sciences, and the Office of Advanced Scientific Computing.<br />
+</pre>
+<br />
+<br />
+
+<pre>          Job information<br />
+          ---------------<br />
+</pre>
+<br />
+
+<pre>   hostname      = n138<br />
+   program       = ../../../nwchem-6.1.1-src/bin/LINUX64/nwchem<br />
+   date          = Sat Oct 13 15:22:02 2012<br />
+</pre>
+<br />
+
+<pre>   compiled      = Sat_Oct_13_15:04:24_2012<br />
+   source        = /sfs2/home/sandeepkr/sharma/Softwares/nwchem-6.1.1-src<br />
+   nwchem branch = 6.1.1<br />
+   input         = h2o.nw<br />
+   prefix        = h2o.<br />
+   data base     = ./h2o.db<br />
+   status        = startup<br />
+   nproc         =        1<br />
+   time left     =     -1s<br />
+</pre>
+<br />
+<br />
+<br />
+
+<pre>          Memory information<br />
+          ------------------<br />
+</pre>
+<br />
+
+<pre>   heap     =   13107201 doubles =    100.0 Mbytes<br />
+   stack    =   13107201 doubles =    100.0 Mbytes<br />
+   global   =   26214400 doubles =    200.0 Mbytes (distinct from heap &amp; stack)<br />
+   total    =   52428802 doubles =    400.0 Mbytes<br />
+   verify   = yes<br />
+   hardfail = no <br />
+</pre>
+<br />
+<br />
+
+<pre>          Directory information<br />
+          ---------------------<br />
+<br />
+ 0 permanent = .<br />
+ 0 scratch   = .<br />
+<br />
+<br />
+<br />
+<br />
+                               NWChem Input Module<br />
+                               -------------------<br />
+<br />
+<br />
+                            Water in 6-31g basis set<br />
+                            ------------------------<br />
+C2V symmetry detected<br />
+</pre>
+<br />
+
+<pre>         ------<br />
+         auto-z<br />
+         ------<br />
+<br />
+<br />
+                            Geometry "geometry" -&gt; ""<br />
+                            -------------------------<br />
+<br />
+Output coordinates in a.u. (scale by  1.000000000 to convert to a.u.)<br />
+<br />
+ No.       Tag          Charge          X              Y              Z<br />
+---- ---------------- ---------- -------------- -------------- --------------<br />
+   1 O                    8.0000     0.00000000     0.00000000     0.22143053<br />
+   2 H                    1.0000    -1.43042809     0.00000000    -0.88572213<br />
+   3 H                    1.0000     1.43042809     0.00000000    -0.88572213<br />
+<br />
+     Atomic Mass <br />
+     ----------- <br />
+<br />
+     O                 15.994910<br />
+     H                  1.007825<br />
+<br />
+</pre>
+<br />
+
+<pre>Effective nuclear repulsion energy (a.u.)       9.1949809303<br />
+</pre>
+<br />
+
+<pre>           Nuclear Dipole moment (a.u.) <br />
+           ----------------------------<br />
+       X                 Y               Z<br />
+---------------- ---------------- ----------------<br />
+    0.0000000000     0.0000000000     0.0000000000<br />
+<br />
+     Symmetry information<br />
+     --------------------<br />
+<br />
+Group name             C2v       <br />
+Group number             16<br />
+Group order               4<br />
+No. of unique centers     2<br />
+<br />
+     Symmetry unique atoms<br />
+<br />
+    1    2<br />
+<br />
+</pre>
+<br />
+<br />
+
+<pre>                               Z-matrix (autoz)<br />
+                               -------- <br />
+</pre>
+<br />
+
+<pre>Units are Angstrom for bonds and degrees for angles<br />
+<br />
+     Type          Name      I     J     K     L     M      Value<br />
+     ----------- --------  ----- ----- ----- ----- ----- ----------<br />
+   1 Stretch                  1     2                       0.95720<br />
+   2 Stretch                  1     3                       0.95720<br />
+   3 Bend                     2     1     3               104.52019<br />
+<br />
+<br />
+           XYZ format geometry<br />
+           -------------------<br />
+    3<br />
+geometry<br />
+O                     0.00000000     0.00000000     0.11717600<br />
+H                    -0.75695000     0.00000000    -0.46870400<br />
+H                     0.75695000     0.00000000    -0.46870400<br />
+<br />
+==============================================================================
+                               internuclear distances<br />
+------------------------------------------------------------------------------<br />
+      center one      |      center two      | atomic units |       a.u.<br />
+------------------------------------------------------------------------------<br />
+   2 H                |   1 O                |     1.80884  |     1.80884<br />
+   3 H                |   1 O                |     1.80884  |     1.80884<br />
+------------------------------------------------------------------------------<br />
+                        number of included internuclear distances:          2<br />
+==============================================================================
+</pre>
+<br />
+<br />
+<br />
+
+<pre>==============================================================================
+                                internuclear angles<br />
+------------------------------------------------------------------------------<br />
+       center 1       |       center 2       |       center 3       |  degrees<br />
+------------------------------------------------------------------------------<br />
+   2 H                |   1 O                |   3 H                |   104.52<br />
+------------------------------------------------------------------------------<br />
+                           number of included internuclear angles:          1<br />
+==============================================================================
+</pre>
+<br />
+<br />
+<br />
+
+<pre>                     Basis "ao basis" -&gt; "" (cartesian)<br />
+                     -----<br />
+ H (Hydrogen)<br />
+ ------------<br />
+           Exponent  Coefficients <br />
+      -------------- ---------------------------------------------------------<br />
+ 1 S  1.87311370E+01  0.033495<br />
+ 1 S  2.82539370E+00  0.234727<br />
+ 1 S  6.40121700E-01  0.813757<br />
+<br />
+ 2 S  1.61277800E-01  1.000000<br />
+<br />
+ O (Oxygen)<br />
+ ----------<br />
+           Exponent  Coefficients <br />
+      -------------- ---------------------------------------------------------<br />
+ 1 S  5.48467170E+03  0.001831<br />
+ 1 S  8.25234950E+02  0.013950<br />
+ 1 S  1.88046960E+02  0.068445<br />
+ 1 S  5.29645000E+01  0.232714<br />
+ 1 S  1.68975700E+01  0.470193<br />
+ 1 S  5.79963530E+00  0.358521<br />
+<br />
+ 2 S  1.55396160E+01 -0.110778<br />
+ 2 S  3.59993360E+00 -0.148026<br />
+ 2 S  1.01376180E+00  1.130767<br />
+<br />
+ 3 P  1.55396160E+01  0.070874<br />
+ 3 P  3.59993360E+00  0.339753<br />
+ 3 P  1.01376180E+00  0.727159<br />
+<br />
+ 4 S  2.70005800E-01  1.000000<br />
+<br />
+ 5 P  2.70005800E-01  1.000000<br />
+<br />
+</pre>
+<br />
+<br />
+
+<pre>Summary of "ao basis" -&gt; "" (cartesian)<br />
+------------------------------------------------------------------------------<br />
+      Tag                 Description            Shells   Functions and Types<br />
+---------------- ------------------------------  ------  ---------------------<br />
+H                           6-31g                   2        2   2s<br />
+O                           6-31g                   5        9   3s2p<br />
+</pre>
+<br />
+<br />
+
+<pre>                                NWChem SCF Module<br />
+                                -----------------<br />
+<br />
+<br />
+                            Water in 6-31g basis set<br />
+<br />
+<br />
+</pre>
+<br />
+
+<pre> ao basis        = "ao basis"<br />
+ functions       =    13<br />
+ atoms           =     3<br />
+ closed shells   =     5<br />
+ open shells     =     0<br />
+ charge          =   0.00<br />
+ wavefunction    = RHF <br />
+ input vectors   = atomic<br />
+ output vectors  = ./h2o.movecs<br />
+ use symmetry    = T<br />
+ symmetry adapt  = T<br />
+</pre>
+<br />
+<br />
+
+<pre>Summary of "ao basis" -&gt; "ao basis" (cartesian)<br />
+------------------------------------------------------------------------------<br />
+      Tag                 Description            Shells   Functions and Types<br />
+---------------- ------------------------------  ------  ---------------------<br />
+H                           6-31g                   2        2   2s<br />
+O                           6-31g                   5        9   3s2p<br />
+</pre>
+<br />
+<br />
+
+<pre>     Symmetry analysis of basis<br />
+     --------------------------<br />
+<br />
+       a1          7<br />
+       a2          0<br />
+       b1          4<br />
+       b2          2<br />
+<br />
+</pre>
+<br />
+
+<pre>Forming initial guess at       0.1s<br />
+</pre>
+<br />
+0:Segmentation Violation error, status=: 11<br />
+(rank:0 hostname:n138 pid:6781):ARMCI DASSERT fail. ../../ga-5-1/armci/src/common/signaltrap.c:SigSegvHandler():310 cond:0<br />
+Last System Error Message from Task 0:: Inappropriate ioctl for device<br />
+<br />
+<br />
+<br />
+<br />
+The original Build file is as follows:<br />
+<br />
+export ENABLE_COMPONENT=yes<br />
+export FOPTIMIZE="-O3 -xHost -no-prec-div -funroll-loops -unroll-aggressive"<br />
+export COPTIMIZE="-O3 -xHost -no-prec-div -funroll-loops"<br />
+<br />
+MKL_HOME="/sfs1/intel_122010/composerxe-2011.0.084/mkl"<br />
+MKL_LIB="$MKL_HOME/lib/intel64"<br />
+MKL_INCLUDE="$MKL_HOME/include/intel64"<br />
+<br />
+export HAS_BLAS=yes<br />
+export BLASOPT="-L$MKL_LIB -lmkl_blas95_ilp64" # the other existing blas library is libmkl_blas95_lp64<br />
+<br />
+export USE_LAPACK=yes<br />
+export USE_SCALAPACK=yes<br />
+<br />
+export SCALAPACK="-i8 -I$MKL_INCLUDE -L$MKL_LIB -lmkl_scalapack_ilp64 -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lmkl_blacs_intelmpi_ilp64 -lpthread -lm"<br />
+export LAPACK="-i8 -I$MKL_INCLUDE/intel64/ilp64 -I$MKL_INCLUDE -L$MKL_LIB -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -lpthread -lm"<br />
+<br />
+<br />
+export USE_MPI=TRUE                                             <br />
+export USE_MPIF=TRUE                                           <br />
+export USE_MPIF4=TRUE<br />
+<br />
+export MPI_HOME=/opt/hpmpi<br />
+export MPI_LOC=$MPI_HOME<br />
+export MPI_LIB=$MPI_LOC/lib/linux_amd64<br />
+export MPI_INCLUDE=$MPI_LOC/include/64<br />
+export LIBMPI='-lmpi'<br />
+export FPATH=$FPATH:$MKL_INCLUDE<br />
+<br />
+export NWCHEM_TOP=/sfs2/home/sandeepkr/sharma/Softwares/nwchem-6.1.1-src<br />
+export NWCHEM_TARGET=LINUX64<br />
+export NWCHEM_MODULES=all<br />
+export LARGE_FILES=TRUE<br />
+export USE_NOFSCHECK=TRUE<br />
+export TCGRSH=/usr/bin/ssh
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_2191"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_2191" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem13" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id2191.html">1:11:54 PM PDT - Mon, Oct 15th 2012 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Chaitanya,<br />
+Have tried to debug what call is causing the Segmentation Violation error?<br />
+<br />
+To make things simpler, I would suggest to compile first with any MKL library to link against (including Scalapack),<br />
+have you tried it already?<br />
+I suggest to recompile NWChem without redefining FOPTIMIZE and COPTIMIZE, too, and use gcc as C compiler.<br />
+<br />
+Cheers, Edo
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../../index.html">Forum</a> &gt;&gt; <a href="../../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../../sf/id4.html">Compiling NWChem</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />

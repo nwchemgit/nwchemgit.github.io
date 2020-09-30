@@ -1,0 +1,2510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="SCF convergence issue Viewed 2527 times, With a total of 8 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id1786 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >SCF convergence issue</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_6344"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6344" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6344.html">10:35:20 AM PDT - Sun, Sep 6th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I am having trouble running several molecules at the HF level using cc-pVTZ basis set. The HF level using cc-pVDZ basis set is running just fine, and I use those results as the starting point for the cc-pVTZ calculations but the SCF won't converge at 200 iterations. Now, I was able to take the results from the cc-pVDZ basis set calculation as a starting point for a DFT calculation with cc-pVTZ basis set, and that ran just fine. <br />
+I have tried using the stepper algorithm, turning off the symmetry and automatic Z-matrix, disabling the Newton-Raphson until the maximum value of the orbital gradient (twice the largest off-diagonal Fock matrix element) is less than 0.01 and 0.001, and level shifting by 0.2 and level shifting by 0.2 only until the maximum element of the gradient falls below 0.001. All to no avail.<br />
+If there are any suggestions, that do not include increasing the SCF max iterations, it would be much appreciated.
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6345"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6345" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6345.html">10:43:17 AM PDT - Sun, Sep 6th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I can only seem to post pieces of the input/output at a time... <br />
+<br />
+argument  1 = nwch.nw<br />
+<br />
+<br />
+<br />
+
+<h6> <span class="mw-headline" id=".3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D_echo_of_input_deck_.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D">======================== echo of input deck ========================</span></h6>
+scratch_dir /scratch/wardce01<br />
+Title "dioxetane_R_SR_1295_9s_15_HF-TZ-opt-2"<br />
+<br />
+Start  dioxetane_R_SR_1295_9s_15_HF-TZ-opt-2<br />
+<br />
+echo<br />
+<br />
+Memory 200 mw<br />
+<br />
+charge 0<br />
+<br />
+geometry noautosym noautoz units angstrom<br />
+
+<pre>N     1.35034     0.316493     -1.48320<br />
+C     0.755821     -0.901158     -1.07358<br />
+C     0.455453     -2.00724     -1.83380<br />
+H     0.721591     -2.05972     -2.88101<br />
+C     -0.207465     -3.08220     -1.23328<br />
+H     -0.435153     -3.94694     -1.83718<br />
+C     -0.566570     -3.03734     0.105361<br />
+O     -1.21005     -4.02516     0.767250<br />
+C     -0.257056     -1.90610     0.867316<br />
+H     -0.530552     -1.89639     1.91300<br />
+C     0.400952     -0.855970     0.273371<br />
+C     0.895834     0.448054     0.865073<br />
+C     -1.52699     -5.21327     0.101085<br />
+H     -2.01818     -5.85044     0.831656<br />
+H     -0.630955     -5.71868     -0.267187<br />
+H     -2.21053     -5.03674     -0.733122<br />
+C     1.70325     1.02999     -0.299096<br />
+O     2.87472     0.584356     0.378269<br />
+H     1.74237     2.10326     -0.456297<br />
+H     2.07924     0.245255     -2.16835<br />
+O     2.13992     0.268657     1.54877<br />
+C     -0.0799165     1.27784     1.67523<br />
+H     -0.310678     0.730071     2.59357<br />
+C     -1.38856     1.60523     0.954564<br />
+H     0.416906     2.20133     1.97421<br />
+H     -2.01242     2.19567     1.61990<br />
+H     -1.93002     0.691462     0.712226<br />
+N     -1.21431     2.36062     -0.271339<br />
+H     -1.06458     1.86565     -1.12418<br />
+C     -1.19504     3.71696     -0.288277<br />
+C     -0.973048     4.34888     -1.64431<br />
+O     -1.32447     4.37640     0.705112<br />
+H     -1.32547     3.72297     -2.46423<br />
+H     0.0962367     4.52724     -1.77775<br />
+H     -1.48096     5.31007     -1.66671<br />
+</pre>
+end<br />
+<br />
+ecce_print /home/wardce01/nwchem_run/Melatonin_Kladna_gas/Melatonin_Kladna_gas_1/HF-TZ-opt/dioxetane_R_SR_1295_9s_15_HF-TZ-opt-5/ecce.out<br />
+<br />
+basis "ao basis" spherical print<br />
+H    S<br />
+
+<pre>   33.870000000000     0.006068000000<br />
+    5.095000000000     0.045308000000<br />
+    1.159000000000     0.202822000000<br />
+</pre>
+H    S<br />
+
+<pre>    0.325800000000     1.000000000000<br />
+</pre>
+H    S<br />
+
+<pre>    0.102700000000     1.000000000000<br />
+</pre>
+H    P<br />
+
+<pre>    1.407000000000     1.000000000000<br />
+</pre>
+H    P<br />
+
+<pre>    0.388000000000     1.000000000000<br />
+</pre>
+H    D<br />
+
+<pre>    1.057000000000     1.000000000000<br />
+</pre>
+O    S<br />
+
+<pre>15330.000000000000     0.000508000000    -0.000115000000<br />
+ 2299.000000000000     0.003929000000    -0.000895000000<br />
+  522.400000000000     0.020243000000    -0.004636000000<br />
+  147.300000000000     0.079181000000    -0.018724000000<br />
+   47.550000000000     0.230687000000    -0.058463000000<br />
+   16.760000000000     0.433118000000    -0.136463000000<br />
+    6.207000000000     0.350260000000    -0.175740000000<br />
+    0.688200000000    -0.008154000000     0.603418000000<br />
+</pre>
+O    S<br />
+
+<pre>    1.752000000000     1.000000000000<br />
+</pre>
+O    S<br />
+
+<pre>    0.238400000000     1.000000000000<br />
+</pre>
+O    P<br />
+
+<pre>   34.460000000000     0.015928000000<br />
+    7.749000000000     0.099740000000<br />
+    2.280000000000     0.310492000000<br />
+</pre>
+O    P<br />
+
+<pre>    0.715600000000     1.000000000000<br />
+</pre>
+O    P<br />
+
+<pre>    0.214000000000     1.000000000000<br />
+</pre>
+O    D<br />
+
+<pre>    2.314000000000     1.000000000000<br />
+</pre>
+O    D<br />
+
+<pre>    0.645000000000     1.000000000000<br />
+</pre>
+O    F<br />
+
+<pre>    1.428000000000     1.000000000000<br />
+</pre>
+N    S<br />
+
+<pre>11420.000000000000     0.000523000000    -0.000115000000<br />
+ 1712.000000000000     0.004045000000    -0.000895000000<br />
+  389.300000000000     0.020775000000    -0.004624000000<br />
+  110.000000000000     0.080727000000    -0.018528000000<br />
+   35.570000000000     0.233074000000    -0.057339000000<br />
+   12.540000000000     0.433501000000    -0.132076000000<br />
+    4.644000000000     0.347472000000    -0.172510000000<br />
+    0.511800000000    -0.008508000000     0.599944000000<br />
+</pre>
+N    S<br />
+
+<pre>    1.293000000000     1.000000000000<br />
+</pre>
+N    S<br />
+
+<pre>    0.178700000000     1.000000000000<br />
+</pre>
+N    P<br />
+
+<pre>   26.630000000000     0.014670000000<br />
+    5.948000000000     0.091764000000<br />
+    1.742000000000     0.298683000000<br />
+</pre>
+N    P<br />
+
+<pre>    0.555000000000     1.000000000000<br />
+</pre>
+N    P<br />
+
+<pre>    0.172500000000     1.000000000000<br />
+</pre>
+N    D<br />
+
+<pre>    1.654000000000     1.000000000000<br />
+</pre>
+N    D<br />
+
+<pre>    0.469000000000     1.000000000000<br />
+</pre>
+N    F<br />
+
+<pre>    1.093000000000     1.000000000000<br />
+</pre>
+C    S<br />
+
+<pre> 8236.000000000000     0.000531000000    -0.000113000000<br />
+ 1235.000000000000     0.004108000000    -0.000878000000<br />
+  280.800000000000     0.021087000000    -0.004540000000<br />
+   79.270000000000     0.081853000000    -0.018133000000<br />
+   25.590000000000     0.234817000000    -0.055760000000<br />
+    8.997000000000     0.434401000000    -0.126895000000<br />
+    3.319000000000     0.346129000000    -0.170352000000<br />
+    0.364300000000    -0.008983000000     0.598684000000<br />
+</pre>
+C    S<br />
+
+<pre>    0.905900000000     1.000000000000<br />
+</pre>
+C    S<br />
+
+<pre>    0.128500000000     1.000000000000<br />
+</pre>
+C    P<br />
+
+<pre>   18.710000000000     0.014031000000<br />
+    4.133000000000     0.086866000000<br />
+    1.200000000000     0.290216000000<br />
+</pre>
+C    P<br />
+
+<pre>    0.382700000000     1.000000000000<br />
+</pre>
+C    P<br />
+
+<pre>    0.120900000000     1.000000000000<br />
+</pre>
+C    D<br />
+
+<pre>    1.097000000000     1.000000000000<br />
+</pre>
+C    D<br />
+
+<pre>    0.318000000000     1.000000000000<br />
+</pre>
+C    F<br />
+
+<pre>    0.761000000000     1.000000000000<br />
+</pre>
+END<br />
+<br />
+scf<br />
+
+<pre> RHF<br />
+ direct<br />
+ nopen 0<br />
+ maxiter 200<br />
+</pre>
+end<br />
+<br />
+driver<br />
+
+<pre> default<br />
+ maxiter 100<br />
+</pre>
+end<br />
+<br />
+task scf optimize<br />
+
+<h6> <span class="mw-headline" id=".3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D.3D">====================================================================</span></h6>
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6346"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6346" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6346.html">10:49:21 AM PDT - Sun, Sep 6th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Job information<br />
+
+<pre>          ---------------<br />
+</pre>
+<br />
+
+<pre>   hostname        = c01.etsu.edu<br />
+   program         = /opt/nwchem/bin/nwchem<br />
+   date            = Wed Aug 26 16:34:31 2015<br />
+</pre>
+<br />
+
+<pre>   compiled        = Fri_Dec_12_17:21:39_2014<br />
+   source          = /home/skirkby/nwchem-6.5<br />
+   nwchem branch   = 6.5<br />
+   nwchem revision = 26243<br />
+   ga revision     = 10506<br />
+   input           = nwch.nw<br />
+   prefix          = dioxetane_R_SR_1295_9s_15_HF-TZ-opt-2.<br />
+   data base       = ./dioxetane_R_SR_1295_9s_15_HF-TZ-opt-2.db<br />
+   status          = startup<br />
+   nproc           =       12<br />
+   time left       =     -1s<br />
+</pre>
+<br />
+<br />
+<br />
+
+<pre>          Memory information<br />
+          ------------------<br />
+</pre>
+<br />
+
+<pre>   heap     =   52428794 doubles =    400.0 Mbytes<br />
+   stack    =   52428799 doubles =    400.0 Mbytes<br />
+   global   =  104857600 doubles =    800.0 Mbytes (distinct from heap &amp; stack)<br />
+   total    =  209715193 doubles =   1600.0 Mbytes<br />
+   verify   = yes<br />
+   hardfail = no <br />
+</pre>
+<br />
+<br />
+
+<pre>          Directory information<br />
+          ---------------------<br />
+</pre>
+<br />
+
+<pre> 0 permanent = .<br />
+ 0 scratch   = /scratch/wardce01<br />
+</pre>
+<br />
+<br />
+<br />
+<br />
+
+<pre>                               NWChem Input Module<br />
+                               -------------------<br />
+</pre>
+<br />
+<br />
+
+<pre>                      dioxetane_R_SR_1295_9s_15_HF-TZ-opt-2<br />
+                      -------------------------------------<br />
+</pre>
+<br />
+
+<pre>Scaling coordinates for geometry "geometry" by  1.889725989<br />
+(inverse scale =  0.529177249)<br />
+</pre>
+<br />
+<br />
+<br />
+
+<pre>                            Geometry "geometry" -&gt; ""<br />
+                            -------------------------<br />
+</pre>
+<br />
+
+<pre>Output coordinates in angstroms (scale by  1.889725989 to convert to a.u.)<br />
+</pre>
+<br />
+
+<pre> No.       Tag          Charge          X              Y              Z<br />
+---- ---------------- ---------- -------------- -------------- --------------<br />
+   1 N                    7.0000     1.35033998     0.31649344    -1.48319945<br />
+   2 C                    6.0000     0.75582098    -0.90115756    -1.07357945<br />
+   3 C                    6.0000     0.45545298    -2.00723956    -1.83379945<br />
+   4 H                    1.0000     0.72159098    -2.05971956    -2.88100945<br />
+   5 C                    6.0000    -0.20746502    -3.08219956    -1.23327945<br />
+   6 H                    1.0000    -0.43515302    -3.94693956    -1.83717945<br />
+   7 C                    6.0000    -0.56657002    -3.03733956     0.10536155<br />
+   8 O                    8.0000    -1.21005002    -4.02515956     0.76725055<br />
+   9 C                    6.0000    -0.25705602    -1.90609956     0.86731655<br />
+  10 H                    1.0000    -0.53055202    -1.89638956     1.91300055<br />
+  11 C                    6.0000     0.40095198    -0.85596956     0.27337155<br />
+  12 C                    6.0000     0.89583398     0.44805444     0.86507355<br />
+  13 C                    6.0000    -1.52699002    -5.21326956     0.10108555<br />
+  14 H                    1.0000    -2.01818002    -5.85043956     0.83165655<br />
+  15 H                    1.0000    -0.63095502    -5.71867956    -0.26718645<br />
+  16 H                    1.0000    -2.21053002    -5.03673956    -0.73312145<br />
+  17 C                    6.0000     1.70324998     1.02999044    -0.29909545<br />
+  18 O                    8.0000     2.87471998     0.58435644     0.37826955<br />
+  19 H                    1.0000     1.74236998     2.10326044    -0.45629645<br />
+  20 H                    1.0000     2.07923998     0.24525544    -2.16834945<br />
+  21 O                    8.0000     2.13991998     0.26865744     1.54877055<br />
+  22 C                    6.0000    -0.07991652     1.27784044     1.67523055<br />
+  23 H                    1.0000    -0.31067802     0.73007144     2.59357055<br />
+  24 C                    6.0000    -1.38856002     1.60523044     0.95456455<br />
+  25 H                    1.0000     0.41690598     2.20133044     1.97421055<br />
+  26 H                    1.0000    -2.01242002     2.19567044     1.61990055<br />
+  27 H                    1.0000    -1.93002002     0.69146244     0.71222655<br />
+  28 N                    7.0000    -1.21431002     2.36062044    -0.27133845<br />
+  29 H                    1.0000    -1.06458002     1.86565044    -1.12417945<br />
+  30 C                    6.0000    -1.19504002     3.71696044    -0.28827645<br />
+  31 C                    6.0000    -0.97304802     4.34888044    -1.64430945<br />
+  32 O                    8.0000    -1.32447002     4.37640044     0.70511255<br />
+  33 H                    1.0000    -1.32547002     3.72297044    -2.46422945<br />
+  34 H                    1.0000     0.09623668     4.52724044    -1.77774945<br />
+  35 H                    1.0000    -1.48096002     5.31007044    -1.66670945<br />
+</pre>
+<br />
+
+<pre>     Atomic Mass <br />
+     ----------- <br />
+</pre>
+<br />
+
+<pre>     N                 14.003070<br />
+     C                 12.000000<br />
+     H                  1.007825<br />
+     O                 15.994910<br />
+</pre>
+<br />
+<br />
+
+<pre>Effective nuclear repulsion energy (a.u.)    1492.5417539352<br />
+</pre>
+<br />
+
+<pre>           Nuclear Dipole moment (a.u.) <br />
+           ----------------------------<br />
+       X                 Y               Z<br />
+---------------- ---------------- ----------------<br />
+   -0.0000000000    -0.0000000000     0.0000000000<br />
+</pre>
+<br />
+<br />
+
+<pre>           XYZ format geometry<br />
+           -------------------<br />
+   35<br />
+geometry<br />
+N                     1.35033998     0.31649344    -1.48319945<br />
+C                     0.75582098    -0.90115756    -1.07357945<br />
+C                     0.45545298    -2.00723956    -1.83379945<br />
+H                     0.72159098    -2.05971956    -2.88100945<br />
+C                    -0.20746502    -3.08219956    -1.23327945<br />
+H                    -0.43515302    -3.94693956    -1.83717945<br />
+C                    -0.56657002    -3.03733956     0.10536155<br />
+O                    -1.21005002    -4.02515956     0.76725055<br />
+C                    -0.25705602    -1.90609956     0.86731655<br />
+H                    -0.53055202    -1.89638956     1.91300055<br />
+C                     0.40095198    -0.85596956     0.27337155<br />
+C                     0.89583398     0.44805444     0.86507355<br />
+C                    -1.52699002    -5.21326956     0.10108555<br />
+H                    -2.01818002    -5.85043956     0.83165655<br />
+H                    -0.63095502    -5.71867956    -0.26718645<br />
+H                    -2.21053002    -5.03673956    -0.73312145<br />
+C                     1.70324998     1.02999044    -0.29909545<br />
+O                     2.87471998     0.58435644     0.37826955<br />
+H                     1.74236998     2.10326044    -0.45629645<br />
+H                     2.07923998     0.24525544    -2.16834945<br />
+O                     2.13991998     0.26865744     1.54877055<br />
+C                    -0.07991652     1.27784044     1.67523055<br />
+H                    -0.31067802     0.73007144     2.59357055<br />
+C                    -1.38856002     1.60523044     0.95456455<br />
+H                     0.41690598     2.20133044     1.97421055<br />
+H                    -2.01242002     2.19567044     1.61990055<br />
+H                    -1.93002002     0.69146244     0.71222655<br />
+N                    -1.21431002     2.36062044    -0.27133845<br />
+H                    -1.06458002     1.86565044    -1.12417945<br />
+C                    -1.19504002     3.71696044    -0.28827645<br />
+C                    -0.97304802     4.34888044    -1.64430945<br />
+O                    -1.32447002     4.37640044     0.70511255<br />
+H                    -1.32547002     3.72297044    -2.46422945<br />
+H                     0.09623668     4.52724044    -1.77774945<br />
+H                    -1.48096002     5.31007044    -1.66670945<br />
+</pre>
+<br />
+
+<pre>==============================================================================
+</pre></td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6347"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6347" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6347.html">10:50:43 AM PDT - Sun, Sep 6th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">internuclear distances<br />
+
+<pre>------------------------------------------------------------------------------<br />
+      center one      |      center two      | atomic units |  angstroms<br />
+------------------------------------------------------------------------------<br />
+   2 C                |   1 N                |     2.67509  |     1.41560<br />
+   3 C                |   2 C                |     2.59902  |     1.37534<br />
+   4 H                |   3 C                |     2.04425  |     1.08177<br />
+   5 C                |   3 C                |     2.64266  |     1.39844<br />
+   6 H                |   5 C                |     2.03908  |     1.07903<br />
+   7 C                |   5 C                |     2.62048  |     1.38670<br />
+   8 O                |   7 C                |     2.55494  |     1.35202<br />
+   9 C                |   7 C                |     2.64297  |     1.39860<br />
+  10 H                |   9 C                |     2.04261  |     1.08090<br />
+  11 C                |   2 C                |     2.63361  |     1.39365<br />
+  11 C                |   9 C                |     2.59693  |     1.37423<br />
+  12 C                |  11 C                |     2.86311  |     1.51509<br />
+  13 C                |   8 O                |     2.64280  |     1.39851<br />
+  14 H                |  13 C                |     2.05363  |     1.08673<br />
+  15 H                |  13 C                |     2.06486  |     1.09268<br />
+  16 H                |  13 C                |     2.06516  |     1.09284<br />
+  17 C                |   1 N                |     2.69624  |     1.42679<br />
+  17 C                |  12 C                |     2.89434  |     1.53162<br />
+  18 O                |  17 C                |     2.69228  |     1.42469<br />
+  19 H                |  17 C                |     2.05116  |     1.08543<br />
+  20 H                |   1 N                |     1.89520  |     1.00290<br />
+  21 O                |  12 C                |     2.70394  |     1.43087<br />
+  21 O                |  18 O                |     2.67893  |     1.41763<br />
+  22 C                |  12 C                |     2.86403  |     1.51558<br />
+  23 H                |  22 C                |     2.06720  |     1.09392<br />
+  24 C                |  22 C                |     2.89016  |     1.52941<br />
+  25 H                |  22 C                |     2.06063  |     1.09044<br />
+  26 H                |  24 C                |     2.05320  |     1.08650<br />
+  27 H                |  24 C                |     2.05874  |     1.08944<br />
+  28 N                |  24 C                |     2.74096  |     1.45045<br />
+  29 H                |  28 N                |     1.88476  |     0.99737<br />
+  30 C                |  28 N                |     2.56357  |     1.35658<br />
+  31 C                |  30 C                |     2.85807  |     1.51242<br />
+  32 O                |  30 C                |     2.26644  |     1.19935<br />
+  33 H                |  31 C                |     2.05992  |     1.09006<br />
+  34 H                |  31 C                |     2.06403  |     1.09224<br />
+  35 H                |  31 C                |     2.05482  |     1.08736<br />
+------------------------------------------------------------------------------<br />
+                        number of included internuclear distances:         37<br />
+==============================================================================
+</pre></td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6348"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6348" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6348.html">10:52:14 AM PDT - Sun, Sep 6th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I've decided to skip some sections....<br />
+<br />
+
+<pre>                          NWChem Geometry Optimization<br />
+                          ----------------------------<br />
+</pre>
+<br />
+<br />
+<br />
+<br />
+
+<pre>                      dioxetane_R_SR_1295_9s_15_HF-TZ-opt-2<br />
+</pre>
+<br />
+<br />
+
+<pre>maximum gradient threshold         (gmax) =   0.000450<br />
+rms gradient threshold             (grms) =   0.000300<br />
+maximum cartesian step threshold   (xmax) =   0.001800<br />
+rms cartesian step threshold       (xrms) =   0.001200<br />
+fixed trust radius                (trust) =   0.300000<br />
+maximum step size to saddle      (sadstp) =   0.100000<br />
+energy precision                  (eprec) =   1.0D-07<br />
+maximum number of steps          (nptopt) =  100<br />
+initial hessian option           (inhess) =    0<br />
+line search option               (linopt) =    1<br />
+hessian update option            (modupd) =    1<br />
+saddle point option              (modsad) =    0<br />
+initial eigen-mode to follow     (moddir) =    0<br />
+initial variable to follow       (vardir) =    0<br />
+follow first negative mode     (firstneg) =    T<br />
+apply conjugacy                    (opcg) =    F<br />
+source of zmatrix                         =
+</pre></td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6349"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6349" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem6" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6349.html">10:54:10 AM PDT - Sun, Sep 6th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2"><hr /><br />
+<pre>        Quadratically convergent ROHF<br />
+</pre>
+<br />
+
+<pre>Convergence threshold    &nbsp;:          1.000E-04<br />
+Maximum no. of iterations&nbsp;:          200<br />
+Final Fock-matrix accuracy:          1.000E-07<br />
+----------------------------------------------<br />
+</pre>
+<br />
+<br />
+
+<pre>             iter       energy          gnorm     gmax       time<br />
+            ----- ------------------- --------- --------- --------<br />
+                1     -910.1445749954  1.44D-01  1.02D-02  70113.4<br />
+                2     -910.1461767862  8.73D-03  6.99D-04  70728.2<br />
+                3     -910.1461843584  1.52D-03  9.20D-05  72199.4<br />
+                4     -910.1461844634  7.18D-04  4.66D-05  73578.9<br />
+                5     -910.1461844635  5.86D-04  4.24D-05  74547.5<br />
+                6     -910.1461843982  4.33D-04  2.40D-05  75505.2<br />
+                7     -910.1461843918  3.67D-04  2.18D-05  76439.7<br />
+                8     -910.1461844107  3.48D-04  2.36D-05  77350.0<br />
+                9     -910.1461844179  3.52D-04  2.72D-05  78287.3<br />
+               10     -910.1461844187  2.84D-04  1.69D-05  79021.4<br />
+               11     -910.1461844261  2.32D-04  1.76D-05  80173.2<br />
+               12     -910.1461843772  2.63D-04  1.31D-05  80895.4<br />
+               13     -910.1461843861  2.85D-04  1.63D-05  81581.1<br />
+               14     -910.1461843581  2.35D-04  1.68D-05  82728.4<br />
+               15     -910.1461843618  2.85D-04  2.06D-05  83450.2<br />
+               16     -910.1461843828  2.47D-04  1.40D-05  84594.4<br />
+               17     -910.1461843925  1.94D-04  1.79D-05  85970.2<br />
+               18     -910.1461843689  1.77D-04  1.50D-05  87332.2<br />
+               19     -910.1461843838  1.53D-04  1.41D-05  88257.8<br />
+               20     -910.1461843767  2.42D-04  1.64D-05  90939.9<br />
+               21     -910.1461843823  1.59D-04  1.19D-05  93193.2<br />
+               22     -910.1461843802  1.83D-04  1.19D-05  95180.8<br />
+               23     -910.1461843634  1.97D-04  1.33D-05  96758.5<br />
+               24     -910.1461843548  1.79D-04  1.26D-05  98322.6<br />
+               25     -910.1461843872  1.55D-04  8.91D-06 100551.3<br />
+               26     -910.1461843855  1.26D-04  6.36D-06 102342.2<br />
+               27     -910.1461843700  1.31D-04  7.85D-06 103716.6<br />
+               28     -910.1461843550  2.08D-04  1.54D-05 106369.7<br />
+               29     -910.1461843544  1.80D-04  9.77D-06 109469.3<br />
+               30     -910.1461844005  1.94D-04  1.16D-05 111052.9<br />
+               31     -910.1461843783  1.89D-04  1.47D-05 111979.7<br />
+               32     -910.1461843677  1.41D-04  1.05D-05 114424.3<br />
+               33     -910.1461843639  1.53D-04  1.29D-05 118177.2<br />
+               34     -910.1461843580  1.78D-04  1.38D-05 121060.7<br />
+               35     -910.1461844023  1.84D-04  1.23D-05 121980.9<br />
+               36     -910.1461843519  1.47D-04  8.53D-06 124240.3<br />
+               37     -910.1461844106  2.16D-04  1.75D-05 128660.4<br />
+               38     -910.1461843391  2.14D-04  1.46D-05 133091.4<br />
+               39     -910.1461843730  1.35D-04  7.21D-06 135753.0<br />
+               40     -910.1461844034  1.81D-04  1.27D-05 137558.8<br />
+               41     -910.1461843615  1.26D-04  7.93D-06 139793.8<br />
+               42     -910.1461843664  1.45D-04  9.15D-06 142847.2<br />
+               43     -910.1461844011  1.74D-04  1.30D-05 145963.6<br />
+               44     -910.1461843442  2.00D-04  1.47D-05 149083.4<br />
+               45     -910.1461843957  1.53D-04  1.12D-05 151745.5<br />
+               46     -910.1461843775  2.12D-04  1.03D-05 152878.4<br />
+               47     -910.1461843795  2.61D-04  1.29D-05 154901.1<br />
+               48     -910.1461843442  2.52D-04  1.85D-05 156281.4<br />
+               49     -910.1461844243  1.99D-04  1.43D-05 157434.2<br />
+               50     -910.1461843688  2.28D-04  1.43D-05 159032.3<br />
+               51     -910.1461843689  2.41D-04  1.43D-05 160376.3<br />
+               52     -910.1461843855  2.25D-04  1.50D-05 161091.0<br />
+               53     -910.1461843843  2.50D-04  1.49D-05 162232.0<br />
+               54     -910.1461843829  1.58D-04  8.05D-06 163166.1<br />
+               55     -910.1461843461  1.94D-04  1.08D-05 166047.3<br />
+               56     -910.1461843576  1.53D-04  8.67D-06 169150.5<br />
+               57     -910.1461843997  2.72D-04  1.59D-05 173554.5<br />
+               58     -910.1461844184  2.12D-04  1.25D-05 175131.8<br />
+               59     -910.1461843434  2.10D-04  1.38D-05 176469.8<br />
+               60     -910.1461843263  1.96D-04  1.10D-05 178483.8<br />
+               61     -910.1461843958  1.94D-04  1.50D-05 179620.0<br />
+               62     -910.1461843801  1.55D-04  7.64D-06 182981.0<br />
+               63     -910.1461843312  2.12D-04  1.68D-05 184795.9<br />
+               64     -910.1461843656  1.53D-04  9.11D-06 187025.1<br />
+               65     -910.1461843993  1.82D-04  1.48D-05 189063.8<br />
+               66     -910.1461843458  1.71D-04  1.30D-05 191981.5<br />
+               67     -910.1461844031  1.55D-04  1.09D-05 194651.8<br />
+               68     -910.1461843182  2.91D-04  2.93D-05 199099.4<br />
+               69     -910.1461843986  2.47D-04  1.72D-05 199831.0<br />
+               70     -910.1461843959  2.30D-04  1.58D-05 200999.3<br />
+               71     -910.1461843821  1.71D-04  1.44D-05 201929.8<br />
+               72     -910.1461843490  1.89D-04  1.46D-05 203688.7<br />
+               73     -910.1461843826  1.94D-04  1.43D-05 205734.1<br />
+               74     -910.1461843839  1.32D-04  1.17D-05 207742.8<br />
+               75     -910.1461843502  1.68D-04  1.14D-05 209524.4<br />
+               76     -910.1461843850  1.66D-04  1.43D-05 211986.8<br />
+               77     -910.1461843423  2.29D-04  1.91D-05 216378.6<br />
+               78     -910.1461844049  1.80D-04  9.58D-06 217524.8<br />
+               79     -910.1461844243  2.24D-04  1.61D-05 218903.0<br />
+               80     -910.1461843444  2.25D-04  1.17D-05 219600.6<br />
+               81     -910.1461843797  1.69D-04  1.01D-05 220971.8<br />
+               82     -910.1461843209  2.17D-04  1.85D-05 223011.7<br />
+               83     -910.1461843863  2.23D-04  1.24D-05 224171.2<br />
+               84     -910.1461843726  1.90D-04  1.08D-05 225114.4<br />
+               85     -910.1461843867  2.08D-04  1.65D-05 227366.4<br />
+               86     -910.1461843242  1.90D-04  1.07D-05 230040.2<br />
+               87     -910.1461843915  1.66D-04  1.02D-05 231826.3<br />
+               88     -910.1461843784  1.36D-04  7.45D-06 233430.2<br />
+               89     -910.1461843529  2.01D-04  1.46D-05 234801.5<br />
+               90     -910.1461844106  1.99D-04  1.83D-05 239230.7<br />
+               91     -910.1461843815  1.75D-04  9.06D-06 242991.5<br />
+               92     -910.1461843909  1.45D-04  1.02D-05 245658.0<br />
+               93     -910.1461843561  1.60D-04  1.04D-05 247674.5<br />
+               94     -910.1461843684  1.27D-04  6.75D-06 251399.9<br />
+               95     -910.1461843802  2.34D-04  1.49D-05 255826.9<br />
+               96     -910.1461844287  4.09D-04  2.73D-05 260267.3<br />
+               97     -910.1461843296  3.17D-04  2.51D-05 261181.4<br />
+               98     -910.1461843919  3.14D-04  1.74D-05 261903.7<br />
+               99     -910.1461843820  3.19D-04  1.70D-05 262845.6<br />
+              100     -910.1461843856  3.72D-04  3.07D-05 263580.9
+</pre></td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6350"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6350" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem7" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6350.html">10:54:53 AM PDT - Sun, Sep 6th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">101     -910.1461843855  2.37D-04  1.79D-05 264519.3<br />
+
+<pre>              102     -910.1461843490  2.54D-04  1.99D-05 265676.9<br />
+              103     -910.1461843812  2.56D-04  1.67D-05 266392.4<br />
+              104     -910.1461843444  1.89D-04  1.41D-05 267761.1<br />
+              105     -910.1461843961  1.96D-04  1.18D-05 269118.3<br />
+              106     -910.1461843636  2.01D-04  1.25D-05 270700.3<br />
+              107     -910.1461843921  2.21D-04  1.36D-05 271422.1<br />
+              108     -910.1461843579  2.13D-04  1.24D-05 272762.5<br />
+              109     -910.1461843933  2.21D-04  1.67D-05 274364.1<br />
+              110     -910.1461843774  2.02D-04  1.20D-05 275044.3<br />
+              111     -910.1461843464  2.30D-04  1.40D-05 276189.5<br />
+              112     -910.1461843569  1.92D-04  1.08D-05 277564.5<br />
+              113     -910.1461843707  2.36D-04  1.73D-05 278713.7<br />
+              114     -910.1461843940  2.21D-04  1.34D-05 279858.9<br />
+              115     -910.1461843767  2.26D-04  1.45D-05 281228.7<br />
+              116     -910.1461843369  2.17D-04  1.10D-05 282823.2<br />
+              117     -910.1461844058  1.97D-04  1.51D-05 284184.5<br />
+              118     -910.1461843799  1.78D-04  9.10D-06 285535.1<br />
+              119     -910.1461843465  2.30D-04  1.55D-05 286696.3<br />
+              120     -910.1461843724  2.19D-04  1.44D-05 287857.3<br />
+              121     -910.1461844080  1.96D-04  1.61D-05 289211.8<br />
+              122     -910.1461844059  1.59D-04  1.03D-05 290812.5<br />
+              123     -910.1461843434  1.81D-04  8.70D-06 293691.9<br />
+              124     -910.1461843714  1.51D-04  1.10D-05 295065.7<br />
+              125     -910.1461843766  2.10D-04  1.22D-05 299524.0<br />
+              126     -910.1461844116  1.76D-04  1.46D-05 300667.6<br />
+              127     -910.1461843740  1.74D-04  1.02D-05 302455.3<br />
+              128     -910.1461844145  5.16D-04  4.00D-05 306817.7<br />
+              129     -910.1461843425  2.68D-04  1.79D-05 307731.9<br />
+              130     -910.1461843510  2.36D-04  1.70D-05 308893.9<br />
+              131     -910.1461843724  2.43D-04  1.69D-05 309613.7<br />
+              132     -910.1461843641  1.98D-04  1.13D-05 310767.8<br />
+              133     -910.1461844011  2.32D-04  1.80D-05 311920.8<br />
+              134     -910.1461843880  1.69D-04  1.08D-05 313916.3<br />
+              135     -910.1461843955  1.86D-04  1.20D-05 316143.1<br />
+              136     -910.1461843835  1.40D-04  1.07D-05 318168.7<br />
+              137     -910.1461843992  2.38D-04  1.26D-05 320608.1<br />
+              138     -910.1461843902  2.73D-04  1.68D-05 321318.2<br />
+              139     -910.1461843371  2.50D-04  1.75D-05 322470.8<br />
+              140     -910.1461843433  2.49D-04  1.89D-05 323166.3<br />
+              141     -910.1461843629  2.23D-04  1.62D-05 324532.6<br />
+              142     -910.1461844320  2.45D-04  2.00D-05 325896.3<br />
+              143     -910.1461843476  2.29D-04  1.60D-05 327271.5<br />
+              144     -910.1461844036  2.35D-04  1.49D-05 329527.3<br />
+              145     -910.1461843954  2.43D-04  1.41D-05 330248.4<br />
+              146     -910.1461843526  2.16D-04  1.43D-05 331851.9<br />
+              147     -910.1461843561  2.54D-04  1.64D-05 332568.9<br />
+              148     -910.1461843771  1.98D-04  1.30D-05 333735.9<br />
+              149     -910.1461843398  1.99D-04  1.21D-05 335315.8<br />
+              150     -910.1461843767  1.46D-04  6.94D-06 338161.3<br />
+              151     -910.1461843988  2.24D-04  1.76D-05 339525.1<br />
+              152     -910.1461843740  2.15D-04  1.43D-05 341105.9<br />
+              153     -910.1461843652  2.11D-04  1.55D-05 342021.7<br />
+              154     -910.1461843488  2.03D-04  1.07D-05 344727.6<br />
+              155     -910.1461843781  1.79D-04  1.18D-05 346099.0<br />
+              156     -910.1461843828  1.85D-04  1.07D-05 347665.7<br />
+              157     -910.1461843519  2.10D-04  1.28D-05 349930.1<br />
+              158     -910.1461843614  2.04D-04  1.36D-05 351091.5<br />
+              159     -910.1461843712  2.20D-04  1.54D-05 352676.4<br />
+              160     -910.1461844146  2.34D-04  1.70D-05 354273.6<br />
+              161     -910.1461843832  2.18D-04  1.47D-05 354983.7<br />
+              162     -910.1461843515  2.18D-04  1.32D-05 356368.5<br />
+              163     -910.1461843573  2.56D-04  1.34D-05 357067.0<br />
+              164     -910.1461843674  1.74D-04  1.17D-05 358230.0<br />
+              165     -910.1461843956  1.38D-04  6.79D-06 360235.6<br />
+              166     -910.1461843739  1.93D-04  1.09D-05 361595.1<br />
+              167     -910.1461844149  2.46D-04  2.14D-05 363178.1<br />
+              168     -910.1461843968  1.73D-04  9.72D-06 364525.3<br />
+              169     -910.1461843380  2.29D-04  1.65D-05 365872.1<br />
+              170     -910.1461843929  1.65D-04  1.14D-05 367691.7<br />
+              171     -910.1461843830  1.46D-04  9.92D-06 369044.3<br />
+              172     -910.1461844000  1.91D-04  1.02D-05 371255.0<br />
+              173     -910.1461843750  2.15D-04  1.11D-05 372624.6<br />
+              174     -910.1461843462  1.94D-04  9.32D-06 377016.4<br />
+              175     -910.1461843920  1.56D-04  8.96D-06 379041.0<br />
+              176     -910.1461843875  2.34D-04  1.47D-05 381481.4<br />
+              177     -910.1461843944  1.61D-04  1.06D-05 382621.5<br />
+              178     -910.1461843794  1.78D-04  9.56D-06 384803.0<br />
+              179     -910.1461843903  1.56D-04  1.30D-05 386173.7<br />
+              180     -910.1461843419  1.95D-04  1.45D-05 390592.4<br />
+              181     -910.1461843599  1.70D-04  8.06D-06 393254.4<br />
+              182     -910.1461843974  1.58D-04  9.10D-06 397670.0<br />
+              183     -910.1461843578  1.49D-04  7.36D-06 399227.4<br />
+              184     -910.1461844167  2.63D-04  1.95D-05 403667.5<br />
+              185     -910.1461843421  2.21D-04  1.61D-05 405032.3<br />
+              186     -910.1461843881  1.63D-04  9.40D-06 407052.6<br />
+              187     -910.1461844035  1.78D-04  9.07D-06 409065.3<br />
+              188     -910.1461843864  1.54D-04  1.23D-05 412138.5<br />
+              189     -910.1461843489  1.62D-04  9.06D-06 416529.9<br />
+              190     -910.1461843786  1.83D-04  1.30D-05 418331.5<br />
+              191     -910.1461843853  2.22D-04  1.34D-05 420391.3<br />
+              192     -910.1461843955  1.41D-04  7.70D-06 421536.8<br />
+              193     -910.1461843494  1.43D-04  8.63D-06 422672.4<br />
+              194     -910.1461844173  2.49D-04  2.53D-05 427058.8<br />
+              195     -910.1461843396  2.48D-04  1.71D-05 431452.3<br />
+              196     -910.1461843809  2.19D-04  1.29D-05 432588.2<br />
+              197     -910.1461843918  1.56D-04  8.78D-06 434182.5<br />
+              198     -910.1461844076  2.30D-04  1.71D-05 438605.3<br />
+              199     -910.1461843460  2.35D-04  1.28D-05 439307.7<br />
+              200     -910.1461843611  2.52D-04  1.66D-05 440031.9<br />
+</pre>
+<br />
+
+<pre>     Calculation failed to converge<br />
+     ------------------------------<br />
+</pre>
+<br />
+<br />
+<br />
+
+<pre>      Final RHF  results <br />
+      ------------------ <br />
+</pre>
+<br />
+
+<pre>        Total SCF energy =   -910.146184361141<br />
+     One-electron energy =  -4212.658012265842<br />
+     Two-electron energy =   1808.346123147437<br />
+Nuclear repulsion energy =   1494.165704757265<br />
+</pre>
+<br />
+
+<pre>       Time for solution = 370140.6s
+</pre></td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6351"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6351" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem8" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6351.html">10:55:59 AM PDT - Sun, Sep 6th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">driver_energy_step: energy failed                   0<br />
+
+<pre>------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error related to the specified geometry<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+driver_energy_step: energy failed                   0<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error related to the specified geometry<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+driver_energy_step: energy failed                   0<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error related to the specified geometry<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+------------------------------------------------------------------------<br />
+driver_energy_step: energy failed                   0<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+  162: task scf optimize<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error related to the specified geometry<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a><br />
+</pre>
+<br />
+<br />
+
+<pre>For further details see manual section:                                                                                                                                                                                                                                                                <br />
+driver_energy_step: energy failed                   0<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+    0: <br />
+------------------------------------------------------------------------<br />
+driver_energy_step: energy failed                   0<br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+ current input line&nbsp;: <br />
+    0: <br />
+------------------------------------------------------------------------<br />
+------------------------------------------------------------------------<br />
+There is an error related to the specified geometry<br />
+------------------------------------------------------------------------<br />
+For more information see the NWChem manual at <a href="http://www.nwchem-sw.org/index.php/NWChem_Documentation" class="external free">http://www.nwchem-sw.org/index.php/NWChem_Documentation</a>
+</pre></td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6374"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6374" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem9" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6374.html">9:44:59 AM PDT - Mon, Sep 14th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Please try the input below<br />
+
+<pre>
+scratch_dir /scratch/wardce01
+Title &quot;dioxetane_R_SR_1295_9s_15_HF-TZ-opt-2&quot;
+
+Start  dioxetane_R_SR_1295_9s_15_HF-TZ-opt-2
+
+
+echo
+
+Memory 200 mw
+
+charge 0
+
+geometry
+ N     1.35034     0.316493     -1.48320
+ C     0.755821     -0.901158     -1.07358
+ C     0.455453     -2.00724     -1.83380
+ H     0.721591     -2.05972     -2.88101
+ C     -0.207465     -3.08220     -1.23328
+ H     -0.435153     -3.94694     -1.83718
+ C     -0.566570     -3.03734     0.105361
+ O     -1.21005     -4.02516     0.767250
+ C     -0.257056     -1.90610     0.867316
+ H     -0.530552     -1.89639     1.91300
+ C     0.400952     -0.855970     0.273371
+ C     0.895834     0.448054     0.865073
+ C     -1.52699     -5.21327     0.101085
+ H     -2.01818     -5.85044     0.831656
+ H     -0.630955     -5.71868     -0.267187
+ H     -2.21053     -5.03674     -0.733122
+ C     1.70325     1.02999     -0.299096
+ O     2.87472     0.584356     0.378269
+ H     1.74237     2.10326     -0.456297
+ H     2.07924     0.245255     -2.16835
+ O     2.13992     0.268657     1.54877
+ C     -0.0799165     1.27784     1.67523
+ H     -0.310678     0.730071     2.59357
+ C     -1.38856     1.60523     0.954564
+ H     0.416906     2.20133     1.97421
+ H     -2.01242     2.19567     1.61990
+ H     -1.93002     0.691462     0.712226
+ N     -1.21431     2.36062     -0.271339
+ H     -1.06458     1.86565     -1.12418
+ C     -1.19504     3.71696     -0.288277
+ C     -0.973048     4.34888     -1.64431
+ O     -1.32447     4.37640     0.705112
+ H     -1.32547     3.72297     -2.46423
+ H     0.0962367     4.52724     -1.77775
+ H     -1.48096     5.31007     -1.66671
+end
+
+ecce_print /home/wardce01/nwchem_run/Melatonin_Kladna_gas/Melatonin_Kladna_gas_1/HF-TZ-opt/dioxetane_R_SR_1295_9s_15_HF-TZ-opt-5/ecce.out
+
+basis &quot;ao basis&quot; spherical print
+H    S
+    33.870000000000     0.006068000000
+     5.095000000000     0.045308000000
+     1.159000000000     0.202822000000
+H    S
+     0.325800000000     1.000000000000
+H    S
+     0.102700000000     1.000000000000
+H    P
+     1.407000000000     1.000000000000
+H    P
+     0.388000000000     1.000000000000
+H    D
+     1.057000000000     1.000000000000
+O    S
+ 15330.000000000000     0.000508000000    -0.000115000000
+  2299.000000000000     0.003929000000    -0.000895000000
+   522.400000000000     0.020243000000    -0.004636000000
+   147.300000000000     0.079181000000    -0.018724000000
+    47.550000000000     0.230687000000    -0.058463000000
+    16.760000000000     0.433118000000    -0.136463000000
+     6.207000000000     0.350260000000    -0.175740000000
+     0.688200000000    -0.008154000000     0.603418000000
+O    S
+     1.752000000000     1.000000000000
+O    S
+     0.238400000000     1.000000000000
+O    P
+    34.460000000000     0.015928000000
+     7.749000000000     0.099740000000
+     2.280000000000     0.310492000000
+O    P
+     0.715600000000     1.000000000000
+O    P
+     0.214000000000     1.000000000000
+O    D
+     2.314000000000     1.000000000000
+O    D
+     0.645000000000     1.000000000000
+O    F
+     1.428000000000     1.000000000000
+N    S
+ 11420.000000000000     0.000523000000    -0.000115000000
+  1712.000000000000     0.004045000000    -0.000895000000
+   389.300000000000     0.020775000000    -0.004624000000
+   110.000000000000     0.080727000000    -0.018528000000
+    35.570000000000     0.233074000000    -0.057339000000
+    12.540000000000     0.433501000000    -0.132076000000
+     4.644000000000     0.347472000000    -0.172510000000
+     0.511800000000    -0.008508000000     0.599944000000
+N    S
+     1.293000000000     1.000000000000
+N    S
+     0.178700000000     1.000000000000
+N    P
+    26.630000000000     0.014670000000
+     5.948000000000     0.091764000000
+     1.742000000000     0.298683000000
+N    P
+     0.555000000000     1.000000000000
+N    P
+     0.172500000000     1.000000000000
+N    D
+     1.654000000000     1.000000000000
+N    D
+     0.469000000000     1.000000000000
+N    F
+     1.093000000000     1.000000000000
+C    S
+  8236.000000000000     0.000531000000    -0.000113000000
+  1235.000000000000     0.004108000000    -0.000878000000
+   280.800000000000     0.021087000000    -0.004540000000
+    79.270000000000     0.081853000000    -0.018133000000
+    25.590000000000     0.234817000000    -0.055760000000
+     8.997000000000     0.434401000000    -0.126895000000
+     3.319000000000     0.346129000000    -0.170352000000
+     0.364300000000    -0.008983000000     0.598684000000
+C    S
+     0.905900000000     1.000000000000
+C    S
+     0.128500000000     1.000000000000
+C    P
+    18.710000000000     0.014031000000
+     4.133000000000     0.086866000000
+     1.200000000000     0.290216000000
+C    P
+     0.382700000000     1.000000000000
+C    P
+     0.120900000000     1.000000000000
+C    D
+     1.097000000000     1.000000000000
+C    D
+     0.318000000000     1.000000000000
+C    F
+     0.761000000000     1.000000000000
+END
+dft
+xc hfexch
+vectors input atomic output dft.mos
+convergence energy 1d-8
+direct
+end
+task dft ignore
+scf
+  RHF
+  direct
+  nopen 0
+  maxiter 200
+vectors input atomic output hf.mos
+end
+
+driver
+  default
+  maxiter 100
+end
+
+task scf optimize
+</pre>
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../../index.html">Forum</a> &gt;&gt; <a href="../../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../../sf/id3.html">General Topics</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />

@@ -1,0 +1,2464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="Compiling NWChem Advice.... Viewed 4862 times, With a total of 13 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id71_Compiling_NWChem_Advice_html skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >Compiling NWChem Advice....</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_232"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_232" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id232.html">4:35:41 AM PST - Mon, Dec 13th 2010 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi All,<br />
+<br />
+I same across the following web-site with good instructions on compiling NWChem: <br />
+<br />
+<a target='blank' href="http://www.hpcadvisorycouncil.com/pdf/NWChem_Best_Practice.pdf" class="external text">HPC Advisory Council - NWChem Best Practice</a><br />
+<br />
+<br />
+cheers,<br />
+<br />
+Chris.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_258"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_258" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id258.html">3:57:23 PM PST - Tue, Jan 11th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Thanks for sharing. Bert<br />
+<br />
+<br />
+<div class='quote_title'>Quote:Chrisn77 <a target='blank' href="../../sp/id232.html" title="Special:AWCforum/sp/id232">Dec 13th 11:35 am</a><div class='quote'>Hi All,<br />
+<br />
+I same across the following web-site with good instructions on compiling NWChem: <br />
+<br />
+<a target='blank' href="http://www.hpcadvisorycouncil.com/pdf/NWChem_Best_Practice.pdf" class="external text">HPC Advisory Council - NWChem Best Practice</a><br />
+<br />
+<br />
+cheers,<br />
+<br />
+Chris.</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_276"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_276" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                     Guest -  <font class="group_text"></font>
+                                    <div id="mem3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class=""></div><!-- /member_title -->
+                                
+                                
+                                                              
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="15">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id276.html">11:30:58 PM PST - Sun, Jan 16th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_486"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_486" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id486.html">12:09:14 AM PDT - Mon, Jun 13th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I got the following error message right after the initialization of the program after building NWChem following these directions:<br />
+<br />
+
+<pre>                                NWChem DFT Module<br />
+                                -----------------<br />
+<br />
+<br />
+                    Ti2O4 1Ag C2h BP86/aug-cc-pVDZ(-PP) TDDFT<br />
+<br />
+<br />
+</pre>
+rank 0 in job 5  computea-01_34827   caused collective abort of all ranks<br />
+
+<pre> exit status of rank 0: killed by signal 9<br />
+</pre>
+<br />
+I was able to run a simple H2O calculation, but as soon as I run a little larger calculation, the job failed. I am using the following compilers and libraries:<br />
+<br />
+/app/intel/Compiler/11.1/072/bin/intel64/ifort<br />
+/app/intel/Compiler/11.1/064/bin/intel64/icc<br />
+/app/intel/impi/4.0.0.025/<br />
+Interconnect is OpenIB.<br />
+And I am running on a single node.<br />
+<br />
+Any help will be greatly appreciated.<br />
+<br />
+Shenggang.
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_532"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_532" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id532.html">3:18:39 PM PDT - Wed, Jul 6th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">How much memory are you asking for and how much memory do you have? It's unclear why the calculation would abort at this stage. Could you post the input deck and a little bit more about the output.<br />
+<br />
+Bert<br />
+<br />
+<div class='quote_title'>Quote:Shenggangli <a target='blank' href="../../sp/id486.html" title="Special:AWCforum/sp/id486">Jun 13th 7:09 am</a><div class='quote'>I got the following error message right after the initialization of the program after building NWChem following these directions:<br />
+<br />
+
+<pre>                                NWChem DFT Module<br />
+                                -----------------<br />
+<br />
+<br />
+                    Ti2O4 1Ag C2h BP86/aug-cc-pVDZ(-PP) TDDFT<br />
+<br />
+<br />
+</pre>
+rank 0 in job 5  computea-01_34827   caused collective abort of all ranks<br />
+
+<pre> exit status of rank 0: killed by signal 9<br />
+</pre>
+<br />
+I was able to run a simple H2O calculation, but as soon as I run a little larger calculation, the job failed. I am using the following compilers and libraries:<br />
+<br />
+/app/intel/Compiler/11.1/072/bin/intel64/ifort<br />
+/app/intel/Compiler/11.1/064/bin/intel64/icc<br />
+/app/intel/impi/4.0.0.025/<br />
+Interconnect is OpenIB.<br />
+And I am running on a single node.<br />
+<br />
+Any help will be greatly appreciated.<br />
+<br />
+Shenggang.</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_550"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_550" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem6" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id550.html">6:55:19 PM PDT - Sun, Jul 17th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">The input is pretty regular, and I only claim 512MB of memory per processor, and I have 16 GB in total. The same job runs with a build using the GNU compilers.<br />
+<br />
+echo<br />
+start ti2o4.1ag.c2h.tddft.bp86.ad <br />
+memory 512 mb<br />
+title "Ti2O4 1Ag C2h BP86/aug-cc-pVDZ(-PP) TDDFT"<br />
+charge 0<br />
+<br />
+geometry<br />
+
+<pre> TI     0.000000    1.358790    0.000000<br />
+ O      0.000000    0.000000    1.259175<br />
+ O      0.000000    0.000000   -1.259175<br />
+ TI     0.000000   -1.358790    0.000000<br />
+ O      1.390706   -2.234545    0.000000<br />
+ O     -1.390706    2.234545    0.000000<br />
+</pre>
+symmetry c2h<br />
+end<br />
+<br />
+basis spherical<br />
+O library aug-cc-pVDZ<br />
+
+<ol><li> cc-pVDZ-PP<br />
+</li></ol>
+Ti s<br />
+
+<pre>     1179.85   0.000280<br />
+     175.264   0.001649<br />
+     15.4371   0.054881<br />
+     5.46437   -0.384598<br />
+     1.11430   0.726613<br />
+     0.474843   0.464209<br />
+     0.084602   0.018129<br />
+     0.032314   -0.003034<br />
+</pre>
+Ti s<br />
+
+<pre>     1179.85   -0.000073<br />
+     175.264   -0.000495<br />
+     15.4371   -0.013825<br />
+     5.46437   0.105472<br />
+     1.11430   -0.248678<br />
+     0.474843   -0.287478<br />
+     0.084602   0.598418<br />
+     0.032314   0.558246<br />
+</pre>
+Ti s<br />
+
+<pre>     1179.85   0.000171<br />
+     175.264   0.000836<br />
+     15.4371   0.032278<br />
+     5.46437   -0.235207<br />
+     1.11430   0.924182<br />
+     0.474843   -0.350426<br />
+     0.084602   -1.780466<br />
+     0.032314   1.729235<br />
+</pre>
+Ti s<br />
+
+<pre>     0.032314   1.0<br />
+</pre>
+Ti p<br />
+
+<pre>     30.4206   0.005258<br />
+     8.26043   -0.072253<br />
+     2.11785   0.314105<br />
+     0.960790   0.506006<br />
+     0.418681   0.290650<br />
+     0.116841   0.027032<br />
+     0.039440   -0.003770<br />
+</pre>
+Ti p<br />
+
+<pre>     30.4206   -0.001192<br />
+     8.26043   0.018066<br />
+     2.11785   -0.087998<br />
+     0.960790   -0.174911<br />
+     0.418681   -0.045726<br />
+     0.116841   0.558068<br />
+     0.039440   0.556683<br />
+</pre>
+Ti p<br />
+
+<pre>     30.4206   -0.001470<br />
+     8.26043   0.022249<br />
+     2.11785   -0.105142<br />
+     0.960790   -0.216938<br />
+     0.418681   -0.081574<br />
+     0.116841   0.803506<br />
+     0.039440   0.315929<br />
+</pre>
+Ti p<br />
+
+<pre>     0.039440   1.0<br />
+</pre>
+Ti d<br />
+
+<pre>     21.7936   0.025345<br />
+     6.7014   0.112634<br />
+     2.30235   0.289321<br />
+     0.81126   0.427201<br />
+     0.268201   0.390352<br />
+     0.077546   0.148302<br />
+</pre>
+Ti d<br />
+
+<pre>     21.7936   -0.025853<br />
+     6.7014   -0.118705<br />
+     2.30235   -0.292861<br />
+     0.81126   -0.337560<br />
+     0.268201   0.306027<br />
+     0.077546   0.711637<br />
+</pre>
+Ti d<br />
+
+<pre>     0.077546   1.0<br />
+</pre>
+Ti f<br />
+
+<pre>     0.4980   1.0<br />
+</pre>
+<ol><li> aug-cc-pVDZ-PP<br />
+</li></ol>
+Ti s<br />
+
+<pre>     0.0123   1.0<br />
+</pre>
+Ti p<br />
+
+<pre>     0.0133   1.0<br />
+</pre>
+Ti d<br />
+
+<pre>     0.0224   1.0<br />
+</pre>
+Ti f<br />
+
+<pre>     0.1185   1.0<br />
+</pre>
+end<br />
+<br />
+ecp<br />
+Ti nelec 10<br />
+Ti S<br />
+2    12.68545278327510   130.80332818219401<br />
+2     5.60443403028738    20.28841794549380<br />
+Ti P<br />
+2    12.16470843145440    32.17007242591840<br />
+2    11.83573845353970    54.94536681653020<br />
+2     4.20933536504579     2.08550079252638<br />
+2     4.87027289311104     6.50179581409069<br />
+Ti D<br />
+2    16.69258854674990    -9.43456596695940<br />
+2    17.44887629757160   -15.01358236125450<br />
+2     4.87042604412202     0.06111200391995<br />
+2     4.88118144645471     0.05753055973493<br />
+Ti F<br />
+2     8.70406407124751    -1.96536087719181<br />
+2    10.12717654527650    -3.75480071683613<br />
+end<br />
+<br />
+dft<br />
+
+<pre>  vectors swap 28 29 output ti2o4.1ag.c2h.tddft.bp86.ad.movecs<br />
+  xc becke88 perdew86<br />
+  grid xfine<br />
+  mult 1<br />
+  iterations 100<br />
+</pre>
+end<br />
+task dft
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_552"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_552" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem7" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id552.html">1:59:49 PM PDT - Mon, Jul 18th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">This clearly sounds like a compiler issue. I've seen others finding problems with the latest Intel compiler. Do you have access to another compiler (other then GNU that works), or Intel 10?<br />
+<br />
+Bert<br />
+<br />
+<br />
+<br />
+<div class='quote_title'>Quote:Shenggangli <a target='blank' href="../../sp/id550.html" title="Special:AWCforum/sp/id550">Jul 18th 1:55 am</a><div class='quote'>The input is pretty regular, and I only claim 512MB of memory per processor, and I have 16 GB in total. The same job runs with a build using the GNU compilers.<br />
+<br />
+echo<br />
+start ti2o4.1ag.c2h.tddft.bp86.ad <br />
+memory 512 mb<br />
+title "Ti2O4 1Ag C2h BP86/aug-cc-pVDZ(-PP) TDDFT"<br />
+charge 0<br />
+<br />
+geometry<br />
+
+<pre> TI     0.000000    1.358790    0.000000<br />
+ O      0.000000    0.000000    1.259175<br />
+ O      0.000000    0.000000   -1.259175<br />
+ TI     0.000000   -1.358790    0.000000<br />
+ O      1.390706   -2.234545    0.000000<br />
+ O     -1.390706    2.234545    0.000000<br />
+</pre>
+symmetry c2h<br />
+end<br />
+<br />
+basis spherical<br />
+O library aug-cc-pVDZ<br />
+
+<ol><li> cc-pVDZ-PP<br />
+</li></ol>
+Ti s<br />
+
+<pre>     1179.85   0.000280<br />
+     175.264   0.001649<br />
+     15.4371   0.054881<br />
+     5.46437   -0.384598<br />
+     1.11430   0.726613<br />
+     0.474843   0.464209<br />
+     0.084602   0.018129<br />
+     0.032314   -0.003034<br />
+</pre>
+Ti s<br />
+
+<pre>     1179.85   -0.000073<br />
+     175.264   -0.000495<br />
+     15.4371   -0.013825<br />
+     5.46437   0.105472<br />
+     1.11430   -0.248678<br />
+     0.474843   -0.287478<br />
+     0.084602   0.598418<br />
+     0.032314   0.558246<br />
+</pre>
+Ti s<br />
+
+<pre>     1179.85   0.000171<br />
+     175.264   0.000836<br />
+     15.4371   0.032278<br />
+     5.46437   -0.235207<br />
+     1.11430   0.924182<br />
+     0.474843   -0.350426<br />
+     0.084602   -1.780466<br />
+     0.032314   1.729235<br />
+</pre>
+Ti s<br />
+
+<pre>     0.032314   1.0<br />
+</pre>
+Ti p<br />
+
+<pre>     30.4206   0.005258<br />
+     8.26043   -0.072253<br />
+     2.11785   0.314105<br />
+     0.960790   0.506006<br />
+     0.418681   0.290650<br />
+     0.116841   0.027032<br />
+     0.039440   -0.003770<br />
+</pre>
+Ti p<br />
+
+<pre>     30.4206   -0.001192<br />
+     8.26043   0.018066<br />
+     2.11785   -0.087998<br />
+     0.960790   -0.174911<br />
+     0.418681   -0.045726<br />
+     0.116841   0.558068<br />
+     0.039440   0.556683<br />
+</pre>
+Ti p<br />
+
+<pre>     30.4206   -0.001470<br />
+     8.26043   0.022249<br />
+     2.11785   -0.105142<br />
+     0.960790   -0.216938<br />
+     0.418681   -0.081574<br />
+     0.116841   0.803506<br />
+     0.039440   0.315929<br />
+</pre>
+Ti p<br />
+
+<pre>     0.039440   1.0<br />
+</pre>
+Ti d<br />
+
+<pre>     21.7936   0.025345<br />
+     6.7014   0.112634<br />
+     2.30235   0.289321<br />
+     0.81126   0.427201<br />
+     0.268201   0.390352<br />
+     0.077546   0.148302<br />
+</pre>
+Ti d<br />
+
+<pre>     21.7936   -0.025853<br />
+     6.7014   -0.118705<br />
+     2.30235   -0.292861<br />
+     0.81126   -0.337560<br />
+     0.268201   0.306027<br />
+     0.077546   0.711637<br />
+</pre>
+Ti d<br />
+
+<pre>     0.077546   1.0<br />
+</pre>
+Ti f<br />
+
+<pre>     0.4980   1.0<br />
+</pre>
+<ol><li> aug-cc-pVDZ-PP<br />
+</li></ol>
+Ti s<br />
+
+<pre>     0.0123   1.0<br />
+</pre>
+Ti p<br />
+
+<pre>     0.0133   1.0<br />
+</pre>
+Ti d<br />
+
+<pre>     0.0224   1.0<br />
+</pre>
+Ti f<br />
+
+<pre>     0.1185   1.0<br />
+</pre>
+end<br />
+<br />
+ecp<br />
+Ti nelec 10<br />
+Ti S<br />
+2    12.68545278327510   130.80332818219401<br />
+2     5.60443403028738    20.28841794549380<br />
+Ti P<br />
+2    12.16470843145440    32.17007242591840<br />
+2    11.83573845353970    54.94536681653020<br />
+2     4.20933536504579     2.08550079252638<br />
+2     4.87027289311104     6.50179581409069<br />
+Ti D<br />
+2    16.69258854674990    -9.43456596695940<br />
+2    17.44887629757160   -15.01358236125450<br />
+2     4.87042604412202     0.06111200391995<br />
+2     4.88118144645471     0.05753055973493<br />
+Ti F<br />
+2     8.70406407124751    -1.96536087719181<br />
+2    10.12717654527650    -3.75480071683613<br />
+end<br />
+<br />
+dft<br />
+
+<pre>  vectors swap 28 29 output ti2o4.1ag.c2h.tddft.bp86.ad.movecs<br />
+  xc becke88 perdew86<br />
+  grid xfine<br />
+  mult 1<br />
+  iterations 100<br />
+</pre>
+end<br />
+task dft</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_558"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_558" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem8" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id558.html">7:09:28 PM PDT - Mon, Jul 18th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">We have. I will try some old versions of the Intel compilers. I will let you know what happenes.<br />
+<br />
+Thanks.<br />
+<br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id552.html" title="Special:AWCforum/sp/id552">Jul 18th 8:59 pm</a><div class='quote'>This clearly sounds like a compiler issue. I've seen others finding problems with the latest Intel compiler. Do you have access to another compiler (other then GNU that works), or Intel 10?<br />
+<br />
+Bert<br />
+<br />
+</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_577"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_577" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem9" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id577.html">1:49:03 AM PDT - Thu, Jul 21st 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">I doubt it is really due to the compiler problem. As indicated by the following output (NWChem built with Intel 10.1.025 and MKL 10.1 and MPICH), maybe it has something to with MPI. The same MPI library works for Molpro and other programs.<br />
+<br />
+
+<pre> <br />
+                                NWChem SCF Module<br />
+                                -----------------<br />
+</pre>
+<br />
+<br />
+
+<pre>                       WO3 1A1 C3v B3LYP/aug-cc-pVDZ(-PP)<br />
+</pre>
+<br />
+<br />
+<br />
+
+<pre> ao basis        = "ao basis"<br />
+ functions       =   123<br />
+ atoms           =     4<br />
+ closed shells   =    19<br />
+ open shells     =     0<br />
+ charge          =   0.00<br />
+ wavefunction    = RHF<br />
+ input vectors   = atomic<br />
+ output vectors  = ./wo3.1a1.c3v.tddft.b3lyp.ad.movecs<br />
+ use symmetry    = T<br />
+ symmetry adapt  = T<br />
+</pre>
+<br />
+<br />
+
+<pre>Summary of "ao basis" -&gt; "ao basis" (spherical)<br />
+------------------------------------------------------------------------------<br />
+      Tag                 Description            Shells   Functions and Types<br />
+---------------- ------------------------------  ------  ---------------------<br />
+O                        aug-cc-pVDZ                9       23   4s3p2d<br />
+W                       user specified             16       54   5s5p4d2f<br />
+</pre>
+<br />
+<br />
+
+<pre>     Symmetry analysis of basis<br />
+     --------------------------<br />
+</pre>
+<br />
+
+<pre>       a'         74<br />
+       a"         49<br />
+</pre>
+<br />
+p2_26088:  p4_error: net_recv read:  probable EOF on socket: 1<br />
+p4_26092:  p4_error: net_recv read:  probable EOF on socket: 1<br />
+p1_26087:  p4_error: net_recv read:  probable EOF on socket: 1<br />
+Last System Error Message from Task 0:: Inappropriate ioctl for device<br />
+rm_l_2_26091: (1.585938) net_send: could not write to fd=7, errno = 32<br />
+p3_26090:  p4_error: net_recv read:  probable EOF on socket: 1<br />
+rm_l_1_26089: (1.589844) net_send: could not write to fd=6, errno = 32<br />
+
+<pre>   p4_error: latest msg from perror: Bad file descriptor<br />
+</pre>
+rm_l_5_26096: (1.582031) net_send: could not write to fd=11, errno = 9<br />
+rm_l_5_26096:  p4_error: net_send write: -1<br />
+rm_l_3_26093: (1.585938) net_send: could not write to fd=8, errno = 32<br />
+rm_l_4_26095: (1.585938) net_send: could not write to fd=9, errno = 32<br />
+[0] MPI Abort by user Aborting program&nbsp;!<br />
+0:Child process terminated prematurely, status=: 11 <br />
+(rank:0 hostname:n13 pid:26015):ARMCI DASSERT fail. signaltrap.c:SigChldHandler():167 cond:0<br />
+[0] Aborting program!<br />
+p0_26015:  p4_error:&nbsp;: 0<br />
+p3_26090: (7.585938) net_send: could not write to fd=8, errno = 32<br />
+p0_26015: (11.617188) net_send: could not write to fd=4, errno = 32<br />
+mpiexec: Warning: task 0 exited with status 1.<br />
+<br />
+<div class='quote_title'>Quote:Shenggangli <a target='blank' href="../../sp/id558.html" title="Special:AWCforum/sp/id558">Jul 19th 2:09 am</a><div class='quote'>We have. I will try some old versions of the Intel compilers. I will let you know what happenes.<br />
+<br />
+Thanks.<br />
+<br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id552.html" title="Special:AWCforum/sp/id552">Jul 18th 8:59 pm</a><div class='quote'>This clearly sounds like a compiler issue. I've seen others finding problems with the latest Intel compiler. Do you have access to another compiler (other then GNU that works), or Intel 10?<br />
+<br />
+Bert<br />
+<br />
+</div id="quote"></div id="quote"></div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_607"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_607" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem10" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id607.html">5:16:18 PM PDT - Tue, Aug 2nd 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">As NWChem doesn't really use much MPI, but rather directly runs over ARMCI (GA network layer) that uses the IB API, I doubt it is MPI. Can you post the complete build environment (i.e., which environment variables have you set)?<br />
+<br />
+Bert<br />
+<br />
+<br />
+<div class='quote_title'>Quote:Shenggangli <a target='blank' href="../../sp/id577.html" title="Special:AWCforum/sp/id577">Jul 21st 8:49 am</a><div class='quote'>I doubt it is really due to the compiler problem. As indicated by the following output (NWChem built with Intel 10.1.025 and MKL 10.1 and MPICH), maybe it has something to with MPI. The same MPI library works for Molpro and other programs.<br />
+<br />
+
+<pre> <br />
+                                NWChem SCF Module<br />
+                                -----------------<br />
+</pre>
+<br />
+<br />
+
+<pre>                       WO3 1A1 C3v B3LYP/aug-cc-pVDZ(-PP)<br />
+</pre>
+<br />
+<br />
+<br />
+
+<pre> ao basis        = "ao basis"<br />
+ functions       =   123<br />
+ atoms           =     4<br />
+ closed shells   =    19<br />
+ open shells     =     0<br />
+ charge          =   0.00<br />
+ wavefunction    = RHF<br />
+ input vectors   = atomic<br />
+ output vectors  = ./wo3.1a1.c3v.tddft.b3lyp.ad.movecs<br />
+ use symmetry    = T<br />
+ symmetry adapt  = T<br />
+</pre>
+<br />
+<br />
+
+<pre>Summary of "ao basis" -&gt; "ao basis" (spherical)<br />
+------------------------------------------------------------------------------<br />
+      Tag                 Description            Shells   Functions and Types<br />
+---------------- ------------------------------  ------  ---------------------<br />
+O                        aug-cc-pVDZ                9       23   4s3p2d<br />
+W                       user specified             16       54   5s5p4d2f<br />
+</pre>
+<br />
+<br />
+
+<pre>     Symmetry analysis of basis<br />
+     --------------------------<br />
+</pre>
+<br />
+
+<pre>       a'         74<br />
+       a"         49<br />
+</pre>
+<br />
+p2_26088:  p4_error: net_recv read:  probable EOF on socket: 1<br />
+p4_26092:  p4_error: net_recv read:  probable EOF on socket: 1<br />
+p1_26087:  p4_error: net_recv read:  probable EOF on socket: 1<br />
+Last System Error Message from Task 0:: Inappropriate ioctl for device<br />
+rm_l_2_26091: (1.585938) net_send: could not write to fd=7, errno = 32<br />
+p3_26090:  p4_error: net_recv read:  probable EOF on socket: 1<br />
+rm_l_1_26089: (1.589844) net_send: could not write to fd=6, errno = 32<br />
+
+<pre>   p4_error: latest msg from perror: Bad file descriptor<br />
+</pre>
+rm_l_5_26096: (1.582031) net_send: could not write to fd=11, errno = 9<br />
+rm_l_5_26096:  p4_error: net_send write: -1<br />
+rm_l_3_26093: (1.585938) net_send: could not write to fd=8, errno = 32<br />
+rm_l_4_26095: (1.585938) net_send: could not write to fd=9, errno = 32<br />
+[0] MPI Abort by user Aborting program&nbsp;!<br />
+0:Child process terminated prematurely, status=: 11 <br />
+(rank:0 hostname:n13 pid:26015):ARMCI DASSERT fail. signaltrap.c:SigChldHandler():167 cond:0<br />
+[0] Aborting program!<br />
+p0_26015:  p4_error:&nbsp;: 0<br />
+p3_26090: (7.585938) net_send: could not write to fd=8, errno = 32<br />
+p0_26015: (11.617188) net_send: could not write to fd=4, errno = 32<br />
+mpiexec: Warning: task 0 exited with status 1.<br />
+<br />
+<div class='quote_title'>Quote:Shenggangli <a target='blank' href="../../sp/id558.html" title="Special:AWCforum/sp/id558">Jul 19th 2:09 am</a><div class='quote'>We have. I will try some old versions of the Intel compilers. I will let you know what happenes.<br />
+<br />
+Thanks.<br />
+<br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id552.html" title="Special:AWCforum/sp/id552">Jul 18th 8:59 pm</a><div class='quote'>This clearly sounds like a compiler issue. I've seen others finding problems with the latest Intel compiler. Do you have access to another compiler (other then GNU that works), or Intel 10?<br />
+<br />
+Bert<br />
+<br />
+</div id="quote"></div id="quote"></div id="quote"></div id="quote"></div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_614"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_614" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem11" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id614.html">11:08:14 PM PDT - Sun, Aug 7th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi, Bert, I used ifort/icc 10.1.026.<br />
+<br />
+
+<ol><li>!/bin/bash<br />
+</li></ol>
+<br />
+export NWCHEM_TOP=/home/sli/source/nwchem-6.0<br />
+export LARGE_FILES=TRUE<br />
+export NWCHEM_TARGET=LINUX64<br />
+export USE_MPI=y<br />
+export USE_MPIF=y<br />
+export FOPTIMIZE="-O3 -axSTPOW"<br />
+export COPTIMIZE="-O3 -axSTPOW"<br />
+export MPI_LIB=/usr/lib64/MPICH/p4/intel<br />
+export MPI_INCLUDE=/usr/include<br />
+export LIBMPI="-lmpich"<br />
+export BLASOPT="-L/opt/intel/Compiler/11.0/084/mkl/lib/em64t -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -liomp5 -lpthread"<br />
+export FC=ifort<br />
+export CC=icc<br />
+export NWCHEM_MODULES=all<br />
+make FC=ifort CC=icc NWCHEM_TOP=NWCHEM_TOP=/home/sli/source/nwchem-6.0 LARGE_FILES=TRUE NWCHEM_TARGET=LINUX64 USE_MPI=y USE_MPIF=y OPTIMIZE="-O3 -axSTPOW" COPTIMIZE="-O3 -axSTPOW" MPI_LIB=/usr/lib64/MPICH/p4/intel MPI_INCLUDE=/usr/include LIBMPI="-lmpich" BLASOPT="-L/opt/intel/Compiler/11.0/084/mkl/lib/em64t -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -liomp5 -lpthread" NWCHEM_MODULES=all nwchem_config<br />
+make FC=ifort CC=icc NWCHEM_TOP=NWCHEM_TOP=/home/sli/source/nwchem-6.0 LARGE_FILES=TRUE NWCHEM_TARGET=LINUX64 USE_MPI=y USE_MPIF=y OPTIMIZE="-O3 -axSTPOW" COPTIMIZE="-O3 -axSTPOW" MPI_LIB=/usr/lib64/MPICH/p4/intel MPI_INCLUDE=/usr/include LIBMPI="-lmpich" BLASOPT="-L/opt/intel/Compiler/11.0/084/mkl/lib/em64t -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core -liomp5 -lpthread" NWCHEM_MODULES=all
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_615"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_615" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem12" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id615.html">11:15:32 PM PDT - Sun, Aug 7th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">The following is what I did using the latest versions of the Intel compilers (version 2011 update 4 I believe). Does the use TCGMSG affect the performance significantly?<br />
+<br />
+
+<ol><li>!/bin/bash<br />
+</li></ol>
+export LARGE_FILES=TRUE<br />
+export ENABLE_COMPONENT=yes<br />
+export TCGRSH=/usr/bin/ssh<br />
+export USE_MPIF=y<br />
+export FOPTIMIZE="-O3 -axSSE2,SSE3,SSSE3,SSE4.1,xSSE4.2 -no-prec-div -funroll-loops -unroll-aggressive"<br />
+export COPTIMIZE="-O3 -axSSE2,SSE3,SSSE3,SSE4.1,SSE4.2 -no-prec-div -funroll-loops"<br />
+export BLASOPT="-L/opt/intel/composerxe/mkl/lib/intel64 -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core"<br />
+export FC=ifort<br />
+export CC=icc<br />
+<br />
+
+<ol><li>export USE_GPROF=yes<br />
+</li></ol>
+export USE_SUBGROUPS=yes<br />
+export USE_MPI=yes<br />
+
+<ol><li>export OLD_GA=yes<br />
+</li></ol>
+export MSG_COMMS=MPI<br />
+export USE_PYTHON64=yes<br />
+export MPI_LOC=/usr<br />
+export MPI_INCLUDE=$MPI_LOC/include<br />
+export MPI_LIB=$MPI_LOC/lib64/MPICH/p4/intel<br />
+export LIBMPI="-lmpich-intel -lmpi -lmpichfarg -lbproc -lmpe"<br />
+
+<ol><li>export LIBMPI="-lfmpich -lmpich -lpthread"        # MPICH2 1.2<br />
+</li><li>export LIBMPI="-lmpichf90 -lmpich -lmpl -lpthread" # MPICH2 1.3.1<br />
+</li></ol>
+export PYTHONHOME=/usr<br />
+export PYTHONVERSION=2.4<br />
+export NWCHEM_TOP=`pwd`<br />
+export NWCHEM_TARGET=LINUX64<br />
+export NWCHEM_MODULES="all python"<br />
+export NWCHEM_EXECUTABLE=$NWCHEM_TOP/bin/LINUX64/nwchem<br />
+export PYTHONPATH=./:$NWCHEM_TOP/contrib/python/<br />
+cd $NWCHEM_TOP/src<br />
+
+<ol><li>make DIAG=PAR FC=gfortran CC=gcc CDEBUG="-g -ffpe-trap=invalid,zero,overflow" FDEBUG="-g -ffpe-trap=invalid,zero,overflow" FOPTIMIZE="-g -ffpe-trap=invalid,zero,overflow" COPTIMIZE="-g -ffpe-trap=invalid,zero,overflow" nwchem_config<br />
+</li><li>make DIAG=PAR FC=gfortran CC=gcc CDEBUG="-g -ffpe-trap=invalid,zero,overflow" FDEBUG="-g -ffpe-trap=invalid,zero,overflow" FOPTIMIZE="-g -ffpe-trap=invalid,zero,overflow" COPTIMIZE="-g -ffpe-trap=invalid,zero,overflow" $1<br />
+</li><li>make DIAG=PAR FC=gfortran CC=gcc CDEBUG="-pg -g" FDEBUG="-pg -g" FOPTIMIZE="-pg -g -O0" COPTIMIZE="-pg -g -O0" nwchem_config<br />
+</li><li>make DIAG=PAR FC=gfortran CC=gcc CDEBUG="-pg -g" FDEBUG="-pg -g" FOPTIMIZE="-pg -g -O0" COPTIMIZE="-pg -g -O0" $1<br />
+</li></ol>
+make DIAG=PAR FC=ifort CC=icc LARGE_FILES=TRUE ENABLE_COMPONENT=yes TCGRSH=/usr/bin/ssh USE_MPIF=y FOPTIMIZE="-O3 -axSSE2,SSE3,SSSE3,SSE4.1,xSSE4.2 -no-prec-div -funroll-loops -unroll-aggressive" COPTIMIZE="-O3 -axSSE2,SSE3,SSSE3,SSE4.1,SSE4.2 -no-prec-div -funroll-loops" BLASOPT="-L/opt/intel/composerxe/mkl/lib/intel64 -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core" USE_SUBGROUPS=yes USE_MPI=yes MSG_COMMS=MPI USE_PYTHON64=yes MPI_LOC=/usr MPI_INCLUDE=/usr/include MPI_LIB=/usr/lib64/MPICH/p4/intel LIBMPI="-lmpich-intel -lmpi -lmpichfarg -lbproc -lmpe" PYTHONHOME=/usr PYTHONVERSION=2.4 NWCHEM_TOP=/home/sli/source/nwchem-6.0 NWCHEM_TARGET=LINUX64 NWCHEM_MODULES="all python" NWCHEM_EXECUTABLE=/home/sli/source/nwchem-6.0/bin/LINUX64/nwchem PYTHONPATH=./:/home/sli/source/nwchem-6.0/contrib/python/ nwchem_config<br />
+make DIAG=PAR FC=ifort CC=icc LARGE_FILES=TRUE ENABLE_COMPONENT=yes TCGRSH=/usr/bin/ssh USE_MPIF=y FOPTIMIZE="-O3 -axSSE2,SSE3,SSSE3,SSE4.1,xSSE4.2 -no-prec-div -funroll-loops -unroll-aggressive" COPTIMIZE="-O3 -axSSE2,SSE3,SSSE3,SSE4.1,SSE4.2 -no-prec-div -funroll-loops" BLASOPT="-L/opt/intel/composerxe/mkl/lib/intel64 -lmkl_intel_ilp64 -lmkl_sequential -lmkl_core" USE_SUBGROUPS=yes USE_MPI=yes MSG_COMMS=MPI USE_PYTHON64=yes MPI_LOC=/usr MPI_INCLUDE=/usr/include MPI_LIB=/usr/lib64/MPICH/p4/intel LIBMPI="-lmpich-intel -lmpi -lmpichfarg -lbproc -lmpe" PYTHONHOME=/usr PYTHONVERSION=2.4 NWCHEM_TOP=/home/sli/source/nwchem-6.0 NWCHEM_TARGET=LINUX64 NWCHEM_MODULES="all python" NWCHEM_EXECUTABLE=/home/sli/source/nwchem-6.0/bin/LINUX64/nwchem PYTHONPATH=./:/home/sli/source/nwchem-6.0/contrib/python/ $1
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_619"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_619" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem13" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id619.html">5:18:24 PM PDT - Mon, Aug 8th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Do you get NWChem to run correctly with this environment?<br />
+<br />
+With TCGMSG the parallel performance beyond one node will not be good as the communication goes over sockets. To go beyond one node you should choose the appropriate network and set ARMCI_NETWORK and other parameters as defined in the INSTALL file.<br />
+<br />
+Bert
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_626"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_626" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                     Guest -  <font class="group_text"></font>
+                                    <div id="mem14" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class=""></div><!-- /member_title -->
+                                
+                                
+                                                              
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="15">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id626.html">1:26:27 AM PDT - Thu, Aug 11th 2011 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="5" colspan="2">No, both builds with versions 10.1 and 2011 fail to run.<br />
+<br />
+To my impression, the TCGMSG build usually works, although I get poor performance on the dual quad-core processor system with a single node. How scalable is NWChem on these dual quad-core processor systems (I mean for just one node)?<br />
+<br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id619.html" title="Special:AWCforum/sp/id619">Aug 9th 12:18 am</a><div class='quote'>Do you get NWChem to run correctly with this environment?<br />
+<br />
+With TCGMSG the parallel performance beyond one node will not be good as the communication goes over sockets. To go beyond one node you should choose the appropriate network and set ARMCI_NETWORK and other parameters as defined in the INSTALL file.<br />
+<br />
+Bert</div id="quote"></div id="quote">
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../../index.html">Forum</a> &gt;&gt; <a href="../../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../../sf/id4.html">Compiling NWChem</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />
+</body> 
+</html> 

@@ -1,0 +1,2028 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="Raman Calculation Crashes Viewed 1255 times, With a total of 4 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id1893_Raman_Calculation_Crashes_html skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >Raman Calculation Crashes</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_6745"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6745" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6745.html">3:24:26 PM PST - Sun, Dec 13th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi,<br />
+<br />
+I've been trying to run an optimization and raman frequency calculations a HATN TPA complex, 146 atoms and 512 electrons, and while it optimizes fine the raman calculation crashes after the Hessian one electron contribution calculation, with the error: <br />
+<br />
+0:nga_get_common:check subscript failed:4608952526928270815 not in (4608952526928270815:1168) dim=2:Received an Error in Communication.<br />
+<br />
+I'm running the calculation only on one cpu core, though I have tried two with no difference, and have been using 16 gb ram and have tried various combinations of heap, stack and global assignment, all with the same result.<br />
+<br />
+Any suggestions?<br />
+<br />
+Thanks<br />
+<br />
+Input:<br />
+scratch_dir /scratch<br />
+
+<pre><br />
+</pre>
+charge 0<br />
+<br />
+geometry<br />
+......<br />
+end<br />
+<br />
+driver<br />
+
+<pre>MAXITER 500<br />
+</pre>
+end<br />
+<br />
+memory heap 100 mb stack 100 mb global 13800 mb <br />
+<br />
+basis  "ao basis" spherical<br />
+
+<pre>* library 6-31G* <br />
+</pre>
+end<br />
+<br />
+dft<br />
+
+<pre>direct<br />
+mult 1<br />
+XC B3LYP<br />
+</pre>
+end<br />
+<br />
+property<br />
+
+<pre>response 1 4.282270E-2<br />
+damping 0.007<br />
+</pre>
+end<br />
+<br />
+raman<br />
+
+<pre>normal<br />
+lorentzian<br />
+low 1000<br />
+high 1000<br />
+width 15.0<br />
+</pre>
+end<br />
+<br />
+task DFT opt<br />
+task DFT raman
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6749"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6749" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6749.html">10:59:39 AM PST - Mon, Dec 14th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Could you post the complete input file?<br />
+<br />
+Thanks
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6750"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6750" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6750.html">1:22:18 PM PST - Mon, Dec 14th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Here is the complete file I am submitting to the cluster I am trying to run the calculation on<br />
+<br />
+
+<ol><li>!/bin/sh<br />
+<ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><br />
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li><li>PBS -l nodes=nwchem:ppn=1<br />
+</li><li>PBS -l mem=14000MB<br />
+</li><li>PBS -l walltime=2000:00:00<br />
+</li><li>PBS -q i7<br />
+</li><li>PBS -j oe<br />
+</li><li>PBS -m abe<br />
+</li><li>PBS -N HATN_TPA_o_f<br />
+</li></ol>
+<pre>        	<br />
+</pre>
+<ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><br />
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li><li><br />
+</li><li>       All of the above variables need to be set for each job!<br />
+</li><li><br />
+</li><li>	#PBS -q		Requests either bigio or qgen queue<br />
+</li><li>	JOB_TYPE	Either molpro or dalton <br />
+</li><li><br />
+<ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><br />
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+cd $PBS_O_WORKDIR                          #Do not remove<br />
+cat &gt; $PBS_JOBNAME.nw &lt;&lt;%EOF%             #Do not remove<br />
+<br />
+start HATN_TPA_o_f<br />
+
+<pre>title "HATN_TPA_o_f"<br />
+ scratch_dir /scratch<br />
+<br />
+charge 0<br />
+</pre>
+<br />
+geometry<br />
+
+<pre>C  3.331497 3.869036 0.012962<br />
+C  3.530743 2.511301 0.016213<br />
+C  2.418112 1.626144 0.009289<br />
+C  1.096594 2.180068 -0.001323<br />
+C  0.925622 3.587499 -0.000087<br />
+C  2.016876 4.441324 0.004724<br />
+C  0.215249 0.067468 0.001585<br />
+C  1.543226 -0.486526 0.006104<br />
+C  1.733134 -1.950627 0.006502<br />
+C  0.591289 -2.823739 0.002894<br />
+C  -0.772576 -2.256094 0.000341<br />
+H  4.189473 4.534211 -0.012041<br />
+H  4.526061 2.077950 0.011640<br />
+H  -0.091638 3.964416 0.025106<br />
+C  -0.957935 -0.830990 -0.000200<br />
+C  -3.040762 -2.545392 -0.003495<br />
+C  -3.224395 -1.128934 -0.004158<br />
+C  -4.544986 -0.605955 -0.006477<br />
+C  -4.185413 -3.386612 -0.005097<br />
+H  -4.003067 -4.455157 -0.004473<br />
+H  -4.639385 0.473841 -0.006864<br />
+C  -5.648235 -1.431197 -0.008024<br />
+C  -5.462211 -2.868513 -0.007250<br />
+C  3.118784 -3.769092 0.009817<br />
+C  1.984299 -4.636883 0.005126<br />
+C  4.420249 -4.338155 0.013998<br />
+C  2.193505 -6.041770 0.003944<br />
+H  1.306415 -6.664671 -0.000022<br />
+H  5.253235 -3.644599 0.017787<br />
+C  3.460660 -6.583197 0.007734<br />
+C  4.611670 -5.702587 0.013185<br />
+N  -2.167742 -0.287389 -0.002585<br />
+N  0.007605 1.375708 -0.001818<br />
+N  -1.804374 -3.090025 -0.001338<br />
+N  0.726555 -4.143262 0.001976<br />
+N  2.971557 -2.426327 0.010213<br />
+N  2.617623 0.290841 0.010193<br />
+C  -6.682793 -3.772520 -0.008807<br />
+C  -6.427463 -5.284539 -0.006837<br />
+H  -7.305220 -3.523658 -0.881634<br />
+H  -7.308605 -3.522004 0.861109<br />
+C  -7.730030 -6.096393 -0.007959<br />
+H  -5.828227 -5.561279 -0.885019<br />
+H  -5.830927 -5.559397 0.873772<br />
+C  -7.502191 -7.613574 -0.006041<br />
+H  -8.332972 -5.819240 0.869649<br />
+H  -8.330371 -5.821053 -0.887917<br />
+H  -6.899920 -7.892143 -0.883572<br />
+H  -6.902171 -7.890247 0.873628<br />
+C  -7.058226 -0.865944 -0.010428<br />
+C  -7.190665 0.661591 -0.011902<br />
+H  -7.600384 -1.264016 0.860625<br />
+H  -7.598033 -1.265520 -0.882244<br />
+C  -8.653939 1.125179 -0.014950<br />
+H  -6.682108 1.078767 0.867997<br />
+H  -6.678905 1.077347 -0.890618<br />
+C  -8.805126 2.651829 -0.016198<br />
+H  -9.167295 0.708803 -0.894511<br />
+H  -9.170616 0.709917 0.863195<br />
+H  -8.291846 3.068400 0.863253<br />
+H  -8.287870 3.067383 -0.893798<br />
+C  -10.265173 3.123777 -0.019791<br />
+H  -10.777951 2.708168 -0.899023<br />
+H  -10.782014 2.709024 0.857467<br />
+C  -10.405532 4.649704 -0.020879<br />
+H  -11.458139 4.955247 -0.023598<br />
+H  -9.932417 5.091668 0.864752<br />
+H  -9.928091 5.090807 -0.904610<br />
+C  -8.803057 -8.427234 -0.006822<br />
+H  -9.404564 -8.148900 0.870356<br />
+H  -9.402351 -8.150773 -0.886105<br />
+C  -8.568052 -9.941505 -0.004904<br />
+H  -9.514798 -10.493779 -0.005516<br />
+H  -7.998623 -10.255255 -0.888552<br />
+H  -8.000875 -10.253358 0.880862<br />
+C  3.678571 -8.086418 0.006488<br />
+C  2.424694 -8.968986 -0.005772<br />
+H  4.288144 -8.356012 0.882269<br />
+H  4.301998 -8.352460 -0.860497<br />
+C  2.762830 -10.466138 -0.007905<br />
+H  1.801198 -8.740891 0.869445<br />
+H  1.815055 -8.735128 -0.889218<br />
+C  1.522344 -11.368865 -0.024861<br />
+H  3.391266 -10.697010 -0.881017<br />
+H  3.372620 -10.703768 0.876531<br />
+H  0.892738 -11.138133 0.847340<br />
+H  0.912869 -11.132205 -0.909681<br />
+C  6.006046 -6.305103 0.017661<br />
+C  7.184493 -5.323983 0.024514<br />
+H  6.107604 -6.968186 -0.854782<br />
+H  6.100377 -6.971930 0.888055<br />
+C  8.542689 -6.038959 0.028440<br />
+H  7.125337 -4.666613 -0.853683<br />
+H  7.118165 -4.670244 0.904910<br />
+C  9.736032 -5.074681 0.034908<br />
+H  8.605018 -6.699372 0.906226<br />
+H  8.611841 -6.695935 -0.851413<br />
+H  9.674114 -4.413808 -0.842474<br />
+H  9.667658 -4.417512 0.914586<br />
+C  11.096685 -5.783852 0.038392<br />
+H  11.158748 -6.443858 0.915453<br />
+H  11.165166 -6.440139 -0.840979<br />
+C  12.282597 -4.813338 0.044789<br />
+H  13.238778 -5.349113 0.047196<br />
+H  12.267067 -4.163065 -0.838636<br />
+H  12.260539 -4.166754 0.930775<br />
+C  1.855028 -12.866704 -0.026188<br />
+H  2.462160 -13.103561 0.859222<br />
+H  2.485399 -13.096735 -0.897059<br />
+C  0.610717 -13.760967 -0.046222<br />
+H  -0.022668 -13.578185 0.830681<br />
+H  0.001337 -13.571694 -0.938609<br />
+H  0.880676 -14.823261 -0.046446<br />
+C  1.844315 5.911733 -0.001246<br />
+C  0.771387 6.518824 -0.678921<br />
+C  2.741772 6.759281 0.672757<br />
+C  0.602512 7.897928 -0.688619<br />
+H  0.078500 5.901485 -1.243476<br />
+C  2.572813 8.139109 0.684000<br />
+H  3.564693 6.330784 1.237969<br />
+C  1.500054 8.735037 -0.001777<br />
+H  -0.221410 8.336892 -1.241545<br />
+H  3.267781 8.763507 1.235707<br />
+N  1.328729 10.140043 -0.002845<br />
+C  2.461253 11.000995 -0.057860<br />
+C  2.531263 12.136272 0.765451<br />
+C  3.520443 10.731703 -0.939785<br />
+C  3.635190 12.984948 0.699580<br />
+H  1.718066 12.346733 1.452813<br />
+C  4.628374 11.576355 -0.985742<br />
+H  3.468309 9.860698 -1.585378<br />
+C  4.692070 12.709417 -0.171172<br />
+H  3.673422 13.859324 1.343995<br />
+H  5.439211 11.353565 -1.674357<br />
+H  5.553778 13.369310 -0.214928<br />
+C  0.022407 10.703589 0.052641<br />
+C  -0.941850 10.185800 0.932531<br />
+C  -0.317296 11.790696 -0.768552<br />
+C  -2.220262 10.739636 0.978444<br />
+H  -0.682992 9.351214 1.576383<br />
+C  -1.592749 12.349330 -0.702624<br />
+H  0.422139 12.191866 -1.454372<br />
+C  -2.553350 11.826069 0.166045<br />
+H  -2.954592 10.326758 1.665120<br />
+H  -1.839252 13.190355 -1.345416<br />
+H  -3.548424 12.259478 0.209697<br />
+</pre>
+end<br />
+<br />
+driver<br />
+
+<pre>MAXITER 500<br />
+</pre>
+end<br />
+<br />
+memory heap 100 mb stack 100 mb global 13800 mb <br />
+<br />
+basis  "ao basis" spherical<br />
+
+<pre>* library 6-31G* <br />
+</pre>
+end<br />
+<br />
+dft<br />
+
+<pre>direct<br />
+mult 1<br />
+XC B3LYP<br />
+</pre>
+end<br />
+<br />
+property<br />
+
+<pre>response 1 4.282270E-2<br />
+damping 0.007<br />
+</pre>
+end<br />
+<br />
+raman<br />
+
+<pre>normal<br />
+lorentzian<br />
+low 1000<br />
+high 1000<br />
+width 15.0<br />
+</pre>
+end<br />
+<br />
+task DFT optimize <br />
+task DFT raman<br />
+<br />
+%EOF%<br />
+
+<ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><br />
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li><li><br />
+</li><li>       Ignore everything below  this line<br />
+</li><li><br />
+<ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><ol><li><br />
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+</li></ol>
+<br />
+/usr/share/nwchem/bin/nwchem $PBS_JOBNAME.nw &gt; $PBS_JOBNAME.out<br />
+rm $PBS_JOBNAME.nw<br />
+<br />
+exit 0
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6751"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6751" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Vet</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6751.html">4:05:10 PM PST - Mon, Dec 14th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">This line does not look right to me<br />
+<br />
+
+<pre>
+
+H  5.253235 -*****************
+</pre>
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_6752"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_6752" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../../sp/id6752.html">5:04:40 PM PST - Mon, Dec 14th 2015 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">That line and the line<br />
+<br />
+
+<pre>C  2.016876 *****************<br />
+</pre>
+<br />
+appear to be copy and paste errors, as in the input file that do not have the *s, but rather the numbers you would expect
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../../index.html">Forum</a> &gt;&gt; <a href="../../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../../sf/id5.html">Running NWChem</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />
+</body> 
+</html> 

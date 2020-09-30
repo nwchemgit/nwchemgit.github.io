@@ -1,0 +1,2478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="RT-TDDFT with water (based on a tutorial) not working Viewed 1826 times, With a total of 5 Posts" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_st_id2199 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >RT-TDDFT with water (based on a tutorial) not working</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_7740"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_7740" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id7740.html">3:08:11 PM PST - Tue, Nov 29th 2016 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi,<br />
+<br />
+I am having trouble in running a RT-TDDFT calculation with water.<br />
+This is based on a tutorial found at <a target='blank' href="http://www.nwchem-sw.org/index.php/Release66:RT-TDDFT#Absorption_spectrum_of_water" class="external autonumber">[1]</a>.<br />
+Here is the input:<br />
+<br />
+
+<pre>echo
+start water
+
+title &quot;H2O&quot;
+
+geometry &quot;system&quot; units angstroms print xyz autosym
+  O        0.00000       -0.39574        0.00000
+  H       -0.76347        0.20098        0.00000
+  H        0.76347        0.20098        0.00000
+end
+set geometry &quot;system&quot;
+
+memory 2000 mb
+
+dft
+ maxiter 100
+ grid fine
+ direct
+end
+
+
+
+# Absorption spectrum with Real-Time TDDFT
+# using B3LYP/6-31G*/smd=water//B3LYP/6-31G*
+# (see DOI: 10.1021/ct200137z and DOI: 10.1021/acs.jpclett.6b00282).
+#
+# We compute x, y, and z kick simulations with the following parameters:
+#      total time:     500.0 au =   12.095 fs
+#       time step:       0.2 au = 0.004838 fs
+#  field strength:    0.0001 au = 0.05142 V/nm
+
+basis
+ * library 6-31G*
+end
+
+
+
+driver
+ maxiter 50
+end
+
+dft
+ xc B3LYP
+end
+task dft optimize
+# task dft frequencies
+
+
+
+cosmo
+ do_cosmo_smd true
+ solvent water
+end
+task dft energy
+# task dft frequencies
+
+
+
+unset rt_tddft:*
+rt_tddft
+ tmax 500.0
+ dt 0.2
+
+ tag &quot;kick_x&quot;
+  
+ field &quot;kick&quot;
+  type delta
+  polarization x
+  max 0.0001
+ end
+
+ excite &quot;system&quot; with &quot;kick&quot;
+end
+task dft rt_tddft
+
+unset rt_tddft:*
+rt_tddft
+ tmax 500.0
+ dt 0.2
+
+ tag &quot;kick_y&quot;
+
+ field &quot;kick&quot;
+  type delta
+  polarization y
+  max 0.0001
+ end
+
+ excite &quot;system&quot; with &quot;kick&quot;
+end
+task dft rt_tddft
+
+unset rt_tddft:*
+rt_tddft
+ tmax 500.0
+ dt 0.2
+
+ tag &quot;kick_z&quot;
+
+ field &quot;kick&quot;
+  type delta
+  polarization z
+  max 0.0001
+ end
+
+ excite &quot;system&quot; with &quot;kick&quot;
+end
+task dft rt_tddft
+</pre><br />
+<br />
+
+Everything works smoothly until the first <pre>task dft rt_tddft</pre>.<br />
+Here is the output from RT-TDDFT:<br />
+<br />
+
+<pre> *************************
+ * Closed-shell RT-TDDFT *
+ *************************
+  
+ 
+****************************** WARNING ****************************** 
+  SCF did not converge previously--it is quite likely that  
+  the starting density is not in the ground state 
+********************************************************************* 
+ 
+ 
+****************************** WARNING ****************************** 
+  Schwartz screening tolerance is similar to the Magnus interpolation  
+  tolerance--this may cause problems with convergence.  If  
+  so, try loosening tol_interpol. 
+********************************************************************* 
+ 
+  
+  
+ Geometry               Atoms      Basis func.   Nuc. charge          Nuc. dip. mom.
+ -----------------------------------------------------------------------------------------
+  driverinitial        3 (100% )     0 (  0% )     10.00        0.00      0.00      0.00
+ *system               3 (100% )    19 (100% )     10.00        0.00      0.00     -0.02
+
+=============== Geometry Initialization ===============
+  Active geometry: &quot;system&quot;
+  No linear dependencies
+  Number of atomic orbitals    = 19
+  Number of molecular orbitals = 19
+=======================================================
+
+ 
+ 
+             System parameters
+             -----------------
+     No. atoms             &nbsp;: 3
+     Wavefunction type     &nbsp;: restricted
+     No. alpha electrons   &nbsp;: 5
+     No. beta electrons    &nbsp;: 5
+     Total no. electrons   &nbsp;: 10
+     System charge         &nbsp;: 0
+ 
+ 
+               2e integrals
+               ------------
+     tol2e for real part of Fock matrix: 1.0000E-08
+     tol2e for imag part of Fock matrix: 1.0000E-10
+ 
+ 
+                    Propagation parameters
+                    ----------------------
+     End time (tmax)      &nbsp;: 5.0000E+02 au = 1.2095E+01 fs
+     Time step (dt)       &nbsp;: 2.0000E-01 au = 4.8378E-03 fs
+     No. time steps (nt)  &nbsp;: 2500
+     Progagation method   &nbsp;: 2nd order Magnus w/ self-consistent interpolation
+     Exponentiation method&nbsp;: Adaptive contractive power series
+ 
+ 
+                        Tolerances
+                        ----------
+     Zero / comparison / check tolerance &nbsp;: 1.0000E-08
+     Series convergence tolerance        &nbsp;: 1.0000E-10
+     Interpolation convergence tolerance &nbsp;: 1.0000E-07
+     Reqd no. zero terms in series       &nbsp;: 3
+     Reqd no. zero terms in interpolation&nbsp;: 1
+ 
+ 
+                Output and checking parameters
+                ------------------------------
+     Quantites to print&nbsp;: messages, dipole, field, energy, &lt;S^2&gt;
+     No. print points  &nbsp;: 2500 (once every 1 time steps)
+     No. checks        &nbsp;: 10 (once every 250 time steps)
+     No. restart points&nbsp;: 100 (once every 25 time steps)
+     Checking level    &nbsp;: 1 (checkpoints only)
+     Profiling         &nbsp;: No
+ 
+ 
+ Dipole and quadrupole matrices
+ ------------------------------
+     Center of mass = ( 0.0000E+00,  0.0000E+00, -1.0153E-01)
+     norm[D_x]  = 1.4391E+00
+     norm[D_y]  = 1.0184E+00
+     norm[D_z]  = 1.0184E+00
+     norm[Q_xx] = 3.6212E+00
+     norm[Q_xy] = 5.0919E-01
+     norm[Q_xz] = 1.3002E+00
+     norm[Q_yy] = 1.5501E+00
+     norm[Q_yz] = 4.6295E-01
+     norm[Q_zz] = 2.8298E+00
+ 
+ 
+         Applied fields
+         --------------
+ 
+               &quot;kick&quot;
+     Type           &nbsp;: delta
+     Polarization   &nbsp;: x
+     Field maximum  &nbsp;: 1.0000E-04 au = 5.1421E-02 V/nm
+ 
+ 
+        Excitation rules
+        ----------------
+     Excite geometry &quot;system&quot; with &quot;kick&quot;
+ 
+ 
+                             Closed shell propagation
+                             ------------------------
+ 
+****************************** WARNING ****************************** 
+  Starting movecs not specified--trying SCF output: 
+   ./water.movecs 
+********************************************************************* 
+ 
+     File name             &nbsp;: ./water.movecs
+     Job title             &nbsp;: H2O
+     Basis set name        &nbsp;: ao basis
+     SCF type              &nbsp;: dft
+     Atomic orbitals       &nbsp;: 19
+     Molecular orbitals    &nbsp;: 19
+ 
+   Vector      Occupation     Eigenvalue [au]
+ --------------------------------------------
+         1        2.00       -1.91406328E+01
+         2        2.00       -9.98562901E-01
+         3        2.00       -5.14860740E-01
+         4        2.00       -3.83853656E-01
+         5        2.00       -3.02592866E-01
+         6        0.00        8.54131625E-02
+         7        0.00        1.72049059E-01
+         8        0.00        7.74796640E-01
+         9        0.00        8.50198696E-01
+        10        0.00        8.74323469E-01
+        11        0.00        8.89001705E-01
+        12        0.00        1.06049823E+00
+        13        0.00        1.19655008E+00
+        14        0.00        1.71740885E+00
+        15        0.00        1.73567783E+00
+        16        0.00        1.76590757E+00
+        17        0.00        2.27515280E+00
+        18        0.00        2.57191774E+00
+        19        0.00        3.54163434E+00
+ 
+ ------------------------------------------------------------------------
+ zfock_cs_build: not working with symmetry                   0
+ ------------------------------------------------------------------------
+ zfock_cs_build: not working with symmetry                   0
+ ------------------------------------------------------------------------
+ zfock_cs_build: not working with symmetry                   0
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ zfock_cs_build: not working with symmetry                   0
+ ------------------------------------------------------------------------
+ zfock_cs_build: not working with symmetry                   0
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ zfock_cs_build: not working with symmetry                   0
+ zfock_cs_build: not working with symmetry                   0
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+  current input line&nbsp;: 
+ zfock_cs_build: not working with symmetry                   0
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+  current input line&nbsp;: 
+     0: 
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ This error has not yet been assigned to a category
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+ ------------------------------------------------------------------------
+  current input line&nbsp;: 
+    74: task dft rt_tddft
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ This error has not yet been assigned to a category
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+
+ ------------------------------------------------------------------------
+  current input line&nbsp;: 
+     0: 
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ This error has not yet been assigned to a category
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+
+  current input line&nbsp;: 
+     0: 
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ This error has not yet been assigned to a category
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+
+
+ ------------------------------------------------------------------------
+  current input line&nbsp;: 
+     0: 
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ This error has not yet been assigned to a category
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+
+  current input line&nbsp;: 
+     0: 
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ This error has not yet been assigned to a category
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+
+
+     0: 
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ This error has not yet been assigned to a category
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+
+
+ For further details see manual section: No section for this category                                                                                                                                                                                                                                   
+
+ For further details see manual section: No section for this category                                                                                                                                                                                                                                   
+ For further details see manual section: No section for this category                                                                                                                                                                                                                                   
+ For further details see manual section: No section for this category                                                                                                                                                                                                                                   
+
+
+ For further details see manual section: No section for this category                                                                                                                                                                                                                                   
+
+ For further details see manual section: No section for this category                                                                                                                                                                                                                                   
+
+ For further details see manual section: No section for this category                                                                                                                                                                                                                                   
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+  current input line&nbsp;: 
+     0: 
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
+ This error has not yet been assigned to a category
+ ------------------------------------------------------------------------
+ For more information see the NWChem manual at http://www.nwchem-sw.org/index.php/NWChem_Documentation
+
+
+ For further details see manual section: No section for this category                                                                                                                                                                                                                                   
+</pre><br />
+<br />
+Not only the error intrigues me, but what is the reason for the first and last warnings (repeated below)?<br />
+<br />
+
+(<pre>****************************** WARNING ******************************
+  SCF did not converge previously--it is quite likely that
+  the starting density is not in the ground state
+*********************************************************************
+
+...
+
+****************************** WARNING ******************************
+  Starting movecs not specified--trying SCF output:
+   ./water.movecs
+*********************************************************************
+</pre>)<br />
+<br />
+Does anybody know something about it?<br />
+<br />
+All the best,<br />
+Felipe
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_7741"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_7741" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id7741.html">3:19:40 PM PST - Tue, Nov 29th 2016 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">It occurred to me that this could be due to symmetry.<br />
+
+Changing <pre>geometry &quot;system&quot; units angstroms print xyz autosym</pre> to <pre>geometry &quot;system&quot; units angstroms print xyz noautosym</pre> has "solved" the issue.<br />
+<br />
+But the warnings remain.<br />
+<br />
+Furthermore, does anyone knows why I am having two geometries being propagated? Some output has been gathered below:<br />
+<br />
+Geometry initialization (also appears in the last post):<br />
+<br />
+
+<pre>...
+ Geometry               Atoms      Basis func.   Nuc. charge          Nuc. dip. mom.
+ -----------------------------------------------------------------------------------------
+  driverinitial        3 (100% )     0 (  0% )     10.00        0.00      0.00      0.00
+ *system               3 (100% )    19 (100% )     10.00       -0.00     -0.02      0.00
+
+=============== Geometry Initialization ===============
+  Active geometry: &quot;system&quot;
+  No linear dependencies
+  Number of atomic orbitals    = 19
+  Number of molecular orbitals = 19
+=======================================================
+...</pre><br />
+<br />
+(why a geometry called driverinitial with three atoms but no basis function?)<br />
+<br />
+Initial propagation:<br />
+<br />
+
+<pre>...
+kick_x      0.00000        ### Propagation started ###
+kick_x      0.00000        ### Checks passed ###
+kick_x      0.00000   0.000000000000E+000   0.000000000000E+000   0.000000000000E+000     # Applied E-field [driverinitial] (alpha spin)
+kick_x      0.00000   0.000000000000E+000   0.000000000000E+000   0.000000000000E+000     # Applied E-field [driverinitial] (beta spin)
+kick_x      0.00000   1.000000000000E-004   0.000000000000E+000   0.000000000000E+000     # Applied E-field [system] (alpha spin)
+kick_x      0.00000   1.000000000000E-004   0.000000000000E+000   0.000000000000E+000     # Applied E-field [system] (beta spin)
+kick_x      0.00000   9.087057941008E+000     # Enuc
+kick_x      0.00000  -1.230318047252E+002     # Ecore
+kick_x      0.00000   4.688799160678E+001     # Ecoul
+kick_x      0.00000  -9.349754548525E+000     # Exc(1)
+kick_x      0.00000   0.000000000000E+000     # Exc(2)
+kick_x      0.00000  -7.640650972596E+001     # Etot
+kick_x      0.00000  -7.105427357601E-014     # Eadded
+kick_x      0.00000   0.000000000000E+000   0.000000000000E+000   0.000000000000E+000     # Dipole moment [driverinitial]
+kick_x      0.00000   4.723066256210E-011   9.823580546607E-001  -1.338243279755E-015     # Dipole moment [system]
+kick_x      0.00000        ### Saved restart point ###
+kick_x      0.00000   3.887855970497E-008     # Magnus interpol (matrix 1 of 1)
+kick_x      0.00000                     2     # Magnus total interpolations
+kick_x      0.20000   0.000000000000E+000   0.000000000000E+000   0.000000000000E+000     # Applied E-field [driverinitial] (alpha spin)
+kick_x      0.20000   0.000000000000E+000   0.000000000000E+000   0.000000000000E+000     # Applied E-field [driverinitial] (beta spin)
+kick_x      0.20000   0.000000000000E+000   0.000000000000E+000   0.000000000000E+000     # Applied E-field [system] (alpha spin)
+kick_x      0.20000   0.000000000000E+000   0.000000000000E+000   0.000000000000E+000     # Applied E-field [system] (beta spin)
+kick_x      0.20000   9.087057941008E+000     # Enuc
+kick_x      0.20000  -1.230310160680E+002     # Ecore
+kick_x      0.20000   4.688722099854E+001     # Ecoul
+kick_x      0.20000  -9.349772627629E+000     # Exc(1)
+kick_x      0.20000   0.000000000000E+000     # Exc(2)
+kick_x      0.20000  -7.640650975607E+001     # Etot
+kick_x      0.20000  -3.010447358065E-008     # Eadded
+kick_x      0.20000   0.000000000000E+000   0.000000000000E+000   0.000000000000E+000     # Dipole moment [driverinitial]
+kick_x      0.20000   8.133903820679E-006   9.776107816813E-001  -1.246510265411E-015     # Dipole moment [system]
+kick_x      0.20000   3.902881728912E-008     # Magnus interpol (matrix 1 of 1)
+...</pre><br />
+<br />
+Thank you all in advance!<br />
+<br />
+All the best,<br />
+Felipe
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_7746"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_7746" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Regular</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id7746.html">10:28:02 AM PST - Wed, Nov 30th 2016 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">You are correct that in the first case symmetry was the problem. The code is currently not set up to use symmetry in the calculation of the Fock matrix, and so symmetry needs to be turned off.<br />
+<br />
+The "SCF did not converge..." warning is triggered by the RT-TDDFT code finding that the dft:converged flag in the RTDB is set to false. If the SCF calculation before the RT-TDDFT calculation did converge, then there is potentially a bug in the code where that flag is not getting set correctly. If the MO energies and total energy at the beginning of the RT-TDDFT calculation match those from the SCF calculation, then this is probably a harmless bug in this circumstance.<br />
+<br />
+The "Starting movecs not specified..." warning is simply telling you that you did not make use of the load keyword in the RT-TDDFT input and the code is going with the default starting point of the output from the previous SCF calculation.<br />
+<br />
+Finally, you do not have two geometries being propagated. Only the system specified by the last set geometry directive is being propagated. However, the RT-TDDFT code is set up to compute properties for any geometry that it finds in the RTDB. This is a convenience for a calculation like the charge transfer example in the RT-TDDFT documentation, but does make for slightly odd looking output in other cases.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_7747"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_7747" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id7747.html">11:37:59 AM PST - Wed, Nov 30th 2016 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Hi Sean,<br />
+<br />
+Thanks for the reply!<br />
+About the convergence issue, I found the following.<br />
+<br />
+Here is the output from the convergence (in smd=water) and the MO energies reported by the RT-TDDFT module:<br />
+<br />
+
+<pre>...
+                                 NWChem DFT Module
+                                 -----------------
+
+
+                                        H2O
+
+
+
+
+ Summary of &quot;ao basis&quot; -&gt; &quot;ao basis&quot; (cartesian)
+ ------------------------------------------------------------------------------
+       Tag                 Description            Shells   Functions and Types
+ ---------------- ------------------------------  ------  ---------------------
+ O                           6-31G*                  6       15   3s2p1d
+ H                           6-31G*                  2        2   2s
+
+
+
+ solvent parameters
+ solvname_short: h2o     
+ solvname_long:  water                              
+ dielec:       78.4000
+ dielecinf:     1.7769
+ aqueous SMD model solvent descriptors
+ dielec:       78.4000
+ sola:          0.8200
+
+          ---------------
+          -cosmo- solvent
+          ---------------
+ Cosmo: York-Karplus, doi: 10.1021/jp992097l
+ dielectric constant -eps-     =  78.40
+ screen = (eps-1)/(eps    )    =   0.98724
+ surface charge correction     = lagrangian
+ -lineq- algorithm             =   0
+ -bem- low  level              =   3
+ -bem- from -octahedral-
+ gaussian surface charge width =   0.98000
+ degree of switching           =   1.00000
+ switching function tolerance  =   0.00010
+ atomic radii = 
+ --------------
+    1  8.000  1.520
+    2  1.000  1.200
+    3  1.000  1.200
+
+ solvent accessible surface
+ --------------------------
+
+ ---------- ATOMIC COORDINATES (A.U.) ------------ VDWR(ANG.) --
+     1   -0.00000000   -0.22817117    0.00000000     1.520
+     2   -1.43912872    0.90343169    0.00000000     1.200
+     3    1.43912872    0.90343169    0.00000000     1.200
+ number of segments per atom =        128
+ number of   points per atom =        128
+ atom (   nspa,  nppa )
+ ----------------------
+    1 (     84,     0 )       0
+    2 (     72,     0 )       0
+    3 (     72,     0 )       0
+ number of -cosmo- surface points =      228
+ molecular surface =     36.049 angstrom**2
+ molecular volume  =     16.286 angstrom**3
+ ...... end of -cosmo- initialization ......
+
+
+ G(SMD-CDS) energy (kcal/mol)  =     1.451
+ SMD-CDS SASA (angstrom**2)    =    55.867
+
+  Caching 1-el integrals 
+
+            General Information
+            -------------------
+          SCF calculation type: DFT
+          Wavefunction type:  closed shell.
+          No. of atoms    &nbsp;:     3
+          No. of electrons&nbsp;:    10
+           Alpha electrons&nbsp;:     5
+            Beta electrons&nbsp;:     5
+          Charge          &nbsp;:     0
+          Spin multiplicity:     1
+          Use of symmetry is: off; symmetry adaption is: off
+          Maximum number of iterations: 100
+          This is a Direct SCF calculation.
+          AO basis - number of functions:    19
+                     number of shells:    10
+          Convergence on energy requested: 1.00D-06
+          Convergence on density requested: 1.00D-05
+          Convergence on gradient requested: 5.00D-04
+
+              XC Information
+              --------------
+                         B3LYP Method XC Potential
+                     Hartree-Fock (Exact) Exchange  0.200          
+                        Slater Exchange Functional  0.800 local    
+                    Becke 1988 Exchange Functional  0.720 non-local
+              Lee-Yang-Parr Correlation Functional  0.810          
+                  VWN I RPA Correlation Functional  0.190 local    
+
+             Grid Information
+             ----------------
+          Grid used for XC integration:  fine      
+          Radial quadrature: Mura-Knowles        
+          Angular quadrature: Lebedev. 
+          Tag              B.-S. Rad. Rad. Pts. Rad. Cut. Ang. Pts.
+          ---              ---------- --------- --------- ---------
+          O                   0.60       70           5.0       590
+          H                   0.35       60           6.0       590
+          Grid pruning is: on 
+          Number of quadrature shells:   190
+          Spatial weights used:  Erf1
+
+          Convergence Information
+          -----------------------
+          Convergence aids based upon iterative change in 
+          total energy or number of iterations. 
+          Levelshifting, if invoked, occurs when the 
+          HOMO/LUMO gap drops below (HL_TOL): 1.00D-02
+          DIIS, if invoked, will attempt to extrapolate 
+          using up to (NFOCK): 10 stored Fock matrices.
+
+                    Damping( 0%)  Levelshifting(0.5)       DIIS
+                  --------------- ------------------- ---------------
+          dE  on:    start            ASAP                start   
+          dE off:    2 iters        100 iters           100 iters 
+
+
+      Screening Tolerance Information
+      -------------------------------
+          Density screening/tol_rho: 1.00D-10
+          AO Gaussian exp screening on grid/accAOfunc:  14
+          CD Gaussian exp screening on grid/accCDfunc:  20
+          XC Gaussian exp screening on grid/accXCfunc:  20
+          Schwarz screening/accCoul: 1.00D-08
+
+
+ Loading old vectors from job with title&nbsp;:
+
+H2O
+
+   Time after variat. SCF:      1.9
+   Time prior to 1st pass:      1.9
+
+ Grid_pts file          = ./water.gridpts.0
+ Record size in doubles =  12289        No. of grid_pts per rec  =   3070
+ Max. records in memory =      7        Max. recs in file   =    498033
+
+
+           Memory utilization after 1st SCF pass: 
+           Heap Space remaining (MW):       65.45            65447422
+          Stack Space remaining (MW):       65.54            65535764
+
+   convergence    iter        energy       DeltaE   RMS-Dens  Diis-err    time
+ ---------------- ----- ----------------- --------- --------- ---------  ------
+     COSMO gas phase
+ d= 0,ls=0.0,diis     1    -76.4089539664 -8.55D+01  1.11D-06  5.54D-10     2.1
+ d= 0,ls=0.0,diis     2    -76.4089539664 -8.16D-12  6.80D-07  4.99D-10     2.1
+
+           Memory utilization after 1st SCF pass: 
+           Heap Space remaining (MW):       65.45            65446486
+          Stack Space remaining (MW):       65.54            65535764
+
+   convergence    iter        energy       DeltaE   RMS-Dens  Diis-err    time
+ ---------------- ----- ----------------- --------- --------- ---------  ------
+     COSMO solvation phase
+ d= 0,ls=0.0,diis     1    -76.4204071046 -1.15D-02  7.84D-03  8.53D-03     2.3
+ d= 0,ls=0.0,diis     2    -76.4221908241 -1.78D-03  2.00D-03  4.00D-03     2.5
+ d= 0,ls=0.0,diis     3    -76.4224536808 -2.63D-04  8.78D-04  9.37D-04     2.7
+ d= 0,ls=0.0,diis     4    -76.4225396238 -8.59D-05  9.25D-05  1.26D-05     2.8
+ d= 0,ls=0.0,diis     5    -76.4225407800 -1.16D-06  9.09D-06  1.58D-08     3.0
+ d= 0,ls=0.0,diis     6    -76.4225407834 -3.35D-09  7.78D-07  8.31D-11     3.2
+
+
+         Total DFT energy =      -76.422540783370
+      One electron energy =     -123.184436548490
+           Coulomb energy =       46.888000611769
+    Exchange-Corr. energy =       -9.349755803047
+ Nuclear repulsion energy =        9.087057941008
+
+             COSMO energy =        0.136593015390
+
+ Numeric. integr. density =       10.000000401382
+
+     Total iterative time =      1.3s
+
+
+                                COSMO-SMD solvation results
+                                ---------------------------
+ Reference for the SMD model:
+ Marenich, A. V.; Cramer, C. J.; Truhlar, D. G. J. Phys. Chem. B 2009, 113, 6378
+
+             internal energy in gas &lt;Psi(g)|H|Psi(g)&gt; =       -76.4089539664
+         internal energy in solvent &lt;Psi(s)|H|Psi(s)&gt; =       -76.4065098117
+                               delta internal energy  =         0.0024441547 (    1.53 kcal/mol)
+   total free energy in solvent &lt;Psi(s)|H+V/2|Psi(s)&gt; =       -76.4248533812
+ polarization energy contribution &lt;Psi(s)|V/2|Psi(s)&gt; =        -0.0183435695 (  -11.51 kcal/mol)
+    total free energy in solvent including G(SMD-CDS) =       -76.4225407834
+                       G(SMD-CDS) energy contribution =         0.0023125978 (    1.45 kcal/mol)
+     1 M fixed-concentration free energy of solvation =        -0.0135868169 (   -8.53 kcal/mol)
+
+                       DFT Final Molecular Orbital Analysis
+                       ------------------------------------
+
+ Vector    1  Occ=2.000000D+00  E=-1.914063D+01
+              MO Center= -2.7D-11, -1.2D-01,  2.1D-18, r^2= 1.5D-02
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     1      0.992852  1 O  s          
+
+ Vector    2  Occ=2.000000D+00  E=-9.985629D-01
+              MO Center= -5.1D-11,  7.1D-02,  1.5D-16, r^2= 5.1D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     2      0.470317  1 O  s                  6      0.454212  1 O  s          
+     1     -0.211394  1 O  s          
+
+ Vector    3  Occ=2.000000D+00  E=-5.148607D-01
+              MO Center=  1.7D-11,  9.4D-02,  1.3D-18, r^2= 7.7D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     3      0.524511  1 O  px                 7      0.291988  1 O  px         
+    16     -0.229236  2 H  s                 18      0.229236  3 H  s          
+
+ Vector    4  Occ=2.000000D+00  E=-3.838537D-01
+              MO Center= -1.7D-11, -2.1D-01, -1.3D-16, r^2= 6.8D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     4      0.558108  1 O  py                 8      0.393123  1 O  py         
+     6     -0.377756  1 O  s                  2     -0.155296  1 O  s          
+
+ Vector    5  Occ=2.000000D+00  E=-3.025929D-01
+              MO Center= -2.8D-11, -1.0D-01,  3.1D-16, r^2= 6.0D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     5      0.638025  1 O  pz                 9      0.513333  1 O  pz         
+
+ Vector    6  Occ=0.000000D+00  E= 8.541316D-02
+              MO Center=  2.0D-10,  6.2D-01,  1.7D-16, r^2= 2.4D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     6      1.207119  1 O  s                 17     -0.958008  2 H  s          
+    19     -0.958008  3 H  s                  8      0.470675  1 O  py         
+     4      0.256306  1 O  py                 2      0.150596  1 O  s          
+
+ Vector    7  Occ=0.000000D+00  E= 1.720491D-01
+              MO Center= -2.5D-10,  5.7D-01, -1.6D-18, r^2= 2.5D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+    17      1.263215  2 H  s                 19     -1.263215  3 H  s          
+     7      0.743009  1 O  px                 3      0.413619  1 O  px         
+
+ Vector    8  Occ=0.000000D+00  E= 7.747966D-01
+              MO Center=  4.2D-10,  1.3D-01,  1.1D-16, r^2= 1.6D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+    16      0.835065  2 H  s                 18     -0.835065  3 H  s          
+    17     -0.626270  2 H  s                 19      0.626270  3 H  s          
+     7      0.493459  1 O  px                11     -0.349141  1 O  dxy        
+
+ Vector    9  Occ=0.000000D+00  E= 8.501987D-01
+              MO Center= -2.4D-10, -4.3D-01, -6.3D-15, r^2= 1.0D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     4      0.895810  1 O  py                 6      0.833457  1 O  s          
+     8     -0.763309  1 O  py                 2     -0.422092  1 O  s          
+    16     -0.304685  2 H  s                 18     -0.304685  3 H  s          
+    10     -0.242525  1 O  dxx               17      0.192916  2 H  s          
+    19      0.192916  3 H  s                 13     -0.182921  1 O  dyy        
+
+ Vector   10  Occ=0.000000D+00  E= 8.743235D-01
+              MO Center= -2.6D-11, -1.2D-01,  5.5D-15, r^2= 1.1D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     9     -1.035316  1 O  pz                 5      0.963783  1 O  pz         
+
+ Vector   11  Occ=0.000000D+00  E= 8.890017D-01
+              MO Center= -2.3D-11,  3.2D-01, -8.6D-17, r^2= 1.6D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     6      1.217961  1 O  s                 16      0.795751  2 H  s          
+    18      0.795751  3 H  s                  2     -0.746716  1 O  s          
+    17     -0.637386  2 H  s                 19     -0.637386  3 H  s          
+     8     -0.435707  1 O  py                15     -0.341180  1 O  dzz        
+    13     -0.207076  1 O  dyy        
+
+ Vector   12  Occ=0.000000D+00  E= 1.060498D+00
+              MO Center= -1.2D-10, -6.4D-02,  2.9D-16, r^2= 1.5D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     7      1.612257  1 O  px                 3     -0.993890  1 O  px         
+    17      0.968811  2 H  s                 19     -0.968811  3 H  s          
+
+ Vector   13  Occ=0.000000D+00  E= 1.196550D+00
+              MO Center= -5.5D-11,  3.7D-01,  5.8D-16, r^2= 1.4D+00
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+     6      3.578158  1 O  s                  2     -1.448156  1 O  s          
+     8      1.123420  1 O  py                17     -0.788134  2 H  s          
+    19     -0.788134  3 H  s                 10     -0.650623  1 O  dxx        
+     4     -0.422192  1 O  py                13     -0.397494  1 O  dyy        
+    16     -0.335015  2 H  s                 18     -0.335015  3 H  s          
+
+ Vector   14  Occ=0.000000D+00  E= 1.717409D+00
+              MO Center= -2.5D-11, -1.6D-01, -1.0D-16, r^2= 6.2D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+    13      1.006688  1 O  dyy               10     -0.599722  1 O  dxx        
+    15     -0.342551  1 O  dzz                6     -0.234714  1 O  s          
+
+ Vector   15  Occ=0.000000D+00  E= 1.735678D+00
+              MO Center= -2.3D-11, -1.2D-01, -1.1D-15, r^2= 6.1D-01
+   Bfn.  Coefficient  Atom+Function         Bfn.  Coefficient  Atom+Function  
+  ----- ------------  ---------------      ----- ------------  ---------------
+    12      1.732051  1 O  dxz        
+
+
+ center of mass
+ --------------
+ x =  -0.00000000 y =  -0.10152795 z =   0.00000000
+
+ moments of inertia (a.u.)
+ ------------------
+           2.292227814855          -0.000000000205           0.000000000000
+          -0.000000000205           4.174595510957           0.000000000000
+           0.000000000000           0.000000000000           6.466823325813
+
+     Multipole analysis of the density
+     ---------------------------------
+
+     L   x y z        total         alpha         beta         nuclear
+     -   - - -        -----         -----         ----         -------
+     0   0 0 0     -0.000000     -5.000000     -5.000000     10.000000
+
+     1   1 0 0      0.000000      0.000000      0.000000     -0.000000
+     1   0 1 0      0.982358      0.500432      0.500432     -0.018506
+     1   0 0 1     -0.000000     -0.000000     -0.000000      0.000000
+
+     2   2 0 0     -3.001548     -3.571865     -3.571865      4.142183
+     2   1 1 0      0.000000     -0.000000     -0.000000      0.000000
+     2   1 0 1     -0.000000     -0.000000     -0.000000      0.000000
+     2   0 2 0     -4.408450     -3.228662     -3.228662      2.048874
+     2   0 1 1      0.000000      0.000000      0.000000      0.000000
+     2   0 0 2     -5.371023     -2.685511     -2.685511      0.000000
+
+
+ Task  times  cpu:        1.3s     wall:        2.8s
+
+
+                                NWChem Input Module
+                                -------------------
+
+
+
+                           NWChem Real-Time TDDFT Module
+                           -----------------------------
+
+
+                                        H2O
+
+
+
+
+ Summary of &quot;ao basis&quot; -&gt; &quot;ao basis&quot; (cartesian)
+ ------------------------------------------------------------------------------
+       Tag                 Description            Shells   Functions and Types
+ ---------------- ------------------------------  ------  ---------------------
+ O                           6-31G*                  6       15   3s2p1d
+ H                           6-31G*                  2        2   2s
+
+
+
+ solvent parameters
+ solvname_short: h2o     
+ solvname_long:  water                              
+ dielec:       78.4000
+ dielecinf:     1.7769
+ aqueous SMD model solvent descriptors
+ dielec:       78.4000
+ sola:          0.8200
+
+          ---------------
+          -cosmo- solvent
+          ---------------
+ Cosmo: York-Karplus, doi: 10.1021/jp992097l
+ dielectric constant -eps-     =  78.40
+ screen = (eps-1)/(eps    )    =   0.98724
+ surface charge correction     = lagrangian
+ -lineq- algorithm             =   0
+ -bem- low  level              =   3
+ -bem- from -octahedral-
+ gaussian surface charge width =   0.98000
+ degree of switching           =   1.00000
+ switching function tolerance  =   0.00010
+ atomic radii = 
+ --------------
+    1  8.000  1.520
+    2  1.000  1.200
+    3  1.000  1.200
+
+ solvent accessible surface
+ --------------------------
+
+ ---------- ATOMIC COORDINATES (A.U.) ------------ VDWR(ANG.) --
+     1   -0.00000000   -0.22817117    0.00000000     1.520
+     2   -1.43912872    0.90343169    0.00000000     1.200
+     3    1.43912872    0.90343169    0.00000000     1.200
+ number of segments per atom =        128
+ number of   points per atom =        128
+ atom (   nspa,  nppa )
+ ----------------------
+    1 (     84,     0 )       0
+    2 (     72,     0 )       0
+    3 (     72,     0 )       0
+ number of -cosmo- surface points =      228
+ molecular surface =     36.049 angstrom**2
+ molecular volume  =     16.286 angstrom**3
+ ...... end of -cosmo- initialization ......
+
+
+ G(SMD-CDS) energy (kcal/mol)  =     1.451
+ SMD-CDS SASA (angstrom**2)    =    55.867
+
+  Caching 1-el integrals 
+
+            General Information
+            -------------------
+          SCF calculation type: DFT
+          Wavefunction type:  closed shell.
+          No. of atoms    &nbsp;:     3
+          No. of electrons&nbsp;:    10
+           Alpha electrons&nbsp;:     5
+            Beta electrons&nbsp;:     5
+          Charge          &nbsp;:     0
+          Spin multiplicity:     1
+          Use of symmetry is: off; symmetry adaption is: off
+          Maximum number of iterations: 100
+          This is a Direct SCF calculation.
+          AO basis - number of functions:    19
+                     number of shells:    10
+          Convergence on energy requested: 1.00D-06
+          Convergence on density requested: 1.00D-05
+          Convergence on gradient requested: 5.00D-04
+
+              XC Information
+              --------------
+                         B3LYP Method XC Potential
+                     Hartree-Fock (Exact) Exchange  0.200          
+                        Slater Exchange Functional  0.800 local    
+                    Becke 1988 Exchange Functional  0.720 non-local
+              Lee-Yang-Parr Correlation Functional  0.810          
+                  VWN I RPA Correlation Functional  0.190 local    
+
+             Grid Information
+             ----------------
+          Grid used for XC integration:  fine      
+          Radial quadrature: Mura-Knowles        
+          Angular quadrature: Lebedev. 
+          Tag              B.-S. Rad. Rad. Pts. Rad. Cut. Ang. Pts.
+          ---              ---------- --------- --------- ---------
+          O                   0.60       70           5.0       590
+          H                   0.35       60           6.0       590
+          Grid pruning is: on 
+          Number of quadrature shells:   190
+          Spatial weights used:  Erf1
+
+          Convergence Information
+          -----------------------
+          Convergence aids based upon iterative change in 
+          total energy or number of iterations. 
+          Levelshifting, if invoked, occurs when the 
+          HOMO/LUMO gap drops below (HL_TOL): 1.00D-02
+          DIIS, if invoked, will attempt to extrapolate 
+          using up to (NFOCK): 10 stored Fock matrices.
+
+                    Damping( 0%)  Levelshifting(0.5)       DIIS
+                  --------------- ------------------- ---------------
+          dE  on:    start            ASAP                start   
+          dE off:    2 iters        100 iters           100 iters 
+
+
+      Screening Tolerance Information
+      -------------------------------
+          Density screening/tol_rho: 1.00D-10
+          AO Gaussian exp screening on grid/accAOfunc:  14
+          CD Gaussian exp screening on grid/accCDfunc:  20
+          XC Gaussian exp screening on grid/accXCfunc:  20
+          Schwarz screening/accCoul: 1.00D-08
+
+  
+ *************************
+ * Closed-shell RT-TDDFT *
+ *************************
+  
+ 
+****************************** WARNING ****************************** 
+  SCF did not converge previously--it is quite likely that  
+  the starting density is not in the ground state 
+********************************************************************* 
+ 
+ 
+****************************** WARNING ****************************** 
+  Schwartz screening tolerance is similar to the Magnus interpolation  
+  tolerance--this may cause problems with convergence.  If  
+  so, try loosening tol_interpol. 
+********************************************************************* 
+ 
+  
+  
+ Geometry               Atoms      Basis func.   Nuc. charge          Nuc. dip. mom.
+ -----------------------------------------------------------------------------------------
+  driverinitial        3 (100% )     0 (  0% )     10.00        0.00      0.00      0.00
+ *system               3 (100% )    19 (100% )     10.00       -0.00     -0.02      0.00
+
+=============== Geometry Initialization ===============
+  Active geometry: &quot;system&quot;
+  No linear dependencies
+  Number of atomic orbitals    = 19
+  Number of molecular orbitals = 19
+=======================================================
+
+ 
+ 
+             System parameters
+             -----------------
+     No. atoms             &nbsp;: 3
+     Wavefunction type     &nbsp;: restricted
+     No. alpha electrons   &nbsp;: 5
+     No. beta electrons    &nbsp;: 5
+     Total no. electrons   &nbsp;: 10
+     System charge         &nbsp;: 0
+ 
+ 
+               2e integrals
+               ------------
+     tol2e for real part of Fock matrix: 1.0000E-08
+     tol2e for imag part of Fock matrix: 1.0000E-10
+ 
+ 
+                    Propagation parameters
+                    ----------------------
+     End time (tmax)      &nbsp;: 5.0000E+02 au = 1.2095E+01 fs
+     Time step (dt)       &nbsp;: 2.0000E-01 au = 4.8378E-03 fs
+     No. time steps (nt)  &nbsp;: 2500
+     Progagation method   &nbsp;: 2nd order Magnus w/ self-consistent interpolation
+     Exponentiation method&nbsp;: Adaptive contractive power series
+ 
+ 
+                        Tolerances
+                        ----------
+     Zero / comparison / check tolerance &nbsp;: 1.0000E-08
+     Series convergence tolerance        &nbsp;: 1.0000E-10
+     Interpolation convergence tolerance &nbsp;: 1.0000E-07
+     Reqd no. zero terms in series       &nbsp;: 3
+     Reqd no. zero terms in interpolation&nbsp;: 1
+ 
+ 
+                Output and checking parameters
+                ------------------------------
+     Quantites to print&nbsp;: messages, dipole, field, energy, &lt;S^2&gt;
+     No. print points  &nbsp;: 2500 (once every 1 time steps)
+     No. checks        &nbsp;: 10 (once every 250 time steps)
+     No. restart points&nbsp;: 100 (once every 25 time steps)
+     Checking level    &nbsp;: 1 (checkpoints only)
+     Profiling         &nbsp;: No
+ 
+ 
+ Dipole and quadrupole matrices
+ ------------------------------
+     Center of mass = (-4.1748E-11, -1.0153E-01,  0.0000E+00)
+     norm[D_x]  = 1.4391E+00
+     norm[D_y]  = 1.0184E+00
+     norm[D_z]  = 1.0184E+00
+     norm[Q_xx] = 3.6212E+00
+     norm[Q_xy] = 1.3002E+00
+     norm[Q_xz] = 4.6295E-01
+     norm[Q_yy] = 2.3663E+00
+     norm[Q_yz] = 4.6295E-01
+     norm[Q_zz] = 2.7777E+00
+ 
+ 
+         Applied fields
+         --------------
+ 
+               &quot;kick&quot;
+     Type           &nbsp;: delta
+     Polarization   &nbsp;: x
+     Field maximum  &nbsp;: 1.0000E-04 au = 5.1421E-02 V/nm
+ 
+ 
+        Excitation rules
+        ----------------
+     Excite geometry &quot;system&quot; with &quot;kick&quot;
+ 
+ 
+                             Closed shell propagation
+                             ------------------------
+ 
+****************************** WARNING ****************************** 
+  Starting movecs not specified--trying SCF output: 
+   ./water.movecs 
+********************************************************************* 
+ 
+     File name             &nbsp;: ./water.movecs
+     Job title             &nbsp;: H2O
+     Basis set name        &nbsp;: ao basis
+     SCF type              &nbsp;: dft
+     Atomic orbitals       &nbsp;: 19
+     Molecular orbitals    &nbsp;: 19
+ 
+   Vector      Occupation     Eigenvalue [au]
+ --------------------------------------------
+         1        2.00       -1.91406328E+01
+         2        2.00       -9.98562901E-01
+         3        2.00       -5.14860740E-01
+         4        2.00       -3.83853655E-01
+         5        2.00       -3.02592866E-01
+         6        0.00        8.54131631E-02
+         7        0.00        1.72049058E-01
+         8        0.00        7.74796639E-01
+         9        0.00        8.50198691E-01
+        10        0.00        8.74323469E-01
+        11        0.00        8.89001704E-01
+        12        0.00        1.06049823E+00
+        13        0.00        1.19655008E+00
+        14        0.00        1.71740885E+00
+        15        0.00        1.73567783E+00
+        16        0.00        1.76590757E+00
+        17        0.00        2.27515280E+00
+        18        0.00        2.57191774E+00
+        19        0.00        3.54163434E+00
+ 
+
+ Grid_pts file          = ./water.gridpts.0
+ Record size in doubles =  12289        No. of grid_pts per rec  =   3070
+ Max. records in memory =      7        Max. recs in file   =    498033
+
+kick_x      0.00000        ### Propagation started ###
+kick_x      0.00000        ### Checks passed ###
+...</pre><br />
+<br />
+Everything seems converged (DIIS errors are around 1e-10 -- 1e-11, energy deltas are around 1e-9 -- 1e-12, for instance. Those values are for both gas and condensed phases (SMD).), but the output does not say it directly.<br />
+<br />
+MO energies match but RT-TDDFT does not report total energies so I can't compare.<br />
+<br />
+Can this be a bug?<br />
+<br />
+Another question: is it OK to use COSMO/SMD together with RT-TDDFT in NWChem?<br />
+<br />
+Thanks again in advance.<br />
+<br />
+All the best,<br />
+Felipe
+</td>
+		                    </tr>
+		                                
+		                    <tr>
+	<td class="edited_on" align="left" colspan="2">
+	</td>
+</tr>
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_7750"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_7750" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Forum Regular</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id7750.html">12:19:16 PM PST - Wed, Nov 30th 2016 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">It does appear that the RT-TDDFT code is picking up the correct information from the SCF calculation (for the total energy, you can look at the total energy reported at time 0 in the propagation if you are having the code print the energy at every step). There must be a small bug somewhere in which the converged flag is getting set to false during the initialization of the RT-TDDFT calculation when COSMO is active.<br />
+<br />
+From a technical perspective, I do believe the RT-TDDFT calculation will work with COSMO in the sense that the code won't crash. I don't believe that this combination was ever tested thoroughly so I advise testing and carefully checking results against some baseline. Beyond whether the code will run or not though, I strongly advise that you do a literature search on RT-TDDFT combined with implicit solvent models if you have not already done so. There are several aspects that should be considered when combining these methods. For instance, while the ground state was solved using the static dielectric constant of water (~78), it is the optical or high-frequency dielectric constant of water (~2) that would be appropriate when propagating the electronic system.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />       <a name="post_7751"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_7751" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem6" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Clicked A Few Times</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post1" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap><a target="blank" href="../sp/id7751.html">2:04:44 PM PST - Wed, Nov 30th 2016 </a></td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Thanks again for the reply, I will look into that.
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br /><br />
+<table width="100%" cellpadding="0" cellspacing="0" class="bot_breadcrumbs_and_pagejump">
+	<tr>
+		<td width="100%" class="bot_breadcrumbs"><a href="../index.html">Forum</a> &gt;&gt; <a href="../sc/id2.html">NWChem's corner</a> &gt;&gt; <a href="../sf/id5.html">Running NWChem</a></td>
+	</tr>
+	<tr>
+		<td width="100%" class="bot_pagejumps"></td>
+	</tr>
+</table>
+<br /><br />      <br />
+</body> 
+</html> 
