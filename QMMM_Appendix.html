@@ -221,7 +221,7 @@ END
 <p>In our case Babel did this for us and the entire system is defined as
 one residue with the name LIG (see columns 4 and 5). We can leave it as,
 but I will redefine residue name to NN3 (keep it to 3 characters !).
-Again running <code>sed 's/LIG/NN3/' n3o3-step1.pdb \&gt; n3o3-step2.pdb</code></p>
+Again running <code>sed 's/LIG/NN3/' n3o3-step1.pdb &gt; n3o3-step2.pdb</code></p>
 <pre><code>ATOM      1  O   NN3     1       1.562   0.180  -1.368  1.00  0.00           O  
 ATOM      2  N   NN3     1       1.316   0.936  -0.424  1.00  0.00           N  
 ATOM      3  N   NN3     1       2.364   1.026   0.488  1.00  0.00           N  
@@ -392,7 +392,7 @@ moves as a bit further this time</p>
 <p>complaining now that atom types OX and NX are not defined. This brings
 us to the next step of defining new parameter file for our calculation. </p>
 <h2 id="generation-of-new-parameter-files">Generation of new parameter files<a class="headerlink" href="#generation-of-new-parameter-files" title="Permanent link">&para;</a></h2>
-<p>Continuing with our fragment construction in <a href="#generation-of-new=fragment-files">Generation of new fragment
+<p>Continuing with our fragment construction in <a href="#generation-of-new-fragment-files">Generation of new fragment
 files</a> section, we now
 need to define VDW parameters for our new atom types NX and OX. The best
 way to do it is to create <code>amber.par</code> file in the directory where you plan
@@ -409,7 +409,7 @@ OX     16.00000 6.35968E-01 1.76830E-01                            1 1111111111
 End
 </code></pre>
 
-<p>The format of this file is documented in <a href="#Format_of_NWChem_parameter_file">Format of NWChem parameter
+<p>The format of this file is documented in <a href="#format-of-nwchem-parameter-file">Format of NWChem parameter
 file</a>. How to actually
 choose the appropriate values for VDW parameters is a whole new subject,
 which I do not think anybody yet fully addressed. The practical strategy
