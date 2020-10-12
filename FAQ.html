@@ -136,7 +136,7 @@
               
                 <h1 id="general-information-about-nwchem">General information about NWChem<a class="headerlink" href="#general-information-about-nwchem" title="Permanent link">&para;</a></h1>
 <h2 id="where-is-the-users-manual">Where is the User&rsquo;s Manual?<a class="headerlink" href="#where-is-the-users-manual" title="Permanent link">&para;</a></h2>
-<p>The NWChem User&rsquo;s Manual is now at <a href="https://github.com/nwchemgit/nwchem/wiki">https://github.com/nwchemgit/nwchem/wiki</a> </p>
+<p>The NWChem User&rsquo;s Manual is now at <a href="https://github.com/nwchemgit/nwchem/wiki">https://github.com/nwchemgit/nwchem/wiki</a> </p>
 <h2 id="where-do-i-go-for-help-with-a-global-arrays-problem">Where do I go for help with a Global Arrays problem?<a class="headerlink" href="#where-do-i-go-for-help-with-a-global-arrays-problem" title="Permanent link">&para;</a></h2>
 <p>If you have problems with compiling the tools directory, please visit
 the Global Arrays Google group at
@@ -151,20 +151,23 @@ URL <a href="https://github.com/nwchemgit/nwchem/wiki/Compiling-NWChem">https://
 <h1 id="installation-problems">Installation Problems<a class="headerlink" href="#installation-problems" title="Permanent link">&para;</a></h1>
 <h2 id="how-to-fix-configure-error-could-not-compile-simple-c-mpi-program">How to fix <code>configure: error: could not compile simple C MPI program</code><a class="headerlink" href="#how-to-fix-configure-error-could-not-compile-simple-c-mpi-program" title="Permanent link">&para;</a></h2>
 <p>When compiling the tools directory, you might see the compilation
-stopping with the message <code>configure: error: could not compile simple C
-MPI program</code> This is most likely due to incorrect settings for the
-<code>MPI_LIB</code>, <code>MPI_INCLUDE</code> and <code>LIBMPI</code> environment variables. The
-suggested course of action is a) to use NWChem 6.6, b) unset all of the
-three variables above and c) point your <code>PATH</code> env. variable to the
-location of mpif90. If bash is your shell choice, this can be
-accomplished by typing</p>
-<pre><code>unset MPI_LIB
-unset MPI_INCLUDE 
-unset LIBMPI
-export PATH=&quot;directory where mpif90 is located&quot;:$PATH
+stopping with the message</p>
+<pre><code>configure: error: could not compile simple C MPI program
 </code></pre>
 
-<h2 id="whats-this-business-with-armci-and-armci_network">What&rsquo;s this business with ARMCI and ARMCI_NETWORK?<a class="headerlink" href="#whats-this-business-with-armci-and-armci_network" title="Permanent link">&para;</a></h2>
+<p>This is most likely due to incorrect settings for the
+<code>MPI_LIB</code>, <code>MPI_INCLUDE</code> and <code>LIBMPI</code> environment variables. The
+suggested course of action is to unset all of the
+three variables above and point your <code>PATH</code> env. variable to the
+location of <code>mpif90</code>. If bash is your shell choice, this can be
+accomplished by typing</p>
+<pre><code>unset MPI_LIB
+unset MPI_INCLUDE
+unset LIBMPI
+export PATH=&quot;directory where mpif90 is located&quot;:$PATH
+</code></pre>
+
+<h2 id="whats-this-business-with-armci-and-armcinetwork">What&rsquo;s this business with ARMCI and ARMCI\NETWORK?<a class="headerlink" href="#whats-this-business-with-armci-and-armcinetwork" title="Permanent link">&para;</a></h2>
 <p>ARMCI is a library used by Global Arrays (both ARMCI and GA source code
 is located in NWChem&rsquo;s tools directory). More information can be found
 at the following URL <a href="http://hpc.pnl.gov/armci">http://hpc.pnl.gov/armci</a> If your installation
@@ -201,9 +204,11 @@ failure, some of which may be worked around in the input.</p>
 <p>1. Strictly linear molecules with 3 or more atoms. AUTOZ does not
 generate linear bend coordinates, but, just as in a real Z-matrix, you
 can specify a dummy center that is not co-linear. There are two relevant
-tips: i) constrain the dummy center to be not co-linear otherwise the
+tips:
+* constrain the dummy center to be not co-linear otherwise the
 center could become co-linear. Also, the inevitable small forces on the
-dummy center can confuse the optimizer. ii) put the dummy center far
+dummy center can confuse the optimizer.
+* put the dummy center far
 enough away so that only one connection is generated.</p>
 <p>E.g., this input for acetylene will not use internals</p>
 <pre><code>           geometry
@@ -301,7 +306,7 @@ number of iterations, then it may be restarted with the second job.</p>
 <p>Some ARMCI_NETWORK values (e.g. OPENIB) depend on the
 <code>ARMCI_DEFAULT_SHMMAX</code> value for large allocations of Global memory. We
 recommend a value of &ndash; at least &ndash; 2048, e.g. in bash shell parlance</p>
-<pre><code>export ARMCI_DEFAULT_SHMMAX=2048
+<pre><code>export ARMCI_DEFAULT_SHMMAX=2048
 </code></pre>
 
 <p>A value of 2048 for ARMCI_DEFAULT_SHMMAX corresponds to 2048 GBytes,
@@ -309,7 +314,7 @@ equal to 2048*1024*1024=2147483648 bytes. For
 ARMCI_DEFAULT_SHMMAX=2048 to work, it is necessary that kernel
 parameter <code>kernel.shmmax</code> to be greater than 2147483648. You can check
 the current value of <code>kernel.shmmax</code> on your system by typing</p>
-<pre><code>sysctl kernel.shmmax
+<pre><code>sysctl kernel.shmmax
 </code></pre>
 
 <p>More detail about kernel.shmmax can be found at the webpage
