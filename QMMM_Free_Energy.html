@@ -251,26 +251,36 @@ The xyzi is basically xyz structure file with an extra column that
 allows to map coordinates of QM atoms to the overall system. The xyzi
 file can also be obtained as part of calculation of internal free energy
 by inserting</p>
-<p><code>set qmmm:region_print .true.</code></p>
+<pre><code>set qmmm:region_print .true.
+</code></pre>
+
 <p>anywhere in the input file during energy calculation. <strong>Both xyzi and
 esp files should be placed into the perm directory!!!</strong></p>
 <p>In the input file the restart file is specified in the MD block
 following the standard notation</p>
-<p><code>md</code>
-<code>system &lt; name of rst file without extension&gt;</code>
-<code>...</code>
-<code>end</code></p>
+<pre><code>md
+ system &lt; name of rst file without extension&gt;
+ ...
+end
+</code></pre>
+
 <p>while coordinates of QM region (xyzi files) and ESP charges (esp files)
 are set using the following directives (at the top level outside of any
 input blocks)</p>
-<p><code>set qmmm:fep_geom xxx_A.xyzi xxx_B.xyzi</code>
-<code>set qmmm:fep_esp  xxx_A.esp xxx_B.esp</code></p>
+<pre><code>set qmmm:fep_geom xxx_A.xyzi xxx_B.xyzi
+set qmmm:fep_esp  xxx_A.esp xxx_B.esp
+</code></pre>
+
 <p>The current interpolation interval <script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>
 <br />
 for which free energy difference is calculated is defined as</p>
-<p><code>set qmmm:fep_lambda lambda_i lambda_i+1</code></p>
+<pre><code>set qmmm:fep_lambda lambda_i lambda_i+1
+</code></pre>
+
 <p>To enable double wide sampling use the following directive</p>
-<p><code>set qmmm:fep_deriv .true.</code></p>
+<pre><code>set qmmm:fep_deriv .true.
+</code></pre>
+
 <p>If set, the above directive will perform both
 <script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>  and
 <script type="math/tex">\,\! [\lambda_i\to\lambda_{i-1}]</script>  calculations, where</p>
@@ -287,36 +297,42 @@ trajectory to calculate averages of relevant energy differences. The
 number of MD steps in the first phase is controlled by the QM/MM
 directive <span id="nsamples"></span></p>
 <ul>
-<li><strong><a href="/Release66:qmmm_nsamples.md">nsamples</a></strong>
+<li><strong><a href="Qmmm_nsamples.html">nsamples</a></strong>
     <integer number of MD steps for sampling></li>
 </ul>
 <p>This is a <strong>required</strong> directive for QM/MM free energy calculations.</p>
 <p>Number of overall cycles is defined by the QM/MM directive</p>
 <ul>
-<li><strong><a href="/Release66:qmmm_ncycles.md">ncycles</a></strong> \&lt;integer number
+<li><strong><a href="Qmmm_ncycles.html">ncycles</a></strong> <integer number
     of cycles default 1></li>
 </ul>
 <p>In most cases explicit definition of QM/MM
-<strong><a href="/Release66:qmmm_density.md">density</a></strong> and
-<strong><a href="/Release66:qmmm_region.md">region</a></strong> should not be required.
-The QM/MM <strong><a href="/Release66:qmmm_density.md">density</a></strong> will
+<strong><a href="Qmmm_density.html">density</a></strong> and
+<strong><a href="Qmmm_region.html">region</a></strong> should not be required.
+The QM/MM <strong><a href="Qmmm_density.html">density</a></strong> will
 automatically default to <strong>espfit</strong> and
-<strong><a href="/Release66:qmmm_region.md">region</a></strong> to <strong>mm</strong>.</p>
+<strong><a href="Qmmm_region.html">region</a></strong> to <strong>mm</strong>.</p>
 <p>Prior to data collection for free energy calculations user may want to
 prequilibrate the system, which can be achieved by <strong>equil</strong> keyword in
 the MD block:</p>
-<p><code>md</code>
-<code>...</code>
-<code>equil</code><number of equilibration steps>
-<code>end</code></p>
+<pre><code> md
+  ... 
+ equil &lt;number of equilibration steps&gt;
+ end
+</code></pre>
+
 <p>Other parameters (e.g. temperature and pressure can be also set in the
 MD block.</p>
 <p>The actual QM/MM solvation free energy calculation is invoked through
 the following task directive</p>
-<p><code>task qmmm fep</code></p>
+<pre><code>task qmmm fep
+</code></pre>
+
 <p>The current value of solvation free energy differences may be tracked
 though</p>
-<p><code>grep free</code><name of the output file></p>
+<pre><code>grep free &lt;name of the output file&gt;
+</code></pre>
+
 <p>The first number is a forward (<script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>)
 free energy difference and second number is backward
 (<script type="math/tex">\,\! [\lambda_i\to\lambda_{i-1}]</script>) free energy difference, both in
@@ -324,9 +340,11 @@ kcal/mol. The same numbers can also be found in the 4th and 6th columns
 of <system>.thm file but this time in <strong>atomic units</strong>.</p>
 <p>The same <system>.thm file can also be used to continue from the prior
 calculation. This will require the presence of</p>
-<p><code>set qmmm:extend .true.</code></p>
+<pre><code> set qmmm:extend .true.
+</code></pre>
+
 <p>directive, the <system>.thm file, and the appropriate rst file.</p>
-<p>Here is an <a href="/Release66:QMMM_FEP_Example.md">example of the input file for QM/MM solvation free energy
+<p>Here is an <a href="QMMM_FEP_Example.html">example of the input file for QM/MM solvation free energy
 calculation</a>.</p>
               
             </div>
