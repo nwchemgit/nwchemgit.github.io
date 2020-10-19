@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://nwchemgit.github.io/QMMM_ESP.html">
+  <link rel="canonical" href="https://nwchemgit.github.io/QMMM_FEP_Example.html">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>QMMM ESP - NWChem</title>
+  <title>Example of QM/MM solvation free energy calculation input file - NWChem</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "QMMM ESP";
-    var mkdocs_page_input_path = "QMMM_ESP.md";
-    var mkdocs_page_url = "/QMMM_ESP.html";
+    var mkdocs_page_name = "Example of QM/MM solvation free energy calculation input file";
+    var mkdocs_page_input_path = "QMMM_FEP_Example.md";
+    var mkdocs_page_url = "/QMMM_FEP_Example.html";
   </script>
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
@@ -117,10 +117,10 @@
     
       
     
-    <li>QMMM ESP</li>
+    <li>Example of QM/MM solvation free energy calculation input file</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/QMMM_ESP.md"
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/QMMM_FEP_Example.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -131,62 +131,36 @@
           <div role="main">
             <div class="section">
               
-                <ul>
-<li>Example QM/MM ESP Calculation:</li>
-</ul>
-<p>The example below illustrates dipole property QM/MM DFT/B3LYP
-calculation for quantum water molecule embedded into 20 angstrom box of
-classical SPCE/E water molecules.</p>
-<p>The preparation stage that involves definition of the QM region and
-solvation is performed as part of the calculation. Note that water
-fragment file <a href="WTR.frg">wtr.frg</a> is required in this
-calculation. Prepare run will generate restart file
-(<a href="wtr_ref.rst">wtr_ref.rst</a>) and topology file
-(<a href="wtr.top">wtr.top</a>)</p>
-<p>In the QM/MM interface block the use of bq_zone value of 3.0 Angstrom
-is specified.</p>
-<pre><code>  start wtr
+                <h1 id="example-of-qmmm-solvation-free-energy-calculation-input-file">Example of QM/MM solvation free energy calculation input file<a class="headerlink" href="#example-of-qmmm-solvation-free-energy-calculation-input-file" title="Permanent link">&para;</a></h1>
+<p>A total of two sampling cycles will be performed with 1000 samples per each cycle  </p>
+<pre><code> memory total 2000 Mb
 
-  permanent_dir ./perm  
-  scratch_dir ./data
+  start  clfoh
 
-  prepare  
-  source wtr0.pdb  
-  new_top new_seq  
-  new_rst  
-  modify segment 1  quantum  
-  center  
-  orient  
-  solvate box 3.0  
-  update lists  
-  ignore  
-  write wtr_ref.rst  
-  write wtr_ref.pdb  
+  permanent_dir  ./perm
+  scratch_dir   /scratch
+
+
+  md
+  #this will require topology [clfoh.top](clfoh.top) and restart [clfoh_neb.rst](clfoh_neb.rst) files 
+   system clfoh_neb
+   cutoff 1.5 qmmm 1.5
+   noshake solute
+   isotherm
   end
 
-  task prepare
-
-  md  
-  system wtr_ref  
+  qmmm
+  print low
+  nsamples 1000
+  ncycles 2
   end
 
-  basis  
-  * library &quot;6-31G&quot;  
-  end
+  set qmmm:fep_geom [clfoh_neb-s.xyzi](clfoh_neb-s.xyzi) [clfoh_neb-e.xyzi](clfoh_neb-e.xyzi)
+  set qmmm:fep_esp  [clfoh_neb-s.esp](clfoh_neb-s.esp.md) [clfoh_neb-e.esp](clfoh_neb-e.esp.md)
+  set qmmm:fep_lambda 0.0 0.1
+  set qmmm:fep_deriv .true.
 
-  dft  
-  xc b3lyp  
-  end
-
-  qmmm  
-  bq_zone 3.0  
-  end
-
-  property  
-   dipole  
-  end
-
-  task qmmm dft property
+  task qmmm fep
 </code></pre>
               
             </div>

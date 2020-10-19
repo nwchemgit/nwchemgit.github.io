@@ -139,45 +139,55 @@ calculation for quantum water molecule embedded into 20 angstrom box of
 classical SPCE/E water molecules.</p>
 <p>The preparation stage that involves definition of the QM region and
 solvation is performed as part of the calculation. Note that water
-fragment file <a href="media:WTR.frg.md">wtr.frg</a> is required in this
+fragment file <a href="WTR.frg">wtr.frg</a> is required in this
 calculation. Prepare run will generate restart file
-(<a href="media:wtr_ref.rst.md">wtr_ref.rst</a>) and topology file
-(<a href="media:wtr.top.md">wtr.top</a>)</p>
-<p>In the QM/MM interface block the use of bq_zone value of 3.0 Angstrom
+(<a href="wtr_ref.rst">wtr_ref.rst</a>) and topology file
+(<a href="wtr.top">wtr.top</a>)</p>
+<p>In the QM/MM interface block the use of <code>bq_zone</code> value of 3.0 Angstrom
 is specified.</p>
-<p><code>start wtr</code></p>
-<p><code>permanent_dir ./perm</code><br />
-<code>scratch_dir ./data</code></p>
-<p><code>prepare</code><br />
-<code>source wtr0.pdb</code><br />
-<code>new_top new_seq</code><br />
-<code>new_rst</code><br />
-<code>modify segment 1  quantum</code><br />
-<code>center</code><br />
-<code>orient</code><br />
-<code>solvate box 3.0</code><br />
-<code>update lists</code><br />
-<code>ignore</code><br />
-<code>write wtr_ref.rst</code><br />
-<code>write wtr_ref.pdb</code><br />
-<code>end</code></p>
-<p><code>task prepare</code></p>
-<p><code>md</code><br />
-<code>system wtr_ref</code><br />
-<code>end</code></p>
-<p><code>basis</code><br />
-<code>* library "6-31G"</code><br />
-<code>end</code></p>
-<p><code>dft</code><br />
-<code>xc b3lyp</code><br />
-<code>end</code></p>
-<p><code>qmmm</code><br />
-<code>bq_zone 3.0</code><br />
-<code>end</code></p>
-<p><code>property</code><br />
-<code>dipole</code><br />
-<code>end</code></p>
-<p><code>task qmmm dft property</code></p>
+<pre><code>  start wtr
+
+  permanent_dir ./perm  
+  scratch_dir ./data
+
+  prepare  
+  source wtr0.pdb  
+  new_top new_seq  
+  new_rst  
+  modify segment 1  quantum  
+  center  
+  orient  
+  solvate box 3.0  
+  update lists  
+  ignore  
+  write wtr_ref.rst  
+  write wtr_ref.pdb  
+  end
+
+  task prepare
+
+  md  
+  system wtr_ref  
+  end
+
+  basis  
+  * library &quot;6-31G&quot;  
+  end
+
+  dft  
+  xc b3lyp  
+  end
+
+  qmmm  
+  bq_zone 3.0  
+  end
+
+  property  
+   dipole  
+  end
+
+  task qmmm dft property
+</code></pre>
               
             </div>
           </div>

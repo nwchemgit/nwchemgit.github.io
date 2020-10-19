@@ -134,9 +134,13 @@
                 <h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
 <p>QM/MM hessian and frequency calculations are invoked though the
 following task directives</p>
-<p><code>task qmmm</code><qmtheory><code>hessian</code></p>
+<pre><code>task qmmm `&lt;qmtheory&gt;` hessian
+</code></pre>
+
 <p>or</p>
-<p><code>task qmmm</code><qmtheory><code>freq</code></p>
+<pre><code>task qmmm `&lt;qmtheory&gt;` freq
+</code></pre>
+
 <p>Only numerical implementation are supported at this point and will be
 used even in the absence of &ldquo;numerical&rdquo; keyword. Other than standard
 QM/MM directives no additional QM/MM input is required for default
@@ -156,46 +160,55 @@ defined by region directive in QM/MM block. The electrostatic field from
 fixed QM region is represented by point ESP charges (see density
 directive). These ESP charges are calculated from wavefunction generated
 as a result of energy calculation.</p>
-<p><code>memory total 800 Mb</code>  </p>
-<p><code>start asa</code>  </p>
-<p><code>permanent_dir ./perm</code><br />
-<code>scratch_dir ./data</code>  </p>
-<p><code>#this will generate topology file (</code><a href="media:asa.top.md"><code>asa.top</code></a><code>), restart (</code><a href="media:asa_ref.rst.md"><code>asa_ref.rst</code></a><code>), and pdb (</code><a href="media:asa_ref.pdb.md"><code>asa_ref.pdb</code></a><code>) files.</code><br />
-<code>prepare</code><br />
-<code>source</code><a href="media:asa.pdb.md"><code>asa.pdb</code></a><br />
-<code>new_top new_seq</code><br />
-<code>new_rst</code><br />
-<code>modify atom 2:_CB quantum</code><br />
-<code>modify atom 2:2HB quantum</code><br />
-<code>modify atom 2:3HB quantum</code><br />
-<code>modify atom 2:_OG quantum</code><br />
-<code>modify atom 2:_HG quantum</code><br />
-<code>center</code><br />
-<code>orient</code><br />
-<code>solvate</code><br />
-<code>update lists</code><br />
-<code>ignore</code><br />
-<code>write</code><a href="media:asa_ref.rst.md"><code>asa_ref.rst</code></a><br />
-<code>write</code><a href="media:asa_ref.pdb.md"><code>asa_ref.pdb</code></a><code># Write out PDB file to check structure</code><br />
-<code>end</code><br />
-<code>task prepare</code></p>
-<p><code>md</code><br />
-<code>system asa_ref</code><br />
-<code>end</code>  </p>
-<p><code>basis "ao basis"</code><br />
-<code>* library "6-31G*"</code><br />
-<code>end</code>  </p>
-<p><code>dft</code><br />
-<code>print low</code><br />
-<code>iterations 500</code><br />
-<code>end</code>  </p>
-<p><code>qmmm</code><br />
-<code>region mm_solute</code><br />
-<code>density espfit</code><br />
-<code>end</code>  </p>
-<p><code># run energy calculation to generate wavefunction file for subsequent ESP charge generation</code><br />
-<code>task qmmm dft energy</code><br />
-<code>task qmmm dft freq</code></p>
+<pre><code> memory total 800 Mb  
+
+ start asa  
+
+ permanent_dir ./perm  
+ scratch_dir ./data  
+
+ #this will generate topology file ([asa.top](asa.top)), restart ([asa_ref.rst](asa_ref.rst)), and pdb ([asa_ref.pdb](asa_ref.pdb)) files.  
+ prepare  
+   source [asa.pdb](asa.pdb)  
+   new_top new_seq  
+   new_rst  
+   modify atom 2:_CB quantum  
+   modify atom 2:2HB quantum  
+   modify atom 2:3HB quantum  
+   modify atom 2:_OG quantum  
+   modify atom 2:_HG quantum  
+   center  
+   orient  
+   solvate  
+   update lists  
+   ignore  
+   write [asa_ref.rst](asa_ref.rst)  
+   write [asa_ref.pdb](asa_ref.pdb)   # Write out PDB file to check structure  
+ end  
+ task prepare
+
+ md  
+   system asa_ref  
+ end  
+
+ basis &quot;ao basis&quot;  
+   * library &quot;6-31G*&quot;  
+ end  
+
+ dft  
+  print low  
+  iterations 500  
+ end  
+
+ qmmm  
+ region mm_solute  
+ density espfit  
+ end  
+
+ # run energy calculation to generate wavefunction file for subsequent ESP charge generation  
+ task qmmm dft energy  
+ task qmmm dft freq
+</code></pre>
               
             </div>
           </div>
