@@ -93,7 +93,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#where-do-i-go-for-help-with-nwchem-problems">Where do I go for help with NWChem problems?</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#where-do-i-find-the-instructions-for-installing-nwchem">Where do I find the instructions for installing NWChem?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#where-do-i-find-the-installation-instructions">Where do I find the installation instructions?</a>
     </li>
     </ul>
                     </li>
@@ -162,11 +162,11 @@ website at <a href="http://hpc.pnl.gov/globalarrays/">http://hpc.pnl.gov/globala
 <h2 id="where-do-i-go-for-help-with-nwchem-problems">Where do I go for help with NWChem problems?<a class="headerlink" href="#where-do-i-go-for-help-with-nwchem-problems" title="Permanent link">&para;</a></h2>
 <p>Please post your NWChem issue to the NWChem forum hosted on Google Groups at
 <a href="https://groups.google.com/forum/#!forum/nwchem-forum">https://groups.google.com/forum/#!forum/nwchem-forum</a></p>
-<h2 id="where-do-i-find-the-instructions-for-installing-nwchem">Where do I find the instructions for installing NWChem?<a class="headerlink" href="#where-do-i-find-the-instructions-for-installing-nwchem" title="Permanent link">&para;</a></h2>
+<h2 id="where-do-i-find-the-installation-instructions">Where do I find the installation instructions?<a class="headerlink" href="#where-do-i-find-the-installation-instructions" title="Permanent link">&para;</a></h2>
 <p>For updated instructions for compiling NWChem please visit the following
-URL <a href="https://github.com/nwchemgit/nwchem/wiki/Compiling-NWChem">https://github.com/nwchemgit/nwchem/wiki/Compiling-NWChem</a></p>
+URL <a href="https://nwchemgit.github.io/Compiling-NWChem.html">https://nwchemgit.github.io/Compiling-NWChem.html</a></p>
 <h1 id="installation-problems">Installation Problems<a class="headerlink" href="#installation-problems" title="Permanent link">&para;</a></h1>
-<h2 id="how-to-fix-configure-error-could-not-compile-simple-c-mpi-program">How to fix <code>configure: error: could not compile simple C MPI program</code><a class="headerlink" href="#how-to-fix-configure-error-could-not-compile-simple-c-mpi-program" title="Permanent link">&para;</a></h2>
+<h2 id="how-to-fix-a-configure-error-could-not">How to fix a <code>configure: error: could not ...</code><a class="headerlink" href="#how-to-fix-a-configure-error-could-not" title="Permanent link">&para;</a></h2>
 <p>When compiling the tools directory, you might see the compilation
 stopping with the message</p>
 <pre><code>configure: error: could not compile simple C MPI program
@@ -184,25 +184,26 @@ unset LIBMPI
 export PATH=&quot;directory where mpif90 is located&quot;:$PATH
 </code></pre>
 
-<h2 id="whats-this-business-with-armci-and-armcinetwork">What&rsquo;s this business with ARMCI and ARMCI\NETWORK?<a class="headerlink" href="#whats-this-business-with-armci-and-armcinetwork" title="Permanent link">&para;</a></h2>
+<h2 id="what-are-armci-and-armci_network">What are ARMCI and ARMCI_NETWORK?<a class="headerlink" href="#what-are-armci-and-armci_network" title="Permanent link">&para;</a></h2>
 <p>ARMCI is a library used by Global Arrays (both ARMCI and GA source code
 is located in NWChem&rsquo;s tools directory). More information can be found
-at the following URL <a href="http://hpc.pnl.gov/armci">http://hpc.pnl.gov/armci</a> If your installation
+at the following URL <a href="http://hpc.pnl.gov/armci">http://hpc.pnl.gov/armci</a><br />
+If your installation
 uses a fast network and you are aiming to get optimal communication
 performance, you might want to assign a non-default value to
-<code>ARMCI_NETWORK</code>. The following links contained useful information about
-<code>ARMCI_NETWORK</code>: <a href="ARMCI.html"> Choosing the ARMCI
-library</a> and <a href="Compiling-NWChem.html#Setting_up_the_proper_environment_variables"> Setting up the proper
-environment_variables when compiling
-NWChem</a></p>
+<code>ARMCI_NETWORK</code>.<br />
+The following links contained useful information about
+<code>ARMCI_NETWORK</code>:<br />
+- <a href="ARMCI.html"> Choosing the ARMCI library</a> <br />
+- <a href="Compiling-NWChem.html#Setting_up_the_proper_environment_variables"> Choosing the proper environment variables when compiling NWChem</a>  </p>
 <h1 id="input-problems">Input Problems<a class="headerlink" href="#input-problems" title="Permanent link">&para;</a></h1>
-<h2 id="i-get-the-message-warning-processed-input-with-no-task-what-is-wrong">I get the message: <code>! warning: processed input with no task</code>. What is wrong?<a class="headerlink" href="#i-get-the-message-warning-processed-input-with-no-task-what-is-wrong" title="Permanent link">&para;</a></h2>
+<h2 id="how-to-fix-warning-processed-input-with-no-task">How to fix <code>! warning: processed input with no task</code><a class="headerlink" href="#how-to-fix-warning-processed-input-with-no-task" title="Permanent link">&para;</a></h2>
 <p>Have you used emacs to create your input file? Emacs usually does not
 put and an end-of-line as a last character of the file, therefore the
 NWChem input parser ignores the last line of your input (the one
 containing the task directive). To fix the problem, add one more blank
 line after the task line and your task directive will be executed.</p>
-<h2 id="autoz-fails-to-generate-valid-internal-coordinates-now-what">AUTOZ fails to generate valid internal coordinates. Now what?<a class="headerlink" href="#autoz-fails-to-generate-valid-internal-coordinates-now-what" title="Permanent link">&para;</a></h2>
+<h2 id="autoz-fails-to-generate-valid-internal-coordinates"><code>AUTOZ fails to generate valid internal coordinates</code><a class="headerlink" href="#autoz-fails-to-generate-valid-internal-coordinates" title="Permanent link">&para;</a></h2>
 <p>If AUTOZ fails, NWChem will default to using Cartesian coordinates (and
 ignore any zcoord data) so you don&rsquo;t have to do anything unless you
 really need to use internal coordinates. An exception are certain cases
@@ -218,15 +219,17 @@ unphysical bonds, whereas if they are too far apart AUTOZ will not be
 able to figure out how to connect things.</p>
 <p>Once the obvious has been checked, there are several possible modes of
 failure, some of which may be worked around in the input.</p>
-<p>1. Strictly linear molecules with 3 or more atoms. AUTOZ does not
+<ol>
+<li>Strictly linear molecules with 3 or more atoms. AUTOZ does not
 generate linear bend coordinates, but, just as in a real Z-matrix, you
 can specify a dummy center that is not co-linear. There are two relevant
-tips:
-* constrain the dummy center to be not co-linear otherwise the
+tips:</li>
+<li>constrain the dummy center to be not co-linear otherwise the
 center could become co-linear. Also, the inevitable small forces on the
-dummy center can confuse the optimizer.
-* put the dummy center far
-enough away so that only one connection is generated.</p>
+dummy center can confuse the optimizer.</li>
+<li>put the dummy center far
+enough away so that only one connection is generated.</li>
+</ol>
 <p>E.g., this input for acetylene will not use internals</p>
 <pre><code>           geometry
              h  0  0  0
@@ -250,17 +253,23 @@ enough away so that only one connection is generated.</p>
            end
 </code></pre>
 
-<p>2. Larger molecules that contain a strictly linear chain of four or
+<ol>
+<li>
+<p>Larger molecules that contain a strictly linear chain of four or
 more atoms (that ends in a free atom). For these molecules the autoz
 will fail and the code can currently not recover by using cartesians.
 One has to explicitly define noautoz in the geometry input to make it
 work. If internal coordinates are required one can fix it in the same
 manner as described above. However, you can also force a connection to a
 real nearby atom.</p>
-<p>3. Very highly connected systems generate too many internal coordinates
+</li>
+<li>
+<p>Very highly connected systems generate too many internal coordinates
 which can make optimization in redundant internals less efficient than
 in Cartesians. For systems such as clusters of atoms or small molecules,
 try using a smaller value of the scaling factor for covalent radii</p>
+</li>
+</ol>
 <pre><code>zcoord; cvr_scaling 0.9; end
 </code></pre>
 
