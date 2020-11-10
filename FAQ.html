@@ -231,26 +231,26 @@ dummy center can confuse the optimizer.</li>
 enough away so that only one connection is generated.</li>
 </ol>
 <p>E.g., this input for acetylene will not use internals</p>
-<pre><code>           geometry
-             h  0  0  0
-             c  0  0  1
-             c  0  0  2.2
-             h  0  0  3.2
-           end
+<pre><code> geometry
+   h  0  0  0
+   c  0  0  1
+   c  0  0  2.2
+   h  0  0  3.2
+ end
 
-           but this one will
+ but this one will
 
-           geometry
-             zcoord
-               bond    2 3  3.0  cx constant
-               angle 1 2 3 90.0 hcx constant
-             end
-             h  0  0  0
-             c  0  0  1
-             x  3  0  1
-             c  0  0  2.2
-             h  0  0  3.2
-           end
+ geometry
+   zcoord
+     bond    2 3  3.0  cx constant
+     angle 1 2 3 90.0 hcx constant
+   end
+   h  0  0  0
+   c  0  0  1
+   x  3  0  1
+   c  0  0  2.2
+   h  0  0  3.2
+ end
 </code></pre>
 
 <ol>
@@ -298,37 +298,37 @@ number of iterations, then it may be restarted with the second job.</p>
     as in the original job.</li>
 </ul>
 <p>Job 1.</p>
-<pre><code>         start ammonia
-         permanent_dir /u/myfiles
+<pre><code> start ammonia
+ permanent_dir /u/myfiles
 
-         geometry
-           zmatrix
-             n
-             h 1 nh
-             h 1 nh 2 hnh
-             h 1 nh 2 hnh 3 hnh -1
-           variables
-             nh 1.
-             hnh 115.
-           end
-         end
+ geometry
+   zmatrix
+     n
+     h 1 nh
+     h 1 nh 2 hnh
+     h 1 nh 2 hnh 3 hnh -1
+   variables
+     nh 1.
+     hnh 115.
+   end
+ end
 
-         basis
-           n library 3-21g; h library 3-21g
-         end
+ basis
+   n library 3-21g; h library 3-21g
+ end
 
-         task scf optimize
+ task scf optimize
 </code></pre>
 
 <p>Job 2.</p>
-<pre><code>         restart ammonia
-         permanent_dir /u/myfiles
+<pre><code> restart ammonia
+ permanent_dir /u/myfiles
 
-         task scf optimize
+ task scf optimize
 </code></pre>
 
 <h1 id="execution-problems">Execution Problems<a class="headerlink" href="#execution-problems" title="Permanent link">&para;</a></h1>
-<h2 id="how-do-i-set-the-correct-value-for-armci_default_shmmax">How do I set the correct value for <code>ARMCI_DEFAULT_SHMMAX</code>?<a class="headerlink" href="#how-do-i-set-the-correct-value-for-armci_default_shmmax" title="Permanent link">&para;</a></h2>
+<h2 id="how-do-i-set-the-value-of-armci_default_shmmax">How do I set the value of <code>ARMCI_DEFAULT_SHMMAX</code>?<a class="headerlink" href="#how-do-i-set-the-value-of-armci_default_shmmax" title="Permanent link">&para;</a></h2>
 <p>Some ARMCI_NETWORK values (e.g. OPENIB) depend on the
 <code>ARMCI_DEFAULT_SHMMAX</code> value for large allocations of Global memory. We
 recommend a value of &ndash; at least &ndash; 2048, e.g. in bash shell parlance</p>
@@ -336,7 +336,7 @@ recommend a value of &ndash; at least &ndash; 2048, e.g. in bash shell parlance<
 </code></pre>
 
 <p>A value of 2048 for ARMCI_DEFAULT_SHMMAX corresponds to 2048 GBytes,
-equal to 2048*1024*1024=2147483648 bytes. For
+equal to 2048<em>1024</em>1024=2147483648 bytes. For
 ARMCI_DEFAULT_SHMMAX=2048 to work, it is necessary that kernel
 parameter <code>kernel.shmmax</code> to be greater than 2147483648. You can check
 the current value of <code>kernel.shmmax</code> on your system by typing</p>
