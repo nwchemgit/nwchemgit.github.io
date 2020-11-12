@@ -1060,7 +1060,7 @@ padding: 2px 5px;
 <br />
 Please apply the following patch:<br />
 1) cd $NWCHEM_TOP<br />
-2) wget <a target='blank' href="http://www.nwchem-sw.org/images/Tddft-bsse.patch.gz" class="external free">http://www.nwchem-sw.org/images/Tddft-bsse.patch.gz</a><br />
+2) wget <a target='blank' href="http://nwchemgit.github.io/images/Tddft-bsse.patch.gz" class="external free">http://nwchemgit.github.io/images/Tddft-bsse.patch.gz</a><br />
 3) gzip -d Tddft-bsse.patch.gz<br />
 4) patch -p0 &lt; Tddft-bsse.patch<br />
 5) recompile<br />
@@ -1078,7 +1078,7 @@ This will result in an executable that lets you do the calculation you specified
 <br />
 The next thing to worry about is what your calculation actually means. E.g. with 5 states (ground state + 4 excited states) on each monomer you can generate 25 different dimer states. As implemented the code will calculate the same number of states for the monomers and the dimer. Mapping the combinations of monomer states to dimer states is not something the code can do automatically so you will have to do this by hand. I assume that can be expected to work only with weak interactions between the monomers (but otherwise the BSSE is probably not the most important error anyway). <br />
 <br />
-Finally the functional you are using includes Grimme's dispersion corrections. These are based on a force field that has been optimized for the ground state only. Also, you will need the patch <a target='blank' href="http://www.nwchem-sw.org/images/Disp-bsse.patch.gz" class="external free">http://www.nwchem-sw.org/images/Disp-bsse.patch.gz</a> that fixes the combination of Grimme dispersion corrections and BSSE calculations. <br />
+Finally the functional you are using includes Grimme's dispersion corrections. These are based on a force field that has been optimized for the ground state only. Also, you will need the patch <a target='blank' href="http://nwchemgit.github.io/images/Disp-bsse.patch.gz" class="external free">http://nwchemgit.github.io/images/Disp-bsse.patch.gz</a> that fixes the combination of Grimme dispersion corrections and BSSE calculations. <br />
 <br />
 Huub
 </td>

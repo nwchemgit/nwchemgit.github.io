@@ -1068,7 +1068,7 @@ $ uname -rvm<br />
 
 <pre>cd /tmp
 su -c &quot;yum -y install wget gcc-gfortran openmpi-devel python-devel atlas-devel&quot;
-wget http://www.nwchem-sw.org/download.php?f=Nwchem-src-2014-01-28.tar.gz -O Nwchem-src-2014-01-28.tar.gz
+wget http://nwchemgit.github.io/download.php?f=Nwchem-src-2014-01-28.tar.gz -O Nwchem-src-2014-01-28.tar.gz
 tar zxf Nwchem-src-2014-01-28.tar.gz
 cd nwchem-src-2014-01-28/src
 sh ../../compile.sh 2&gt;&amp;1| tee ../build.log
@@ -1260,12 +1260,12 @@ MA error: MA_verify_allocator_stuff:
 		                        <td valign="top" class="post_body" height="65" colspan="2">Marcindulak<br />
 Please apply the following patch<br />
 <br />
-<a target='blank' href="http://www.nwchem-sw.org/images/Ga52.patch.gz" class="external free">http://www.nwchem-sw.org/images/Ga52.patch.gz</a><br />
+<a target='blank' href="http://nwchemgit.github.io/images/Ga52.patch.gz" class="external free">http://nwchemgit.github.io/images/Ga52.patch.gz</a><br />
 <br />
 To apply, please do the following<br />
 <br />
 cd $NWCHEM_TOP/src/<br />
-wget <a target='blank' href="http://www.nwchem-sw.org/images/Ga52.patch.gz" class="external free">http://www.nwchem-sw.org/images/Ga52.patch.gz</a><br />
+wget <a target='blank' href="http://nwchemgit.github.io/images/Ga52.patch.gz" class="external free">http://nwchemgit.github.io/images/Ga52.patch.gz</a><br />
 gzip -d Ga52.patch.gz<br />
 patch -p0 &lt; Ga52.patch<br />
 cd tools<br />
@@ -1440,8 +1440,8 @@ Maybe also this bug gives a hint: <a target='blank' href="https://bugzilla.redha
 		                        <td valign="top" class="post_body" height="65" colspan="2">This is what worked for me on a Fedora 20 x86_64 box<br />
 Used vanilla Nwchem-src-2014-01-28 tarbal;<br />
 Applied the two following patches<br />
-<a target='blank' href="http://www.nwchem-sw.org/images/Ga53_acc.patch.gz" class="external free">http://www.nwchem-sw.org/images/Ga53_acc.patch.gz</a><br />
-<a target='blank' href="http://www.nwchem-sw.org/images/Gcc48.patch.gz" class="external free">http://www.nwchem-sw.org/images/Gcc48.patch.gz</a><br />
+<a target='blank' href="http://nwchemgit.github.io/images/Ga53_acc.patch.gz" class="external free">http://nwchemgit.github.io/images/Ga53_acc.patch.gz</a><br />
+<a target='blank' href="http://nwchemgit.github.io/images/Gcc48.patch.gz" class="external free">http://nwchemgit.github.io/images/Gcc48.patch.gz</a><br />
 <br />
 Used the following compile.sh<br />
 
@@ -1640,7 +1640,7 @@ By the way, I would recommend using OpenBLAS instead of Atlas (since OpenBLAS is
 		                                     
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">Thanks, i hope the patches will get into the next nwchem release.<br />
-As for the openblas vs atlas i made two builds to be compared: <a target='blank' href="http://www.nwchem-sw.org/index.php/Special:AWCforum/st/id1145/official_RPMS_for_RHEL6_and_Fedo....html" class="external free">http://www.nwchem-sw.org/index.php/Special:AWCforum/st/id1145/official_RPMS_for_RHEL6_and_...</a><br />
+As for the openblas vs atlas i made two builds to be compared: <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id1145/official_RPMS_for_RHEL6_and_Fedo....html" class="external free">http://nwchemgit.github.io/index.php/Special:AWCforum/st/id1145/official_RPMS_for_RHEL6_and_...</a><br />
 I hope to get some feedback in that thread, so I can select the version of blas, taking into account the stability and performance of the<br />
 executables.
 </td>

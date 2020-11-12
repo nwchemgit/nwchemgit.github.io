@@ -1058,7 +1058,7 @@ padding: 2px 5px;
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">I run version 6.5+r26243 (Debian testing).<br />
 <br />
-I'm trying to get CIS frequencies, but whatever I tried so far ended up in a crash of the TDDFT gradient module with "tddft_grad_init: failed to read isroots". I tried the second example from <a target='blank' href="http://www.nwchem-sw.org/index.php/Excited-State_Calculations" class="external free">http://www.nwchem-sw.org/index.php/Excited-State_Calculations</a> but this did not work either. After adding "symmetry group c1" after geometry, I used as input:<br />
+I'm trying to get CIS frequencies, but whatever I tried so far ended up in a crash of the TDDFT gradient module with "tddft_grad_init: failed to read isroots". I tried the second example from <a target='blank' href="http://nwchemgit.github.io/index.php/Excited-State_Calculations" class="external free">http://nwchemgit.github.io/index.php/Excited-State_Calculations</a> but this did not work either. After adding "symmetry group c1" after geometry, I used as input:<br />
 <br />
 
 <pre>
@@ -1175,9 +1175,9 @@ TASK TDDFT OPTIMIZE
 TASK TDDFT FREQUENCIES
 </pre><br />
 <br />
-I cribbed from QA/tests/bf_cis, which actually seems to be basically the calculation you are trying here but with a somewhat updated input deck. It is properly documented in the NWChem 6.5 online docs: <a target='blank' href="http://www.nwchem-sw.org/index.php/Release65:Excited-State_Calculations#GRAD_--_analytical_TDDFT_gradients" class="external free">http://www.nwchem-sw.org/index.php/Release65:Excited-State_Calculations#GRAD_--_analytical...</a><br />
+I cribbed from QA/tests/bf_cis, which actually seems to be basically the calculation you are trying here but with a somewhat updated input deck. It is properly documented in the NWChem 6.5 online docs: <a target='blank' href="http://nwchemgit.github.io/index.php/Release65:Excited-State_Calculations#GRAD_--_analytical_TDDFT_gradients" class="external free">http://nwchemgit.github.io/index.php/Release65:Excited-State_Calculations#GRAD_--_analytical...</a><br />
 <br />
-The default documentation seems to still be for an older version, so you wouldn't see what is needed: <a target='blank' href="http://www.nwchem-sw.org/index.php/Excited-State_Calculations" class="external free">http://www.nwchem-sw.org/index.php/Excited-State_Calculations</a> (no mention of grad or civecs).
+The default documentation seems to still be for an older version, so you wouldn't see what is needed: <a target='blank' href="http://nwchemgit.github.io/index.php/Excited-State_Calculations" class="external free">http://nwchemgit.github.io/index.php/Excited-State_Calculations</a> (no mention of grad or civecs).
 </td>
 		                    </tr>
 		                                
@@ -1286,7 +1286,7 @@ The default documentation seems to still be for an older version, so you wouldn'
 		                        <td valign="top" class="post_body" height="65" colspan="2">A patch is now available to address this issue.<br />
 Once the patch is applied, you no longer will need to insert the <tt>civecs</tt> and <tt>grad</tt> lines in the input file<br />
 <br />
-<a target='blank' href="http://www.nwchem-sw.org/images/Tddft_grad.patch.gz" class="external free">http://www.nwchem-sw.org/images/Tddft_grad.patch.gz</a>
+<a target='blank' href="http://nwchemgit.github.io/images/Tddft_grad.patch.gz" class="external free">http://nwchemgit.github.io/images/Tddft_grad.patch.gz</a>
 </td>
 		                    </tr>
 		                                

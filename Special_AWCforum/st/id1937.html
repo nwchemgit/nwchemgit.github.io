@@ -1060,7 +1060,7 @@ padding: 2px 5px;
 <br />
 I'm having some difficulties getting the Xeon Phi offload working with NWChem 6.6. <br />
 <br />
-I <a target='blank' href="http://www.nwchem-sw.org/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi" class="external text">compiled</a> NWChem without errors, and the vectorization output during compilation showed that the offload sections were properly compiled. I do not have any problems executing the application, and NWChem identifies the Xeon Phi devices (verified with OFFLOAD_REPORT=2).<br />
+I <a target='blank' href="http://nwchemgit.github.io/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi" class="external text">compiled</a> NWChem without errors, and the vectorization output during compilation showed that the offload sections were properly compiled. I do not have any problems executing the application, and NWChem identifies the Xeon Phi devices (verified with OFFLOAD_REPORT=2).<br />
 <br />
 
 <pre>
@@ -1111,7 +1111,7 @@ NWC_RANKS_PER_DEVICE=1 mpirun -np 2 ./nwchem ./input.nw
 <br />
 The problem I'm having is that this is the only time OFFLOAD_REPORT output is generated during execution, even during the ccsd calculation which should also be offloaded. Since these reports are not being generated elsewhere, I can only conclude that the computations are handled by the CPU. I suspect the problem is with my input, and thus I'm hoping someone can help me come up with a working example. <br />
 <br />
-My input file is based on the ccsd <a target='blank' href="http://www.nwchem-sw.org/index.php/Release66:Sample#MP2_optimization_and_CCSD.28T.29_on_nitrogen" class="external text">sample</a>, and it runs very well on the CPU.<br />
+My input file is based on the ccsd <a target='blank' href="http://nwchemgit.github.io/index.php/Release66:Sample#MP2_optimization_and_CCSD.28T.29_on_nitrogen" class="external text">sample</a>, and it runs very well on the CPU.<br />
 <br />
 
 <pre>
@@ -1144,7 +1144,7 @@ task ccsd
 task ccsd+t(ccsd)
 </pre><br />
 <br />
-According to my sources, <a target='blank' href="https://software.intel.com/en-us/articles/nwchem-for-the-intel-xeon-phi-coprocessor" class="external text">Intel</a> and the <a target='blank' href="http://www.nwchem-sw.org/index.php/Release66:CCSD" class="external text">ccsd documentation</a>, I think that this input file should work and I do not understand why the calculation is not being offloaded. I've also tried all three versions of the ccsd calculation, and verified that NWC_RANKS_PER_DEVICE=0 runs exclusively on the CPU. I'm currently running the input file provide by the Intel source, but I may not have an answer until tomorrow because of the time required to solve each iteration.<br />
+According to my sources, <a target='blank' href="https://software.intel.com/en-us/articles/nwchem-for-the-intel-xeon-phi-coprocessor" class="external text">Intel</a> and the <a target='blank' href="http://nwchemgit.github.io/index.php/Release66:CCSD" class="external text">ccsd documentation</a>, I think that this input file should work and I do not understand why the calculation is not being offloaded. I've also tried all three versions of the ccsd calculation, and verified that NWC_RANKS_PER_DEVICE=0 runs exclusively on the CPU. I'm currently running the input file provide by the Intel source, but I may not have an answer until tomorrow because of the time required to solve each iteration.<br />
 <br />
 Also, to illustrate what my goals are: I'm not using NWChem to solve any particular problem, I'm 100% interested in utilizing the offload to Xeon Phi for performance testing and execution modeling. I just need an input file that will use NWChem in offload mode, reported correctly by OFFLOAD_REPORT.<br />
 <br />
@@ -1205,7 +1205,7 @@ Gary
 		                        <td valign="top" class="post_body" height="65" colspan="2">Gary<br />
 The problem with your input file is that is using a different (older) NWChem implementation of the CCSD(T) method that has been ported to the Intel MIC hardware yet.<br />
 As described in the documentation at<br />
-<a target='blank' href="http://www.nwchem-sw.org/index.php/Release66:TCE#CCSD.28T.29_and_MRCCSD.28T.29_implementations_for_Intel_MIC_architectures" class="external free">http://www.nwchem-sw.org/index.php/Release66:TCE#CCSD.28T.29_and_MRCCSD.28T.29_implementat...</a><br />
+<a target='blank' href="http://nwchemgit.github.io/index.php/Release66:TCE#CCSD.28T.29_and_MRCCSD.28T.29_implementations_for_Intel_MIC_architectures" class="external free">http://nwchemgit.github.io/index.php/Release66:TCE#CCSD.28T.29_and_MRCCSD.28T.29_implementat...</a><br />
 only the CCSD(T) and MRCCSD(T) part of the  TCE NWChem module have been ported to the Intel MIC HW.<br />
 <br />
 Here is the input file you will need to use<br />

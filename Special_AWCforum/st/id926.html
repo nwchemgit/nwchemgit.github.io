@@ -1057,7 +1057,7 @@ padding: 2px 5px;
 		                                     
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">On <br />
-<a target='blank' href="http://www.nwchem-sw.org/index.php/COSMO" class="external free">http://www.nwchem-sw.org/index.php/COSMO</a><br />
+<a target='blank' href="http://nwchemgit.github.io/index.php/COSMO" class="external free">http://nwchemgit.github.io/index.php/COSMO</a><br />
 which hasn't been updated since 2011, it says that <br />
 
 <pre>
@@ -1072,7 +1072,7 @@ However, brief testing indicates that while this was true in e.g. nwchem 6.1 and
 <br />
 Is this just a case of the manual lagging behind?<br />
 <br />
-There's nothing about the changed default on <a target='blank' href="http://www.nwchem-sw.org/index.php/NWChem_6.2" class="external free">http://www.nwchem-sw.org/index.php/NWChem_6.2</a> and I can't find any release notes in the sources.
+There's nothing about the changed default on <a target='blank' href="http://nwchemgit.github.io/index.php/NWChem_6.2" class="external free">http://nwchemgit.github.io/index.php/NWChem_6.2</a> and I can't find any release notes in the sources.
 </td>
 		                    </tr>
 		                                
@@ -1190,7 +1190,7 @@ niri.govind@pnl.gov
 As part of the provision for analytical gradients in COSMO there were a couple of additional changes that fixed problems related to geometry optimizations:<br />
 1. The sum of COSMO charges formally should equal the total charge in the cavity. Previously the COSMO charges were "corrected" to force this relationship to hold. However, doing that violated the variational nature of the total energy resulting in incorrect gradients. Therefore this "correction" has been removed.<br />
 2. In geometry optimizations problems arise when a pair of COSMO charges get very close. This leads to inaccurate gradients and strange steps in the geometry optimizations. Setting Rsolv to 0.5 screens away COSMO charges that are closer together than 0.5 Angstrom and eliminates this problem.<br />
-So you are right that rsolv has a new default in the NWChem-6.3. This has been updated the documentation for NWChem-6.3 at <a target='blank' href="http://www.nwchem-sw.org/index.php/Release62:COSMO_Solvation_Model" class="external free">http://www.nwchem-sw.org/index.php/Release62:COSMO_Solvation_Model</a> as far as I can see. Please let me know if you find an occurance that I have missed.<br />
+So you are right that rsolv has a new default in the NWChem-6.3. This has been updated the documentation for NWChem-6.3 at <a target='blank' href="http://nwchemgit.github.io/index.php/Release62:COSMO_Solvation_Model" class="external free">http://nwchemgit.github.io/index.php/Release62:COSMO_Solvation_Model</a> as far as I can see. Please let me know if you find an occurance that I have missed.<br />
 <br />
 I hope this resolves any confusion about this issue.<br />
 <br />

@@ -1083,7 +1083,7 @@ I run  2 example jobs in a linux cluster using 4 processor on 4 nodes, and they 
  There is an error related to the specified geometry
  _______________________________________________________</pre><br />
 Here is the input of SiC example<br />
-<a target='blank' href="http://www.nwchem-sw.org/index.php/NWPW#Optimizing_a_unit_cell_and_geometry_for_Silicon-Carbide" class="external text">SiC 8 atom cubic cell - geometry and unit cell optimization</a><br />
+<a target='blank' href="http://nwchemgit.github.io/index.php/NWPW#Optimizing_a_unit_cell_and_geometry_for_Silicon-Carbide" class="external text">SiC 8 atom cubic cell - geometry and unit cell optimization</a><br />
 <br />
 <br />
 (2) "Diamond 8 atom cubic cell - geometry and unit cell optimization", and I got another error&nbsp;:<br />
@@ -1103,7 +1103,7 @@ Fortran runtime error: Sequential READ or WRITE not allowed after EOF marker, po
 </pre><br />
 <br />
 and here is the input<br />
-<a target='blank' href="http://www.nwchem-sw.org/images/Diamond-band.nw" class="external text">Diamond 8 atom cubic cell - geometry and unit cell optimization</a><br />
+<a target='blank' href="http://nwchemgit.github.io/images/Diamond-band.nw" class="external text">Diamond 8 atom cubic cell - geometry and unit cell optimization</a><br />
 <br />
 Can anyone tell me what was the problem and provide me a fix? Thanks a lot.<br />
 <br />
@@ -1782,11 +1782,11 @@ Mickey
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">Mickey,<br />
 Please apply the patch provided below to makefile.h and recompile the nwpw directory<br />
-<a target='blank' href="http://www.nwchem-sw.org/images/Gcc46_nw611.patch.gz" class="external free">http://www.nwchem-sw.org/images/Gcc46_nw611.patch.gz</a><br />
+<a target='blank' href="http://nwchemgit.github.io/images/Gcc46_nw611.patch.gz" class="external free">http://nwchemgit.github.io/images/Gcc46_nw611.patch.gz</a><br />
 <br />
 This are the steps you need to take<br />
 1) cd $NWCHEM_TOP/src/config<br />
-2) wget <a target='blank' href="http://www.nwchem-sw.org/images/Gcc46_nw611.patch.gz" class="external free">http://www.nwchem-sw.org/images/Gcc46_nw611.patch.gz</a><br />
+2) wget <a target='blank' href="http://nwchemgit.github.io/images/Gcc46_nw611.patch.gz" class="external free">http://nwchemgit.github.io/images/Gcc46_nw611.patch.gz</a><br />
 3) gzip -d Gcc46_nw611.patch.g<br />
 4) patch -p0 &lt; Gcc46_nw611.patch<br />
 5) cd ../nwpw<br />

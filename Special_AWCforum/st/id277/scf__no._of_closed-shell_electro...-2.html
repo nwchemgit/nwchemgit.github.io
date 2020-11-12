@@ -1371,15 +1371,15 @@ niri.govind@pnnl.gov
 		                        <td valign="top" class="post_body" height="65" colspan="2">The reason seems to be that you calculate singlet with Hartree-Fock for (assumed in dft part) doublet.<br />
 Count the electrons in the system and set the correct multiplicity.<br />
 For Hartree-Fock:<br />
-<a target='blank' href="http://www.nwchem-sw.org/index.php/Hartree-Fock_Theory_for_Molecules#Wavefunction_type" class="external free">http://www.nwchem-sw.org/index.php/Hartree-Fock_Theory_for_Molecules#Wavefunction_type</a><br />
+<a target='blank' href="http://nwchemgit.github.io/index.php/Hartree-Fock_Theory_for_Molecules#Wavefunction_type" class="external free">http://nwchemgit.github.io/index.php/Hartree-Fock_Theory_for_Molecules#Wavefunction_type</a><br />
 for dft with:<br />
-<a target='blank' href="http://www.nwchem-sw.org/index.php/Density_Functional_Theory_for_Molecules#ODFT_and_MULT_--_Open_shell_systems" class="external free">http://www.nwchem-sw.org/index.php/Density_Functional_Theory_for_Molecules#ODFT_and_MULT_-...</a><br />
+<a target='blank' href="http://nwchemgit.github.io/index.php/Density_Functional_Theory_for_Molecules#ODFT_and_MULT_--_Open_shell_systems" class="external free">http://nwchemgit.github.io/index.php/Density_Functional_Theory_for_Molecules#ODFT_and_MULT_-...</a><br />
 In my impression (i may be wrong - don't know your system)<br />
 doing initially Hartree Fock geometry optimization and/or hybrid DFT is an overkill.<br />
 Maybe try just with PBE, and refine your results with PBE0 later.<br />
 This will offer you also a possibility to check dependence of your results on functional.<br />
 Note also that sometimes non-physical systems show convergence problems.<br />
-Or problems could be related to the basis set you use, maybe try ECP's (<a target='blank' href="http://www.nwchem-sw.org/index.php/ECP" class="external free">http://www.nwchem-sw.org/index.php/ECP</a>)?<br />
+Or problems could be related to the basis set you use, maybe try ECP's (<a target='blank' href="http://nwchemgit.github.io/index.php/ECP" class="external free">http://nwchemgit.github.io/index.php/ECP</a>)?<br />
 Check the example in the Nwchem source:<br />
 QA/tests/cu2_m06-l/cu2_m06-l.nw<br />
 I don't know what properties you are interested in, but the tiny 6-311G/6-31Gs basis will give you error of tenths of kcal/mol<br />

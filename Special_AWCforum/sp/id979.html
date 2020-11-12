@@ -1070,11 +1070,11 @@ When I use optimized LAPACK/BLAS that use 32-bit integer (a.k.a. integer*4 in Fo
 </pre>
 <br />
 If this still does not work, you might need recompiled (from scratch) the tools directory, after patching the tools GNUmakefile ($NWCHEM_TOP/src/tools/GNUmakefile) with the following patch<br />
-<a target='blank' href="http://www.nwchem-sw.org/images/GNUmakefile.toolsoct25.patch.gz" class="external free">http://www.nwchem-sw.org/images/GNUmakefile.toolsoct25.patch.gz</a><br />
+<a target='blank' href="http://nwchemgit.github.io/images/GNUmakefile.toolsoct25.patch.gz" class="external free">http://nwchemgit.github.io/images/GNUmakefile.toolsoct25.patch.gz</a><br />
 plus define the env. variables BLAS_LIB (same value as BLASOPT), plus BLAS_SIZE=4<br />
 In other words (the following instructions are for csh/tcsh)<br />
 1) cd NWCHEM_TOP/src/tools<br />
-2)  wget <a target='blank' href="http://www.nwchem-sw.org/images/GNUmakefile.toolsoct25.patch.gz" class="external free">http://www.nwchem-sw.org/images/GNUmakefile.toolsoct25.patch.gz</a><br />
+2)  wget <a target='blank' href="http://nwchemgit.github.io/images/GNUmakefile.toolsoct25.patch.gz" class="external free">http://nwchemgit.github.io/images/GNUmakefile.toolsoct25.patch.gz</a><br />
 3) gzip -d GNUmakefile.toolsoct25.patch.gz<br />
 4) patch -p0 &lt; GNUmakefile.toolsoct25.patch<br />
 5) rm -rf build install<br />
