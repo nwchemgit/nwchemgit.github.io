@@ -33,16 +33,40 @@ var linkSupportsPreload = DOMTokenListSupports(document.createElement("link").re
     if(linkSupportsPreload){
   // Dynamically load the things that relied on preload.
 	console.log(" @@@@ PRELOADING @@@ ");
-	document.write('<link rel="preload" as="style" onload="this.rel = \'stylesheet\'" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />');
-	document.write('<link rel="preload" as="style" onload="this.rel = \'stylesheet\'" href="css/theme.css" />');
-	document.write('<link rel="preload" as="style" onload="this.rel = \'stylesheet\'" href="css/theme_extra.css" />');
+	var fileref1=document.createElement("link")
+	fileref1.setAttribute("rel", "preload")
+	fileref1.setAttribute("as", "style")
+	fileref1.setAttribute("onload", "this.rel = \'stylesheet\'")
+	fileref1.setAttribute("href", "https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" )
+	var fileref2=document.createElement("link")
+	fileref2.setAttribute("rel", "preload")
+	fileref2.setAttribute("as", "style")
+	fileref2.setAttribute("onload", "this.rel = \'stylesheet\'")
+	fileref2.setAttribute("href", "css/theme.css")
+	var fileref3=document.createElement("link")
+	fileref3.setAttribute("rel", "preload")
+	fileref3.setAttribute("as", "style")
+	fileref3.setAttribute("onload", "this.rel = \'stylesheet\'")
+	fileref3.setAttribute("href", "css/theme_extra.css")
 }else{
     console.log("@@@@ NOT PRELOADING @@@ ");
-    document.write('<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />');
-    document.write('<link rel="stylesheet" href="css/theme_extra.css" >');
-    document.write('<link rel="stylesheet" href="css/theme.css" >');
+    var fileref1=document.createElement("link")
+    fileref1.setAttribute("rel", "stylesheet")
+    fileref1.setAttribute("href", "https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700")
+    var fileref2=document.createElement("link")
+    fileref2.setAttribute("rel", "stylesheet")
+    fileref2.setAttribute("href", "css/theme_extra.css")
+    var fileref3=document.createElement("link")
+    fileref3.setAttribute("rel", "stylesheet")
+    fileref3.setAttribute("href", "css/theme.css")
 }
+    if (typeof fileref2!="undefined")
+		document.getElementsByTagName("head")[0].appendChild(fileref2)
+    if (typeof fileref3!="undefined")
+		document.getElementsByTagName("head")[0].appendChild(fileref3)
 }
+    if (typeof fileref1!="undefined")
+		document.getElementsByTagName("head")[0].appendChild(fileref1)
 </script>
   
   <script>
