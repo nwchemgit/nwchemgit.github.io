@@ -10,31 +10,40 @@
   <link rel="canonical" href="https://nwchemgit.github.io/index.html">
   <link rel="shortcut icon" href="img/favicon.ico">
   <title>NWChem Website - NWChem</title>
-  <link
-  rel="preload"
-  as="style"
-  onload="this.rel = 'stylesheet'"
-    href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-  <noscript>
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
-  </noscript>
-  
-  <link
-  rel="stylesheet"
-    href="css/theme.css" />
-  
-  <link
-  rel="preload"
-  as="style"
-  onload="this.rel = 'stylesheet'"
-    href="css/theme_extra.css" />
-  <noscript>
-  <link
-    rel="stylesheet"
-    href="css/theme_extra.css" />
-  </noscript>
+
+<script>
+function load_theme(){
+var DOMTokenListSupports = function(tokenList, token) {
+  if (!tokenList || !tokenList.supports) {
+    return;
+  }
+  try {
+    return tokenList.supports(token);
+  } catch (e) {
+    if (e instanceof TypeError) {
+      console.log("The DOMTokenList doesn't have a supported tokens list");
+    } else {
+      console.error("That shouldn't have happened");
+    }
+  }
+};
+
+var linkSupportsPreload = DOMTokenListSupports(document.createElement("link").relList, "preload");
+//    if((navigator.userAgent.toLowerCase("chrome") > -1) && (!linkSupportsPreload)){
+    if(linkSupportsPreload){
+  // Dynamically load the things that relied on preload.
+	console.log(" @@@@ PRELOADING @@@ ");
+	document.write('<link rel="preload" as="style" onload="this.rel = \'stylesheet\'" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />');
+	document.write('<link rel="preload" as="style" onload="this.rel = \'stylesheet\'" href="css/theme.css" />');
+	document.write('<link rel="preload" as="style" onload="this.rel = \'stylesheet\'" href="css/theme_extra.css" />');
+}else{
+    console.log("@@@@ NOT PRELOADING @@@ ");
+    document.write('<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />');
+    document.write('<link rel="stylesheet" href="css/theme_extra.css" >');
+    document.write('<link rel="stylesheet" href="css/theme.css" >');
+}
+}
+</script>
   
   <script>
     // Current page data
@@ -48,7 +57,10 @@
   
 </head>
 
-<body class="wy-body-for-nav" role="document">
+  <body  class="wy-body-for-nav" role="document">
+        <script>
+	  load_theme();
+    </script>
 
   <div class="wy-grid-for-nav">
 
@@ -251,6 +263,7 @@ DOI: <a href="http://dx.doi.org/10.1063/5.0004997">10.1063/5.0004997</a>  </p>
             SphinxRtdTheme.Navigation.enable(true);
         };
     </script>
+
 
 </body>
 </html>
