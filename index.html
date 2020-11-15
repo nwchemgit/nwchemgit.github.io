@@ -48,6 +48,16 @@ var linkSupportsPreload = DOMTokenListSupports(document.createElement("link").re
 	fileref3.setAttribute("as", "style")
 	fileref3.setAttribute("onload", "this.rel = \'stylesheet\'")
 	fileref3.setAttribute("href", "css/theme_extra.css")
+	var fileref4=document.createElement("link")
+	fileref4.setAttribute("rel", "preload")
+	fileref4.setAttribute("as", "font")
+	fileref4.setAttribute("type", "font/woff2")
+	fileref4.setAttribute("href", "fonts/fontawesome-webfont.woff2?v=4.7.0")
+	var fileref5=document.createElement("link")
+	fileref5.setAttribute("rel", "preload")
+	fileref5.setAttribute("as", "font")
+	fileref5.setAttribute("type", "font/woff2")
+	fileref5.setAttribute("href", "fonts/RobotoSlab/roboto-slab-v7-bold.woff2")
 }else{
     console.log("@@@@ NOT PRELOADING @@@ ");
     var fileref1=document.createElement("link")
@@ -60,13 +70,15 @@ var linkSupportsPreload = DOMTokenListSupports(document.createElement("link").re
     fileref3.setAttribute("rel", "stylesheet")
     fileref3.setAttribute("href", "css/theme.css")
 }
-    if (typeof fileref2!="undefined")
-		document.getElementsByTagName("head")[0].appendChild(fileref2)
-    if (typeof fileref3!="undefined")
-		document.getElementsByTagName("head")[0].appendChild(fileref3)
-}
     if (typeof fileref1!="undefined")
-		document.getElementsByTagName("head")[0].appendChild(fileref1)
+	document.getElementsByTagName("head")[0].appendChild(fileref1)
+    if (typeof fileref2!="undefined")
+	document.getElementsByTagName("head")[0].appendChild(fileref2)
+    if (typeof fileref3!="undefined")
+	document.getElementsByTagName("head")[0].appendChild(fileref3)
+    if (typeof fileref4!="undefined")
+	document.getElementsByTagName("head")[0].appendChild(fileref4)
+}
 </script>
   
   <script>
