@@ -53,11 +53,13 @@ var linkSupportsPreload = DOMTokenListSupports(document.createElement("link").re
 	fileref4.setAttribute("as", "font")
 	fileref4.setAttribute("type", "font/woff2")
 	fileref4.setAttribute("href", "fonts/fontawesome-webfont.woff2?v=4.7.0")
+	fileref4.setAttribute("crossorigin", "use-credentials")
 	var fileref5=document.createElement("link")
 	fileref5.setAttribute("rel", "preload")
 	fileref5.setAttribute("as", "font")
 	fileref5.setAttribute("type", "font/woff2")
 	fileref5.setAttribute("href", "fonts/RobotoSlab/roboto-slab-v7-bold.woff2")
+	fileref5.setAttribute("crossorigin", "use-credentials")
 }else{
     console.log("@@@@ NOT PRELOADING @@@ ");
     var fileref1=document.createElement("link")
@@ -78,6 +80,8 @@ var linkSupportsPreload = DOMTokenListSupports(document.createElement("link").re
 	document.getElementsByTagName("head")[0].appendChild(fileref3)
     if (typeof fileref4!="undefined")
 	document.getElementsByTagName("head")[0].appendChild(fileref4)
+    if (typeof fileref5!="undefined")
+	document.getElementsByTagName("head")[0].appendChild(fileref5)
 }
 </script>
   
