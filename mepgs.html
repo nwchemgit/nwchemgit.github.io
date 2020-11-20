@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://nwchemgit.github.io/mepgs.html">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Mepgs - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Mepgs";
+    var mkdocs_page_input_path = "mepgs.md";
+    var mkdocs_page_url = "/mepgs.html";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">User Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Download.html">Download</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Molecular-Dynamics.html">Quantum Molecular Dynamics</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="EMSL_Arrows.html">EMSL Arrows</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Mepgs</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/mepgs.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="mepgs">MEPGS<a class="headerlink" href="#mepgs" title="Permanent link">&para;</a></h2>
+<p>The MEPGS module performs a search for the two critical points on the
+potential energy surface connected to a saddle point of the molecule
+defined by input using the <code>GEOMETRY</code> directive (see Section
+<a href="Geometry.html">geometry</a> ).
+The algorithm programmed in MEPGS is a <strong>constrained</strong> trust region
+quasi-newton optimization and approximate energy Hessian updates.</p>
+<p>Optional input for this module is specified within the compound
+directive,</p>
+<pre><code>      MEPGS 
+        OPTTOL &lt;real opttol default 3e-4&gt;
+        EPREC &lt;real eprec default 1e-7&gt;
+        STRIDE &lt;real stride default 0.1&gt;
+        EVIB &lt;real evib default 1e-4&gt;
+        MAXMEP &lt;integer maxiter default 250&gt;
+        MAXITER &lt;integer maxiter default 20&gt;
+        INHESS &lt;integer inhess default 2&gt;
+        (BACKWARD || FORWARD) &lt;string default both&gt;
+        (MSWG || NOMSWG) &lt;string default NOMSWG&gt;
+        (XYZ || NOXYZ) 
+      END
+</code></pre>
+
+<h3 id="convergence-criteria">Convergence criteria<a class="headerlink" href="#convergence-criteria" title="Permanent link">&para;</a></h3>
+<p>The user may request a specific value for the tolerance with the keyword
+<code>OPTTOL</code> which will couple all the convergence criteria in the following
+way:</p>
+<pre><code>             GRMS   1.0*OPTTOL
+             GMAX   1.5*OPTTOL
+             XRMS   4.0*OPTTOL
+             XMAX   6.0*OPTTOL
+</code></pre>
+
+<h3 id="available-precision">Available precision<a class="headerlink" href="#available-precision" title="Permanent link">&para;</a></h3>
+<pre><code>    EPREC &lt;real eprec default 1e-7&gt;
+</code></pre>
+<p>In performing a constrained trust region optimization the precision of
+the energy is coupled to the convergence criteria (see Section
+<a href="tropt.html">TROPT</a> ).
+Note that the default EPREC for DFT calculations is 5e-6 instead of 1e-7.</p>
+<h3 id="controlling-the-step-length">Controlling the step length<a class="headerlink" href="#controlling-the-step-length" title="Permanent link">&para;</a></h3>
+<pre><code>        STRIDE &lt;real stride default 0.1&gt;
+</code></pre>
+
+<p>A dynamic stride (<code>stride</code>) is used to control the step length during
+the minimum energy path walking when taking the Euler step as starting
+point.</p>
+<h3 id="moving-away-from-the-saddle-point">Moving away from the saddle point<a class="headerlink" href="#moving-away-from-the-saddle-point" title="Permanent link">&para;</a></h3>
+<pre><code>        EVIB &lt;real evib default 1e-4&gt;
+</code></pre>
+
+<p>The expected decrease in energy (<code>evib</code>) assuming a quadratic
+approximation around the saddle structure to be obtained.</p>
+<h3 id="maximum-number-of-mepgs-steps">Maximum number of MEPGS steps<a class="headerlink" href="#maximum-number-of-mepgs-steps" title="Permanent link">&para;</a></h3>
+<pre><code>        MAXMEP &lt;integer maxmep default 250&gt;
+</code></pre>
+
+<p>By default at most 250 minimum energy path steps will be taken, but this
+may be modified with this directive.</p>
+<h3 id="maximum-number-of-steps">Maximum number of steps<a class="headerlink" href="#maximum-number-of-steps" title="Permanent link">&para;</a></h3>
+<pre><code>        MAXITER &lt;integer maxiter default 20&gt;
+</code></pre>
+
+<p>By default at most 20 <strong>constrained</strong> geometry optimization steps will
+be taken, but this may be modified with this directive.</p>
+<h3 id="initial-hessian">Initial Hessian<a class="headerlink" href="#initial-hessian" title="Permanent link">&para;</a></h3>
+<pre><code>        INHESS &lt;integer inhess default 2&gt;
+</code></pre>
+
+<p>With this option the MEPGS module will be able to transform Cartesian
+Hessian from previous frequency calculation.</p>
+<h3 id="selecting-the-side-to-traverse">Selecting the side to traverse<a class="headerlink" href="#selecting-the-side-to-traverse" title="Permanent link">&para;</a></h3>
+<pre><code>        (BACKWARD || FORWARD) &lt;string default both&gt;
+</code></pre>
+
+<p>With this option the MEPGS module will select which side of the minimum
+energy path to explore. By default both sides are explored for a MEPGS run.</p>
+<h3 id="using-mass">Using mass<a class="headerlink" href="#using-mass" title="Permanent link">&para;</a></h3>
+<pre><code>        (MSWG || NOMSWG) &lt;string default NOMSWG&gt;
+</code></pre>
+
+<p>With this option the MEPGS will trigger the use of mass when following
+the minimum energy path. Mass is not used as default, if mass is used
+then this formally becomes an intrinsic reaction coordinate.</p>
+<h3 id="minimum-energy-path-saved-xyz-file">Minimum energy path saved XYZ file<a class="headerlink" href="#minimum-energy-path-saved-xyz-file" title="Permanent link">&para;</a></h3>
+<pre><code>        XYZ [&lt;string xyz default $fileprefix&gt;]
+        NOXYZ
+</code></pre>
+
+<p>The <code>XYZ</code> directive causes the geometry at each calculated structure on
+the minimum energy path to be output into file in the permanent
+directory in XYZ format. The optional string will prefix the filename.
+The <code>NOXYZ</code> directive turns this off.</p>
+<p>For example, the input</p>
+<pre><code>        mepgs; xyz ; end
+</code></pre>
+
+<p>will cause a trajectory file filename.xyz to be created in the permanent
+directory.</p>
+<h3 id="mepgs-usage">MEPGS usage<a class="headerlink" href="#mepgs-usage" title="Permanent link">&para;</a></h3>
+<pre><code>        start somename
+        geometry; &lt;saddle point body &gt; ; end   
+        task theory freq
+        freq; reuse somename.hess ; end
+        mepgs; &lt;mepgs options&gt; ; end
+        task theory mepgs
+</code></pre>
+
+<p>In the above example, after performing a frequency analysis for the
+saddle point, the information of the force constant matrix is reused
+(freq directive) in order to be able to follow the transition state
+mode.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

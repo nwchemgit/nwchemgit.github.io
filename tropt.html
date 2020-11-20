@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://nwchemgit.github.io/tropt.html">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Tropt - NWChem</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Tropt";
+    var mkdocs_page_input_path = "tropt.md";
+    var mkdocs_page_url = "/tropt.html";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> NWChem</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Home.html">User Documentation</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Download.html">Download</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Quantum-Molecular-Dynamics.html">Quantum Molecular Dynamics</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Examples.html">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">Compiling NWChem from source</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived Forum</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="EMSL_Arrows.html">EMSL Arrows</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">NWChem</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Tropt</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/tropt.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="tropt">TROPT<a class="headerlink" href="#tropt" title="Permanent link">&para;</a></h2>
+<p>The TROPT module is one of three drivers (see Section
+<a href="Geometry-Optimization.html#geometry-optimization-with-stepper">Stepper</a>
+for documentation on STEPPER and Section
+<a href="Geometry-Optimization.html#geometry-optimization-with-DRIVER">Driver module</a>
+for documentation on DRIVER) to perform a geometry optimization function
+on the molecule defined by input using the <code>GEOMETRY</code> directive (see
+Section <a href="Geometry.html">Geometry</a>).
+Geometry optimization is either an energy minimization or a transition
+state optimization. The algorithm programmed in TROPT is a trust region
+quasi-newton optimization and approximate energy Hessian updates.</p>
+<p>TROPT is <strong>not</strong> selected by default out of the two available modules to
+perform geometry optimization. In order to force use of TROPT (e.g.,
+because a previous optimization used STEPPER or DRIVER) provide a TROPT
+input block (below) — even an empty block will force use of TROPT.</p>
+<p>Optional input for this module is specified within the compound
+directive,</p>
+<pre><code>      TROPT 
+        (LOOSE || DEFAULT || TIGHT)
+        GMAX &lt;real value&gt;
+        GRMS &lt;real value&gt;
+        XMAX &lt;real value&gt;
+        XRMS &lt;real value&gt;
+
+        OPTTOL &lt;real opttol default 3e-4&gt;
+
+        EPREC &lt;real eprec default 1e-7&gt;
+
+        TRUST &lt;real trust default 0.3&gt;
+
+        CLEAR
+        REDOAUTOZ
+
+        INHESS &lt;integer inhess default 0&gt;
+
+        (MODDIR || VARDIR) &lt;integer dir default 0&gt;
+        (FIRSTNEG || NOFIRSTNEG)
+
+        MAXITER &lt;integer maxiter default 20&gt;
+
+        BSCALE &lt;real BSCALE default 1.0&gt;
+        ASCALE &lt;real ASCALE default 0.25&gt;
+        TSCALE &lt;real TSCALE default 0.1&gt;
+        HSCALE &lt;real HSCALE default 1.0&gt;
+
+        PRINT ...
+
+        XYZ [&lt;string xyz default $file_prefix$&gt;]
+        NOXYZ
+
+      END
+</code></pre>
+
+<h3 id="convergence-criteria">Convergence criteria<a class="headerlink" href="#convergence-criteria" title="Permanent link">&para;</a></h3>
+<pre><code>        (LOOSE || DEFAULT || TIGHT)
+        GMAX &lt;real value&gt;
+        GRMS &lt;real value&gt;
+        XMAX &lt;real value&gt;
+        XRMS &lt;real value&gt;
+
+        OPTTOL  &lt;real value&gt;
+</code></pre>
+
+<p>The defaults may be used, or the directives <code>LOOSE</code>, <code>DEFAULT</code>, or
+<code>TIGHT</code> specified to use standard sets of values, or the individual
+criteria adjusted. All criteria are in atomic units. <code>GMAX</code> and <code>GRMS</code>
+control the maximum and root mean square gradient in the coordinates
+being used (Z-matrix, redundant internals, or Cartesian). <code>XMAX</code> and
+<code>XRMS</code> control the maximum and root mean square of the Cartesian step.</p>
+<pre><code>                      LOOSE    DEFAULT    TIGHT
+             GMAX   0.0045d0   0.00045   0.000015   
+             GRMS   0.0030d0   0.00030   0.00001
+             XMAX   0.0054d0   0.00180   0.00006
+             XRMS   0.0036d0   0.00120   0.00004
+</code></pre>
+
+<p>Additionally the user may request a specific value for the tolerance
+with the keyword <code>OPTTOL</code> which will couple all the convergence criteria
+in the following way:</p>
+<pre><code>             GRMS   1.0*OPTTOL
+             GMAX   1.5*OPTTOL
+             XRMS   4.0*OPTTOL
+             XMAX   6.0*OPTTOL
+</code></pre>
+
+<p>Note that GMAX and GRMS used for convergence of geometry may
+significantly vary in different coordinate systems such as Z-matrix,
+redundant internals, or Cartesian. The coordinate system is defined in
+the input file (default is Z-matrix). Therefore the choice of coordinate
+system may slightly affect converged energy. Although in most cases XMAX
+and XRMS are last to converge which are always done in Cartesian
+coordinates, which insures convergence to the same geometry in different
+coordinate systems.</p>
+<p>The old criterion may be recovered with the input</p>
+<pre><code>       gmax 0.0008; grms 1; xrms 1; xmax 1
+</code></pre>
+
+<h3 id="available-precision">Available precision<a class="headerlink" href="#available-precision" title="Permanent link">&para;</a></h3>
+<pre><code>        EPREC &lt;real eprec default 1e-7&gt;
+</code></pre>
+
+<p>In performing a trust region optimization the precision of the energy is
+coupled to the convergence criteria. As mentioned above in most cases
+XMAX and XRMS are last to converge, thus, an accelerated converge is
+triggered in TROPT when GMAX and GRMS are already converged and the
+corresponding energy change with respect to the previous point is below
+the EPREC threshold, then, the structure is treated as optimized. This
+is used as an accelerated convergence criteria to avoid long tail in the
+optimization process. This will increase the speed of an optimization in
+most of the cases but it will be somehow cumbersome when dealing with
+flat energy surfaces, in this case a more tight EPREC value is
+recommended. Note that the default EPREC for DFT calculations is 5e-6
+instead of 1e-7.</p>
+<h3 id="controlling-the-step-length">Controlling the step length<a class="headerlink" href="#controlling-the-step-length" title="Permanent link">&para;</a></h3>
+<pre><code>        TRUST &lt;real trust default 0.3&gt;
+</code></pre>
+
+<p>A dynamic trust radius (<code>trust</code>) is used to control the step during
+optimization processes both minimization and saddle-point searches. It
+defaults to 0.3 for minimizations and 0.1 for saddle-point searches.</p>
+<h3 id="backstepping-in-tropt">Backstepping in TROPT<a class="headerlink" href="#backstepping-in-tropt" title="Permanent link">&para;</a></h3>
+<p>If a step taken during the optimization is too large or in the wrong
+direction (e.g., the step causes the energy to go up for a
+minimization), the TROPT optimizer will automatically “backstep” and
+reduce the current value of the trust radius in order to avoid a
+permanent “backsteping”.</p>
+<h3 id="maximum-number-of-steps">Maximum number of steps<a class="headerlink" href="#maximum-number-of-steps" title="Permanent link">&para;</a></h3>
+<pre><code>        MAXITER &lt;integer maxiter default 20&gt;
+</code></pre>
+
+<p>By default at most 20 geometry optimization steps will be taken, but
+this may be modified with this directive.</p>
+<h3 id="discard-restart-information">Discard restart information<a class="headerlink" href="#discard-restart-information" title="Permanent link">&para;</a></h3>
+<pre><code>        CLEAR
+</code></pre>
+
+<p>By default TROPT reuses Hessian information from a previous
+optimization, and, to facilitate a restart also stores which mode is
+being followed for a saddle-point search. This option deletes all
+restart data.</p>
+<h3 id="regenerate-internal-coordinates">Regenerate internal coordinates<a class="headerlink" href="#regenerate-internal-coordinates" title="Permanent link">&para;</a></h3>
+<pre><code>        REDOAUTOZ
+</code></pre>
+
+<p>Deletes Hessian data and regenerates internal coordinates at the current
+geometry. Useful if there has been a large change in the geometry that
+has rendered the current set of coordinates invalid or non-optimal.</p>
+<h3 id="initial-hessian">Initial Hessian<a class="headerlink" href="#initial-hessian" title="Permanent link">&para;</a></h3>
+<pre><code>        INHESS &lt;integer inhess default 0&gt;
+</code></pre>
+
+<ul>
+<li>
+<p>0 = Default &hellip; use restart data if available, otherwise use
+    diagonal guess.</p>
+</li>
+<li>
+<p>1 = Use diagonal initial guess.</p>
+</li>
+<li>
+<p>2 = Use restart data if available, otherwise transform Cartesian
+    Hessian from previous frequency calculation.</p>
+</li>
+</ul>
+<p>In addition, the diagonal elements of the initial Hessian for internal
+coordinates may be scaled using separate factors for bonds, angles and
+torsions with the following</p>
+<pre><code>        BSCALE &lt;real bscale default 1.0&gt;
+        ASCALE &lt;real ascale default 0.25&gt;
+        TSCALE &lt;real tscale default 0.1&gt;
+</code></pre>
+
+<p>These values typically give a two-fold speedup over unit values, based
+on about 100 test cases up to 15 atoms using 3-21g and 6-31g* SCF.
+However, if doing many optimizations on physically similar systems it
+may be worth fine tuning these parameters.</p>
+<p>Finally, the entire Hessian from any source may be scaled by a factor
+using the directive</p>
+<pre><code>        HSCALE &lt;real hscale default 1.0&gt;
+</code></pre>
+
+<p>It might be of utility, for instance, when computing an initial Hessian
+using SCF to start a large MP2 optimization. The SCF vibrational modes
+are expected to be stiffer than the MP2, so scaling the initial Hessian
+by a number less than one might be beneficial.</p>
+<h3 id="mode-or-variable-to-follow-to-saddle-point">Mode or variable to follow to saddle point<a class="headerlink" href="#mode-or-variable-to-follow-to-saddle-point" title="Permanent link">&para;</a></h3>
+<pre><code>        (MODDIR || VARDIR) &lt;integer dir default 0&gt;
+        (FIRSTNEG || NOFIRSTNEG)
+</code></pre>
+
+<p>When searching for a transition state the program, by default, will take
+an initial step uphill and then do mode following using a fuzzy maximum
+overlap (the lowest eigen-mode with an overlap with the previous search
+direction of 0.7 times the maximum overlap is selected). Once a negative
+eigen-value is found, that mode is followed regardless of overlap.</p>
+<p>The initial uphill step is appropriate if the gradient points roughly in
+the direction of the saddle point, such as might be the case if a
+constrained optimization was performed at the starting geometry.
+Alternatively, the initial search direction may be chosen to be along a
+specific internal variable (using the directive <code>VARDIR</code>) or along a
+specific eigen-mode (using <code>MODDIR</code>). Following a variable might be
+valuable if the initial gradient is either very small or very large.
+Note that the eigen-modes in the optimizer have next-to-nothing to do
+with the output from a frequency calculation. You can examine the
+eigen-modes used by the optimizer with</p>
+<pre><code>         tropt; print hvecs; end
+</code></pre>
+<p>The selection of the first negative mode is usually a good choice if the
+search is started in the vicinity of the transition state and the
+initial search direction is satisfactory. However, sometimes the first
+negative mode might not be the one of interest (e.g., transverse to the
+reaction direction). If <code>NOFIRSTNEG</code> is specified, the code will not
+take the first negative direction and will continue doing mode-following
+until that mode goes negative.</p>
+<h3 id="optimization-history-as-xyz-file">Optimization history as XYZ file<a class="headerlink" href="#optimization-history-as-xyz-file" title="Permanent link">&para;</a></h3>
+<pre><code>        XYZ [&lt;string xyz default $fileprefix&gt;]
+        NOXYZ
+</code></pre>
+
+<p>The <code>XYZ</code> directive causes the geometry at each step to be output into
+file in the permanent directory in XYZ format. The optional string will
+prefix the filename. The <code>NOXYZ</code> directive turns this off.</p>
+<p>For example, the input</p>
+<pre><code>        tropt; xyz ; end
+</code></pre>
+
+<p>will cause a trajectory file filename.xyz to be created in the permanent
+directory.</p>
+<h3 id="print-options">Print options<a class="headerlink" href="#print-options" title="Permanent link">&para;</a></h3>
+<p>The UNIX command <code>"egrep '^@' &lt; output"</code> will extract a pretty table
+summarizing the optimization.</p>
+<p>If you specify the NWChem input</p>
+<pre><code>          scf; print none; end
+          tropt; print low; end
+          task scf optimize
+</code></pre>
+
+<p>you’ll obtain a pleasantly terse output.</p>
+<p>For more control, these options for the standard print directive are
+recognized</p>
+<ul>
+<li>
+<p><code>debug</code> - prints a large amount of data. Don’t use in parallel.</p>
+</li>
+<li>
+<p><code>high</code> - print the search direction in internals</p>
+</li>
+<li>
+<p><code>default</code> - prints geometry for each major step (not during the line
+    search), gradient in internals (before and after application of
+    constraints)</p>
+</li>
+<li>
+<p><code>low</code> - prints convergence and energy information. At convergence
+    prints final geometry, change in internals from initial geometry</p>
+</li>
+</ul>
+<p>and these specific print options</p>
+<ul>
+<li>
+<p><code>finish</code> (low) - print geometry data at end of calculation</p>
+</li>
+<li>
+<p><code>bonds</code> (default) - print bonds at end of calculation</p>
+</li>
+<li>
+<p><code>angles</code> (default) - print angles at end of calculation</p>
+</li>
+<li>
+<p><code>hvecs</code> (never) - print eigen-values/vectors of the Hessian</p>
+</li>
+<li>
+<p><code>searchdir</code> (high) - print the search direction in internals</p>
+</li>
+<li>
+<p>‘<code>internal gradient</code>’ (default) - print the gradient in internals</p>
+</li>
+<li>
+<p><code>sadmode</code> (default) - print the mode being followed to the saddle
+    point</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
