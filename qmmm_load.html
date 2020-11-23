@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://nwchemgit.github.io/qmmm_method.html">
+  <link rel="canonical" href="https://nwchemgit.github.io/qmmm_load.html">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Qmmm method - NWChem</title>
+  <title>Qmmm load - NWChem</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Qmmm method";
-    var mkdocs_page_input_path = "qmmm_method.md";
-    var mkdocs_page_url = "/qmmm_method.html";
+    var mkdocs_page_name = "Qmmm load";
+    var mkdocs_page_input_path = "qmmm_load.md";
+    var mkdocs_page_url = "/qmmm_load.html";
   </script>
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
@@ -125,10 +125,10 @@
     
       
     
-    <li>Qmmm method</li>
+    <li>Qmmm load</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/qmmm_method.md"
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/qmmm_load.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -139,16 +139,15 @@
           <div role="main">
             <div class="section">
               
-                <pre><code>  method   [method1]  [method2]  [method3]
+                <h3 id="qmmm-load">QMMM load<a class="headerlink" href="#qmmm-load" title="Permanent link">&para;</a></h3>
+<pre><code>load  &lt; esp &gt; [&lt;filename&gt;]
 </code></pre>
 
-<p>This directive controls which optimization algorithm will be used for the regions as defined by [[qmmm_region|Qmmm_region]] directive.
-The allowed values are <code>bfgs</code> aka <a href="Geometry-Optimization.html#geometry-optimization-with-driver">DRIVER</a>,
-<code>lbfgs</code> limited memory version of quasi-newton,
-and <code>sd</code> simple steepest descent algorithm.
-The use of this directive is not recommended in all but special cases. In particular, 
-<code>bfgs</code> should be used for QM region if there are any constraints,
-<code>sd</code> method should always be used for classical solute and solvent atoms with shake constraints.</p>
+<p>This directive instructs to load external file (located in permanent
+directory) containing esp charges for QM region. If filename is not
+provided it will be constructed from the name of the restart file by
+replacing &ldquo;.rst&rdquo; suffix with &ldquo;.esp&rdquo;. Note that file containing esp
+charges is always generated whenever esp charge calculation is performed</p>
               
             </div>
           </div>
