@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://nwchemgit.github.io/qmmm_method.html">
+  <link rel="canonical" href="https://nwchemgit.github.io/QMMM_QMMM_Parameters.html">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Qmmm method - NWChem</title>
+  <title>QM/MM parameters - NWChem</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Qmmm method";
-    var mkdocs_page_input_path = "qmmm_method.md";
-    var mkdocs_page_url = "/qmmm_method.html";
+    var mkdocs_page_name = "QM/MM parameters";
+    var mkdocs_page_input_path = "QMMM_QMMM_Parameters.md";
+    var mkdocs_page_url = "/QMMM_QMMM_Parameters.html";
   </script>
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
@@ -125,10 +125,10 @@
     
       
     
-    <li>Qmmm method</li>
+    <li>QM/MM parameters</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/qmmm_method.md"
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/QMMM_QMMM_Parameters.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -139,16 +139,45 @@
           <div role="main">
             <div class="section">
               
-                <pre><code>  method   [method1]  [method2]  [method3]
+                <h1 id="qmmm-parameters">QM/MM parameters<a class="headerlink" href="#qmmm-parameters" title="Permanent link">&para;</a></h1>
+<p>The QM/MM interface parameters define the interaction between classical
+and quantum regions. </p>
+<pre><code> qmmm  
+ [ [eref](qmmm_eref.md) &lt;double precision default 0.0d0&gt;]  
+ [ [bqzone](qmmm_bq_zone.md) &lt;double precision default 9.0d0&gt;]  
+ [ [mm_charges](qmmm_mm_charges.md) [exclude &lt;(none||all||linkbond||linkbond_H) default none&gt;]  
+          [ expand  &lt;none||all||solute||solvent&gt; default none]  
+          [ update  &lt;integer default 0&gt;]   
+ [ [link_atoms](qmmm_link_atoms.md) &lt;(hydrogen||halogen) default hydrogen&gt;]  
+ [ [link_ecp](qmmm_link_ecp.md)  &lt;(auto||user) default auto&gt;]  
+ [ [region](qmmm_region.md)   &lt; [region1]  [region2]  [region3] &gt; ]  
+ [ [method](qmmm_method.md)   [method1]  [method2]  [method3]  ]  
+ [ [maxiter](Qmmm_maxiter.md)  [maxiter1] [maxiter2] [maxiter3] ]  
+ [ [ncycles](Qmmm_ncycles.md)  &lt; [number] default 1 &gt; ]  
+ [ [density](Qmmm_density.md)  [espfit] [static] [dynamical] ]  
+ [ [xyz](qmmm_xyz.md)  ]  
+ [ [convergence](Qmmm_convergence.md) &lt;double precision default 1.0d-4&gt;] ]  
+ [ [load](qmmm_load.md) ]  
+ [ [nsamples](Qmmm_nsamples.md) ]  
+ end
 </code></pre>
 
-<p>This directive controls which optimization algorithm will be used for the regions as defined by [[qmmm_region|Qmmm_region]] directive.
-The allowed values are <code>bfgs</code> aka <a href="Geometry-Optimization.html#geometry-optimization-with-driver">DRIVER</a>,
-<code>lbfgs</code> limited memory version of quasi-newton,
-and <code>sd</code> simple steepest descent algorithm.
-The use of this directive is not recommended in all but special cases. In particular, 
-<code>bfgs</code> should be used for QM region if there are any constraints,
-<code>sd</code> method should always be used for classical solute and solvent atoms with shake constraints.</p>
+<p>Detailed explanation of the subdirectives in the QM/MM
+input block is given below:</p>
+<p>Detailed explanation of the subdirectives in the QM/MM input block is given below:</p>
+<p><a href="qmmm_eref.html">qmmm_eref</a></p>
+<p><a href="qmmm_bq_zone.html">qmmm_bq_zone</a></p>
+<p><a href="qmmm_mm_charges.html">qmmm_mm_charges</a></p>
+<p><a href="qmmm_link_atoms.html">qmmm_link_atoms</a></p>
+<p><a href="qmmm_link_ecp.html">qmmm_link_ecp</a></p>
+<p><a href="Qmmm_region.html">qmmm_region</a></p>
+<p><a href="qmmm_method.html">qmmm_method</a></p>
+<p><a href="Qmmm_maxiter.html">qmmm_maxiter</a></p>
+<p><a href="Qmmm_ncycles.html">qmmm_ncycles</a></p>
+<p><a href="Qmmm_density.html">qmmm_density</a></p>
+<p><a href="qmmm_load.html">qmmm_load</a></p>
+<p><a href="Qmmm_convergence.html">qmmm_convergence</a></p>
+<p><a href="Qmmm_nsamples.html">qmmm_nsamples</a></p>
               
             </div>
           </div>

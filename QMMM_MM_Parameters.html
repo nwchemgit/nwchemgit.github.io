@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://nwchemgit.github.io/qmmm_method.html">
+  <link rel="canonical" href="https://nwchemgit.github.io/QMMM_MM_Parameters.html">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Qmmm method - NWChem</title>
+  <title>QMMM MM Parameters - NWChem</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Qmmm method";
-    var mkdocs_page_input_path = "qmmm_method.md";
-    var mkdocs_page_url = "/qmmm_method.html";
+    var mkdocs_page_name = "QMMM MM Parameters";
+    var mkdocs_page_input_path = "QMMM_MM_Parameters.md";
+    var mkdocs_page_url = "/QMMM_MM_Parameters.html";
   </script>
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
@@ -125,10 +125,10 @@
     
       
     
-    <li>Qmmm method</li>
+    <li>QMMM MM Parameters</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/qmmm_method.md"
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/QMMM_MM_Parameters.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -139,16 +139,34 @@
           <div role="main">
             <div class="section">
               
-                <pre><code>  method   [method1]  [method2]  [method3]
+                <p>The molecular mechanics parameters are given in the form of standard MD
+input block as used by the <a href="MD.html">MD module</a>. At
+the basic level the molecular mechanics input block specifies the
+restart and topology file that were generated during QM/MM <a href="QMMM_Restart_and_Topology_Files.html">preparation
+stage</a>. It also
+contains information relevant to the calculation of the classical region
+(e.g. cutoff distances, constraints, optimization and dynamics
+parameters, etc) in the system. In this input block one can also set
+fixed atom constraints on classical atoms. Continuing with our <a href="Qmmm_preparation_basic.html#example">prepare
+example for ethanol
+molecule</a> here is
+a simple input block that may be used for this system.</p>
+<pre><code> md  
+# this specifies that etl_md.rst will be used as a restart file  
+#  and etl.top will be a topology file  
+  system etl_md  
+# if we ever wanted to fix C1 atom   
+  fix solute 1 _C1  
+  noshake solute  
+ end
 </code></pre>
 
-<p>This directive controls which optimization algorithm will be used for the regions as defined by [[qmmm_region|Qmmm_region]] directive.
-The allowed values are <code>bfgs</code> aka <a href="Geometry-Optimization.html#geometry-optimization-with-driver">DRIVER</a>,
-<code>lbfgs</code> limited memory version of quasi-newton,
-and <code>sd</code> simple steepest descent algorithm.
-The use of this directive is not recommended in all but special cases. In particular, 
-<code>bfgs</code> should be used for QM region if there are any constraints,
-<code>sd</code> method should always be used for classical solute and solvent atoms with shake constraints.</p>
+<p>The <em>noshake solute</em>, shown in the above example is a recommended
+directive for QM/MM simulations that involve
+<a href="Qmmm_optimization.html">optimizations</a>. Otherwise
+user has to ensure that the <a href="qmmm_method.html">optimization
+method</a> for classical solute atoms
+is a steepest descent</p>
               
             </div>
           </div>
