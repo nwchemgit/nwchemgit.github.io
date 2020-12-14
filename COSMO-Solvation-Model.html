@@ -186,6 +186,7 @@ be noted that one must in general take into account the standard state
 correction besides the electrostatic and cavitation/dispersion
 contribution to the solvation free energy, when a comparison to
 experimental data is made.</p>
+<h2 id="cosmo-input-parameters">COSMO Input Parameters<a class="headerlink" href="#cosmo-input-parameters" title="Permanent link">&para;</a></h2>
 <p>Invoking the COSMO solvation model is done by specifying the input COSMO
 input block with the input options as:</p>
 <pre><code>cosmo  
@@ -384,8 +385,17 @@ that, as per general rule in NWChem, all names are case insensitive.</p>
 <p>and placed in one of the these locations - directory specified by the
 environmental variable NWCHEM_COSMO_LIBRARY, permanent directory, or
 run directory.</p>
+<h2 id="cosmo-usage-tips">COSMO Usage Tips<a class="headerlink" href="#cosmo-usage-tips" title="Permanent link">&para;</a></h2>
+<p>Authors of the paper https://dx.doi.org/10.1021/jp810292n report that<br />
+&rdquo; &hellip; <em>the SMD/COSMO/NWChem calculations we employed finer grids (options minbem=3, maxbem=4, ificos=1) because the default NWChem tessellation parameters (options: minbem=2, maxbem=3, ificos=0) produced very large errors in solvation free energies</em>.&rdquo;<br />
+Since the <code>maxbem</code> keyword is no longer in use, this paper&rsquo;s recommended input translate into</p>
+<pre><code>cosmo
+ minbem 3
+ ificos 1
+end
+</code></pre>
+
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<p><references/></p>
 <ol>
 <li>Klamt, A; Schuurmann, G (1993). &ldquo;COSMO: A new approach to dielectric screening in solvents with explicit expressions for the screening energy and its gradient&rdquo;. Journal of the Chemical Society, Perkin Transactions 2: 799-805. doi:10.1039/P29930000799. </li>
 <li>York, D.M.; Karplus, M. (1999). &ldquo;A smooth solvation potential based on the conductor-like screening model&rdquo;. Journal of physical chemistry A 103: 11060-11079. doi:10.1021/jp992097l. </li>
