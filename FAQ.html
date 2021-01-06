@@ -177,7 +177,7 @@ website at <a href="http://hpc.pnl.gov/globalarrays/">http://hpc.pnl.gov/globala
 <p>For updated instructions for compiling NWChem please visit the following
 URL <a href="https://nwchemgit.github.io/Compiling-NWChem.html">https://nwchemgit.github.io/Compiling-NWChem.html</a></p>
 <h1 id="installation-problems">Installation Problems<a class="headerlink" href="#installation-problems" title="Permanent link">&para;</a></h1>
-<h2 id="how-to-fix-a-configure-error-could-not">How to fix a <code>configure: error: could not ...</code><a class="headerlink" href="#how-to-fix-a-configure-error-could-not" title="Permanent link">&para;</a></h2>
+<h2 id="configure-error-could-not"><code>configure: error: could not ...</code><a class="headerlink" href="#configure-error-could-not" title="Permanent link">&para;</a></h2>
 <p>When compiling the tools directory, you might see the compilation
 stopping with the message</p>
 <pre><code>configure: error: could not compile simple C MPI program
@@ -208,7 +208,7 @@ The following links contained useful information about
 - <a href="ARMCI.html"> Choosing the ARMCI library</a> <br />
 - <a href="Compiling-NWChem.html#Setting_up_the_proper_environment_variables"> Choosing the proper environment variables when compiling NWChem</a>  </p>
 <h1 id="input-problems">Input Problems<a class="headerlink" href="#input-problems" title="Permanent link">&para;</a></h1>
-<h2 id="how-to-fix-warning-processed-input-with-no-task">How to fix <code>! warning: processed input with no task</code><a class="headerlink" href="#how-to-fix-warning-processed-input-with-no-task" title="Permanent link">&para;</a></h2>
+<h2 id="warning-processed-input-with-no-task"><code>! warning: processed input with no task</code><a class="headerlink" href="#warning-processed-input-with-no-task" title="Permanent link">&para;</a></h2>
 <p>Have you used emacs to create your input file? Emacs usually does not
 put and an end-of-line as a last character of the file, therefore the
 NWChem input parser ignores the last line of your input (the one
@@ -356,6 +356,29 @@ the current value of <code>kernel.shmmax</code> on your system by typing</p>
 
 <p>More detail about kernel.shmmax can be found at the webpage
 <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/sect-Oracle_9i_and_10g_Tuning_Guide-Setting_Shared_Memory-Setting_SHMALL_Parameter.html">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/sect-Oracle_9i_and_10g_Tuning_Guide-Setting_Shared_Memory-Setting_SHMALL_Parameter.html</a></p>
+<h2 id="wsl-execution-problems">WSL execution problems<a class="headerlink" href="#wsl-execution-problems" title="Permanent link">&para;</a></h2>
+<p>NWChem runs on Windows Subsystem for Linux (WSL) can crash with the error message</p>
+<pre><code>--------------------------------------------------------------------------
+WARNING: Linux kernel CMA support was requested via the
+btl_vader_single_copy_mechanism MCA variable, but CMA support is
+not available due to restrictive ptrace settings.
+
+The vader shared memory BTL will fall back on another single-copy
+mechanism if one is available. This may result in lower performance.
+
+  Local host: hostabc
+--------------------------------------------------------------------------
+[hostabc:16805] 1 more process has sent help message help-btl-vader.txt / cma-permission-denied
+[hostabc:16805] Set MCA parameter &quot;orte_base_help_aggregate&quot; to 0 to see all help / error messages
+</code></pre>
+
+<p>The error can be fixed with the following command</p>
+<pre><code>echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+</code></pre>
+
+<p>More details at
+<a href="https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710">https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710</a>
+<a href="https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html">https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html</a></p>
               
             </div>
           </div>
