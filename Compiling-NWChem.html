@@ -84,6 +84,10 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#automatic-detection-of-mpi-variables-with-mpif90">Automatic detection of MPI variables with mpif90</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#obsolete-how-to-se-the-mpi-variables">Obsolete:  How to se the MPI variables</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-start-nwchem">How to start NWChem</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#nwchem_modules">NWCHEM_MODULES</a>
@@ -92,6 +96,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#adding-optional-environmental-variables">Adding optional environmental variables</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#setting-python-environment-variables">Setting Python environment variables</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#optimized-math-libraries">Optimized math libraries</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#how-to-deal-with-integer-size-of-linear-algebra-libraries">How to deal with integer size of Linear Algebra libraries</a>
@@ -182,102 +188,116 @@
 necessary and optional environment variables is outlined. In addition,
 based on the experiences of developers and users how-to&rsquo;s for various
 platforms have been created. These how-to&rsquo;s will be updated with
-additional platforms and better environment variables over time.</p>
+additional platforms and better environment variables over time.  </p>
+<p>Download of the NWChem source is a step needed before compilation. Details for downloading
+as well as instructions for installing pre-compiled version of NWChem are available at the
+<a href="Download.html">Download page</a>.</p>
 <h2 id="setting-up-the-proper-environment-variables">Setting up the proper environment variables<a class="headerlink" href="#setting-up-the-proper-environment-variables" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>NWCHEM_TOP</strong> defines the top directory of the NWChem source tree,
+<li><code>$NWCHEM_TOP</code> defines the top directory of the NWChem source tree,
     e.g.</li>
 </ul>
-<p>When dealing with source from a <strong><em>NWChem release</em></strong> (6.8 in this
-example)</p>
+<p>When dealing with source from a <strong><em>NWChem release</em></strong> (6.8 in this example)</p>
 <pre><code>export NWCHEM_TOP=&lt;your path&gt;/nwchem-6.8
 </code></pre>
 
-<p>when using the <strong><em>NWChem development</em></strong> source</p>
-<pre><code>export NWCHEM_TOP=&lt;your path&gt;/nwchem
-</code></pre>
-
 <ul>
-<li>$NWCHEM_TARGET defines your target platform, e.g.</li>
+<li><code>$NWCHEM_TARGET</code> defines your target platform, e.g.</li>
 </ul>
 <pre><code>export NWCHEM_TARGET=LINUX64
 </code></pre>
 
+<p>The following platforms are available:</p>
 <table>
-<caption>The platforms that available are:</caption>
 <thead>
 <tr>
 <th>NWCHEM_TARGET</th>
-<th>Platform</th>
-<th>OS/Version</th>
+<th align="left">Platform</th>
+<th>OS</th>
 <th>Compilers</th>
 </tr>
 </thead>
 <tbody>
-<tr class="even">
+<tr>
 <td>LINUX</td>
-<td>x86<br />
-ppc<br/>
-arm</td>
-<td>RedHat, Suse<br />
-Suse</td>
-<td>GNU, Intel, PGI<br />
-GNU, xlf</td>
+<td align="left">x86</td>
+<td>Linux</td>
+<td>GNU, Intel, PGI</td>
 </tr>
-<tr class="odd">
+<tr>
+<td></td>
+<td align="left">ppc</td>
+<td>Linux</td>
+<td>GNU, IBM</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">arm</td>
+<td>Linux</td>
+<td>GNU, flang</td>
+</tr>
+<tr>
 <td>LINUX64</td>
-<td>ia64<br />
-x86_64<br />
-ppc64</br>
-ppc64le</br>
-aarch64</td>
-<td>RedHat<br />
-SLES, RedHat<br />
-SLES, RedHat</td>
-<td>Intel<br />
-GNU, PGI, Flang, Intel<br />
-xlf</td>
+<td align="left">x86_64</td>
+<td>Linux</td>
+<td>GNU, Intel, PGI, Flang</td>
 </tr>
-<tr class="even">
-<td>BGL<br />
-BGP<br />
-BGQ</td>
-<td>Blue Gene/L<br />
-Blue Gene/P<br />
-Blue Gene/Q</td>
-<td>SLES (login) CNK (compute)</td>
-<td>blrts_xlf<br />
-bgxlf_r<br />
-bgxlf_r</td>
+<tr>
+<td></td>
+<td align="left">ppc64le</td>
+<td>Linux</td>
+<td>GNU, IBM</td>
 </tr>
-<tr class="even">
-<td>MACX<br />
-MACX64</td>
-<td>Apple MacOSX</td>
-<td>OSX</td>
+<tr>
+<td></td>
+<td align="left">aarch64</td>
+<td>Linux</td>
+<td>GNU, flang</td>
+</tr>
+<tr>
+<td>MACX</td>
+<td align="left">x86</td>
+<td>Darwin</td>
 <td>GNU, Intel</td>
 </tr>
-<tr class="odd">
-<td>MinGW<br />
-</td>
-<td>Intel x86</td>
-<td>Windows with MinGW<br />
-Windows</td>
-<td>GNU</td>
+<tr>
+<td>MACX64</td>
+<td align="left">x86_64</td>
+<td>Darwin</td>
+<td>GNU, Intel</td>
+</tr>
+<tr>
+<td>BGL</td>
+<td align="left">Blue Gene/L</td>
+<td></td>
+<td>IBM</td>
+</tr>
+<tr>
+<td>BGP</td>
+<td align="left">Blue Gene/P</td>
+<td></td>
+<td>IBM</td>
+</tr>
+<tr>
+<td>BGQ</td>
+<td align="left">Blue Gene/Q</td>
+<td></td>
+<td>IBM</td>
 </tr>
 </tbody>
 </table>
-
-<p><br>
-  - <strong>ARMCI_NETWORK</strong> must be defined in order to achieve best
-    performance on high performance networks, e.g.</p>
-<pre><code>export ARMCI_NETWORK=OPENIB
+<p><br></p>
+<ul>
+<li><code>$ARMCI_NETWORK</code> must be defined in order to achieve best
+    performance on high performance networks, e.g.</li>
+</ul>
+<pre><code>export ARMCI_NETWORK=MPI-PR
 </code></pre>
 
 <p>For a single processor system, this environment variable does not have
-to be defined.</p>
+to be defined.
+Supported combination of ARMCI_NETWORK and NWCHEM_TARGET variables:  </p>
 <table>
-<caption>Supported combination of ARMCI_NETWORK and NWCHEM_TARGET variables:</caption>
 <thead>
 <tr>
 <th>ARMCI_NETWORK</th>
@@ -287,54 +307,46 @@ to be defined.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="even">
+<tr>
 <td>OPENIB</td>
 <td>LINUX, LINUX64</td>
 <td>Mellanox InfiniBand</td>
 <td>Verbs</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>MPI-PR</td>
 <td>LINUX64</td>
 <td>Any network</td>
 <td>MPI</td>
 </tr>
-<tr class="even">
-<td>MPI-MT<br />
-MPI-SPAWN</td>
+<tr>
+<td>MPI-MT<br />MPI-SPAWN</td>
 <td>LINUX64</td>
-<td>MPI support multi-threading multiple</td>
+<td>MPI supporting<br />multi-threading multiple</td>
 <td>MPI-2</td>
 </tr>
-<tr class="odd">
-<td>MPI-TS</td>
+<tr>
+<td>MPI-TS<br /> MPI-PT</td>
 <td>any</td>
 <td>any network with MPI</td>
 <td>MPI</td>
 </tr>
-<tr class="even">
-<td>MPI-PT</td>
-<td>any</td>
-<td>any network with MPI</td>
-<td>MPI</td>
-</tr>
-<tr class="even">
+<tr>
 <td>BGMLMPI</td>
 <td>BGL</td>
 <td>IBM Blue Gene/L</td>
 <td>BGLMPI</td>
 </tr>
-<tr class="odd">
-<td>DCMFMPI</td>
+<tr>
+<td>DC        MFMPI</td>
 <td>BGP</td>
 <td>IBM Blue Gene/P</td>
-<td>DCMF, MPI</td>
+<td>DCMF,MPI</td>
 </tr>
 </tbody>
 </table>
-
-<p><br>
-Please see <a href="ARMCI.html">Choosing the ARMCI Library</a> for
+<p><br></p>
+<p>Please see <a href="ARMCI.html">Choosing the ARMCI Library</a> for
 additional information on choosing the right network
 options.</p>
 <h3 id="mpi-variables">MPI variables<a class="headerlink" href="#mpi-variables" title="Permanent link">&para;</a></h3>
@@ -347,27 +359,27 @@ options.</p>
 </thead>
 <tbody>
 <tr>
-<td>USE_MPI</td>
+<td><code>USE_MPI</code></td>
 <td>Set to &ldquo;y&rdquo; to indicate that NWChem should be compiled with MPI</td>
 </tr>
 <tr>
-<td>USE_MPIF</td>
-<td>Set to &ldquo;y&rdquo; for the NWPW module to use fortran-bindings of MPI (Generally set when USE_MPI is set)</td>
+<td><code>USE_MPIF</code></td>
+<td>Set to &ldquo;y&rdquo; for the NWPW module to use fortran-bindings of MPI. <br /> (Generally set when USE_MPI is set)</td>
 </tr>
 <tr>
-<td>USE_MPIF4</td>
-<td>Set to &ldquo;y&rdquo; for the NWPW module to use Integer*4 fortran-bindings of MPI. (Generally set when USE_MPI is set on most platforms)</td>
+<td><code>USE_MPIF4</code></td>
+<td>Set to &ldquo;y&rdquo; for the NWPW module to use Integer*4 fortran-bindings of MPI. <br /> (Generally set when USE_MPI is set on most platforms)</td>
 </tr>
 <tr>
-<td>LIBMPI</td>
+<td><code>LIBMPI</code></td>
 <td>Name of the MPI library that should be linked with -l (eg. -lmpich)</td>
 </tr>
 <tr>
-<td>MPI_LIB</td>
+<td><code>MPI_LIB</code></td>
 <td>Directory where the MPI library resides</td>
 </tr>
 <tr>
-<td>MPI_INCLUDE</td>
+<td><code>MPI_INCLUDE</code></td>
 <td>Directory where the MPI include files reside</td>
 </tr>
 </tbody>
@@ -375,11 +387,12 @@ options.</p>
 <p><br></p>
 <h4 id="automatic-detection-of-mpi-variables-with-mpif90"><span style="color:red;">Automatic detection of MPI variables with mpif90</span><a class="headerlink" href="#automatic-detection-of-mpi-variables-with-mpif90" title="Permanent link">&para;</a></h4>
 <p><strong><em>New in NWChem 6.6</em></strong>: If the
-location of the mpif90 command is part of your PATH env. variable,
-NWChem will figure out the values of LIBMPI, MPI_LIB and MPI_INCLUDE
-(if they are not set). Therefore, we do <strong>NOT</strong> recommend to set LIBMPI,
-MPI_LIB and MPI_INCLUDE and add the location of mpif90 to the PATH
-variable, instead.</p>
+location of the <code>mpif90</code> command is part of your <code>PATH</code> env. variable,
+NWChem will figure out the values of <code>LIBMPI</code>, <code>MPI_LIB</code> and <code>MPI_INCLUDE</code>
+(if they are not set). Therefore, we do <strong>NOT</strong> recommend to set <code>LIBMPI</code>,
+<code>MPI_LIB</code> and <code>MPI_INCLUDE</code> and add the location of <code>mpif90</code> to the <code>PATH</code>
+variable, instead. Therefore, the next section can be considered obsolete in the most common cases.</p>
+<h4 id="obsolete-how-to-se-the-mpi-variables">Obsolete:  How to se the MPI variables<a class="headerlink" href="#obsolete-how-to-se-the-mpi-variables" title="Permanent link">&para;</a></h4>
 <p>The output of the command</p>
 <pre><code>mpif90 -show
 </code></pre>
@@ -435,21 +448,16 @@ export LIBMPI=&quot;-lmpi_f90 -lmpi_f77 -lmpi -ldl -Wl,--export-dynamic -lnsl -l
 </tbody>
 </table>
 
-<p><br>
-Note:</p>
+<p><br></p>
+<h4 id="how-to-start-nwchem">How to start NWChem<a class="headerlink" href="#how-to-start-nwchem" title="Permanent link">&para;</a></h4>
 <p>When MPI is used, the appropriate MPI run command should be used to
 start an NWChem calculation, e.g.</p>
-<pre><code>  % mpirun -np 8 $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem h2o.nw
-</code></pre>
-
-<p>When all nodes are connected via shared memory and the ch_shmem version
-of MPICH is installed and used, NWChem can be called directly, e.g.</p>
-<pre><code>  % $NWCHEM_TOP/bin/${NWCHEM_TARGET}/nwchem -np 8 h2o.nw
+<pre><code>  % mpirun -np 8 $NWCHEM_TOP/bin/$NWCHEM_TARGET/nwchem h2o.nw
 </code></pre>
 
 <h3 id="nwchem_modules">NWCHEM_MODULES<a class="headerlink" href="#nwchem_modules" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>NWCHEM_MODULES</strong> defines the modules to be compiled, e.g.</li>
+<li><code>$NWCHEM_MODULES</code> defines the modules to be compiled, e.g.</li>
 </ul>
 <pre><code>export NWCHEM_MODULES=&quot;all python&quot;
 </code></pre>
@@ -494,7 +502,7 @@ of junk files), e.g.</p>
 </code></pre>
 
 <p><strong>USE_NOIO</strong> can be set to avoid NWChem 6.5 doing I/O for the ddscf,
-mp2 and ccsd modules (it automatically sets USE_NOFSCHECK, too). It is
+mp2 and ccsd modules (it automatically sets <code>USE_NOFSCHECK</code>, too). It is
 strongly recommended on large clusters or supercomputers or any computer
 lacking any fast and large local filesystem.</p>
 <pre><code>export USE_NOIO=TRUE
@@ -522,7 +530,7 @@ to be included in the code, e.g.</p>
 <pre><code>export CCSDTQ=TRUE
 </code></pre>
 
-<p><strong>Setting Python environment variables</strong></p>
+<h3 id="setting-python-environment-variables">Setting Python environment variables<a class="headerlink" href="#setting-python-environment-variables" title="Permanent link">&para;</a></h3>
 <p>Python programs may be embedded into the NWChem input and used to
 control the execution of NWChem. To build with Python, Python needs to
 be available on your machine. The software can be download from
@@ -575,12 +583,12 @@ hardware include:  </p>
 <td><a href="http://www.intel.com/software/products/mkl">http://www.intel.com/software/products/mkl</a></td>
 </tr>
 <tr>
-<td>ATLAS</td>
-<td><a href="http://math-atlas.sf.net">http://math-atlas.sf.net</a></td>
-</tr>
-<tr>
 <td>Cray LibSci</td>
 <td>Available only on Cray hardware, it is automatically linked when compiling on Cray computers.</td>
+</tr>
+<tr>
+<td>IBM ESSL</td>
+<td>Available only on IBM hardware <a href="https://www.ibm.com/support/knowledgecenter/en/SSFHY8_6.3/navigation/welcome.html">https://www.ibm.com/support/knowledgecenter/en/SSFHY8_6.3/navigation/welcome.html</a></td>
 </tr>
 </tbody>
 </table>
