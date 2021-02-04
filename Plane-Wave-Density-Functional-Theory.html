@@ -400,8 +400,8 @@ most systems. There are sub-directives which allow for customized
 application; those currently provided as options for the PSPW module
 are:</p>
 <pre><code>NWPW   
-  SIMULATION_CELL            ... (see section `[`Simulation Cell`](#Simulation_Cell)`) END   
-  CELL_NAME &lt;string cell_name default 'cell_default'&gt; `  
+  SIMULATION_CELL            ... (see section [Simulation Cell](#Simulation_Cell)) END
+  CELL_NAME &lt;string cell_name default 'cell_default'&gt;
   VECTORS [[input (&lt;string input_wavefunctions default file_prefix.movecs&gt;) || 
            [output(&lt;string output_wavefunctions default file_prefix.movecs&gt;)]] 
   XC (Vosko      || LDA          || PBE96         || revPBE       || PBEsol          ||   
@@ -413,7 +413,7 @@ are:</p>
       PBE0-Grimme2    || PBE0-Grimme3    || PBE0-Grimme4   || B3LYP-Grimme2  || B3LYP-Grimme3  || B3LYP-Grimme4 ||
       revPBE0-Grimme2 || revPBE0-Grimme3 || revPBE0-Grimme4 ||
       PBE0       || revPBE0      || HSE  || HF || default Vosko) 
-  XC new ...(see section `[`Using Exchange-Correlation Potentials Available in the DFT Module`](#Using_Exchange-Correlation_Potentials_Available_in_the_DFT_Module)`) 
+  XC new ...(see section [Using Exchange-Correlation Potentials Available in the DFT Module](#Using_Exchange-Correlation_Potentials_Available_in_the_DFT_Module))
   DFT||ODFT||RESTRICTED||UNRESTRICTED 
   MULT &lt;integer mult default 1&gt;   
   CG 
@@ -467,17 +467,16 @@ END
 <p>The following list describes the keywords contained in the PSPW input
 block.</p>
 <ul>
-<li><code>cell_name</code> - name of the simulation_cell named <cell_name>. See
+<li><code>cell_name</code> - name of the simulation_cell named <code>cell_name</code>. See
     section <a href="#simulation-cell">Simulation Cell</a>.</li>
 <li><code>input_wavefunctions</code> - name of the file containing one-electron
     orbitals</li>
 <li><code>output_wavefunctions</code> - name of the file that will contain the
     one-electron orbitals at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass (<img alt="$0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/29632a9bf827ce0200454dd32fc3be82.svg?invert_in_darkmode&sanitize=true" align=middle width="8.188554pt" height="21.10812pt"/>
-<img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/>).
+<li><code>fake_mass</code> - value for the electronic fake mass <script type="math/tex">\mu</script>
     This parameter is not presently used in a conjugate gradient
     simulation.</li>
-<li><code>time_step</code> - value for the time step (<img alt="$\Delta t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a63739e01952f6a63389340c037ae29.svg?invert_in_darkmode&sanitize=true" align=middle width="19.56141pt" height="22.38192pt"/>). This parameter
+<li><code>time_step</code> - value for the time step <script type="math/tex">\Delta t</script>. This parameter
     is not presently used in a conjugate gradient simulation.</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies and tolerances</li>
@@ -559,7 +558,7 @@ set nwpw:lcao_iterations 2 #specifies the number of LCAO iterations.
 <p>The PSPW code can now handle PAW potentials. To use them the
 pseudopotentials input block is used to redirect the code to use the paw
 potentials located in the default paw potential library
-($NWCHEM_TOP/src/nwpw/libraryp/paw_default). For example, to redirect
+(<code>$NWCHEM\_TOP/src/nwpw/libraryp/paw_default</code>). For example, to redirect
 the code to use PAW potentials for carbon and hydrogen, the following
 input would be used.</p>
 <pre><code>nwpw 
@@ -878,7 +877,7 @@ task pspw energy
 
 <p>Using this input the user has ability to include only the local or
 nonlocal contributions of a given functional. The user can also specify
-a multiplicative prefactor (the variable <prefactor> in the input) for
+a multiplicative prefactor (the variable <code>prefactor</code> in the input) for
 the local/nonlocal component or total (for more details see Section <a href="Density-Functional-Theory-for-Molecules.html#XC_and_DECOMP_--_Exchange-Correlation_Potentials">XC
 and DECOMP &ndash; Exchange-Correlation
 Potentials</a>).
@@ -988,12 +987,12 @@ end
 
 <p>where</p>
 <ul>
-<li><alpha> - value for the broadening the eigenvalues, default
+<li><code>alpha</code>  value for the broadening the eigenvalues, default
     0.05/27.2116 au</li>
-<li><npoints> - number of plotting points in dos files, default 500</li>
-<li><emin> - minimum energy in dos plots, default min(eigenvalues)-0.1
+<li><code>npoints</code>  number of plotting points in dos files, default 500</li>
+<li><code>emin</code>  minimum energy in dos plots, default min(eigenvalues)-0.1
     au</li>
-<li><emax> - maximimum energy in dos plots, default max(eigenvalues)+0.1
+<li><code>emax</code>  maximimum energy in dos plots, default max(eigenvalues)+0.1
     au</li>
 </ul>
 <p>The units for dos parameters are in atomic units. Note that if virtual
@@ -1167,7 +1166,9 @@ END
 </code></pre>
 
 <p>The following list describes the input for the DPLOT sub-block.</p>
-<p><code>VECTORS &lt;string input_wavefunctions default input_movecs&gt;</code> </p>
+<pre><code>VECTORS &lt;string input_wavefunctions default input_movecs&gt;
+</code></pre>
+
 <p>This sub-directive specifies the name of the molecular orbital file. If
 the second file is optionally given the density is computed as the
 difference between the corresponding electron densities. The vector
@@ -1180,11 +1181,15 @@ match.</p>
 <p>This sub-directive specifies, what kind of density is to be plotted. The
 known names for total, difference, alpha, beta, laplacian, and
 potential.</p>
-<p><code>ELF [restricted|alpha|beta] &lt;string elf_name no default&gt;</code></p>
+<pre><code>ELF [restricted|alpha|beta] &lt;string elf_name no default&gt;
+</code></pre>
+
 <p>This sub-directive specifies that an electron localization function
 (ELF) is to be
 plotted.</p>
-<p><code>ORBITAL &lt;integer orbital_number no default&gt; &lt;string orbital_name no default&gt;</code></p>
+<pre><code>ORBITAL &lt;integer orbital_number no default&gt; &lt;string orbital_name no default&gt;
+</code></pre>
+
 <p>This sub-directive specifies the molecular orbital number that is to be
 plotted.</p>
 <pre><code>LIMITXYZ [units &lt;string Units default angstroms&gt;]  
@@ -1375,12 +1380,12 @@ end
 
 <p>where</p>
 <ul>
-<li><alpha> - value for the broadening the eigenvalues, default
+<li><code>alpha</code> - value for the broadening the eigenvalues, default
     0.05/27.2116 au</li>
-<li><npoints> - number of plotting points in dos files, default 500</li>
-<li><emin> - minimum energy in dos plots, default min(eigenvalues)-0.1
+<li><code>npoints</code> - number of plotting points in dos files, default 500</li>
+<li><code>emin</code> - minimum energy in dos plots, default min(eigenvalues)-0.1
     au</li>
-<li><emax> - maximimum energy in dos plots, default max(eigenvalues)+0.1
+<li><code>emax</code> - maximimum energy in dos plots, default max(eigenvalues)+0.1
     au</li>
 </ul>
 <p>The units for dos parameters are in atomic units. Note that if virtual
@@ -1649,9 +1654,9 @@ END
     orbital velocities.</li>
 <li><code>output_v_wavefunctions</code> - name of the file that will contain the
     one-electron orbital velocities at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass (<img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/>).</li>
+<li><code>fake_mass</code> - value for the electronic fake mass (<script type="math/tex">\mu</script> ).</li>
 <li><code>time_step</code> - value for the Verlet integration time step
-    ($\Delta t$).</li>
+    (<script type="math/tex">Delta t</script>).</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies.</li>
 <li><code>outer_iteration</code> - number of outer iterations</li>
@@ -1683,13 +1688,13 @@ END
     dynamics. See section -sec:pspw_nose- for a description of the
     parameters. Note that the Temperature subblock is just a reordering
     of the Nose-Hoover subblock.<ul>
-<li><code>Period_electron</code> $\equiv P_{electron}$ - estimated period for
+<li><code>Period_electron</code> <script type="math/tex">\equiv P_{electron}</script> - estimated period for
     fictitious electron thermostat.</li>
-<li><code>Temperature_electron</code> $\equiv T_{electron}$ - temperature for
+<li><code>Temperature_electron</code> <script type="math/tex">\equiv T_{electron}</script> - temperature for
     fictitious electron motion</li>
-<li><code>Period_ion</code> $\equiv P_{ion}$ - estimated period for ionic
+<li><code>Period_ion</code> <script type="math/tex">\equiv P_{ion}</script> - estimated period for ionic
     thermostat</li>
-<li><code>Temperature_ion</code> $\equiv T_{ion}$ - temperature for ion
+<li><code>Temperature_ion</code> <script type="math/tex">\equiv T_{ion}</script> - temperature for ion
     motion</li>
 <li><code>Chainlength_electron</code> - number of electron thermostat chains</li>
 <li><code>Chainlength_ion</code> - number of ion thermostat chains</li>
@@ -1700,9 +1705,9 @@ END
     annealing to work the Nose-Hoover subblock needs to be specified.
     The initial temperature are taken from the Nose-Hoover subblock. See
     section -sec:pspw_nose- for a description of the parameters.<ul>
-<li><code>sa_scale_c</code> $\equiv \tau_{electron}$ - decay rate in atomic
+<li><code>sa_scale_c</code> <script type="math/tex">\equiv \tau_{electron}</script> - decay rate in atomic
     units for electronic temperature.</li>
-<li><code>sa_scale_r</code> $\equiv \tau_{ionic}$ - decay rate in atomic
+<li><code>sa_scale_r</code> <script type="math/tex">\equiv \tau_{ionic}</script> - decay rate in atomic
     units for the ionic temperature.  </li>
 </ul>
 </li>
@@ -1957,7 +1962,7 @@ sub-block,</p>
     ANGLE &lt;integer atom1_index no default&gt; &lt;integer atom2_index no default&gt; &lt;integer atom3_index no default&gt;  
          [W &lt;real w default 0.00005&gt;] 
          [SIGMA &lt;real sigma default 0.1&gt;]
-         [RANGE &lt;real a b default 0 &lt;img alt=&quot;$\pi$&quot; src=&quot;https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f30fdded685c83b0e7b446aa9c9aa120.svg?invert_in_darkmode&amp;sanitize=true&quot; align=middle width=&quot;9.922935pt&quot; height=&quot;14.10255pt&quot;/&gt;&gt;]
+         [RANGE &lt;real a b default 0]
          [NRANGE &lt;integer nrange default 501&gt;]  
     ...]
     [
@@ -2041,10 +2046,9 @@ its width is controlled by the parameter <img alt="$\frac{1}{n}$" src="https://r
 small values of <img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> respectively correspond to sharp and soft
 transitions at <img alt="$r_{ij} = r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/603ddac5711cb486f42d9f3bb061b1e6.svg?invert_in_darkmode&sanitize=true" align=middle width="54.752445pt" height="14.10255pt"/>. 
 Furthermore <img alt="$\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> should
-approach 1 and 0 when 
-<img alt="$r_{ij}&amp;lt;r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/70c5fddc4b0f648ba5d4cc8f918c0990.svg?invert_in_darkmode&sanitize=true" align=middle width="51.295365pt" height="22.74591pt"/>
-and 
-<img alt="$r_{ij}&amp;gt;&amp;gt;r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4a58a9b2c3caaba8aabd0ca2e461687f.svg?invert_in_darkmode&sanitize=true" align=middle width="76.090245pt" height="20.1465pt"/>
+approach 1 and 0 when <script type="math/tex">r_{ij} < 0</script>
+and
+<script type="math/tex">r_{ij} < r_0 </script>
 respectively. In practice 
 <img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> =6-10 Å 
 <img alt="$^{-1}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2351d2e88576cfc62e0f3db8a8ab779c.svg?invert_in_darkmode&sanitize=true" align=middle width="16.76367pt" height="26.70657pt"/>. 
@@ -2135,8 +2139,9 @@ sub-block.</p>
     orbitals</li>
 <li><code>output_wavefunctions</code> - name of the file tha will contain the
     one-electron orbitals at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass (img alt=&rdquo;$\mu$&rdquo; src=&rdquo;https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&amp;sanitize=true&rdquo; align=middle width=&rdquo;9.86799pt&rdquo; height=&rdquo;14.10255pt&rdquo;/).</li>
-<li><code>time_step</code> - value for the time step (<img alt="$\Delta t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a63739e01952f6a63389340c037ae29.svg?invert_in_darkmode&sanitize=true" align=middle width="19.56141pt" height="22.38192pt"/>).</li>
+<li><code>fake_mass</code> - value for the electronic fake mass <script type="math/tex">\mu</script>
+</li>
+<li><code>time_step</code> - value for the time step <script type="math/tex">Delta t</script>.</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies and tolerances</li>
 <li><code>outer_iteration</code> - number of outer iterations</li>
@@ -2419,7 +2424,9 @@ END
 contained in the geometry blocks. The following local pseudopotential
 suggested by Laio, VandeVondele and Rothlisberger can be automatically
 generated.</p>
-<p><img alt="$<script type="math/tex; mode=display">\begin{matrix}V(\vec{r}) = -Z_{ion}\frac{{r_c}^{n_{\sigma}} - r^{n_{\sigma}}}{-sign(Z_{ion})*{r_c}^{n_{\sigma}+1}-r^{n_{\sigma}+1}}\end{matrix}</script>$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/17086f550a410c207428802b573b51b2.svg?invert_in_darkmode&sanitize=true" align=middle width="270.767145pt" height="31.97766pt"/></p>
+<p>
+<script type="math/tex; mode=display">\begin{matrix}V(\vec{r}) = -Z_{ion}\frac{{r_c}^{n_{\sigma}} - r^{n_{\sigma}}}{-sign(Z_{ion})*{r_c}^{n_{\sigma}+1}-r^{n_{\sigma}+1}}\end{matrix}</script>
+</p>
 <p>The following input To define this pseudopo the O^ MM atom using the
 following input</p>
 <pre><code>NWPW   
@@ -2579,7 +2586,7 @@ number, <img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwc
 number, <img alt="$l$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f2322dff5bde89c37bcae4116fe20a8.svg?invert_in_darkmode&sanitize=true" align=middle width="5.2088685pt" height="22.74591pt"/>, and the third value specifies the occupation of the
 state.</p>
 <p>For example to define a pseudopotential for the Neon atom in the
-<img alt="$1s^2 2s^2 2p^6$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a25c18197ba3b73e419b77b39111c7d8.svg?invert_in_darkmode&sanitize=true" align=middle width="69.43563pt" height="26.70657pt"/> state could have the block</p>
+<script type="math/tex">1s^2 2s^2 2p^6</script> state could have the block</p>
 <pre><code>ATOMIC_FILLING: 1 2   
  1 s 2.0 #core state - 1s^2   
  2 s 2.0 #valence state - 2s^2   
@@ -2598,9 +2605,9 @@ block</p>
 <h3 id="cutoff">CUTOFF<a class="headerlink" href="#cutoff" title="Permanent link">&para;</a></h3>
 <p>This optional block specifies the cutoff distances used to match the
 all-electron atom to the pseudopotential atom. For Hamann
-pseudopotentials <img alt="$r_{cut}(l)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3900e93dc26b755c3479ab08de679b08.svg?invert_in_darkmode&sanitize=true" align=middle width="44.77077pt" height="24.56553pt"/> defines the distance where the
+pseudopotentials <script type="math/tex">r_{cut}(l)</script> defines the distance where the
 all-electron potential is matched to the pseudopotential, and for
-Troullier-Martins pseudopotentials <img alt="$r_{cut}(l)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3900e93dc26b755c3479ab08de679b08.svg?invert_in_darkmode&sanitize=true" align=middle width="44.77077pt" height="24.56553pt"/> defines the distance
+Troullier-Martins pseudopotentials <script type="math/tex">r_{cut}(l)</script> defines the distance
 where the all-electron orbital is matched to the pseudowavefunctions.
 Thus the definition of the radii depends on the type of pseudopotential.
 The cutoff radii used in Hamann pseudopotentials will be smaller than
@@ -2636,7 +2643,7 @@ Cohen, Phys. Rev. B, <strong>26</strong>(, 1738, (1982)). This approximation is 
 to dramatically improve results for systems containing alkali and
 transition metal atoms.</p>
 <p>The implementation in the PSPW module defines the semi-core density,
-<img alt="$\rho_{semicore}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/cdd27902cf8366f23ed927a19a3fc1fe.svg?invert_in_darkmode&sanitize=true" align=middle width="62.082075pt" height="14.10255pt"/> in terms of the core density, <img alt="$\rho_{core}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/37e9fdd7359c2b306266e517ccec656b.svg?invert_in_darkmode&sanitize=true" align=middle width="33.432465pt" height="14.10255pt"/>, by
+<script type="math/tex">\rho_{semicore}</script>, by
 using the sixth-order polynomial</p>
 <p>
 <script type="math/tex; mode=display">\rho_{semicore}(r) = \begin{cases} \rho_{core}  \mbox{if } r \ge r_{semicore} \\ c_0 + c_3 r^3 + c_4 r^4 + c_5 r^5 + c_6 r^6  \mbox{if } r < r_{semicore} \end{cases}</script>
@@ -2714,7 +2721,7 @@ END
     orbitals</li>
 <li><code>output_wavefunctions</code> - name of the file that will contain the
     one-electron orbitals at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass (<img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/>). This
+<li><code>fake_mass</code> - value for the electronic fake mass <script type="math/tex">\mu</script>. This
     parameter is not presently used in a conjugate gradient simulation</li>
 <li><code>time_step</code> - value for the time step (<img alt="$\Delta t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a63739e01952f6a63389340c037ae29.svg?invert_in_darkmode&sanitize=true" align=middle width="19.56141pt" height="22.38192pt"/>). This parameter
     is not presently used in a conjugate gradient simulation.</li>
@@ -2748,14 +2755,14 @@ END
     the spin multiplicity of the system</li>
 <li>INTEGRATE_MULT_L - optional keyword which if specified allows the
     user to define the angular XC integration of the augmented region</li>
-<li>SIMULATION_CELL (see <a href="#simulation-cell">Simulation Cell</a></li>
-<li>CAR-PARRINELLO(see <a href="#car-parrinello">Car-Parrinello</a></li>
-<li><mapping> - for a value of 1 slab FFT is used, for a value of 2 a
+<li>SIMULATION_CELL (see <a href="#simulation-cell">Simulation Cell</a> )</li>
+<li>CAR-PARRINELLO (see <a href="#car-parrinello">Car-Parrinello</a> )</li>
+<li><code>mapping</code> - for a value of 1 slab FFT is used, for a value of 2 a
     2d-Hilbert FFT is used.</li>
 </ul>
 <h2 id="pseudopotential-and-paw-basis-libraries">Pseudopotential and PAW basis Libraries<a class="headerlink" href="#pseudopotential-and-paw-basis-libraries" title="Permanent link">&para;</a></h2>
 <p>A library of pseudopotentials used by PSPW and BAND is currently
-available in the directory $NWCHEM_TOP/src/nwpw/libraryp/pspw_default</p>
+available in the directory <code>$NWCHEM_TOP/src/nwpw/libraryp/pspw_default</code></p>
 <p>The elements listed in the following table are
 present:</p>
 <pre><code> H                                                  He  
@@ -2786,7 +2793,7 @@ OPIUM package of Rappe et al. The user can request additional
 pseudopotentials from Eric J. Bylaska at (Eric.Bylaska@pnl.gov).</p>
 <p>Similarly, a library of PAW basis used by PAW is currently available in
 the directory
-$NWCHEM_TOP/src/nwpw/libraryp/paw_default</p>
+<code>$NWCHEM_TOP/src/nwpw/libraryp/paw_default</code></p>
 <pre><code> H                                                  He  
 -------                              -----------------  
  Li Be                               B  C  N  O  F  Ne  
@@ -3024,7 +3031,7 @@ energy</p>
 </p>
 <p>where <img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is the fictitious electronic mass, <img alt="$M$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fb97d38bcc19230b0acd442e17db879c.svg?invert_in_darkmode&sanitize=true" align=middle width="17.67348pt" height="22.38192pt"/> is average mass
 of one atom, and
-<script type="math/tex; mode=display">\begin{matrix}\sum_{i} <\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}&amp> \end{matrix}</script>
+<script type="math/tex; mode=display">\begin{matrix}\sum_{i} <\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}> \end{matrix}</script>
 is the kinetic energy of the electrons.</p>
 <p>Blöchl and Parrinello suggested that the choice of mass parameters,
 <img alt="$Q_e$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/25d99aa5082492b57d3beef5928ffac3.svg?invert_in_darkmode&sanitize=true" align=middle width="19.16046pt" height="22.38192pt"/>, and <img alt="$Q_R$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3ed261b38de3a90e4d91fe27c8f513b1.svg?invert_in_darkmode&sanitize=true" align=middle width="22.871475pt" height="22.38192pt"/> should be made such that the period of oscillating
@@ -3409,7 +3416,7 @@ velocities at the start of the simulation. The following input is used
 to increase the ionic velocities by a factor of two at the start of the
 Car-Parrinello simulation.</p>
 <p>Key Input</p>
-<pre><code>…. 
+<pre><code>...
 Car-Parrinello  
 fake_mass 500.0
 time_step 5.0 
@@ -3418,11 +3425,11 @@ loop 10 100
 emotion_filename b12.00.emotion
 xyz_filename     b12.00.xyz
 end 
-….
+...
 </code></pre>
 
 <p>Output</p>
-<pre><code> ….        
+<pre><code>...        
      wavefnc cutoff= 10.000  fft= 42x 42x 42(     6027 waves     1004 per task)  
 
 technical parameters:  
@@ -3440,7 +3447,7 @@ technical parameters:
 0.83868E-03 (ion)**  
 
 Constant Energy Simulation           
- ….
+...
 </code></pre>
 
 <p>The program checks to see if the initial input ionic velocities have a
@@ -3453,7 +3460,9 @@ off this feature set the following</p>
 </code></pre>
 
 <p>or</p>
-<p><code>set nwpw:com_shift .false.</code></p>
+<pre><code> set nwpw:com_shift .false.
+</code></pre>
+
 <h3 id="simulated-annealing-using-constant-temperature-simulation">Simulated Annealing Using Constant Temperature Simulation<a class="headerlink" href="#simulated-annealing-using-constant-temperature-simulation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="b12-example2b.nw">Media:b12-example2b.nw</a>,
 output:<a href="b12-example2b.nwout">Media:b12-example2b.nwout</a>
@@ -3549,7 +3558,7 @@ theory.</p>
 </table>
 <p>Table 1: Standard enthalpy of formation (ΔH<img alt="$_f^o$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K) for
 CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH in kcal/mol from atomization energies with various
-electronic structure methods. Results taken from reference <script type="math/tex; mode=display">2</script>.</p>
+electronic structure methods. Results taken from reference [2].</p>
 <p></center></p>
 <p>Differences of up to 106.5 kcal/mol are found between different levels
 of theory. This example demonstrates that care must be taken in choosing
@@ -3557,7 +3566,7 @@ the appropriate method for calculating the heats of formation from total
 atomization energies.</p>
 <p>The difficulties associated with calculating absolute heats of formation
 from atomization energies can be avoided by using a set of isodesmic
-reactions<script type="math/tex; mode=display">1</script>. The defining property of an isodesmic reaction - that
+reactions[1]. The defining property of an isodesmic reaction - that
 there are an equal number of like bonds on the left-hand and right-hand
 sides of the reaction - helps to minimize the error in the reaction
 energy. These reactions are designed to separate out the interactions
@@ -3717,7 +3726,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 </table>
 <p>Table 2: Gas-phase standard enthalpies of formation ( ΔH<img alt="$_f^o$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K))
 in kcal/mol from isodesmic reactions and G2 Theory calculations taken
-from <script type="math/tex; mode=display">3</script>.</p>
+from [3].</p>
 <p></center></p>
 <p><center></p>
 <table>
@@ -3779,7 +3788,7 @@ from <script type="math/tex; mode=display">3</script>.</p>
 </tbody>
 </table>
 <p>Table 3: Miscellaneous experimental gas-phase enthalpies of formation
-(kcal/mol) taken from <script type="math/tex; mode=display">3</script>.</p>
+(kcal/mol) taken from [3].</p>
 <p></center></p>
 <ol>
 <li>Hehre, W. J., L. Radom, P.v.R. Schleyer, and J.A. Pople Ab Initio
@@ -4632,11 +4641,9 @@ Setting number            1
 
 <p>The following example uses the BAND module to optimize the unit cell and
 geometry for a <a href="http://en.wikipedia.org/wiki/Brucite">Brucite</a> crystal
-(Mg(OH)<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>) with P-3m1
+(Mg(OH)<sub>2</sub> with P-3m1
 symmetry.</p>
-<p><center></p>
-<p><a href="Brucite-small.jpg">400px</a></p>
-<p></center></p>
+<p><img alt="400px" src="Brucite-small.jpg" /></p>
 <pre><code>title &quot;brucite testing - using P-3m1 symmetry&quot;  
 echo  
 
