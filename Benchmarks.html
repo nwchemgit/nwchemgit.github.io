@@ -237,26 +237,26 @@ threshold was relaxed, 1024 cores were used). See the <a href="input_p2ta.nw"> i
 file</a> for
 details.</p>
 <pre><code>--------------------------------------------------------
- Iter          Residuum       Correlation     Cpu    Wall
- --------------------------------------------------------
-   1   0.7187071521175  -7.9406033677717   640.9   807.7
-   ......
- MICROCYCLE DIIS UPDATE: 10 5
-  11   0.0009737920958  -7.9953441809574   691.1   822.2
- --------------------------------------------------------
- Iterations converged
- CCSD correlation energy / hartree =        -7.995344180957357
- CCSD total energy / hartree       =     -2418.570838364838890
+ Iter          Residuum       Correlation     Cpu    Wall
+ --------------------------------------------------------
+   1   0.7187071521175  -7.9406033677717   640.9   807.7
+   ......
+ MICROCYCLE DIIS UPDATE: 10 5
+  11   0.0009737920958  -7.9953441809574   691.1   822.2
+ --------------------------------------------------------
+ Iterations converged
+ CCSD correlation energy / hartree =        -7.995344180957357
+ CCSD total energy / hartree       =     -2418.570838364838890
 
- EOM-CCSD right-hand side iterations
- --------------------------------------------------------------
-      Residuum       Omega / hartree  Omega / eV    Cpu    Wall
- --------------------------------------------------------------
+ EOM-CCSD right-hand side iterations
+ --------------------------------------------------------------
+      Residuum       Omega / hartree  Omega / eV    Cpu    Wall
+ --------------------------------------------------------------
 ......
-Iteration   2 using    6 trial vectors
-  0.1584284659595   0.0882389635508    2.40111   865.3  1041.2
-Iteration   3 using    7 trial vectors
-  0.0575982107592   0.0810948687618    2.20670   918.0  1042.2
+Iteration   2 using    6 trial vectors
+  0.1584284659595   0.0882389635508    2.40111   865.3  1041.2
+Iteration   3 using    7 trial vectors
+  0.0575982107592   0.0810948687618    2.20670   918.0  1042.2
 </code></pre>
 
 <h1 id="performance-tests-of-the-gpu-implementation-of-non-iterative-part-of-the-ccsdt-approach">Performance tests of the GPU implementation of non-iterative part of the CCSD(T) approach<a class="headerlink" href="#performance-tests-of-the-gpu-implementation-of-non-iterative-part-of-the-ccsdt-approach" title="Permanent link">&para;</a></h1>
@@ -265,39 +265,39 @@ XK7 <a href="https://www.olcf.ornl.gov/computing-resources/titan-cray-xk7/">1</a
 system at ORNL (C<sub>22</sub>H<sub>14</sub>, 378 basis set functions,
 C1 symmetry; 98 nodes: 8 cores per node + 1GPU)</p>
 <p><strong>Using 8 CPU cores</strong></p>
-<pre><code>Using CUDA CCSD(T) code 
-Using 0 device(s) per node 
-CCSD[T] correction energy / hartree = -0.150973754992986 
-CCSD[T] correlation energy / hartree = -3.067917061062492 
-CCSD[T] total energy / hartree = -844.403376796441080 
-CCSD(T) correction energy / hartree = -0.147996460406684 
-CCSD(T) correlation energy / hartree = -3.064939766476190 
-CCSD(T) total energy / hartree = -844.400399501854849 
-Cpu &amp; wall time / sec 9229.9 9240.3 
+<pre><code>Using CUDA CCSD(T) code 
+Using 0 device(s) per node 
+CCSD[T] correction energy / hartree = -0.150973754992986 
+CCSD[T] correlation energy / hartree = -3.067917061062492 
+CCSD[T] total energy / hartree = -844.403376796441080 
+CCSD(T) correction energy / hartree = -0.147996460406684 
+CCSD(T) correlation energy / hartree = -3.064939766476190 
+CCSD(T) total energy / hartree = -844.400399501854849 
+Cpu &amp; wall time / sec 9229.9 9240.3 
 </code></pre>
 
 <p><strong>Using 7 CPU cores and one GPU</strong></p>
-<pre><code>Using CUDA CCSD(T) code 
-Using 1 device(s) per node  
-CCSD[T] correction energy / hartree = -0.150973754993019 
-CCSD[T] correlation energy / hartree = -3.067917061062597 
-CCSD[T] total energy / hartree = -844.403376796441307 
-CCSD(T) correction energy / hartree = -0.147996460406693 
-CCSD(T) correlation energy / hartree = -3.064939766476270 
-CCSD(T) total energy / hartree = -844.400399501854963 
-Cpu &amp; wall time / sec 1468.0 1630.7 
+<pre><code>Using CUDA CCSD(T) code 
+Using 1 device(s) per node  
+CCSD[T] correction energy / hartree = -0.150973754993019 
+CCSD[T] correlation energy / hartree = -3.067917061062597 
+CCSD[T] total energy / hartree = -844.403376796441307 
+CCSD(T) correction energy / hartree = -0.147996460406693 
+CCSD(T) correlation energy / hartree = -3.064939766476270 
+CCSD(T) total energy / hartree = -844.400399501854963 
+Cpu &amp; wall time / sec 1468.0 1630.7 
 </code></pre>
 
 <p><strong>Using 1 CPU core and one GPU</strong></p>
-<pre><code>Using CUDA CCSD(T) code
-Using 1 device(s) per node
-CCSD[T] correction energy / hartree = -0.150973754993069
-CCSD[T] correlation energy / hartree = -3.067917061063028
-CCSD[T] total energy / hartree =  -844.***************
-CCSD(T) correction energy / hartree = -0.147996460406749
-CCSD(T) correlation energy / hartree = -3.064939766476708
-CCSD(T) total energy / hartree = -844.400399501861216
-Cpu &amp; wall time / sec 1410.9 1756.5
+<pre><code>Using CUDA CCSD(T) code
+Using 1 device(s) per node
+CCSD[T] correction energy / hartree = -0.150973754993069
+CCSD[T] correlation energy / hartree = -3.067917061063028
+CCSD[T] total energy / hartree =  -844.***************
+CCSD(T) correction energy / hartree = -0.147996460406749
+CCSD(T) correlation energy / hartree = -3.064939766476708
+CCSD(T) total energy / hartree = -844.400399501861216
+Cpu &amp; wall time / sec 1410.9 1756.5
 </code></pre>
 
 <p>Without GPU 9240.3 sec. With GPU 1630.7 sec.</p>
@@ -392,36 +392,90 @@ standard TCE CCSD implementation using tilesize=12.</p>
 <p><img alt="CTF.png" src="CTF.png" /></p>
 <p>Luciferin (aug-cc-pVDZ basis set; RHF reference; frozen core) - time per
 CCSD iteration (<a href="luciferin.nw"> input file</a>)</p>
-<pre><code> tilesize = 30 
-   256 cores      644 sec.
-   512            378 sec.
-   664            314 sec.
-  1020            278 sec.
-  1300            237 sec.
+<pre><code> tilesize = 30 
+   256 cores      644 sec.
+   512            378 sec.
+   664            314 sec.
+  1020            278 sec.
+  1300            237 sec.
 </code></pre>
 
-<pre><code> tilesize = 40
-    128             998 sec.
-    256             575 sec.
+<pre><code> tilesize = 40
+    128             998 sec.
+    256             575 sec.
 </code></pre>
 
 <p>Sucrose (6-311G** basis set; RHF reference; frozen core) - time per
 CCSD iteration (<a href="sucrose.nw"> input file</a>)</p>
-<pre><code>tilesize = 40
-   256 cores   1486 sec. 
-   512          910 sec.
-  1024          608 sec.
+<pre><code>tilesize = 40
+   256 cores   1486 sec. 
+   512          910 sec.
+  1024          608 sec.
 </code></pre>
 
 <p>Cytosine-OH (POL1; UHF reference; frozen core) - time per EOMCCSD
 iteration (<a href="cytosine_oh_pol1.nw"> input file</a>)</p>
-<pre><code> tilesize = 30
- 256 cores    44.5 sec.
+<pre><code> tilesize = 30
+ 256 cores    44.5 sec.
 </code></pre>
 
-<pre><code> tilesize = 40
- 128 cores    55.6 sec.
+<pre><code> tilesize = 40
+ 128 cores    55.6 sec.
 </code></pre>
+
+<h1 id="density-functional-calculation-of-a-zeolite-fragment">Density functional calculation of a zeolite fragment<a class="headerlink" href="#density-functional-calculation-of-a-zeolite-fragment" title="Permanent link">&para;</a></h1>
+<p>Benchmark results with NWChem 7.0.0 for
+LDA calculations (energy plus gradient) on a 533 atoms <a href="benchmarks/siosi8.nw">siosi8</a> zeolite fragment.
+The input uses an atomic orbital basis set with 7108 functions
+and a charge density fitting basis with 16501 functions.
+The input file is available at this <a href="benchmarks/siosi8.nw">link</a>.</p>
+<table>
+<thead>
+<tr>
+<th>computer</th>
+<th align="right"># nodes</th>
+<th align="right">cores/node</th>
+<th align="right">total # cores</th>
+<th align="right">Wall time (seconds)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cascade</td>
+<td align="right">9</td>
+<td align="right">16</td>
+<td align="right">144</td>
+<td align="right">1247</td>
+</tr>
+<tr>
+<td>cascade</td>
+<td align="right">20</td>
+<td align="right">16</td>
+<td align="right">320</td>
+<td align="right">703</td>
+</tr>
+<tr>
+<td>tahoma</td>
+<td align="right">4</td>
+<td align="right">36</td>
+<td align="right">144</td>
+<td align="right">927</td>
+</tr>
+<tr>
+<td>tahoma</td>
+<td align="right">9</td>
+<td align="right">36</td>
+<td align="right">324</td>
+<td align="right">524</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+Hardware used:</p>
+<ul>
+<li>EMSL cascade <a href="https://www.emsl.pnnl.gov/MSC/UserGuide/cascade/cascade_overview.html#nodes">specifications</a>  </li>
+<li>EMSL tahoma <a href="https://www.emsl.pnnl.gov/MSC/UserGuide/tahoma/tahoma_overview.html#nodes">specifications</a></li>
+</ul>
               
             </div>
           </div>
