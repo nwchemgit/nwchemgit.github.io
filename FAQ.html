@@ -383,6 +383,131 @@ mechanism if one is available. This may result in lower performance.
 <p>More details at
 <a href="https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710">https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710</a>
 <a href="https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html">https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html</a></p>
+<h2 id="how-do-i-increase-the-number-of-digits-of-the-s-matrix-printout">How do I increase the number of digits of the S matrix printout<a class="headerlink" href="#how-do-i-increase-the-number-of-digits-of-the-s-matrix-printout" title="Permanent link">&para;</a></h2>
+<p>The only way to increase the number of digits of the AO overlap matrix printout is by modify the source code of
+the <code>ga_print()</code> function.</p>
+<p>For example, in the cagse NWChem 7.0.2, you can do this by editing the C source code in
+$NWCHEM_TOP/src/tools/ga-5.7.2/global/src/global.util.c by increaseing the number of digits from 5 to 7</p>
+<pre><code>--- global.util.c.org   1969-07-20 15:50:45.000000000 -0700
++++ global.util.c   1969-07-20 15:51:19.000000000 -0700
+@@ -122,22 +122,22 @@
+             case C_DBL:
+               pnga_get(g_a, lo, hi, dbuf, &amp;ld);
+               for(jj=0; jj&lt;(jmax-j+1); jj++)
+-                fprintf(file,&quot; %11.5f&quot;,dbuf[jj]);
++                fprintf(file,&quot; %11.7f&quot;,dbuf[jj]);
+               break;
+             case C_DCPL:
+               pnga_get(g_a, lo, hi, dbuf, &amp;ld);
+               for(jj=0; jj&lt;(jmax-j+1); jj+=2)
+-                fprintf(file,&quot; %11.5f,%11.5f&quot;,dbuf[jj], dbuf[jj+1]);
++                fprintf(file,&quot; %11.7f,%11.7f&quot;,dbuf[jj], dbuf[jj+1]);
+               break;
+             case C_SCPL:
+               pnga_get(g_a, lo, hi, dbuf, &amp;ld);
+               for(jj=0; jj&lt;(jmax-j+1); jj+=2)
+-                fprintf(file,&quot; %11.5f,%11.5f&quot;,dbuf[jj], dbuf[jj+1]);
++                fprintf(file,&quot; %11.7f,%11.7f&quot;,dbuf[jj], dbuf[jj+1]);
+               break;
+             case C_FLOAT:
+               pnga_get(g_a, lo, hi, fbuf, &amp;ld);
+               for(jj=0; jj&lt;(jmax-j+1); jj++)
+-                fprintf(file,&quot; %11.5f&quot;,fbuf[jj]);
++                fprintf(file,&quot; %11.7f&quot;,fbuf[jj]);
+               break;       
+             case C_LONG:
+               pnga_get(g_a, lo, hi, lbuf, &amp;ld);
+@@ -229,22 +229,22 @@
+             case C_DBL:
+               pnga_get(g_a, lo, hi, dbuf, &amp;ld);
+               for(jj=0; jj&lt;(jmax-j+1); jj++)
+-                fprintf(file,&quot; %11.5f&quot;,dbuf[jj]);
++                fprintf(file,&quot; %11.7f&quot;,dbuf[jj]);
+               break;
+             case C_FLOAT:
+               pnga_get(g_a, lo, hi, dbuf, &amp;ld);
+               for(jj=0; jj&lt;(jmax-j+1); jj++)
+-                fprintf(file,&quot; %11.5f&quot;,fbuf[jj]);
++                fprintf(file,&quot; %11.7f&quot;,fbuf[jj]);
+               break;     
+             case C_DCPL:
+               pnga_get(g_a, lo, hi, dbuf, &amp;ld);
+               for(jj=0; jj&lt;(jmax-j+1); jj+=2)
+-                fprintf(file,&quot; %11.5f,%11.5f&quot;,dbuf[jj], dbuf[jj+1]);
++                fprintf(file,&quot; %11.7f,%11.7f&quot;,dbuf[jj], dbuf[jj+1]);
+               break;
+             case C_SCPL:
+               pnga_get(g_a, lo, hi, dbuf, &amp;ld);
+               for(jj=0; jj&lt;(jmax-j+1); jj+=2)
+-                fprintf(file,&quot; %11.5f,%11.5f&quot;,dbuf[jj], dbuf[jj+1]);
++                fprintf(file,&quot; %11.7f,%11.7f&quot;,dbuf[jj], dbuf[jj+1]);
+               break;
+             default: pnga_error(&quot;ga_print: wrong type&quot;,0);
+           }
+@@ -761,28 +761,28 @@
+                             if(ndim &gt; 1)
+                                 for(j=0; j&lt;(hip[1]-lop[1]+1); j++)
+                                     if((double)dbuf_2d[j*bufsize+i]&lt;100000.0)
+-                                        fprintf(file,&quot; %11.5f&quot;,
++                                        fprintf(file,&quot; %11.7f&quot;,
+                                                 dbuf_2d[j*bufsize+i]);
+                                     else
+                                         fprintf(file,&quot; %.5e&quot;,
+                                                 dbuf_2d[j*bufsize+i]);
+                             else
+                                 if((double)dbuf_2d[i]&lt;100000.0)
+-                                    fprintf(file,&quot; %11.5f&quot;,dbuf_2d[i]);
++                                    fprintf(file,&quot; %11.7f&quot;,dbuf_2d[i]);
+                                 else
+                                     fprintf(file,&quot; %.5e&quot;,dbuf_2d[i]);
+                             break;
+                         case C_FLOAT:
+                             if(ndim &gt; 1)
+                                 for(j=0; j&lt;(hip[1]-lop[1]+1); j++)
+-                                    fprintf(file,&quot; %11.5f&quot;, fbuf_2d[j*bufsize+i]);
+-                            else fprintf(file,&quot; %11.5f&quot;, fbuf_2d[i]);
++                                    fprintf(file,&quot; %11.7f&quot;, fbuf_2d[j*bufsize+i]);
++                            else fprintf(file,&quot; %11.7f&quot;, fbuf_2d[i]);
+                             break;           
+                         case C_DCPL:
+                             if(ndim &gt; 1)
+                                 for(j=0; j&lt;(hip[1]-lop[1]+1); j++)
+                                     if(((double)dcbuf_2d[(j*bufsize+i)*2]&lt;100000.0)&amp;&amp;((double)dcbuf_2d[(j*bufsize+i)*2+1]&lt;100000.0))
+-                                        fprintf(file,&quot; %11.5f,%11.5f&quot;,
++                                        fprintf(file,&quot; %11.7f,%11.7f&quot;,
+                                                 dcbuf_2d[(j*bufsize+i)*2],
+                                                 dcbuf_2d[(j*bufsize+i)*2+1]);
+                                     else
+@@ -792,7 +792,7 @@
+                             else
+                                 if(((double)dcbuf_2d[i*2]&lt;100000.0) &amp;&amp;
+                                    ((double)dcbuf_2d[i*2+1]&lt;100000.0))
+-                                    fprintf(file,&quot; %11.5f,%11.5f&quot;,
++                                    fprintf(file,&quot; %11.7f,%11.7f&quot;,
+                                             dcbuf_2d[i*2], dcbuf_2d[i*2+1]);
+                                 else
+                                     fprintf(file,&quot; %.5e,%.5e&quot;,
+@@ -802,7 +802,7 @@
+                             if(ndim &gt; 1)
+                                 for(j=0; j&lt;(hip[1]-lop[1]+1); j++)
+                                     if(((float)fcbuf_2d[(j*bufsize+i)*2]&lt;100000.0)&amp;&amp;((float)fcbuf_2d[(j*bufsize+i)*2+1]&lt;100000.0))
+-                                        fprintf(file,&quot; %11.5f,%11.5f&quot;,
++                                        fprintf(file,&quot; %11.7f,%11.7f&quot;,
+                                                 fcbuf_2d[(j*bufsize+i)*2],
+                                                 fcbuf_2d[(j*bufsize+i)*2+1]);
+                                     else
+@@ -812,7 +812,7 @@
+                             else
+                                 if(((float)fcbuf_2d[i*2]&lt;100000.0) &amp;&amp;
+                                    ((float)fcbuf_2d[i*2+1]&lt;100000.0))
+-                                    fprintf(file,&quot; %11.5f,%11.5f&quot;,
++                                    fprintf(file,&quot; %11.7f,%11.7f&quot;,
+                                             fcbuf_2d[i*2], fcbuf_2d[i*2+1]);
+                                 else
+                                     fprintf(file,&quot; %.5e,%.5e&quot;,
+</code></pre>
+
+<p><a href="https://nwchemgit.github.io/Special_AWCforum/sp/id3358.html">https://nwchemgit.github.io/Special_AWCforum/sp/id3358.html</a></p>
               
             </div>
           </div>
