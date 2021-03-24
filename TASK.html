@@ -289,10 +289,8 @@ task. The form of the directive in such cases is as follows:</p>
 </code></pre>
 
 <p>The supported tasks that can be accessed with this form of the TASK
-directive are listed below, with the corresponding entries for string
-variable</p>
-<p><task></p>
-<p>.</p>
+directive are listed below, with the corresponding entries for the string
+variable <code>&lt;task&gt;</code>  </p>
 <ul>
 <li>python - Execute a <a href="Python.html">Python program</a>.</li>
 <li>rtdbprint - Print the contents of the database.</li>
@@ -320,7 +318,7 @@ simply by entering the keyword all. The input entered for command must
 form a single string, and must consist of valid UNIX command(s). If the
 string includes white space, it must be enclosed in double quotes.</p>
 <p>For example, the TASK directive to tell process zero to copy the
-molecular orbitals file to a backup location /piofs/save can be input as
+molecular orbitals file to a backup location <code>/piofs/save</code> can be input as
 follows:</p>
 <pre><code>task shell &quot;cp *.movecs /piofs/save&quot;
 </code></pre>
@@ -395,27 +393,27 @@ section are:</p>
 END
 </code></pre>
 
-<p>MON defines the monomer&rsquo;s name and its atoms; <string monomer name>
+<p><code>MON</code> defines the monomer&rsquo;s name and its atoms; <string monomer name>
 defines the name of the monomer, <integer atoms> is the list of atoms
 corresponding to the monomer (where such a list is relative to the
 initial geometry). This information is needed for each monomer. With the
-tag INPUT the user can modify any calculation attributes for each
+tag <code>INPUT</code> the user can modify any calculation attributes for each
 monomer without ghost. For example, the iterations number and the grid
 can be changed in a DFT calculation (see the example of the interaction
-between Zn<sup>2+</sup> and water). INPUT_WGHOST is the same than INPUT but
+between Zn<sup>2+</sup> and water). <code>INPUT_WGHOST</code> is the same as <code>INPUT</code> but
 for the monomer with ghost. The input changes will be applied within
 this and for the following calculations, you should be cautious
-reverting the changes for the next monomers. CHARGE assigns a charge to
+reverting the changes for the next monomers. <code>CHARGE</code> assigns a charge to
 a monomer and it must be consistent with the total charge in the whole
-system (see Section <a href="Charge.html">Charge</a>). The options OFF and ON turns off and
+system (see Section <a href="Charge.html">Charge</a>). The options <code>OFF</code> and <code>ON</code> turns off and
 on any BSSE calculation.</p>
 <p>The energy evaluation involves 1 + 2N calculations, i.e. one for the
-supermolecule and two for the N monomers. <script type="math/tex; mode=display">S. Simon, M. Duran, J. J.
-Dannenberg, J. Chem. Phys., 105, 11024 (1996)</script> NWChem stores the vector
-files for each calculation (<string monomer name>.bsse.movecs), and one
-hessian file (<string monomer name>.bsse.hess). The code does not assign
+supermolecule and two for the N monomers. [S. Simon, M. Duran, J. J.
+Dannenberg, J. Chem. Phys., 105, 11024 (1996)] NWChem stores the vector
+files for each calculation (<code>&lt;string monomer name&gt;.bsse.movecs</code>), and one
+hessian file (<code>&lt;string monomer name&gt;.bsse.hess</code>). The code does not assign
 automatically the basis set for the ghost atoms, you must assign the
-corresponding bqX for each element, instead.</p>
+corresponding <code>bqX</code> for each element, instead.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
 <p>The dimer (FH)<sub>2</sub></p>
 <pre><code>title dimer  
@@ -441,7 +439,7 @@ end
 task dft energy
 </code></pre>
 
-<p>Changing maxiter for a specific monomer: (Zn<sup>2+</sup>(H<sub>2</sub>O))</p>
+<p>Changing <code>maxiter</code> for a specific monomer: (Zn<sup>2+</sup>(H<sub>2</sub>O))</p>
 <pre><code>title znwater  
 start znwater  
 echo  
@@ -462,11 +460,11 @@ basis &quot;ao basis&quot; 
 end  
 charge 2  
 scf; direct; end  
-mp2; end  
+mp2; freeze atomic;end  
 bsse   
  mon metal 1   
  charge 2   
- input_wghost &quot;scf; maxiter 200; end&quot;   
+ input_wghost &quot;scf\; maxiter 200\; end&quot;   
  mon water 2 3 4  
 end  
 task mp2 optimize
