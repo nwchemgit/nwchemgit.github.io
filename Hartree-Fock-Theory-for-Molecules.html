@@ -222,8 +222,8 @@ be obtained by specifying</p>
 symmetry adapted in NWChem. This may not be desirable for fully
 unrestricted wavefunctions. In such cases, the user has the option of
 defeating the defaults by specifying the keywords
-<a href="#adapt---symmetry-adaptation-of-mos">ADAPT</a> OFF and
-<a href="#sym----use-of-symmetry">SYM</a> OFF .</p>
+<a href="#adapt-symmetry-adaptation-of-mos">ADAPT</a> OFF and
+<a href="#sym-use-of-symmetry">SYM</a> OFF .</p>
 <p>The keywords RHF and ROHF are provided in the code for completeness. It
 may be necessary to specify these in order to modify the behavior of a
 previous calculation (see <a href="NWChem-Architecture.html">NWChem
@@ -435,8 +435,9 @@ orbitals.</p>
 &ldquo;try1.movecs&rdquo;. The MO coefficients for the basis functions on atom 2
 will be swapped with those on atom 1. The final orbitals obtained in the
 calculation will be written to the file &ldquo;try2.movecs&rdquo;.</p>
+<h3 id="vectors-rotate-keyword">VECTORS ROTATE keyword<a class="headerlink" href="#vectors-rotate-keyword" title="Permanent link">&para;</a></h3>
 <p>The following example shows how the ROTATE keyword can be used to rotate
-MO vectors calculated at geometry geom1 to geometry geom2, which has a
+MO vectors calculated at geometry <code>geom1</code> to geometry <code>geom2</code>, which has a
 different rotational orientation:</p>
 <pre><code>set geometry geom1
 dft
@@ -450,7 +451,7 @@ end
 task dft
 </code></pre>
 
-<h3 id="superposition-of-fragment-molecular-orbitals">Superposition of fragment molecular orbitals<a class="headerlink" href="#superposition-of-fragment-molecular-orbitals" title="Permanent link">&para;</a></h3>
+<h3 id="vectors-fragment-keyword-superposition-of-fragment-molecular-orbitals">VECTORS FRAGMENT keyword - Superposition of fragment molecular orbitals<a class="headerlink" href="#vectors-fragment-keyword-superposition-of-fragment-molecular-orbitals" title="Permanent link">&para;</a></h3>
 <p>The fragment initial guess is particularly useful in the following
 instances:</p>
 <ul>
