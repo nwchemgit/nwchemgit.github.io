@@ -151,12 +151,12 @@
             <div class="section">
               
                 <h2 id="zmatrix-z-matrix-input">ZMATRIX &ndash; Z-matrix input<a class="headerlink" href="#zmatrix-z-matrix-input" title="Permanent link">&para;</a></h2>
-<p>The ZMATRIX directive is an optional directive that can be used within
-the compound GEOMETRY directive to specify the structure of the system
+<p>The <code>ZMATRIX</code> directive is an optional directive that can be used within
+the compound <code>GEOMETRY</code> directive to specify the structure of the system
 with a Z-matrix, which can include both internal and Cartesian
-coordinates. The ZMATRIX directive is itself a compound directive that
-can include the VARIABLES and CONSTANTS directives, depending on the
-options selected. The general form of the compound ZMATRIX directive is
+coordinates. The <code>ZMATRIX</code> directive is itself a compound directive that
+can include the <code>VARIABLES</code> and <code>CONSTANTS</code> directives, depending on the
+options selected. The general form of the compound <code>ZMATRIX</code> directive is
 as follows:</p>
 <pre><code>   [ZMATRIX || ZMT || ZMAT 
         &lt;string tagn&gt; &lt;list_of_zmatrix_variables&gt;  
@@ -171,7 +171,7 @@ as follows:</p>
 </code></pre>
 
 <p>The input module recognizes three possible spellings of this directive
-name. It can be invoked with ZMATRIX, ZMT, or ZMAT. The user can specify
+name. It can be invoked with <code>ZMATRIX</code>, <code>ZMT</code>, or <code>ZMAT</code>. The user can specify
 the molecular structure using either Cartesian coordinates or internal
 coordinates (bond lengths, bond angles and dihedral angles. The Z-matrix
 input for a center defines connectivity, bond length, and bond or
@@ -189,13 +189,13 @@ or BQ at the start of the tag.</p>
 <p>Bond lengths, bond angles and dihedral angles (denoted below as R,
 alpha, and beta, respectively) may be specified either as numerical
 values or as symbolic strings that must be subsequently defined using
-the VARIABLES or CONSTANTS directives. The numerical values of the
-symbolic strings labeled VARIABLES may be subject to changes during a
+the <code>VARIABLES</code> or <code>CONSTANTS</code> directives. The numerical values of the
+symbolic strings labeled <code>VARIABLES</code> may be subject to changes during a
 geometry optimization say, while the numerical values of the symbolic
-strings labeled CONSTANTS will stay frozen to the value given in the
+strings labeled <code>CONSTANTS</code> will stay frozen to the value given in the
 input. The same symbolic string can be used more than once, and any
 mixture of numeric data and symbols is acceptable. Bond angles (α) must
-be in the range 0 \&lt; α \&lt; 180.</p>
+be in the range 0 &lt; α &lt; 180.</p>
 <p>The Z-matrix input is specified sequentially as follows:</p>
 <pre><code>  tag1  
   tag2 i R  
@@ -230,17 +230,16 @@ Z-matrix input with optional parameter specified as -1.</p>
 <p></center></p>
 <p>The Z-matrix input shown above is interpreted as follows:</p>
 <ol>
-<li>tag1<br />
+<li><code>tag1</code><br />
     Only a tag is required for the first center.</li>
-<li>tag2 i R<br />
+<li><code>tag2 i R</code><br />
     The second center requires specification of its tag and the bond
     length (<img alt="$R_{Ci}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6edf639cf81543afd1beeabac800ceae.svg?invert_in_darkmode&sanitize=true" align=middle width="27.267735pt" height="22.38192pt"/>) distance to a previous atom, which is identified by i.</li>
-<li>tag3 i R j alpha<br />
+<li><code>tag3 i R j alpha</code><br />
     The third center requires specification of its tag, its bond length
     distance (<img alt="$R_{Ci}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6edf639cf81543afd1beeabac800ceae.svg?invert_in_darkmode&sanitize=true" align=middle width="27.267735pt" height="22.38192pt"/>) to one of the two previous centers (identified
     by the value of i), and the bond angle  <img alt="$\alpha = \widehat{Cij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/75131bd9f30067d5c20cee14b40231f3.svg?invert_in_darkmode&sanitize=true" align=middle width="58.61163pt" height="32.87592pt"/>.</li>
-<li>tag i R j alpha k beta <script type="math/tex; mode=display">\<integer orient default 0\></script>
-<br />
+<li><code>tag i R j alpha k beta [&lt;integer orient default 0&gt;]</code><br />
     The fourth, and all subsequent centers, require the tag, a bond
     length (<img alt="$R_{Ci}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6edf639cf81543afd1beeabac800ceae.svg?invert_in_darkmode&sanitize=true" align=middle width="27.267735pt" height="22.38192pt"/>) relative to center i, the bond angle with
     centers i and j ( <img alt="$\alpha = \widehat{Cij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/75131bd9f30067d5c20cee14b40231f3.svg?invert_in_darkmode&sanitize=true" align=middle width="58.61163pt" height="32.87592pt"/>), and either the
@@ -268,7 +267,7 @@ which has the general form:</p>
 <p>Each line contains the name of a variable followed by its value.
 Optionally, an equals sign (=) can be included between the symbol and
 its value, for clarity in reading the input file.</p>
-<p>Following the VARIABLES directive, the CONSTANTS directive may be used
+<p>Following the <code>VARIABLES</code> directive, the <code>CONSTANTS</code> directive may be used
 to define any Z-matrix symbolic variables that remain unchanged during
 geometry optimizations. To freeze the Cartesian coordinates of an atom,
 refer to <a href="#Applying_constraints_in_geometry_optimizations">Applying constraints in geometry
@@ -280,10 +279,10 @@ The general form of this directive is as follows:</p>
 </code></pre>
 
 <p>Each line contains the name of a variable followed by its value. As with
-the VARIABLES directive, an equals sign (=) can be included between the
+the <code>VARIABLES</code> directive, an equals sign (=) can be included between the
 symbol and its value.</p>
-<p>The end of the Z-matrix input using the compound ZMATRIX directive is
-signaled by a line containing either END or ZEND, following all input
+<p>The end of the Z-matrix input using the compound <code>ZMATRIX</code> directive is
+signaled by a line containing either <code>END</code> or <code>ZEND</code>, following all input
 for the directive itself and its associated optional directives.</p>
 <p>A simple example is presented for water. All Z-matrix parameters are
 specified numerically, and symbolic tags are used to specify
@@ -300,10 +299,10 @@ or may not be identical.</p>
 </code></pre>
 
 <p>The following example illustrates the Z-matrix input for the molecule
-<img alt="$CH_3CF_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/cdaae9d00c367465fffd1cfa2ee4dead.svg?invert_in_darkmode&sanitize=true" align=middle width="63.8088pt" height="22.38192pt"/>. This input uses the numbers of centers to specify the
+CH<sub>3</sub>CF<sub>3</sub>. This input uses the numbers of centers to specify the
 connectivity information (i, j, and k), and uses symbolic variables for
 the Z-matrix parameters R, alpha, and beta, which are defined in the
-inputs for the VARIABLES and CONSTANTS directives.</p>
+inputs for the <code>VARIABLES</code> and <code>CONSTANTS</code> directives.</p>
 <pre><code>geometry  
  zmatrix  
   C   
