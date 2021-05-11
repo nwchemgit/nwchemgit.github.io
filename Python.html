@@ -151,7 +151,7 @@
             <div class="section">
               
                 <h1 id="controlling-nwchem-with-python">Controlling NWChem with Python<a class="headerlink" href="#controlling-nwchem-with-python" title="Permanent link">&para;</a></h1>
-<p>Python (version 1.5.1) programs may be embedded into the NWChem input
+<p>Python programs may be embedded into the NWChem input
 and used to control the execution of NWChem. Python is a very powerful
 and widely used scripting language that provides useful things such as
 variables, conditional branches and loops, and is also readily extended.
@@ -222,10 +222,10 @@ there are some gotchas</p>
 <li>The calls to NWChem functions are all collective (i.e., all nodes
     must execute them). If these calls are not made collectively your
     program may deadlock (i.e., cease to make progress).</li>
-<li>When writing to the database (rtdb_put()) it is the data from node
+<li>When writing to the database (<code>rtdb_put()</code>) it is the data from node
     zero that is written.</li>
 <li>NWChem overrides certain default signal handlers so care must be
-    taken when creating processes (see Section 38.3.11).</li>
+    taken when creating processes (see Section describing <a href="#scaning-a-basis-exponent-yet-again----plotting-and-handling-child-processes">a scanning example</a>).</li>
 </ul>
 <h2 id="nwchem-extensions">NWChem extensions<a class="headerlink" href="#nwchem-extensions" title="Permanent link">&para;</a></h2>
 <p>Since we have little experience using Python, the NWChem-Python
@@ -241,32 +241,32 @@ can be used with the existing optimizers or dynamics package?</p>
 automatically imported and contains the following NWChem-specific
 commands. They all handle NWChem-related errors by raising the exception
 &ldquo;NWChemError&rdquo;, which may be handled in the standard Python manner (see
-Section 38.3.9).</p>
+Section describing <a href="#handling-exceptions-from-nwchem">handling exception</a>).</p>
 <ul>
-<li>input_parse(string) &ndash; invokes the standard NWChem input parser
+<li><code>input_parse(string)</code> &ndash; invokes the standard NWChem input parser
     with the data in string as input. Note that the usual behavior of
     NWChem will apply &ndash; the parser only reads input up to either end of
-    input or until a TASK directive is encountered (the task directive
+    input or until a <code>TASK</code> directive is encountered (the task directive
     is not executed by the parser).</li>
-<li>task_energy(theory) &ndash; returns the energy as if computed with the
-    NWChem directive TASK ENERGY <THEORY>.</li>
-<li>task_gradient(theory) &ndash; returns a tuple (energy,gradient) as if
-    computed with the NWChem directive TASK GRADIENT <THEORY>.</li>
-<li>task_optimize(theory) &ndash; returns a tuple (energy,gradient) as if
-    computed with the NWChem directive TASK OPTIMIZE <THEORY>. The
+<li><code>task_energy(theory)</code> &ndash; returns the energy as if computed with the
+    NWChem directive <code>TASK ENERGY &lt;THEORY&gt;</code>.</li>
+<li><code>task_gradient(theory)</code> &ndash; returns a tuple (energy,gradient) as if
+    computed with the NWChem directive <code>TASK GRADIENT &lt;THEORY&gt;</code>.</li>
+<li><code>task_optimize(theory)</code> &ndash; returns a tuple (energy,gradient) as if
+    computed with the NWChem directive <code>TASK OPTIMIZE &lt;THEORY&gt;</code>. The
     energy and gradient will be those at the last point in the
     optimization and consistent with the current geometry in the
     database.</li>
-<li>ga_nodeid() &ndash; returns the number of the parallel process.</li>
-<li>rtdb_print(print_values) &ndash; prints the contents of the RTDB. If
-    print_values is 0, only the keys are printed, if it is 1 then the
+<li><code>ga_nodeid()</code> &ndash; returns the number of the parallel process.</li>
+<li><code>rtdb_print(print_values)</code> &ndash; prints the contents of the RTDB. If
+    <code>print_values</code> is 0, only the keys are printed, if it is 1 then the
     values are also printed.</li>
-<li>rtdb_put(name, values) or rtdb_put(name, values, type) &ndash; puts the
+<li><code>rtdb_put(name, values)</code> or <code>rtdb_put(name, values, type)</code> &ndash; puts the
     values into the database with the given name. In the first form, the
     type is inferred from the first value, and in the second form the
     type is specified using the last argument as one of INT, DBL,
     LOGICAL, or CHAR.</li>
-<li>rtdb_get(name) &ndash; returns the data from the database associated
+<li><code>rtdb_get(name)</code> &ndash; returns the data from the database associated
     with the given name.</li>
 </ul>
 <p>An
