@@ -549,7 +549,7 @@ the <code>PATH</code> environment variable:</p>
 should be set as 2.7</p>
 <p>You will also need to set PYTHONPATH to include any modules that you are
 using in your input. Examples of Python within NWChem are in the
-$NWCHEM_TOP/QA/tests/pyqa and $NWCHEM_TOP/contrib/python directories.</p>
+<code>$NWCHEM_TOP/QA/tests/pyqa3</code> and <code>$NWCHEM_TOP/contrib/python</code> directories.</p>
 <h3 id="optimized-math-libraries">Optimized math libraries<a class="headerlink" href="#optimized-math-libraries" title="Permanent link">&para;</a></h3>
 <p>By default NWChem uses its own basic linear algebra subroutines (BLAS).
 To include faster BLAS routines, the environment variable BLASOPT needs
@@ -655,8 +655,7 @@ using the following procedure:</p>
 <pre><code>          #INTERFACE64 = 1
 </code></pre>
 
-<pre><code>            needs to be changed to
-</code></pre>
+<p>needs to be changed to</p>
 <pre><code>          INTERFACE64 = 1
 </code></pre>
 
@@ -669,6 +668,9 @@ using the following procedure:</p>
     ACML 4.4.0 using a PGI compiler
     /opt/acml/4.4.0/pgi64_int64/lib/libacml.a</li>
 </ul>
+<p><strong><em>New in NWChem 7.0.2</em></strong>: 
+1. The environment variable <code>BUILD_OPENBLAS</code> can be used to automatically build the OpenBLAS library during a NWChem compilation (either using <code>BLAS_SIZE=8</code> or <code>BLAS_SIZE=4</code>)
+2. The environment variable <code>BUILD_SCALAPACK</code> can be used to automatically build the ScaLapack library during a NWChem compilation (either using <code>SCALAPACK_SIZE=8</code> or <code>SCALAPACK_SIZE=4</code>)</p>
 <h3 id="linking-in-nbo">Linking in NBO<a class="headerlink" href="#linking-in-nbo" title="Permanent link">&para;</a></h3>
 <p>The 5.0 (obsolete) version of NBO provides a utility to generate source
 code that can be linked into computational chemistry packages such as
