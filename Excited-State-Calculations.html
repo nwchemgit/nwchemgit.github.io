@@ -403,15 +403,15 @@ keyword only excitations from occupied states below the energy cutoff
 will be considered.</p>
 <h3 id="ewin-energy-window">EWIN &ndash; energy window<a class="headerlink" href="#ewin-energy-window" title="Permanent link">&para;</a></h3>
 <p>This keyword enables a restricted energy window between a lower energy
-cutoff and a higher energy cutoff. For example, ewin -20.0 -10.0 will
+cutoff and a higher energy cutoff. For example, <code>ewin -20.0 -10.0</code> will
 only consider excitations from occupied orbitals within the specified
 energy window</p>
 <h3 id="alpha-beta-alpha-beta-orbital-windows">Alpha, Beta &ndash; alpha, beta orbital windows<a class="headerlink" href="#alpha-beta-alpha-beta-orbital-windows" title="Permanent link">&para;</a></h3>
 <p>Orbital windows can be specified using the following keywords:</p>
-<ul>
-<li>alpha 1 4</li>
-<li>beta 2 5</li>
-</ul>
+<pre><code>  alpha 1 4
+  beta 2 5
+</code></pre>
+
 <p>Here alpha excitations will be considered from orbitals 1 through 4
 depending on the number of roots requested and beta excitations will be
 considered from orbitals 2 through 5 depending on the number of roots
@@ -808,7 +808,7 @@ for a specific excited state using the DPLOT block</p>
 <pre><code>echo  
 start h2o-td  
 title h2o-td  
-memory total 800 stack 400 heap 50 global 350 mb  
+memory total 800 mb stack 400 mb heap 50 mb  
 charge 0  
 geometry units au noautoz nocenter  
 symmetry group c1  
