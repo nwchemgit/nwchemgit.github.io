@@ -198,6 +198,14 @@ sudo yum install nwchem nwchem-openmpi Lmod
 <pre><code>nwchem_openmpi
 </code></pre>
 
+<p>Serial runs (using a single process) on a input file named <code>n2.nw</code> can be performed with the command</p>
+<pre><code>nwchem_openmpi n2.nw
+</code></pre>
+
+<p>Parallel runs (using more than one process) can be performed with the command</p>
+<pre><code>mpirun -np 2 nwchem_openmpi n2.nw
+</code></pre>
+
 <h1 id="nwchem-availability-on-macos">NWChem availability on macOS<a class="headerlink" href="#nwchem-availability-on-macos" title="Permanent link">&para;</a></h1>
 <p>NWChem can be installed from <a href="https://brew.sh/">Homebrew</a>, by executing the following commands  </p>
 <pre><code>bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
@@ -210,8 +218,7 @@ brew install nwchem
 <pre><code>conda install -c conda-forge nwchem
 </code></pre>
 
-<p>More details at https://github.com/conda-forge/nwchem-feedstock
-```</p>
+<p>More details at https://github.com/conda-forge/nwchem-feedstock</p>
               
             </div>
           </div>
