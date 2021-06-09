@@ -2977,19 +2977,19 @@ where:</p>
 <p>
 <script type="math/tex; mode=display">E_{disp}=-s_6\sum^{N_{atom}-1}_{i=1}\sum^{N_{atom}}_{j=i+1} \frac{C_{6}^{ij}}{R_{ij}^{6}} \left( 1+e^{-\alpha (\frac{R_{ij}}{R_{vdw}} -1)} \right)^{-1}</script>
 </p>
-<p>In this equation, the <script type="math/tex">s_6</script>
-set used, <script type="math/tex">C_6^{ij}</script>
-atoms. <script type="math/tex">R_{vdw}</script>
-radii and the nucleus distance respectively. The <script type="math/tex">\alpha</script>
+<p>In this equation, the  <em>s<sub>6</sub></em> term depends in the functional and basis
+  set used, <em>C<sub>6</sub><sup>ij</sup></em> is the dispersion coefficient between pairs of
+  atoms.  <em>R<sub>vdw</sub></em> and  <em>R<sub>ij</sub></em> are related with van der Waals atom
+radii and the nucleus distance respectively. The  <em>&alpha;</em> value
 contributes to control the corrections at intermediate distances.</p>
-<p>There are available three ways to compute   <em>C<sup>6</sup><sub>ij</sub>:</em> </p>
+<p>There are available three ways to compute   <em>C<sup>6</sup><sub>ij</sub></em>: </p>
 <ol>
 <li>
 <p>
 <script type="math/tex; mode=display">C_6^{ij}= \,\! \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}</script>
 where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from Q. Wu and W. Yang,
 J. Chem. Phys. 116 515 (2002) and U. Zimmerli, M Parrinello and P.
-Koumoutsakos J. Chem. Phys. 120 2693 (2004). (Use vdw 0)  </p>
+Koumoutsakos J. Chem. Phys. 120 2693 (2004). (Use <code>vdw 0</code>)  </p>
 </li>
 <li>
 <p>
@@ -3002,16 +3002,17 @@ Koumoutsakos J. Chem. Phys. 120 2693 (2004). (Use vdw 0)  </p>
 </p>
 </li>
 </ol>
-<p>Note that in each option there is a certain set of <script type="math/tex">C_6</script>
-<script type="math/tex">R_{vdw}</script>
-up to Z=54 for the dispersion correction above. <script type="math/tex">C_6</script>
+<p>Note that in each option there is a certain set of <em>C<sub>6</sub></em> and <em>R<sub>vdw</sub></em>.
+Also note that Grimme only defined parameters for elements
+up to Z=54 for the dispersion correction above. 
+<em>C<sub>6</sub></em> values for
 elements above Z=54 have been set to zero.</p>
-<p>For options vdw 1 and vdw 2 , there are <script type="math/tex">s_6</script>
+<p>For options <code>vdw 1</code> and <code>vdw 2</code> , there are s<sub>6</sub> values by default for
 some functionals and triple-zeta plus double polarization basis set
 (TZV2P):</p>
 <ul>
-<li>vdw 1. BLYP 1.40, PBE 0.70 and BP86 1.30.</li>
-<li>vdw 2. BLYP 1.20, PBE 0.75, BP86 1.05, B3LYP 1.05, Becke97-D 1.25
+<li><code>vdw 1</code> BLYP 1.40, PBE 0.70 and BP86 1.30.</li>
+<li><code>vdw 2</code> BLYP 1.20, PBE 0.75, BP86 1.05, B3LYP 1.05, Becke97-D 1.25
     and TPSS 1.00.</li>
 </ul>
 <p>Grimme&rsquo;s DFT-D3 is also available. Here the dispersion term has the
@@ -3019,21 +3020,21 @@ following
 form:</p>
 <p>E<sub>disp</sub> = &sum;<sub>ij</sub> &sum;<sub>n=6,8</sub> s<sub>n</sub>  C<sup>ij</sup><sub>n</sub> &frasl; r<sub>ij</sub><sup>n</sup> &lbrace;1 + 6 &lbrack;r<sub>ij</sub> &frasl; (s<sub>r,n</sub> R<sub>0</sub><sup>ij</sup>)&rbrack;<sup>-&alpha;n</sup> &rbrace;<sup>-1</sup></p>
 <p>This new dispersion correction covers elements through Z=94.
-<script type="math/tex">C^{ij}_{n} (n=6,8)</script>
+  <em>C<sup>ij</sup><sub>n</sub> (n=6,8)</em> are coordination and geometry dependent. Details
 about the functional form can be found in S. Grimme, J. Antony, S.
 Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010).</p>
 <p>To use the Grimme DFT-D3 dispersion correction, use the option</p>
 <ul>
-<li>vdw 3 (s6 and alpha cannot be set manually). Functionals for which
+<li>
+<p><code>vdw 3</code> (s6 and alpha cannot be set manually). Functionals for which
     DFT-D3 is available in NWChem are BLYP, B3LYP, BP86, Becke97-D,
     PBE96, TPSS, PBE0, B2PLYP, BHLYP, TPSSH, PWB6K, B1B95, SSB-D,
-    MPW1B95, MPWB1K, M05, M05-2X, M06L, M06, M06-2X, and M06HF</li>
-</ul>
-<!-- end list -->
-
-<ul>
-<li>vdw 4 triggers the DFT-D3BJ dispersion model. Currently only BLYP,
-    B3LYP, BHLYP, TPSS, TPSSh,  B2-PLYP, B97-D, BP86, PBE96, PW6B95, revPBE, B3PW91, pwb6k, b1b95, CAM-B3LYP, LC-wPBE,  HCTH120, MPW1B95, BOP, OLYP,  BPBE, OPBE and SSB  are supported.</li>
+    MPW1B95, MPWB1K, M05, M05-2X, M06L, M06, M06-2X, and M06HF</p>
+</li>
+<li>
+<p><code>vdw 4</code> triggers the DFT-D3BJ dispersion model. Currently only BLYP,
+    B3LYP, BHLYP, TPSS, TPSSh,  B2-PLYP, B97-D, BP86, PBE96, PW6B95, revPBE, B3PW91, pwb6k, b1b95, CAM-B3LYP, LC-wPBE,  HCTH120, MPW1B95, BOP, OLYP,  BPBE, OPBE and SSB  are supported.</p>
+</li>
 </ul>
 <p>This capability is also supported for energy gradients and Hessian. Is
 possible to be deactivated with OFF.</p>
