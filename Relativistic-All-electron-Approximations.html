@@ -183,7 +183,7 @@ geometry optimizations and frequency calculations.</p>
 relativistic approximations and is a compound directive that encloses
 additional directives specific to the
 approximations:</p>
-<pre><code>uRELATIVISTIC
+<pre><code>RELATIVISTIC
   [DOUGLAS-KROLL [&lt;string (ON||OFF) default ON&gt; \  
                 &lt;string (FPP||DKH||DKFULL||DK3||DK3FULL) default DKH&gt;]  || 
    ZORA [ (ON || OFF) default ON ] ||   
@@ -293,10 +293,9 @@ in the relativistic block</p>
 Dyall&rsquo;s modified Dirac Hamiltonian. This Hamiltonian is entirely
 equivalent to the original Dirac Hamiltonian, and its solutions have the
 same properties. The modification is achieved by a transformation on the
-small component, extracting out <img alt="$\sigma\cdot{\mathbf{p}}/2mc$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c46aed4b12babd9287a19c391bc35863.svg?invert_in_darkmode&sanitize=true" align=middle width="70.10916pt" height="24.56553pt"/>. This
+small component, extracting out &sigma;&sdot;<strong>p</strong>/2mc. This
 gives the modified small component the same symmetry as the large
-component, and in fact it differs from the large component only at order
-<img alt="$\alpha^2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/faf31b8936b189d00880b729b0055112.svg?invert_in_darkmode&sanitize=true" align=middle width="17.06529pt" height="26.70657pt"/>. The advantage of the modification is that the operators
+component, and in fact it differs from the large component only at order &alpha;<sup>2</sup>. The advantage of the modification is that the operators
 now resemble the operators of the Breit-Pauli Hamiltonian, and can be
 classified in a similar fashion into spin-free, spin-orbit and spin-spin
 terms. It is the spin-free terms which have been implemented in NWChem,
@@ -343,11 +342,11 @@ syntax:</p>
 
 <p>The first sub-option gives the capability to limit the two-electron
 corrections to those in which the small components in any density must
-be on the same center. This reduces the <img alt="$(LL\vert SS)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/66ddaf52ed41bfc115c68b4e5fe18344.svg?invert_in_darkmode&sanitize=true" align=middle width="61.55721pt" height="24.56553pt"/> contributions
-to at most three-center integrals and the <img alt="$(SS\vert SS)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/59ab9338b3084d63a183235bed9b6a2c.svg?invert_in_darkmode&sanitize=true" align=middle width="61.245855pt" height="24.56553pt"/> contributions
+be on the same center. This reduces the <em>(LL|SS)</em> contributions
+to at most three-center integrals and the <em>(SS|SS)</em> contributions
 to two centers. For a case with only one relativistic atom this option
-is redundant. The second controls the inclusion of the <img alt="$(SS\vert SS)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/59ab9338b3084d63a183235bed9b6a2c.svg?invert_in_darkmode&sanitize=true" align=middle width="61.245855pt" height="24.56553pt"/>
-integrals which are of order <img alt="$\alpha^4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b4500a19b399c81e85b5c18d7b910cf6.svg?invert_in_darkmode&sanitize=true" align=middle width="17.06529pt" height="26.70657pt"/>. For light atoms they may
+is redundant. The second controls the inclusion of the <em>(SS|SS)</em>
+integrals which are of order &alpha;<sup>4</sup>. For light atoms they may
 safely be neglected, but for heavy atoms they should be included.</p>
 <p>In addition to the selection of this keyword in the RELATIVISTIC
 directive block, it is necessary to supply basis sets in addition to the
