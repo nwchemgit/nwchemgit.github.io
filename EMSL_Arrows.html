@@ -420,8 +420,6 @@ available:</p>
 <pre><code>-       dft        -- NWChem Gaussian DFT  
 -       pspw   -- NWChem Plane-Wave DFT (periodic boundary conditions, Γ point)  
 -       pspw4 -- NWChem Plane-Wave DFT (aperiodic boundary conditions)  
--       paw      -- NWChem PAW DFT (periodic boundary conditions, Γ point)  
--       paw4    -- NWChem PAW DFT  (aperiodic boundary conditions)  
 -       mp2      -- NWChem MP2 program  
 -       ccsd(t)  -- NWChem CCSD(T)  
 -       pm3      -- Mopac7 PM3  
@@ -488,9 +486,9 @@ xc_property and xc_base are defined to be the same as xc{}.</p>
 <p>The default solvation type is solvation_type{COSMO}. The following
 solvation types are available with the Gaussian DFT, MP2 and CCSD(T)
 programs.</p>
-<pre><code>-       COSMO            -- The COSMO solvation model of Klampt and Shuurman
+<pre><code>-       COSMO            -- The COSMO solvation model of Klampt and Shuurman (solvent=water)
 
--       COSMO-SMD   -- The extended Minnesota COSMO solvation model of Cramer et al.
+-       COSMO-SMD           -- The extended Minnesota COSMO solvation model of Cramer et al. (solvent=water)
 
 -       COSMO-SMD:solvent   -- where the solvent keyword is from Table of SMD solvent names below
 
@@ -1235,16 +1233,9 @@ based on the Minnesota Solvent Descriptor Database:</p>
 Minnesota Solvent Descriptor Database. University of Minnesota:
 Minneapolis, MN, 2010. <a href="http://comp.chem.umn.edu/solvation/mnsddb.pdf">http://comp.chem.umn.edu/solvation/mnsddb.pdf</a></p>
 <h2 id="esmiles-reactions-how-to-calculate-reaction-energies">ESMILES Reactions - How to Calculate Reaction Energies<a class="headerlink" href="#esmiles-reactions-how-to-calculate-reaction-energies" title="Permanent link">&para;</a></h2>
-<p>Everything between inside the Arrows block is parsed. Note that the
-start of the block is the Arrows:: keyword, and the end of the block is
-denoted by the ::Arrows keyword.</p>
 <p>The basic input is a chemical reaction where the molecules are specified
 using smiles strings or esmiles strings (vida infra), e.g.</p>
-<pre><code>Arrows::
-
-reaction: C(Cl)(Cl)(Cl)O + C --&gt; C(Cl)(Cl)Cl + CO :reaction
-
-::Arrows
+<pre><code>   C(Cl)(Cl)(Cl)O + C --&gt; C(Cl)(Cl)Cl + CO
 </code></pre>
 
 <p>Note that the reaction: :reaction keywords have only one &ldquo;:&rdquo;, whereas
@@ -1294,34 +1285,18 @@ the kegg, cas, pubchem, and csid inputs are entered as kegg=value,
 cas=value, cid=value, csid=value where value is the id. The chemical
 structure input types can be mixed and matched in the reaction input.
 The following reaction inputs are all equivalent.</p>
-<pre><code>Arrows::  
+<pre><code>
+trichloromethanol + methane --&gt; chloroform + methyl alcohol
+trichloromethanol + C --&gt; chloroform + kegg=D02309
+trichloromethanol + C --&gt; chloroform + cas=67-56-1
+trichloromethanol + C --&gt; chloroform + cid=887
+trichloromethanol + C --&gt; chloroform + csid=864
+trichloromethanol + C --&gt; chloroform + InChI=1S/CH4O/c1-2/h2H,1H3
 
-reaction: trichloromethanol + methane --&gt; chloroform + methyl alcohol :reaction  
-reaction: trichloromethanol + C --&gt; chloroform + kegg=D02309 :reaction  
-reaction: trichloromethanol + C --&gt; chloroform + cas=67-56-1 :reaction  
-reaction: trichloromethanol + C --&gt; chloroform + cid=887 :reaction  
-reaction: trichloromethanol + C --&gt; chloroform + csid=864 :reaction  
-reaction: trichloromethanol + C --&gt; chloroform + InChI=1S/CH4O/c1-2/h2H,1H3 :reaction  
-
-::Arrows  
-
-A reaction input can be just a single molecule, i.e.
-
-Arrows::  
-
-reaction: C(Cl)(Cl)(Cl)O :reaction  
-
-::Arrows  
 </code></pre>
 
-<p>The energies outputted for this trivial reaction are just the energies
-from the electronic structure calculations. To calculate atomization
-energies the following input can be used.</p>
-<pre><code>Arrows::  
-
-reaction: C(Cl)(Cl)(Cl)O  --&gt; [C]  mult{3} + 3 [Cl] mult{2} + [O] mult{3} :reaction  
-
-::Arrows
+<p>To calculate atomization energies the following input can be used.</p>
+<pre><code> C(Cl)(Cl)(Cl)O  --&gt; [C]  mult{3} + 3 [Cl] mult{2} + [O] mult{3}
 </code></pre>
 
 <h2 id="map-function-for-adding-options-to-reactions">MAP Function for Adding Options to Reactions<a class="headerlink" href="#map-function-for-adding-options-to-reactions" title="Permanent link">&para;</a></h2>
