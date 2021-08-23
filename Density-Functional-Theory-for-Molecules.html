@@ -252,7 +252,8 @@ are:</p>
               [nodiis] [lshift &lt;real lshift default 0.5&gt;] \  
               [nolevelshifting] \  
               [hl_tol &lt;real hl_tol default 0.1&gt;] \  
-              [rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;]]  
+              [rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;]\
+              [fast] ]  
  GRID [(xcoarse||coarse||medium||fine||xfine||huge) default medium] \  
       [(gausleg||lebedev ) default lebedev ] \  
       [(becke||erf1||erf2||ssf) default erf1] \  
@@ -2000,7 +2001,8 @@ file</a>.</p>
              [levlon &lt;real levlon default 0.0&gt;] \  
              [levloff &lt;real levloff default 0.0&gt;] \  
              [(lshift &lt;real lshift default 0.5&gt;) || nolevelshifting] \  
-             [rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;]]
+             [rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;] \
+             [fast] ]
 </code></pre>
 
 <p>Convergence is satisfied by meeting any or all of three criteria;</p>
@@ -2113,11 +2115,23 @@ the SCF convergence (A. D. Rabuck and G. E. Scuseria, J. Chem. Phys
 <pre><code> CONVERGENCE rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;]]
 </code></pre>
 
-<p>where the optional value n_rabuck determines the number of SCF cycles
+<p>where the optional value <code>n_rabuck</code> determines the number of SCF cycles
 during which the method will be active. For example, to set equal to 30
 the number of cycles where the Rabuck method is active, you need to use
 the following line</p>
 <pre><code> CONVERGENCE rabuck 30
+</code></pre>
+
+<p><code>convergence fast</code> turns on a series of parameters that most often speed-up convergence, but not in 100% of the cases.</p>
+<pre><code>  CONVERGENCE fast
+</code></pre>
+
+<p>Here is an input snippet that would give you the same result as convergence fast</p>
+<pre><code>dft
+convergence lshift 0. ncydp 0 dampon 1d99 dampoff 1d-4 damp 40
+end
+set quickguess t
+task dft  
 </code></pre>
 
 <h2 id="cdft-constrained-dft">CDFT &ndash; Constrained DFT<a class="headerlink" href="#cdft-constrained-dft" title="Permanent link">&para;</a></h2>
