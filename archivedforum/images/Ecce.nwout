@@ -1,0 +1,289 @@
+%begin%input file%1%char
+Title "water"
+
+start water    
+geometry
+ O                 -2.77251178    1.39810424    0.00000000
+ H                 -1.81251178    1.39810424    0.00000000
+ H                 -3.09296636    2.30304008    0.00000000
+end
+
+ecce_print /mscf/home/bert/Test/water/ecce.out
+
+basis
+O S
+5.48467170E+03  0.001831
+8.25234950E+02  0.013950
+1.88046960E+02  0.068445
+5.29645000E+01  0.232714
+1.68975700E+01  0.470193
+5.79963530E+00  0.358521
+O S
+1.55396160E+01 -0.110778
+3.59993360E+00 -0.148026
+1.01376180E+00  1.130767
+O S
+2.70005800E-01  1.000000
+O P
+1.55396160E+01  0.070874
+3.59993360E+00  0.339753
+1.01376180E+00  0.727159
+O P
+2.70005800E-01  1.000000
+H S
+1.87311370E+01  0.033495
+2.82539370E+00  0.234727
+6.40121700E-01  0.813757
+H S
+1.61277800E-01  1.000000
+end
+
+task scf
+%end%input file%1%char
+%begin%version%1%char
+Mon_Nov_01_15:59:31_2010 Version 6.0
+%end%version%1%char
+%begin%entry%1%char
+task_energy
+%end%entry%1%char
+task_energy%begin%entry%1%char
+scf
+task_energy%end%entry%1%char
+task_energy scf%begin%entry%1%char
+load_basis
+task_energy scf%end%entry%1%char
+basis "ao basis" cartesian
+ O                s
+     5.484672E+03     1.831000E-03
+     8.252349E+02     1.395000E-02
+     1.880470E+02     6.844500E-02
+     5.296450E+01     2.327140E-01
+     1.689757E+01     4.701930E-01
+     5.799635E+00     3.585210E-01
+ O                s
+     1.553962E+01    -1.107780E-01
+     3.599934E+00    -1.480260E-01
+     1.013762E+00     1.130767E+00
+ O                s
+     2.700058E-01     1.000000E+00
+ O                p
+     1.553962E+01     7.087400E-02
+     3.599934E+00     3.397530E-01
+     1.013762E+00     7.271590E-01
+ O                p
+     2.700058E-01     1.000000E+00
+ H                s
+     1.873114E+01     3.349500E-02
+     2.825394E+00     2.347270E-01
+     6.401217E-01     8.137570E-01
+ H                s
+     1.612778E-01     1.000000E+00
+end
+task_energy scf load_basis%begin%exit%2%char
+load_basis
+ok
+task_energy scf load_basis%end%exit%1%char
+task_energy scf%begin%entry%1%char
+bas_input
+task_energy scf%end%entry%1%char
+basis "ao basis" cartesian
+ O                s
+     5.484672E+03     1.831000E-03
+     8.252349E+02     1.395000E-02
+     1.880470E+02     6.844500E-02
+     5.296450E+01     2.327140E-01
+     1.689757E+01     4.701930E-01
+     5.799635E+00     3.585210E-01
+ O                s
+     1.553962E+01    -1.107780E-01
+     3.599934E+00    -1.480260E-01
+     1.013762E+00     1.130767E+00
+ O                s
+     2.700058E-01     1.000000E+00
+ O                p
+     1.553962E+01     7.087400E-02
+     3.599934E+00     3.397530E-01
+     1.013762E+00     7.271590E-01
+ O                p
+     2.700058E-01     1.000000E+00
+ H                s
+     1.873114E+01     3.349500E-02
+     2.825394E+00     2.347270E-01
+     6.401217E-01     8.137570E-01
+ H                s
+     1.612778E-01     1.000000E+00
+end
+task_energy scf bas_input%begin%exit%2%char
+bas_input
+ok
+task_energy scf bas_input%end%exit%1%char
+task_energy scf%begin%group class names%4%char
+e
+c2
+si.xz
+si.yz
+task_energy scf%end%group class names%4%char
+task_energy scf%begin%group irrep names%4%char
+a1
+a2
+b1
+b2
+task_energy scf%end%group irrep names%4%char
+task_energy scf%begin%total energy%1%double
+-7.59496092109464e+01 
+task_energy scf%end%total energy%1%double
+task_energy scf%begin%orbital gradient norm%1%double
+7.99943535093593e-01 
+task_energy scf%end%orbital gradient norm%1%double
+task_energy scf%begin%total energy%1%double
+-7.59766109254652e+01 
+task_energy scf%end%total energy%1%double
+task_energy scf%begin%orbital gradient norm%1%double
+4.34824561053811e-01 
+task_energy scf%end%orbital gradient norm%1%double
+task_energy scf%begin%total energy%1%double
+-7.59822724902716e+01 
+task_energy scf%end%total energy%1%double
+task_energy scf%begin%orbital gradient norm%1%double
+1.92485808317019e-01 
+task_energy scf%end%orbital gradient norm%1%double
+task_energy scf%begin%total energy%1%double
+-7.59850178996371e+01 
+task_energy scf%end%total energy%1%double
+task_energy scf%begin%orbital gradient norm%1%double
+2.45417435658470e-02 
+task_energy scf%end%orbital gradient norm%1%double
+task_energy scf%begin%total energy%1%double
+-7.59850807269986e+01 
+task_energy scf%end%total energy%1%double
+task_energy scf%begin%orbital gradient norm%1%double
+1.82109058495964e-04 
+task_energy scf%end%orbital gradient norm%1%double
+task_energy scf%begin%total energy%1%double
+-7.59850807287315e+01 
+task_energy scf%end%total energy%1%double
+task_energy scf%begin%orbital gradient norm%1%double
+1.65851378902929e-06 
+task_energy scf%end%orbital gradient norm%1%double
+task_energy scf%begin%total energy%1%double
+-7.59850807287315e+01 
+task_energy scf%end%total energy%1%double
+task_energy scf%begin%one-electron energy%1%double
+-1.22938958426013e+02 
+task_energy scf%end%one-electron energy%1%double
+task_energy scf%begin%two-electron energy%1%double
+3.77967610423764e+01 
+task_energy scf%end%two-electron energy%1%double
+task_energy scf%begin%nuclear repulsion energy%1%double
+9.15711665490483e+00 
+task_energy scf%end%nuclear repulsion energy%1%double
+task_energy scf%begin%orbital symmetries%13%int
+1 1 3 1 4 1 3 3 1 4 1 3 1 
+task_energy scf%end%orbital symmetries%13%int
+task_energy scf%begin%total mulliken atomic charges%3%double
+-8.07337972056946e-01 4.03668986028472e-01 4.03668986028474e-01 
+task_energy scf%end%total mulliken atomic charges%3%double
+task_energy scf%begin%total mulliken shell charges%9%double
+1.99770988528132e+00 8.98803198785913e-01 9.88950660824413e-01 2.89921888362510e+00 
+2.02265534354020e+00 5.02220551977153e-01 9.41104619943752e-02 5.02220551977152e-01 
+9.41104619943744e-02 
+task_energy scf%end%total mulliken shell charges%9%double
+task_energy scf%begin%total dipole%3%double
+3.49720252756924e-15 -1.71555370421934e-16 1.00050446879355e+00 
+task_energy scf%end%total dipole%3%double
+task_energy scf%begin%open shell dipole%3%double
+0.00000000000000e+00 0.00000000000000e+00 0.00000000000000e+00 
+task_energy scf%end%open shell dipole%3%double
+task_energy scf%begin%nuclear dipole%3%double
+0.00000000000000e+00 0.00000000000000e+00 0.00000000000000e+00 
+task_energy scf%end%nuclear dipole%3%double
+task_energy scf%begin%total quadrupole%6%double
+-2.95114419542213e+00 9.91991341156812e-16 4.05231403988182e-15 -5.36490568517881e+00 
+7.05353777866084e-17 -4.65530617978071e+00 
+task_energy scf%end%total quadrupole%6%double
+task_energy scf%begin%open shell quadrupole%6%double
+0.00000000000000e+00 0.00000000000000e+00 0.00000000000000e+00 0.00000000000000e+00 
+0.00000000000000e+00 0.00000000000000e+00 
+task_energy scf%end%open shell quadrupole%6%double
+task_energy scf%begin%nuclear quadrupole%6%double
+4.38968224958730e+00 0.00000000000000e+00 0.00000000000000e+00 0.00000000000000e+00 
+0.00000000000000e+00 1.75400282741624e+00 
+task_energy scf%end%nuclear quadrupole%6%double
+task_energy scf%begin%molecular orbital energies RHF%13%double
+-2.05570966429276e+01 -1.34931075526534e+00 -7.17000470340674e-01 -5.50612070614078e-01 
+-4.98698231482233e-01 2.04120170984091e-01 2.99979186551399e-01 1.08694537070438e+00 
+1.15967779859413e+00 1.16642053975712e+00 1.20774698982287e+00 1.38372040298712e+00 
+1.68072290098072e+00 
+task_energy scf%end%molecular orbital energies RHF%13%double
+task_energy scf%begin%molecular orbital occupations RHF%13%double
+2.00000000000000e+00 2.00000000000000e+00 2.00000000000000e+00 2.00000000000000e+00 
+2.00000000000000e+00 0.00000000000000e+00 0.00000000000000e+00 0.00000000000000e+00 
+0.00000000000000e+00 0.00000000000000e+00 0.00000000000000e+00 0.00000000000000e+00 
+0.00000000000000e+00 
+task_energy scf%end%molecular orbital occupations RHF%13%double
+task_energy scf%begin%molecular orbital symmetries RHF%13%int
+1 1 3 1 4 1 3 3 1 4 1 3 1 
+task_energy scf%end%molecular orbital symmetries RHF%13%int
+task_energy scf%begin%molecular orbital range RHF%2%int
+1 13 
+task_energy scf%end%molecular orbital range RHF%2%int
+task_energy scf%begin%molecular orbital vectors RHF%13 13%double
+ 0.996 0.022 -0.008 2*0.0 0.002 2*0.0 -0.002 0.0 0.002 0.0 0.002
+ -0.213 0.470 0.483 2*0.0 0.106 2*0.0 0.058 0.139 -0.008 0.139 -0.008
+ 3*0.0 0.503 2*0.0 0.267 2*0.0 -0.263 -0.119 0.263 0.119
+ 0.072 -0.173 -0.293 2*0.0 0.557 2*0.0 0.414 0.138 0.079 0.138 0.079
+ 4*0.0 0.641 2*0.0 0.511 5*0.0
+ -0.087 0.108 1.188 2*0.0 0.224 2*0.0 0.456 -0.064 -0.995 -0.064 -0.995
+ 3*0.0 0.335 2*0.0 0.835 2*0.0 0.037 1.372 -0.037 -1.372
+ 3*0.0 0.134 2*0.0 0.771 2*0.0 0.992 -0.465 -0.992 0.465
+ 0.068 -0.316 0.093 2*0.0 -0.385 2*0.0 -0.169 0.974 -0.530 0.974 -0.530
+ 4*0.0 -0.962 2*0.0 1.037 5*0.0
+ -0.046 0.292 0.041 2*0.0 -0.903 2*0.0 1.186 -0.233 -0.107 -0.233 -0.107
+ 3*0.0 -1.035 2*0.0 1.585 2*0.0 -0.060 0.896 0.060 -0.896
+ 0.060 -1.692 2.732 2*0.0 -0.191 2*0.0 0.768 -0.393 -0.629 -0.393 -0.629
+task_energy scf%end%molecular orbital vectors RHF%13 13%double
+task_energy scf%begin%exit%2%char
+scf
+ok
+task_energy scf%end%exit%1%char
+task_energy%begin%cpu time%1%double
+1.33980000000000e-01 
+task_energy%end%cpu time%1%double
+task_energy%begin%wall time%1%double
+2.41439104080200e-01 
+task_energy%end%wall time%1%double
+task_energy%begin%cartesian coordinates%3 3%double
+0.00000000000000e+00 0.00000000000000e+00 -1.10811877466248e-01 
+-7.83975893436699e-01 0.00000000000000e+00 4.43247509864993e-01 
+7.83975893436699e-01 0.00000000000000e+00 4.43247509864993e-01 
+task_energy%end%cartesian coordinates%3 3%double
+task_energy%begin%atomic charges%3%double
+8.00000000000000e+00 1.00000000000000e+00 1.00000000000000e+00 
+task_energy%end%atomic charges%3%double
+task_energy%begin%atomic tags%3%char
+O
+H
+H
+task_energy%end%atomic tags%3%char
+task_energy%begin%group name%1%char
+C2v
+task_energy%end%group name%1%char
+task_energy%begin%total energy%1%double
+-7.59850807287315e+01 
+task_energy%end%total energy%1%double
+task_energy%begin%exit%2%char
+task_energy
+ok
+task_energy%end%exit%1%char
+%begin%single task cpu time%1%double
+1.33980000000000e-01 
+%end%single task cpu time%1%double
+%begin%single task wall time%1%double
+2.44129896163940e-01 
+%end%single task wall time%1%double
+%begin%all tasks cpu time%1%double
+1.60975000000000e-01 
+%end%all tasks cpu time%1%double
+%begin%all tasks wall time%1%double
+1.15895986557007e+00 
+%end%all tasks wall time%1%double

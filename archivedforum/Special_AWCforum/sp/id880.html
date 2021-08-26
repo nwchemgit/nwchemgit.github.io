@@ -1,0 +1,1294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="DFT caculation fail to Calculation failed to converge, someone help please You are viewing a single post from the thread title above" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_sp_id880 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >DFT caculation fail to Calculation failed to converge, someone help please</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"><b><a href='../st/id288.html'>Click here for full thread</a></b></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_880"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_880" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap>3:01:03 AM PST - Fri, Dec 2nd 2011 </td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">This is my input file. <br />
+<br />
+start NiMof74<br />
+title "NiMof74 in DFT 6-31g basis set"<br />
+<br />
+memory 2000 mb <br />
+
+<pre><br />
+</pre>
+geometry<br />
+
+<pre>C                 -2.08550000   -0.89445174   -1.70629893<br />
+C                 -2.08550000   -0.89445174    5.06370107<br />
+C                 -1.02450000   -0.48345174   -0.86029893<br />
+C                 -1.02450000   -0.48345174    5.91070107<br />
+C                  0.96950000    0.93054826   -0.52129893<br />
+C                  0.96950000    0.93054826    6.24870107<br />
+C                 -0.03350000    0.44754826   -1.36729893<br />
+H                 -0.08950000    0.79954826   -2.43729893<br />
+Ni                 3.31650000    1.17454826   -2.40229893<br />
+Ni                 3.31650000    1.17454826    4.36770107<br />
+O                 -2.14850000   -0.45645174   -2.92429893<br />
+O                 -2.14850000   -0.45645174    3.84570107<br />
+O                 -2.98350000   -1.65245174   -1.26629893<br />
+O                 -2.98350000   -1.65245174    5.50370107<br />
+...<br />
+</pre>
+..<br />
+..<br />
+..<br />
+end<br />
+basis <br />
+
+<pre>  * library 6-31g*<br />
+</pre>
+end<br />
+dft<br />
+
+<pre>xc b3lyp<br />
+mult 7<br />
+</pre>
+end<br />
+task dft energy<br />
+task esp<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+My output is <br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<pre> Convergence Information<br />
+         -----------------------<br />
+         Convergence aids based upon iterative change in <br />
+         total energy or number of iterations. <br />
+         Levelshifting, if invoked, occurs when the <br />
+         HOMO/LUMO gap drops below (HL_TOL): 1.00D-02<br />
+         DIIS, if invoked, will attempt to extrapolate <br />
+         using up to (NFOCK): 10 stored Fock matrices.<br />
+</pre>
+<br />
+
+<pre>                   Damping( 0%)  Levelshifting(0.5)       DIIS<br />
+                 --------------- ------------------- ---------------<br />
+         dE  on:    start            ASAP                start   <br />
+         dE off:    2 iters         30 iters            30 iters <br />
+</pre>
+<br />
+
+<pre><br />
+     Screening Tolerance Information<br />
+     -------------------------------<br />
+         Density screening/tol_rho: 1.00D-10<br />
+         AO Gaussian exp screening on grid/accAOfunc:  14<br />
+         CD Gaussian exp screening on grid/accCDfunc:  20<br />
+         XC Gaussian exp screening on grid/accXCfunc:  20<br />
+         Schwarz screening/accCoul: 1.00D-08<br />
+</pre>
+<br />
+
+<pre><br />
+     Superposition of Atomic Density Guess<br />
+     -------------------------------------<br />
+<br />
+Sum of atomic energies:      -16084.04649400<br />
+<br />
+     Non-variational initial energy<br />
+     ------------------------------<br />
+</pre>
+<br />
+
+<pre>Total energy =  -16126.912731<br />
+1-e energy   =  -78673.240923<br />
+2-e energy   =   34303.201578<br />
+HOMO         =      -0.307176<br />
+LUMO         =      -0.305797<br />
+<br />
+  Time after variat. SCF:     92.2<br />
+  Time prior to 1st pass:     92.2<br />
+</pre>
+<br />
+
+<pre>Grid_pts file          = ./NiMof74.gridpts.000<br />
+Record size in doubles =  12289        No. of grid_pts per rec  =   3070<br />
+Max. records in memory =      8        Max. recs in file   =  18720995<br />
+</pre>
+<br />
+<br />
+
+<pre>          Memory utilization after 1st SCF pass: <br />
+          Heap Space remaining (MW):       65.37            65374403<br />
+         Stack Space remaining (MW):       65.48            65482107<br />
+</pre>
+<br />
+
+<pre>  convergence    iter        energy       DeltaE   RMS-Dens  Diis-err    time<br />
+---------------- ----- ----------------- --------- --------- ---------  ------<br />
+d= 0,ls=0.0,diis     1 -16122.8454734711 -4.44D+04  4.62D-02  2.78D+01   119.3<br />
+                                                    4.47D-02  3.03D+01<br />
+WARNING: error on integrated density =  0.47D-05<br />
+greater than required accuracy of  0.10D-05<br />
+d= 0,ls=0.5,diis     2 -15545.8840673711  5.77D+02  2.55D-02  8.98D+02   169.2<br />
+                                                    2.59D-02  8.75D+02<br />
+WARNING: error on integrated density =  0.47D-05<br />
+greater than required accuracy of  0.10D-05<br />
+d= 0,ls=0.5,diis     3 -15792.4279719391 -2.47D+02  1.90D-02  4.45D+02   218.3<br />
+                                                    1.64D-02  4.51D+02<br />
+WARNING: error on integrated density =  0.51D-05<br />
+greater than required accuracy of  0.10D-05<br />
+d= 0,ls=0.5,diis     4 -15919.2150704769 -1.27D+02  1.76D-02  2.87D+02   267.2<br />
+                                                    1.50D-02  2.84D+02<br />
+WARNING: error on integrated density =  0.48D-05<br />
+greater than required accuracy of  0.10D-05<br />
+d= 0,ls=0.5,diis     5 -16004.8790776661 -8.57D+01  1.01D-02  2.36D+02   315.2<br />
+                                                    9.41D-03  2.25D+02<br />
+WARNING: error on integrated density =  0.29D-05<br />
+greater than required accuracy of  0.10D-05<br />
+d= 0,ls=0.5,diis     6 -16079.6781606958 -7.48D+01  5.68D-03  1.26D+02   362.1<br />
+                                                    5.38D-03  1.15D+02<br />
+WARNING: error on integrated density =  0.19D-05<br />
+greater than required accuracy of  0.10D-05<br />
+d= 0,ls=0.5,diis     7 -16097.4588149494 -1.78D+01  2.98D-03  7.93D+01   408.4<br />
+                                                    2.78D-03  7.99D+01<br />
+WARNING: error on integrated density =  0.16D-05<br />
+greater than required accuracy of  0.10D-05<br />
+d= 0,ls=0.5,diis     8 -16123.5200912042 -2.61D+01  1.66D-03  4.27D+01   454.5<br />
+                                                    1.48D-03  4.04D+01<br />
+WARNING: error on integrated density =  0.12D-05<br />
+greater than required accuracy of  0.10D-05<br />
+d= 0,ls=0.5,diis     9 -16129.6316750587 -6.11D+00  1.23D-03  1.95D+01   500.2<br />
+                                                    1.24D-03  1.86D+01<br />
+WARNING: error on integrated density =  0.11D-05<br />
+greater than required accuracy of  0.10D-05<br />
+d= 0,ls=0.5,diis    10 -16131.0677550729 -1.44D+00  9.52D-04  1.81D+01   545.7<br />
+                                                    8.71D-04  1.69D+01<br />
+d= 0,ls=0.5,diis    11 -16133.4737922973 -2.41D+00  1.64D-03  9.13D+00   591.0<br />
+                                                    1.66D-03  8.56D+00<br />
+d= 0,ls=0.5,diis    12 -16134.7502912024 -1.28D+00  8.74D-04  6.78D+00   636.1<br />
+                                                    8.21D-04  7.07D+00<br />
+d= 0,ls=0.5,diis    13 -16135.3548816605 -6.05D-01  5.94D-04  3.97D+00   681.2<br />
+                                                    5.80D-04  4.30D+00<br />
+d= 0,ls=0.5,diis    14 -16135.8334772653 -4.79D-01  5.10D-04  2.55D+00   725.9<br />
+                                                    5.40D-04  2.86D+00<br />
+d= 0,ls=0.5,diis    15 -16136.3298715235 -4.96D-01  4.53D-04  1.07D+00   770.7<br />
+                                                    5.29D-04  1.25D+00<br />
+d= 0,ls=0.5,diis    16 -16136.6765334001 -3.47D-01  2.58D-04  1.73D-01   815.6<br />
+                                                    3.01D-04  1.97D-01<br />
+d= 0,ls=0.5,diis    17 -16136.7754885066 -9.90D-02  2.02D-04  4.32D-02   860.5<br />
+                                                    2.22D-04  4.49D-02<br />
+d= 0,ls=0.5,diis    18 -16136.8189744018 -4.35D-02  1.50D-04  2.61D-02   905.2<br />
+                                                    1.74D-04  2.94D-02<br />
+d= 0,ls=0.5,diis    19 -16136.8483156279 -2.93D-02  1.41D-04  1.85D-02   949.9<br />
+                                                    1.58D-04  2.00D-02<br />
+d= 0,ls=0.5,diis    20 -16136.8738263836 -2.55D-02  1.35D-04  6.94D-03   994.8<br />
+                                                    1.62D-04  9.43D-03<br />
+d= 0,ls=0.5,diis    21 -16136.8948961281 -2.11D-02  1.20D-04  6.94D-03  1039.6<br />
+                                                    1.38D-04  8.60D-03<br />
+d= 0,ls=0.5,diis    22 -16136.9115359193 -1.66D-02  1.07D-04  7.36D-03  1084.3<br />
+                                                    1.21D-04  9.83D-03<br />
+d= 0,ls=0.5,diis    23 -16136.9257793709 -1.42D-02  1.06D-04  6.15D-03  1129.1<br />
+                                                    1.20D-04  8.81D-03<br />
+d= 0,ls=0.5,diis    24 -16136.9391619643 -1.34D-02  1.03D-04  4.79D-03  1173.8<br />
+                                                    1.23D-04  7.35D-03<br />
+d= 0,ls=0.5,diis    25 -16136.9520115518 -1.28D-02  1.09D-04  3.47D-03  1218.6<br />
+                                                    1.20D-04  4.69D-03<br />
+d= 0,ls=0.5,diis    26 -16136.9638380733 -1.18D-02  1.03D-04  4.11D-03  1263.4<br />
+                                                    1.12D-04  5.11D-03<br />
+d= 0,ls=0.5,diis    27 -16136.9749352231 -1.11D-02  9.36D-05  3.69D-03  1308.0<br />
+                                                    9.71D-05  4.86D-03<br />
+d= 0,ls=0.5,diis    28 -16136.9845803062 -9.65D-03  8.32D-05  3.76D-03  1352.7<br />
+                                                    8.41D-05  5.22D-03<br />
+d= 0,ls=0.5,diis    29 -16136.9927272315 -8.15D-03  7.57D-05  4.47D-03  1397.6<br />
+                                                    7.51D-05  6.15D-03<br />
+d= 0,ls=0.5,diis    30 -16136.9997790723 -7.05D-03  6.77D-05  5.46D-03  1442.3<br />
+                                                    6.35D-05  7.47D-03<br />
+<br />
+     Calculation failed to converge<br />
+     ------------------------------<br />
+<br />
+</pre>
+<br />
+<br />
+
+<pre>        Total DFT energy =   -16137.005311733912<br />
+     One electron energy =   -78760.492538167164<br />
+          Coulomb energy =    35419.615715337823<br />
+   Exchange-Corr. energy =    -1039.255103258454<br />
+Nuclear repulsion energy =    28243.126614353881<br />
+</pre>
+<br />
+
+<pre>Numeric. integr. density =      800.000435491158<br />
+</pre>
+<br />
+
+<pre>    Total iterative time =   1392.2s
+</pre></td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />      <br />
+</body> 
+</html> 

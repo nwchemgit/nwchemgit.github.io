@@ -1,0 +1,1364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="generator" content="MediaWiki 1.16.4" />
+<meta name="keywords" content="Car-Parrinello MD calculation problem You are viewing a single post from the thread title above" />
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/gumax/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/gumax/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/gumax/IE70Fixes.css?270" media="screen" /><![endif]-->
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?270"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script>
+var skin="gumax",
+stylepath="/skins",
+wgUrlProtocols="http.html\\:\\/\\/|https\\:\\/\\/|ftp\\:\\/\\/|irc\\:\\/\\/|gopher\\:\\/\\/|telnet\\:\\/\\/|nntp\\:\\/\\/|worldwind\\:\\/\\/|mailto\\:|news\\:|svn\\:\\/\\/",
+wgArticlePath="/index.php/$1",
+wgScriptPath="",
+wgScriptExtension=".php",
+wgVariantArticlePath=false,
+wgActionPaths={},
+wgCanonicalNamespace="Special",
+wgCanonicalSpecialPageName="AWCforum",
+wgNamespaceNumber=-1,
+wgPageName="Special:AWCforum",
+wgTitle="AWCforum",
+wgAction="view",
+wgArticleId=0,
+wgIsArticle=true,
+wgUserName=null,
+wgUserGroups=null,
+wgUserLanguage="en",
+wgContentLanguage="en",
+wgBreakFrames=true,
+wgCurRevisionId=0,
+wgVersion="1.16.4",
+wgEnableAPI=true,
+wgEnableWriteAPI=true,
+wgSeparatorTransformTable=["", ""],
+wgDigitTransformTable=["", ""],
+wgMainPageTitle="Main Page",
+wgFormattedNamespaces={"-2": "Media", "-1": "Special", "0": "", "1": "Talk", "2": "User", "3": "User talk", "4": "NWChem", "5": "NWChem talk", "6": "File", "7": "File talk", "8": "MediaWiki", "9": "MediaWiki talk", "10": "Template", "11": "Template talk", "12": "Help", "13": "Help talk", "14": "Category", "15": "Category talk", "500": "Release-60", "501": "Release-60 talk", "502": "Release61", "503": "Release61 talk", "504": "Release62", "505": "Release62 talk", "506": "Release64", "507": "Release64 talk", "508": "Release65", "509": "Release65 talk", "510": "Development", "511": "Development talk", "512": "Release66", "513": "Release66 talk", "121707": "Forum"},
+wgNamespaceIds={"media": -2, "special": -1, "": 0, "talk": 1, "user": 2, "user_talk": 3, "nwchem": 4, "nwchem_talk": 5, "file": 6, "file_talk": 7, "mediawiki": 8, "mediawiki_talk": 9, "template": 10, "template_talk": 11, "help": 12, "help_talk": 13, "category": 14, "category_talk": 15, "release-60": 500, "release-60_talk": 501, "release61": 502, "release61_talk": 503, "release62": 504, "release62_talk": 505, "release64": 506, "release64_talk": 507, "release65": 508, "release65_talk": 509, "development": 510, "development_talk": 511, "release66": 512, "release66_talk": 513, "forum": 121707, "ns_reldoc64": "NS_RELDOC65", "ns_reldoc64_talk": "NS_RELDOC65_TALK", "image": 6, "image_talk": 7},
+wgSiteName="NWChem",
+wgCategories=[],
+wgRestrictionEdit=[],
+wgRestrictionMove=[];
+</script>
+		<!-- Head Scripts -->
+<style type="text/css">
+#bodyContent a[href ^="http://"] {
+background: none;
+    padding-right: 0px;
+}
+
+#bodyContent a.external {
+background: none;
+	padding-right: 0px;
+}
+
+#p-cactions li a {
+text-transform: capitalize;
+}
+
+#contentSub {
+margin: 0;
+padding: 2px;
+padding-bottom: 6px;
+}
+
+pre {
+margin:0px; 
+    padding:5px;
+    padding-bottom:20px;  
+    
+    width: 600px;
+    overflow:auto;
+    overflow-y: visible;
+    line-height: 100%;
+}
+
+.top_user_links {
+margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #aaa;
+    text-align: right;
+}
+
+#TopMenuLinksHolder li a:hover {
+
+}
+
+#TopMenuLinksHolder li a {
+
+}
+
+#TopMenuLinksHolder li {
+margin-top: 4px;   
+    margin-left: 4px;
+    margin-bottom: 0px;
+    
+    padding: 3px;
+    
+    list-style: none;
+    float: right;
+    display: block;
+    
+    width: auto;
+    white-space: nowrap;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    color: #000;
+    text-decoration: none;
+    font: 11px Verdana;
+    text-align: left;
+    z-index: 3;
+}
+
+#TopMenuLinksHolder a:visited {
+
+}
+
+#TopMenuLinksHolder div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#TopMenuLinksHolder div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: auto;
+        white-space: nowrap;
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#TopMenuLinksHolder div {
+position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+}
+
+#TopMenuLinksHolder {
+margin: 0;
+    padding: 0;
+    z-index: 3;
+}
+
+.UserNameOptions {
+
+}
+
+#UserNameOptions a:visited {
+
+}
+
+#UserNameOptions li a:hover {
+
+}
+
+#UserNameOptions li a {
+font: 11px Verdana;
+}
+
+#UserNameOptions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    border: 0px;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+}
+
+#UserNameOptions div a:hover {
+color: #FFF;
+}
+
+#UserNameOptions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 5px;
+        
+        width: 500px;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#UserNameOptions div {
+position: absolute;
+    display: block;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    font: 12px arial;
+    line-height: 100%;
+}
+
+#UserNameOptions {
+margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+
+.group_text {
+font-size: 84%;
+    width: auto;
+    padding: 0px;
+}
+
+.edited_on {
+border-top: 1px solid #aaa;
+    margin: 0px;
+    margin-bottom: 0px;
+    padding-left: 5px;
+    font-size: 12px;
+}
+
+.post_title {
+
+}
+
+.post_date {
+border-bottom: 1px solid #aaa;
+    font-size: 90%;
+    padding-left: 2px;
+}
+
+.post_td {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    margin: .0em;
+    padding: .0em;
+}
+
+.post_body {
+padding: .5em;
+    padding-top: 0px;
+}
+
+.post0 {
+background-color: #E5E5E5;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+.post1 {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding-bottom: .0em;
+}
+
+.post_footer {
+/* post, quote, edit buttons */
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.post_box {
+margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 2px;
+    width: auto;
+}
+
+.mem_name {
+border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: .4em;
+}
+
+.adv {
+border: 0px;
+    margin: 0em;
+    padding: 0em;
+}
+
+.thread_sig {
+border-top: 2px solid #aaa;
+    margin: 3px;
+    padding-left: 5px;
+}
+
+#subscribe_menu {
+position: absolute;
+    background: #ccc ;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    margin: 0em;
+    padding: 5px;
+    padding-top: 0px;
+    top:auto;
+    right:65px;
+    z-index: 2;
+}
+
+.drop_down_buttons:hover {
+background: #ccc ;
+}
+
+.drop_down_buttons {
+margin: 0em;
+    white-space: nowrap;
+    border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    background: #fff ;
+}
+
+.mod_menu_row {
+text-align: left;
+}
+
+.post_buttons:hover {
+background: #fff ;
+}
+
+.post_buttons {
+white-space: nowrap;
+    float: right;
+    margin-top: .5em;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    color: #000;
+}
+
+.quote_title {
+border: 1px dashed #aaa;
+	padding: 5px;
+	background-color: #f9f9f9;
+	font-family:"Courier New", Courier, mono;
+}
+
+.quote {
+border-top: 1px solid #000;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 95%;
+}
+
+.user_options_row {
+border: 1px solid #aaa;
+    background: #fff ;
+    padding: .3em;
+}
+
+.t_userinfo {
+white-space:nowrap;
+    text-align: left;
+    margin: 0;
+    padding: .7em;
+    padding-bottom: 0em;
+}
+
+.ThreadOtions {
+margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+#ThreadOtions a:visited {
+
+}
+
+#ThreadOtions li a:hover {
+
+}
+
+#ThreadOtions li a {
+border: 1px solid #aaa;
+    border-bottom: 0em;
+    padding: 4px;
+}
+
+#ThreadOtions li {
+list-style: none;
+    display: block;
+    white-space: nowrap;
+    
+    border: 0px;
+    color: #000;
+    
+    text-decoration: none;
+    z-index: 3;
+}
+
+#ThreadOtions div a:hover {
+background: #FFF;
+    color: #000;
+}
+
+#ThreadOtions div a {
+position: relative;
+        display: block;
+        margin: 0;
+        padding: 2px;
+        border: 0em;
+        
+        white-space: nowrap; 
+        text-align: left;
+        text-decoration: none;
+        font: 11px arial;
+}
+
+#ThreadOtions div {
+position: absolute; 
+    right: 50px;
+    visibility: hidden;
+    margin: 0;
+    padding: 5px;
+    background: #DDDDDD;
+    border: 1px solid #AAAAAA;
+    white-space: nowrap; 
+    text-align: left;
+}
+
+#ThreadOtions {
+margin-top: 3px;
+    padding: 0;
+    z-index: 3;
+}
+
+.forum_posts {
+border: 1px solid #aaa;
+    margin: 0em;
+    padding: 0em;
+    width: 100%;
+
+ width: 100%;
+}
+
+.post {
+background-color: #f9f9f9;
+    border-left: 1px solid #aaa;
+    padding: .0em;
+}
+
+#search_box {
+white-space:nowrap;
+    text-align: right; 
+    margin: .0em;
+    padding: 0px;
+}
+
+.search_box {
+float: right;
+    font-size: 97%;
+    margin: .0em;
+    color: #000;
+    background: #fff;
+    border: 1px solid #000;
+    margin-left: 5px;
+    padding: 0px;
+}
+
+.highlightsearchword {
+color: #FF0000;
+}
+
+.poll_display_table {
+border: 1px solid #aaa;
+    
+    padding: 1px;
+}
+
+.poll_displayheader {
+border-bottom: 1px dashed #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_row {
+border-bottom: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 2px;
+}
+
+.poll_display_vote_total {
+border-top: 1px solid #aaa;
+    padding: 4px;
+    background-color: #DDDDDD;
+    font-family:"Courier New", Courier, mono;
+}
+
+.poll_display_vote_numbers_header {
+border: 1px solid #aaa;
+border-bottom: 0;
+}
+
+.poll_display_vote_percent_header {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option_header {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_numbers {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_display_vote_percent {
+border-top: 1px solid #aaa;
+    padding: 1px;
+}
+
+.poll_display_vote_option {
+border: 1px solid #aaa;
+    border-bottom: 0;
+    padding: 1px;
+}
+
+.poll_percent_color_op10 {
+background-color: #7FFF00;
+}
+
+.poll_percent_color_op1 {
+background-color: #CD5555;
+}
+
+.poll_percent_color_op2 {
+background-color: #5CACEE;
+}
+
+.poll_percent_color_op3 {
+background-color: #FFCC11;
+}
+
+.poll_percent_color_op4 {
+background-color: #668014;
+}
+
+.poll_percent_color_op5 {
+background-color: #A0522D;
+}
+
+.poll_percent_color_op6 {
+background-color: #9F79EE;
+}
+
+.poll_percent_color_op7 {
+background-color: #EE00EE;
+}
+
+.poll_percent_color_op8 {
+background-color: #DC143C;
+}
+
+.poll_percent_color_op9 {
+background-color: #551011;
+}
+
+.page_jumps_top:hover {
+background: #ccc ;
+}
+
+.page_jumps_top {
+white-space: nowrap;
+    display: inline;
+    
+    margin: 0px; 
+    margin-right: 2px;
+    
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 4px;
+    
+    color: #000;
+}
+
+.page_jumps_bot:hover {
+background: #ccc ;
+}
+
+.page_jumps_bot {
+border: 1px solid #aaa;
+    border-top: 0px;
+    padding-top: 2px;
+    margin-left: 2px;
+    font-size: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+}
+
+.main_memtable {
+border: 1px solid #aaa;
+}
+
+.main_leftmenu {
+border-right: 1px solid #aaa;
+     background-color: #f9f9f9;
+     width: 175px;
+}
+
+.leftmenuheaders {
+border: 1px dashed #aaa;
+    padding: 2px;
+    font-family:"Courier New", Courier, mono;
+}
+
+.leftmenu {
+background-color: #f9f9f9;
+}
+
+.right_body {
+padding: 2px;
+}
+
+.mem_pm_table {
+border: 1px solid #aaa;
+    padding: 2px;
+    margin: 7px;
+}
+
+.pm_header_new {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_title {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:85%;
+}
+
+.pm_header_sender {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_header_date {
+background-color: #aaa;
+    border: 1px solid #000;
+    padding: 2px;
+    width:5%;
+}
+
+.pm_row {
+background-color: #f9f9f9;
+    border: 1px solid #000;
+    padding: 3px;
+}
+
+#cat_list_lastaction_user {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 100%;
+}
+
+#cat_list_lastaction_date {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#cat_list_lastaction_title {
+font-size: 90%;
+    color: #7d7d7d;
+    text-align: right;
+    margin-right: 10px;
+    line-height: 105%;
+}
+
+#small_desc {
+font-size: 84%;
+    color: #7d7d7d;
+	margin-left: 10px;
+    width: auto;
+}
+
+#cat_forumdisc {
+font-size: 84%;
+    color: #7d7d7d;
+    margin-left: 10px;
+    width: auto;
+}
+
+.cat_forumrows {
+border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+
+.thread_col_head {
+border: 1px solid #aaa;
+    margin: 0px;
+    padding: 5px;
+    white-space: nowrap;
+}
+
+.bread_crumbs {
+border-bottom: 1px solid #aaa;
+    border-top: 0px;
+    padding: 2px;
+    text-align: left;
+}
+
+.dl_maintable_head {
+border-right: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    background-color: #fff;
+    padding: 2px;
+}
+
+.dl_maintable {
+border: 1px solid #aaa;
+    margin: 1px;
+    padding: 1px;
+}
+
+.right_float {
+float: right;
+	margin-top: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.right {
+float: right;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.spacer {
+background-color: #aaa;
+}
+
+.whos_here_header {
+border-bottom: 1px dashed #aaa;
+            padding: 4px;
+            font-family:"Courier New", Courier, mono;
+}
+
+.whos_here_row {
+border-bottom: 1px solid #aaa;
+            background-color: #f9f9f9;
+            padding: 2px;
+}
+
+.whos_here {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.nothing {
+font-size: 0%;
+            margin: .0em;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            width: 0;
+}
+
+.forum_stats {
+border: 1px solid #aaa;
+            border-bottom: 0;
+}
+
+.forum_stats_leftcol {
+border-bottom: 1px solid #aaa;
+                background-color: #f9f9f9;
+                padding: 2px;
+}
+
+.forum_stats_rightcol {
+background-color: #f9f9f9;
+                border-bottom: 1px solid #aaa;
+                padding: 2px;
+}
+
+.forum_stats_header {
+border-bottom: 1px dashed #aaa;
+                padding: 4px;
+                font-family:"Courier New", Courier, mono;
+}
+
+.thread_rows0 {
+background-color: #E5E5E5;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows1 {
+background-color: #f3f3f3;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_rows {
+background-color: #f9f9f9;
+    border: 1px solid #aaa;
+    border-top: 0px ;
+    padding: 2px;
+    font-size: 95%;
+}
+
+#annc {
+border: 1px solid #000;
+	background-color: red;
+	padding: 0px;
+}
+
+.sticky {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #ffa; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+.thread_lastaction {
+font-size: 84%;
+    text-align: right;
+    white-space: nowrap;
+    display: inline;
+}
+
+.pagejumps_PostOnForumPage:hover {
+background: #ccc ;
+}
+
+.pagejumps_PostOnForumPage {
+border: 1px solid #aaa;
+    margin-left: 3px;
+    font-size: 100%;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 0px;
+}
+
+.new_thread_button:hover {
+background: #ccc ;
+}
+
+.new_thread_button {
+white-space: nowrap;
+    float: right;
+    display: inline; /*fixes IE float bug*/
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    margin-left: 10px;
+   /* margin-left: -4px; */
+    border: 1px solid #aaa;
+    border-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 3px;
+    text-align: left; /* 2.4.1 */
+    color: #000;
+}
+
+#row_info td {
+border: 1px solid #aaa;
+	border-top: 0px;
+	background-color: #f9f9f9;
+	padding: 5px;
+	font-size: 95%;
+}
+
+.page_jumps_holder_thread_bot {
+border-bottom: 1px solid #aaa;
+}
+
+.page_jumps_holderBot {
+
+}
+
+.poll_thread_listing {
+border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #FFCC00;
+    padding: 2px;
+    font-size: 95%;
+}
+
+.locked_thread {
+font-style: italic;
+    border: 1px solid #aaa;
+    border-top: 0px;
+    background-color:  #e2ffe2; /* #ffa; e2ffe2 */
+    padding: 2px;
+    font-size: 95%;
+}
+
+#ajax_pmname {
+text-align: left;
+}
+
+#ajax_pmname ul {
+list-style: none;
+margin: 0;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li:hover {
+background: #f9f9f9;
+	margin-left: .1em;
+	text-decoration: underline;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#ajax_pmname li {
+padding: 2px 5px;
+	white-space: nowrap;
+	text-align: left;
+}
+
+</style>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+</head>
+
+
+<body class="mediawiki ltr ns--1 ns-special page-Special_AWCforum_sp_id7130 skin-gumax">
+
+	</div>
+	<!-- ///// end of gumax-header ///// -->
+
+
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading" >Car-Parrinello MD calculation problem</h1>
+	</tr>
+</table>
+<br />    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td width="65%" align="left" nowrap="nowrap"><b><a href='../st/id1990.html'>Click here for full thread</a></b></td>                                         
+            <td width="35%" class='ThreadOtions' nowrap></td>    
+        </tr>
+    </table>       <a name="post_7130"></a>       
+        <table class="forum_posts" cellpadding="0" cellspacing="0" id="fullheight">
+            <tr>
+                <td width="100%" align="left" colspan="2" valign="top" class="mem_name" id="name_7130" nowrap>
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td class="UserNameOptions" width="100%">
+                                <ul id="UserNameOptions">
+                                  <li>
+                                    <div id="mem1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+                                        
+                                    </div>
+                                  </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" nowrap valign="top" width="20">
+                    <table cellpadding="0" cellspacing="0" width="20">
+                        <tr>
+                            <td class="t_userinfo" width="20" nowrap>
+                <!-- member_title --><div class="">Just Got Here</div><!-- /member_title -->
+                                
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                        
+            		<td align="left" width="100%" valign="top" id="fullheight">
+		                <table width="100%" cellpadding="0" cellspacing="0" class="post0" height="75">
+		                    <tr>
+		                        <td class="post_date" valign="bottom" height="1px"  width="100%" colspan="2"  nowrap>6:00:48 AM PST - Fri, Mar 4th 2016 </td>
+		                            <td class="post_date" valign="bottom" height="1px" width="100%" nowrap></td>
+
+		                    </tr>
+		                                     
+		                    <tr>
+		                        <td valign="top" class="post_body" height="65" colspan="2">Dear All<br />
+I'm trying to perform a Car-Parrinello calculation on a box of benzene molecules. I'm using pspw for structural optimization of the moeclues before running MD simulation. However, when I look at the optimized structure of the simulation box, it seems that all of the benzene molecules have been broken and their C and H atoms have been separated. Please guide we how can I solve this problem. I appreciate you help. My input file is as follows:<br />
+title "benzene ab initio MD"<br />
+<br />
+memory 1000 mb<br />
+<br />
+start benzene20.nw<br />
+geometry units angstroms<br />
+
+<pre>C                 -2.84313711    0.40305010    0.00000000<br />
+C                 -1.44797711    0.40305010    0.00000000<br />
+C                 -0.75043911    1.61080110    0.00000000<br />
+C                 -1.44809311    2.81931010   -0.00119900<br />
+C                 -2.84291811    2.81923210   -0.00167800<br />
+C                 -3.54051911    1.61102610   -0.00068200<br />
+H                 -3.39289611   -0.54926690    0.00045000<br />
+H                 -0.89846911   -0.54946290    0.00131500<br />
+H                  0.34924089    1.61088110    0.00063400<br />
+H                 -0.89789311    3.77145310   -0.00125800<br />
+H                 -3.39304011    3.77151310   -0.00263100<br />
+H                 -4.64012311    1.61120910   -0.00086200<br />
+C                  6.56721800    3.10590793   -0.00056443<br />
+C                  7.96237800    3.10590793   -0.00056443<br />
+C                  8.65991600    4.31365893   -0.00056443<br />
+C                  7.96226200    5.52216793   -0.00176343<br />
+C                  6.56743700    5.52208993   -0.00224243<br />
+C                  5.86983600    4.31388393   -0.00124643<br />
+H                  6.01745900    2.15359093   -0.00011443<br />
+H                  8.51188600    2.15339493    0.00075057<br />
+H                  9.75959600    4.31373893    0.00006957<br />
+H                  8.51246200    6.47431093   -0.00182243<br />
+H                  6.01731500    6.47437093   -0.00319543<br />
+H                  4.77023200    4.31406693   -0.00142643<br />
+C                  3.29114260   -3.91373234   -1.23235702<br />
+C                  4.68630260   -3.91373234   -1.23235702<br />
+C                  5.38384060   -2.70598134   -1.23235702<br />
+C                  4.68618660   -1.49747234   -1.23355602<br />
+C                  3.29136160   -1.49755034   -1.23403502<br />
+C                  2.59376060   -2.70575634   -1.23303902<br />
+H                  2.74138360   -4.86604934   -1.23190702<br />
+H                  5.23581060   -4.86624534   -1.23104202<br />
+H                  6.48352060   -2.70590134   -1.23172302<br />
+H                  5.23638660   -0.54532934   -1.23361502<br />
+H                  2.74123960   -0.54526934   -1.23498802<br />
+H                  1.49415660   -2.70557334   -1.23321902<br />
+C                  3.46434244    2.54568378   -4.50747046<br />
+C                  4.85950244    2.54568378   -4.50747046<br />
+C                  5.55704044    3.75343478   -4.50747046<br />
+C                  4.85938644    4.96194378   -4.50866946<br />
+C                  3.46456144    4.96186578   -4.50914846<br />
+C                  2.76696044    3.75365978   -4.50815246<br />
+H                  2.91458344    1.59336678   -4.50702046<br />
+H                  5.40901044    1.59317078   -4.50615546<br />
+H                  6.65672044    3.75351478   -4.50683646<br />
+H                  5.40958644    5.91408678   -4.50872846<br />
+H                  2.91443944    5.91414678   -4.51010146<br />
+H                  1.66735644    3.75384278   -4.50833246<br />
+C                  2.00829885   -4.26356223   -6.23781143<br />
+C                  3.40345885   -4.26356223   -6.23781143<br />
+C                  4.10099685   -3.05581123   -6.23781143<br />
+C                  3.40334285   -1.84730223   -6.23901043<br />
+C                  2.00851785   -1.84738023   -6.23948943<br />
+C                  1.31091685   -3.05558623   -6.23849343<br />
+H                  1.45853985   -5.21587923   -6.23736143<br />
+H                  3.95296685   -5.21607523   -6.23649643<br />
+H                  5.20067685   -3.05573123   -6.23717743<br />
+H                  3.95354285   -0.89515923   -6.23906943<br />
+H                  1.45839585   -0.89509923   -6.24044243<br />
+H                  0.21131285   -3.05540323   -6.23867343<br />
+C                  3.33541761    4.98815425    4.81666324<br />
+C                  4.73057761    4.98815425    4.81666324<br />
+C                  5.42811561    6.19590525    4.81666324<br />
+C                  4.73046161    7.40441425    4.81546424<br />
+C                  3.33563661    7.40433625    4.81498524<br />
+C                  2.63803561    6.19613025    4.81598124<br />
+H                  2.78565861    4.03583725    4.81711324<br />
+H                  5.28008561    4.03564125    4.81797824<br />
+H                  6.52779561    6.19598525    4.81729724<br />
+H                  5.28066161    8.35655725    4.81540524<br />
+H                  2.78551461    8.35661725    4.81403224<br />
+H                  1.53843161    6.19631325    4.81580124<br />
+C                 -0.24724487   -1.47647025    5.70034460<br />
+C                  1.14791513   -1.47647025    5.70034460<br />
+C                  1.84545313   -0.26871925    5.70034460<br />
+C                  1.14779913    0.93978975    5.69914560<br />
+C                 -0.24702587    0.93971175    5.69866660<br />
+C                 -0.94462687   -0.26849425    5.69966260<br />
+H                 -0.79700387   -2.42878725    5.70079460<br />
+H                  1.69742313   -2.42898325    5.70165960<br />
+H                  2.94513313   -0.26863925    5.70097860<br />
+H                  1.69799913    1.89193275    5.69908660<br />
+H                 -0.79714787    1.89199275    5.69771360<br />
+H                 -2.04423087   -0.26831125    5.69948260<br />
+C                  5.22117859   11.16506489    1.52523606<br />
+C                  6.61633859   11.16506489    1.52523606<br />
+C                  7.31387659   12.37281589    1.52523606<br />
+C                  6.61622259   13.58132489    1.52403706<br />
+C                  5.22139759   13.58124689    1.52355806<br />
+C                  4.52379659   12.37304089    1.52455406<br />
+H                  4.67141959   10.21274789    1.52568606<br />
+H                  7.16584659   10.21255189    1.52655106<br />
+H                  8.41355659   12.37289589    1.52587006<br />
+H                  7.16642259   14.53346789    1.52397806<br />
+H                  4.67127559   14.53352789    1.52260506<br />
+H                  3.42419259   12.37322389    1.52437406<br />
+C                  6.28114930   10.83182567   -4.09687482<br />
+C                  7.67630930   10.83182567   -4.09687482<br />
+C                  8.37384730   12.03957667   -4.09687482<br />
+C                  7.67619330   13.24808567   -4.09807382<br />
+C                  6.28136830   13.24800767   -4.09855282<br />
+C                  5.58376730   12.03980167   -4.09755682<br />
+H                  5.73139030    9.87950867   -4.09642482<br />
+H                  8.22581730    9.87931267   -4.09555982<br />
+H                  9.47352730   12.03965667   -4.09624082<br />
+H                  8.22639330   14.20022867   -4.09813282<br />
+H                  5.73124630   14.20028867   -4.09950582<br />
+H                  4.48416330   12.03998467   -4.09773682<br />
+C                  0.74015125   -9.53571503   -3.88960054<br />
+C                  2.13531125   -9.53571503   -3.88960054<br />
+C                  2.83284925   -8.32796403   -3.88960054<br />
+C                  2.13519525   -7.11945503   -3.89079954<br />
+C                  0.74037025   -7.11953303   -3.89127854<br />
+C                  0.04276925   -8.32773903   -3.89028254<br />
+H                  0.19039225  -10.48803203   -3.88915054<br />
+H                  2.68481925  -10.48822803   -3.88828554<br />
+H                  3.93252925   -8.32788403   -3.88896654<br />
+H                  2.68539525   -6.16731203   -3.89085854<br />
+H                  0.19024825   -6.16725203   -3.89223154<br />
+H                 -1.05683475   -8.32755603   -3.89046254<br />
+C                 -0.48263307   -9.04142894    3.33293378<br />
+C                  0.91252693   -9.04142894    3.33293378<br />
+C                  1.61006493   -7.83367794    3.33293378<br />
+C                  0.91241093   -6.62516894    3.33173478<br />
+C                 -0.48241407   -6.62524694    3.33125578<br />
+C                 -1.18001507   -7.83345294    3.33225178<br />
+H                 -1.03239207   -9.99374594    3.33338378<br />
+H                  1.46203493   -9.99394194    3.33424878<br />
+H                  2.70974493   -7.83359794    3.33356778<br />
+H                  1.46261093   -5.67302594    3.33167578<br />
+H                 -1.03253607   -5.67296594    3.33030278<br />
+H                 -2.27961907   -7.83326994    3.33207178<br />
+C                  3.60206643    9.87984273    9.01740630<br />
+C                  4.99722643    9.87984273    9.01740630<br />
+C                  5.69476443   11.08759373    9.01740630<br />
+C                  4.99711043   12.29610273    9.01620730<br />
+C                  3.60228543   12.29602473    9.01572830<br />
+C                  2.90468443   11.08781873    9.01672430<br />
+H                  3.05230743    8.92752573    9.01785630<br />
+H                  5.54673443    8.92732973    9.01872130<br />
+H                  6.79444443   11.08767373    9.01804030<br />
+H                  5.54731043   13.24824573    9.01614830<br />
+H                  3.05216343   13.24830573    9.01477530<br />
+H                  1.80508043   11.08800173    9.01654430<br />
+C                 -0.59901864   -5.56448244    9.16997053<br />
+C                  0.79614136   -5.56448244    9.16997053<br />
+C                  1.49367936   -4.35673144    9.16997053<br />
+C                  0.79602536   -3.14822244    9.16877153<br />
+C                 -0.59879964   -3.14830044    9.16829253<br />
+C                 -1.29640064   -4.35650644    9.16928853<br />
+H                 -1.14877764   -6.51679944    9.17042053<br />
+H                  1.34564936   -6.51699544    9.17128553<br />
+H                  2.59335936   -4.35665144    9.17060453<br />
+H                  1.34622536   -2.19607944    9.16871253<br />
+H                 -1.14892164   -2.19601944    9.16733953<br />
+H                 -2.39600464   -4.35632344    9.16910853<br />
+C                  1.33400275    3.34912227   11.86760801<br />
+C                  2.72916275    3.34912227   11.86760801<br />
+C                  3.42670075    4.55687327   11.86760801<br />
+C                  2.72904675    5.76538227   11.86640901<br />
+C                  1.33422175    5.76530427   11.86593001<br />
+C                  0.63662075    4.55709827   11.86692601<br />
+H                  0.78424375    2.39680527   11.86805801<br />
+H                  3.27867075    2.39660927   11.86892301<br />
+H                  4.52638075    4.55695327   11.86824201<br />
+H                  3.27924675    6.71752527   11.86635001<br />
+H                  0.78409975    6.71758527   11.86497701<br />
+H                 -0.46298325    4.55728127   11.86674601<br />
+C                  5.50138545    3.67436488   -9.12684400<br />
+C                  6.89654545    3.67436488   -9.12684400<br />
+C                  7.59408345    4.88211588   -9.12684400<br />
+C                  6.89642945    6.09062488   -9.12804300<br />
+C                  5.50160445    6.09054688   -9.12852200<br />
+C                  4.80400345    4.88234088   -9.12752600<br />
+H                  4.95162645    2.72204788   -9.12639400<br />
+H                  7.44605345    2.72185188   -9.12552900<br />
+H                  8.69376345    4.88219588   -9.12621000<br />
+H                  7.44662945    7.04276788   -9.12810200<br />
+H                  4.95148245    7.04282788   -9.12947500<br />
+H                  3.70439945    4.88252388   -9.12770600<br />
+C                 11.02132949   -2.54403824    2.71465663<br />
+C                 12.41648949   -2.54403824    2.71465663<br />
+C                 13.11402749   -1.33628724    2.71465663<br />
+C                 12.41637349   -0.12777824    2.71345763<br />
+C                 11.02154849   -0.12785624    2.71297863<br />
+C                 10.32394749   -1.33606224    2.71397463<br />
+H                 10.47157049   -3.49635524    2.71510663<br />
+H                 12.96599749   -3.49655124    2.71597163<br />
+H                 14.21370749   -1.33620724    2.71529063<br />
+H                 12.96657349    0.82436476    2.71339863<br />
+H                 10.47142649    0.82442476    2.71202563<br />
+H                  9.22434349   -1.33587924    2.71379463<br />
+C                 13.78920316    6.75755241    2.24113162<br />
+C                 15.18436316    6.75755241    2.24113162<br />
+C                 15.88190116    7.96530341    2.24113162<br />
+C                 15.18424716    9.17381241    2.23993262<br />
+C                 13.78942216    9.17373441    2.23945362<br />
+C                 13.09182116    7.96552841    2.24044962<br />
+H                 13.23944416    5.80523541    2.24158162<br />
+H                 15.73387116    5.80503941    2.24244662<br />
+H                 16.98158116    7.96538341    2.24176562<br />
+H                 15.73444716   10.12595541    2.23987362<br />
+H                 13.23930016   10.12601541    2.23850062<br />
+H                 11.99221716    7.96571141    2.24026962<br />
+C                 -3.16492565    9.73512139    0.64628811<br />
+C                 -1.76976565    9.73512139    0.64628811<br />
+C                 -1.07222765   10.94287239    0.64628811<br />
+C                 -1.76988165   12.15138139    0.64508911<br />
+C                 -3.16470665   12.15130339    0.64461011<br />
+C                 -3.86230765   10.94309739    0.64560611<br />
+H                 -3.71468465    8.78280439    0.64673811<br />
+H                 -1.22025765    8.78260839    0.64760311<br />
+H                  0.02745235   10.94295239    0.64692211<br />
+H                 -1.21968165   13.10352439    0.64503011<br />
+H                 -3.71482865   13.10358439    0.64365711<br />
+H                 -4.96191165   10.94328039    0.64542611<br />
+C                 -9.81118236   -5.77029034    1.89259097<br />
+C                 -8.41602236   -5.77029034    1.89259097<br />
+C                 -7.71848436   -4.56253934    1.89259097<br />
+C                 -8.41613836   -3.35403034    1.89139197<br />
+C                 -9.81096336   -3.35410834    1.89091297<br />
+C                -10.50856436   -4.56231434    1.89190897<br />
+H                -10.36094136   -6.72260734    1.89304097<br />
+H                 -7.86651436   -6.72280334    1.89390597<br />
+H                 -6.61880436   -4.56245934    1.89322497<br />
+H                 -7.86593836   -2.40188734    1.89133297<br />
+H                -10.36108536   -2.40182734    1.88995997<br />
+H                -11.60816836   -4.56213134    1.89172897<br />
+C                  9.90336105  -10.28465062    3.00244024<br />
+C                 11.29852105  -10.28465062    3.00244024<br />
+C                 11.99605905   -9.07689962    3.00244024<br />
+C                 11.29840505   -7.86839062    3.00124124<br />
+C                  9.90358005   -7.86846862    3.00076224<br />
+C                  9.20597905   -9.07667462    3.00175824<br />
+H                  9.35360205  -11.23696762    3.00289024<br />
+H                 11.84802905  -11.23716362    3.00375524<br />
+H                 13.09573905   -9.07681962    3.00307424<br />
+H                 11.84860505   -6.91624762    3.00118224<br />
+H                  9.35345805   -6.91618762    2.99980924<br />
+H                  8.10637505   -9.07649162    3.00157824<br />
+C                 -9.47455691    3.14429790    0.17000194<br />
+C                 -8.07939691    3.14429790    0.17000194<br />
+C                 -7.38185891    4.35204890    0.17000194<br />
+C                 -8.07951291    5.56055790    0.16880294<br />
+C                 -9.47433791    5.56047990    0.16832394<br />
+C                -10.17193891    4.35227390    0.16931994<br />
+H                -10.02431591    2.19198090    0.17045194<br />
+H                 -7.52988891    2.19178490    0.17131694<br />
+H                 -6.28217891    4.35212890    0.17063594<br />
+H                 -7.52931291    6.51270090    0.16874394<br />
+H                -10.02445991    6.51276090    0.16737094<br />
+H                -11.27154291    4.35245690    0.16913994<br />
+</pre>
+end<br />
+<br />
+charge 0<br />
+<br />
+nwpw<br />
+xc pbe96<br />
+cutoff 50.0<br />
+end<br />
+<br />
+pspw<br />
+simulation_cell units angstroms<br />
+boundary_conditions periodic<br />
+lattice<br />
+lat_a 17.00d0<br />
+lat_b 17.00d0<br />
+lat_c 17.00d0<br />
+end<br />
+ngrid 30 30 30<br />
+end<br />
+Car-Parrinello<br />
+Nose-Hoover 1200.0 300.0<br />
+fake_mass 600.0<br />
+time_step 1.0<br />
+loop 100 100<br />
+end<br />
+end<br />
+set nwpw:minimizer 2<br />
+task pspw optimize<br />
+task pspw Car-Parrinello
+</td>
+		                    </tr>
+		                                
+		                    
+		                    
+		                </table>
+		            </td>
+        </tr> 
+           
+        <tr><td class="thread_sig" align="left" colspan="2"></td></tr>
+        	
+        </table>
+<br />      <br />
+</body> 
+</html> 
