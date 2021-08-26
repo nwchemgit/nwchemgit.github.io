@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1058,7 +1058,7 @@ padding: 2px 5px;
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">Hi,<br />
 <br />
-First of all, I have realized that there is a release 6.3 of Nwchem available so far and recently I have successfully compiled and installed this release on a cluster equipped with infiniband network using the configuration script as in this thread <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id1001/Errors_Running_Nwchem_6.3.html" class="external free">http://nwchemgit.github.io/index.php/Special:AWCforum/st/id1001/Errors_Running_Nwchem_6.3.ht...</a>. My work is most relevant to qmmm modules and most of them are working fine in this version. However, for some reason I cannot use the 'qmmm fep' module and I always get the following error:<br />
+First of all, I have realized that there is a release 6.3 of Nwchem available so far and recently I have successfully compiled and installed this release on a cluster equipped with infiniband network using the configuration script as in this thread <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id1001/Errors_Running_Nwchem_6.3.html" class="external free">http://nwchemgit.github.io/Special_AWCforum/st/id1001/Errors_Running_Nwchem_6.3.ht...</a>. My work is most relevant to qmmm modules and most of them are working fine in this version. However, for some reason I cannot use the 'qmmm fep' module and I always get the following error:<br />
 <br />
 qmmm_bq_data_load               Failed bq_pset        0<br />
 <br />
@@ -1071,7 +1071,7 @@ This seems to happen for NWchem 6.3 on chinook or even the latest release (Nwche
 12: client RTR-&gt;RTS i=0 rc=22<br />
 (rank:12 hostname:compute-0-40.local pid:3018):ARMCI DASSERT fail. ../../ga-5-1/armci/src/devices/openib/openib.c:vapi_connect_client():1460 cond:!rc<br />
 <br />
-However, I managed to compiled and run jobs (as well as using 'qmm fep' module) in this version by setting ARMCI_NETWORK=MPI-MT. Please note that I have read this thread <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id554/Infiniband_Install.html" class="external free">http://nwchemgit.github.io/index.php/Special:AWCforum/st/id554/Infiniband_Install.html</a> and compiled the code with the MPI implementation that supports MPI_THREAD_MULTIPLE but again the performance is poorer compared to running the same small test with release 6.3. For example, the job finishes within 30 s with nwchem 6.3 but takes ~100 s in nwchem 6.1.1.<br />
+However, I managed to compiled and run jobs (as well as using 'qmm fep' module) in this version by setting ARMCI_NETWORK=MPI-MT. Please note that I have read this thread <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id554/Infiniband_Install.html" class="external free">http://nwchemgit.github.io/Special_AWCforum/st/id554/Infiniband_Install.html</a> and compiled the code with the MPI implementation that supports MPI_THREAD_MULTIPLE but again the performance is poorer compared to running the same small test with release 6.3. For example, the job finishes within 30 s with nwchem 6.3 but takes ~100 s in nwchem 6.1.1.<br />
 <br />
 <br />
 If anyone has any idea how to fix any of these two problems (on how to get nwchem 6.3 works on 'qmmm fep' module or to improve the performance of nwchem 6.1.1), I would be greatly appreciated.

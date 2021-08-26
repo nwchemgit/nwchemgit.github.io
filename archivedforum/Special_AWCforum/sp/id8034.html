@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1056,16 +1056,16 @@ padding: 2px 5px;
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Chiensh <a target='blank' href="id8033.html" title="Special:AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'>Than you Jeff <br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="id8031.html" title="Special:AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
+		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Chiensh <a target='blank' href="id8033.html" title="Special_AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'>Than you Jeff <br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="id8031.html" title="Special_AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
 All the work I know of pertains to NWPW and CC modules.<br />
 </div id="quote"></div id="quote"><br />
 That also what I expect, and I understand that these 2 methods are so important for NWChem and they have highest priority to be ported over this architecture, however HF and DFT scf are the fundamental part of almost all calculations, so I hope OMP/MPI hybrid parallelizations will be available ASAP.  <br />
 </div id="quote"></div id="quote"><br />
 We understand this.  However, SCF calculations bottleneck in atomic integrals.  The NWChem atomic integral library is fast on standard server hardware (e.g. Xeon) but it is not vectorized nor is it threaded.  It's not even thread-safe, either, so we either need to rewrite most of the code or refactor the code to use another atomic integral library.  Neither of these efforts are easy.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8033.html" title="Special:AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="id8031.html" title="Special:AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8033.html" title="Special_AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="id8031.html" title="Special_AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
 C240 isn't big enough for that many MPI ranks.  Try running 32 ranks per node on 1-16 nodes.<br />
 In generally, it is imprudent to start with full-machine jobs.  Run on one node and scale up slowly.<br />
 </div id="quote"></div id="quote"><br />
@@ -1074,7 +1074,7 @@ I see, and I already finished the smaller calculations, and expect will be ineff
 </div id="quote"></div id="quote"><br />
 It's possible that it was just running ridiculously slowly.  In any case, if you scaled up slowly, you know where the optimal number of nodes is already.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8033.html" title="Special:AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8033.html" title="Special_AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
 I also noticed that the current compiling document for KNL is confusing (<a target='blank' href="http://nwchemgit.github.io/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi" class="external free">http://nwchemgit.github.io/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi</a>):<br />
 
 <pre>...<br />
@@ -1088,7 +1088,7 @@ As of November 2016, the development version of NWChem contains threading suppor
 <br />
 Our documentation is not always perfect.  What do you want to see changed here?  I will fix it.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8033.html" title="Special:AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8033.html" title="Special_AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
 however, enabling the USE_F90_ALLOCATABLE flag for stable version of NWChem 6.6 will cause compilation error:<br />
 ...<br />
 because l_a and l_t are not defined when USE_F90_ALLOCATABLE is enabled.<br />

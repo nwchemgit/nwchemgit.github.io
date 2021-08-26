@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1060,7 +1060,7 @@ padding: 2px 5px;
 <br />
 Thank you for the reply.<br />
 <br />
-<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special:AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'>Christof,<br />
+<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special_AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'>Christof,<br />
 I see from your compilation settings that you have supplied a long list of compiler options with the variable FC. I see pleny of potential problems with this since 1) the -openmp option is likely to cause runtime conflicts with the Global Arrays parallelization and 2) the makefile structure will be confused by this long variable for FC. If you really want to change the compiler options, the recommended way would be (for example)<br />
 </div id="quote"></div id="quote"><br />
 I agree with you that too much optimization is potentially a problem. The big number of options resulted from adding "-fp-model precise -fp-model source" indiscriminately when the problems with the build showed up to put some brakes on the compiler.<br />
@@ -1135,21 +1135,21 @@ but as far as I googled this should be mostly harmless.<br />
 <br />
 I will try again from a clean tar.gz again tomorrow, may be there is some other cruft.<br />
 <br />
-<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special:AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special_AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'><br />
 I will try to answer your questions next<br />
 1. The "Linux workstation platform" compilation instructions result in a binary to be used with mpirun, since USE_MPI is set equal to y<br />
 </div id="quote"></div id="quote"><br />
 OK.<br />
-<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special:AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special_AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'><br />
 2. testtask should not fail for the 3-D Global Arrays test<br />
 </div id="quote"></div id="quote"><br />
 Thougt so&nbsp;:-)<br />
-<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special:AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special_AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'><br />
 3. If no high-speed network is present, you can let ARMCI_NETWORK undefined. Another option, recently introduced in GA/ARMCI and that we have not thoroughly tested yet, is MPI-MT. I would suggest, first to try to get the vanilla ARMCI compilation to work,<br />
 and then you might try the ARMCI_NETWORK=MPI-MT setting<br />
 </div id="quote"></div id="quote"><br />
 I fully agree with that. Also, I did not enable  MPI_THREAD_MULTIPLE when compiling the openmpi, so testing that would take more effort. However, does your answer imply that MPI across nodes with ethernet should work with unset ARMCI_NETWORK&nbsp;? Or is the only chance with ARMCI_NETWORK=MPI-MT if at all&nbsp;?<br />
-<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special:AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Edoapra <a target='blank' href="id1131.html" title="Special_AWCforum/sp/id1131">Feb 8th 5:55 pm</a><div class='quote'><br />
 4. I am not sure how to answer this one, since I can see conflicting details in your question. If you compiler NWChem with USE_MPI=y, tests have to be run with doqmtests.mpi, since only doqmtests.mpi uses the needed mpirun<br />
 </div id="quote"></div id="quote"><br />
 So "QA/HOW-TO-RUN-TESTS" as distributed with the release tar.gz <br />

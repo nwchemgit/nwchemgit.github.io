@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Mirrored from /index.php/Special:AWCforum/st/id1889/#post_8036 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 01:55:59 GMT -->
+<!-- Mirrored from /Special_AWCforum/st/id1889/#post_8036 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 01:55:59 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -31,7 +31,7 @@ wgServer="../../../../index.html",
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1314,7 +1314,7 @@ Can anyone suggested me the best way to build nwchem on a KNL system with EDR IB
 Thanks a lot!<br />
 <br />
 PS I just found this section of the compilation instruction, but welcome if there are more hints to me, Thanks!<br />
-<a target='blank' href="../../../../../nwchemgit.github.io/index.php/Compiling_NWChem.html#How-to:_Intel_Xeon_Phi" class="external free">http://nwchemgit.github.io/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi</a><br />
+<a target='blank' href="https://nwchemgit.github.io/index.php/Compiling_NWChem.html#How-to:_Intel_Xeon_Phi" class="external free">http://nwchemgit.github.io/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi</a><br />
 <br />
 <br />
 ~ Dominic Chien
@@ -1373,13 +1373,13 @@ PS I just found this section of the compilation instruction, but welcome if ther
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 May I know is there any update on the nwchem development for KNL (socket based version)?<br />
 </div id="quote"></div id="quote"><br />
 <br />
 All the work I know of pertains to NWPW and CC modules.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 We have  a 144-node KNL system and I managed to compiled a copy of NWChem with ARMCI-MPi using intel compiler and impi, OpenMP is enabled and MIC-AVX512 was added in the compilers flags. <br />
 </div id="quote"></div id="quote"><br />
 <br />
@@ -1389,7 +1389,7 @@ When you run with ARMCI-MPI, please set ARMCI_USE_WIN_ALLOCATE=1 in your environ
 <br />
 If you use ARMCI-MPI, it often helps to use <a target='blank' href="http://www.mcs.anl.gov/project/casper/" class="external free">http://www.mcs.anl.gov/project/casper/</a> as well.  Write Casper user list for assistance if necessary.  We will be updating the docs related to NWChem very soon.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 When I run a C240 dft benchmark job  across the full system, <br />
 <br />
 (1) I run  144 MPI task (1 per node) and OMP_NUM_THREADS=64, it works, but is not impressingly fast, I noted that no more then 1 core in each node (or socket) has ever been used  (I supposed OMP/hybrid parallization  has not been implemented for DFT yet, please correct me if I am wrong)<br />
@@ -1397,7 +1397,7 @@ When I run a C240 dft benchmark job  across the full system, <br />
 <br />
 This is only going to use OpenMP in MKL calls and the benefit will be small.  Please run with OMP_NUM_THREADS=1 unless you use NWPW or CC.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 (2) I run the same job with 9216 MPI tasks instead (1 task per core), but it just hang after printing out the basis set information<br />
 
 <pre>Summary of "ao basis" -&gt; "ao basis" (cartesian)<br />
@@ -1413,7 +1413,7 @@ C240 isn't big enough for that many MPI ranks.  Try running 32 ranks per node on
 <br />
 In generally, it is imprudent to start with full-machine jobs.  Run on one node and scale up slowly.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 Can anyone suggested me the best way to build nwchem on a KNL system with EDR IB connected, i.e. what is the choice of ARMCI_NETWORK, what combination of MKL, LAPACK and Scalapack, as well as  how to use the MIC-AVX512 instruction. In addition also please suggest the best way to run nwchem on this system (i.e. pure MPI or hybrid MPI-OMP&nbsp;?)<br />
 </div id="quote"></div id="quote"><br />
 <br />
@@ -1471,13 +1471,13 @@ It looks fine.  I think we found MPI-PR was better for EDR IB but only a small a
 		                                     
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">Than you Jeff <br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special:AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special_AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
 All the work I know of pertains to NWPW and CC modules.<br />
 </div id="quote"></div id="quote"><br />
 <br />
 That also what I expect, and I understand that these 2 methods are so important for NWChem and they have highest priority to be ported over this architecture, however HF and DFT scf are the fundamental part of almost all calculations, so I hope OMP/MPI hybrid parallelizations will be available ASAP.  <br />
 <br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special:AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special_AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
 Please also try ARMCI_NETWORK=MPI-PR.<br />
 <br />
 When you run with ARMCI-MPI, please set ARMCI_USE_WIN_ALLOCATE=1 in your environment or manually configure with --enable-win-allocate.<br />
@@ -1486,24 +1486,24 @@ If you use ARMCI-MPI, it often helps to use <a target='blank' href="http://www.m
 </div id="quote"></div id="quote"><br />
 Thank you, and I will try all these network setting and will report my finding later. <br />
 <br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special:AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special_AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
 This is only going to use OpenMP in MKL calls and the benefit will be small.  Please run with OMP_NUM_THREADS=1 unless you use NWPW or CC.<br />
 </div id="quote"></div id="quote"><br />
 OK<br />
 <br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special:AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special_AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
 C240 isn't big enough for that many MPI ranks.  Try running 32 ranks per node on 1-16 nodes.<br />
 <br />
 In generally, it is imprudent to start with full-machine jobs.  Run on one node and scale up slowly.<br />
 </div id="quote"></div id="quote"><br />
 I see, and I already finished the smaller calculations, and expect will be inefficient to run on such a large MPI rank, bud I did not expect it simply hang ... .... <br />
 <br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special:AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special_AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
 It looks fine.  I think we found MPI-PR was better for EDR IB but only a small amount.</div id="quote"></div id="quote"><br />
 </div id="quote"></div id="quote"><br />
 <br />
 <br />
-I also noticed that the current compiling document for KNL is confusing (<a target='blank' href="../../../../../nwchemgit.github.io/index.php/Compiling_NWChem.html#How-to:_Intel_Xeon_Phi" class="external free">http://nwchemgit.github.io/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi</a>):<br />
+I also noticed that the current compiling document for KNL is confusing (<a target='blank' href="https://nwchemgit.github.io/index.php/Compiling_NWChem.html#How-to:_Intel_Xeon_Phi" class="external free">http://nwchemgit.github.io/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi</a>):<br />
 
 <pre>...<br />
 This section describes both the newer KNL and older KNC hardware, in reverse chronological order.<br />
@@ -1611,16 +1611,16 @@ beacause l_a and l_t are not defined when USE_F90_ALLOCATABLE is enabled.<br />
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special:AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'>Than you Jeff <br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special:AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
+		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special_AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'>Than you Jeff <br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special_AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
 All the work I know of pertains to NWPW and CC modules.<br />
 </div id="quote"></div id="quote"><br />
 That also what I expect, and I understand that these 2 methods are so important for NWChem and they have highest priority to be ported over this architecture, however HF and DFT scf are the fundamental part of almost all calculations, so I hope OMP/MPI hybrid parallelizations will be available ASAP.  <br />
 </div id="quote"></div id="quote"><br />
 We understand this.  However, SCF calculations bottleneck in atomic integrals.  The NWChem atomic integral library is fast on standard server hardware (e.g. Xeon) but it is not vectorized nor is it threaded.  It's not even thread-safe, either, so we either need to rewrite most of the code or refactor the code to use another atomic integral library.  Neither of these efforts are easy.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special:AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special:AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special_AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8031.html" title="Special_AWCforum/sp/id8031">Mar 15th 9:53 pm</a><div class='quote'><br />
 C240 isn't big enough for that many MPI ranks.  Try running 32 ranks per node on 1-16 nodes.<br />
 In generally, it is imprudent to start with full-machine jobs.  Run on one node and scale up slowly.<br />
 </div id="quote"></div id="quote"><br />
@@ -1629,8 +1629,8 @@ I see, and I already finished the smaller calculations, and expect will be ineff
 </div id="quote"></div id="quote"><br />
 It's possible that it was just running ridiculously slowly.  In any case, if you scaled up slowly, you know where the optimal number of nodes is already.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special:AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
-I also noticed that the current compiling document for KNL is confusing (<a target='blank' href="../../../../../nwchemgit.github.io/index.php/Compiling_NWChem.html#How-to:_Intel_Xeon_Phi" class="external free">http://nwchemgit.github.io/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi</a>):<br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special_AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
+I also noticed that the current compiling document for KNL is confusing (<a target='blank' href="https://nwchemgit.github.io/index.php/Compiling_NWChem.html#How-to:_Intel_Xeon_Phi" class="external free">http://nwchemgit.github.io/index.php/Compiling_NWChem#How-to:_Intel_Xeon_Phi</a>):<br />
 
 <pre>...<br />
 This section describes both the newer KNL and older KNC hardware, in reverse chronological order.<br />
@@ -1643,7 +1643,7 @@ As of November 2016, the development version of NWChem contains threading suppor
 <br />
 Our documentation is not always perfect.  What do you want to see changed here?  I will fix it.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special:AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special_AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
 however, enabling the USE_F90_ALLOCATABLE flag for stable version of NWChem 6.6 will cause compilation error:<br />
 ...<br />
 because l_a and l_t are not defined when USE_F90_ALLOCATABLE is enabled.<br />
@@ -1705,11 +1705,11 @@ This is just a bug.  It does not exist in the latest version of the code.  Can y
 		                        <td valign="top" class="post_body" height="65" colspan="2">Thank you! <br />
 <br />
 How can I get the trunk version? Can you give me the link? Thanks!<br />
-<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8034.html" title="Special:AWCforum/sp/id8034">Mar 20th 9:10 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id8034.html" title="Special_AWCforum/sp/id8034">Mar 20th 9:10 am</a><div class='quote'><br />
 <br />
 Our documentation is not always perfect.  What do you want to see changed here?  I will fix it.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special:AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="../../sp/id8033.html" title="Special_AWCforum/sp/id8033">Mar 20th 7:29 am</a><div class='quote'><br />
 however, enabling the USE_F90_ALLOCATABLE flag for stable version of NWChem 6.6 will cause compilation error:<br />
 ...<br />
 because l_a and l_t are not defined when USE_F90_ALLOCATABLE is enabled.<br />
@@ -1768,7 +1768,7 @@ This is just a bug.  It does not exist in the latest version of the code.  Can y
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2"><a target='blank' href="../../../../../nwchemgit.github.io/index.php/Developer.html#Downloading_from_and_Committing_to_the_NWChem_source_tree" class="external free">http://nwchemgit.github.io/index.php/Developer#Downloading_from_and_Committing_to_the_NWChem...</a>
+		                        <td valign="top" class="post_body" height="65" colspan="2"><a target='blank' href="https://nwchemgit.github.io/index.php/Developer.html#Downloading_from_and_Committing_to_the_NWChem_source_tree" class="external free">http://nwchemgit.github.io/index.php/Developer#Downloading_from_and_Committing_to_the_NWChem...</a>
 </td>
 		                    </tr>
 		                                

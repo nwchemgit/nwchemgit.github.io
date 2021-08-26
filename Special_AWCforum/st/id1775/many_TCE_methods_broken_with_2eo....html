@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Mirrored from /index.php/Special:AWCforum/st/id1775/many_TCE_methods_broken_with_2eo....html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 06:29:56 GMT -->
+<!-- Mirrored from /Special_AWCforum/st/id1775/many_TCE_methods_broken_with_2eo....html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 06:29:56 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -31,7 +31,7 @@ wgServer="../../../../index.html",
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1053,7 +1053,7 @@ padding: 2px 5px;
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2">Previously I reported that MBPT4 consistently crashes with 2eorb, though that combination had worked in version 6.0: <a target='blank' href="../../../../../nwchemgit.github.io/index.php/Special_AWCforum/st/id1755/bug__2eorb_used_to_work_with_MBP....html" class="external free">http://nwchemgit.github.io/index.php/Special:AWCforum/st/id1755/bug%3A_2eorb_used_to_work_wi...</a><br />
+		                        <td valign="top" class="post_body" height="65" colspan="2">Previously I reported that MBPT4 consistently crashes with 2eorb, though that combination had worked in version 6.0: <a target='blank' href="https://nwchemgit.github.io/Special_AWCforum/st/id1755/bug__2eorb_used_to_work_with_MBP....html" class="external free">http://nwchemgit.github.io/Special_AWCforum/st/id1755/bug%3A_2eorb_used_to_work_wi...</a><br />
 <br />
 I have now run through a larger variety of TCE methods with the old 6.0 executable and with the latest 6.5 snapshot from July.<br />
 <br />
@@ -1077,7 +1077,7 @@ If it is not possible to fix 2eorb for the crashing methods, I think at least th
 <br />
 Finally, it appears that the cr-qcisd(t) method is totally broken in 6.5; it crashes with the hashv2 error when 2eorb is enabled and crashes with a segmentation fault when 2eorb is disabled.<br />
 <br />
-Here is an archive with all my 6.0 and 6.5 calculations, plus the small script I used to generate/run the test cases: <a target='blank' href="../../../../../www.sciencemadness.org/cc/tce-bugs.gz" class="external free">http://www.sciencemadness.org/cc/tce-bugs.tgz</a><br />
+Here is an archive with all my 6.0 and 6.5 calculations, plus the small script I used to generate/run the test cases: <a target='blank' href="https://www.sciencemadness.org/cc/tce-bugs.gz" class="external free">http://www.sciencemadness.org/cc/tce-bugs.tgz</a><br />
 <br />
 EDIT: For 6.0 I also compared the final energies with and without 2eorb, to see if e.g. there were erroneous results caused by 2eorb that caused the 2eorb option to be disabled in later releases. For my (admittedly simple) test case all the final energies agreed to many decimal places except for those CCSD(T) and QCISD(T) problem-energies that showed up as asterisks instead of numbers.
 </td>
@@ -1300,7 +1300,7 @@ Karol
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id6698.html" title="Special:AWCforum/sp/id6698">Dec 3rd 1:42 pm</a><div class='quote'>CR-QCISD(T) was a method that I made up at one point in grad school but probably has not utility.  The easiest way to fix it is to delete that code.</div id="quote"></div id="quote"><br />
+		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Jhammond <a target='blank' href="../../sp/id6698.html" title="Special_AWCforum/sp/id6698">Dec 3rd 1:42 pm</a><div class='quote'>CR-QCISD(T) was a method that I made up at one point in grad school but probably has not utility.  The easiest way to fix it is to delete that code.</div id="quote"></div id="quote"><br />
 <br />
 Without looking at it, my guess is that I'm calling a method from CCSD(T) that has been changed to have more arguments, and it is segfaulting there.  The IBM XLF compiler is the only one I know of that is able to check function call signatures in legacy Fortran - you might try to use it to detect such issues.
 </td>

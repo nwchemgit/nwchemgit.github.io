@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1058,9 +1058,9 @@ padding: 2px 5px;
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">Having not ran large graphene simulations myself, I can only give general SCF convergence suggestions. Some possible strategies for SCF convergence are conveniently listed <a target='blank' href="https://sites.google.com/site/orcainputlibrary/scf-convergence-issues" class="external text">on Orca Input Library</a> and can be adapted for NWChem:<br />
 <br />
-1) Use the quadratic convergence algorithm: cgmin (analogous to&nbsp;!NRSCF keyword in orca). <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id2213/cgmin_and_occup.html" class="external text">Here's a testimonial for cgmin with metallic systems in NWChem</a>.<br />
-2a) Run a preliminary HF calculation, and use those vectors to start DFT calculation (<a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id780/Convergence_issues.html" class="external text">example code</a>), and/or<br />
-2b) Run a preliminary calculation for a cationic, closed-shell system, and then read those vectors into your desired neutral, open-shell system (<a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id486/Orbital_swapping_problem.html" class="external text">example code</a>).<br />
+1) Use the quadratic convergence algorithm: cgmin (analogous to&nbsp;!NRSCF keyword in orca). <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id2213/cgmin_and_occup.html" class="external text">Here's a testimonial for cgmin with metallic systems in NWChem</a>.<br />
+2a) Run a preliminary HF calculation, and use those vectors to start DFT calculation (<a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id780/Convergence_issues.html" class="external text">example code</a>), and/or<br />
+2b) Run a preliminary calculation for a cationic, closed-shell system, and then read those vectors into your desired neutral, open-shell system (<a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id486/Orbital_swapping_problem.html" class="external text">example code</a>).<br />
 3) Use a finer grid<br />
 4) Use more DIIS Fock matrices (default 10, but Orca Input Library suggests that 15-40 may be necessary for open-shell systems).<br />
 5) Increase damping and number of damped cycles for DIIS (somewhat analogous to&nbsp;!TIGHTSCF keyword in Orca)<br />

@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1064,18 +1064,18 @@ Bert<br />
 <br />
 <br />
 
-<pre>[QUOTE=Jeronimo <a href="id1848.html" title="Special:AWCforum/sp/id1848">Jul 31st 12:01 pm</a>]Dear Bert,<br />
+<pre>[QUOTE=Jeronimo <a href="id1848.html" title="Special_AWCforum/sp/id1848">Jul 31st 12:01 pm</a>]Dear Bert,<br />
 </pre>
 <br />
 at first, sorry for my late response (I've had a vacation).<br />
 <br />
-<div class='quote_title'>Quote:Bert <a target='blank' href="id1805.html" title="Special:AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>I do not believe this is a kompile issue but rather a run issue. How much memory do you have per processor (not per node, but per core)? The memory keyword in NWChem is per core. Could you try running on multiple processors with the memory keyword set to maybe 1000 mb at most to see if this works.</div id="quote"></div id="quote"><br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="id1805.html" title="Special_AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>I do not believe this is a kompile issue but rather a run issue. How much memory do you have per processor (not per node, but per core)? The memory keyword in NWChem is per core. Could you try running on multiple processors with the memory keyword set to maybe 1000 mb at most to see if this works.</div id="quote"></div id="quote"><br />
 <br />
 I do run the computation using various nodes in our computing infrastructure -- ranging from less-CPU nodes (Dual Core AMD Opteron 885, 16 cores and 64GB of memory) to SMP nodes (Intel Xeon E7 4860, 80 cores, 512GB of memory). On each of these clusters, I did have 4 cores and 50GB of memory reserved on a single node -- no matter which machine I use, all the computations fail in the same fashion (described initially). (I've also tried to specify just 1GB of memory as you have suggested; however, this resulted in the same error).<br />
 <br />
 To illustrate a run, here is a run log on the SMP node (80 cores, 512GB of memory) -- the computation obtained 4CPUs and 50GB of memory reserved by our scheduling system: single-CPU (successfull) computation <a target='blank' href="http://frakira.fi.muni.cz/~jeronimo/tmp/run-single.out" class="external text">run-single.out</a> and multi-CPU (failing) computation <a target='blank' href="http://frakira.fi.muni.cz/~jeronimo/tmp/run-multi.out" class="external text">run-multi.out</a> (the failing convergence is visible on lines starting by line no. 1031).<br />
 <br />
-<div class='quote_title'>Quote:Bert <a target='blank' href="id1805.html" title="Special:AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>What is the hardware you are running on that forces you to use MPI-SPAWN?</div id="quote"></div id="quote"><br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="id1805.html" title="Special_AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>What is the hardware you are running on that forces you to use MPI-SPAWN?</div id="quote"></div id="quote"><br />
 <br />
 Since the infrastructure we run is quite heterogenous, some clusters do have Infiniband interconnection and some do not. Thus, I've decided to use MPI-SPAWN so that such a compilation should be runable on all the machines we run. I hope this is a correct deduction...<br />
 <br />
@@ -1085,7 +1085,7 @@ Tom Rebok, MetaCentrum NGI, Czech Republic.<br />
 <br />
 PS: Is there anybody, who can test to run the computation above in parallel and let me know whether it converges?<br />
 <br />
-PS2: Maybe, it is somehow related to the problem described <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/sp/id533" class="external text">here</a>...</div id="quote"></div id="quote">
+PS2: Maybe, it is somehow related to the problem described <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/sp/id533" class="external text">here</a>...</div id="quote"></div id="quote">
 </td>
 		                    </tr>
 		                                

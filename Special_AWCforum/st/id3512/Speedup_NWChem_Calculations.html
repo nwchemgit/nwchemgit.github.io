@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Mirrored from /index.php/Special:AWCforum/st/id3512/Speedup_NWChem_Calculations.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 00:07:24 GMT -->
+<!-- Mirrored from /Special_AWCforum/st/id3512/Speedup_NWChem_Calculations.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 00:07:24 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -31,7 +31,7 @@ wgServer="../../../../index.html",
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1112,11 +1112,11 @@ Inorganic Chemist - UFRRJ - Rio de Janeiro
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">I have often wondered the same thing about little tricks to speed up NWChem. Unlike Orca, a lot of speed-ups are not run with default NWChem setting. Below are some speed-up options I've found. Hopefully others can share their own tips and tricks!<br />
 <br />
-- I don't think NWChem has analogous SCF-optimization algorithms to KDIIS and SOSCF as described in the Orca manual. NWchem uses DIIS by <a target='blank' href="../../../../../nwchemgit.github.io/index.php/Release66_Density_Functional_Theory_for_Molecules.html#CONVERGENCE_--_SCF_Convergence_Control" class="external text">default</a>.<br />
+- I don't think NWChem has analogous SCF-optimization algorithms to KDIIS and SOSCF as described in the Orca manual. NWchem uses DIIS by <a target='blank' href="https://nwchemgit.github.io/index.php/Release66_Density_Functional_Theory_for_Molecules.html#CONVERGENCE_--_SCF_Convergence_Control" class="external text">default</a>.<br />
 <br />
-- Some of the relative slowness of NWChem vs Orca may be due to use of different default integration grids. Orca by default uses a GaussChebyshev radial grid and Lebedev110 for initial SCF iterations and Lebedev302 for a final SCF evaluation. It seems possible to specify these grids in NWChem according to the <a target='blank' href="../../../../../nwchemgit.github.io/index.php/Release66_Density_Functional_Theory_for_Molecules.html#Specification_of_Basis_Sets_for_the_DFT_Module" class="external text">grid documentation</a>, but I don't know if a looser grid can be used for initial SCF cycles like in Orca. <br />
+- Some of the relative slowness of NWChem vs Orca may be due to use of different default integration grids. Orca by default uses a GaussChebyshev radial grid and Lebedev110 for initial SCF iterations and Lebedev302 for a final SCF evaluation. It seems possible to specify these grids in NWChem according to the <a target='blank' href="https://nwchemgit.github.io/index.php/Release66_Density_Functional_Theory_for_Molecules.html#Specification_of_Basis_Sets_for_the_DFT_Module" class="external text">grid documentation</a>, but I don't know if a looser grid can be used for initial SCF cycles like in Orca. <br />
 <br />
-- Resolution-of-Identity ("RI*") approximations (run by default in orca) can be done with NWChem by specifying a charge density fitting basis ("cd basis") and/or exchange-correlation basis ("xc basis") block in the input file (it should be noted that xc basis is "not recommended" according to <a target='blank' href="../../../../../nwchemgit.github.io/index.php/Release66_Density_Functional_Theory_for_Molecules.html" class="external text">release notes</a>. For def2-*vp type basis sets, the "Weigend Coulumb Fitting" cd basis can be used (as is default in orca). For example input, see below.<br />
+- Resolution-of-Identity ("RI*") approximations (run by default in orca) can be done with NWChem by specifying a charge density fitting basis ("cd basis") and/or exchange-correlation basis ("xc basis") block in the input file (it should be noted that xc basis is "not recommended" according to <a target='blank' href="https://nwchemgit.github.io/index.php/Release66_Density_Functional_Theory_for_Molecules.html" class="external text">release notes</a>. For def2-*vp type basis sets, the "Weigend Coulumb Fitting" cd basis can be used (as is default in orca). For example input, see below.<br />
 <br />
 - Often times a molecule is geometry optimized with a small initial basis, and then the final geometry undergoes single-point DFT evaluation with a larger basis set. To speed up SCF convergence with the larger basis set, the SCF-optimized smaller basis set orbitals can be used as initial guess. (Though I've seen several cases where its better to start with the default guess...) For an example input to project a smaller basis set to a larger basis set, see below.<br />
 <br />

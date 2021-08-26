@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1197,7 +1197,7 @@ Thanks,<br />
 Bert<br />
 <br />
 <br />
-<div class='quote_title'>Quote:Jeronimo <a target='blank' href="../../sp/id1794.html" title="Special:AWCforum/sp/id1794">Jul 20th 2:14 pm</a><div class='quote'>Dear all,<br />
+<div class='quote_title'>Quote:Jeronimo <a target='blank' href="../../sp/id1794.html" title="Special_AWCforum/sp/id1794">Jul 20th 2:14 pm</a><div class='quote'>Dear all,<br />
 <br />
 I'm trying to resolve a problem with our user's computations. I've prepared the NWChem 6.0 installation (64-bit systems, Debian 6.0) for him, compiled by GNU compilers (version 4.3.2) with MPI support (OpenMPI 1.4.3) with the following options:<br />
 <br />
@@ -1330,13 +1330,13 @@ PS: The build log is available here: <a target='blank' href="http://frakira.fi.m
 <br />
 at first, sorry for my late response (I've had a vacation).<br />
 <br />
-<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1805.html" title="Special:AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>I do not believe this is a kompile issue but rather a run issue. How much memory do you have per processor (not per node, but per core)? The memory keyword in NWChem is per core. Could you try running on multiple processors with the memory keyword set to maybe 1000 mb at most to see if this works.</div id="quote"></div id="quote"><br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1805.html" title="Special_AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>I do not believe this is a kompile issue but rather a run issue. How much memory do you have per processor (not per node, but per core)? The memory keyword in NWChem is per core. Could you try running on multiple processors with the memory keyword set to maybe 1000 mb at most to see if this works.</div id="quote"></div id="quote"><br />
 <br />
 I do run the computation using various nodes in our computing infrastructure -- ranging from less-CPU nodes (Dual Core AMD Opteron 885, 16 cores and 64GB of memory) to SMP nodes (Intel Xeon E7 4860, 80 cores, 512GB of memory). On each of these clusters, I did have 4 cores and 50GB of memory reserved on a single node -- no matter which machine I use, all the computations fail in the same fashion (described initially). (I've also tried to specify just 1GB of memory as you have suggested; however, this resulted in the same error).<br />
 <br />
 To illustrate a run, here is a run log on the SMP node (80 cores, 512GB of memory) -- the computation obtained 4CPUs and 50GB of memory reserved by our scheduling system: single-CPU (successfull) computation <a target='blank' href="http://frakira.fi.muni.cz/~jeronimo/tmp/run-single.out" class="external text">run-single.out</a> and multi-CPU (failing) computation <a target='blank' href="http://frakira.fi.muni.cz/~jeronimo/tmp/run-multi.out" class="external text">run-multi.out</a> (the failing convergence is visible on lines starting by line no. 1031).<br />
 <br />
-<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1805.html" title="Special:AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>What is the hardware you are running on that forces you to use MPI-SPAWN?</div id="quote"></div id="quote"><br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1805.html" title="Special_AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>What is the hardware you are running on that forces you to use MPI-SPAWN?</div id="quote"></div id="quote"><br />
 <br />
 Since the infrastructure we run is quite heterogenous, some clusters do have Infiniband interconnection and some do not. Thus, I've decided to use MPI-SPAWN so that such a compilation should be runable on all the machines we run. I hope this is a correct deduction...<br />
 <br />
@@ -1346,7 +1346,7 @@ Tom Rebok, MetaCentrum NGI, Czech Republic.<br />
 <br />
 PS: Is there anybody, who can test to run the computation above in parallel and let me know whether it converges?<br />
 <br />
-PS2: Maybe, it is somehow related to the problem described <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/sp/id533" class="external text">here</a>...
+PS2: Maybe, it is somehow related to the problem described <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/sp/id533" class="external text">here</a>...
 </td>
 		                    </tr>
 		                                
@@ -1410,18 +1410,18 @@ Bert<br />
 <br />
 <br />
 
-<pre>[QUOTE=Jeronimo <a href="../../sp/id1848.html" title="Special:AWCforum/sp/id1848">Jul 31st 12:01 pm</a>]Dear Bert,<br />
+<pre>[QUOTE=Jeronimo <a href="../../sp/id1848.html" title="Special_AWCforum/sp/id1848">Jul 31st 12:01 pm</a>]Dear Bert,<br />
 </pre>
 <br />
 at first, sorry for my late response (I've had a vacation).<br />
 <br />
-<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1805.html" title="Special:AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>I do not believe this is a kompile issue but rather a run issue. How much memory do you have per processor (not per node, but per core)? The memory keyword in NWChem is per core. Could you try running on multiple processors with the memory keyword set to maybe 1000 mb at most to see if this works.</div id="quote"></div id="quote"><br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1805.html" title="Special_AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>I do not believe this is a kompile issue but rather a run issue. How much memory do you have per processor (not per node, but per core)? The memory keyword in NWChem is per core. Could you try running on multiple processors with the memory keyword set to maybe 1000 mb at most to see if this works.</div id="quote"></div id="quote"><br />
 <br />
 I do run the computation using various nodes in our computing infrastructure -- ranging from less-CPU nodes (Dual Core AMD Opteron 885, 16 cores and 64GB of memory) to SMP nodes (Intel Xeon E7 4860, 80 cores, 512GB of memory). On each of these clusters, I did have 4 cores and 50GB of memory reserved on a single node -- no matter which machine I use, all the computations fail in the same fashion (described initially). (I've also tried to specify just 1GB of memory as you have suggested; however, this resulted in the same error).<br />
 <br />
 To illustrate a run, here is a run log on the SMP node (80 cores, 512GB of memory) -- the computation obtained 4CPUs and 50GB of memory reserved by our scheduling system: single-CPU (successfull) computation <a target='blank' href="http://frakira.fi.muni.cz/~jeronimo/tmp/run-single.out" class="external text">run-single.out</a> and multi-CPU (failing) computation <a target='blank' href="http://frakira.fi.muni.cz/~jeronimo/tmp/run-multi.out" class="external text">run-multi.out</a> (the failing convergence is visible on lines starting by line no. 1031).<br />
 <br />
-<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1805.html" title="Special:AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>What is the hardware you are running on that forces you to use MPI-SPAWN?</div id="quote"></div id="quote"><br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1805.html" title="Special_AWCforum/sp/id1805">Jul 23rd 9:50 am</a><div class='quote'>What is the hardware you are running on that forces you to use MPI-SPAWN?</div id="quote"></div id="quote"><br />
 <br />
 Since the infrastructure we run is quite heterogenous, some clusters do have Infiniband interconnection and some do not. Thus, I've decided to use MPI-SPAWN so that such a compilation should be runable on all the machines we run. I hope this is a correct deduction...<br />
 <br />
@@ -1431,7 +1431,7 @@ Tom Rebok, MetaCentrum NGI, Czech Republic.<br />
 <br />
 PS: Is there anybody, who can test to run the computation above in parallel and let me know whether it converges?<br />
 <br />
-PS2: Maybe, it is somehow related to the problem described <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/sp/id533" class="external text">here</a>...</div id="quote"></div id="quote">
+PS2: Maybe, it is somehow related to the problem described <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/sp/id533" class="external text">here</a>...</div id="quote"></div id="quote">
 </td>
 		                    </tr>
 		                                
@@ -1486,13 +1486,13 @@ PS2: Maybe, it is somehow related to the problem described <a target='blank' hre
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">Dear Bert,<br />
 <br />
-<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1870.html" title="Special:AWCforum/sp/id1870">Aug 3rd 9:23 am</a><div class='quote'>Just ran it with 16 processors. I would remove the "io replicated" from the input (that's what I did).</div id="quote"></div id="quote"><br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1870.html" title="Special_AWCforum/sp/id1870">Aug 3rd 9:23 am</a><div class='quote'>Just ran it with 16 processors. I would remove the "io replicated" from the input (that's what I did).</div id="quote"></div id="quote"><br />
 <br />
 thanks a lot! That works!!!&nbsp;:-)<br />
 <br />
 May I ask you for short info, what does the option "io replicated" influence? And why it brokes such type of computations? And when it is (or a different io scheme) suitable to use?<br />
 <br />
-<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1870.html" title="Special:AWCforum/sp/id1870">Aug 3rd 9:23 am</a><div class='quote'>Also, I seriously doubt you can build one binary that will work on all platforms. Also, we have never tested running MPI-SPAWN between heterogeneous nodes on different clusters.</div id="quote"></div id="quote"><br />
+<div class='quote_title'>Quote:Bert <a target='blank' href="../../sp/id1870.html" title="Special_AWCforum/sp/id1870">Aug 3rd 9:23 am</a><div class='quote'>Also, I seriously doubt you can build one binary that will work on all platforms. Also, we have never tested running MPI-SPAWN between heterogeneous nodes on different clusters.</div id="quote"></div id="quote"><br />
 <br />
 I see. But our clusters are not of different platforms -- all our clusters are "x86_64" architecture (having as much as possible unique OS/SW equipment), and thus I think that such a binary should work for us. And if not, I'll solve it once such a problem appears...<br />
 <br />

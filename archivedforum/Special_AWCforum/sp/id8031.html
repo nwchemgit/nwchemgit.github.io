@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1056,13 +1056,13 @@ padding: 2px 5px;
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 May I know is there any update on the nwchem development for KNL (socket based version)?<br />
 </div id="quote"></div id="quote"><br />
 <br />
 All the work I know of pertains to NWPW and CC modules.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 We have  a 144-node KNL system and I managed to compiled a copy of NWChem with ARMCI-MPi using intel compiler and impi, OpenMP is enabled and MIC-AVX512 was added in the compilers flags. <br />
 </div id="quote"></div id="quote"><br />
 <br />
@@ -1072,7 +1072,7 @@ When you run with ARMCI-MPI, please set ARMCI_USE_WIN_ALLOCATE=1 in your environ
 <br />
 If you use ARMCI-MPI, it often helps to use <a target='blank' href="http://www.mcs.anl.gov/project/casper/" class="external free">http://www.mcs.anl.gov/project/casper/</a> as well.  Write Casper user list for assistance if necessary.  We will be updating the docs related to NWChem very soon.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 When I run a C240 dft benchmark job  across the full system, <br />
 <br />
 (1) I run  144 MPI task (1 per node) and OMP_NUM_THREADS=64, it works, but is not impressingly fast, I noted that no more then 1 core in each node (or socket) has ever been used  (I supposed OMP/hybrid parallization  has not been implemented for DFT yet, please correct me if I am wrong)<br />
@@ -1080,7 +1080,7 @@ When I run a C240 dft benchmark job  across the full system, <br />
 <br />
 This is only going to use OpenMP in MKL calls and the benefit will be small.  Please run with OMP_NUM_THREADS=1 unless you use NWPW or CC.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 (2) I run the same job with 9216 MPI tasks instead (1 task per core), but it just hang after printing out the basis set information<br />
 
 <pre>Summary of "ao basis" -&gt; "ao basis" (cartesian)<br />
@@ -1096,7 +1096,7 @@ C240 isn't big enough for that many MPI ranks.  Try running 32 ranks per node on
 <br />
 In generally, it is imprudent to start with full-machine jobs.  Run on one node and scale up slowly.<br />
 <br />
-<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special:AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
+<div class='quote_title'>Quote:Chiensh <a target='blank' href="id8029.html" title="Special_AWCforum/sp/id8029">Mar 15th 11:29 am</a><div class='quote'><br />
 Can anyone suggested me the best way to build nwchem on a KNL system with EDR IB connected, i.e. what is the choice of ARMCI_NETWORK, what combination of MKL, LAPACK and Scalapack, as well as  how to use the MIC-AVX512 instruction. In addition also please suggest the best way to run nwchem on this system (i.e. pure MPI or hybrid MPI-OMP&nbsp;?)<br />
 </div id="quote"></div id="quote"><br />
 <br />

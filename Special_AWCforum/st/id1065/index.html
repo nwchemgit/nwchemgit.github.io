@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1062,7 +1062,7 @@ I'm running QMMM calculations using nwchem and having a problem with the error w
 <br />
 Deviation too large for solvent  598 *:: 598<br />
 <br />
-I'm wondering what the number above implies. It doesn't seem to be a residue no. of water that is having a problem to me. I examined the structure and found nothing weird to this residue number. Indeed, no too close contacts between water molecules themselves or water molecule and protein residues were spotted. I have searched and followed a couple of suggestions to cope with this problem from other threads but it doesn't seem to completely rid of the problem. Running constant energy as suggested by Marat in <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id300/%22Deviation_too_large_for_solvent....html" class="external free">http://nwchemgit.github.io/index.php/Special:AWCforum/st/id300/%22Deviation_too_large_for_so...</a> doesn't help in my case. Increasing the dimension box as recommended by TBS in <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id772/%220%3A_Deviation_too_large_for_solv....html" class="external free">http://nwchemgit.github.io/index.php/Special:AWCforum/st/id772/%220%3A_Deviation_too_large_f...</a> does help sometimes. However, increasing the box dimension might makes the box not rectangular any more when using periodic boundary condition. I'm wondering and concerned whether this effect is going to cause any differences in result.<br />
+I'm wondering what the number above implies. It doesn't seem to be a residue no. of water that is having a problem to me. I examined the structure and found nothing weird to this residue number. Indeed, no too close contacts between water molecules themselves or water molecule and protein residues were spotted. I have searched and followed a couple of suggestions to cope with this problem from other threads but it doesn't seem to completely rid of the problem. Running constant energy as suggested by Marat in <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id300/%22Deviation_too_large_for_solvent....html" class="external free">http://nwchemgit.github.io/Special_AWCforum/st/id300/%22Deviation_too_large_for_so...</a> doesn't help in my case. Increasing the dimension box as recommended by TBS in <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id772/%220%3A_Deviation_too_large_for_solv....html" class="external free">http://nwchemgit.github.io/Special_AWCforum/st/id772/%220%3A_Deviation_too_large_f...</a> does help sometimes. However, increasing the box dimension might makes the box not rectangular any more when using periodic boundary condition. I'm wondering and concerned whether this effect is going to cause any differences in result.<br />
 <br />
 I can send you some output if it would be helpful.<br />
 <br />
@@ -1199,7 +1199,7 @@ Hope this might help fix your problem. I also had a hard time figuring out how t
 <br />
 <br />
 <br />
-<div class='quote_title'>Quote:Wjb0920 <a target='blank' href="../../sp/id3870.html" title="Special:AWCforum/sp/id3870">Nov 26th 9:01 am</a><div class='quote'>Hi,<br />
+<div class='quote_title'>Quote:Wjb0920 <a target='blank' href="../../sp/id3870.html" title="Special_AWCforum/sp/id3870">Nov 26th 9:01 am</a><div class='quote'>Hi,<br />
 <br />
 I encounter the same problem and searching the solution. I am appreciated if you can share me with your experience.<br />
 <br />
@@ -1334,7 +1334,7 @@ UPDATE Although the approach sometimes fixes my problem in case this error arise
 Best,<br />
 Tee<br />
 <br />
-<div class='quote_title'>Quote:Wjb0920 <a target='blank' href="../../sp/id3875.html" title="Special:AWCforum/sp/id3875">Nov 27th 2:41 am</a><div class='quote'>Dear Tpirojsi,<br />
+<div class='quote_title'>Quote:Wjb0920 <a target='blank' href="../../sp/id3875.html" title="Special_AWCforum/sp/id3875">Nov 27th 2:41 am</a><div class='quote'>Dear Tpirojsi,<br />
 <br />
 <br />
 Here I provide another way to solve the problem. The increase of cutoff from 0.9nm to 1.2nm in MD directives group, and also change bqzone from 9 to 12 in qmmm directive group may go through the simulation without error of deviation too large.<br />
@@ -1400,7 +1400,7 @@ Jingbo</div id="quote"></div id="quote">
 		                        <td valign="top" class="post_body" height="65" colspan="2">Please ignore this message. It seems this approach (using 'center' in rewriting restart files) might cause a huge error in free energy calculation because the QM region of each bead will not be the same (their positions are shifted). Sorry for any confusion.<br />
 <br />
 <br />
-<div class='quote_title'>Quote:Tpirojsi <a target='blank' href="../../sp/id3913.html" title="Special:AWCforum/sp/id3913">Dec 4th 7:34 pm</a><div class='quote'>Hi Jingbo,<br />
+<div class='quote_title'>Quote:Tpirojsi <a target='blank' href="../../sp/id3913.html" title="Special_AWCforum/sp/id3913">Dec 4th 7:34 pm</a><div class='quote'>Hi Jingbo,<br />
 <br />
 Glad for having someone to discuss the issue with. For some reason, your approach doesn't help in my case but it's good to know and I'll keep that in mind too. This error seems to be a common error that I think coming from many reasons. Other than what I explained above, when doing FEP calculation I also still have seen this error arising even though the waters were in the perfect shape and place, i.e. no clumping waters or bad contacts. My solution was rewriting restart files from NEB beads with the 'center' keyword in prepare module and using the new restart files to run FEP calculations. Also make sure that we use these new restart files in gerenating xyzi and esp files too. <br />
 <br />
@@ -1409,7 +1409,7 @@ UPDATE Although the approach sometimes fixes my problem in case this error arise
 Best,<br />
 Tee<br />
 <br />
-<div class='quote_title'>Quote:Wjb0920 <a target='blank' href="../../sp/id3875.html" title="Special:AWCforum/sp/id3875">Nov 27th 2:41 am</a><div class='quote'>Dear Tpirojsi,<br />
+<div class='quote_title'>Quote:Wjb0920 <a target='blank' href="../../sp/id3875.html" title="Special_AWCforum/sp/id3875">Nov 27th 2:41 am</a><div class='quote'>Dear Tpirojsi,<br />
 <br />
 <br />
 Here I provide another way to solve the problem. The increase of cutoff from 0.9nm to 1.2nm in MD directives group, and also change bqzone from 9 to 12 in qmmm directive group may go through the simulation without error of deviation too large.<br />

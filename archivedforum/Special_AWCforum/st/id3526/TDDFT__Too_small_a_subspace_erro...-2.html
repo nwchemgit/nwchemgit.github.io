@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Mirrored from /index.php/Special:AWCforum/st/id3526/TDDFT:_Too_small_a_subspace_erro....html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 02:04:25 GMT -->
+<!-- Mirrored from /Special_AWCforum/st/id3526/TDDFT:_Too_small_a_subspace_erro....html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 02:04:25 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -31,7 +31,7 @@ wgServer="../../../../index.html",
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1304,7 +1304,7 @@ K
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Sean <a target='blank' href="../../sp/id10563.html" title="Special:AWCforum/sp/id10563">Nov 14th 2:15 pm</a><div class='quote'>The problem in your case is that you did not allocate enough memory for the calculation to fit in memory so the code switched to the disk-based algorithm. This algorithm is limited to 10 GB of disk space, so the code reduced the maximum subspace to 33 vectors in order to be able to store the necessary quantities. Since you requested 50 roots, the code crashed because you can't solve for 50 roots with only 33 vectors in your subspace.<br />
+		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Sean <a target='blank' href="../../sp/id10563.html" title="Special_AWCforum/sp/id10563">Nov 14th 2:15 pm</a><div class='quote'>The problem in your case is that you did not allocate enough memory for the calculation to fit in memory so the code switched to the disk-based algorithm. This algorithm is limited to 10 GB of disk space, so the code reduced the maximum subspace to 33 vectors in order to be able to store the necessary quantities. Since you requested 50 roots, the code crashed because you can't solve for 50 roots with only 33 vectors in your subspace.<br />
 <br />
 You can increase your allocated GA memory and/or decrease the number of roots requested to get the calculation to run. I believe that you need about 5 times the amount of GA memory that is indicated in your input, so you can increase the GA memory by a factor of 5 or decrease the number of roots by the same factor.</div id="quote"></div id="quote"><br />
 <br />

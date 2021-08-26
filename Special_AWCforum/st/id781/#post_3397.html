@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Mirrored from /index.php/Special:AWCforum/st/id781/#post_3397 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 03:16:23 GMT -->
+<!-- Mirrored from /Special_AWCforum/st/id781/#post_3397 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jun 2020 03:16:23 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -31,7 +31,7 @@ wgServer="../../../../index.html",
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1166,7 +1166,7 @@ Gary
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Gary <a target='blank' href="../../sp/id2895.html" title="Special:AWCforum/sp/id2895">Mar 29th 9:04 am</a><div class='quote'>... But, it takes hitting return twice when first logging into ECCE and then when you bring up the Organizer it will bring up the password prompt dialog one more time so you have to hit return 3 times total to be logged in...<br />
+		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Gary <a target='blank' href="../../sp/id2895.html" title="Special_AWCforum/sp/id2895">Mar 29th 9:04 am</a><div class='quote'>... But, it takes hitting return twice when first logging into ECCE and then when you bring up the Organizer it will bring up the password prompt dialog one more time so you have to hit return 3 times total to be logged in...<br />
 Gary</div id="quote"></div id="quote"><br />
 <br />
 Hitting enter 2-3 times works for me. Thanks for your time and the full explanation.<br />
@@ -1334,7 +1334,7 @@ Gary
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Gary <a target='blank' href="../../sp/id2922.html" title="Special:AWCforum/sp/id2922">Apr 16th 11:35 am</a><div class='quote'>I just created a backdoor feature to allow you to skip the data server password prompt dialog.  This would only be a reasonable feature to use on a machine that isn't shared where you don't mind having the ECCE data server (Apache web server) password in a plaintext file.  But, if it is just your personal workstation where you have installed ECCE and the workstation is not on the open internet for external access, it should be fine.<br />
+		                        <td valign="top" class="post_body" height="65" colspan="2"><div class='quote_title'>Quote:Gary <a target='blank' href="../../sp/id2922.html" title="Special_AWCforum/sp/id2922">Apr 16th 11:35 am</a><div class='quote'>I just created a backdoor feature to allow you to skip the data server password prompt dialog.  This would only be a reasonable feature to use on a machine that isn't shared where you don't mind having the ECCE data server (Apache web server) password in a plaintext file.  But, if it is just your personal workstation where you have installed ECCE and the workstation is not on the open internet for external access, it should be fine.<br />
 <br />
 First, you'll need to download and install the latest ECCE 6.4 that I just pushed out today.  Then to use this feature you'll edit a new file named ServerPass in your .ECCE preferences directory that is under your home directory.  I would highly recommend doing a "chmod 600 ServerPass" after you create this file so it's only viewable by you--doesn't protect you of course if someone gains root access to your system, but then again everything you have on the system is exposed anyway in that instance so no reason to be especially concerned about protecting ECCE calculation data.  In the ServerPass file simply put your ECCE data server password and that's it.  It goes on the first and only line of the file with nothing else.  Save this file and then run the latest ECCE.  It should no longer prompt you and work fine with importing calculations as well based on my tests.  Should the value you put in the ~/.ECCE/ServerPass file no longer be your correct data server password, or if the file is deleted, ECCE will revert to prompting again.  So it tries the value in the file once if it finds one and then reverts to prompting if it doesn't work or the file doesn't exist.<br />
 <br />

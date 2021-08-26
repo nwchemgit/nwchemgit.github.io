@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1058,7 +1058,7 @@ padding: 2px 5px;
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">Hi,<br />
 <br />
-First of all, I have realized that there is a release 6.3 of Nwchem available so far and recently I have successfully compiled and installed this release on a cluster equipped with infiniband network using the configuration script as in this thread <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id1001/Errors_Running_Nwchem_6.3.html" class="external free">http://nwchemgit.github.io/index.php/Special:AWCforum/st/id1001/Errors_Running_Nwchem_6.3.ht...</a>. My work is most relevant to qmmm modules and most of them are working fine in this version. However, for some reason I cannot use the 'qmmm fep' module and I always get the following error:<br />
+First of all, I have realized that there is a release 6.3 of Nwchem available so far and recently I have successfully compiled and installed this release on a cluster equipped with infiniband network using the configuration script as in this thread <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id1001/Errors_Running_Nwchem_6.3.html" class="external free">http://nwchemgit.github.io/Special_AWCforum/st/id1001/Errors_Running_Nwchem_6.3.ht...</a>. My work is most relevant to qmmm modules and most of them are working fine in this version. However, for some reason I cannot use the 'qmmm fep' module and I always get the following error:<br />
 <br />
 qmmm_bq_data_load               Failed bq_pset        0<br />
 <br />
@@ -1071,7 +1071,7 @@ This seems to happen for NWchem 6.3 on chinook or even the latest release (Nwche
 12: client RTR-&gt;RTS i=0 rc=22<br />
 (rank:12 hostname:compute-0-40.local pid:3018):ARMCI DASSERT fail. ../../ga-5-1/armci/src/devices/openib/openib.c:vapi_connect_client():1460 cond:!rc<br />
 <br />
-However, I managed to compiled and run jobs (as well as using 'qmm fep' module) in this version by setting ARMCI_NETWORK=MPI-MT. Please note that I have read this thread <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id554/Infiniband_Install.html" class="external free">http://nwchemgit.github.io/index.php/Special:AWCforum/st/id554/Infiniband_Install.html</a> and compiled the code with the MPI implementation that supports MPI_THREAD_MULTIPLE but again the performance is poorer compared to running the same small test with release 6.3. For example, the job finishes within 30 s with nwchem 6.3 but takes ~100 s in nwchem 6.1.1.<br />
+However, I managed to compiled and run jobs (as well as using 'qmm fep' module) in this version by setting ARMCI_NETWORK=MPI-MT. Please note that I have read this thread <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id554/Infiniband_Install.html" class="external free">http://nwchemgit.github.io/Special_AWCforum/st/id554/Infiniband_Install.html</a> and compiled the code with the MPI implementation that supports MPI_THREAD_MULTIPLE but again the performance is poorer compared to running the same small test with release 6.3. For example, the job finishes within 30 s with nwchem 6.3 but takes ~100 s in nwchem 6.1.1.<br />
 <br />
 <br />
 If anyone has any idea how to fix any of these two problems (on how to get nwchem 6.3 works on 'qmmm fep' module or to improve the performance of nwchem 6.1.1), I would be greatly appreciated.
@@ -1189,7 +1189,7 @@ Edo
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">Edo, yes I use QLogic HW.<br />
 <br />
-<div class='quote_title'>Quote:Edoapra <a target='blank' href="../../sp/id3831.html" title="Special:AWCforum/sp/id3831">Nov 14th 12:10 am</a><div class='quote'>Tee,<br />
+<div class='quote_title'>Quote:Edoapra <a target='blank' href="../../sp/id3831.html" title="Special_AWCforum/sp/id3831">Nov 14th 12:10 am</a><div class='quote'>Tee,<br />
 Could you please give more details about your network hardware?<br />
 Are you using QLogic HW?<br />
 <br />
@@ -1384,7 +1384,7 @@ I searched for solutions about this problem. Some said the PSM_SHAREDCONTEXTS_MA
 <br />
 The second issue is about scalibility. For some reason, I cannot get a scalibility beyond 24 cpus. My work is related to QMMM based calculation and I'm not sure this is a common issue for this kind of calculation or there might be other factors related or not.<br />
 <br />
-<div class='quote_title'>Quote:Tpirojsi <a target='blank' href="../../sp/id3834.html" title="Special:AWCforum/sp/id3834">Nov 14th 1:28 am</a><div class='quote'>Do I need to recompile source code too? Or are these steps for linking the compiled source code to ga-5-2?</div id="quote"></div id="quote">
+<div class='quote_title'>Quote:Tpirojsi <a target='blank' href="../../sp/id3834.html" title="Special_AWCforum/sp/id3834">Nov 14th 1:28 am</a><div class='quote'>Do I need to recompile source code too? Or are these steps for linking the compiled source code to ga-5-2?</div id="quote"></div id="quote">
 </td>
 		                    </tr>
 		                                
@@ -1502,7 +1502,7 @@ I'm truely sorry for any trouble or inconvenience I might have caused so far. I 
 Best,<br />
 Tee<br />
 <br />
-<div class='quote_title'>Quote:Edoapra <a target='blank' href="../../sp/id3851.html" title="Special:AWCforum/sp/id3851">Nov 18th 2:43 am</a><div class='quote'>Tee<br />
+<div class='quote_title'>Quote:Edoapra <a target='blank' href="../../sp/id3851.html" title="Special_AWCforum/sp/id3851">Nov 18th 2:43 am</a><div class='quote'>Tee<br />
 The NWChem group doesn't have access to any QLogic based cluster, therefore we cannot be of any help other than the instructions I passed you a few days ago.<br />
 Edo</div id="quote"></div id="quote">
 </td>

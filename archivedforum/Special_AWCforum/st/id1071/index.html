@@ -26,7 +26,7 @@ wgActionPaths={},
 wgCanonicalNamespace="Special",
 wgCanonicalSpecialPageName="AWCforum",
 wgNamespaceNumber=-1,
-wgPageName="Special:AWCforum",
+wgPageName="Special_AWCforum",
 wgTitle="AWCforum",
 wgAction="view",
 wgArticleId=0,
@@ -1056,7 +1056,7 @@ padding: 2px 5px;
 		                    </tr>
 		                                     
 		                    <tr>
-		                        <td valign="top" class="post_body" height="65" colspan="2">Previously, I asked a question regarding how to clear share memory from strayed process. Edo told me to use a scriptl called 'ipcreset' shiped with nwchem package to deal with it, <a target='blank' href="http://nwchemgit.github.io/index.php/Special:AWCforum/st/id1001/Errors_Running_Nwchem_6.3.html" class="external free">http://nwchemgit.github.io/index.php/Special:AWCforum/st/id1001/Errors_Running_Nwchem_6.3.ht...</a>. This script does a great job most of the time. However, there is some process that cannot be handled by this script. For example I have tried to use ipreset but it turned out to be like this,<br />
+		                        <td valign="top" class="post_body" height="65" colspan="2">Previously, I asked a question regarding how to clear share memory from strayed process. Edo told me to use a scriptl called 'ipcreset' shiped with nwchem package to deal with it, <a target='blank' href="http://nwchemgit.github.io/Special_AWCforum/st/id1001/Errors_Running_Nwchem_6.3.html" class="external free">http://nwchemgit.github.io/Special_AWCforum/st/id1001/Errors_Running_Nwchem_6.3.ht...</a>. This script does a great job most of the time. However, there is some process that cannot be handled by this script. For example I have tried to use ipreset but it turned out to be like this,<br />
 <br />
 [tpirojsi@compute-0-55 ~]$ ipcs -a<br />
 <br />
@@ -1197,7 +1197,7 @@ I have logged in to the nodes that unterminated processes reside. I punched in t
 Tee<br />
 <br />
 <br />
-<div class='quote_title'>Quote:Huub <a target='blank' href="../../sp/id3882.html" title="Special:AWCforum/sp/id3882">Nov 27th 6:55 pm</a><div class='quote'>Hi Tee,<br />
+<div class='quote_title'>Quote:Huub <a target='blank' href="../../sp/id3882.html" title="Special_AWCforum/sp/id3882">Nov 27th 6:55 pm</a><div class='quote'>Hi Tee,<br />
 Using ipcrm will only clear a shared memory segment up when there are no processes attached to it (nattch 0 as you found). In your example there are still 12 processes attached to the shared memory region. Therefore the shared memory region will be deleted only when those 12 processes detach from it. One way to force the processes to detach is to kill them (if you know which processes those are), otherwise the processes will automatically detach when the calculation completes and the processes terminate. Whichever way as soon as the processes detach the shared memory segment will automatically disappear if you previously scheduled it for deletion using ipcrm.<br />
 I hope this helps, Huub</div id="quote"></div id="quote">
 </td>
@@ -1257,7 +1257,7 @@ I hope this helps, Huub</div id="quote"></div id="quote">
 		                    <tr>
 		                        <td valign="top" class="post_body" height="65" colspan="2">My bad. It had to be  killall -9 nwchem. Now the processes are killed. Thank you.<br />
 <br />
-<div class='quote_title'>Quote:Tpirojsi <a target='blank' href="../../sp/id3883.html" title="Special:AWCforum/sp/id3883">Nov 27th 7:36 pm</a><div class='quote'>Hi Huub,<br />
+<div class='quote_title'>Quote:Tpirojsi <a target='blank' href="../../sp/id3883.html" title="Special_AWCforum/sp/id3883">Nov 27th 7:36 pm</a><div class='quote'>Hi Huub,<br />
 <br />
 Thank you for your advice. How do I check which processes those are and kill them as you suggested? The processes have hung there for a while and don't seem to dettach themselves.<br />
 <br />
@@ -1266,7 +1266,7 @@ I have logged in to the nodes that unterminated processes reside. I puched in to
 Tee<br />
 <br />
 <br />
-<div class='quote_title'>Quote:Huub <a target='blank' href="../../sp/id3882.html" title="Special:AWCforum/sp/id3882">Nov 27th 6:55 pm</a><div class='quote'>Hi Tee,<br />
+<div class='quote_title'>Quote:Huub <a target='blank' href="../../sp/id3882.html" title="Special_AWCforum/sp/id3882">Nov 27th 6:55 pm</a><div class='quote'>Hi Tee,<br />
 Using ipcrm will only clear a shared memory segment up when there are no processes attached to it (nattch 0 as you found). In your example there are still 12 processes attached to the shared memory region. Therefore the shared memory region will be deleted only when those 12 processes detach from it. One way to force the processes to detach is to kill them (if you know which processes those are), otherwise the processes will automatically detach when the calculation completes and the processes terminate. Whichever way as soon as the processes detach the shared memory segment will automatically disappear if you previously scheduled it for deletion using ipcrm.<br />
 I hope this helps, Huub</div id="quote"></div id="quote"></div id="quote"></div id="quote">
 </td>
