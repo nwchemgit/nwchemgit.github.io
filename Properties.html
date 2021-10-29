@@ -218,7 +218,7 @@ parameters that can be defined in the input. For the shielding the user
 can define the number of atoms for which the shielding tensor should be
 calculated, followed by the list of specific atom centers. In the case
 of spin-spin coupling the number of atom pairs, followed by the atom
-pairs, can be defined (i.e., spinspin 1 1 2 will calculate the coupling
+pairs, can be defined (i.e., <code>spinspin 1 1 2</code> will calculate the coupling
 for one pair, and the coupling will be between atoms 1 and 2).</p>
 <p>For both the NMR spin-spin and hyperfine coupling the isotope that has
 the highest abundance and has spin, will be chosen for each atom under
@@ -272,19 +272,19 @@ end
 response), single frequency, electric field and mixed electric-magnetic
 field perturbations. The output consists of the electric polarizability
 and optical rotation tensors (alpha, beta for optical rotation) in
-atomic units. If the &lsquo;velocity&rsquo; or &lsquo;giao&rsquo; keywords are absent, the
+atomic units. If the <code>velocity</code> or <code>giao</code> keywords are absent, the
 dipole-length form will be used for the dipole integrals. This is a bit
 faster. The isotropic optical rotation is origin independent when using
-the velocity gauge or with GIAOs [1]. With the keyword &lsquo;bdtensor&rsquo;, a
+the velocity gauge or with GIAOs [1]. With the keyword <code>bdtensor</code>, a
 fully origin-invariant optical rotation tensor is calculated [1,6].
-Note that &lsquo;velocity&rsquo; and &lsquo;orbeta&rsquo; are incompatible. An input line &lsquo;set
-prop:newaoresp 0&rsquo; outside of the &lsquo;properties&rsquo; block forces the use of an
+Note that <code>velocity</code> and <code>orbeta</code> are incompatible. An input line <code>set
+prop:newaoresp 0</code> outside of the <code>properties</code> block forces the use of an
 older version of the response code, which has fewer features (in
 particular, no working GIAO opetical rotation) but which has been tested
 more thoroughly. In the default newer version you may encounter
-undocumented features (bugs). &lsquo;analysis&rsquo; triggers an analysis of the
+undocumented features (bugs). <code>analysis</code> triggers an analysis of the
 response tensors in terms of molecular orbitals. If the property input
-block also contains the keyword &lsquo;pmlocalization&rsquo;, then the analysis is
+block also contains the keyword <code>pmlocalization</code>, then the analysis is
 performed in terms of Pipek-Mezey localized MOs, otherwise the canonical
 set is used (this feature may currently not work, please check the sum
 of the analysis carefully). See Ref. [6] for an example. Works with HF
@@ -337,25 +337,25 @@ end
 
 <h4 id="raman-keywords">Raman Keywords<a class="headerlink" href="#raman-keywords" title="Permanent link">&para;</a></h4>
 <ul>
-<li>NORMAL and RESONANCE: Type of Raman plot to make.</li>
-<li>LORENTZIAN and GAUSSIAN: Generation of smoothed spectra (rather than
+<li><code>NORMAL</code> and <code>RESONANCE</code>: Type of Raman plot to make.</li>
+<li><code>LORENTZIAN</code> and <code>GAUSSIAN</code>: Generation of smoothed spectra (rather than
     sticks) using either a Lorentzian function or a Gaussian function.
-    The default is LORENTZIAN.</li>
-<li>LOW and HIGH: The default range in which to generate the Raman
-    spectrum plot is (0.0, highest wavenumber normal mode) cm-1. The LOW
-    and HIGH keywords modify the frequency range.</li>
-<li>FIRST and LAST: The default range of indices of normal modes used in
-    the plot is (7, number of normal modes). The FIRST and LAST keywords
+    The default is <code>LORENTZIAN</code>.</li>
+<li><code>LOW</code> and <code>HIGH</code>: The default range in which to generate the Raman
+    spectrum plot is (0.0, highest wavenumber normal mode) cm-1. The <code>LOW</code>
+    and <code>HIGH</code> keywords modify the frequency range.</li>
+<li><code>FIRST</code> and <code>LAST</code>: The default range of indices of normal modes used in
+    the plot is (7, number of normal modes). The <code>FIRST</code> and <code>LAST</code> keywords
     modify the range of indices.</li>
-<li>WIDTH:Controls the width in the smoothed peaks, using Lorentzians or
-    Gaussians, in the plot. The default value for WIDTH is 20.0.</li>
-<li>DQ: Size of the steps along the normal modes. The default value for
-    DQ is 0.01. It is related to the step size dR used in numerical
+<li><code>WIDTH</code>: Controls the width in the smoothed peaks, using Lorentzians or
+    Gaussians, in the plot. The default value for <code>WIDTH</code> is 20.0.</li>
+<li><code>DQ</code>: Size of the steps along the normal modes. The default value for
+    <code>DQ</code> is 0.01. It is related to the step size dR used in numerical
     evaluation of polarizability derivative</li>
 </ul>
 <h4 id="raman-output">Raman Output<a class="headerlink" href="#raman-output" title="Permanent link">&para;</a></h4>
 <p>Raman spectrum in stick format and smoothed using Lorentzians or
-Gaussians stored in a filename with format [fname].normal.<br />
+Gaussians stored in a filename with format <code>[fname].normal</code>.<br />
 The number of points is 1000 by default. This value can be changed by adding the following <a href="SET.html">SET</a> directive to the input file</p>
 <pre><code>set raman:numpts &lt;integer&gt;
 </code></pre>
@@ -370,22 +370,22 @@ The number of points is 1000 by default. This value can be changed by adding the
     118 , 517 (2014). DOI: 10.1021/jp411039m</li>
 </ol>
 <h3 id="nbofile">Nbofile<a class="headerlink" href="#nbofile" title="Permanent link">&para;</a></h3>
-<p>The keyword NBOFILE does not execute the Natural Bond Analysis code, but
+<p>The keyword <code>NBOFILE</code> does not execute the Natural Bond Analysis code, but
 simply creates an input file to be used as input to the stand-alone NBO
 code. All other properties are calculated upon request.</p>
 <p>Following the successful completion of an electronic structure
 calculation, a Natural Bond Orbital (NBO) analysis may be carried out by
-providing the keyword NBOFILE in the PROPERTY directive. NWChem will
-query the rtdb and construct an ASCII file, <file_prefix>.gen, that may
-be used as input to the stand alone version of the NBO program, gennbo.
-<file_prefix> is equal to string following the START directive. The
+providing the keyword <code>NBOFILE</code> in the <code>PROPERTY</code> directive. NWChem will
+query the rtdb and construct an ASCII file, <em>file_prefix</em><code>.gen</code>, that may
+be used as input to the stand alone version of the NBO program, GenNBO.
+<em>file_prefix</em> is equal to string following the <code>START</code> directive. The
 input deck may be edited to provide additional options to the NBO
 calculation, (see the NBO user&rsquo;s manual for details.)</p>
 <p>Users that have their own NBO version can compile and link the code into
 the NWChem software. See the INSTALL file in the source for details.</p>
 <h2 id="gaussian-cube-files">Gaussian Cube Files<a class="headerlink" href="#gaussian-cube-files" title="Permanent link">&para;</a></h2>
-<p>Electrostatic potential (keyword <em>esp</em>) and the magnitude of the
-electric field (keyword <em>efield</em>) on the grid can be generated in the
+<p>Electrostatic potential (keyword <code>esp</code>) and the magnitude of the
+electric field (keyword <code>efield</code>) on the grid can be generated in the
 form of the Gaussian Cube File. This behavior is triggered by the
 inclusion of grid keyword as shown
 below</p>
@@ -394,46 +394,40 @@ below</p>
 
 <p>where</p>
 <ul>
-<li>pad dx [dy dz] - specifies amount of padding (in angstroms) in
+<li>
+<p><code>pad dx [dy dz]</code> - specifies amount of padding (in angstroms) in
     x,y, and z dimensions that will be applied in the automatic
     construction of the rectangular grid volume based on the geometry of
     the system. If only one number is provided then the same amount of
     padding will be applied in all dimensions. The default setting is 4
-    angstrom padding in all dimensions.</li>
-</ul>
-<!-- end list -->
-
-<ul>
-<li>rmin x y z - specifies the coordinates (in angstroms) of the minimum
+    angstrom padding in all dimensions.</p>
+</li>
+<li>
+<p><code>rmin x y z</code> - specifies the coordinates (in angstroms) of the minimum
     corner of the rectangular grid volume. This will override any
-    padding in this direction.</li>
-</ul>
-<!-- end list -->
-
-<ul>
-<li>rmax x y z - specifies the coordinates (in angstroms) of the maximum
+    padding in this direction.</p>
+</li>
+<li>
+<p><code>rmax x y z</code> - specifies the coordinates (in angstroms) of the maximum
     corner of the rectangular grid volume. This will override any
-    padding in this direction.</li>
-</ul>
-<!-- end list -->
-
-<ul>
-<li>ngrid nx [ny nz] - specifies number of grid points along each
+    padding in this direction.</p>
+</li>
+<li>
+<p><code>ngrid nx [ny nz]</code> - specifies number of grid points along each
     dimension. If only one number is provided then the same number of
     grid points are assumed all dimensions. In the absence of this
     directive the number of grid points would be computed such that grid
     spacing will be close to 0.2 angstrom, but not exceeding 50 grid
-    points in either dimension.</li>
-</ul>
-<!-- end list -->
-
-<ul>
-<li>output filename - specifies name of the output cube file. The
-    default behavior is to use \&lt;prefix>-elp.cube or \&lt;prefix>-elf.cube
+    points in either dimension.</p>
+</li>
+<li>
+<p><code>output filename</code> - specifies name of the output cube file. The
+    default behavior is to use <em>prefix</em><code>-elp.cube</code> or <em>prefix</em><code>-elf.cube</code>
     file names for electrostatic potential or electric field
-    respectively. Here <prefix> denotes the system name as specified in
+    respectively. Here <em>prefix</em> denotes the system name as specified in
     start directive. Note that Gaussian cube files will be written in
-    the run directory (where the input file resides).</li>
+    the run directory (where the input file resides).</p>
+</li>
 </ul>
 <p>Example input file</p>
 <pre><code>  echo  
