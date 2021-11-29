@@ -22,8 +22,8 @@
     var mkdocs_page_url = "/Cartesian-coordinate-input.html";
   </script>
   
-  <script src="js/jquery-2.1.1.min.js" defer></script> 
-  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -37,7 +37,7 @@
         <a href="." class="icon icon-home"> NWChem</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -147,6 +147,7 @@
   
   <hr/>
 </div>
+
           <div role="main">
             <div class="section">
               
@@ -169,12 +170,12 @@ interpreted as follows:</p>
 <li>If the entry for <code>&lt;tag&gt;</code> begins with either the symbol or name of an
     element (regardless of case), then the center is treated as an atom
     of that type. The default charge is the atomic number (adjusted for
-    the presence of ECPs by the ECP NELEC directive ; see Section 8).
+    the presence of ECPs by the ECP <a href="ECP.html#scalar-ecps">NELEC</a> directive).
     Additional characters can be added to the string, to distinguish
-    between atoms of the same element (For example, the tags oxygen, O,
-    o34, olonepair, and Oxygen-ether, will all be interpreted as oxygen
+    between atoms of the same element (For example, the tags <code>oxygen</code>, <code>O</code>,
+    <code>o34</code>, <code>olonepair</code>, and <code>Oxygen-ether</code>, will all be interpreted as oxygen
     atoms.).</li>
-<li>If the entry for <code>&lt;tag&gt;</code> begins with the characters bq or x
+<li>If the entry for <code>&lt;tag&gt;</code> begins with the characters <code>bq</code> or <code>x</code>
     (regardless of case), then the center is treated as a dummy center
     with a default zero charge (Note: a tag beginning with the
     characters xe will be interpreted as a xenon atom rather than as a
@@ -182,11 +183,11 @@ interpreted as follows:</p>
     non-zero charge.</li>
 </ul>
 <p>It is important to be aware of the following points regarding the
-definitions and usage of the values specified for the variable <tag> to
+definitions and usage of the values specified for the variable <code>&lt;tag&gt;</code> to
 describe the centers in a system:</p>
 <ul>
 <li>If the tag begins with characters that cannot be matched against an
-    atom, and those characters are not BQ or X, then a fatal error is
+    atom, and those characters are not <code>BQ</code> or <code>X</code>, then a fatal error is
     generated.</li>
 <li>The tag of a center is used in the
     <a href="Basis.html">BASIS</a> and
@@ -200,41 +201,41 @@ describe the centers in a system:</p>
     are used to determine the number of electrons in the system.</li>
 </ul>
 <p>The Cartesian coordinates of the atom in the molecule are specified as
-real numbers supplied for the variables x, y, and z following the
+real numbers supplied for the variables <code>x</code>, <code>y</code>, and <code>z</code> following the
 characters entered for the tag. The values supplied for the coordinates
 must be in the units specified by the value of the variable <units> on
-the first line of the GEOMETRY directive input.</p>
+the first line of the <code>GEOMETRY</code> directive input.</p>
 <p>After the Cartesian coordinate input, optional velocities may be entered
-as real numbers for the variables vx, vy, and vz. The velocities should
+as real numbers for the variables <code>vx</code>, <code>vy</code>, and <code>vz</code>. The velocities should
 be given in atomic units and are used in QMD and PSPW calculations.</p>
 <p>The Cartesian coordinate input line also contains the optional keywords
-charge, mass and nucleus, which allow the user to specify the charge of
+<code>charge</code>, <code>mass</code> and <code>nucleus</code>, which allow the user to specify the charge of
 the atom (or center) and its mass (in atomic mass units), and the
 nuclear model. The default charge for an atom is its atomic number,
 adjusted for the presence of <a href="ECP.html">ECPs</a>. In order
 to specify a different value for the charge on a particular atom, the
 user must enter the keyword charge, followed by the desired value for
-the variable <charge>.</p>
+the variable <code>&lt;charge&gt;</code>.</p>
 <p>The default mass for an atom is taken to be the mass of its most
 abundant naturally occurring isotope or of the isotope with the longest
 half-life. To model some other isotope of the element, its mass must be
 defined explicitly by specifying the keyword mass, followed by the value
-(in atomic mass units) for the variable <mass>.</p>
-<p>The default nuclear model is a point nucleus. The keyword nucleus (or
-nucl or nuc) followed by the model name <nucmodel> overrides this
-default. Allowed values of <nucmodel> are point or pt and finite or fi.
+(in atomic mass units) for the variable <code>&lt;mass&gt;</code>.</p>
+<p>The default nuclear model is a point nucleus. The keyword <code>nucleus</code> (or
+<code>nucl</code> or <code>nuc</code>) followed by the model name <code>&lt;nucmodel&gt;</code> overrides this
+default. Allowed values of <code>&lt;nucmodel&gt;</code> are <code>point</code> or <code>pt</code> and <code>finite</code> or <code>fi</code>.
 The finite option is a nuclear model with a Gaussian shape. The RMS
 radius of the Gaussian is determined by the atomic mass number via the
-formula <img alt="$r_{\rm RMS} = 0.836*A^{1/3}+0.57$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8c08bddd524a278e961b7c30456b8f03.svg?invert_in_darkmode&sanitize=true" align=middle width="193.611495pt" height="29.12679pt"/> fm. The mass number A is
-derived from the variable <mass>.</p>
+  formula r<sub>RMS</sub> = 0.836*A<sup>1/3</sup>+0.57 fm. The mass number A is
+derived from the variable <code>&lt;mass&gt;</code>.</p>
 <p>The geometry of the system can be specified entirely in Cartesian
-coordinates by supplying a <tag> line of the type described above for
+coordinates by supplying a <code>&lt;tag&gt;</code> line of the type described above for
 each atom or center. The user has the option, however, of supplying the
 geometry of some or all of the atoms or centers using a Z-matrix
 description. In such a case, the user supplies the input tag line
 described above for any centers to be described by Cartesian
 coordinates, and then specifies the remainder of the system using the
-optional ZMATRIX directive described below in <a href="#ZMATRIX_--_Z-matrix_input">Z-matrix
+optional <code>ZMATRIX</code> directive described below in <a href="#ZMATRIX_--_Z-matrix_input">Z-matrix
 input</a>.</p>
               
             </div>
@@ -260,15 +261,18 @@ input</a>.</p>
   </div>
 
   <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
-      
-      
-      
-    </span>
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/nwchemgit/nwchem-wiki/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+    
+  </span>
 </div>
     <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
     <script src="js/theme.js" defer></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" defer></script>
       <script src="search/main.js" defer></script>
