@@ -203,7 +203,6 @@ directive,</p>
 
       END
 </code></pre>
-
 <h3 id="convergence-criteria">Convergence criteria<a class="headerlink" href="#convergence-criteria" title="Permanent link">&para;</a></h3>
 <pre><code>        (LOOSE || DEFAULT || TIGHT)
         GMAX &lt;real value&gt;
@@ -213,7 +212,6 @@ directive,</p>
 
         OPTTOL  &lt;real value&gt;
 </code></pre>
-
 <p>The defaults may be used, or the directives <code>LOOSE</code>, <code>DEFAULT</code>, or
 <code>TIGHT</code> specified to use standard sets of values, or the individual
 criteria adjusted. All criteria are in atomic units. <code>GMAX</code> and <code>GRMS</code>
@@ -226,7 +224,6 @@ being used (Z-matrix, redundant internals, or Cartesian). <code>XMAX</code> and
              XMAX   0.0054d0   0.00180   0.00006
              XRMS   0.0036d0   0.00120   0.00004
 </code></pre>
-
 <p>Additionally the user may request a specific value for the tolerance
 with the keyword <code>OPTTOL</code> which will couple all the convergence criteria
 in the following way:</p>
@@ -235,7 +232,6 @@ in the following way:</p>
              XRMS   4.0*OPTTOL
              XMAX   6.0*OPTTOL
 </code></pre>
-
 <p>Note that GMAX and GRMS used for convergence of geometry may
 significantly vary in different coordinate systems such as Z-matrix,
 redundant internals, or Cartesian. The coordinate system is defined in
@@ -247,11 +243,9 @@ coordinate systems.</p>
 <p>The old criterion may be recovered with the input</p>
 <pre><code>       gmax 0.0008; grms 1; xrms 1; xmax 1
 </code></pre>
-
 <h3 id="available-precision">Available precision<a class="headerlink" href="#available-precision" title="Permanent link">&para;</a></h3>
 <pre><code>        EPREC &lt;real eprec default 1e-7&gt;
 </code></pre>
-
 <p>In performing a trust region optimization the precision of the energy is
 coupled to the convergence criteria. As mentioned above in most cases
 XMAX and XRMS are last to converge, thus, an accelerated converge is
@@ -267,7 +261,6 @@ instead of 1e-7.</p>
 <h3 id="controlling-the-step-length">Controlling the step length<a class="headerlink" href="#controlling-the-step-length" title="Permanent link">&para;</a></h3>
 <pre><code>        TRUST &lt;real trust default 0.3&gt;
 </code></pre>
-
 <p>A dynamic trust radius (<code>trust</code>) is used to control the step during
 optimization processes both minimization and saddle-point searches. It
 defaults to 0.3 for minimizations and 0.1 for saddle-point searches.</p>
@@ -280,13 +273,11 @@ permanent “backsteping”.</p>
 <h3 id="maximum-number-of-steps">Maximum number of steps<a class="headerlink" href="#maximum-number-of-steps" title="Permanent link">&para;</a></h3>
 <pre><code>        MAXITER &lt;integer maxiter default 20&gt;
 </code></pre>
-
 <p>By default at most 20 geometry optimization steps will be taken, but
 this may be modified with this directive.</p>
 <h3 id="discard-restart-information">Discard restart information<a class="headerlink" href="#discard-restart-information" title="Permanent link">&para;</a></h3>
 <pre><code>        CLEAR
 </code></pre>
-
 <p>By default TROPT reuses Hessian information from a previous
 optimization, and, to facilitate a restart also stores which mode is
 being followed for a saddle-point search. This option deletes all
@@ -294,14 +285,12 @@ restart data.</p>
 <h3 id="regenerate-internal-coordinates">Regenerate internal coordinates<a class="headerlink" href="#regenerate-internal-coordinates" title="Permanent link">&para;</a></h3>
 <pre><code>        REDOAUTOZ
 </code></pre>
-
 <p>Deletes Hessian data and regenerates internal coordinates at the current
 geometry. Useful if there has been a large change in the geometry that
 has rendered the current set of coordinates invalid or non-optimal.</p>
 <h3 id="initial-hessian">Initial Hessian<a class="headerlink" href="#initial-hessian" title="Permanent link">&para;</a></h3>
 <pre><code>        INHESS &lt;integer inhess default 0&gt;
 </code></pre>
-
 <ul>
 <li>
 <p>0 = Default &hellip; use restart data if available, otherwise use
@@ -322,7 +311,6 @@ torsions with the following</p>
         ASCALE &lt;real ascale default 0.25&gt;
         TSCALE &lt;real tscale default 0.1&gt;
 </code></pre>
-
 <p>These values typically give a two-fold speedup over unit values, based
 on about 100 test cases up to 15 atoms using 3-21g and 6-31g* SCF.
 However, if doing many optimizations on physically similar systems it
@@ -331,7 +319,6 @@ may be worth fine tuning these parameters.</p>
 using the directive</p>
 <pre><code>        HSCALE &lt;real hscale default 1.0&gt;
 </code></pre>
-
 <p>It might be of utility, for instance, when computing an initial Hessian
 using SCF to start a large MP2 optimization. The SCF vibrational modes
 are expected to be stiffer than the MP2, so scaling the initial Hessian
@@ -340,7 +327,6 @@ by a number less than one might be beneficial.</p>
 <pre><code>        (MODDIR || VARDIR) &lt;integer dir default 0&gt;
         (FIRSTNEG || NOFIRSTNEG)
 </code></pre>
-
 <p>When searching for a transition state the program, by default, will take
 an initial step uphill and then do mode following using a fuzzy maximum
 overlap (the lowest eigen-mode with an overlap with the previous search
@@ -369,14 +355,12 @@ until that mode goes negative.</p>
 <pre><code>        XYZ [&lt;string xyz default $fileprefix&gt;]
         NOXYZ
 </code></pre>
-
 <p>The <code>XYZ</code> directive causes the geometry at each step to be output into
 file in the permanent directory in XYZ format. The optional string will
 prefix the filename. The <code>NOXYZ</code> directive turns this off.</p>
 <p>For example, the input</p>
 <pre><code>        tropt; xyz ; end
 </code></pre>
-
 <p>will cause a trajectory file filename.xyz to be created in the permanent
 directory.</p>
 <h3 id="print-options">Print options<a class="headerlink" href="#print-options" title="Permanent link">&para;</a></h3>
@@ -387,7 +371,6 @@ summarizing the optimization.</p>
           tropt; print low; end
           task scf optimize
 </code></pre>
-
 <p>you’ll obtain a pleasantly terse output.</p>
 <p>For more control, these options for the standard print directive are
 recognized</p>

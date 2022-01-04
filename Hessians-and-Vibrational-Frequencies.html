@@ -171,7 +171,6 @@ input begins with hessian and has the form:</p>
    profile  
  end
 </code></pre>
-
 <h3 id="defining-the-wavefunction-threshold">Defining the wavefunction threshold<a class="headerlink" href="#defining-the-wavefunction-threshold" title="Permanent link">&para;</a></h3>
 <p>You may modify the default threshold for the wavefunction. This keyword
 is identical to
@@ -185,7 +184,6 @@ tightens these up to 1d-6 and runs an additional energy point if needed.
 If, during an analytic hessian calculation, you encounter an error:</p>
 <pre><code> cphf_solve:the available MOs do not satisfy the SCF equations
 </code></pre>
-
 <p>the convergence criteria of the wavefunction generally needs to be
 tightened.</p>
 <h3 id="profile">Profile<a class="headerlink" href="#profile" title="Permanent link">&para;</a></h3>
@@ -281,7 +279,6 @@ module input can begin with vib, freq, frequency and has the form:</p>
    [filename &lt;string file_set_name&gt; [overwrite]]  
  end
 </code></pre>
-
 <h3 id="hessian-file-reuse">Hessian File Reuse<a class="headerlink" href="#hessian-file-reuse" title="Permanent link">&para;</a></h3>
 <p>By default the task <theory> frequencies directive will recompute the
 hessian. To reuse the previously computed hessian you need only specify
@@ -290,7 +287,6 @@ alternate place you may redirect the reuse directive to that file by
 specifying the path to that file.</p>
 <pre><code> reuse /path_to_hessian_file
 </code></pre>
-
 <p>This will reuse your saved Hessian data but one caveat is that the
 geometry specification at the point where the hessian is computed must
 be the default &ldquo;geometry&rdquo; on the current run-time-data-base for the
@@ -301,14 +297,12 @@ via the input.</p>
 <p>To modify the mass of a specific center you can simply use:</p>
 <pre><code> mass 3 4.00260324
 </code></pre>
-
 <p>which will set the mass of center 3 to 4.00260324 AMUs. The lexical
 index of centers is determined by the geometry object.</p>
 <p>To modify all Hydrogen atoms in a molecule you may use the tag based
 mechanism:</p>
 <pre><code> mass hydrogen 2.014101779
 </code></pre>
-
 <p>The mass redefinitions always start with the default masses and change
 the masses in the order given in the input. Care must be taken to change
 the masses properly. For example, if you want all hydrogens to have the
@@ -331,7 +325,6 @@ freq
 end
 task scf frequencies
 </code></pre>
-
 <p>will use the new mass for all hydrogens in the first frequency analysis.
 The mass of the oxygen atoms will be redefined in the second frequency
 analysis but the hydrogen atoms will use the default mass. To get a
@@ -348,7 +341,6 @@ freq
 end
 task scf frequencies
 </code></pre>
-
 <h3 id="temp-or-temperature">Temp or Temperature<a class="headerlink" href="#temp-or-temperature" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module can generate the vibrational analysis at various
 temperatures other than at standard room temperature. Either temp or
@@ -356,13 +348,11 @@ temperature can be used to initiate this command.</p>
 <p>To modify the temperature of the computation you can simply use:</p>
 <pre><code> temp 4 298.15 300.0 350.0 400.0
 </code></pre>
-
 <p>At this point, the temperatures are persistant and so the user must
 &ldquo;reset&rdquo; the temperature if the standard behavior is required after
 setting the temperatures in a previous &ldquo;VIB&rdquo; command, i.e.</p>
 <pre><code> temp 1 298.15
 </code></pre>
-
 <h3 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module also can generate mode animation input files in the
 standard xyz file format for graphics packages like RasMol or XMol There
@@ -375,7 +365,6 @@ geometry. By default these files are not generated. To activate this
 mechanism simply use the following input directive</p>
 <pre><code> animate
 </code></pre>
-
 <p>anywhere in the frequency/vib input block.</p>
 <p>Given an ordered list of files containing molecular coordinates in XYZ
 format, the rasmolmovie shell script generates an animated gif for each
@@ -399,7 +388,6 @@ directive, e.g.</p>
    animate 0.20
 end
 </code></pre>
-
 <p>where <step_size> is the real number that is the magnitude of each step
 along the eigenvector of each nuclear hessian mode in atomic units.</p>
 <h3 id="specifying-filenames-for-animated-normal-modes">Specifying filenames for animated normal modes<a class="headerlink" href="#specifying-filenames-for-animated-normal-modes" title="Permanent link">&para;</a></h3>
@@ -409,7 +397,6 @@ analysis is run in a single input file. To specify different filename
 for a particular vibrational analysis use the directive</p>
 <pre><code>filename &lt;file_set_name&gt; [overwrite]
 </code></pre>
-
 <p>where <file_set_name> is the name that will be prepended to the usual
 filenames. In addition the code by default requires all files to be new
 files. When the option &ldquo;overwrite&rdquo; is provided any pre-existing files
@@ -422,7 +409,6 @@ This can be changed via the fd_delta input directive, e.g.</p>
    fd_delta 0.005
 end
 </code></pre>
-
 <p>where <fd_hessian_step_size> is the real number that is the magnitude of
 each displacement in atomic units for the calculation of the finite
 difference Hessian. For older versions of NWChem without the fd_delta
@@ -430,7 +416,6 @@ option just set the &ldquo;stpr_gen:delta&rdquo; value on the runtime database,
 e.g.</p>
 <pre><code>set stpr_gen:delta 0.005
 </code></pre>
-
 <h3 id="an-example-input-deck">An Example Input Deck<a class="headerlink" href="#an-example-input-deck" title="Permanent link">&para;</a></h3>
 <p>This example input deck will optimize the geometry for the given basis
 set, compute the frequencies for <img alt="$H_{2}O$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d7fc8f229a929f93c03b951b7fe40bf0.svg?invert_in_darkmode&sanitize=true" align=middle width="33.934725pt" height="22.38192pt"/>, <img alt="$H_{2}O$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d7fc8f229a929f93c03b951b7fe40bf0.svg?invert_in_darkmode&sanitize=true" align=middle width="33.934725pt" height="22.38192pt"/> at different
@@ -474,7 +459,6 @@ freq
 end
 task scf freq
 </code></pre>
-
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p><references/></p>
 <ol>

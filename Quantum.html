@@ -166,14 +166,12 @@ for quantum algorithms. There are currently two options for integrals:</p>
         2emet 13
         nroots ### (Optional, but will include leading excitations for excited-state quantum calculations)
 </code></pre>
-
 <p>You must set the printing parameters at the end of the input file:  </p>
 <pre><code>        set tce:print_integrals T
         set tce:qorb ### (Total number of orbitals you wish to be printed)
         set tce:qela ### (Number of alpha electrons)
         set tce:qelb ### (number of beta electrons)
 </code></pre>
-
 <p><em>Notes:</em>  </p>
 <ul>
 <li>The two-electron integrals are printed out in compact Mulliken
@@ -212,7 +210,6 @@ release</a>.  </p>
 <pre><code>        2eorb
         2emet 13
 </code></pre>
-
 <p>You must set the printing parameters at the end of the input file:  </p>
 <pre><code>        set tce:qducc T
         set tce:nactv ### (The number of active virtual orbitals. 
@@ -220,7 +217,6 @@ release</a>.  </p>
         set tce:nonhf F/T (If a non-RHF reference is used, set to T. Otherwise, keep as F.)
         set tce:ducc_model ### (Determines how the similarity transformed Hamiltonian is truncated. See note below.)
 </code></pre>
-
 <p><em>Notes:</em></p>
 <ul>
 <li>Six models for the truncation of the similarity transformed are implemented and numbered 1-6. They correspond to approximations A(2)-A(7), respectively, that are detailed in <a href="https://arxiv.org/abs/2110.12077">arXiv:2110.12077</a>. Model 3 corresponds to the earliest implementation described in <a href="https://doi.org/10.1063/1.5094643">J. Chem. Phys. 151, 014107 (2019)</a> and <a href="https://doi.org/10.1063/1.5128103">J. Chem. Phys. 151, 234114 (2019)</a>. In contrast to these early publications, the full form of the two-electron integral is printed. Model 2 is an aggressive truncation and is not recommended for use. </li>
@@ -230,7 +226,6 @@ release</a>.  </p>
         Separately, (IJ|LK) = (JI|KL) = (KL|JI) = (LK|IJ)  
         But (IJ|KL) /= (IJ|LK)    
 </code></pre>
-
 <ul>
 <li>When utilizing the <a href="#yaml-interpreter">YAML interpreter</a>, the full two-electron integral will be printed in the YAML file, despite it being labeled as &lsquo;sparse&rsquo; in the YAML file.   </li>
 <li>Frozen core calculations should not be performed. There is nothing preventing such calculation from being executed, but the integrals will be incorrect.   </li>
@@ -240,7 +235,6 @@ release</a>.  </p>
 <p>Once the calculation is completed, the integrals and basic information including initial wavefunction guesses for quantum algorithms can be extracted into a YAML file. To generate the YAML file, executed the following command:</p>
 <pre><code>python $NWCHEM_TOP/contrib/quasar/export_chem_library_yaml.py &lt; {NWChem output file} &gt; {YAML file name}
 </code></pre>
-
 <p><em>Note:</em>
 * the &lsquo;fci_energy&rsquo; in the YAML file is taken to be the energy of the correlated method, which, in either case, is the CCSD energy.</p>
 <h2 id="example-input-file-for-bare-hamiltonian">Example input file for Bare Hamiltonian<a class="headerlink" href="#example-input-file-for-bare-hamiltonian" title="Permanent link">&para;</a></h2>
@@ -280,7 +274,6 @@ set tce:qelb 2
 
 task tce energy
 </code></pre>
-
 <h2 id="example-input-file-for-ducc">Example input file for DUCC<a class="headerlink" href="#example-input-file-for-ducc" title="Permanent link">&para;</a></h2>
 <pre><code>echo
 

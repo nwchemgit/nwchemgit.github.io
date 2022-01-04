@@ -173,7 +173,6 @@ directive,</p>
         (XYZ || NOXYZ) 
       END
 </code></pre>
-
 <h3 id="convergence-criteria">Convergence criteria<a class="headerlink" href="#convergence-criteria" title="Permanent link">&para;</a></h3>
 <p>The user may request a specific value for the tolerance with the keyword
 <code>OPTTOL</code> which will couple all the convergence criteria in the following
@@ -183,7 +182,6 @@ way:</p>
              XRMS   4.0*OPTTOL
              XMAX   6.0*OPTTOL
 </code></pre>
-
 <h3 id="available-precision">Available precision<a class="headerlink" href="#available-precision" title="Permanent link">&para;</a></h3>
 <pre><code>    EPREC &lt;real eprec default 1e-7&gt;
 </code></pre>
@@ -194,44 +192,37 @@ Note that the default EPREC for DFT calculations is 5e-6 instead of 1e-7.</p>
 <h3 id="controlling-the-step-length">Controlling the step length<a class="headerlink" href="#controlling-the-step-length" title="Permanent link">&para;</a></h3>
 <pre><code>        STRIDE &lt;real stride default 0.1&gt;
 </code></pre>
-
 <p>A dynamic stride (<code>stride</code>) is used to control the step length during
 the minimum energy path walking when taking the Euler step as starting
 point.</p>
 <h3 id="moving-away-from-the-saddle-point">Moving away from the saddle point<a class="headerlink" href="#moving-away-from-the-saddle-point" title="Permanent link">&para;</a></h3>
 <pre><code>        EVIB &lt;real evib default 1e-4&gt;
 </code></pre>
-
 <p>The expected decrease in energy (<code>evib</code>) assuming a quadratic
 approximation around the saddle structure to be obtained.</p>
 <h3 id="maximum-number-of-mepgs-steps">Maximum number of MEPGS steps<a class="headerlink" href="#maximum-number-of-mepgs-steps" title="Permanent link">&para;</a></h3>
 <pre><code>        MAXMEP &lt;integer maxmep default 250&gt;
 </code></pre>
-
 <p>By default at most 250 minimum energy path steps will be taken, but this
 may be modified with this directive.</p>
 <h3 id="maximum-number-of-steps">Maximum number of steps<a class="headerlink" href="#maximum-number-of-steps" title="Permanent link">&para;</a></h3>
 <pre><code>        MAXITER &lt;integer maxiter default 20&gt;
 </code></pre>
-
 <p>By default at most 20 <strong>constrained</strong> geometry optimization steps will
 be taken, but this may be modified with this directive.</p>
 <h3 id="initial-hessian">Initial Hessian<a class="headerlink" href="#initial-hessian" title="Permanent link">&para;</a></h3>
 <pre><code>        INHESS &lt;integer inhess default 2&gt;
 </code></pre>
-
 <p>With this option the MEPGS module will be able to transform Cartesian
 Hessian from previous frequency calculation.</p>
 <h3 id="selecting-the-side-to-traverse">Selecting the side to traverse<a class="headerlink" href="#selecting-the-side-to-traverse" title="Permanent link">&para;</a></h3>
 <pre><code>        (BACKWARD || FORWARD) &lt;string default both&gt;
 </code></pre>
-
 <p>With this option the MEPGS module will select which side of the minimum
 energy path to explore. By default both sides are explored for a MEPGS run.</p>
 <h3 id="using-mass">Using mass<a class="headerlink" href="#using-mass" title="Permanent link">&para;</a></h3>
 <pre><code>        (MSWG || NOMSWG) &lt;string default NOMSWG&gt;
 </code></pre>
-
 <p>With this option the MEPGS will trigger the use of mass when following
 the minimum energy path. Mass is not used as default, if mass is used
 then this formally becomes an intrinsic reaction coordinate.</p>
@@ -239,7 +230,6 @@ then this formally becomes an intrinsic reaction coordinate.</p>
 <pre><code>        XYZ [&lt;string xyz default $fileprefix&gt;]
         NOXYZ
 </code></pre>
-
 <p>The <code>XYZ</code> directive causes the geometry at each calculated structure on
 the minimum energy path to be output into file in the permanent
 directory in XYZ format. The optional string will prefix the filename.
@@ -247,7 +237,6 @@ The <code>NOXYZ</code> directive turns this off.</p>
 <p>For example, the input</p>
 <pre><code>        mepgs; xyz ; end
 </code></pre>
-
 <p>will cause a trajectory file filename.xyz to be created in the permanent
 directory.</p>
 <h3 id="mepgs-usage">MEPGS usage<a class="headerlink" href="#mepgs-usage" title="Permanent link">&para;</a></h3>
@@ -258,7 +247,6 @@ directory.</p>
         mepgs; &lt;mepgs options&gt; ; end
         task theory mepgs
 </code></pre>
-
 <p>In the above example, after performing a frequency analysis for the
 saddle point, the information of the force constant matrix is reused
 (freq directive) in order to be able to follow the transition state

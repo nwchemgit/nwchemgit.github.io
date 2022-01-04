@@ -273,7 +273,6 @@ file can also be obtained as part of calculation of internal free energy
 by inserting</p>
 <pre><code>set qmmm:region_print .true.
 </code></pre>
-
 <p>anywhere in the input file during energy calculation. <strong>Both xyzi and
 esp files should be placed into the perm directory!!!</strong></p>
 <p>In the input file the restart file is specified in the MD block
@@ -283,24 +282,20 @@ following the standard notation</p>
  ...
 end
 </code></pre>
-
 <p>while coordinates of QM region (xyzi files) and ESP charges (esp files)
 are set using the following directives (at the top level outside of any
 input blocks)</p>
 <pre><code>set qmmm:fep_geom xxx_A.xyzi xxx_B.xyzi
 set qmmm:fep_esp  xxx_A.esp xxx_B.esp
 </code></pre>
-
 <p>The current interpolation interval <script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>
 <br />
 for which free energy difference is calculated is defined as</p>
 <pre><code>set qmmm:fep_lambda lambda_i lambda_i+1
 </code></pre>
-
 <p>To enable double wide sampling use the following directive</p>
 <pre><code>set qmmm:fep_deriv .true.
 </code></pre>
-
 <p>If set, the above directive will perform both
 <script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>  and
 <script type="math/tex">\,\! [\lambda_i\to\lambda_{i-1}]</script>  calculations, where</p>
@@ -340,19 +335,16 @@ the MD block:</p>
  equil &lt;number of equilibration steps&gt;
  end
 </code></pre>
-
 <p>Other parameters (e.g. temperature and pressure can be also set in the
 MD block.</p>
 <p>The actual QM/MM solvation free energy calculation is invoked through
 the following task directive</p>
 <pre><code>task qmmm fep
 </code></pre>
-
 <p>The current value of solvation free energy differences may be tracked
 though</p>
 <pre><code>grep free &lt;name of the output file&gt;
 </code></pre>
-
 <p>The first number is a forward (<script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>)
 free energy difference and second number is backward
 (<script type="math/tex">\,\! [\lambda_i\to\lambda_{i-1}]</script>) free energy difference, both in
@@ -362,7 +354,6 @@ of <system>.thm file but this time in <strong>atomic units</strong>.</p>
 calculation. This will require the presence of</p>
 <pre><code> set qmmm:extend .true.
 </code></pre>
-
 <p>directive, the <system>.thm file, and the appropriate rst file.</p>
 <p>Here is an <a href="QMMM_FEP_Example.html">example of the input file for QM/MM solvation free energy
 calculation</a>.</p>

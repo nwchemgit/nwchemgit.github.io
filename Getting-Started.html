@@ -216,14 +216,12 @@ be:</p>
  charmm_s &lt;location of NWChem installation&gt;/src/data/charmm_s/  
  charmm_x &lt;location of NWChem installation&gt;/src/data/charmm_x/
 </code></pre>
-
 <p>It is can also be useful to use the NWCHEM_BASIS_LIBRARY environment
 variable when testing a new libraries in your own directory. This will
 allow you to overwrite the value of nwchem_basis_library in your
 .nwchemrc file and point to the new basis library. For example:</p>
 <pre><code>   % setenv NWCHEM_BASIS_LIBRARY &quot;$NWCHEM/data-5.0/libraries/&quot;
 </code></pre>
-
 <p>Do not forget the trailing &ldquo;/&rdquo;.</p>
 <h2 id="input-file-structure">Input File Structure<a class="headerlink" href="#input-file-structure" title="Permanent link">&para;</a></h2>
 <p>The structure of an input file reflects the internal structure of
@@ -241,7 +239,6 @@ PERMANENT_DIR
 MEMORY  
 ECHO
 </code></pre>
-
 <p>After the input file has been scanned for the start-up directives, it is
 rewound and read sequentially. Input is processed either by the
 top-level parser (for the directives listed in <a href="Top-level.html">Top-level
@@ -262,7 +259,6 @@ execute command for NWChem. That is, the execute command looks something
 like the following</p>
 <pre><code> nwchem input_file
 </code></pre>
-
 <p>The default name for the input file is <code>nwchem.nw</code>. If an input file name
 <code>input_file</code> is specified without an extension, the code assumes .nw as a
 default extension, and the input filename becomes <code>input_file.nw</code>. If the
@@ -286,7 +282,6 @@ run this type of problem &ndash; fewer than ten lines of input, as follows:</p>
  end  
  task scf optimize
 </code></pre>
-
 <p>Examining the input line by line, it can be seen that it contains only
 four directives; TITLE, GEOMETRY, BASIS, and TASK. The TITLE directive
 is optional, and is provided as a means for the user to more easily
@@ -312,7 +307,6 @@ directive, refer to <a href="TASK.html">Tasks</a>)</p>
 a typical UNIX workstation is as follows:</p>
 <pre><code> nwchem n2
 </code></pre>
-
 <p>NWChem output is to UNIX standard output, and error messages are sent to
 both standard output and standard error.</p>
 <h2 id="water-molecule-sample-input-file">Water Molecule Sample Input File<a class="headerlink" href="#water-molecule-sample-input-file" title="Permanent link">&para;</a></h2>
@@ -355,7 +349,6 @@ scf; print none; end
 title &quot;H2O+ : 6-31g** UMP2 frequencies&quot;  
 task mp2 freq
 </code></pre>
-
 <p>The START directive
 (<a href="Start_Restart.html">START/RESTART</a> tells
 NWChem that this run is to be started from the beginning. This directive
@@ -431,11 +424,9 @@ be entered as follows;</p>
   H 0 -1.430 1.107  
  end
 </code></pre>
-
 <p>These same five lines could be entered on a single line, as</p>
 <pre><code> geometry; O 0 0 0; H 0 1.430 1.107; H 0 -1.430 1.107; end
 </code></pre>
-
 <p>This one physical input line comprises five logical input lines. Each
 logical or physical input line must be no longer than 1023 characters.</p>
 <p>In the input file:</p>
@@ -523,7 +514,6 @@ following two lines are equivalent</p>
 <pre><code>  7 10 21:27:2 1:3 99  
   7 10 21 23 25 27 1 2 3 99
 </code></pre>
-
 <p>(In Fortran triplet notation, the increment, if unstated, is 1; e.g.,
 1:3 = 1:3:1.)</p>
 <p>The directive <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">VECTORS</a> is presented here as an example of
@@ -534,7 +524,6 @@ follows:</p>
          [swap [(alpha||beta)] &lt;integer vec1 vec2&gt; ...] \ 
          [output &lt;string output_movecs default $file_prefix$.movecs&gt;]
 </code></pre>
-
 <p>This directive contains three optional keywords, as indicated by the
 three main sets of square brackets enclosing the keywords input, swap,
 and output. The keyword input allows the user to specify the source of
@@ -544,7 +533,6 @@ option descriptions;</p>
 <pre><code> (&lt;string input_movecs default atomic&gt;) || \ 
                  (project &lt;string basisname&gt; &lt;string filename&gt;) \
 </code></pre>
-
 <p>The first option, <code>&lt;string input_movecs default atomic&gt;</code>, can be
 used to specify an ASCII character string for the parameter
 <code>input_movecs</code>. If no entry is specified, the code uses the default
@@ -569,7 +557,6 @@ option.</p>
 <pre><code> vectors input project &quot;small basis&quot; small_basis.movecs \
          output large_basis.movecs
 </code></pre>
-
 <p>This directive tells the code to generate input vectors by projecting
 from vectors in a smaller basis named &ldquo;small basis&rdquo;, which is stored in
 the file <code>small_basis.movecs</code>. The output vectors will be stored in the

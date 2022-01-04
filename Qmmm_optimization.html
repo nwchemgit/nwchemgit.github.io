@@ -155,7 +155,6 @@
 methodology and is invoked by</p>
 <pre><code>task qmmm &lt;qmtheory&gt; optimize
 </code></pre>
-
 <p>The overall algorithm involves alternating optimizations of QM and MM
 regions until convergence is achieved. This type of approach offers
 substantial savings compared to direct optimization of the entire system
@@ -195,30 +194,25 @@ are embedded in the solvent</p>
   [xyz] foo
 end
 </code></pre>
-
 <p>We have two regions in the system &ldquo;qm&rdquo; and &ldquo;solvent&rdquo; and we would like
 to optimize them both, thus the line</p>
 <pre><code> [region] qm   solvent
 </code></pre>
-
 <p>Our QM region is presumably small and the maximum number of iterations
 (within a single optimization pass) is set to 10. The solvent region is
 typically much larger (thousands of atoms) and the maximum number of
 iterations is set to a much large number 3000:</p>
 <pre><code>[maxiter] 10   3000
 </code></pre>
-
 <p>We would like to perform a total of 5 optimization passes, giving us a
 total of 5*10=50 optimization steps for QM region and 5*3000=15000
 optimization steps for solvent region:</p>
 <pre><code> [ncycles] 5
 </code></pre>
-
 <p>We are requesting QM region to be represented by point ESP charges
 during the solvent optimization:</p>
 <pre><code>[density] espfit
 </code></pre>
-
 <p>Finally we are requesting that the coordinates of the first region to be
 saved in the form of numbered xyz files:</p>
 <pre><code>[xyz] foo

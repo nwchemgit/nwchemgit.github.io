@@ -179,7 +179,6 @@ block</p>
   [NOPRINT ...]
 END
 </code></pre>
-
 <p>Note that the keyword CCSD is used for the input block regardless of the
 actual level of theory desired (specified with the TASK directive). The
 following directives are recognized within the CCSD group.</p>
@@ -189,18 +188,15 @@ quite enough for most calculations, although particularly troublesome
 cases may require more.</p>
 <pre><code> MAXITER  &lt;integer maxiter default 20&gt;
 </code></pre>
-
 <h2 id="thresh-convergence-threshold">THRESH &ndash; Convergence threshold<a class="headerlink" href="#thresh-convergence-threshold" title="Permanent link">&para;</a></h2>
 <p>Controls the convergence threshold for the iterative part of the
 calculation. Both the RMS error in the amplitudes and the change in
 energy must be less than thresh.</p>
 <pre><code> THRESH  &lt;real thresh default 1e-6&gt;
 </code></pre>
-
 <h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
 <pre><code> TOL2E &lt;real tol2e default min(1e-12, 0.01*thresh)&gt;
 </code></pre>
-
 <p>The variable tol2e is used in determining the integral screening
 threshold for the evaluation of the energy and related quantities.</p>
 <p>CAUTION! At the present time, the tol2e parameter only affects the
@@ -221,12 +217,10 @@ the quantities involved, and the possibility of disk storage are being
 considered, but have not yet been implemented.</p>
 <pre><code> DIISBAS  &lt;integer diisbas default 5&gt;
 </code></pre>
-
 <h2 id="freeze-freezing-orbitals">FREEZE &ndash; Freezing orbitals<a class="headerlink" href="#freeze-freezing-orbitals" title="Permanent link">&para;</a></h2>
 <pre><code>  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
           [virtual &lt;integer nfzv default 0&gt;]]
 </code></pre>
-
 <p>This directive is identical to that used in the <a href="MP2.html">MP2</a>
 module.</p>
 <h2 id="nodisk-on-the-fly-computation-of-integrals">NODISK &ndash; On-the-fly computation of integrals<a class="headerlink" href="#nodisk-on-the-fly-computation-of-integrals" title="Permanent link">&para;</a></h2>
@@ -240,7 +234,6 @@ printed. From looking at the source code, the interesting values seem to
 be IPRT > 5, 10, and 50.</p>
 <pre><code> IPRT  &lt;integer IPRT default 0&gt;
 </code></pre>
-
 <h2 id="print-and-noprint">PRINT and NOPRINT<a class="headerlink" href="#print-and-noprint" title="Permanent link">&para;</a></h2>
 <p>The coupled cluster module supports the standard NWChem print control
 keywords, although very little in the code is actually hooked into this
@@ -292,7 +285,6 @@ CCSD+T(CCSD) calculation, for example, the input file should include the
 directive</p>
 <pre><code> TASK CCSD+T(CCSD)
 </code></pre>
-
 <p>Lower-level results which come as by-products (such as MP3/MP4) of the
 requested calculation are generally also printed in the output file and
 stored on the run-time database, but the method specified in the TASK
@@ -321,7 +313,6 @@ DOJK &lt;integer array default 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2&gt;
 DOS  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
 DOD  &lt;integer array default 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1&gt;
 </code></pre>
-
 <h2 id="alternative-implementations-of-triples">Alternative Implementations of Triples<a class="headerlink" href="#alternative-implementations-of-triples" title="Permanent link">&para;</a></h2>
 <p>There are four customized versions of the CCSD(T) triples driver that
 may improve performance on some architectures. These are not the default
@@ -338,7 +329,6 @@ node code, provided that nonblocking communication makes asynchronous
 progress.</p>
 <pre><code> set ccsd:use_trpdrv_nb T
 </code></pre>
-
 <h3 id="openmp">OpenMP<a class="headerlink" href="#openmp" title="Permanent link">&para;</a></h3>
 <p>As of November 2016, the development version of semidirect CCSD(T) uses
 OpenMP extensively. The OpenMP variant of the triples driver includes
@@ -349,7 +339,6 @@ Global Arrays get operations.</p>
 <pre><code>set ccsd:use_ccsd_omp T
 set ccsd:use_trpdrv_omp T
 </code></pre>
-
 <p>If one runs with only the (T) portion of the code using threads, the
 CCSD code will run slower when using fewer cores. Thus, it may be
 prudent to run the CCSD portion with a larger number of processes and
@@ -376,7 +365,6 @@ extensively and a recommendation concerning the right number of
 processes and threads is not available.</p>
 <pre><code> set ccsd:use_trpdrv_offload T
 </code></pre>
-
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Rendell, A.P., Lee, T.J., Komornicki, A., and Wilson, S. (1992)

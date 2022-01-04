@@ -168,7 +168,6 @@ approximations</p>
 </ul>
 <pre><code>TASK MP2
 </code></pre>
-
 <ul>
 <li>Fully-direct[2] &ndash; this is of utility if only limited I/O
     resources are available (up to about 2800 functions). Only RHF
@@ -177,7 +176,6 @@ approximations</p>
 </ul>
 <pre><code>TASK DIRECT_MP2
 </code></pre>
-
 <ul>
 <li>Resolution of the identity (RI) approximation MP2 (RI-MP2)[3] &ndash;
     this uses the RI approximation and is therefore only exact in the
@@ -190,7 +188,6 @@ approximations</p>
 </ul>
 <pre><code>TASK RIMP2
 </code></pre>
-
 <p>All three MP2 tasks share the same input block.</p>
 <pre><code> MP2  
    [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \  
@@ -205,7 +202,6 @@ approximations</p>
    [SCRATCHDISK &lt;integer&gt;] 
  END
 </code></pre>
-
 <h2 id="freeze-freezing-orbitals">FREEZE &ndash; Freezing orbitals<a class="headerlink" href="#freeze-freezing-orbitals" title="Permanent link">&para;</a></h2>
 <p>All MP2 modules support frozen core orbitals, however, only the direct
 MP2 and RI-MP2 modules support frozen virtual orbitals.</p>
@@ -216,7 +212,6 @@ modified either by the user or due to the presence of an ECP. The actual
 input would be</p>
 <pre><code> freeze atomic
 </code></pre>
-
 <p>For example, in a calculation on Si(OH)<sub>2</sub>, by default the lowest
 seven orbitals would be frozen (the oxygen 1<em>s</em>, and the silicon
 1<em>s</em>, 2<em>s</em> and 2<em>p</em>).</p>
@@ -289,7 +284,6 @@ and higher- period atoms.</p>
 Following the  Si(OH)<sub>2</sub> example, the user could specify</p>
 <pre><code>freeze atomic O 1 Si 3
 </code></pre>
-
 <p>In this case only the lowest four orbitals would be frozen. If the user
 does not specify the orbitals by atom, the rules default to Table 16.1.</p>
 <p>Caution: The system does not check for a valid number of orbitals per
@@ -300,11 +294,9 @@ a logical number of orbitals to be frozen for the atom.</p>
 orbitals to freeze. For instance, to freeze the first 10 orbitals</p>
 <pre><code> freeze 10
 </code></pre>
-
 <p>or equivalently, using the optional keyword core</p>
 <pre><code> freeze core 10
 </code></pre>
-
 <p>Again, note that if the 10 orbitals to be frozen do not correspond to
 the first 10 orbitals, then the swap keyword of the VECTORS directive
 must be used to order the input orbitals correctly (<a href="#vectors----mo-vectors">MO
@@ -313,7 +305,6 @@ vectors</a>).</p>
 instance, to freeze the top 5 virtuals</p>
 <pre><code> freeze virtual 5
 </code></pre>
-
 <p>Again, note that this only works for the direct-MP2 and RI-MP2 energy
 codes.</p>
 <h2 id="tight-increased-precision">TIGHT &ndash; Increased precision<a class="headerlink" href="#tight-increased-precision" title="Permanent link">&para;</a></h2>
@@ -335,7 +326,6 @@ limit the per process disk usage. Mandatory argument for this keyword is
 the maximum number of MBytes. For example, the following input line</p>
 <pre><code> scratchdisk 512
 </code></pre>
-
 <p>puts an upper limit of 512 MBytes to the semi-direct MP2 usage of disk
 (again, on a per process base).</p>
 <h2 id="print-and-noprint">PRINT and NOPRINT<a class="headerlink" href="#print-and-noprint" title="Permanent link">&para;</a></h2>
@@ -464,7 +454,6 @@ to specify a different source using the VECTORS directive. For instance,
 to obtain vectors from the file /tmp/h2o.movecs, use the directive</p>
 <pre><code> vectors /tmp/h2o.movecs
 </code></pre>
-
 <p>As noted above (<a href="#freeze----freezing-orbitals">FREEZE</a>) if
 the SCF orbitals are not in the correct order, it is necessary to
 permute the input orbitals using the swap keyword of the VECTORS
@@ -473,7 +462,6 @@ corresponding to the SCF orbitals 1-5, and 7, it is necessary to swap
 orbital 7 into the 6th position. This is accomplished by</p>
 <pre><code> vectors swap 6 7
 </code></pre>
-
 <p>The swap capability is examined in more detail in <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">Input/output of MO
 vectors</a>.</p>
 <h2 id="ri-mp2-fitting-basis">RI-MP2 fitting basis<a class="headerlink" href="#ri-mp2-fitting-basis" title="Permanent link">&para;</a></h2>
@@ -486,7 +474,6 @@ the name &ldquo;ri-mp2 basis&rdquo; (see <a href="Basis.html">Basis</a>). For in
    ...
  end
 </code></pre>
-
 <p>Alternatively, using a standard capability of basis sets
 (<a href="Basis.html">Basis</a>) another named basis may be associated with
 the fitting basis. For instance, the following input specifies a basis
@@ -500,10 +487,8 @@ with the name &ldquo;small fitting basis&rdquo; and then defines this to be the
    H s;  0.01 1
  end
 </code></pre>
-
 <pre><code> set &quot;ri-mp2 basis&quot; &quot;small fitting basis&quot;
 </code></pre>
-
 <h2 id="file3c-ri-mp2-3-center-integral-filename">FILE3C &ndash; RI-MP2 3-center integral filename<a class="headerlink" href="#file3c-ri-mp2-3-center-integral-filename" title="Permanent link">&para;</a></h2>
 <p>The default name for the file used to store the transformed 3-center
 integrals is &ldquo;file_prefix.mo3cint&rdquo; in the scratch directory. This may
@@ -511,7 +496,6 @@ be overridden using the FILE3C directive. For instance, to specify the
 file /scratch/h2o.3c, use this directive</p>
 <pre><code> file3c /scratch/h2o.3c
 </code></pre>
-
 <h2 id="riapprox-ri-mp2-approximation">RIAPPROX &ndash; RI-MP2 Approximation<a class="headerlink" href="#riapprox-ri-mp2-approximation" title="Permanent link">&para;</a></h2>
 <p>The type of RI approximation used in the RI-MP2 calculation is
 controlled by means of the RIAPPROX directive. The two possible values
@@ -531,14 +515,12 @@ parameter may be changed by setting the a parameter in the database. For
 instance, to set it to <img alt="$10^{-10}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7e66fb4017db9bbbc21f10b17fe18e42.svg?invert_in_darkmode&sanitize=true" align=middle width="39.668805pt" height="26.70657pt"/></p>
 <pre><code> set &quot;mp2:fit min eval&quot; 1e-10
 </code></pre>
-
 <h3 id="reference-spin-mapping-for-ri-mp2-calculations">Reference Spin Mapping for RI-MP2 Calculations<a class="headerlink" href="#reference-spin-mapping-for-ri-mp2-calculations" title="Permanent link">&para;</a></h3>
 <p>The user has the option of specifying that the RI-MP2 calculations are
 to be done with variations of the SCF reference wavefunction. This is
 accomplished with a SET directive of the form,</p>
 <pre><code> set &quot;mp2:reference spin mapping&quot; &lt;integer array default 0&gt;
 </code></pre>
-
 <p>Each element specified for array is the SCF spin case to be used for the
 corresponding spin case of the correlated calculation. The number of
 elements set determines the overall type of correlated calculation to be
@@ -550,25 +532,21 @@ of the correlated reference spin cases, the SET directive would be as
 follows,</p>
 <pre><code> set &quot;mp2:reference spin mapping&quot; 1 1
 </code></pre>
-
 <p>The SCF calculation to produce the reference wavefunction could be
 either RHF or UHF in this case.</p>
 <p>The SET directive for a similar case, but this time using the beta-spin
 SCF orbitals for both correlated spin cases, is as follows,</p>
 <pre><code> set &quot;mp2:reference spin mapping&quot; 2 2
 </code></pre>
-
 <p>The SCF reference calculation must be UHF in this case.</p>
 <p>The SET directive for a spin-restricted calculation (one element) from
 the beta-spin SCF orbitals using this option is as follows,</p>
 <pre><code> set &quot;mp2:reference spin mapping&quot; 2
 </code></pre>
-
 <p>The SET directive for a spin-unrestricted calculation with the spins
 flipped from the original SCF reference wavefunction is as follows,</p>
 <pre><code> set &quot;mp2:reference spin mapping&quot; 2 1
 </code></pre>
-
 <h3 id="batch-sizes-for-the-ri-mp2-calculation">Batch Sizes for the RI-MP2 Calculation<a class="headerlink" href="#batch-sizes-for-the-ri-mp2-calculation" title="Permanent link">&para;</a></h3>
 <p>The user can control the size of each batch in the transformation and
 energy evaluation in the MP2 calculation, and consequently the memory
@@ -577,7 +555,6 @@ directives of the following form,</p>
 <pre><code> set &quot;mp2:transformation batch size&quot; &lt;integer size default -1&gt;
  set &quot;mp2:energy batch size&quot; &lt;integer isize jsize default -1 -1&gt;
 </code></pre>
-
 <p>The default is for the code to determine the batch size based on the
 available memory. Should there be problems with the program-determined
 batch sizes, these variables allow the user to override them. The
@@ -607,7 +584,6 @@ amount of I/O, or minimizing the amount of computation. This can be
 accomplished using a SET directive of the form,</p>
 <pre><code> set &quot;mp2:energy mem minimize&quot; &lt;string mem_opt default I&gt;
 </code></pre>
-
 <p>A value of I entered for the string mem_opt means that a strategy to
 minimize I/O will be employed. A value of C tells the code to use a
 strategy that minimizes computation.</p>
@@ -630,7 +606,6 @@ controlled in the RI-MP2 calculation using the following SET directives,</p>
  set &quot;xf3ci:AO 2 batch size&quot; &lt;integer max&gt;
  set &quot;xf3ci:fit batch size&quot; &lt;integer max&gt;
 </code></pre>
-
 <p>The size of the local arrays determines the sizes of the two matrix
 multiplications. These entries set limits on the size of blocks to be
 used in each index. The listing above is in order of importance of the
@@ -683,7 +658,6 @@ end
 
 task mp2 property
 </code></pre>
-
 <p>Note that the MP2 linear response density matrix is not necessarily positive
 definite so it is not unusual to see a few small negative natural
 orbital occupation numbers. Significant negative occupation numbers have
@@ -696,7 +670,6 @@ energies as suggested by S.Grimme[10]</p>
    [SCS]  
  END
 </code></pre>
-
 <p>Scaling factors for the two components (parallel and opposite spin) can
 be defined by using the keywords FSS (same spin factor) and FOS
 (opposite spin factor):</p>
@@ -706,7 +679,6 @@ be defined by using the keywords FSS (same spin factor) and FOS
    fos   0.56  
 end
 </code></pre>
-
 <p>Default values are FSS=0.333333333, FOS=1.2 for MP2, and FSS=1.13, FOS=1.27 for
 CCSD.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>

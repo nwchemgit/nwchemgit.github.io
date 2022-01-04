@@ -188,7 +188,6 @@ module input can begin with vib, freq, frequency and has the form:</p>
    [animate [&lt;real step_size_for_animation&gt;]]  
  end
 </code></pre>
-
 <h3 id="hessian-file-reuse">Hessian File Reuse<a class="headerlink" href="#hessian-file-reuse" title="Permanent link">&para;</a></h3>
 <p>By default the task <theory> frequencies directive will recompute the
 hessian. To reuse the previously computed hessian you need only specify
@@ -197,7 +196,6 @@ alternate place you may redirect the reuse directive to that file by
 specifying the path to that file.</p>
 <pre><code> reuse /path_to_hessian_file
 </code></pre>
-
 <p>This will reuse your saved Hessian data but one caveat is that the
 geometry specification at the point where the hessian is computed must
 be the default &ldquo;geometry&rdquo; on the current run-time-data-base for the
@@ -208,14 +206,12 @@ via the input.</p>
 <p>To modify the mass of a specific center you can simply use:</p>
 <pre><code> mass 3 4.00260324
 </code></pre>
-
 <p>which will set the mass of center 3 to 4.00260324 AMUs. The lexical
 index of centers is determined by the geometry object.</p>
 <p>To modify all Hydrogen atoms in a molecule you may use the tag based
 mechanism:</p>
 <pre><code> mass hydrogen 2.014101779
 </code></pre>
-
 <p>The mass redefinitions always start with the default masses and change
 the masses in the order given in the input. Care must be taken to change
 the masses properly. For example, if you want all hydrogens to have the
@@ -238,7 +234,6 @@ freq
 end  
 task scf frequencies
 </code></pre>
-
 <p>will use the new mass for all hydrogens in the first frequency analysis.
 The mass of the oxygen atoms will be redefined in the second frequency
 analysis but the hydrogen atoms will use the default mass. To get a
@@ -255,7 +250,6 @@ freq
 end  
 task scf frequencies
 </code></pre>
-
 <h3 id="temp-or-temperature">Temp or Temperature<a class="headerlink" href="#temp-or-temperature" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module can generate the vibrational analysis at various
 temperatures other than at standard room temperature. Either temp or
@@ -263,13 +257,11 @@ temperature can be used to initiate this command.</p>
 <p>To modify the temperature of the computation you can simply use:</p>
 <pre><code> temp 4 298.15 300.0 350.0 400.0
 </code></pre>
-
 <p>At this point, the temperatures are persistant and so the user must
 &ldquo;reset&rdquo; the temperature if the standard behavior is required after
 setting the temperatures in a previous &ldquo;VIB&rdquo; command, i.e.</p>
 <pre><code> temp 1 298.15
 </code></pre>
-
 <h3 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module also can generate mode animation input files in the
 standard xyz file format for graphics packages like RasMol or XMol There
@@ -282,14 +274,12 @@ geometry. By default these files are not generated. To activate this
 mechanism simply use the following input directive</p>
 <pre><code> animate
 </code></pre>
-
 <p>anywhere in the frequency/vib input block.</p>
 <h4 id="controlling-the-step-size-along-the-mode-vector">Controlling the Step Size Along the Mode Vector<a class="headerlink" href="#controlling-the-step-size-along-the-mode-vector" title="Permanent link">&para;</a></h4>
 <p>By default, the step size used is 0.15 a.u. which will give reliable
 animations for most systems. This can be changed via the input directive</p>
 <pre><code> animate real &lt;step_size&gt;
 </code></pre>
-
 <p>where <step_size> is the real number that is the magnitude of each step
 along the eigenvector of each nuclear hessian mode in atomic units.</p>
 <h3 id="an-example-input-deck">An Example Input Deck<a class="headerlink" href="#an-example-input-deck" title="Permanent link">&para;</a></h3>

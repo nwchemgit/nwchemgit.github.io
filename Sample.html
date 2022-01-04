@@ -172,7 +172,6 @@ calculation is performed and then restarted to perform the optimization
  end
  task scf
 </code></pre>
-
 <p>The final energy should be -75.983998.</p>
 <h3 id="job-2-restarting-and-perform-a-geometry-optimization">Job 2. Restarting and perform a geometry optimization<a class="headerlink" href="#job-2-restarting-and-perform-a-geometry-optimization" title="Permanent link">&para;</a></h3>
 <pre><code> restart h2o
@@ -180,7 +179,6 @@ calculation is performed and then restarted to perform the optimization
  
  task scf optimize
 </code></pre>
-
 <p>There is no need to specify anything that has not changed from the
 previous input deck, though it will do no harm to repeat it.</p>
 <h2 id="compute-the-polarizability-of-ne-using-finite-field">Compute the polarizability of Ne using finite field<a class="headerlink" href="#compute-the-polarizability-of-ne-using-finite-field" title="Permanent link">&para;</a></h2>
@@ -194,7 +192,6 @@ previous input deck, though it will do no harm to repeat it.</p>
  scf; thresh 1e-10; end
  task scf
 </code></pre>
-
 <p>The final energy should be -128.496350.</p>
 <h3 id="job-2-compute-the-energy-with-applied-field">Job 2. Compute the energy with applied field<a class="headerlink" href="#job-2-compute-the-energy-with-applied-field" title="Permanent link">&para;</a></h3>
 <p>An external field may be simulated with point charges. The charges here
@@ -211,7 +208,6 @@ default for a restart job.</p>
  end  
  task scf
 </code></pre>
-
 <p>The final energy should be -128.496441, which together with the previous
 field-free result yields an estimate for the polarizability of 1.83
 atomic units. Note that by <a href="Geometry.html">default</a> NWChem does
@@ -294,7 +290,6 @@ end
 
 task scf
 </code></pre>
-
 <p>This should produce the following output:</p>
 <pre><code>      Final RHF  results   
       ------------------   
@@ -304,7 +299,6 @@ task scf
      Two electron energy =     31.201960019808  
 Nuclear repulsion energy =     17.798842925142
 </code></pre>
-
 <h2 id="mp2-optimization-and-ccsdt-on-nitrogen">MP2 optimization and CCSD(T) on nitrogen<a class="headerlink" href="#mp2-optimization-and-ccsdt-on-nitrogen" title="Permanent link">&para;</a></h2>
 <p>The following performs an MP2 geometry optimization followed by a
 CCSD(T) energy evaluation at the converged geometry. A Dunning

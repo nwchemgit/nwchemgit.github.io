@@ -190,13 +190,11 @@ directive,</p>
    SOCKET (UNIX || IPI_CLIENT) &lt;string socketname default (see input description)&gt;  
  END
 </code></pre>
-
 <p>On each optimization step a line search is performed. To speed up
 calculations (up to two times), it may be beneficial to turn off the
 line search using following directive:</p>
 <pre><code> set driver:linopt 0
 </code></pre>
-
 <h2 id="convergence-criteria">Convergence criteria<a class="headerlink" href="#convergence-criteria" title="Permanent link">&para;</a></h2>
 <pre><code>   (LOOSE || DEFAULT || TIGHT)  
    GMAX &lt;real value&gt;  
@@ -204,7 +202,6 @@ line search using following directive:</p>
    XMAX &lt;real value&gt;  
    XRMS &lt;real value&gt;
 </code></pre>
-
 <p>The defaults may be used, or the directives LOOSE, DEFAULT, or TIGHT
 specified to use standard sets of values, or the individual criteria
 adjusted. All criteria are in atomic units. GMAX and GRMS control the
@@ -258,11 +255,9 @@ coordinate systems.</p>
 <p>The old criterion may be recovered with the input</p>
 <pre><code>  gmax 0.0008; grms 1; xrms 1; xmax 1
 </code></pre>
-
 <h2 id="available-precision">Available precision<a class="headerlink" href="#available-precision" title="Permanent link">&para;</a></h2>
 <pre><code>   EPREC &lt;real eprec default 1e-7&gt;
 </code></pre>
-
 <p>In performing a line search the optimizer must know the precision of the
 energy (this has nothing to do with convergence criteria). The default
 value of 1e-7 should be adjusted if less, or more, precision is
@@ -272,7 +267,6 @@ instead of 1e-7.</p>
 <pre><code>   TRUST &lt;real trust default 0.3&gt;
    SADSTP &lt;real sadstp default 0.1&gt;
 </code></pre>
-
 <p>A fixed trust radius (trust) is used to control the step during
 minimizations, and is also used for modes being minimized during
 saddle-point searches. It defaults to 0.3 for minimizations and 0.1 for
@@ -282,13 +276,11 @@ the mode being maximized during a saddle-point search and defaults to
 <h2 id="maximum-number-of-steps">Maximum number of steps<a class="headerlink" href="#maximum-number-of-steps" title="Permanent link">&para;</a></h2>
 <pre><code>   MAXITER &lt;integer maxiter default 20&gt;
 </code></pre>
-
 <p>By default at most 20 geometry optimization steps will be taken, but
 this may be modified with this directive.</p>
 <h2 id="discard-restart-information">Discard restart information<a class="headerlink" href="#discard-restart-information" title="Permanent link">&para;</a></h2>
 <pre><code>   CLEAR
 </code></pre>
-
 <p>By default Driver reuses Hessian information from a previous
 optimization, and, to facilitate a restart also stores which mode is
 being followed for a saddle-point search. This option deletes all
@@ -296,14 +288,12 @@ restart data.</p>
 <h2 id="regenerate-internal-coordinates">Regenerate internal coordinates<a class="headerlink" href="#regenerate-internal-coordinates" title="Permanent link">&para;</a></h2>
 <pre><code>   REDOAUTOZ
 </code></pre>
-
 <p>Deletes Hessian data and regenerates internal coordinates at the current
 geometry. Useful if there has been a large change in the geometry that
 has rendered the current set of coordinates invalid or non-optimal.</p>
 <h2 id="initial-hessian">Initial Hessian<a class="headerlink" href="#initial-hessian" title="Permanent link">&para;</a></h2>
 <pre><code>   INHESS &lt;integer inhess default 0&gt;
 </code></pre>
-
 <ul>
 <li>0 = Default &hellip; use restart data if available, otherwise use
     diagonal guess.</li>
@@ -318,7 +308,6 @@ torsions with the following</p>
    ASCALE &lt;real ascale default 0.25&gt;  
    TSCALE &lt;real tscale default 0.1&gt;
 </code></pre>
-
 <p>These values typically give a two-fold speedup over unit values, based
 on about 100 test cases up to 15 atoms using 3-21g and 6-31g* SCF.
 However, if doing many optimizations on physically similar systems it
@@ -327,7 +316,6 @@ may be worth fine tuning these parameters.</p>
 using the directive</p>
 <pre><code>   HSCALE &lt;real hscale default 1.0&gt;
 </code></pre>
-
 <p>It might be of utility, for instance, when computing an initial Hessian
 using SCF to start a large MP2 optimization. The SCF vibrational modes
 are expected to be stiffer than the MP2, so scaling the initial Hessian
@@ -336,7 +324,6 @@ by a number less than one might be beneficial.</p>
 <pre><code>   (MODDIR || VARDIR) &lt;integer dir default 0&gt;  
    (FIRSTNEG || NOFIRSTNEG)
 </code></pre>
-
 <p>When searching for a transition state the program, by default, will take
 an initial step uphill and then do mode following using a fuzzy maximum
 overlap (the lowest eigen-mode with an overlap with the previous search
@@ -354,7 +341,6 @@ with the output from a frequency calculation. You can examine the
 eigen-modes used by the optimizer with</p>
 <pre><code>  driver; print hvecs; end
 </code></pre>
-
 <p>The selection of the first negative mode is usually a good choice if the
 search is started in the vicinity of the transition state and the
 initial search direction is satisfactory. However, sometimes the first
@@ -366,7 +352,6 @@ until that mode goes negative.</p>
 <pre><code>   XYZ [&lt;string xyz default $fileprefix&gt;] 
    NOXYZ
 </code></pre>
-
 <p>The XYZ directive causes the geometry at each step (but not intermediate
 points of a line search) to be output into separate files in the
 permanent directory in XYZ format. The optional string will prefix the
@@ -374,7 +359,6 @@ filename. The NOXYZ directive turns this off.</p>
 <p>For example, the input</p>
 <pre><code>   driver; xyz test; end
 </code></pre>
-
 <p>will cause files test-000.xyz, test-001.xyz, &hellip; to be created in the
 permanent directory.</p>
 <p>The script rasmolmovie in the NWChem contrib directory can be used to
@@ -382,7 +366,6 @@ turn these into an animated GIF movie.</p>
 <h2 id="i-pi-socket-communication">i-PI Socket communication<a class="headerlink" href="#i-pi-socket-communication" title="Permanent link">&para;</a></h2>
 <pre><code>   SOCKET (UNIX || IPI_CLIENT) &lt;string socketname default (see input description)&gt;  
 </code></pre>
-
 <p>The SOCKET directive enables NWChem to communicate with other software
 packages &ndash; such as <a href="http://ipi-code.org/">i-PI</a> or
 <a href="https://wiki.fysik.dtu.dk/ase/dev/ase/calculators/socketio/socketio.html">ASE</a> &ndash;
@@ -409,7 +392,6 @@ summarizing the optimization.</p>
      driver; print low; end  
      task scf optimize
 </code></pre>
-
 <p>you&rsquo;ll obtain a pleasantly terse output.</p>
 <p>For more control, these options for the standard print directive are
 recognized</p>
@@ -446,7 +428,6 @@ directive,</p>
    ...  
  END
 </code></pre>
-
 <p>The presence of the STEPPER compound directive automatically turns off
 the default geometry optimization tool DRIVER. Input specified for the
 STEPPER module must appear in the input file after the GEOMETRY
@@ -470,7 +451,6 @@ geometry of the system. This default behavior may be forced with the
 directive</p>
 <pre><code> MIN
 </code></pre>
-
 <p>STEPPER can also be used to find the transition state by following the
 lowest eigenvector of the nuclear Hessian. This is usually invoked by
 using the saddle keyword on the <a href="Top-level.html#TASK">TASK
@@ -478,7 +458,6 @@ directive</a>, but it may also be
 selected by specifying the directive</p>
 <pre><code> TS
 </code></pre>
-
 <p>in the STEPPER input.</p>
 <h2 id="track-mode-selection">TRACK &ndash; Mode selection<a class="headerlink" href="#track-mode-selection" title="Permanent link">&para;</a></h2>
 <p>STEPPER has the ability to ``track&rsquo;&lsquo; a specific mode during an
@@ -487,7 +466,6 @@ module track the eigenvector corresponding to a specific mode. This is
 done by specifying the directive</p>
 <pre><code> TRACK [nmode &lt;integer nmode default 1&gt;]
 </code></pre>
-
 <p>The keyword TRACK tells STEPPER to track the eigenvector corresponding
 to the integer value of <nmode> during a transition state walk. (Note:
 this input is invalid for a minimization walk since following a specific
@@ -500,7 +478,6 @@ the energy minimization. However, the user has the option of specifying
 the maximum number of iterations allowed, using the input line,</p>
 <pre><code> MAXITER &lt;integer maxiter default 20&gt;
 </code></pre>
-
 <p>The value specified for the integer <maxiter> defines the maximum number
 of geometry optimization steps. The geometry optimization will restart
 automatically.</p>
@@ -512,7 +489,6 @@ overriding this default using the keyword TRUST, with the following
 input line,</p>
 <pre><code> TRUST &lt;real radius default 0.1&gt;
 </code></pre>
-
 <p>The larger the value specified for the variable radius, the larger the
 steps that can be taken by STEPPER. Experience has shown that for larger
 systems (i.e., those with 20 or more atoms), a value of 0.5, or greater,
@@ -527,13 +503,11 @@ with the other optimizer module DRIVER. The input line for CONVGGM has
 the following form,</p>
 <pre><code>  CONVGGM &lt;real convggm default 8.0d-04&gt;
 </code></pre>
-
 <p>The keyword CONVGG allows the user to specify the convergence tolerance
 for the gradient norm for all degrees of freedom. The input line is of
 the following form,</p>
 <pre><code>  CONVGG &lt;real convgg default 1.0d-02&gt;
 </code></pre>
-
 <p>The entry for the real variable <convgg> should be approximately equal
 to the square root of the energy convergence tolerance.</p>
 <p>The energy convergence tolerance is the convergence criterion for the
@@ -541,7 +515,6 @@ energy difference in the geometry optimization in STEPPER. It can be
 specified by input using a line of the following form,</p>
 <pre><code>  CONVGE &lt;real convge default 1.0d-04&gt;
 </code></pre>
-
 <h2 id="backstepping-in-stepper">Backstepping in STEPPER<a class="headerlink" href="#backstepping-in-stepper" title="Permanent link">&para;</a></h2>
 <p>If a step taken during the optimization is too large (e.g., the step
 causes the energy to go up for a minimization or down for a transition

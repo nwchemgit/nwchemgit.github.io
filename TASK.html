@@ -187,7 +187,6 @@ for the TASK directive are discussed in the following sections.</p>
 the following form:</p>
 <pre><code>TASK &lt;string theory&gt; [&lt;string operation default energy&gt;] [ignore]
 </code></pre>
-
 <p>The string <theory> specifies the level of theory to be used in the
 calculations for this task. NWChem currently supports ten different
 options. These are listed below, with the corresponding entry for the
@@ -261,17 +260,14 @@ string operation. For an SCF energy calculation, the input line is
 simply</p>
 <pre><code>task scf
 </code></pre>
-
 <p>Equivalently, the operation can be specified explicitly, using the
 directive</p>
 <pre><code>task scf energy
 </code></pre>
-
 <p>Similarly, to perform a geometry optimization using density functional
 theory, the TASK directive is</p>
 <pre><code>task dft optimize
 </code></pre>
-
 <p>The optional keyword ignore can be used to allow execution to continue
 even if the task fails, as discussed above. An example with the keyword
 ignore can be found in the <a href="Density-Functional-Theory-for-Molecules.html#sample-input-file">DFT
@@ -286,7 +282,6 @@ operation as input, the directive needs only a string identifying the
 task. The form of the directive in such cases is as follows:</p>
 <pre><code>TASK &lt;string task&gt; [ignore]
 </code></pre>
-
 <p>The supported tasks that can be accessed with this form of the TASK
 directive are listed below, with the corresponding entries for the string
 variable <code>&lt;task&gt;</code>  </p>
@@ -306,7 +301,6 @@ processes to be executed using the Bourne shell. This form of the task
 directive is:</p>
 <pre><code>TASK shell [(&lt;integer-range process = 0&gt;||all)]  &lt;string command&gt;
 </code></pre>
-
 <p>The keyword shell is required for this directive. It specifies that the
 given command will be executed in the Bourne shell. The user can also
 specify which process(es) will execute this command by entering values
@@ -321,17 +315,14 @@ molecular orbitals file to a backup location <code>/piofs/save</code> can be inp
 follows:</p>
 <pre><code>task shell &quot;cp *.movecs /piofs/save&quot;
 </code></pre>
-
 <p>The TASK directive to tell all processes to list the contents of their
 /scratch directories is as follows:</p>
 <pre><code>task shell all &quot;ls -l /scratch&quot;
 </code></pre>
-
 <p>The TASK directive to tell processes 0 to 10 to remove the contents of
 the current directory is as follows:</p>
 <pre><code>task shell 0:10:1 &quot;/bin/rm -f *&quot;
 </code></pre>
-
 <p>Note that NWChem&rsquo;s ability to quote special input characters is very
 limited when compared with that of the Bourne shell. To execute all but
 the simplest UNIX commands, it is usually much easier to put the shell
@@ -343,7 +334,6 @@ and it has the following
 form:</p>
 <pre><code>TASK QMMM &lt;string theory&gt; [&lt;string operation default energy&gt;] [ignore]
 </code></pre>
-
 <p>The string <theory> specifies the QM theory to be used in the QM/MM
 simulation. If theory is &ldquo;md&rdquo; this is not a QM/MM simulation and will
 result in an appropriate error. The level of theory may be any QM method
@@ -391,7 +381,6 @@ section are:</p>
  [ON]  
 END
 </code></pre>
-
 <p><code>MON</code> defines the monomer&rsquo;s name and its atoms; <string monomer name>
 defines the name of the monomer, <integer atoms> is the list of atoms
 corresponding to the monomer (where such a list is relative to the
@@ -437,7 +426,6 @@ bsse 
 end
 task dft energy
 </code></pre>
-
 <p>Changing <code>maxiter</code> for a specific monomer: (Zn<sup>2+</sup>(H<sub>2</sub>O))</p>
 <pre><code>title znwater  
 start znwater  

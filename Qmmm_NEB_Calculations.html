@@ -162,7 +162,6 @@ the starting and ending point provided by the .rst files. These are set
 in the input using the following directive</p>
 <pre><code>set qmmm:neb_path_limits xxx_start.rst xxx_end.rst
 </code></pre>
-
 <p>where xxx_start.rst xxx_end.rst refers to starting and ending point of
 the NEB pathway. Both rst files have to be present at the <strong>top level</strong>
 directory. It should be noted that only coordinates of qmlink region
@@ -173,7 +172,6 @@ of the system come from reference rst file provided in the MD block</p>
   ...
 end
 </code></pre>
-
 <p>Typically this reference restart file ( xxx_ref.rst ) would be a copy
 of a restart file for starting or ending point.</p>
 <p>The number of beads in the NEB pathway, initial optimization step size,
@@ -182,7 +180,6 @@ and number of optimization steps are set using the following directives</p>
 set neb:stepsize 10
 set neb:steps 20
 </code></pre>
-
 <p>The calculation starts by constructing initial guess for the pathway
 (consisting of a sequence of numbered rst files) by combining linearly
 interpolated coordinates of the qmlink regions from starting and ending
@@ -200,7 +197,6 @@ following standard convention, e.g.</p>
  density espfit
 end
 </code></pre>
-
 <p>or</p>
 <pre><code>qmmm
  region  mm_solute solvent
@@ -209,7 +205,6 @@ end
  density espfit
 end
 </code></pre>
-
 <p>In both examples presented above we utilized espfit option for density
 to speed up calculations. <strong>Note that optimization region cannot be
 qmlink!</strong></p>
@@ -230,7 +225,6 @@ using</p>
 <p>The progress of NEB calculation can be monitored by</p>
 <pre><code>grep gnorm &lt;output file&gt;
 </code></pre>
-
 <p>Experience shows that the value of gnorm less or around O(10^-2)
 indicates converged pathway. The current pathway in the XYZ format can
 be found in the output file (look for XYZ FILE string) and viewed as

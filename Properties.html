@@ -178,7 +178,6 @@ form:</p>
    [CENTER ((com || coc || origin || arb &lt;real x y z&gt;) default coc)] 
  END
 </code></pre>
-
 <p>Most of the properties can be computed for Hartree-Fock (closed-shell
 RHF, open-shell ROHF, and open-shell UHF), and DFT (closed-shell and
 open-shell spin unrestricted) wavefunctions. The NMR hyperfine and
@@ -186,7 +185,6 @@ indirect spin-spin coupling require a UHF or ODFT wave function.</p>
 <h2 id="vectors-keyword">Vectors keyword<a class="headerlink" href="#vectors-keyword" title="Permanent link">&para;</a></h2>
 <pre><code> VECTORS [ (&lt;string input_movecs &gt;)]
 </code></pre>
-
 <p>The VECTORS directive allows the user to specify the input molecular
 orbital vectors for the property calculation</p>
 <h2 id="property-keywords">Property keywords<a class="headerlink" href="#property-keywords" title="Permanent link">&para;</a></h2>
@@ -211,7 +209,6 @@ keywords:</p>
  MOLDENFILE  
  ALL
 </code></pre>
-
 <p>The &ldquo;ALL&rdquo; keyword generates all currently available properties.</p>
 <h3 id="nmr-and-epr">NMR and EPR<a class="headerlink" href="#nmr-and-epr" title="Permanent link">&para;</a></h3>
 <p>Both the NMR shielding and spin-spin coupling have additional optional
@@ -249,7 +246,6 @@ references:</p>
 dipole, quadrupole, and octupole calculations.</p>
 <pre><code>   [CENTER ((com || coc || origin || arb &lt;real x y z&gt;) default coc)]
 </code></pre>
-
 <p>com is the center of mass, coc is the center of charge, origin is (0.0,
 0.0, 0.0) and arb is any arbitrary point which must be accompanied by
 the coordinated to be used. Currently the x, y, and z coordinates must
@@ -268,7 +264,6 @@ follows:</p>
  convergence 1e-4         # set CPKS convergence criterion (default 1e-4)  
 end
 </code></pre>
-
 <p>Response calculations are currently supported only for order 1 (linear
 response), single frequency, electric field and mixed electric-magnetic
 field perturbations. The output consists of the electric polarizability
@@ -320,11 +315,9 @@ calculations. Detailed description of input parameters at
 END  
 task dft raman
 </code></pre>
-
 <p>or</p>
 <pre><code>task dft raman numerical
 </code></pre>
-
 <p>Sample input block:</p>
 <pre><code>property
  response 1 8.8559E-2  
@@ -335,7 +328,6 @@ raman
  lorentzian  
 end
 </code></pre>
-
 <h4 id="raman-keywords">Raman Keywords<a class="headerlink" href="#raman-keywords" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>NORMAL</code> and <code>RESONANCE</code>: Type of Raman plot to make.</li>
@@ -360,7 +352,6 @@ Gaussians stored in a filename with format <code>[fname].normal</code>.<br />
 The number of points is 1000 by default. This value can be changed by adding the following <a href="SET.html">SET</a> directive to the input file</p>
 <pre><code>set raman:numpts &lt;integer&gt;
 </code></pre>
-
 <h4 id="raman-references">Raman References<a class="headerlink" href="#raman-references" title="Permanent link">&para;</a></h4>
 <p>Please refer to the following papers for further details:</p>
 <ol>
@@ -392,7 +383,6 @@ inclusion of grid keyword as shown
 below</p>
 <pre><code> grid [pad dx [dy dz]] [rmax x y z] [rmin x y z] [ngrid nx [ny nz]] [output filename]
 </code></pre>
-
 <p>where</p>
 <ul>
 <li>
@@ -477,7 +467,6 @@ below</p>
 
   task dft property
 </code></pre>
-
 <h2 id="aimfile">Aimfile<a class="headerlink" href="#aimfile" title="Permanent link">&para;</a></h2>
 <p>This keyword generates AIM Wavefunction files. The resulting AIM
 wavefunction file (.wfn/.wfx) can be post-processed with a variety of
@@ -495,7 +484,6 @@ codes, e.g.</p>
 <pre><code>MOLDENFILE
 MOLDEN_NORM (JANPA | | NWCHEM || NONE)
 </code></pre>
-
 <p>This keyword generates files using the <a href="https://www3.cmbi.umcn.nl/molden/molden_format.html">Molden
 format</a>. The resulting
 Molden file (.molden) should compatible with a variety of codes that can
@@ -536,7 +524,6 @@ be named <code>h2o.molden</code></p>
 
  task scf property
 </code></pre>
-
 <p>Then, the resulting <code>h2o.molden</code> file can be post processed by Janpa with the following command</p>
 <pre><code>java -jar janpa.jar h2o.molden &gt; h2o.janpa.txt
 </code></pre>

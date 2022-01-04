@@ -170,55 +170,44 @@
 <h2 id="example-of-nwchem-installation-on-debianubuntu">Example of NWChem installation on Debian/Ubuntu<a class="headerlink" href="#example-of-nwchem-installation-on-debianubuntu" title="Permanent link">&para;</a></h2>
 <pre><code>sudo apt-get  install nwchem
 </code></pre>
-
 <h2 id="example-of-nwchem-rpm-installation-under-redhat-6-x86_64">Example of NWChem RPM installation under RedHat 6 x86_64<a class="headerlink" href="#example-of-nwchem-rpm-installation-under-redhat-6-x86_64" title="Permanent link">&para;</a></h2>
 <pre><code>sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 sudo yum update
 sudo yum install nwchem nwchem-openmpi environment-modules
 </code></pre>
-
 <p>In order to run NWChem, you must type</p>
 <pre><code>module load openmpi-x86_64
 </code></pre>
-
 <p>The name of the NWChem executable is</p>
 <pre><code>nwchem_openmpi
 </code></pre>
-
 <h2 id="example-of-nwchem-rpm-installation-under-centos-7-x86_64">Example of NWChem RPM installation under Centos 7 x86_64<a class="headerlink" href="#example-of-nwchem-rpm-installation-under-centos-7-x86_64" title="Permanent link">&para;</a></h2>
 <pre><code>sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 sudo yum update
 sudo yum install nwchem nwchem-openmpi Lmod
 </code></pre>
-
 <p>In order to run NWChem, you must type</p>
 <pre><code>module load mpi/openmpi-x86_64
 </code></pre>
-
 <p>The name of the NWChem executable is</p>
 <pre><code>nwchem_openmpi
 </code></pre>
-
 <p>Serial runs, using a single process, (on a input file named <code>n2.nw</code> in the following example) can be performed with the command</p>
 <pre><code>nwchem_openmpi n2.nw
 </code></pre>
-
 <p>Parallel runs (using more than one process) can be performed with the command</p>
 <pre><code>mpirun -np 2 nwchem_openmpi n2.nw
 </code></pre>
-
 <h1 id="nwchem-availability-on-macos">NWChem availability on macOS<a class="headerlink" href="#nwchem-availability-on-macos" title="Permanent link">&para;</a></h1>
 <p>NWChem can be installed from <a href="https://brew.sh/">Homebrew</a>, by executing the following commands  </p>
 <pre><code>bin/bash -c &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;
 
 brew install nwchem
 </code></pre>
-
 <h1 id="nwchem-installation-on-conda">NWChem installation on Conda<a class="headerlink" href="#nwchem-installation-on-conda" title="Permanent link">&para;</a></h1>
 <p>NWChem can be installed  on Linux or MacOS from the <a href="https://conda-forge.org/">conda-forge</a> channel of <a href="https://docs.conda.io">Conda</a> with the command</p>
 <pre><code>conda install -c conda-forge nwchem
 </code></pre>
-
 <p>More details at <a href="https://github.com/conda-forge/nwchem-feedstock">https://github.com/conda-forge/nwchem-feedstock</a></p>
               
             </div>

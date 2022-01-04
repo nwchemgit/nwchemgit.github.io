@@ -158,13 +158,11 @@ selected grid points.</p>
 <p>The ESP module is specified by the NWChem task directive</p>
 <pre><code>task esp
 </code></pre>
-
 <p>The input for the module is taken from the ESP input block</p>
 <pre><code>ESP  
   ... 
 END
 </code></pre>
-
 <h2 id="grid-specification">Grid specification<a class="headerlink" href="#grid-specification" title="Permanent link">&para;</a></h2>
 <p>The grid points for which the quantum mechanical electrostatic potential
 is evaluated and used in the fitting procedure of the partial atomic
@@ -177,14 +175,12 @@ parameters determine the selection of grid points.</p>
 </ul>
 <pre><code>       recalculate  
 </code></pre>
-
 <p>is given, the grid and the electrostatic potential is recalculated.</p>
 <ul>
 <li>The extent of the grid is determined by the <code>range</code> keyword</li>
 </ul>
 <pre><code>       range &lt;real rcut&gt; 
 </code></pre>
-
 <p>where <code>rcut</code> is the maximum distance in nm between a grid point and any of the atomic centers. 
 When omitted, a default value for rcut of 0.3 nm is used.</p>
 <ul>
@@ -192,7 +188,6 @@ When omitted, a default value for rcut of 0.3 nm is used.</p>
 </ul>
 <pre><code>       spacing &lt;real spac&gt;  
 </code></pre>
-
 <p>where <code>spac</code> is the grid spacing in <em>nm</em> for the regularly spaced grid points.
 If not specified, a default spacing of 0.05 nm is used.</p>
 <ul>
@@ -200,7 +195,6 @@ If not specified, a default spacing of 0.05 nm is used.</p>
 </ul>
 <pre><code>       radius &lt;integer iatnum&gt; &lt;real atrad&gt;  
 </code></pre>
-
 <p>where iatnum is the atomic number for which a van der Waals radius of atrad in nm will be used in the grid point determination.<br />
 Default values will be used for atoms not specified.</p>
 <ul>
@@ -208,21 +202,18 @@ Default values will be used for atoms not specified.</p>
 </ul>
 <pre><code>       probe &lt;real probe default 0.07&gt;
 </code></pre>
-
 <ul>
 <li>The distance between atomic center and probe center can be
     multiplied by a constant <code>factor</code> specified by</li>
 </ul>
 <pre><code>       factor &lt;real factor default 1.0&gt;
 </code></pre>
-
 <p>All grid points are discarded that lie within a distance <code>factor*(radius(i)+probe)</code> from any atom <strong>i</strong>.</p>
 <ul>
 <li>Schwarz screening is applied using</li>
 </ul>
 <pre><code>      screen [&lt;real scrtol default 1.0D-5&gt;]
 </code></pre>
-
 <h2 id="constraints">Constraints<a class="headerlink" href="#constraints" title="Permanent link">&para;</a></h2>
 <p>Additional constraints to the partial atomic charges can be imposed
 during the fitting procedure.</p>
@@ -232,7 +223,6 @@ using</li>
 </ul>
 <pre><code>       constrain &lt;real charge {&lt;integer iatom&gt;}
 </code></pre>
-
 <p>where <code>charge</code> is the net charge of the set of atoms <code>{iatom}</code>. A negative atom number iatom can be<br />
 used to specify that the partial charge of that atom is substracted in the sum for the set.</p>
 <ul>
@@ -240,28 +230,24 @@ used to specify that the partial charge of that atom is substracted in the sum f
 </ul>
 <pre><code>       constrain &lt;real charge&gt; &lt;integer iatom&gt; through &lt;integer jatom&gt; 
 </code></pre>
-
 <p>where charge is the net charge of the set of atoms <code>{[iatom:jatom]}</code>.</p>
 <ul>
 <li>A group of atoms can be constrained to have the same charge with</li>
 </ul>
 <pre><code>       constrain equal {&lt;integer iatom&gt;}
 </code></pre>
-
 <ul>
 <li>The individual charge of a group of atoms can be constrained to be equal to those of a second group of atoms
 with</li>
 </ul>
 <pre><code>      constrain group  &lt;integer iatom&gt; &lt;integer jatom&gt;  to  &lt;integer katom&gt; &lt;integer latom&gt;
 </code></pre>
-
 <p>resulting in the same charge for atoms iatom and katom, for atoms iatom+1 and k atom+1, &hellip; for atoms jatom and latom.</p>
 <ul>
 <li>A special constraint</li>
 </ul>
 <pre><code>       constrain xhn  &lt;integer iatom&gt; {&lt;integer jatom&gt;}
 </code></pre>
-
 <p>can be used to constrain the set <code>{iatom,{jatom}}</code> to zero charge, and constrain all atoms  in <code>{jatom}</code>
 to have the same charge. This can be used, for example, to restrain a methyl    group to zero charge,
 and have all hydrogen carrying identical charges.</p>
@@ -275,7 +261,6 @@ fitting procedure.</p>
       hyperbolic [&lt;real scale&gt; [&lt;real tight&gt;]]  \  
        [maxiter &lt;integer maxit&gt;]  [tolerance &lt;real toler&gt;])
 </code></pre>
-
 <p>Here <code>hfree</code> can be specified to exclude hydrogen atoms from the
 restraining procedure. Variable <code>scale</code> is the strength of the restraint
 potential, with a default of 0.005 au for the <code>harmonic</code> restraint and a

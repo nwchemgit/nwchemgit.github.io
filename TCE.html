@@ -367,7 +367,6 @@ operations depend on the ParSoft library.</p>
 To perform a single-point energy calculation, include</p>
 <pre><code> TASK TCE ENERGY
 </code></pre>
-
 <p>in the input file, which may be preceded by the TCE input block that
 details the calculations:</p>
 <pre><code> TCE
@@ -404,21 +403,17 @@ details the calculations:</p>
    [FRAGMENT &lt;default -1 (off)&gt;]
  END
 </code></pre>
-
 <p>Also supported are energy gradient calculation, geometry optimization,
 and vibrational frequency (or hessian) calculation, on the basis of
 numerical differentiation. To perform these calculations, use</p>
 <pre><code>     TASK TCE GRADIENT
 </code></pre>
-
 <p>or</p>
 <pre><code>     TASK TCE OPTIMIZE
 </code></pre>
-
 <p>or</p>
 <pre><code>     TASK TCE FREQUENCIES
 </code></pre>
-
 <p>The user may also specify the parameters of reference wave function
 calculation in a separate block for either HF (SCF) or DFT, depending on
 the first keyword in the above syntax.</p>
@@ -435,7 +430,6 @@ input file will be</p>
  END
  TASK TCE ENERGY
 </code></pre>
-
 <p>which performs a CCSD/cc-pVDZ calculation of the Be atom in its singlet
 ground state with a spin-restricted HF reference.</p>
 <p>New implementations of the iterative CCSD and EOMCCSD methods based on the
@@ -455,7 +449,6 @@ set tce:nts T
 
 task tce energy
 </code></pre>
-
 <p>New task scheduling should reduce time to solutions and provide better
 parallel performance especially in large CCSD/EOMCCSD runs.</p>
 <h2 id="keywords-of-tce-input-block">Keywords of TCE input block<a class="headerlink" href="#keywords-of-tce-input-block" title="Permanent link">&para;</a></h2>
@@ -478,7 +471,6 @@ can be performed with the following input blocks:</p>
  END
  TASK TCE ENERGY
 </code></pre>
-
 <p>This calculation (and any correlation calculation in the TCE module
 using a RHF or RDFT reference for a closed-shell system) skips the
 storage and computation of all β spin blocks of integrals and excitation
@@ -494,7 +486,6 @@ open-shell doublet system can be requested by</p>
  END
  TASK TCE ENERGY
 </code></pre>
-
 <p>and likewise, UHF-UCCSDT for an open-shell doublet system can be
 specified with</p>
 <pre><code> SCF
@@ -507,7 +498,6 @@ specified with</p>
  END
  TASK TCE ENERGY
 </code></pre>
-
 <p>The operation and storage costs of the last two calculations are
 identical. To use the KS DFT reference wave function for a UCCSD
 calculation of an open-shell doublet system,</p>
@@ -521,7 +511,6 @@ calculation of an open-shell doublet system,</p>
  END
  TASK TCE ENERGY
 </code></pre>
-
 <p>Note that the default model of the DFT module is
 LDA.</p>
 <h3 id="ccsdccsdtccsdtqcisdcisdtcisdtq-mbpt2mbpt3mbpt4-etc-the-correlation-models">CCSD,CCSDT,CCSDTQ,CISD,CISDT,CISDTQ, MBPT2,MBPT3,MBPT4, etc. &ndash; the correlation models<a class="headerlink" href="#ccsdccsdtccsdtqcisdcisdtcisdtq-mbpt2mbpt3mbpt4-etc-the-correlation-models" title="Permanent link">&para;</a></h3>
@@ -641,7 +630,6 @@ corresponding wavefunctions have strong quasidegenerate character.</p>
 variable before the compilation of NWChem</p>
 <pre><code> export MRCC_METHODS=y
 </code></pre>
-
 <p>To run MRCC calculations the user has to define two groups in the input
 file. First, the TCE group and secondly the MRCCDATA group. In the TCE
 group the iterative level of theory is defined, e.g. BWCCSD or MKCCSD.
@@ -704,7 +692,6 @@ keyword ROOT 3 should be used. An example is given below.</p>
  end
  task tce energy
 </code></pre>
-
 <pre><code> echo
  start tce_mrcc_mkcc 
  memory stack 1000 mb heap 100 mb global 500 mb verify
@@ -738,7 +725,6 @@ keyword ROOT 3 should be used. An example is given below.</p>
  end
  task tce energy
 </code></pre>
-
 <p>This version of MRCC works only with GA as specified by the &ldquo;IO GA&rdquo;
 option. In addition this code works only with the spin-orbit 4-index
 transformation, however in all circumstances an RHF Hartree-Fock initial
@@ -791,7 +777,6 @@ given in equation 20 [ <a href="http://dx.doi.org/10.1063/1.4747698">J. Chem. Ph
  end
  task tce ener
 </code></pre>
-
 <pre><code> echo
  start tce_mrcc_mkcc 
  memory stack 1000 mb heap 100 mb global 500 mb verify
@@ -830,7 +815,6 @@ given in equation 20 [ <a href="http://dx.doi.org/10.1063/1.4747698">J. Chem. Ph
  end
  task tce ener
 </code></pre>
-
 <h3 id="implementation-notes-for-reference-level-parallelism-in-mrcc">Implementation notes for reference-level-parallelism in MRCC<a class="headerlink" href="#implementation-notes-for-reference-level-parallelism-in-mrcc" title="Permanent link">&para;</a></h3>
 <p>The current version of the MRCC codes contains also a pilot
 implementation of the reference-level-parallelism based on the use of
@@ -849,11 +833,9 @@ input:</p>
 <pre><code>subgroupsize n
 improvetiling
 </code></pre>
-
 <p>and</p>
 <pre><code>diis 0
 </code></pre>
-
 <p>in tce block. The line <code>subgroupsize n</code> defines the size of the subgroup and
 <code>improvetiling</code> refers to the data representation in the MRCC subgroup
 algorithm. For example, if user has 4 references and total 32 cores/CPU
@@ -894,7 +876,6 @@ cores/CPU available then the size of the subgroupsize (n) is 120.</p>
  end
  task tce ener
 </code></pre>
-
 <p>CAUTION: Before using the subgroup-based algorithm the users should
 perform the GA subgroup test in
 <code>$NWCHEM_TOP/src/tools/ga-5-6-3/global/testing/pgtest.x</code> and <code>pg2test.x</code> in the
@@ -917,7 +898,6 @@ mrccdata
   cas 2 2
 end
 </code></pre>
-
 <p>In effect both diagonal and perturbative USS corrections will be calculated after
 the completion of iterative Mk-MRCCSD or BW-MRCCSD calculations.</p>
 <h3 id="electron-affinity-ionization-potential-eomccsd-methods">Electron affinity, ionization potential EOMCCSD methods<a class="headerlink" href="#electron-affinity-ionization-potential-eomccsd-methods" title="Permanent link">&para;</a></h3>
@@ -928,7 +908,6 @@ to set the following variable before the compilation of NWChem</p>
 <pre><code>export EACCSD=y
 export IPCCSD=y
 </code></pre>
-
 <p>Two input examples for the EA/IP-EOMCCSD calculations are shown below.</p>
 <ul>
 <li>EA-EOMCCSD calculations for the ozone molecule</li>
@@ -967,7 +946,6 @@ end
 
 task tce energy
 </code></pre>
-
 <ul>
 <li>IP-EOMCCSD calculations for the F2 molecule</li>
 </ul>
@@ -1003,7 +981,6 @@ end
 
 task tce energy
 </code></pre>
-
 <p>As in the EOMCCSD input we can request any number of roots.</p>
 <p>In analogy to the EOMCC calculations we can customize the number of
 initial guesses by using &ldquo;set tce:maxeorb&rdquo; directive. For example for
@@ -1015,7 +992,6 @@ HF orbital energies) to pinpoint the initial guesses. If one is
 interested in calculating one EA-EOMCCSD root of the a1 symmetry the</p>
 <pre><code> set tce:maxeorb 0.1
 </code></pre>
-
 <p>should be used. This means that the number of starting vectors will be
 equal to the number of the unoccupied a1 symmetry orbitals with the
 corresponding orbital energies less than 0.1 (in our example there will
@@ -1023,14 +999,12 @@ be only one such a vector corresponding to the unoccupied orbital energy
 0.072). If one looks for two roots</p>
 <pre><code> set tce:maxeorb 0.16
 </code></pre>
-
 <p>option should be used(there are two a1 unoccupied orbitals with energies
 less than 0.16).</p>
 <p>For the IP-EOMCCSD case the &ldquo;set tce:maxeorb&rdquo; option works in a similar
 way. For example if one is looks for 1 IP-EOMCCSD root of a1 symmetry ,</p>
 <pre><code>set tce:maxeorb 0.24 
 </code></pre>
-
 <p>directive should be used (there is only one occupied orbital of a1
 symmetry with the absolute value of orbital energy less than 0.24),
 etc.</p>
@@ -1120,22 +1094,18 @@ orbitals are frozen by default. To exclude the atom-like core regions
 altogether, one may request</p>
 <pre><code> FREEZE atomic
 </code></pre>
-
 <p>To specify the number of lowest-lying occupied orbitals be excluded, one
 may use</p>
 <pre><code> FREEZE 10
 </code></pre>
-
 <p>which causes 10 lowest-lying occupied orbitals excluded. This is
 equivalent to writing</p>
 <pre><code> FREEZE core 10
 </code></pre>
-
 <p>To freeze the highest virtual orbitals, use the virtual keyword. For
 instance, to freeze the top 5 virtuals</p>
 <pre><code> FREEZE virtual 5
 </code></pre>
-
 <h3 id="nroots-the-number-of-excited-states">NROOTS &ndash; the number of excited states<a class="headerlink" href="#nroots-the-number-of-excited-states" title="Permanent link">&para;</a></h3>
 <p>One can specify the number of excited state roots to be determined. The
 default value is 1. It is advised that the users request several more
@@ -1211,7 +1181,6 @@ end
 set tce:thresheom 1.0d-4
 task tce energy
 </code></pre>
-
 <p>the CCSD equations will be converged to the 1.0d-6 threshold while the
 EOMCCSD ones to 1.0d-4. This option shoul dbe used with the &ldquo;eomsol 2&rdquo;
 option. In some situations finding several (n) roots to the EOMCCSD
@@ -1232,7 +1201,6 @@ set tce:thresheom 1.0d-4
 set tce:threshl 1.0d-3
 task tce energy
 </code></pre>
-
 <p>In this example the CCSD equations are solved with the 1.0d-6 threshold,
 the first n (2) EOMCCSD roots are determined with the 10d-4 accuracy,
 while the buffer root is determined with relax conv. criterion 1.0d-3.</p>
@@ -1358,7 +1326,6 @@ Krishnamoorthy, R. Olson, V. Tipparaju, E. Apra, Supercomputing 2011,
 Seattle). In order to enable these versions it is enough to add</p>
 <pre><code>set tce:xmem 100
 </code></pre>
-
 <p>which defines maximum memory size (in MB) for the slice of 6-dimensional
 tensors (in the current example 100 MB; for more details see QA tests
 tce_ccsd_t_xmem and tce_cr_eomccsd_t_xmem).</p>
@@ -1514,7 +1481,6 @@ TCE
 END
 TASK TCE ENERGY
 </code></pre>
-
 <p>The same result can be obtained by the following input:</p>
 <pre><code>START h2o
 TITLE &quot;ROHF-UCCSD/cc-pVTZ H2O&quot;
@@ -1535,7 +1501,6 @@ SCF
 END
 TASK UCCSD ENERGY
 </code></pre>
-
 <p>EOMCCSD calculations with EOMSOL 2 algorithm. In these claculations the
 diis value of 8 will be used both in the CCSD and EOMCCSD iterations.</p>
 <pre><code>TITLE &quot;tce_eomccsd_eomsol2&quot;
@@ -1577,7 +1542,6 @@ TCE
 END
 TASK TCE ENERGY
 </code></pre>
-
 <p>EOM-CCSDT calculation for excitation energies, excited-state dipole, and
 transition moments.</p>
 <pre><code>START tce_h2o_eomcc
@@ -1601,7 +1565,6 @@ TCE
 END
 TASK TCE ENERGY
 </code></pre>
-
 <p>Active-space CCSDt/EOMCCSDt calculations (version I) of several excited
 states of the <img alt="$Be_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/650a5bafc9258057b3db4920eedd9cd7.svg?invert_in_darkmode&sanitize=true" align=middle width="27.400395pt" height="22.38192pt"/> molecule. Three highest-lying occupied α and β
 orbitals (active_oa and active_ob) and nine lowest-lying unoccupied α
@@ -1636,7 +1599,6 @@ TCE
 END 
 TASK TCE ENERGY
 </code></pre>
-
 <p>Completely renormalized EOMCCSD(T) (CR-EOMCCSD(T)) calculations for the
 ozone molecule as described by the POL1 basis set. The CREOMSD(T)
 directive automatically initialize three-step procedure: (1) CCSD
@@ -1697,7 +1659,6 @@ TCE
 END
 TASK TCE ENERGY
 </code></pre>
-
 <p>The input for the active-space CR-EOMCCSD(T) calculations (the uracil
 molecule in the 6-31G* basis set). In this example, the model space is
 specified by defining the number of highest occupied orbitals (noact)
@@ -1748,7 +1709,6 @@ tce
 end
 task tce energy
 </code></pre>
-
 <p>The active-space in the active-space CR-EOMCCSD(T) calculations can be
 alternatively specified by defining the energy &ldquo;window&rdquo;
 [emin_act,emax_act]. All orbitals with orbital energies falling into
@@ -1796,7 +1756,6 @@ tce
 end
 task tce energy 
 </code></pre>
-
 <p>The LR-CCSD(T) calculations for the glycine molecule in the aug-cc-pVTZ
 basis set. Option 2EORB is used in order to minimize memory requirements
 associated with the storage of two-electron integrals.</p>
@@ -1832,7 +1791,6 @@ TCE
 END
 TASK TCE ENERGY
 </code></pre>
-
 <p>The CCSD calculations for the triplet state of the <img alt="$C_{20}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e9758f9071518083d5e4c173d6cfc8e.svg?invert_in_darkmode&sanitize=true" align=middle width="24.761055pt" height="22.38192pt"/> molecule.
 New algorithms for 4-index tranformation are used.</p>
 <pre><code>title &quot;c20_cage&quot;
@@ -1884,7 +1842,6 @@ tce
 end
 task tce energy
 </code></pre>
-
 <h2 id="tce-response-properties">TCE Response Properties<a class="headerlink" href="#tce-response-properties" title="Permanent link">&para;</a></h2>
 <h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
 <p>Response properties can be calculated within the TCE. Ground-state
@@ -1924,7 +1881,6 @@ block keywords. There are currently only three commands available:</p>
 set tce:afreq &lt;double precision afreq(9) default: 0.0&gt; 
 set tce:respaxis &lt;logical respaxis(3) default: T T T&gt;
 </code></pre>
-
 <p>The boolean variable lineresp invokes the linear response equations for
 the corresponding coupled-cluster method (only CCSD and CCSDT possess
 this feature) and evaluates the dipole polarizability. When lineresp is
@@ -1987,7 +1943,6 @@ set tce:afreq 0.000 0.072
 set tce:respaxis T T T
 task tce energy
 </code></pre>
-
 <p>This is a relatively simple example for CCSDT-LR.</p>
 <pre><code>geometry units au
  symmetry c2v
@@ -2007,7 +1962,6 @@ set tce:afreq 0.0 0.1 0.2 0.3 0.4
 set tce:respaxis T F T
 task tce energy
 </code></pre>
-
 <h2 id="tce-restart-capability">TCE Restart Capability<a class="headerlink" href="#tce-restart-capability" title="Permanent link">&para;</a></h2>
 <h3 id="overview_1">Overview<a class="headerlink" href="#overview_1" title="Permanent link">&para;</a></h3>
 <p>Check-pointing and restart are critical for computational chemistry
@@ -2061,7 +2015,6 @@ set tce:save_l &lt;logical save_l default: F F F F&gt;
 set tce:save_tr &lt;logical save_tr default: F F F F&gt;
 set tce:save_interval &lt;integer save_interval default: 100000&gt;
 </code></pre>
-
 <p>The boolean variables read_integrals and save_integrals control which
 integrals are read/saved. The first location is the 1-e integrals, the
 second is for the 2-e integrals, and the third is for dipole integrals.
@@ -2110,7 +2063,6 @@ set tce:afreq 0.0 0.1 0.2 0.3 0.4
 set tce:respaxis T F T
 task tce energy
 </code></pre>
-
 <h2 id="maximizing-performance">Maximizing performance<a class="headerlink" href="#maximizing-performance" title="Permanent link">&para;</a></h2>
 <p>The following are recommended parameters for getting the best
 performance and efficiency for common methods on various hardware
@@ -2126,12 +2078,10 @@ calculations. When 2 GB of memory is available per process, the
 following settings are close to optimal for CCSD jobs</p>
 <pre><code>memory stack 800 mb heap 100 mb global 1000 mb
 </code></pre>
-
 <p>for property jobs, which require more amplitudes to be stored, it is
 wise to favor the global allocation</p>
 <pre><code>memory stack 500 mb heap 100 mb global 1300 mb
 </code></pre>
-
 <p>If you get an error for ga_create during the iterative steps, reduce
 the number of DIIS vectors. If this error occurs during the four-index
 transformation (after d_v2 filesize appears) you need more GA space, a
@@ -2142,7 +2092,6 @@ be larger than 30 in most cases and one should set something similar to
 the following</p>
 <pre><code>memory stack 1200 mb heap 100 mb global 600 mb
 </code></pre>
-
 <p>The local memory requires will be tilesize<sup>N</sup> where N=4 for
 CCSD, N=6 for CCSD(T) and CCSDT, and N=8 for CCSDTQ. One should set
 tilesize to 16 or less for CCSDT and CCSDTQ, although symmetry will
@@ -2201,7 +2150,6 @@ synchronization steps from nearly 80, in the EOMCCSD case, down to 4.
 Optimized versions of the CCSD/EOMCCSD codes are enabled once the</p>
 <pre><code>set tce:nts T
 </code></pre>
-
 <p>directive is used in the input file. Compared to the original
 CCSD/EOMCCSD implementations the new approaches requires more global
 memory. The new CCSD/EOMCCSD implementations provides significant
@@ -2267,18 +2215,15 @@ versions)</p>
 
  % setenv USE_OFFLOAD 1
 </code></pre>
-
 <p>When using MKL and Intel Composer XE version 14 (or later versions),
 please use the following
 settings</p>
 <pre><code> % setenv BLASOPT   &quot;-mkl -openmp   -lpthread -lm&quot;
  % setenv SCALAPACK &quot;-mkl -openmp -lmkl_scalapack_ilp64 -lmkl_blacs_intelmpi_ilp64 -lpthread -lm&quot;
 </code></pre>
-
 <p>The command require for compilation is</p>
 <pre><code> make FC=ifort 
 </code></pre>
-
 <p>From our experience using the CCSD(T) and MRCCSD(T) TCE modules, we have
 determined that the optimal configuration is to use a single Global
 Arrays ranks for offloading work to each Xeon Phi card.</p>
@@ -2303,12 +2248,10 @@ is required other than specifying the number of processes on each node
 Xeon CPU hosts</p>
 <pre><code> % setenv OMP_NUM_THREADS 4
 </code></pre>
-
 <p>MIC_USE_2MB_BUFFER greatly improve communication between host and
 Xeon Phi card</p>
 <pre><code> % setenv MIC_USE_2MB_BUFFER 16K
 </code></pre>
-
 <p><span style="color:red"><strong>Very important</strong></span>: when running on
 clusters equipped with Xeon Phi and Infiniband network hardware
 (requiring <code>ARMCI_NETWORK=OPENIB</code>), the following env. variable is
@@ -2316,7 +2259,6 @@ required, even <span style="color:red">in the case when the Xeon Phi
 hardware is not utilized</span>.</p>
 <pre><code> % setenv ARMCI_OPENIB_DEVICE mlx4_0
 </code></pre>
-
 <h3 id="ccsdt-method-with-cuda">CCSD(T) method with CUDA<a class="headerlink" href="#ccsdt-method-with-cuda" title="Permanent link">&para;</a></h3>
 <p>NWChem 6.3 offers a possibility of using GPU accelerators to perform the
 most computationally intensive part of the CCSD(T) calculations
@@ -2334,7 +2276,6 @@ devices per node.</p>
  cuda 1
 end
 </code></pre>
-
 <p>In the example above the number of CUDA devises is set equal to 1, which
 means that user will use 1 GPU per node.</p>
 <p>To enable the compilation of CUDA code one has to set the follwoing
@@ -2345,7 +2286,6 @@ export CUDA_LIBS=&quot;-L&lt;Your Path to cuda&gt;/lib64 -L&lt;Your Path to cuda
 export CUDA_FLAGS=&quot;-arch  &lt;Your Cuda architecture&gt;&quot;  
 export CUDA_INCLUDE=&quot;-I. -I&lt;Your Path to cuda&gt;/include&quot;
 </code></pre>
-
 <p>For
 example:</p>
 <pre><code>export TCE_CUDA=Y
@@ -2353,12 +2293,10 @@ export CUDA_LIBS=&quot;-L/usr/local/cuda-5.0/lib64 -L/usr/local/cuda-5.0/lib -lc
 export CUDA_FLAGS=&quot;-arch sm_20 &quot;
 export CUDA_INCLUDE=&quot;-I. -I/usr/local/cuda-5.0/include&quot;
 </code></pre>
-
 <p>In addition the code needs to be compiled with the following make
 command</p>
 <pre><code> make FC=&lt;fortran compiler&gt; CUDA=nvcc
 </code></pre>
-
 <p>Before running production style calculations we strongly suggest the
 users to perform QA test from the /nwchem/QA/tests/tce_cuda directory.
 A full example of a TCE CUDA input file is given below:</p>

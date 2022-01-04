@@ -174,7 +174,6 @@ citation:</p>
    University; Bruce C. Garrett and Theresa L. Windus, Environmental Molecular Sciences Laboratory,  
    Pacific Northwest Laboratory. `
 </code></pre>
-
 <h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
 <p>By using DIRDYVTST, a user can carry out electronic structure
 calculations with NWChem and use the resulting energies, gradients, and
@@ -229,7 +228,6 @@ form:</p>
    ...
  END
 </code></pre>
-
 <h4 id="use-of-symmetry">Use of symmetry<a class="headerlink" href="#use-of-symmetry" title="Permanent link">&para;</a></h4>
 <p>The use of symmetry in the calculation is controlled by the keyword
 <code>autosym | noautosym</code> which is used as described in the
@@ -281,7 +279,6 @@ model is DFT/B3LYP/6-311g**, the DIRDYVTST input might look like this</p>
      ....  
    end
 </code></pre>
-
 <p>The empty XC directive restores the default <a href="Density-Functional-Theory-for-Molecules.html#XC-and-DECOMP----Exchange-Correlation-Potentials">LDA exchange-correlation
 functional</a>.
 Note that semi-colons and other quotation marks inside the input string
@@ -302,7 +299,6 @@ sections.</p>
  [SINGLEPOINT]  
  [SAVEFILE (vecs || hess || spc)
 </code></pre>
-
 <p>Descriptions</p>
 <p>TITLE is a keyword that allows the user to input a description of the
 calculation. In this version, the user can only have a single-line
@@ -320,7 +316,6 @@ then the atomic mass is required in units of amu.</p>
                            3     Cl  
                          END`
 </code></pre>
-
 <p>SINGLEPOINT is a keyword that specifies that a single point calculation
 is to be performed at the reactants, products and saddle point
 geometries. The type of single point calculation is specified in the
@@ -339,7 +334,6 @@ format:</p>
   END  
   SPECIES (ATOMIC || LINRP || NONLINRP || LINTS || NONLINTS default NONLINRP)
 </code></pre>
-
 <p>REACT1 and REACT2 are input for each of the reactants and PROD1 and
 PROD2 are input for each of the products. REACT1 and PROD1 are required.
 START is the input for the transition state if one exists, or starting
@@ -353,7 +347,6 @@ Cartesian coordinates with atomic unit.</p>
                             2      0.0     0.0     1.5  
                          END
 </code></pre>
-
 <p>SPECIES is a variable keyword that indicates the type of the molecule.
 Options are: ATOMIC (atomic reactant or product), LINRP (linear reactant
 or product), NONLINRP (nonlinear reactant or product), LINTS (linear
@@ -373,7 +366,6 @@ transition state), and NONLINTS (nonlinear transition state).</p>
  [INTEGRA (EULER || LQA || CLQA || CUBE default EULER)] 
  [PRINTFREQ (on || off default off)]
 </code></pre>
-
 <p>Descriptions</p>
 <p>SCALEMASS is a variable keyword that indicates the arbitrary mass (in
 amu) used for mass-scaled Cartesian coordinates. This is the variable

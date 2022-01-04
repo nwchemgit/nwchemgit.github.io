@@ -186,14 +186,12 @@ and model molecular geometry. The energy at the high-level of theory for
 the real geometry is estimated as</p>
 <pre><code>     E(High,Real) = E(Low,Real) + [E(High,Model) - E(Low,Model)].
 </code></pre>
-
 <p>The three-layer model requires high, medium and low levels of theory,
 and real, intermediate and model geometries and the corresponding energy
 estimate is</p>
 <pre><code>     E(High,Real) = E(Low,Real) + [E(High,Model) - E(Medium,Model)]
                     +  [E(Medium,Inter) - E(Low,Inter)].
 </code></pre>
-
 <p>When does ONIOM work well? The approximation for a two-layer model will
 be good if</p>
 <ul>
@@ -230,7 +228,6 @@ follows</p>
  [NOPRINT ...]  
 END
 </code></pre>
-
 <p>which are described in detail below.</p>
 <p>For better validation of user input, the HIGH, LOW and MODEL directives
 must always be specified. If the one of the MEDIUM or INTER directives
@@ -260,12 +257,10 @@ potassium (the model) first.</p>
      H  0    0.76   -1.68  
    end
 </code></pre>
-
 <p>and the following directive in the ONIOM input block indicates that one
 atom (implicitly the first in the geometry) is in the model system</p>
 <pre><code>   model 1
 </code></pre>
-
 <h3 id="link-atoms">Link atoms<a class="headerlink" href="#link-atoms" title="Permanent link">&para;</a></h3>
 <p>Link atoms for bonds spanning two regions are automatically generated
 from the bond information. The additional parameters on the MODEL and
@@ -306,14 +301,12 @@ acetaldehyde with the <img alt="$CHO$" src="https://raw.githubusercontent.com/wi
      C     0.152   -1.150    0.005  
    end
 </code></pre>
-
 <p>There are three atoms (the first three) of the real geometry included in
 the model geometry, and we are breaking the bond between atoms 1 and 7,
 replacing atom 7 with a hydrogen link atom. This is all accomplished by
 the directive</p>
 <pre><code>   model 3   1 7 0.709 H
 </code></pre>
-
 <p>Since the default link atom is hydrogen there is actually no need to
 specify the &ldquo;H&rdquo;.</p>
 <p>See also the
@@ -369,7 +362,6 @@ model is DFT/LDA/3-21g, the ONIOM input might look like this</p>
      high dft basis 6-311g** input &quot;dft; xc b3lyp; end&quot;  
    end
 </code></pre>
-
 <p>The empty XC directive restores the default LDA exchange-correlation
 option (see Section 11.3). Note that semi-colons and other quotation
 marks inside the input string must be preceded by a backslash to avoid
@@ -428,7 +420,6 @@ necessary. If an alternative name is desired, then the VECTORS directive
 may be used as follows</p>
 <pre><code>   vectors low-real /u/rjh/jobs/fe_ether_water.mos
 </code></pre>
-
 <h2 id="restarting">Restarting<a class="headerlink" href="#restarting" title="Permanent link">&para;</a></h2>
 <p>Restart of ONIOM calculations does not currently work as smoothly as we
 would like. For geometry optimizations that terminated gracefully by
@@ -566,7 +557,6 @@ apparent if we write
 
    task oniom
 </code></pre>
-
 <h3 id="optimization-and-frequencies">Optimization and frequencies<a class="headerlink" href="#optimization-and-frequencies" title="Permanent link">&para;</a></h3>
 <p>A two-layer model including modification of theory, basis, ECP and total
 charge and no link atoms.</p>
@@ -639,7 +629,6 @@ database.</p>
    task oniom optimize  
    task oniom freq
 </code></pre>
-
 <h3 id="a-three-layer-example">A three-layer example<a class="headerlink" href="#a-three-layer-example" title="Permanent link">&para;</a></h3>
 <p>A three layer example combining CCSD(T), and MP2 with two different
 quality basis sets, and using multiple link atoms.</p>
@@ -700,7 +689,6 @@ factor could be chosen differently for each of the bonds.</p>
 
    task oniom
 </code></pre>
-
 <h3 id="dft-with-and-without-charge-fitting">DFT with and without charge fitting<a class="headerlink" href="#dft-with-and-without-charge-fitting" title="Permanent link">&para;</a></h3>
 <p>Demonstrates use of general input strings.</p>
 <p>A two-layer model for anthracene (a linear chain of three fused benzene

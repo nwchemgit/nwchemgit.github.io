@@ -251,7 +251,6 @@ afterwards.</p>
   [LOAD RESTART]
 END
 </code></pre>
-
 <h3 id="tmax-simulation-time">TMAX &ndash; Simulation time<a class="headerlink" href="#tmax-simulation-time" title="Permanent link">&para;</a></h3>
 <p>This option specifies the maximum time (in au) to run the simulation
 before stopping, which must be a positive real number. In practice, you
@@ -267,7 +266,6 @@ to automatically stop at 500 au:</p>
   ... 
 end
 </code></pre>
-
 <h3 id="dt-time-step">DT &ndash; Time step<a class="headerlink" href="#dt-time-step" title="Permanent link">&para;</a></h3>
 <p>This specifies the electronic time step for time integration. A larger
 time step results in a faster simulation, but there are two issues which
@@ -287,7 +285,6 @@ relative small time step:</p>
  ...
 end
 </code></pre>
-
 <p>It is always good practice to check that your results are independent of
 time step.</p>
 <h3 id="tag-output-label">TAG &ndash; Output label<a class="headerlink" href="#tag-output-label" title="Permanent link">&para;</a></h3>
@@ -300,13 +297,11 @@ this string (set to &ldquo;<rt_tddft>: &rdquo; by default). For example setting:
  ...
 end
 </code></pre>
-
 <p>will result in outputs that look like:</p>
 <pre><code>...
 nameofrun      2.20000  -7.589146713114E+001     # Etot
 ...
 </code></pre>
-
 <h3 id="nchecks-number-of-run-time-check-points">NCHECKS &ndash; Number of run-time check points<a class="headerlink" href="#nchecks-number-of-run-time-check-points" title="Permanent link">&para;</a></h3>
 <p>This option takes an integer number (default 10), or &ldquo;*&rdquo; which means
 every step, which sets the total of number of run-time checkpoints,
@@ -320,7 +315,6 @@ execution.</p>
   ...
 end
 </code></pre>
-
 <h3 id="nprints-number-of-print-points">NPRINTS &ndash; Number of print points<a class="headerlink" href="#nprints-number-of-print-points" title="Permanent link">&para;</a></h3>
 <p>This sets the number of print points, i.e., the total number of
 time-dependent observables (e.g., dipole, charge, energy) that are
@@ -334,7 +328,6 @@ usually no need to change this from &ldquo;*&ldquo;.</p>
   ...
 end
 </code></pre>
-
 <h3 id="nrestarts-number-of-restart-checkpoints">NRESTARTS &ndash; Number of restart checkpoints<a class="headerlink" href="#nrestarts-number-of-restart-checkpoints" title="Permanent link">&para;</a></h3>
 <p>This sets the number of run-time check points where the time-dependent
 complex density matrix is saved to file, allowing the simulation to be
@@ -352,7 +345,6 @@ following example there will be 100 restart points, which corresponds to
   ...
 end
 </code></pre>
-
 <h3 id="tolerances-controlling-numerical-tolerances">TOLERANCES &ndash; Controlling numerical tolerances<a class="headerlink" href="#tolerances-controlling-numerical-tolerances" title="Permanent link">&para;</a></h3>
 <p>This option controls various numerical tolerances:</p>
 <ul>
@@ -372,7 +364,6 @@ defaults with a looser interpolation tolerance:</p>
   tolerances zero 1d-8 series 1d-10 interpol 1e-5
 end
 </code></pre>
-
 <h3 id="propagator-selecting-the-integrator-method">PROPAGATOR &ndash; Selecting the integrator method<a class="headerlink" href="#propagator-selecting-the-integrator-method" title="Permanent link">&para;</a></h3>
 <p>This selects the propagator (i.e., time integrator) method. Possible
 choices include &ldquo;euler&rdquo; for Euler integration (terrible, you should
@@ -386,7 +377,6 @@ useful for debugging or simplicity (e.g., for code development).</p>
   ...
 end
 </code></pre>
-
 <h3 id="exp-selecting-the-matrix-exponentiation-method">EXP &ndash; Selecting the matrix exponentiation method<a class="headerlink" href="#exp-selecting-the-matrix-exponentiation-method" title="Permanent link">&para;</a></h3>
 <p>This selects the method for exponentiation matrices. For now this can
 either be &ldquo;pseries&rdquo; for a contractive power series or &ldquo;diag&rdquo; for
@@ -397,7 +387,6 @@ diagonalization. In general the power series (default) is faster.</p>
   ...
 end
 </code></pre>
-
 <h3 id="prof-run-time-profiling">PROF &ndash; Run-time profiling<a class="headerlink" href="#prof-run-time-profiling" title="Permanent link">&para;</a></h3>
 <p>This turns on run-time profiling, which will display time spent in each
 component of the code (e.g., building components of the TD Fock matrix,
@@ -409,7 +398,6 @@ verbose output.</p>
   ...
 end
 </code></pre>
-
 <h3 id="noprop-skipping-propagation">NOPROP &ndash; Skipping propagation<a class="headerlink" href="#noprop-skipping-propagation" title="Permanent link">&para;</a></h3>
 <p>This options causes the RT-TDDFT module skip propagation, i.e., to
 initialize and finalize. For now this is largely useful for skipping to
@@ -420,7 +408,6 @@ visualization post-processing without having to re-run a simulation.</p>
   ...
 end
 </code></pre>
-
 <h3 id="static-force-static-fock-matrix">STATIC &ndash; Force static Fock matrix<a class="headerlink" href="#static-force-static-fock-matrix" title="Permanent link">&para;</a></h3>
 <p>This option sets the static Fock matrix flag, meaning the time-dependent
 Fock matrix will not be recalculated at each time, but instead use the
@@ -436,7 +423,6 @@ few uses besides dry-runs and debugging.</p>
   ...
 end
 </code></pre>
-
 <h3 id="print-selecting-time-dependent-quantities-to-be-printed">PRINT &ndash; Selecting time-dependent quantities to be printed<a class="headerlink" href="#print-selecting-time-dependent-quantities-to-be-printed" title="Permanent link">&para;</a></h3>
 <p>This sets the various time-dependent properties that are to be computed
 and printed at each print point. Note that for many of these options,
@@ -464,7 +450,6 @@ geometry &hellip;&rdquo; in the input deck). Possible choices are:</p>
   ...
 end
 </code></pre>
-
 <h3 id="field-sub-block-for-specifying-external-electric-fields">FIELD &ndash; Sub-block for specifying external electric fields<a class="headerlink" href="#field-sub-block-for-specifying-external-electric-fields" title="Permanent link">&para;</a></h3>
 <p>This sub-block is used to specify external electric fields, each of
 which must be given a unique name. Numerous fields can be specified, but
@@ -480,7 +465,6 @@ descriptive:</p>
   spin total      # = alpha, beta, total (only valid for open-shell)
 end
 </code></pre>
-
 <pre><code>field &quot;gpulse&quot;
   type gaussian   # Gaussian enveloped quasi-monochromatic pulse: E(t) = exp( -(t-t0)^2 / 2s^2)
   polarization x  # = x, y, z
@@ -491,7 +475,6 @@ end
   spin total      # = alpha, beta, total (only valid for open-shell)
 end
 </code></pre>
-
 <pre><code>field &quot;hpulse&quot;
   type hann       # sin^2 (Hann) enveloped quasi-monochromatic pulse
   polarization x  # = x, y, z
@@ -502,7 +485,6 @@ end
   spin total      # = alpha, beta, total (only valid for open-shell)
 end
 </code></pre>
-
 <pre><code>field &quot;resonant&quot;
   type cw         # monochromatic continuous wave
   frequency 0.12  # frequency of laser pulse in au (e.g., 0.12 au = 3.27 eV)
@@ -511,7 +493,6 @@ end
   spin total      # = alpha, beta, total (only valid for open-shell)
 end
 </code></pre>
-
 <h3 id="excite-excitation-rules">EXCITE &ndash; Excitation rules<a class="headerlink" href="#excite-excitation-rules" title="Permanent link">&para;</a></h3>
 <p>This sets the rules for applying external fields to the system. It takes
 the form &ldquo;excite <geom> with <field>&ldquo;, where <geom> is the name of a
@@ -526,7 +507,6 @@ takes the form (note that quotes are optional and shown for clarity):</p>
   ...
 end
 </code></pre>
-
 <h3 id="visualization-sub-block-for-controlling-3d-visualization">VISUALIZATION &ndash; Sub-block for controlling 3D visualization<a class="headerlink" href="#visualization-sub-block-for-controlling-3d-visualization" title="Permanent link">&para;</a></h3>
 <p>This block is used to control visualization of the electronic charge
 density, which is typically used during a resonant excitation. This is a
@@ -543,7 +523,6 @@ files.</p>
   dplot             # post-process density matrices into cube files after propagation
 end
 </code></pre>
-
 <h3 id="load-restart">LOAD RESTART<a class="headerlink" href="#load-restart" title="Permanent link">&para;</a></h3>
 <p>This keyword needs to be added to restart a calculation. In the following example, the calculation will restart from the previous calculation and extend the run to the new tmax</p>
 <pre><code>rt_tddft
@@ -552,7 +531,6 @@ end
   load restart
 end
 </code></pre>
-
 <h2 id="worked-examples">Worked Examples<a class="headerlink" href="#worked-examples" title="Permanent link">&para;</a></h2>
 <h3 id="absorption-spectrum-of-water">Absorption spectrum of water<a class="headerlink" href="#absorption-spectrum-of-water" title="Permanent link">&para;</a></h3>
 <p>Here, we compute the 6-31G/TD-PBE0 absorption spectrum of gas-phase
@@ -659,7 +637,6 @@ rt_tddft
  end
 task dft rt_tddft
 </code></pre>
-
 <p>After running the simulation, we extract the x-dipole moment for the
 x-kick and similarly for the y and z-kicks (see &ldquo;contrib/parsers&rdquo;
 directory for this script or download here:
@@ -668,7 +645,6 @@ directory for this script or download here:
 nw_rtparse.py -xdipole -py -tkick_y h2o_abs.nwo &gt; y.dat
 nw_rtparse.py -xdipole -pz -tkick_z h2o_abs.nwo &gt; z.dat
 </code></pre>
-
 <p>Note, the syntax for extracting the x polarization for the x-kick, etc.
 Alternatively, we could grep and cut, or whatnot. This will give use the
 resulting time-dependent dipole moments:</p>
@@ -698,7 +674,6 @@ fft1d -d50 -z -p50000 &lt; y.dat | rotate_fft &gt; yw.dat
 fft1d -d50 -z -p50000 &lt; z.dat | rotate_fft &gt; zw.dat
 paste xw.dat yw.dat zw.day &gt; s.dat
 </code></pre>
-
 <p>Here, you can just use your favorite Fourier transform utility or
 analysis software, but for convenience there is also a simple GNU Octave
 fft1d.m utility in the &ldquo;contrib/parsers&rdquo; directory of the trunk or
@@ -710,7 +685,6 @@ redirect from stdin). Assuming the FFT output takes the form (w, Re, Im,
 Abs), to plot using gnuplot we would do:</p>
 <pre><code>gnuplot&gt; plot &quot;s.dat&quot; u ($1*27.2114):($1*($3+$7+$11))
 </code></pre>
-
 <p>where we have scaled by 27.2114 to output in eV instead of atomic units,
 and we have not properly scaled to get the absolute oscillator strengths
 (thus our magnitudes are in &ldquo;arbitrary units&rdquo;). The real-time spectrum
@@ -820,7 +794,6 @@ rt_tddft
  end
 task dft rt_tddft
 </code></pre>
-
 <p><img alt="Time-dependent electric field and dipole moment during resonant excitation" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/RT_TDDFT_h2o_resonant_td.png" align=middle with="268pt" height="200pt"/>  </p>
 <p>From the time-dependent dipole moment you can see the field driving the
 system into a superposition of the ground state and the one excited
@@ -1067,7 +1040,6 @@ rt_tddft
 end
 task dft rt_tddft
 </code></pre>
-
 <p><img alt="Time dependent charge oscillation between a TCNE dimer" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/RT_TDDFT_tcne_td_charge.png" align=middle with="364pt" height="200pt"/>  </p>
 <p>The time-dependent charge shows that the excess electron starts on the
 &ldquo;bottom&rdquo; molecule (i.e., a total electronic charge of -65), then swings

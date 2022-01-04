@@ -162,13 +162,11 @@ RIMP2, CCSD, TCE.</p>
   ...  
  END
 </code></pre>
-
 <p>To run a NEB calculation the following the following task directives is
 used</p>
 <pre><code>TASK &lt;theory&gt; NEB  
 TASK &lt;theory&gt; NEB ignore
 </code></pre>
-
 <p>where \&lt;theory> is SCF, HF, DFT, PSPW, BAND, MP2, CCSD, TCE, etc.. The
 Task directive with the ignore option is recommended, otherwise NWChem
 will crash if the path is not optimized in the allowed maximum number of
@@ -197,7 +195,6 @@ directive,</p>
     [PRINT_SHIFT &lt;integer print_shift default 0&gt;]  
  END
 </code></pre>
-
 <p>The following list describes the input for the NEB block</p>
 <ul>
 <li><strong>nbeads</strong> - number of beads (or images) used to represent the path</li>
@@ -251,7 +248,6 @@ H  0.00000000     0.55046969     0.75406534
 H  0.00000000     0.55046969    -0.75406534  
 end
 </code></pre>
-
 <p>and the last geometry in the path (<img alt="$\vec{R}^{nbeads}_{xyz}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d254a98c76a6ac0805214858d3d02c99.svg?invert_in_darkmode&sanitize=true" align=middle width="52.732845pt" height="31.71135pt"/>) in
 entered in the geometry block label &ldquo;endgeom&rdquo;, e.g.</p>
 <pre><code>geometry endgeom nocenter noautosym noautoz  
@@ -260,7 +256,6 @@ H  0.00000000    -0.55046969     0.75406534
 H  0.00000000    -0.55046969    -0.75406534  
 end
 </code></pre>
-
 <ul>
 <li>Linear interpolation between three geometries</li>
 </ul>
@@ -291,7 +286,6 @@ H  0.00000000    -0.55046969     0.75406534
 H  0.00000000    -0.55046969    -0.75406534  
 end
 </code></pre>
-
 <ul>
 <li>Using xyz_path to explicitly input a path of geometries</li>
 </ul>
@@ -303,7 +297,6 @@ NEB
 END  
 ...
 </code></pre>
-
 <p>where path.xyz contains a list of geometries in xyz format, e.g.</p>
 <pre><code>--------------- path.xyz ------------------  
                    3  
@@ -333,7 +326,6 @@ H           0.000000   -0.550469    0.754065
 H           0.000000   -0.550469   -0.754065  
 --------------- path.xyz ------------------
 </code></pre>
-
 <h2 id="convergence-criteria">Convergence criteria<a class="headerlink" href="#convergence-criteria" title="Permanent link">&para;</a></h2>
 <p>The defaults may be used, or the directives LOOSE, DEFAULT, or TIGHT
 specified to use standard sets of values, or the individual criteria
@@ -438,7 +430,6 @@ neb
 end 
 task dft neb ignore
 </code></pre>
-
 <p>After each optimization step the path energies are outputed as follows</p>
 <pre><code>neb: Path Energy #                    9  
 neb:                     1  -75.970000166349976       
@@ -462,7 +453,6 @@ neb:                    18  -75.973964962774133     
 neb:                    19  -75.973959526041568       
 neb:                    20  -75.970000163960066     
 </code></pre>
-
 <p>Another way to keep track of the optimization process is to run the
 following grep command on the output
 file.</p>
@@ -528,7 +518,6 @@ file.</p>
 @neb   14     -75.961405     -75.922286     -75.973966     -75.921927  0.03549  0.00079  0.00244  0.03857  11860.0  
 @neb  NEB calculation converged
 </code></pre>
-
 <h1 id="zero-temperature-string-method">Zero Temperature String Method<a class="headerlink" href="#zero-temperature-string-method" title="Permanent link">&para;</a></h1>
 <p>The STRING module is an implementation of the zero temperature string
 method of vanden Eijden et al., and it is one of two drivers in NWChem
@@ -540,13 +529,11 @@ MP2, RIMP2, CCSD, TCE.</p>
   ...
  END
 </code></pre>
-
 <p>To run a STRING calculation the following the following task directives
 is used</p>
 <pre><code>TASK &lt;theory&gt; STRING
 TASK &lt;theory&gt; STRING ignore
 </code></pre>
-
 <p>where \&lt;theory> is SCF, HF, DFT, PSPW, BAND, MP2, CCSD, TCE, etc.. The
 Task directive with the ignore option is recommended, otherwise NWChem
 will crash if the path is not optimized in the allowed maximum number of
@@ -573,7 +560,6 @@ directive,</p>
     PRINT_SHIFT &lt;integer print_shift default 0&gt;  
  END
 </code></pre>
-
 <p>The following list describes the input for the STRING block</p>
 <ul>
 <li><strong>nbeads</strong> - number of beads (or images) used to represent the path</li>
@@ -621,7 +607,6 @@ H  0.00000000     0.55046969     0.75406534
 H  0.00000000     0.55046969    -0.75406534  
 end
 </code></pre>
-
 <p>and the last geometry in the path (<img alt="$\vec{R}^{nbeads}_{xyz}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d254a98c76a6ac0805214858d3d02c99.svg?invert_in_darkmode&sanitize=true" align=middle width="52.732845pt" height="31.71135pt"/>) in
 entered in the geometry block label &ldquo;endgeom&rdquo;, e.g.</p>
 <pre><code>geometry endgeom nocenter noautosym noautoz  
@@ -630,7 +615,6 @@ H  0.00000000    -0.55046969     0.75406534
 H  0.00000000    -0.55046969    -0.75406534  
 end
 </code></pre>
-
 <ul>
 <li>Linear interpolation between three geometries</li>
 </ul>
@@ -661,7 +645,6 @@ H  0.00000000    -0.55046969     0.75406534
 H  0.00000000    -0.55046969    -0.75406534  
 end
 </code></pre>
-
 <ul>
 <li>Using xyz_path to explicitly input a path of geometries</li>
 </ul>
@@ -673,7 +656,6 @@ STRING
 END
 ...
 </code></pre>
-
 <h2 id="string-tutorial-1hcn-hnc-path-optimization">String Tutorial 1:HCN &ndash;> HNC path optimization<a class="headerlink" href="#string-tutorial-1hcn-hnc-path-optimization" title="Permanent link">&para;</a></h2>
 <p>(input:<a href="HCN-string1.nw">HCN-string1.nw</a>,
 output:<a href="HCN-string1.nwout">HCN-string1.nwout</a>,
@@ -762,7 +744,6 @@ string
 end  
 task dft string ignore
 </code></pre>
-
 <p>After each optimization step the path energies are outputed as follows</p>
 <pre><code> string: Path Energy #                    2  
  string:                     1  -92.906682492969779  
@@ -776,7 +757,6 @@ task dft string ignore
  string:                     9  -92.716422030970662  
  string:                    10  -92.881713271394148
 </code></pre>
-
 <p>Another way to keep track of the optimization process is to run the
 following grep command on the output
 file.</p>
@@ -870,7 +850,6 @@ file.</p>
 @zts Bead number   19  Potential Energy =     -92.881844751735  
 @zts Bead number   20  Potential Energy =     -92.882700859222
 </code></pre>
-
 <p>A plotting program (e.g. gnuplot, xmgrace) can be used to look at final
 path as well as the the convergence of the path
 i.e.,</p>
@@ -896,7 +875,6 @@ gnuplot&gt; set style data linespoints
 gnuplot&gt; plot &quot;hcn-hnc-dft.string_epath&quot; using 1:($2+92.908)*27.2116*23.06,&quot;hcn-hnc-dft.string_final_epath&quot; using 1:($2+92.908)*27.2116*23.06  
 gnuplot&gt; 
 </code></pre>
-
 <p><a href="file:hcn-hnc-dft0.png.md">400px</a></p>
 <h2 id="string-tutorial-2">String Tutorial 2:<a class="headerlink" href="#string-tutorial-2" title="Permanent link">&para;</a></h2>
 <pre><code>Title &quot;2SiO4H4 --&gt; H3O3Si-O-SiO3H3 + H2O&quot;  
@@ -982,7 +960,6 @@ string
 end  
 task pspw string ignore
 </code></pre>
-
 <h2 id="string-tutorial-3-combining-neb-and-string-path-optimizations">String Tutorial 3: Combining NEB and String path optimizations<a class="headerlink" href="#string-tutorial-3-combining-neb-and-string-path-optimizations" title="Permanent link">&para;</a></h2>
               
             </div>

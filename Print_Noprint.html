@@ -155,7 +155,6 @@
 <pre><code>PRINT [(none || low || medium || high || debug) default medium]  [&lt;string list_of_names ... &gt;]
 NOPRINT &lt;string list_of_names ... &gt;
 </code></pre>
-
 <p>The default print level is medium.</p>
 <p>Every output that is printed by NWChem has a print threshold associated with it. If this threshold is equal to or lower than the print level requested by the user, then the output is generated. For example, the threshold for printing the SCF energy at convergence is low. This means that if the user-specified print level on the PRINT directive is low, medium, high, or debug, then the SCF energy will be printed at convergence.</p>
 <p>The overall print level specified using the PRINT directive is a convenient tool for controlling the verbosity of NWChem. Setting the print level to high might be helpful in diagnosing convergence problems. The print level of debug might also be of use in evaluating problem cases, but the user should be aware that this can generate a huge amount of output. Setting the print level to low might be the preferable choice for geometry optimizations that will perform many steps which are in themselves of little interest to the user.</p>
@@ -226,7 +225,6 @@ NOPRINT &lt;string list_of_names ... &gt;
 <p>The following example shows how a PRINT directive for the top level process can be used to limit printout to only essential information. The directive is</p>
 <pre><code>print none &quot;ma stats&quot; rtdb
 </code></pre>
-
 <p>This directive instructs the NWChem main program to print nothing, except for the memory usage statistics (ma stats) and the names of all items stored in the database at the end of the job.</p>
 <p>The print level within a module is inherited from the calling layer. For instance, by specifying the print to be low within the MP2 module will cause the SCF, CPHF and gradient modules when invoked from the MP2 to default to low print. Explicit user input of print thresholds overrides the inherited value.</p>
               

@@ -178,7 +178,6 @@ QM/MM calculations. Here is the structure of just N3O3- in xyz format
   N                     1.95804013     1.90608355     1.48799418  
   O                     2.81393172     2.06788134     2.36142683
 </code></pre>
-
 <p>We cannot use this file as is in the QM/MM simulations, and it has to be
 converted into PDB format. This is needed even if we plan to treat this
 molecule quantum mechanically. There is more than way to do it. For
@@ -201,7 +200,6 @@ CONECT    6    5
 MASTER        0    0    0    0    0    0    0    0    6    0    6    0  
 END
 </code></pre>
-
 <p>which after stripping nonessential information becomes  </p>
 <pre><code> HETATM    1  O   LIG     1       1.562   0.180  -1.368  1.00  0.00           O    
  HETATM    2  N   LIG     1       1.316   0.936  -0.424  1.00  0.00           N    
@@ -211,7 +209,6 @@ END
  HETATM    6  O   LIG     1       2.814   2.068   2.361  1.00  0.00           O    
  END
 </code></pre>
-
 <p>This is not yet the format we want. So what we need to do is</p>
 <ol>
 <li><em>replace HETATM field by ATOM preserving the format (column
@@ -220,7 +217,6 @@ locations) of the rest of the file</em>:</li>
 <p>I would typically use sed for this purpose</p>
 <pre><code> sed 's/HETATM/ATOM  /' n3o3-bad.pdb &gt; n3o3-step1.pdb
 </code></pre>
-
 <p>where <code>n3o3-bad.pdb</code> is the original pdb file from Babel and
 <code>n3o3-step1.pdb</code> is the converted one as shown below</p>
 <pre><code>ATOM      1  O   LIG     1       1.562   0.180  -1.368  1.00  0.00           O  
@@ -231,7 +227,6 @@ ATOM      5  N   LIG     1       1.958   1.906   1.488  1.00  0.00           N
 ATOM      6  O   LIG     1       2.814   2.068   2.361  1.00  0.00           O  
 END
 </code></pre>
-
 <ol>
 <li><em>define residues (aka molecules):</em></li>
 </ol>
@@ -247,7 +242,6 @@ ATOM      5  N   NN3     1       1.958   1.906   1.488  1.00  0.00           N
 ATOM      6  O   NN3     1       2.814   2.068   2.361  1.00  0.00           O  
 END
 </code></pre>
-
 <p>You could have also broken it up into several residues as</p>
 <pre><code>ATOM      1  O   NN2     1       1.562   0.180  -1.368  1.00  0.00           O  
 ATOM      2  N   NN2     1       1.316   0.936  -0.424  1.00  0.00           N  
@@ -257,7 +251,6 @@ ATOM      5  N   NN1     2       1.958   1.906   1.488  1.00  0.00           N
 ATOM      6  O   NN1     2       2.814   2.068   2.361  1.00  0.00           O  
 END
 </code></pre>
-
 <p>where I defined two residues NN2 and NN1 (note changes in columns 4 and
 5). To keep things simple I will stay with one residue version for now</p>
 <ol>
@@ -274,7 +267,6 @@ ATOM      5  N3  NN3     2       1.958   1.906   1.488  1.00  0.00           N
 ATOM      6  O3  NN3     2       2.814   2.068   2.361  1.00  0.00           O  
 END
 </code></pre>
-
 <p>Now we have a PDB file for our system in &ldquo;proper&rdquo; PDB format. Before we
 move to next step, I should mention that the last 3 columns are not
 necessary and could have been removed at any point leading to
@@ -287,7 +279,6 @@ ATOM      5  N3  NN3     2       1.958   1.906   1.488
 ATOM      6  O3  NN3     2       2.814   2.068   2.361      
 END
 </code></pre>
-
 <h2 id="generation-of-new-fragment-files">Generation of new fragment files<a class="headerlink" href="#generation-of-new-fragment-files" title="Permanent link">&para;</a></h2>
 <p>While setting up QM/MM calculations is often necessary to generate new
 fragment files for the molecules that are not available as part of
@@ -307,7 +298,6 @@ ATOM      5  N3  NN3     1       1.958   1.906   1.488
 ATOM      6  O3  NN3     1       2.814   2.068   2.361      
 END
 </code></pre>
-
 <p>We have residue named NN3 and therefore looking to construct fragment
 file <code>NN3.frg</code>. The best way to do it is to run a simple prepare job</p>
 <pre><code>start n3o3  
@@ -325,7 +315,6 @@ end
 
 task prepare
 </code></pre>
-
 <p>This prepare job will necessarily fail because NN3.frg is not yet
 available:</p>
 <pre><code>Created fragment                      ./NN3.frg_TMP  
@@ -337,7 +326,6 @@ Unresolved atom types in fragment NN3
  *   0: pre_mkfrg failed 9999  
  **********
 </code></pre>
-
 <p>As part of this process skeleton fragment file (<code>NN3.frg_TMP</code>) will be
 generated that can be modified into the final correct form. Let us take
 a look at <code>NN3.frg_TMP</code></p>
@@ -361,7 +349,6 @@ NN3
     3    5  
     5    6
 </code></pre>
-
 <p>The main problem with this fragment file is that there are no atom types
 to be found in column 12. What atom type does is to identify what
 classical parameters should be assigned to it. Since, as mentioned in
@@ -385,7 +372,6 @@ NN3
     3    5  
     5    6
 </code></pre>
-
 <p>and rename resulting file as <a href="NN3.frg">NN3.frg</a>. Please
 note that the overall format of the fragment file was preserved and atom
 types were entered starting at column 12. Rerunning the same prepare job
@@ -405,7 +391,6 @@ moves as a bit further this time</p>
  *   0: pre_check failed 9999  
  **********
 </code></pre>
-
 <p>complaining now that atom types OX and NX are not defined. This brings
 us to the next step of defining new parameter file for our calculation. </p>
 <h2 id="generation-of-new-parameter-files">Generation of new parameter files<a class="headerlink" href="#generation-of-new-parameter-files" title="Permanent link">&para;</a></h2>
@@ -425,7 +410,6 @@ OX     16.00000 6.35968E-01 1.76830E-01                            1 1111111111
       Q       8 3.17984E-01 1.76830E-01  
 End
 </code></pre>
-
 <p>The format of this file is documented in <a href="#format-of-nwchem-parameter-file">Format of NWChem parameter
 file</a>. How to actually
 choose the appropriate values for VDW parameters is a whole new subject,
@@ -462,7 +446,6 @@ NONBOND
  CA 1.9080  0.0860  
 C 1.9080  0.0860
 </code></pre>
-
 <p>to <strong>fixed format</strong> NWChem style amber.par file  </p>
 <pre><code>#Generated amber.par file  
 Electrostatic 1-4 scaling factor     0.833333  

@@ -199,7 +199,6 @@ third reference details the method used in the ET module.</p>
 <pre><code> VECTORS [reactants] &lt;string reactants_filename&gt;  
  VECTORS [products ] &lt;string products_filename&gt;
 </code></pre>
-
 <p>In the VECTORS directive the user specifies the source of the molecular
 orbital vectors for the ET reactant and product states. This is required
 input, as no default filename will be set by the program. In fact, this
@@ -209,7 +208,6 @@ below.</p>
 <h2 id="focknofock-method-for-calculating-the-two-electron-contribution-to-vrp">FOCK/NOFOCK &ndash; method for calculating the two-electron contribution to  <i>V<sub>RP</sub></i><a class="headerlink" href="#focknofock-method-for-calculating-the-two-electron-contribution-to-vrp" title="Permanent link">&para;</a></h2>
 <pre><code>  &lt;string (FOCK||NOFOCK) default FOCK&gt;
 </code></pre>
-
 <p>This directive enables/disables the use of the NWChem&rsquo;s Fock matrix
 routine in the calculation of the two-electron portion of the ET
 Hamiltonian. Since the Fock matrix routine has been optimized for speed,
@@ -221,7 +219,6 @@ slower.</p>
 <h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
 <pre><code> TOL2E &lt;real tol2e default max(10e-12,min(10e-7, S(RP)*10e-7 )&gt;
 </code></pre>
-
 <p>The variable tol2e is used in determining the integral screening
 threshold for the evaluation of the two-electron contribution to the
 Hamiltonian between the electron transfer reactant and product states.
@@ -232,8 +229,7 @@ than 1.0d-12 or greater than 1.0d-7.</p>
 is, for example:</p>
 <pre><code> tol2e 1e-9
 </code></pre>
-
-<!---  ##  FMO -- Fragment Orbital Approach
+<!---  ##  FMO -- Fragment Orbital Approach 
 
 The keyword <tt>FMO</tt> can be used to compute electronic couplings by means of the fragment orbital approach
 (EF Valeev, V Coropceanu, DA da Silva Filho, S Salman, JL Bredas,. J. Am. Chem. Soc., 128, 9882 (2006))
@@ -244,7 +240,6 @@ The keyword <tt>FMO</tt> can be used to compute electronic couplings by means of
 
 An example input file can be found in  the [etrans-fmo QA directory](../tree/master/QA/tests/etrans-fmo.md)
 -->
-
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>The following example is for a simple electron transfer reaction,
 <img alt="$He_{} \rightarrow He^{ +}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/071c03bc68d9e9cb99efa0d16a160ace.svg?invert_in_darkmode&sanitize=true" align=middle width="81.53376pt" height="26.12412pt"/>. The ET calculation is easy to execute,
@@ -308,7 +303,6 @@ et
 end
 task scf et
 </code></pre>
-
 <p>Here is what the output looks like for this example:</p>
 <pre><code>                           Electron Transfer Calculation
                            -----------------------------
@@ -336,7 +330,6 @@ task scf et
                                                     0.000599 eV
                                                        0.014 kcal/mol
 </code></pre>
-
 <p>The overlap between the ET reactant and product states (<i>S<sub>RP</sub></i>) is
 small, so the magnitude of the coupling between the states is also
 small. If the fragment guess or charged atomic density guess were not

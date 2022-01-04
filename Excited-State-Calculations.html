@@ -251,16 +251,13 @@ encompasses all of the above-mentioned methods implemented. To use this
 module, one needs to specify TDDFT on the task directive, e.g.,</p>
 <pre><code>     TASK TDDFT ENERGY
 </code></pre>
-
 <p>for a single-point excitation energy calculation, and</p>
 <pre><code>     TASK TDDFT OPTIMIZE
 </code></pre>
-
 <p>for an excited-state geometry optimization (and perhaps an adiabatic
 excitation energy calculation), and</p>
 <pre><code>     TASK TDDFT FREQUENCIES
 </code></pre>
-
 <p>for an excited-state vibrational frequency calculation. The TDDFT module
 first invokes DFT module for a ground-state calculation (regardless of
 whether the calculations uses a HF reference as in CIS or TDHF or a DFT
@@ -300,7 +297,6 @@ block. The syntax is:</p>
      &lt;string list_of_names ...&gt;]
  END
 </code></pre>
-
 <p>The user can also specify the reference wave function in the DFT input
 block (even when CIS and TDHF calculations are requested). See the
 section of Sample input and output for more details.</p>
@@ -313,7 +309,6 @@ section of Sample input and output for more details.</p>
  END  
  TASK TDDFT ENERGY
 </code></pre>
-
 <p>Note that the keyword for the asymptotic correction must be given in the
 DFT input block, since all the effects of the correction (and also
 changes in the computer program) occur in the SCF calculation stage. See
@@ -412,7 +407,6 @@ energy window</p>
 <pre><code>  alpha 1 4
   beta 2 5
 </code></pre>
-
 <p>Here alpha excitations will be considered from orbitals 1 through 4
 depending on the number of roots requested and beta excitations will be
 considered from orbitals 2 through 5 depending on the number of roots
@@ -447,13 +441,11 @@ The excited stated density is written to a file with the dmat suffix.</p>
 end
 task tddft optimize
 </code></pre>
-
 <p>At the moment the following exchange-correlation functionals are
 supported with TDDFT
 gradients</p>
 <pre><code>LDA, BP86, PBE, BLYP, B3LYP, PBE0, BHLYP, CAM-B3LYP, LC-PBE, LC-PBE0, BNL, LC-wPBE, LC-wPBEh, LC-BLYP
 </code></pre>
-
 <h3 id="cdspectrum-optical-rotation-calculations">CDSpectrum &ndash; optical rotation calculations<a class="headerlink" href="#cdspectrum-optical-rotation-calculations" title="Permanent link">&para;</a></h3>
 <p>Perform optical rotation calculations.
 We recommend to use the <code>GIAO</code> keyword</p>
@@ -488,22 +480,18 @@ or DFT calculation). No orbitals are frozen by default. To exclude the
 atom-like core regions altogether, one may request</p>
 <pre><code> FREEZE atomic
 </code></pre>
-
 <p>To specify the number of lowest-lying occupied orbitals be excluded, one
 may use</p>
 <pre><code> FREEZE 10
 </code></pre>
-
 <p>which causes 10 lowest-lying occupied orbitals excluded. This is
 equivalent to writing</p>
 <pre><code> FREEZE core 10
 </code></pre>
-
 <p>To freeze the highest virtual orbitals, use the virtual keyword. For
 instance, to freeze the top 5 virtuals</p>
 <pre><code> FREEZE virtual 5
 </code></pre>
-
 <h3 id="print-the-verbosity">PRINT &ndash; the verbosity<a class="headerlink" href="#print-the-verbosity" title="Permanent link">&para;</a></h3>
 <p>This keyword changes the level of output verbosity. One may also request
 some particular items in the table
@@ -613,7 +601,6 @@ TDDFT
 END  
 TASK TDDFT ENERGY
 </code></pre>
-
 <p>To perform a spin-unrestricted TDHF/aug-cc-pVDZ calculation for the CO+
 radical,</p>
 <pre><code>START co  
@@ -636,7 +623,6 @@ TDDFT
 END  
 TASK TDDFT ENERGY
 </code></pre>
-
 <p>A geometry optimization followed by a frequency calculation for an
 excited state is carried out for BF at the CIS/6-31G* level in the
 following sample input.</p>
@@ -661,7 +647,6 @@ END
 TASK TDDFT OPTIMIZE  
 TASK TDDFT FREQUENCIES
 </code></pre>
-
 <p>TDDFT with an asymptotically corrected SVWN exchange-correlation
 potential. Casida-Salahub scheme has been used with the shift value of
 0.1837 a.u. supplied as an input parameter.</p>
@@ -683,7 +668,6 @@ TDDFT
 END  
 TASK TDDFT ENERGY
 </code></pre>
-
 <p>TDDFT with an asymptotically corrected B3LYP exchange-correlation
 potential. Hirata-Zhan-Apra-Windus-Dixon scheme has been used (this is
 only meaningful with B3LYP functional).</p>
@@ -705,7 +689,6 @@ TDDFT
 END  
 TASK TDDFT ENERGY
 </code></pre>
-
 <p>TDDFT for core states. The following example illustrates the usage of an
 energy cutoff and energy and orbital windows.[9]</p>
 <pre><code>echo  
@@ -757,7 +740,6 @@ tddft
 end  
 task tddft
 </code></pre>
-
 <p>TDDFT optimization with LDA of Pyridine with the 6-31G basis[10]</p>
 <pre><code>echo  
 start tddftgrad_pyridine_opt  
@@ -803,7 +785,6 @@ tddft
 end  
 task tddft optimize
 </code></pre>
-
 <p>TDDFT calculation followed by a calculation of the transition density
 for a specific excited state using the DPLOT block</p>
 <pre><code>echo  
@@ -872,7 +853,6 @@ dplot
 end  
 task dplot
 </code></pre>
-
 <p>TDDFT protocol for calculating the valence-to-core (1s) X-ray emission spectrum [11]</p>
 <ol>
 <li>Calculate the neutral ground state.   </li>
@@ -916,7 +896,6 @@ Options:
                         comment character for output ('#' default)
   -v, --verbose         echo warnings and progress to stderr
 </code></pre>
-
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ol>
 <li>J. B. Foreman, M. Head-Gordon, J. A. Pople, and M. J. Frisch, <em>J. Phys. Chem.</em> <strong>96</strong>, 135 (1992).</li>

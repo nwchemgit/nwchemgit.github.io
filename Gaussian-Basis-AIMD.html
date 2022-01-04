@@ -181,11 +181,9 @@ Phys. Chem. B, 120 (8), pp 1429–1436 (2016), <a href="https://dx.doi.org/10.10
   [tddft &lt;integer default 1&gt;]   
 END
 </code></pre>
-
 <p>The module is called as:</p>
 <pre><code>task &lt;level of theory&gt; qmd
 </code></pre>
-
 <p>where <level of theory> is any Gaussian basis set method in NWChem</p>
 <h2 id="qmd-keywords">QMD Keywords<a class="headerlink" href="#qmd-keywords" title="Permanent link">&para;</a></h2>
 <h3 id="dt_nucl-nuclear-time-step">dt_nucl &ndash; Nuclear time step<a class="headerlink" href="#dt_nucl-nuclear-time-step" title="Permanent link">&para;</a></h3>
@@ -279,7 +277,6 @@ qmd
 end  
 task dft qmd
 </code></pre>
-
 <p>The following is a sample input for an excited state MD simulation on
 the first excited state. The simulation is 200 steps long with a 10 a.u.
 time step, run in the microcanonical ensemble. Center-of-mass rotations
@@ -317,7 +314,6 @@ qmd
 end  
 task tddft qmd
 </code></pre>
-
 <p>Additional sample inputs can be found in $NWCHEM_TOP/QA/tests/qmd_*</p>
 <h2 id="processing-the-output-of-a-qmd-run">Processing the output of a QMD run<a class="headerlink" href="#processing-the-output-of-a-qmd-run" title="Permanent link">&para;</a></h2>
 <p>The xyz file produced by the QMD module contains the velocities (given
@@ -359,13 +355,11 @@ qmd
 end  
 task dft qmd
 </code></pre>
-
 <p>The IR spectrum and vibrational density of states were generated from
 the <a href="qmd_tools.tar.gz">qmd_analysis code</a> with the following
 command.</p>
 <pre><code>./qmd_analysis -xyz SiCl4.xyz -steps 15000 -skip 5000 -ts 10.0 -temp 20.0 -smax 800 -width 10.0
 </code></pre>
-
 <p>where we have skipped the first 5000 steps from the simulation and only
 used the data from the last 15000 steps to compute the spectra. The time
 step is given as 10 a.u. since that was the time step in the simulation

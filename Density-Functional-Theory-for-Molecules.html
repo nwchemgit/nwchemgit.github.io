@@ -174,12 +174,10 @@ fit the exchange-correlation (XC) potential.</p>
    ...  
  END
 </code></pre>
-
 <p>The actual DFT calculation will be performed when the input module
 encounters the <a href="TASK.html">TASK</a> directive.</p>
 <pre><code> TASK DFT
 </code></pre>
-
 <p>Once a user has specified a geometry and a Kohn-Sham orbital basis set
 the DFT module can be invoked with no input directives (defaults invoked
 throughout). There are sub-directives which allow for customized
@@ -285,7 +283,6 @@ are:</p>
  SYM &lt;string (ON||OFF) default ON&gt;
  ADAPT &lt;string (ON||OFF) default ON&gt;
 </code></pre>
-
 <p>The following sections describe these keywords and optional
 sub-directives that can be specified for a DFT calculation in NWChem.</p>
 <h2 id="specification-of-basis-sets-for-the-dft-module">Specification of Basis Sets for the DFT Module<a class="headerlink" href="#specification-of-basis-sets-for-the-dft-module" title="Permanent link">&para;</a></h2>
@@ -322,7 +319,6 @@ given calculation can be summarized as follows;</p>
 <p>The VECTORS directive is the same as that in the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">SCF</a> module. Currently, the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-lock-keyword">LOCK</a> keyword is not supported by the DFT module, however the directive</p>
 <pre><code> MAX_OVL
 </code></pre>
-
 <p>has the same effect.</p>
 <h2 id="xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash; Exchange-Correlation Potentials<a class="headerlink" href="#xc-and-decomp-exchange-correlation-potentials" title="Permanent link">&para;</a></h2>
 <pre><code> XC [[acm] [b3lyp] [beckehandh] [pbe0] [bhlyp]\  
@@ -349,7 +345,6 @@ given calculation can be summarized as follows;</p>
      [vwn_5 &lt;real prefactor default 1.0&gt;] \  
      [vwn_1_rpa &lt;real prefactor default 1.0&gt;]]
 </code></pre>
-
 <p>The user has the option of specifying the exchange-correlation treatment
 in the DFT Module (see table below for full list of functionals). The
 default exchange-correlation functional is defined as the local density
@@ -371,11 +366,9 @@ keywords within the DFT module input directive, XC slater vwn_5.</p>
 end  
 task dft
 </code></pre>
-
 <p>is equivalent to the simple line</p>
 <pre><code>task dft
 </code></pre>
-
 <p>The DECOMP directive causes the components of the energy corresponding
 to each functional to be printed, rather than just the total
 exchange-correlation energy which is the default. You can see an example
@@ -393,7 +386,6 @@ table below.</p>
 computation expense), is invoked by specifying</p>
 <pre><code>  XC HFexch
 </code></pre>
-
 <p>Note that the user also has the ability to include only the local or
 nonlocal contributions of a given functional. In addition the user can
 specify a multiplicative prefactor (the variable <prefactor> in the
@@ -401,7 +393,6 @@ input) for the local/nonlocal component or total. An example of this
 might be,</p>
 <pre><code>  XC becke88 nonlocal 0.72
 </code></pre>
-
 <p>The user should be aware that the Becke88 local component is simply the
 Slater exchange and should be input as such.</p>
 <p>Any combination of the supported exchange functional options can be
@@ -409,18 +400,15 @@ used. For example the popular Gaussian B3 exchange could be specified
 as:</p>
 <pre><code>  XC slater 0.8 becke88 nonlocal 0.72 HFexch 0.2
 </code></pre>
-
 <p>Any combination of the supported correlation functional options can be
 used. For example B3LYP could be specified
 as:</p>
 <pre><code>XC vwn_1_rpa 0.19 lyp 0.81 HFexch 0.20  slater 0.80 becke88 nonlocal 0.72
 </code></pre>
-
 <p>and X3LYP as:</p>
 <pre><code>xc vwn_1_rpa 0.129 lyp 0.871 hfexch 0.218 slater 0.782 \
 becke88 nonlocal 0.542  xperdew91 nonlocal 0.167
 </code></pre>
-
 <h3 id="setting-up-common-exchange-correlation-functionals">Setting up common exchange-correlation functionals<a class="headerlink" href="#setting-up-common-exchange-correlation-functionals" title="Permanent link">&para;</a></h3>
 <ul>
 <li>B3LYP: xc b3lyp</li>
@@ -1737,7 +1725,6 @@ becomes</p>
 </p>
 <pre><code> cam &lt;real cam&gt; cam_alpha &lt;real cam_alpha&gt; cam_beta &lt;cam_beta&gt;
 </code></pre>
-
 <p><code>cam</code> represents the attenuation parameter &mu;, <code>cam_alpha</code> and
 <code>cam_beta</code> are the  &alpha; and &beta; parameters that control the
 amount of short-range DFT and long-range HF Exchange according to the
@@ -1754,63 +1741,51 @@ specified as follows:</p>
 <pre><code>xc xcamb88 1.00 lyp 0.81 vwn_5 0.19 hfexch 1.00  
 cam 0.33 cam_alpha 0.19 cam_beta 0.46
 </code></pre>
-
 <p>LC-BLYP:</p>
 <pre><code>xc xcamb88 1.00 lyp 1.0 hfexch 1.00  
 cam 0.33 cam_alpha 0.0 cam_beta 1.0
 </code></pre>
-
 <p>LC-PBE:</p>
 <pre><code>xc xcampbe96 1.0 cpbe96 1.0 HFexch 1.0 
 cam 0.30 cam_alpha 0.0 cam_beta 1.0
 </code></pre>
-
 <p>LC-PBE0 or CAM-PBE0:</p>
 <pre><code>xc xcampbe96 1.0 cpbe96 1.0 HFexch 1.0
 cam 0.30 cam_alpha 0.25 cam_beta 0.75
 </code></pre>
-
 <p>BNL (Baer, Neuhauser,
 Lifshifts):</p>
 <pre><code>xc xbnl07 0.90 lyp 1.00 hfexch 1.00  
 cam 0.33 cam_alpha 0.0 cam_beta 1.0
 </code></pre>
-
 <p>LC-wPBE:</p>
 <pre><code>xc xwpbe 1.00 cpbe96 1.0 hfexch 1.00  
 cam 0.4 cam_alpha 0.00 cam_beta 1.00
 </code></pre>
-
 <p>LRC-wPBEh:</p>
 <pre><code>xc xwpbe 0.80 cpbe96 1.0 hfexch 1.00 
 cam 0.2 cam_alpha 0.20 cam_beta 0.80
 </code></pre>
-
 <p>QTP-00</p>
 <pre><code>xc xcamb88 1.00 lyp 0.80 vwn_5 0.2 hfexch 1.00 
 cam 0.29 cam_alpha 0.54 cam_beta 0.37
 </code></pre>
-
 <p>rCAM-B3LYP</p>
 <pre><code>xc xcamb88 1.00 lyp 1.0 vwn_5 0. hfexch 1.00 becke88 nonlocal 0.13590
 cam 0.33 cam_alpha 0.18352 cam_beta 0.94979
 </code></pre>
-
 <p>HSE03 functional: 0.25*Ex(HF-SR) - 0.25*Ex(PBE-SR) + Ex(PBE) +
 Ec(PBE), where gamma(HF-SR) = gamma(PBE-SR)</p>
 <pre><code>xc hse03
 </code></pre>
-
 <p>or it can be explicitly set as</p>
 <pre><code>xc xpbe96 1.0 xcampbe96 -0.25 cpbe96 1.0 srhfexch 0.25
 cam 0.33 cam_alpha 0.0 cam_beta 1.0
 </code></pre>
-
 <p>HSE06 functional:</p>
 <pre><code>xc xpbe96 1.0 xcampbe96 -0.25 cpbe96 1.0 srhfexch 0.25
 cam 0.11 cam_alpha 0.0 cam_beta 1.0
 </code></pre>
-
 <p>Please see the following papers (not a complete list) for further
 details about the theory behind these functionals and applications.</p>
 <ol>
@@ -1848,7 +1823,6 @@ dft
 end  
 task dft energy
 </code></pre>
-
 <p>Example illustrating the HSE03 functional:</p>
 <pre><code>echo  
 start h2o-hse  
@@ -1875,7 +1849,6 @@ dft
 end  
 task dft energy
 </code></pre>
-
 <h3 id="ssb-d-functional">SSB-D functional<a class="headerlink" href="#ssb-d-functional" title="Permanent link">&para;</a></h3>
 <p>The recently developed SSB-D is a small correction to the non-empirical
 PBE functional and includes a portion of Grimme&rsquo;s dispersion correction
@@ -1894,7 +1867,6 @@ stacked adenine dimers), and for NMR chemical shieldings.</p>
 <p>It can be specified as</p>
 <pre><code>xc ssb-d
 </code></pre>
-
 <h3 id="semi-empirical-hybrid-dft-combined-with-perturbative-mp2">Semi-empirical hybrid DFT combined with perturbative MP2<a class="headerlink" href="#semi-empirical-hybrid-dft-combined-with-perturbative-mp2" title="Permanent link">&para;</a></h3>
 <p>This theory combines hybrid density functional theory with MP2
 semi-empirically. The B2PLYP functional, which is an example of this
@@ -1907,7 +1879,6 @@ dft
  dftmp2 
 end
 </code></pre>
-
 <p>For details of the theory, please see the following reference:</p>
 <ol>
 <li>S. Grimme, &ldquo;Semiempirical hybrid density functional with
@@ -1965,22 +1936,18 @@ end
 task dft optimize   
 task dft freq numerical
 </code></pre>
-
 <h2 id="iterations-or-maxiter-number-of-scf-iterations">ITERATIONS or MAXITER &ndash; Number of SCF iterations<a class="headerlink" href="#iterations-or-maxiter-number-of-scf-iterations" title="Permanent link">&para;</a></h2>
 <pre><code> ITERATIONS or MAXITER &lt;integer iterations default 30&gt;
 </code></pre>
-
 <p>The default optimization in the DFT module is to iterate on the
 Kohn-Sham (SCF) equations for a specified number of iterations (default
 30). The keyword that controls this optimization is <code>ITERATIONS</code>, and has
 the following general form,</p>
 <pre><code>  iterations &lt;integer iterations default 30&gt;
 </code></pre>
-
 <p>or</p>
 <pre><code>  maxiter &lt;integer iterations default 30&gt;
 </code></pre>
-
 <p>The optimization procedure will stop when the specified number of
 iterations is reached or convergence is met. See an example that uses
 this directive in <a href="#sample-input-file">Sample input
@@ -2005,7 +1972,6 @@ file</a>.</p>
              [rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;] \
              [fast] ]
 </code></pre>
-
 <p>Convergence is satisfied by meeting any or all of three criteria;</p>
 <ul>
 <li>convergence of the total energy; this is defined to be when the
@@ -2015,7 +1981,6 @@ file</a>.</p>
 </ul>
 <pre><code>       CONVERGENCE energy &lt;real energy default 1e-6&gt;
 </code></pre>
-
 <ul>
 <li>convergence of the total density; this is defined to be when the
     total DFT density matrix at iteration N and at iteration N-1 have a
@@ -2024,7 +1989,6 @@ file</a>.</p>
 </ul>
 <pre><code>       CONVERGENCE density &lt;real density default 1e-5&gt;
 </code></pre>
-
 <ul>
 <li>convergence of the orbital gradient; this is defined to be when the
     DIIS error vector becomes less than some value (the default is
@@ -2032,7 +1996,6 @@ file</a>.</p>
 </ul>
 <pre><code>       CONVERGENCE gradient &lt;real gradient default 5e-4&gt;
 </code></pre>
-
 <p>The default optimization strategy is to immediately begin direct
 inversion of the iterative subspace. Damping is also initiated (using
 70% of the previous density) for the first 2 iteration. In addition, if
@@ -2050,7 +2013,6 @@ these is available as,</p>
               [levlon &lt;real levlon default 0.0&gt;] \  
               [levloff &lt;real levloff default 0.0&gt;]
 </code></pre>
-
 <p>So, for example, damping, DIIS, and/or level-shifting can be turned
 on/off as desired.</p>
 <p>Another strategy can be to simply specify how many iterations (cycles)
@@ -2061,7 +2023,6 @@ control the number of damping cycles (ncydp), the number of DIIS cycles
               [ncyds &lt;integer ncyds default 30&gt;] \  
               [ncysh &lt;integer ncysh default 0&gt;]
 </code></pre>
-
 <p>The amount of damping, level-shifting, time at which level-shifting is
 automatically imposed, and Fock matrices used in the DIIS extrapolation
 can be modified by the following keywords</p>
@@ -2070,12 +2031,10 @@ can be modified by the following keywords</p>
               [lshift &lt;real lshift default 0.5&gt;] \  
               [hl_tol &lt;real hl_tol default 0.1&gt;]]
 </code></pre>
-
 <p>Damping is defined to be the percentage of the previous iterations
 density mixed with the current iterations density. So, for example</p>
 <pre><code> CONVERGENCE damp 70
 </code></pre>
-
 <p>would mix 30% of the current iteration density with 70% of the previous
 iteration density.</p>
 <p>Level-Shifting is defined as the amount of shift applied to the diagonal
@@ -2083,7 +2042,6 @@ elements of the unoccupied block of the Fock matrix. The shift is
 specified by the keyword <code>lshift</code>. For example the directive,</p>
 <pre><code> CONVERGENCE lshift 0.5
 </code></pre>
-
 <p>causes the diagonal elements of the Fock matrix corresponding to the
 virtual orbitals to be shifted by 0.5 a.u. By default, this
 level-shifting procedure is switched on whenever the HOMO-LUMO gap is
@@ -2092,7 +2050,6 @@ the directive hl_tol. An example of changing the HOMO-LUMO gap
 tolerance to 0.01 would be,</p>
 <pre><code> CONVERGENCE hl_tol 0.01
 </code></pre>
-
 <p>Direct inversion of the iterative subspace with extrapolation of up to
 10 Fock matrices is a default optimization procedure. For large
 molecular systems the amount of available memory may preclude the
@@ -2103,30 +2060,25 @@ the number of Fock matrices stored and used in the extrapolation
 procedure to 3 would take the form,</p>
 <pre><code> CONVERGENCE diis 3
 </code></pre>
-
 <p>The user has the ability to simply turn off any optimization procedures
 deemed undesirable with the obvious keywords,</p>
 <pre><code> CONVERGENCE [nodamping] [nodiis] [nolevelshifting]
 </code></pre>
-
 <p>For systems where the initial guess is very poor, the user can try using
 fractional occupation of the orbital levels during the initial cycles of
 the SCF convergence (A. D. Rabuck and G. E. Scuseria, J. Chem. Phys
 110,695 (1999)). The input has the following form</p>
 <pre><code> CONVERGENCE rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;]]
 </code></pre>
-
 <p>where the optional value <code>n_rabuck</code> determines the number of SCF cycles
 during which the method will be active. For example, to set equal to 30
 the number of cycles where the Rabuck method is active, you need to use
 the following line</p>
 <pre><code> CONVERGENCE rabuck 30
 </code></pre>
-
 <p><code>convergence fast</code> turns on a series of parameters that most often speed-up convergence, but not in 100% of the cases.</p>
 <pre><code>  CONVERGENCE fast
 </code></pre>
-
 <p>Here is an input snippet that would give you the same result as convergence fast</p>
 <pre><code>dft
 convergence lshift 0. ncydp 0 dampon 1d99 dampoff 1d-4 damp 40
@@ -2134,7 +2086,6 @@ end
 set quickguess t
 task dft  
 </code></pre>
-
 <h2 id="cdft-constrained-dft">CDFT &ndash; Constrained DFT<a class="headerlink" href="#cdft-constrained-dft" title="Permanent link">&para;</a></h2>
 <p>This option enables the constrained DFT formalism by Wu and Van Voorhis
 described in the paper: Q. Wu, T. Van Voorhis, Phys. Rev. A 72, 024502
@@ -2142,7 +2093,6 @@ described in the paper: Q. Wu, T. Van Voorhis, Phys. Rev. A 72, 024502
 <pre><code> CDFT &lt;integer fatom1 latom1&gt; [&lt;integer fatom2 latom2&gt;] (charge||spin &lt;real constaint_value&gt;) \ 
       [pop (becke||mulliken||lowdin) default lowdin]
 </code></pre>
-
 <p>Variables fatom1 and latom1 define the first and last atom of the group
 of atoms to which the constraint will be applied. Therefore the atoms in
 the same group should be placed continuously in the geometry input. If
@@ -2188,13 +2138,11 @@ dft
 end  
 task dft
 </code></pre>
-
 <h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR &ndash; Fractional Occupation of the Molecular Orbitals<a class="headerlink" href="#smear-fractional-occupation-of-the-molecular-orbitals" title="Permanent link">&para;</a></h2>
 <p>The SMEAR keyword is useful in cases with many degenerate states near
 the HOMO (eg metallic clusters)</p>
 <pre><code> SMEAR &lt;real smear default 0.001&gt;
 </code></pre>
-
 <p>This option allows fractional occupation of the molecular orbitals. A
 Gaussian broadening function of exponent smear is used as described in
 the paper: R.W. Warren and B.I. Dunlap, Chem. Phys. Letters 262, 384
@@ -2204,7 +2152,6 @@ to the total energy in order to have energies and gradients consistent.</p>
 <h3 id="restricted">Restricted<a class="headerlink" href="#restricted" title="Permanent link">&para;</a></h3>
 <pre><code>fon partial 3 electrons 1.8 filled 2
 </code></pre>
-
 <p>Here 1.8 electrons will be equally divided over 3 valence orbitals and 2
 orbitals are fully filled. The total number of electrons here is 5.8</p>
 <p>Example input:</p>
@@ -2227,12 +2174,10 @@ dft
 end
 task dft energy
 </code></pre>
-
 <h3 id="unrestricted">Unrestricted<a class="headerlink" href="#unrestricted" title="Permanent link">&para;</a></h3>
 <pre><code>fon alpha partial 3 electrons 0.9 filled 2 
 fon beta partial 3 electrons 0.9 filled 2
 </code></pre>
-
 <p>Here 0.9 electrons will be equally divided over 3 alpha valence orbitals
 and 2 alpha orbitals are fully filled. Similarly for beta. The total
 number of electrons here is 5.8</p>
@@ -2253,12 +2198,10 @@ dft
 end  
 task dft energy
 </code></pre>
-
 <p>To set fractional numbers in the core orbitals, add the following
 directive in the input file:</p>
 <pre><code>   set dft:core_fon .true.
 </code></pre>
-
 <p>Example input:</p>
 <pre><code>dft
  print &quot;final vectors analysis&quot;
@@ -2271,7 +2214,6 @@ directive in the input file:</p>
 end
 task dft
 </code></pre>
-
 <h2 id="occup-controlling-the-occupations-of-molecular-orbitals">OCCUP &ndash; Controlling the occupations of molecular orbitals<a class="headerlink" href="#occup-controlling-the-occupations-of-molecular-orbitals" title="Permanent link">&para;</a></h2>
 <p>Example:</p>
 <pre><code>echo  
@@ -2302,7 +2244,6 @@ dft
 end  
 task dft
 </code></pre>
-
 <h2 id="grid-numerical-integration-of-the-xc-potential">GRID &ndash; Numerical Integration of the XC Potential<a class="headerlink" href="#grid-numerical-integration-of-the-xc-potential" title="Permanent link">&para;</a></h2>
 <pre><code> GRID [(xcoarse||coarse||medium||fine||xfine||huge) default medium] \  
       [(gausleg||lebedev ) default lebedev ] \  
@@ -2311,7 +2252,6 @@ task dft
       [rm &lt;real rm default 2.0&gt;] \  
       [nodisk]
 </code></pre>
-
 <p>A numerical integration is necessary for the evaluation of the
 exchange-correlation contribution to the density functional. The default
 quadrature used for the numerical integration is an Euler-MacLaurin
@@ -2323,7 +2263,6 @@ level of accuracy with the keywords; <code>xcoarse</code>, <code>coarse</code>, 
 <code>huge</code>. The default is <code>medium</code>.</p>
 <pre><code> GRID [xcoarse||coarse||medium||fine||xfine||huge]
 </code></pre>
-
 <p>Our intent is to have a numerical integration scheme which would give us
 approximately the accuracy defined below regardless of molecular
 composition.</p>
@@ -2569,12 +2508,10 @@ specification. This is accomplished by using the gausleg keyword.</p>
 <h4 id="gauss-legendre-angular-grid">Gauss-Legendre angular grid<a class="headerlink" href="#gauss-legendre-angular-grid" title="Permanent link">&para;</a></h4>
 <pre><code> GRID gausleg &lt;integer nradpts default 50&gt; &lt;integer nagrid default 10&gt;
 </code></pre>
-
 <p>In this type of grid, the number of phi points is twice the number of
 theta points. So, for example, a specification of,</p>
 <pre><code> GRID gausleg 80 20
 </code></pre>
-
 <p>would be interpreted as 80 radial points, 20 theta points, and 40 phi
 points per center (or 64000 points per center before pruning).</p>
 <h4 id="lebedev-angular-grid">Lebedev angular grid<a class="headerlink" href="#lebedev-angular-grid" title="Permanent link">&para;</a></h4>
@@ -2584,7 +2521,6 @@ levels of accuracy have also been defined and are available to the user.
 The input for this type of grid takes the form,</p>
 <pre><code> GRID lebedev &lt;integer radpts &gt; &lt;integer iangquad &gt;
 </code></pre>
-
 <p>In this context the variable iangquad specifies a certain number of
 angular points as indicated by the table below:</p>
 <p><center></p>
@@ -2754,11 +2690,9 @@ radial points. As an example, here is a grid input line for the water
 molecule</p>
 <pre><code>grid lebedev 80 11 H 70 8  O 90 11
 </code></pre>
-
 <h3 id="partitioning-functions">Partitioning functions<a class="headerlink" href="#partitioning-functions" title="Permanent link">&para;</a></h3>
 <pre><code>GRID [(becke||erf1||erf2||ssf) default erf1]
 </code></pre>
-
 <ul>
 <li>becke : A. D. Becke, J. Chem. Phys. 88, 1053 (1988).</li>
 <li>ssf : R.E.Stratmann, G.Scuseria and M.J.Frisch, Chem. Phys. Lett.
@@ -2773,7 +2707,6 @@ molecule</p>
 <h3 id="radial-grids">Radial grids<a class="headerlink" href="#radial-grids" title="Permanent link">&para;</a></h3>
 <pre><code> GRID [[euler||mura||treutler]  default mura]
 </code></pre>
-
 <ul>
 <li>euler : Euler-McLaurin quadrature wih the transformation devised by
     C.W. Murray, N.C. Handy, and G.L. Laming, Mol. Phys.78, 997 (1993).</li>
@@ -2786,14 +2719,12 @@ molecule</p>
 <h3 id="disk-usage-for-grid">Disk usage for Grid<a class="headerlink" href="#disk-usage-for-grid" title="Permanent link">&para;</a></h3>
 <pre><code> NODISK
 </code></pre>
-
 <p>This keyword turns off storage of grid points and weights on disk.</p>
 <h2 id="tolerances-screening-tolerances">TOLERANCES &ndash; Screening tolerances<a class="headerlink" href="#tolerances-screening-tolerances" title="Permanent link">&para;</a></h2>
 <pre><code> TOLERANCES [[tight] [tol_rho &lt;real tol_rho default 1e-10&gt;] \  
              [accCoul &lt;integer accCoul default 8&gt;] \  
              [radius &lt;real radius default 25.0&gt;]]
 </code></pre>
-
 <p>The user has the option of controlling screening for the tolerances in
 the integral evaluations for the DFT module. In most applications, the
 default values will be adequate for the calculation, but different
@@ -2805,19 +2736,16 @@ values greater than <script type="math/tex">10^{(-accCoul)}</script>
 </p>
 <pre><code> TOLERANCES accCoul &lt;integer accCoul default 8&gt;
 </code></pre>
-
 <p>Screening away needless computation of the XC functional (on the grid)
 due to negligible density is also possible with the use of,</p>
 <pre><code> TOLERANCES tol_rho &lt;real tol_rho default 1e-10&gt;
 </code></pre>
-
 <p>XC functional computation is bypassed if the corresponding density
 elements are less than tol_rho.</p>
 <p>A screening parameter, radius, used in the screening of the Becke or
 Delley spatial weights is also available as,</p>
 <pre><code> TOLERANCES radius &lt;real radius default 25.0&gt;
 </code></pre>
-
 <p>where radius is the cutoff value in bohr.</p>
 <p>The tolerances as discussed previously are insured at convergence. More
 sleazy tolerances are invoked early in the iterative process which can
@@ -2826,7 +2754,6 @@ introduces a discontinuity in the convergence process. To avoid use of
 initial sleazy tolerances the user can invoke the tight option:</p>
 <pre><code> TOLERANCES tight
 </code></pre>
-
 <p>This option sets all tolerances to their default/user specified values
 at the very first
 iteration.</p>
@@ -2837,14 +2764,12 @@ iteration.</p>
             [filename &lt;string filename default $file_prefix.aoints$]  
  NOIO
 </code></pre>
-
 <p>The inverted charge-density and exchange-correlation matrices for a DFT
 calculation are normally written to disk storage. The user can prevent
 this by specifying the keyword <code>noio</code> within the input for the DFT
 directive. The input to exercise this option is as follows,</p>
 <pre><code>  noio
 </code></pre>
-
 <p>If this keyword is encountered, then the two matrices (inverted
 charge-density and exchange-correlation) are computed ``on-the-fly&rsquo;&lsquo;
 whenever needed.</p>
@@ -2859,14 +2784,12 @@ work when using <code>SEMIDIRECT</code>.</p>
 <pre><code> ODFT
  MULT &lt;integer mult default 1&gt;
 </code></pre>
-
 <p>Both closed-shell and open-shell systems can be studied using the DFT
 module. Specifying the keyword <code>MULT</code> within the <code>DFT</code> directive allows the
 user to define the spin multiplicity of the system. The form of the
 input line is as follows;</p>
 <pre><code>  MULT &lt;integer mult default 1&gt;
 </code></pre>
-
 <p>When the keyword <code>MULT</code> is specified, the user can define the integer
 variable mult, where mult is equal to the number of alpha electrons
 minus beta electrons, plus 1.</p>
@@ -2888,7 +2811,6 @@ keyword can only be used with the CGMIN keyword.</p>
 <pre><code>sic [perturbative || oep || oep-loc ]
 &lt;default perturbative&gt;
 </code></pre>
-
 <p>The Perdew and Zunger (see J. P. Perdew and A. Zunger, Phys. Rev. B 23,
 5048 (1981)) method to remove the self-interaction contained in many
 exchange-correlation functionals has been implemented with the Optimized
@@ -2920,12 +2842,10 @@ and D. A. Dixon, J. Chem. Phys. 112, 7880 (2000). The components of the
 sic energy can be printed out using:</p>
 <pre><code>print &quot;SIC information&quot;
 </code></pre>
-
 <h2 id="mulliken-mulliken-analysis">MULLIKEN &ndash; Mulliken analysis<a class="headerlink" href="#mulliken-mulliken-analysis" title="Permanent link">&para;</a></h2>
 <p>Mulliken analysis of the charge distribution is invoked by the keyword:</p>
 <pre><code> MULLIKEN
 </code></pre>
-
 <p>When this keyword is encountered, Mulliken analysis of both the input
 density as well as the output density will occur. For example, to
 perform a mulliken analysis and print the explicit population analysis
@@ -2936,12 +2856,10 @@ of the basis functions, use the following</p>
 end
 task dft
 </code></pre>
-
 <h2 id="fukui-fukui-indices">FUKUI &ndash; Fukui Indices<a class="headerlink" href="#fukui-fukui-indices" title="Permanent link">&para;</a></h2>
 <p>Fukui inidces analysis is invked by the keyword:</p>
 <pre><code> FUKUI
 </code></pre>
-
 <p>When this keyword is encounters, the condensed Fukui indices will be
 calculated and printed in the output. Detailed information about the
 analysis can be obtained using the following</p>
@@ -2951,7 +2869,6 @@ analysis can be obtained using the following</p>
  end  
  task dft
 </code></pre>
-
 <h2 id="bsse-basis-set-superposition-error">BSSE &ndash; Basis Set Superposition Error<a class="headerlink" href="#bsse-basis-set-superposition-error" title="Permanent link">&para;</a></h2>
 <p>Particular care is required to compute BSSE by the counter-poise method
 for the DFT module. In order to include terms deriving from the
@@ -2974,7 +2891,6 @@ basis
  bqO library O aug-cc-pvdz
 end
 </code></pre>
-
 <p>Please note that the <q>ghost</q> oxygen atom has been labeled bqO, and
 not just bq.</p>
 <h2 id="disp-empirical-long-range-contribution-vdw">DISP &ndash; Empirical Long-range Contribution (vdW)<a class="headerlink" href="#disp-empirical-long-range-contribution-vdw" title="Permanent link">&para;</a></h2>
@@ -2984,7 +2900,6 @@ not just bq.</p>
       [ alpha &lt;real alpha default 20.0d0] \
       [ off ] 
 </code></pre>
-
 <p>When systems with high dependence on van der Waals interactions are
 computed, the dispersion term may be added empirically through
 long-range contribution DFT-D, i.e. <script type="math/tex; mode=display">E_{DFT-D}=E_{DFT-KS}+E_{disp}</script>
@@ -3081,11 +2996,9 @@ dft
 end
 task dft energy
 </code></pre>
-
 <h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM &ndash; Exchange-hole dipole moment dispersion model<a class="headerlink" href="#xdm-exchange-hole-dipole-moment-dispersion-model" title="Permanent link">&para;</a></h2>
 <pre><code>XDM  [ a1 &lt;real a1&gt; ]   [ a2 &lt;real a2&gt; ]
 </code></pre>
-
 <p>See details (including list of a1 and a2 parameters) in A.
 Otero-de-la-Roza and E. R. Johnson, J. Chem. Phys. 138, 204109 (2013)
 and the website <a href="http://gatsby.ucmerced.edu/wiki/XDM">http://gatsby.ucmerced.edu/wiki/XDM</a></p>
@@ -3110,11 +3023,9 @@ and the website <a href="http://gatsby.ucmerced.edu/wiki/XDM">http://gatsby.ucme
 
     task dft optimize
 </code></pre>
-
 <h2 id="print-control">Print Control<a class="headerlink" href="#print-control" title="Permanent link">&para;</a></h2>
 <pre><code> PRINT||NOPRINT
 </code></pre>
-
 <p>The PRINT||NOPRINT options control the level of output in the DFT.
 Please see some examples using this directive in <a href="#sample-input-file">Sample input
 file</a>. Known controllable print options
@@ -3272,13 +3183,12 @@ are:</p>
 <p>The spin-orbit DFT module (SODFT) in the NWChem code allows for the variational <br />
 treatment of the one-electron spin-orbit operator within the DFT framework. Calculations <br />
 can be performed either with an electron relativistic approach (ZORA) or with an  <br />
-effective core potential (ECP.md) and a matching spin-orbit potential (SO). The current <br />
+effective core potential (ECP) and a matching spin-orbit potential (SO). The current <br />
 implementation does NOT use symmetry.</p>
 <p>The actual SODFT calculation will be performed when the input module
 encounters the TASK directive (<a href="TASK.html">TASK</a>).</p>
 <pre><code> TASK SODFT
 </code></pre>
-
 <p>Input parameters are the same as for the DFT. Some of the DFT options
 are not available in the SODFT. These are max_ovl and sic.</p>
 <p>Besides using the standard ECP and basis sets, see <a href="ECP.html">Effective Core
@@ -3421,7 +3331,6 @@ dft
 end  
 task sodft
 </code></pre>
-
 <h2 id="sym-and-adapt">SYM and ADAPT<a class="headerlink" href="#sym-and-adapt" title="Permanent link">&para;</a></h2>
 <p>The options <code>SYM</code> and <code>ADAPT</code> works the same way as the analogous options for the SCF code.
 Therefore please use the following links for <a href="Hartree-Fock-Theory-for-Molecules.html#sym-use-of-symmetry">SYM</a> and

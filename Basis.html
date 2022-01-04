@@ -177,7 +177,6 @@ explicitly in the input, to define a particular basis set.</p>
        ...  
  END
 </code></pre>
-
 <p>Examining the keywords on the first line of the BASIS directive:</p>
 <ul>
 <li>
@@ -380,7 +379,6 @@ basis set library is:</p>
                  [except &lt;string tag list&gt;] [rel] 
        ...
 </code></pre>
-
 <p>For example, the NWChem basis set library contains the Dunning cc-pvdz
 basis set. These may be used as follows</p>
 <pre><code> basis  
@@ -388,7 +386,6 @@ basis set. These may be used as follows</p>
    hydrogen library cc-pvdz  
  end
 </code></pre>
-
 <p>A default path of the NWChem basis set libraries is provided on
 installation of the code, but a different path can be defined by
 specifying the keyword file, and one can explicitly name the file to be
@@ -398,7 +395,6 @@ accessed for the basis functions. For example,</p>
    si library 6-31g file /usr/d3g681/nwchem/libraries/  
  end
 </code></pre>
-
 <p>This directive tells the code to use the basis set 3-21g in the file
 /usr/d3g681/nwchem/library for atom o and to use the basis set 6-31g in
 the directory /usr/d3g681/nwchem/libraries/ for atom si, rather than
@@ -410,7 +406,6 @@ directives for large numbers of atoms. An example is:</p>
    *  library 3-21g 
  end
 </code></pre>
-
 <p>This directive tells the code to assign the basis sets 3-21g to all the
 atom tags defined in the geometry. If one wants to place a different
 basis set on one of the atoms defined in the geometry, the following
@@ -419,7 +414,6 @@ directive can be used:</p>
    *  library 3-21g except H 
  end
 </code></pre>
-
 <p>This directive tells the code to assign the basis sets 3-21g to all the
 atoms in the geometry, except the hydrogen atoms. Remember that the user
 will have to explicitly define the hydrogen basis set in this
@@ -428,7 +422,6 @@ directive! One may also define tags that end with a &ldquo;<code>*</code>&rdquo;
    oxy*  library 3-21g   
  end
 </code></pre>
-
 <p>This directive tells the code to assign the basis sets 3-21g to all atom
 tags in the geometry that start with &ldquo;<code>oxy</code>&rdquo;.</p>
 <p>If standard basis sets are to be placed upon a dummy center, the
@@ -446,7 +439,6 @@ directive is as follows:</p>
    bqh library h cc-pvdz  
  end
 </code></pre>
-
 <p>A special dummy center tag is <code>bq*</code>, which will assign the same basis set
 to all bq centers in the geometry. Just as with the <code>*</code> tag, the except
 list can be used to assign basis sets to unique dummy centers.</p>
@@ -476,7 +468,6 @@ the NWChem source code (after release 7.0.0). In order to switch from the defaul
 the following environment variable setting is required</p>
 <pre><code>NWCHEM_BASIS_LIBRARY=$NWCHEM_TOP/src/basis/libraries.bse/
 </code></pre>
-
 <h2 id="explicit-basis-set-definition">Explicit basis set definition<a class="headerlink" href="#explicit-basis-set-definition" title="Permanent link">&para;</a></h2>
 <p>If the basis sets in the library or available in other external files
 are not suitable for a given calculation, the basis set may be
@@ -486,7 +477,6 @@ associated with a center using an input line of the following form:</p>
        &lt;real exponent&gt; &lt;real list_of_coefficients&gt;  
        ...
 </code></pre>
-
 <p>The variable <shell_type> identifies the angular momentum of the shell,
 <em>s</em>, <em>p</em>, <em>d</em>, .... NWChem is configured to handle up to <em>h</em> shells. The
 keyword rel marks the shell as relativistic &ndash; see the Section  on <a href="Relativistic-All-electron-Approximations.html">relativistic
@@ -535,7 +525,6 @@ including multiple columns of coefficients.</p>
          0.141      1.0  
  end
 </code></pre>
-
 <p>Explicit basis set specifications are available from the <a href="https://www.basissetexchange.org/">basis set
 exchange</a>. </p>
 <h2 id="combinations-of-library-and-explicit-basis-set-input">Combinations of library and explicit basis set input<a class="headerlink" href="#combinations-of-library-and-explicit-basis-set-input" title="Permanent link">&para;</a></h2>
@@ -552,7 +541,6 @@ adds the aug-cc-pVDZ diffuse functions onto the hydrogen.</p>
    hydrogen library &quot;aug-cc-pVDZ Diffuse&quot;  
  end
 </code></pre>
-
 <p>The resulting basis set defined is identical to the one defined above in
 the explicit basis set input.</p>
               

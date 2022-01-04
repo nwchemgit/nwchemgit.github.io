@@ -200,7 +200,6 @@ following input</p>
  task scf  
  scf; thresh 1d-8; end
 </code></pre>
-
 <p>The following input restarts from the SCF to perform a sequence of
 selected CI calculations with the specified tolerances, starting with
 the SCF reference.</p>
@@ -211,7 +210,6 @@ the SCF reference.</p>
      0.001 0.001 0.0001 0.0001 0.00001 0.00001 0.000001  
  task selci
 </code></pre>
-
 <p>The table below summarizes the output from each of the major
 computational steps that were
 performed.</p>
@@ -426,7 +424,6 @@ MCSCF reference.</p>
 <p>A single orbital configuration or occupation is specified by</p>
 <pre><code> ns  (socc(i),i=1,ns)  (docc(i),i=1,nd)
 </code></pre>
-
 <p>where ns specifies the number of singly occupied orbitals, socc() is the
 list of singly occupied orbitals, and docc() is the list of doubly
 occupied orbitals (the number of doubly occupied orbitals, nd, is
@@ -444,7 +441,6 @@ array with name &ldquo;selci:conf&rdquo;. For example, the input</p>
    4   2  3 19 20   1 4 \  
    4   2  4 20 23   1 3
 </code></pre>
-
 <p>specifies the following nine orbital configurations</p>
 <pre><code>  1(2)  2(2)  3(2)  4(2)  
   1(2)  2(2)  3(2) 27(2)  
@@ -456,7 +452,6 @@ array with name &ldquo;selci:conf&rdquo;. For example, the input</p>
   1(2)  2(1)  3(1)  4(2) 19(1) 20(1)  
   1(2)  2(1)  3(2)  4(1) 20(1) 23(1)
 </code></pre>
-
 <p>The optional formatting of the input is just to make this arcane
 notation easier to read. Relatively few configurations can be currently
 specified in this fashion because of the input line limit of 1024
@@ -474,14 +469,12 @@ as a separate integer array</p>
  set &quot;selci:refgen  3&quot; 5 4    6 4   5 3   6 3    
  set &quot;selci:refgen  4&quot; 5 4    6 4   5 3   6 3
 </code></pre>
-
 <p>In the absence of friendly, input note that the names &ldquo;selci:refgen n&rdquo;
 must be formatted with n in I2 format. Each set specifies a list of
 creation-annihilation operator pairs (in that order). So for instance,
 in the above example each set is the same and causes the excitations</p>
 <pre><code> 4-&gt;5   4-&gt;6   3-&gt;5   3-&gt;6
 </code></pre>
-
 <p>If orbitals 3 and 4 were initially doubly occupied, and orbitals 5 and 6
 initially unoccupied, then the application of this set of operators four
 times in succession is sufficient to generate the four electron in four
@@ -504,7 +497,6 @@ for instance, you wanted to generate a single excitation CI space from
 the current configuration list, specify</p>
 <pre><code> set selci:exci 1
 </code></pre>
-
 <p>Any excitation level may be applied, but since the list of
 configurations is explicitly generated, as is the CI Hamiltonian matrix,
 you will run out of disk space if you attempt to use more than a few
@@ -514,7 +506,6 @@ tens of thousands of configurations.</p>
 perturbation selection. The following requests that 2 roots be generated</p>
 <pre><code> set selci:nroot 2
 </code></pre>
-
 <p>There is no imposed upper limit. If many roots are required, then, to
 minimize root skipping problems, it helps to perform an initial
 approximate diagonalization with several more roots than required, and
@@ -527,7 +518,6 @@ corrections to the energy, and much higher accuracy in the CI
 eigenvalues. This may be adjusted with</p>
 <pre><code>set &quot;selci:diag tol&quot; 1d-3
 </code></pre>
-
 <p>the example setting much lower precision, appropriate for the
 approximate diagonalization discussed in the preceding section.</p>
 <h2 id="selection-thresholds">Selection thresholds<a class="headerlink" href="#selection-thresholds" title="Permanent link">&para;</a></h2>
@@ -539,7 +529,6 @@ than <em>T</em>. The list of selection thresholds is specified as follows</p>
 <pre><code> set &quot;selci:selection thresholds&quot; \  
      0.001 0.001 0.0001 0.0001 0.00001 0.00001 0.000001
 </code></pre>
-
 <p>There is no default for this parameter.</p>
 <h2 id="mode">Mode<a class="headerlink" href="#mode" title="Permanent link">&para;</a></h2>
 <p>By default the program runs in &ldquo;ci+davids&rdquo; mode and just determines the
@@ -547,7 +536,6 @@ CI eigenvectors/values in the current configuration space. To perform a
 selected-CI with perturbation correction use the following</p>
 <pre><code> set selci:mode select
 </code></pre>
-
 <p>and remember to define the selection thresholds.</p>
 <h2 id="memory-requirements">Memory requirements<a class="headerlink" href="#memory-requirements" title="Permanent link">&para;</a></h2>
 <p>No global arrays are used inside the selected-CI, though the four-index
@@ -563,7 +551,6 @@ error will result if insufficient memory is available.</p>
 integrals need to be regenerated each time. Specify</p>
 <pre><code> set selci:moints:force logical .true.
 </code></pre>
-
 <p>to accomplish this.</p>
 <h2 id="disabling-update-of-the-configuration-list">Disabling update of the configuration list<a class="headerlink" href="#disabling-update-of-the-configuration-list" title="Permanent link">&para;</a></h2>
 <p>When computing CI+PT energy the reference configuration list is normally
@@ -574,7 +561,6 @@ must be kept fixed to keep the potential energy surface continuous and
 well defined. To do this specify</p>
 <pre><code> set selci:update logical .false.
 </code></pre>
-
 <h2 id="orbital-locking-in-ci-geometry-optimization">Orbital locking in CI geometry optimization<a class="headerlink" href="#orbital-locking-in-ci-geometry-optimization" title="Permanent link">&para;</a></h2>
 <p>The selected CI wavefunction is not invariant to orbital rotations or to
 swapping two or more orbitals. Orbitals could be swapped or rotated when

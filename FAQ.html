@@ -187,7 +187,6 @@ URL <a href="https://nwchemgit.github.io/Compiling-NWChem.html">https://nwchemgi
 stopping with the message</p>
 <pre><code>configure: error: could not compile simple C MPI program
 </code></pre>
-
 <p>This is most likely due to incorrect settings for the
 <code>MPI_LIB</code>, <code>MPI_INCLUDE</code> and <code>LIBMPI</code> environment variables. The
 suggested course of action is to unset all of the
@@ -199,7 +198,6 @@ unset MPI_INCLUDE
 unset LIBMPI
 export PATH=&quot;directory where mpif90 is located&quot;:$PATH
 </code></pre>
-
 <h2 id="what-are-armci-and-armci_network">What are ARMCI and ARMCI_NETWORK?<a class="headerlink" href="#what-are-armci-and-armci_network" title="Permanent link">&para;</a></h2>
 <p>ARMCI is a library used by Global Arrays (both ARMCI and GA source code
 is located in NWChem&rsquo;s tools directory). More information can be found
@@ -268,7 +266,6 @@ enough away so that only one connection is generated.</li>
    h  0  0  3.2
  end
 </code></pre>
-
 <ol>
 <li>
 <p>Larger molecules that contain a strictly linear chain of four or
@@ -288,7 +285,6 @@ try using a smaller value of the scaling factor for covalent radii</p>
 </ol>
 <pre><code>zcoord; cvr_scaling 0.9; end
 </code></pre>
-
 <p>In addition to this you can also try specifying a minimal set of bonds
 to connect the fragments.</p>
 <p>If these together don&rsquo;t work, then you&rsquo;re out of luck. Use Cartesians or
@@ -335,14 +331,12 @@ number of iterations, then it may be restarted with the second job.</p>
 
  task scf optimize
 </code></pre>
-
 <p>Job 2.</p>
 <pre><code> restart ammonia
  permanent_dir /u/myfiles
 
  task scf optimize
 </code></pre>
-
 <h1 id="execution-problems">Execution Problems<a class="headerlink" href="#execution-problems" title="Permanent link">&para;</a></h1>
 <h2 id="how-do-i-set-the-value-of-armci_default_shmmax">How do I set the value of <code>ARMCI_DEFAULT_SHMMAX</code>?<a class="headerlink" href="#how-do-i-set-the-value-of-armci_default_shmmax" title="Permanent link">&para;</a></h2>
 <p>Some ARMCI_NETWORK values (e.g. OPENIB) depend on the
@@ -350,7 +344,6 @@ number of iterations, then it may be restarted with the second job.</p>
 recommend a value of &ndash; at least &ndash; 2048, e.g. in bash shell parlance</p>
 <pre><code>export ARMCI_DEFAULT_SHMMAX=2048
 </code></pre>
-
 <p>A value of 2048 for ARMCI_DEFAULT_SHMMAX corresponds to 2048 GBytes,
 equal to 2048<em>1024</em>1024=2147483648 bytes. For
 ARMCI_DEFAULT_SHMMAX=2048 to work, it is necessary that kernel
@@ -358,7 +351,6 @@ parameter <code>kernel.shmmax</code> to be greater than 2147483648. You can chec
 the current value of <code>kernel.shmmax</code> on your system by typing</p>
 <pre><code>sysctl kernel.shmmax
 </code></pre>
-
 <p>More detail about kernel.shmmax can be found at the webpage
 <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/sect-Oracle_9i_and_10g_Tuning_Guide-Setting_Shared_Memory-Setting_SHMALL_Parameter.html">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Tuning_and_Optimizing_Red_Hat_Enterprise_Linux_for_Oracle_9i_and_10g_Databases/sect-Oracle_9i_and_10g_Tuning_Guide-Setting_Shared_Memory-Setting_SHMALL_Parameter.html</a></p>
 <h2 id="wsl-execution-problems">WSL execution problems<a class="headerlink" href="#wsl-execution-problems" title="Permanent link">&para;</a></h2>
@@ -376,11 +368,9 @@ mechanism if one is available. This may result in lower performance.
 [hostabc:16805] 1 more process has sent help message help-btl-vader.txt / cma-permission-denied
 [hostabc:16805] Set MCA parameter &quot;orte_base_help_aggregate&quot; to 0 to see all help / error messages
 </code></pre>
-
 <p>The error can be fixed with the following command</p>
 <pre><code>echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
 </code></pre>
-
 <p>More details at
 <a href="https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710">https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710</a>
 <a href="https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html">https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html</a></p>
@@ -507,7 +497,6 @@ $NWCHEM_TOP/src/tools/ga-5.7.2/global/src/global.util.c by increaseing the numbe
                                  else
                                      fprintf(file,&quot; %.5e,%.5e&quot;,
 </code></pre>
-
 <p><a href="https://nwchemgit.github.io/Special_AWCforum/sp/id3358.html">https://nwchemgit.github.io/Special_AWCforum/sp/id3358.html</a></p>
               
             </div>

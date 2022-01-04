@@ -166,7 +166,6 @@ module:</p>
    ...  
  END
 </code></pre>
-
 <h2 id="wavefunction-type">Wavefunction type<a class="headerlink" href="#wavefunction-type" title="Permanent link">&para;</a></h2>
 <p>A spin-restricted, closed shell RHF calculation is performed by default.
 An error results if the number of electrons is inconsistent with this
@@ -191,7 +190,6 @@ are as follows:</p>
  ROHF
  UHF
 </code></pre>
-
 <p>The optional keywords SINGLET, DOUBLET, &hellip;, OCTET and NOPEN allow the
 user to specify the number of singly occupied orbitals for a particular
 calculation. SINGLET is the default, and specifies a closed shell;
@@ -218,7 +216,6 @@ be obtained by specifying</p>
     ...  
  end
 </code></pre>
-
 <p>The user should be aware that, by default, molecular orbitals are
 symmetry adapted in NWChem. This may not be desirable for fully
 unrestricted wavefunctions. In such cases, the user has the option of
@@ -232,7 +229,6 @@ Architecture</a> for restart behavior).</p>
 <h2 id="sym-use-of-symmetry">SYM &ndash; use of symmetry<a class="headerlink" href="#sym-use-of-symmetry" title="Permanent link">&para;</a></h2>
 <pre><code>  SYM &lt;string (ON||OFF) default ON&gt;
 </code></pre>
-
 <p>This directive enables/disables the use of symmetry to speed up Fock
 matrix construction (via the petite-list or skeleton algorithm) in the
 SCF, if symmetry was used in the specification of the geometry. Symmetry
@@ -242,11 +238,9 @@ directive</a>.</p>
 <p>For example, to disable use of symmetry in Fock matrix construction:</p>
 <pre><code> sym off
 </code></pre>
-
 <h2 id="adapt-symmetry-adaptation-of-mos">ADAPT - symmetry adaptation of MOs<a class="headerlink" href="#adapt-symmetry-adaptation-of-mos" title="Permanent link">&para;</a></h2>
 <pre><code> ADAPT &lt;string (ON||OFF) default ON&gt;
 </code></pre>
-
 <p>The default in the SCF module calculation is to force symmetry adaption
 of the molecular orbitals. This does not affect the speed of the
 calculation, but without explicit adaption the resulting orbitals may be
@@ -261,7 +255,6 @@ specify SYM OFF (<a href="#sym----use-of-symmetry">Use of Symmetry</a>).</p>
 <h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
 <pre><code> TOL2E &lt;real tol2e default min(10e-7 , 0.01*thresh)&gt;
 </code></pre>
-
 <p>The variable tol2e is used in determining the integral screening
 threshold for the evaluation of the energy and related Fock-like
 matrices. The Schwarz inequality is used to screen the product of
@@ -279,7 +272,6 @@ threshold</a>).</p>
 is, for example:</p>
 <pre><code> tol2e 1e-9
 </code></pre>
-
 <p>For very diffuse basis sets, or for high-accuracy calculations it might
 be necessary to set this parameter. A value of 10<sup>-12</sup> is
 sufficient for nearly all such
@@ -294,7 +286,6 @@ purposes.</p>
          [lock]  
          [rotate  &lt;string input_geometry&gt; &lt;string input_movecs&gt;]
 </code></pre>
-
 <p>The VECTORS directive allows the user to specify the source and
 destination of the molecular orbital vectors. In a startup calculation
 (see <a href="Top-level.html#START_and_RESTART_--_Start-up_mode">START</a>),
@@ -360,21 +351,18 @@ examples.</p>
 <p>Example 1:</p>
 <pre><code> vectors output h2o.movecs
 </code></pre>
-
 <p>Assuming a start-up calculation, this directive will result in use of
 the default atomic density guess, and will output the vectors to the
 file h2o.movecs.</p>
 <p>Example 2:</p>
 <pre><code> vectors input initial.movecs output final.movecs
 </code></pre>
-
 <p>This directive will result in the initial vectors being read from the
 file &ldquo;initial.movecs&rdquo;. The results will be written to the file
 final.movecs. The contents of &ldquo;initial.movecs&rdquo; will not be changed.</p>
 <p>Example 3:</p>
 <pre><code> vectors input project &quot;small basis&quot; small.movecs
 </code></pre>
-
 <p>This directive will cause the calculation to start from vectors in the
 file &ldquo;small.movecs&rdquo; which are in a basis named &ldquo;small basis&rdquo;. The output
 vectors will be written to the default file &ldquo;<file_prefix.movecs>&ldquo;.</p>
@@ -387,7 +375,6 @@ alpha and beta orbitals, as necessary.</p>
 <p>An example of use of the SWAP directive:</p>
 <pre><code> vectors input try1.movecs swap 173 175 174 176 output try2.movecs
 </code></pre>
-
 <p>This directive will cause the initial orbitals to be read from the file
 &ldquo;try1.movecs&rdquo;. The vectors for the orbitals within the pairs 173-175
 will be swapped with those within 174-176, so the resulting order is
@@ -401,12 +388,10 @@ permutations of the orbitals. For instance, to apply the permutation
 <code>(6 7)(7 8)(8 9)</code>, and thus may be specified as</p>
 <pre><code> vectors swap 8 9  7 8  6 7
 </code></pre>
-
 <p>Another example, now illustrating this feature for a UHF calculation, is
 the directive</p>
 <pre><code> vectors swap beta 4 5 swap alpha 5 6
 </code></pre>
-
 <p>This input will result in the swapping of the 5-6 alpha orbital pair and
 the 4-5 beta orbital pair. (All other items in the input use the default
 values.)</p>
@@ -431,7 +416,6 @@ orbitals.</p>
 <p>An example of use of the REORDER keyword:</p>
 <pre><code> vectors input try1.movecs reorder 2 1 output try2.movecs
 </code></pre>
-
 <p>This directive will cause the initial orbitals to be read from the file
 &ldquo;try1.movecs&rdquo;. The MO coefficients for the basis functions on atom 2
 will be swapped with those on atom 1. The final orbitals obtained in the
@@ -451,7 +435,6 @@ dft
 end
 task dft
 </code></pre>
-
 <h3 id="vectors-fragment-keyword-superposition-of-fragment-molecular-orbitals">VECTORS FRAGMENT keyword - Superposition of fragment molecular orbitals<a class="headerlink" href="#vectors-fragment-keyword-superposition-of-fragment-molecular-orbitals" title="Permanent link">&para;</a></h3>
 <p>The fragment initial guess is particularly useful in the following
 instances:</p>
@@ -471,7 +454,6 @@ instances:</p>
 </ul>
 <pre><code> VECTORS [input] fragment &lt;string file1&gt; [&lt;string file2&gt; ...]
 </code></pre>
-
 <p>The molecular orbitals are formed by superimposing the previously
 generated orbitals of fragments of the molecule being studied. These
 fragment molecular orbitals must be in the same basis as the current
@@ -480,7 +462,6 @@ molecular orbitals. For instance, in a calculation on the water dimer,
 one might specify</p>
 <pre><code> vectors fragment h2o1.movecs h2o2.movecs
 </code></pre>
-
 <p>where h2o1.movecs contains the orbitals for the first fragment, and
 h2o2.movecs contains the orbitals for the second fragment.</p>
 <p>A complete example of the input for a calculation on the water dimer
@@ -522,7 +503,6 @@ vectors input fragment h2o1.movecs h2o2.movecs \
 end
 task scf
 </code></pre>
-
 <p>First, the geometry of the dimer and the two monomers are specified and
 given names. Then, after the basis specification, calculations are
 performed on the fragments by setting the geometry to the appropriate
@@ -717,7 +697,6 @@ scf
 end
 task scf
 </code></pre>
-
 <h3 id="example-of-projecting-smaller-basis-into-larger-basis">Example of projecting smaller basis into larger basis<a class="headerlink" href="#example-of-projecting-smaller-basis-into-larger-basis" title="Permanent link">&para;</a></h3>
 <p>Key ingredient needed: definition of both the smaller and the larger
 basis set, plus mention of the small basis set in the &ldquo;<code>input project</code>&rdquo;
@@ -748,7 +727,6 @@ line.</p>
     end
     task scf
 </code></pre>
-
 <h3 id="atomic-guess-orbitals-with-charged-atoms">Atomic guess orbitals with charged atoms<a class="headerlink" href="#atomic-guess-orbitals-with-charged-atoms" title="Permanent link">&para;</a></h3>
 <p>As noted above, the default guess vectors are based on superimposing the
 density matrices of the neutral atoms. If some atoms are significantly
@@ -764,7 +742,6 @@ added to those centers. Two parameters must be set as follows:</p>
 <pre><code> set atomscf:tags_z &lt;string list_of_tags&gt;  
  set atomscf:z      &lt;real list_of_charges&gt;
 </code></pre>
-
 <p>The array of strings atomscf:tags_z should be set to the list of tags,
 and the array atomscf:z should be set to the list of charges which must
 be real numbers (not integers). All atoms that have a tag specified in
@@ -776,7 +753,6 @@ charge of +2</p>
 <pre><code> set atomscf:z        -1  2.0  
  set atomscf:tags_z    O  Fe
 </code></pre>
-
 <p>There are some limitations to this feature. It is not possible to add
 electrons to closed shell atoms, nor is it possible to remove all
 electrons from a given atom. Attempts to do so will cause the code to
@@ -798,11 +774,9 @@ following directive which should be inserted in the top-level of input
 (i.e., outside of the SCF input block) and before the TASK directive.</p>
 <pre><code> set tolguess 1e-7
 </code></pre>
-
 <h2 id="thresh-convergence-threshold">THRESH &ndash; convergence threshold<a class="headerlink" href="#thresh-convergence-threshold" title="Permanent link">&para;</a></h2>
 <pre><code> THRESH  &lt;real thresh default 1.0e-4&gt;
 </code></pre>
-
 <p>This directive specifies the convergence threshold for the calculation.
 The convergence threshold is the norm of the orbital gradient, and has a
 default value in the code of 10<sup>-4</sup>.  </p>
@@ -828,7 +802,6 @@ that can be attained in most circumstances.</p>
 <h2 id="maxiter-iteration-limit">MAXITER &ndash; iteration limit<a class="headerlink" href="#maxiter-iteration-limit" title="Permanent link">&para;</a></h2>
 <pre><code> MAXITER &lt;integer maxiter default 8&gt;
 </code></pre>
-
 <p>The maximum number of iterations for the SCF calculation defaults to 20
 for both ROHF/RHF and UHF calculations. For most molecules, this number
 of iterations is more than sufficient for the quadratically convergent
@@ -846,13 +819,11 @@ converge due to the presence of many states with similar energies.</p>
 <p>The following sets the maximum number of SCF iterations to 50:</p>
 <pre><code> maxiter 50
 </code></pre>
-
 <h2 id="profile-performance-profile">PROFILE &ndash; performance profile<a class="headerlink" href="#profile-performance-profile" title="Permanent link">&para;</a></h2>
 <p>This directive allows the user to obtain timing and parallel execution
 information about the SCF module. It is specified by the simple keyword</p>
 <pre><code> PROFILE
 </code></pre>
-
 <p>This option can be helpful in understanding the computational
 performance of an SCF calculation. However, it can introduce a
 significant overhead on machines that have expensive timing routines,
@@ -863,7 +834,6 @@ second-order convergence for the SCF calculation. The form of the
 directive is as follows:</p>
 <pre><code> DIIS
 </code></pre>
-
 <p>The implementation of this option is currently fairly rudimentary. It
 does not have level-shifting and damping, and does not support open
 shells or UHF. It is provided on an &ldquo;as is&rdquo; basis, and should be used
@@ -874,7 +844,6 @@ extrapolation. This is accomplished with the DIISBAS directive, which is
 of the form:</p>
 <pre><code> DIISBAS &lt;integer diisbas default 5&gt;
 </code></pre>
-
 <p>The default of 5 should be adequate for most applications, but may be
 increased if convergence is poor. On large systems, it may be necessary
 to specify a lower value for diisbas, to conserve memory.</p>
@@ -910,7 +879,6 @@ the problem of restarting a parallel semidirect calculation.</p>
 iteration) is forced by specifying the directive</p>
 <pre><code> DIRECT
 </code></pre>
-
 <p>Alternatively, the SEMIDIRECT directive can be used to control the
 default semidirect calculation by defining the amount of disk space and
 the cache memory size. The form of this directive is as follows:</p>
@@ -918,7 +886,6 @@ the cache memory size. The form of this directive is as follows:</p>
              [memsize  &lt;integer memsize default available&gt;]  
              [filename &lt;string filename default $file_prefix.aoints$]
 </code></pre>
-
 <p>The keyword FILESIZE allows the user to specify the amount of disk space
 to be used per process for storing the integrals in 64-bit words.
 Similarly, the keyword MEMSIZE allows the user to specify the number of
@@ -941,16 +908,13 @@ can be used for this purpose.</p>
 <p>For example, to force full recomputation of all integrals:</p>
 <pre><code> direct
 </code></pre>
-
 <p>Exactly the same result could be obtained by entering the directive:</p>
 <pre><code> semidirect filesize 0 memsize 0
 </code></pre>
-
 <p>To disable the use of memory for caching integrals and limit disk usage
 by each process to 100 megawords (MW):</p>
 <pre><code> semidirect memsize 0 filesize 100000000
 </code></pre>
-
 <p>The integral records are typically 32769 words long and any non-zero
 value for filesize or memsize should be enough to hold at least one
 record.</p>
@@ -1017,7 +981,6 @@ Max. records in memory =      3        Max. records in file   =      5
 No. of bits per label  =      8        No. of bits per value  =     32
 #quartets = 2.0D+04  #integrals = 7.9D+05  direct = 63.6%  cached = 36.4%
 </code></pre>
-
 <p>The file information above relates only to process 0. The line of
 information about the number of quartets, integrals, etc., is a sum over
 all processes.</p>
@@ -1035,7 +998,6 @@ rate(mb/s): 1.44e+01  1.01e+02
 ------------------------------------------------------------
  Parallel integral file used       4 records with       0 large values
 </code></pre>
-
 <p>Again, the detailed file information relates just to process 0, but the
 final line indicates the total number of integral records stored by all
 processes.</p>
@@ -1135,7 +1097,6 @@ Newton-Raphson iteration and specify level-shifting.</p>
 <h2 id="nr-controlling-the-newton-raphson">NR &ndash; controlling the Newton-Raphson<a class="headerlink" href="#nr-controlling-the-newton-raphson" title="Permanent link">&para;</a></h2>
 <pre><code>   NR &lt;real nr_switch default 0.1&gt;
 </code></pre>
-
 <p>The exact orbital Hessian is adopted as the preconditioner when the
 maximum element of the orbital gradient is below the value specified for
 nr_switch. The default value is 0.1, which means that Newton-Raphson
@@ -1145,7 +1106,6 @@ disable the Newton-Raphson entirely, the value of nr_switch must be set
 to zero. The directive to accomplish this is as follows:</p>
 <pre><code> nr 0
 </code></pre>
-
 <h2 id="level-level-shifting-the-orbital-hessian">LEVEL &ndash; level-shifting the orbital Hessian<a class="headerlink" href="#level-level-shifting-the-orbital-hessian" title="Permanent link">&para;</a></h2>
 <p>This directive allows the user to specify level-shifting to obtain a
 positive-definite preconditioning matrix for the SCF solution procedure.
@@ -1160,7 +1120,6 @@ accuracy. The form of the directive is as follows:</p>
         [nr &lt;real initial default 0.0&gt; \
           [&lt;real tol default 0.0&gt; &lt;real final default 0.0&gt;]]
 </code></pre>
-
 <p>This directive contains only two keywords: one for the PCG method and
 the other for the exact Hessian (Newton Raphson, or NR). Use of PCG or
 NR is determined by the input specified for nr_switch on the NR
@@ -1186,13 +1145,11 @@ destroys quadratic convergence. An example of an input directive that
 applies a shift of 0.2 to the exact Hessian is as follows:</p>
 <pre><code> level nr 0.2
 </code></pre>
-
 <p>To apply this shift to the exact Hessian only until the maximum element
 of the gradient falls below 0.005, the required input directive is as
 follows:</p>
 <pre><code> level nr 0.2 0.005 0
 </code></pre>
-
 <p>Note that in both of these examples, the parameters for the PCG method
 are at the default values. To obtain values different from the defaults,
 the keyword pcg must also be specified. For example, to specify the
@@ -1201,7 +1158,6 @@ non-default shifting for the PCG method, the directive would be
 something like the following:</p>
 <pre><code> level pcg 20 0.3 0.0 nr 0.2 0.005 0.0
 </code></pre>
-
 <p>This input will cause the PCG method to be level-shifted by 20.0 until
 the maximum element of the gradient falls below 0.3, then the shift will
 be zero. For the exact Hessian, the level shifting is initially 0.2,
@@ -1210,7 +1166,6 @@ zero.</p>
 <p>The default options correspond to</p>
 <pre><code> level pcg 20 0.5 0 nr 0 0 0
 </code></pre>
-
 <h2 id="orbital-localization">Orbital Localization<a class="headerlink" href="#orbital-localization" title="Permanent link">&para;</a></h2>
 <p>The SCF module includes an experimental implementation of orbital
 localization, including Foster-Boys and Pipek-Mezey which only works for
@@ -1220,12 +1175,10 @@ block to control this so the SET directive
 <p>The directive</p>
 <pre><code> set scf:localize t
 </code></pre>
-
 <p>will separately localize the core, valence, and virtual orbital spaces
 using the Pipek-Mezey algorithm. If the additional directive</p>
 <pre><code> set scf:loctype FB
 </code></pre>
-
 <p>is included, then the Foster-boys algorithm is used. The partitioning of
 core-orbitals is performed using the atomic information described in
 Section 16.1.</p>
@@ -1363,7 +1316,6 @@ directive is as follows:</p>
    [print || noprint] ...  
  END
 </code></pre>
-
 <p>The complementary keyword pair print and noprint allows the user some
 additional control on the information that can be included in the print
 output from the SCF calculation. Currently, only a few items can be
