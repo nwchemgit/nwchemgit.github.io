@@ -159,10 +159,11 @@
               
                 <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <p>Dockerfile recipes are available at the repository <a href="https://github.com/nwchemgit/nwchem-dockerfiles">https://github.com/nwchemgit/nwchem-dockerfiles</a></p>
-<p>Docker images of the master branch can be obtained with the command</p>
-<pre><code>docker pull ghcr.io/nwchemgit/nwchem-dev/amd64:latest
+<p>Docker images of the master branch are hosted at <a href="https://ghcr.io">https://ghcr.io</a> and can be used with the following command  </p>
+<pre><code> docker run --rm -v [host_system_dir]:/data ghcr.io/nwchemgit/nwchem-dev/[arch] input.nw
 </code></pre>
-<p>Docker images are available at <a href="https://hub.docker.com/u/nwchemorg">https://hub.docker.com/u/nwchemorg</a></p>
+<p>where the <code>[arch]</code> option can have the values <code>amd64</code>, <code>arm64</code>, <code>ppc64le</code> or <code>armv7</code>  </p>
+<p>Older Docker images are available at <a href="https://hub.docker.com/u/nwchemorg">https://hub.docker.com/u/nwchemorg</a></p>
 <p>The following docker command will pull the NWChem 7.0.0 image and run it in parallel using three processes </p>
 <pre><code>docker run  --entrypoint='mpirun' -v  /Users/edo/nwchem/tests:/data -it nwchemorg/nwchem-700.fedora.sockets  -np 3 nwchem  /data/h2o_b2lyp.nw
 </code></pre>
