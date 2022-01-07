@@ -264,11 +264,13 @@ follows:</p>
  convergence 1e-4         # set CPKS convergence criterion (default 1e-4)  
 end
 </code></pre>
-<p>Response calculations are currently supported only for 
-- order 1 (linear response), <br />
-- single frequency, <br />
-- electric field <br />
-- mixed electric-magnetic field perturbations.    </p>
+<p>Response calculations are currently supported only for   </p>
+<ul>
+<li>order 1 (linear response),   </li>
+<li>single frequency,   </li>
+<li>electric field   </li>
+<li>mixed electric-magnetic field perturbations.    </li>
+</ul>
 <p>The output consists of the electric polarizability
 and optical rotation tensors (alpha, beta for optical rotation) in
 atomic units.<br />
@@ -505,9 +507,7 @@ codes, e.g.</p>
 <li><a href="http://multiwfn.codeplex.com/">Multiwfn</a></li>
 <li><a href="https://github.com/aoterodelaroza/postg">Postg</a></li>
 </ul>
-<p>More details at
-<a href="https://sites.google.com/site/alvarovazquezmayagoitia/goals/codes/nwchem-notes/generator-of-aim-wavefunction-files-nwchem">https://sites.google.com/site/alvarovazquezmayagoitia/goals/codes/nwchem-notes/generator-of-aim-wavefunction-files-nwchem</a><br />
-<strong>WARNING:</strong> Since we have discovered issues in generating .WFN files with this module (e.g. systems with ECPs), the recommended method for generating .WFN file is to first generate a Molden file with the <a href="Properties.html#moldenfile">Moldenfile</a> option, then convert the Molden file into a WFN file by using the <a href="https://github.com/zorkzou/Molden2AIM">Molden2AIM</a> program.</p>
+<p><strong>WARNING:</strong> Since we have discovered issues in generating .WFN files with this module (e.g. systems with ECPs), the recommended method for generating .WFN file is to first generate a Molden file with the <a href="Properties.html#moldenfile">Moldenfile</a> option, then convert the Molden file into a WFN file by using the <a href="https://github.com/zorkzou/Molden2AIM">Molden2AIM</a> program.</p>
 <h2 id="moldenfile">Moldenfile<a class="headerlink" href="#moldenfile" title="Permanent link">&para;</a></h2>
 <pre><code>MOLDENFILE
 MOLDEN_NORM (JANPA | | NWCHEM || NONE)
