@@ -274,12 +274,12 @@ end
 <p>The output consists of the electric polarizability
 and optical rotation tensors (alpha, beta for optical rotation) in
 atomic units.<br />
-The <code>response</code> keyword requires two arguments: response order and frequency in Hartree energy units (e.g. <code>response 1 0</code>)
+The <code>response</code> keyword requires two arguments: response order and frequency in Hartree energy units (e.g. <code>response 1 0</code>).<br />
 If the <code>velocity</code> or <code>giao</code> keywords are absent, the
 dipole-length form will be used for the dipole integrals. This is a bit
 faster. <br />
 The isotropic optical rotation is origin independent when using
-the velocity gauge or with GIAOs [1]. <br />
+the velocity gauge (by means of <code>velocity</code> keyword) or with GIAOs [1] (by means of the <code>giao</code> keyword). <br />
 With the keyword <code>bdtensor</code>, a
 fully origin-invariant optical rotation tensor is calculated [1,6].<br />
 Note that <code>velocity</code> and <code>orbeta</code> are incompatible. <br />
@@ -315,7 +315,7 @@ implemented in NWChem.</p>
 <p>Raman calculations can be performed by specifying the Raman block. These
 calculations are performed in conjunction with polarizability
 calculations. Detailed description of input parameters at
-<a href="http://pubs.acs.org/doi/suppl/10.1021/jp411039m">http://pubs.acs.org/doi/suppl/10.1021/jp411039m</a></p>
+<a href="https://pubs.acs.org/doi/10.1021/jp411039m#notes-1">https://pubs.acs.org/doi/10.1021/jp411039m#notes-1</a></p>
 <pre><code>RAMAN 
  [ (NORMAL | | RESONANCE) default NORMAL ]  
  [ (LORENTZIAN | | GAUSSIAN) default LORENTZIAN ]  
@@ -369,10 +369,9 @@ The number of points is 1000 by default. This value can be changed by adding the
 <p>Please refer to the following papers for further details:</p>
 <ol>
 <li>J. M. Mullin, J. Autschbach, G. C. Schatz, Computational and
-    Theoretical Chemistry 987, 32 (2012). DOI:
-    10.1016/j.comptc.2011.08.027.</li>
+    Theoretical Chemistry 987, 32 (2012). <a href="https://dx.doi.org/10.1016/j.comptc.2011.08.027">DOI:10.1016/j.comptc.2011.08.027</a></li>
 <li>F. W. Aquino and G. C. Schatz, The Journal of Physical Chemistry A
-    118 , 517 (2014). DOI: 10.1021/jp411039m</li>
+    118 , 517 (2014). <a href="https://dx.doi.org/10.1021/jp411039m">DOI:10.1021/jp411039m</a></li>
 </ol>
 <h3 id="polarizability-computed-with-the-sum-over-orbitals-method">Polarizability computed with the Sum over Orbitals method<a class="headerlink" href="#polarizability-computed-with-the-sum-over-orbitals-method" title="Permanent link">&para;</a></h3>
 <p>As an alternative to the <a href="#response-calculations">linear response
@@ -385,7 +384,7 @@ can be used to compute Raman frequencies when coupled with
 as described in reference [9].</p>
 <p>Sample input computing polarizability both with the SOO method and the linear response method:</p>
 <pre><code>property
- polfromsos
+ polfrom
 end
 
 task dft property
@@ -395,9 +394,9 @@ property
 end
 task dft property
 </code></pre>
-<h4 id="sos-reference">SOS Reference<a class="headerlink" href="#sos-reference" title="Permanent link">&para;</a></h4>
+<h4 id="soo-reference">SOO Reference<a class="headerlink" href="#soo-reference" title="Permanent link">&para;</a></h4>
 <p>Please refer to the following paper  for further details<br />
-9.  E. Aprà, As. Bhattarai, E. Baxter, S. Wang, G. E. Johnson, N. Govind, and P. Z. El-Khoury, Applied Spectroscopy 174 (11), 1350-1357 (2020). DOI: 10.1177/0003702820923392</p>
+9.  E. Aprà, As. Bhattarai, E. Baxter, S. Wang, G. E. Johnson, N. Govind, and P. Z. El-Khoury, Applied Spectroscopy 174 (11), 1350-1357 (2020). <a href="https://dx.doi.org/10.1177/0003702820923392">DOI:10.1177/0003702820923392</a></p>
 <h3 id="nbofile">Nbofile<a class="headerlink" href="#nbofile" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>NBOFILE</code> does not execute the Natural Bond Analysis code, but
 simply creates an input file to be used as input to the stand-alone NBO
