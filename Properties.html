@@ -209,7 +209,7 @@ keywords:</p>
  MOLDENFILE  
  ALL
 </code></pre>
-<p>The &ldquo;ALL&rdquo; keyword generates all currently available properties.</p>
+<p>The <code>ALL</code> keyword generates all currently available properties.</p>
 <h3 id="nmr-and-epr">NMR and EPR<a class="headerlink" href="#nmr-and-epr" title="Permanent link">&para;</a></h3>
 <p>Both the NMR shielding and spin-spin coupling have additional optional
 parameters that can be defined in the input. For the shielding the user
@@ -264,23 +264,32 @@ follows:</p>
  convergence 1e-4         # set CPKS convergence criterion (default 1e-4)  
 end
 </code></pre>
-<p>Response calculations are currently supported only for order 1 (linear
-response), single frequency, electric field and mixed electric-magnetic
-field perturbations. The output consists of the electric polarizability
+<p>Response calculations are currently supported only for 
+ * order 1 (linear response), 
+ * single frequency, 
+ * electric field<br />
+ * mixed electric-magnetic field perturbations.   </p>
+<p>The output consists of the electric polarizability
 and optical rotation tensors (alpha, beta for optical rotation) in
-atomic units. If the <code>velocity</code> or <code>giao</code> keywords are absent, the
+atomic units. <br />
+If the <code>velocity</code> or <code>giao</code> keywords are absent, the
 dipole-length form will be used for the dipole integrals. This is a bit
-faster. The isotropic optical rotation is origin independent when using
-the velocity gauge or with GIAOs [1]. With the keyword <code>bdtensor</code>, a
-fully origin-invariant optical rotation tensor is calculated [1,6].
-Note that <code>velocity</code> and <code>orbeta</code> are incompatible. An input line <code>set
-prop:newaoresp 0</code> outside of the <code>properties</code> block forces the use of an
+faster. <br />
+The isotropic optical rotation is origin independent when using
+the velocity gauge or with GIAOs [1]. <br />
+With the keyword <code>bdtensor</code>, a
+fully origin-invariant optical rotation tensor is calculated [1,6].<br />
+Note that <code>velocity</code> and <code>orbeta</code> are incompatible. <br />
+The input line <br />
+<code>set prop:newaoresp 0</code><br />
+outside of the <code>properties</code> block forces the use of an
 older version of the response code, which has fewer features (in
-particular, no working GIAO opetical rotation) but which has been tested
+particular, no working GIAO optical rotation) but which has been tested
 more thoroughly. In the default newer version you may encounter
-undocumented features (bugs). <code>analysis</code> triggers an analysis of the
-response tensors in terms of molecular orbitals. If the property input
-block also contains the keyword <code>pmlocalization</code>, then the analysis is
+undocumented features (bugs).<br />
+The keyword <code>analysis</code> triggers an analysis of the
+response tensors in terms of molecular orbitals.<br />
+If the property input block also contains the keyword <code>pmlocalization</code>, then the analysis is
 performed in terms of Pipek-Mezey localized MOs, otherwise the canonical
 set is used (this feature may currently not work, please check the sum
 of the analysis carefully). See Ref. [6] for an example. Works with HF
