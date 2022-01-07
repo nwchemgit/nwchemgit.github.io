@@ -317,7 +317,10 @@ end
 task tddft qmd
 </code></pre>
 <h3 id="property-calculation-in-a-molecular-dynamics-simulation">Property calculation in a Molecular Dynamics simulation<a class="headerlink" href="#property-calculation-in-a-molecular-dynamics-simulation" title="Permanent link">&para;</a></h3>
-<p>The following is a sample input for an MD simulation that compute polarizability by means of the <a href="Properties.html#polarizability-computed-with-the-sum-over-orbitals-method">SOS method</a> at each time step.</p>
+<p>Thefollowing is a sample input for an MD simulation that compute
+polarizability by means of the
+<a href="Properties.html#polarizability-computed-with-the-sum-over-orbitals-method">SOS method</a>
+at each time step.</p>
 <pre><code>start qmd_prop_h2o_svr  
 echo  
 print low  
@@ -347,7 +350,8 @@ property
 end
 task tddft qmd
 </code></pre>
-<p>Additional sample inputs can be found in $NWCHEM_TOP/QA/tests/qmd_*</p>
+<p>Additional sample inputs can be found in $NWCHEM_TOP/QA/tests/qmd_*
+(e.g. <a href="https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props">https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props</a>)</p>
 <h2 id="processing-the-output-of-a-qmd-run">Processing the output of a QMD run<a class="headerlink" href="#processing-the-output-of-a-qmd-run" title="Permanent link">&para;</a></h2>
 <p>The xyz file produced by the QMD module contains the velocities (given
 in Angstrom/fs), in addition to the coordinates (given in Angstrom). The
