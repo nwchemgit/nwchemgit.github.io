@@ -246,7 +246,8 @@ For example, property 5 will calculate properties on the current geometry every 
 <h3 id="tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation">tddft &ndash; How often to peform TDDFT calculation as part of the MD simulation<a class="headerlink" href="#tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation" title="Permanent link">&para;</a></h3>
 <p>If present, the code will look for the tddft block and calculate the absorption spectrum.<br />
 For example, tddft 5 will perform tddft calculations on the current geometry every 5 steps.    </p>
-<h2 id="sample-input">Sample input<a class="headerlink" href="#sample-input" title="Permanent link">&para;</a></h2>
+<h2 id="sample-input-files">Sample input files<a class="headerlink" href="#sample-input-files" title="Permanent link">&para;</a></h2>
+<h3 id="ground-state-molecular-dynamics">Ground state Molecular Dynamics<a class="headerlink" href="#ground-state-molecular-dynamics" title="Permanent link">&para;</a></h3>
 <p>The following is a sample input for a ground state MD simulation. The
 simulation is 200 steps long with a 10 a.u. time step, using the
 stochastic velocity rescaling thermostat with a relaxation parameter of
@@ -277,6 +278,7 @@ qmd
 end  
 task dft qmd
 </code></pre>
+<h3 id="excited-state-molecular-dynamics">Excited state Molecular Dynamics<a class="headerlink" href="#excited-state-molecular-dynamics" title="Permanent link">&para;</a></h3>
 <p>The following is a sample input for an excited state MD simulation on
 the first excited state. The simulation is 200 steps long with a 10 a.u.
 time step, run in the microcanonical ensemble. Center-of-mass rotations
@@ -312,6 +314,37 @@ qmd
   thermostat  none  
   print_xyz   5  
 end  
+task tddft qmd
+</code></pre>
+<h3 id="property-calculation-in-a-molecular-dynamics-simulation">Property calculation in a Molecular Dynamics simulation<a class="headerlink" href="#property-calculation-in-a-molecular-dynamics-simulation" title="Permanent link">&para;</a></h3>
+<p>The following is a sample input for an MD simulation that compute polarizability by means of the <a href="Properties.html#polarizability-computed-with-the-sum-over-orbitals-method">SOS method</a> at each time step.</p>
+<pre><code>start qmd_prop_h2o_svr  
+echo  
+print low  
+geometry noautosym noautoz  
+  O   0.00000000    -0.01681748     0.11334792  
+  H   0.00000000     0.81325914    -0.34310308  
+  H   0.00000000    -0.67863597    -0.56441201  
+end  
+basis  
+  * library 6-31G*  
+end  
+dft  
+  xc pbe0  
+end  
+
+qmd  
+  nstep_nucl  200  
+  dt_nucl     10.0  
+  com_step    10  
+  thermostat  none  
+  print_xyz   5
+  property 1
+end  
+
+property
+ polfromsos
+end
 task tddft qmd
 </code></pre>
 <p>Additional sample inputs can be found in $NWCHEM_TOP/QA/tests/qmd_*</p>
