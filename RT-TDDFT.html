@@ -274,10 +274,10 @@ become unstable and/or inaccurate for larger time steps, which depends
 on the integrator used. Very roughly speaking, the second order Magnus
 integrator should be reliable for time steps up to 0.2 au. Second, you
 must choose a time step small enough to capture the oscillations of
-interest, i.e., to resolve an excitation of energy <img alt="$\omega$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ae4fb5973f393577570881fc24fc2054.svg?invert_in_darkmode&sanitize=true" align=middle width="10.781595pt" height="14.10255pt"/>, your time
-step needs to be smaller than <img alt="$\pi / \omega$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/87993fbf847434803c2454e87093dc46.svg?invert_in_darkmode&sanitize=true" align=middle width="28.89513pt" height="24.56553pt"/>, and typically a tenth of
+interest, i.e., to resolve an excitation of energy &omega;, your time
+step needs to be smaller than &pi;/&omega;, and typically a tenth of
 that for accuracy. For example, to capture high energy oscillations such
-as core-level excitations (e.g., <img alt="$\omega = 50$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/130501d8bc013f1b8aaeb348a5e32a95.svg?invert_in_darkmode&sanitize=true" align=middle width="49.030575pt" height="21.10812pt"/> au) you might want a
+as core-level excitations (e.g., &omega; = 50au) you might want a
 relative small time step:</p>
 <pre><code>rt_tddft
  ...
@@ -290,7 +290,7 @@ time step.</p>
 <h3 id="tag-output-label">TAG &ndash; Output label<a class="headerlink" href="#tag-output-label" title="Permanent link">&para;</a></h3>
 <p>This option sets a label for the output for convenient parsing (e.g.,
 with &ldquo;grep&rdquo;). Every output line with time-dependent data will begin with
-this string (set to &ldquo;<rt_tddft>: &rdquo; by default). For example setting:</p>
+this string (set to <code>&lt;rt_tddft&gt;:</code> by default). For example setting:</p>
 <pre><code>rt_tddft
  ...
  tag &quot;nameofrun&quot;
@@ -303,7 +303,7 @@ nameofrun      2.20000  -7.589146713114E+001     # Etot
 ...
 </code></pre>
 <h3 id="nchecks-number-of-run-time-check-points">NCHECKS &ndash; Number of run-time check points<a class="headerlink" href="#nchecks-number-of-run-time-check-points" title="Permanent link">&para;</a></h3>
-<p>This option takes an integer number (default 10), or &ldquo;*&rdquo; which means
+<p>This option takes an integer number (default 10), or <code>*</code> which means
 every step, which sets the total of number of run-time checkpoints,
 where various sanity checks are made such as symmetries, idempotency,
 traces, etc. These checks are not terribly efficient (e.g., involve
@@ -318,10 +318,10 @@ end
 <h3 id="nprints-number-of-print-points">NPRINTS &ndash; Number of print points<a class="headerlink" href="#nprints-number-of-print-points" title="Permanent link">&para;</a></h3>
 <p>This sets the number of print points, i.e., the total number of
 time-dependent observables (e.g., dipole, charge, energy) that are
-computed and printed. It either takes an integer number or <code>"*"</code> which
+computed and printed. It either takes an integer number or <code>*</code> which
 means every time step (this is the default). Since there is no
 appreciable cost to computing and printing these quantities, there is
-usually no need to change this from <code>"*"</code>.</p>
+usually no need to change this from <code>*</code>.</p>
 <pre><code>rt_tddft
   ...
   nprints *
@@ -348,11 +348,11 @@ end
 <h3 id="tolerances-controlling-numerical-tolerances">TOLERANCES &ndash; Controlling numerical tolerances<a class="headerlink" href="#tolerances-controlling-numerical-tolerances" title="Permanent link">&para;</a></h3>
 <p>This option controls various numerical tolerances:</p>
 <ul>
-<li>zero: threshold for checks that quantities are zero, e.g., in
+<li><code>zero</code>: threshold for checks that quantities are zero, e.g., in
     symmetry checks (default 1e-8)</li>
-<li>series: numerical convergence for series, e.g., matrix
+<li><code>series</code>: numerical convergence for series, e.g., matrix
     exponentiation (default 1e-10)</li>
-<li>interpol: numerical convergence for interpolation, e.g., in Magnus
+<li><code>interpol</code>: numerical convergence for interpolation, e.g., in Magnus
     propagator (default 1e-7)</li>
 </ul>
 <p>Occasionally it is useful to loosen the interpolation tolerances if the
@@ -496,11 +496,11 @@ end
 </code></pre>
 <h3 id="excite-excitation-rules">EXCITE &ndash; Excitation rules<a class="headerlink" href="#excite-excitation-rules" title="Permanent link">&para;</a></h3>
 <p>This sets the rules for applying external fields to the system. It takes
-the form &ldquo;excite <geom> with <field>&ldquo;, where <geom> is the name of a
+the form <code>excite &lt;geom&gt; with &lt;field&gt;</code>, where <code>&lt;geom&gt;</code> is the name of a
 geometry fragment (defaults to &ldquo;geometry&rdquo; which is the default geometry
-name), and <field> is the name of a <a href="RT-TDDFT.html#field----sub-block-for-specifying-external-electric-fields">field
+name), and <code>&lt;field&gt;</code> is the name of a <a href="RT-TDDFT.html#field----sub-block-for-specifying-external-electric-fields">field
 structure</a>.
-Assuming, for example, you have defined a field name &ldquo;kick&rdquo; this option
+Assuming, for example, you have defined a field name <code>kick</code> this option
 takes the form (note that quotes are optional and shown for clarity):</p>
 <pre><code>rt_tddft
   ...
