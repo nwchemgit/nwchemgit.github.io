@@ -222,7 +222,7 @@ units</strong>. Some useful conversions are:</p>
 set</a>, and
 <a href="Density-Functional-Theory-for-Molecules.html">DFT</a> options are
 all specified as normal, using their respective syntax. Real-time TDDFT
-parameters are supplied in the RT_TDDFT block (note, nothing is
+parameters are supplied in the <code>RT_TDDFT</code> block (note, nothing is
 case-sensitive), with all possible options summarized below, and each
 discussed in detail
 afterwards.</p>
@@ -318,10 +318,10 @@ end
 <h3 id="nprints-number-of-print-points">NPRINTS &ndash; Number of print points<a class="headerlink" href="#nprints-number-of-print-points" title="Permanent link">&para;</a></h3>
 <p>This sets the number of print points, i.e., the total number of
 time-dependent observables (e.g., dipole, charge, energy) that are
-computed and printed. It either takes an integer number or &ldquo;*&rdquo; which
+computed and printed. It either takes an integer number or <code>"*"</code> which
 means every time step (this is the default). Since there is no
 appreciable cost to computing and printing these quantities, there is
-usually no need to change this from &ldquo;*&ldquo;.</p>
+usually no need to change this from <code>"*"</code>.</p>
 <pre><code>rt_tddft
   ...
   nprints *
@@ -366,8 +366,8 @@ end
 </code></pre>
 <h3 id="propagator-selecting-the-integrator-method">PROPAGATOR &ndash; Selecting the integrator method<a class="headerlink" href="#propagator-selecting-the-integrator-method" title="Permanent link">&para;</a></h3>
 <p>This selects the propagator (i.e., time integrator) method. Possible
-choices include &ldquo;euler&rdquo; for Euler integration (terrible, you should
-never use this), &ldquo;rk4&rdquo; for 4th order Runge-Kutta, and &ldquo;magnus&rdquo; for 2nd
+choices include <code>euler</code> for Euler integration (terrible, you should
+never use this), <code>rk4</code> for 4th order Runge-Kutta, and <code>magnus</code> for 2nd
 order Magnus with self-consistent interpolation. In virtually all cases
 Magnus is superior in terms of stability. Euler or rk4 are perhaps only
 useful for debugging or simplicity (e.g., for code development).</p>
@@ -379,7 +379,7 @@ end
 </code></pre>
 <h3 id="exp-selecting-the-matrix-exponentiation-method">EXP &ndash; Selecting the matrix exponentiation method<a class="headerlink" href="#exp-selecting-the-matrix-exponentiation-method" title="Permanent link">&para;</a></h3>
 <p>This selects the method for exponentiation matrices. For now this can
-either be &ldquo;pseries&rdquo; for a contractive power series or &ldquo;diag&rdquo; for
+either be <code>pseries</code> for a contractive power series or <code>diag</code> for
 diagonalization. In general the power series (default) is faster.</p>
 <pre><code>rt_tddft
   ...
@@ -413,7 +413,7 @@ end
 Fock matrix will not be recalculated at each time, but instead use the
 t=0 value. This will drastically increase the simulation speed since the
 bulk of the work is spent rebuilding the TD Fock matrix, but will give
-non-physical results. For example, using &ldquo;static&rdquo; to compute an
+non-physical results. For example, using <code>static</code> to compute an
 absorption spectrum will result in excitations corresponding to the raw
 eigenvalue differences without electron-hole relaxation. This option has
 few uses besides dry-runs and debugging.</p>
@@ -427,21 +427,21 @@ end
 <p>This sets the various time-dependent properties that are to be computed
 and printed at each print point. Note that for many of these options,
 the values are computed and printed for each geometry specified in the
-input deck, not only the active one (i.e., the one set using &ldquo;set
-geometry &hellip;&rdquo; in the input deck). Possible choices are:</p>
+input deck, not only the active one (i.e., the one set using <code>set
+geometry ...</code> in the input deck). Possible choices are:</p>
 <ul>
-<li>dipole: Dipole moment</li>
-<li>quadrupole: Quadrupole moment</li>
-<li>field: External (applied) electric field</li>
-<li>moocc: Molecular orbital occupations</li>
-<li>energy: Components of system energy (e.g., core, XC, total, etc)</li>
-<li>cputime: CPU time taken in simulation so far (useful for checking
+<li><code>dipole</code>: Dipole moment</li>
+<li><code>quadrupole</code>: Quadrupole moment</li>
+<li><code>field</code>: External (applied) electric field</li>
+<li><code>moocc</code>: Molecular orbital occupations</li>
+<li><code>energy</code>: Components of system energy (e.g., core, XC, total, etc)</li>
+<li><code>cputime</code>: CPU time taken in simulation so far (useful for checking
     scaling)</li>
-<li>charge: Electronic charge (computed from density matrix, not from
+<li><code>charge</code>: Electronic charge (computed from density matrix, not from
     the XC grid)</li>
-<li>convergence: Convergence information (e.g., from Magnus)</li>
-<li>s2: <S2> value (openshell only)</li>
-<li>*: Print all quantities</li>
+<li><code>convergence</code>: Convergence information (e.g., from Magnus)</li>
+<li><code>s2</code>: <S2> value (openshell only)</li>
+<li><code>*</code>: Print all quantities</li>
 </ul>
 <p>The defaults correspond to:</p>
 <pre><code>rt_tddft
@@ -513,9 +513,9 @@ end
 density, which is typically used during a resonant excitation. This is a
 two stage process. During the propagation, a series of density matrices
 will be dumped to file (see options below). After propagation, if the
-&ldquo;dplot&rdquo; option is set, the code will read in options from a separate
+<code>dplot</code> option is set, the code will read in options from a separate
 DPLOT block and convert the density matrix snapshots to a corresponding
-series of real-space charge density &ldquo;cube&rdquo;
+series of real-space charge density <code>cube</code>
 files.</p>
 <pre><code>visualization
   tstart 0.0        # start visualization at this time
@@ -525,7 +525,7 @@ files.</p>
 end
 </code></pre>
 <h3 id="load-restart">LOAD RESTART<a class="headerlink" href="#load-restart" title="Permanent link">&para;</a></h3>
-<p>This keyword needs to be added to restart a calculation. In the following example, the calculation will restart from the previous calculation and extend the run to the new tmax</p>
+<p>This keyword needs to be added to restart a calculation. In the following example, the calculation will restart from the previous calculation and extend the run to the new <code>tmax</code></p>
 <pre><code>rt_tddft
   ...
   tmax 10.0        # new end time
