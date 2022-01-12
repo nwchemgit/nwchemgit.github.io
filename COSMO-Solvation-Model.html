@@ -269,14 +269,14 @@ Waals radii by default:</p>
 <p>For examples see Stefanovich et al.<sup id="fnref_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup> and Barone et al.<sup id="fnref_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">6</a></sup></p>
 <p>&ldquo;Rsolv&rdquo; is no longer used.</p>
 <p><code>iscren</code> is a flag to define the dielectric charge scaling option.
-<code>iscren 1</code> implies the original scaling from Klamt and Schüürmann,
+<code>iscren 1</code> implies the original scaling from Klamt and Schürmann,
 mainly &ldquo;(&epsilon;-1)/(&epsilon;+1/2)&rdquo;, where &epsilon; is the
 dielectric constant. <code>iscren 0</code> implies the modified scaling suggested
 by Stefanovich and Truong<sup id="fnref_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">7</a></sup>, mainly &ldquo;(&epsilon;-1)/&epsilon;&ldquo;.
 Default is to use the modified scaling. For high dielectric the
 difference between the scaling is not significant.</p>
 <p>The next two parameters define the tesselation of the unit sphere. The
-approach still follows the original proposal by Klamt and Schüürmann to
+approach still follows the original proposal by Klamt and Schürmann to
 some degree. Basically a tesselation is generated from <code>minbem</code> refining
 passes starting from either an octahedron or an icosahedron. Each level
 of refinement partitions the triangles of the current tesselation into
@@ -300,7 +300,7 @@ code selects the iterative method.</p>
 suggested by York and Karplus to avoid singularities when two surface
 charges coincide. The default value is <code>zeta 0.98</code> this value was chosen
 to ensure that the results of the current implementation are as close as
-possible to those of the original Klamt and Schuurmann based
+possible to those of the original Klamt and Schürmann based
 implementation.</p>
 <p><code>gamma_s</code> modifies the width of the smooth switching function that
 eliminates surface charges when their positions move into the sphere of
@@ -323,7 +323,7 @@ This option needs to be used with care as in some cases starting the
 COSMO solvation from an unconverged electron density can generate
 unphysical charges that lock the calculation into strange electron
 distributions.</p>
-<p><code>do_cosmo_ks</code> is a flag to turn on the Klamt-Schuurmann model</p>
+<p><code>do_cosmo_ks</code> is a flag to turn on the Klamt-Schürmann model</p>
 <p><code>do_cosmo_yk</code> is a flag to turn on the York-Karplus model (default)</p>
 <p>The following example is for a water molecule in &lsquo;water&rsquo;, using the
 HF/6-31G** level of
@@ -402,25 +402,25 @@ end
 <hr />
 <ol>
 <li id="fn_footnote_1">
-<p>Klamt, A; Schuurmann, G (1993). &ldquo;COSMO: A new approach to dielectric screening in solvents with explicit expressions for the screening energy and its gradient&rdquo;. Journal of the Chemical Society, Perkin Transactions 2: 799-805. doi:10.1039/P29930000799.&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Klamt, A; Schürmann, G (1993). &ldquo;COSMO: A new approach to dielectric screening in solvents with explicit expressions for the screening energy and its gradient&rdquo;. Journal of the Chemical Society, Perkin Transactions 2: 799-805. <a href="https://dx.doi.org/10.1039/P29930000799">DOI:10.1039/P29930000799</a>&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_2">
-<p>York, D.M.; Karplus, M. (1999). &ldquo;A smooth solvation potential based on the conductor-like screening model&rdquo;. Journal of physical chemistry A 103: 11060-11079. doi:10.1021/jp992097l.&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>York, D.M.; Karplus, M. (1999). &ldquo;A smooth solvation potential based on the conductor-like screening model&rdquo;. Journal of physical chemistry A 103: 11060-11079. <a href="https://dx.doi.org/10.1021/jp992097l">DOI:10.1021/jp992097l</a>&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_3">
-<p>A. Bondi (1964). &ldquo;van der Waals volums and radii&rdquo;. Journal of Physical Chemistry 68: 441-451. doi:10.1021/j100785a001.&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>A. Bondi (1964). &ldquo;van der Waals volums and radii&rdquo;. Journal of Physical Chemistry 68: 441-451. <a href="https://dx.doi.org/10.1021/j100785a001">DOI:10.1021/j100785a001</a>&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_4">
-<p>A. Klamt, V. Jonas (1998). &ldquo;Refinement and parametrization of COSMO-RS&rdquo;. Journal of physical chemistry A 102: 5074-5085. doi:10.1021/jp980017s.&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>A. Klamt, V. Jonas (1998). &ldquo;Refinement and parametrization of COSMO-RS&rdquo;. Journal of physical chemistry A 102: 5074-5085. <a href="https://dx.doi.org/10.1021/jp980017s">DOI:10.1021/jp980017s</a>&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_5">
-<p>E. V. Stefanovich, T. N. Truong (1995). &ldquo;Optimized atomic radii for quantum dielectric continuum solvation models&rdquo;. Chemical Physics Letters 244: 65-74. doi:10.1016/0009-2614(95)00898-E.&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>E. V. Stefanovich, T. N. Truong (1995). &ldquo;Optimized atomic radii for quantum dielectric continuum solvation models&rdquo;. Chemical Physics Letters 244: 65-74. <a href="https://dx.doi.org/10.1016/0009-2614(95)00898-E">DOI:10.1016/0009-2614(95)00898-E</a>&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_6">
-<p>V. Barone, M. Cossi (1997). &ldquo;A new definition of cavities for the computation of solvation free energies by the polarizable continuum model&rdquo;. Journal of Chemical Physics 107: 3210-3221. doi:10.1063/1.474671.&#160;<a class="footnote-backref" href="#fnref_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>V. Barone, M. Cossi (1997). &ldquo;A new definition of cavities for the computation of solvation free energies by the polarizable continuum model&rdquo;. Journal of Chemical Physics 107: 3210-3221. <a href="https://dx.doi.org/10.1063/1.474671">DOI:10.1063/1.474671</a>&#160;<a class="footnote-backref" href="#fnref_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_7">
-<p>E. V. Stefanovich, T. N. Truong (1995). &ldquo;Optimized atomic radii for quantum dielectric continuum solvation models&rdquo;. Chemical Physics Letters 244: 65-74. doi:10.1016/0009-2614(95)00898-E.&#160;<a class="footnote-backref" href="#fnref_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>E. V. Stefanovich, T. N. Truong (1995). &ldquo;Optimized atomic radii for quantum dielectric continuum solvation models&rdquo;. Chemical Physics Letters 244: 65-74. <a href="https://dx.doi.org/10.1016/0009-2614(95)00898-E">DOI:10.1016/0009-2614(95)00898-E</a>&#160;<a class="footnote-backref" href="#fnref_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_8">
 <p>A. V. Marenich, C. J. Cramer, D. G. Truhlar (2009). &ldquo;Universal Solvation Model Based on Solute Electron Density and on a Continuum Model of the Solvent Defined by the Bulk Dielectric Constant and Atomic Surface Tensions&rdquo;. The Journal of Physical Chemistry B 113: 6378-6396. <a href="https://dx.doi.org/10.1021/jp810292n">DOI:10.1021/jp810292n</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
