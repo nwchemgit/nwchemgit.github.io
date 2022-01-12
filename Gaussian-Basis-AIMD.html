@@ -169,20 +169,20 @@ El-Khoury, A. L. Mifflin, W. P. Hess, H.F. Wang, C. J. Cramer, N. Govind
 Static Normal Mode Analysis: The CH Region of DMSO as a Case Study&rdquo; J.
 Phys. Chem. B, 120 (8), pp 1429–1436 (2016), <a href="https://dx.doi.org/10.1021/acs.jpcb.5b03323">DOI:10.1021/acs.jpcb.5b03323</a> (2015).</p>
 <pre><code>QMD
-  [dt_nucl &lt;double default 10.0&gt;]  
-  [nstep_nucl &lt;integer default 1000&gt;]  
-  [targ_temp &lt;double default 298.15&gt;]  
-  [thermostat &lt;string default none&gt; &lt;thermostat parameters&gt;]  
-  [rand_seed &lt;integer default new one generated for each run&gt;]  
-  [com_step &lt;integer default 100&gt;]  
-  [print_xyz &lt;integer default 1&gt;]  
+  [dt_nucl &lt;double default 10.0&gt;]  
+  [nstep_nucl &lt;integer default 1000&gt;]  
+  [targ_temp &lt;double default 298.15&gt;]  
+  [thermostat &lt;string default none&gt; &lt;thermostat parameters&gt;]  
+  [rand_seed &lt;integer default new one generated for each run&gt;]  
+  [com_step &lt;integer default 100&gt;]  
+  [print_xyz &lt;integer default 1&gt;]  
   [linear]   
   [property &lt;integer default 1&gt;] 
   [tddft &lt;integer default 1&gt;]   
 END
 </code></pre>
 <p>The module is called as:</p>
-<pre><code>task &lt;level of theory&gt; qmd
+<pre><code>task &lt;level of theory&gt; qmd
 </code></pre>
 <p>where <level of theory> is any Gaussian basis set method in NWChem</p>
 <h2 id="qmd-keywords">QMD Keywords<a class="headerlink" href="#qmd-keywords" title="Permanent link">&para;</a></h2>
@@ -203,26 +203,26 @@ the nuclei. Possible options are:</p>
 <ul>
 <li><strong>none</strong></li>
 </ul>
-<p>No thermostat is used, i.e. an NVE ensemble is simulated. Default  </p>
+<p>No thermostat is used, i.e. an NVE ensemble is simulated. Default  </p>
 <ul>
 <li><strong>svr</strong> <code>&lt;double default 1000.0&gt;</code></li>
 </ul>
-<p>Stochastic velocity rescaling thermostat of Bussi, Donadio, and Parrinello,
- J. Chem. Phys. 126, 014101 (2007)<br />
-   Number sets the relaxation parameter of the thermostat  </p>
+<p>Stochastic velocity rescaling thermostat of Bussi, Donadio, and Parrinello,
+ J. Chem. Phys. 126, 014101 (2007)<br />
+   Number sets the relaxation parameter of the thermostat  </p>
 <ul>
 <li><strong>langevin</strong> <code>&lt;double default 0.1&gt;</code></li>
 </ul>
-<p>Langevin dynamics, implementation according to Bussi and Parrinello Phys. Rev. E 75, 056707 (2007)<br />
-   Number sets the value of the friction  </p>
+<p>Langevin dynamics, implementation according to Bussi and Parrinello Phys. Rev. E 75, 056707 (2007)<br />
+   Number sets the value of the friction  </p>
 <ul>
 <li><strong>berendsen</strong> <code>&lt;double default 1000.0&gt;</code>  </li>
 </ul>
-<p>Berendsen thermostat, number sets the relaxation parameter of the thermostat  </p>
+<p>Berendsen thermostat, number sets the relaxation parameter of the thermostat  </p>
 <ul>
 <li><strong>rescale</strong></li>
 </ul>
-<p>Velocity rescaling, i.e. isokinetic ensemble  </p>
+<p>Velocity rescaling, i.e. isokinetic ensemble  </p>
 <h3 id="rand_seed-seed-for-the-random-number-generator">rand_seed &ndash; Seed for the random number generator<a class="headerlink" href="#rand_seed-seed-for-the-random-number-generator" title="Permanent link">&para;</a></h3>
 <p>This specifies the seed for initializing the random number generator. If
 not given, a unique random seed will be generated. Even without a
@@ -254,29 +254,29 @@ stochastic velocity rescaling thermostat with a relaxation parameter of
 100 a.u. and a target temperature of 200 K. Center-of-mass rotations and
 translations will be removed every 10 steps and trajectory information
 will be output to the xyz file every 5 steps.</p>
-<pre><code>start qmd_dft_h2o_svr  
+<pre><code>start qmd_dft_h2o_svr  
 echo  
-print low  
-geometry noautosym noautoz  
-  O   0.00000000    -0.01681748     0.11334792  
-  H   0.00000000     0.81325914    -0.34310308  
-  H   0.00000000    -0.67863597    -0.56441201  
+print low  
+geometry noautosym noautoz  
+  O   0.00000000    -0.01681748     0.11334792  
+  H   0.00000000     0.81325914    -0.34310308  
+  H   0.00000000    -0.67863597    -0.56441201  
 end  
 basis  
-  * library 6-31G*  
+  * library 6-31G*  
 end  
 dft  
-  xc pbe0  
+  xc pbe0  
 end  
 qmd  
-  nstep_nucl  200  
-  dt_nucl     10.0  
-  targ_temp   200.0  
-  com_step    10  
-  thermostat  svr 100.0  
-  print_xyz   5  
+  nstep_nucl  200  
+  dt_nucl     10.0  
+  targ_temp   200.0  
+  com_step    10  
+  thermostat  svr 100.0  
+  print_xyz   5  
 end  
-task dft qmd
+task dft qmd
 </code></pre>
 <h3 id="excited-state-molecular-dynamics">Excited state Molecular Dynamics<a class="headerlink" href="#excited-state-molecular-dynamics" title="Permanent link">&para;</a></h3>
 <p>The following is a sample input for an excited state MD simulation on
@@ -284,71 +284,71 @@ the first excited state. The simulation is 200 steps long with a 10 a.u.
 time step, run in the microcanonical ensemble. Center-of-mass rotations
 and translations will be removed every 10 steps and trajectory
 information will be output to the xyz file every 5 steps.</p>
-<pre><code>start qmd_tddft_h2o_svr  
+<pre><code>start qmd_tddft_h2o_svr  
 echo  
-print low  
-geometry noautosym noautoz  
-  O   0.00000000    -0.01681748     0.11334792  
-  H   0.00000000     0.81325914    -0.34310308  
-  H   0.00000000    -0.67863597    -0.56441201  
+print low  
+geometry noautosym noautoz  
+  O   0.00000000    -0.01681748     0.11334792  
+  H   0.00000000     0.81325914    -0.34310308  
+  H   0.00000000    -0.67863597    -0.56441201  
 end  
 basis  
-  * library 6-31G*  
+  * library 6-31G*  
 end  
 dft  
-  xc pbe0  
+  xc pbe0  
 end  
 tddft  
-  nroots 5  
-  notriplet  
-  target 1  
-  civecs  
-  grad  
-    root 1  
-  end  
+  nroots 5  
+  notriplet  
+  target 1  
+  civecs  
+  grad  
+    root 1  
+  end  
 end  
 qmd  
-  nstep_nucl  200  
-  dt_nucl     10.0  
-  com_step    10  
-  thermostat  none  
-  print_xyz   5  
+  nstep_nucl  200  
+  dt_nucl     10.0  
+  com_step    10  
+  thermostat  none  
+  print_xyz   5  
 end  
-task tddft qmd
+task tddft qmd
 </code></pre>
 <h3 id="property-calculation-in-a-molecular-dynamics-simulation">Property calculation in a Molecular Dynamics simulation<a class="headerlink" href="#property-calculation-in-a-molecular-dynamics-simulation" title="Permanent link">&para;</a></h3>
 <p>Thefollowing is a sample input for an MD simulation that compute
 polarizability by means of the
 <a href="Properties.html#polarizability-computed-with-the-sum-over-orbitals-method">SOS method</a>
 at each time step.</p>
-<pre><code>start qmd_prop_h2o_svr  
+<pre><code>start qmd_prop_h2o_svr  
 echo  
-print low  
-geometry noautosym noautoz  
-  O   0.00000000    -0.01681748     0.11334792  
-  H   0.00000000     0.81325914    -0.34310308  
-  H   0.00000000    -0.67863597    -0.56441201  
+print low  
+geometry noautosym noautoz  
+  O   0.00000000    -0.01681748     0.11334792  
+  H   0.00000000     0.81325914    -0.34310308  
+  H   0.00000000    -0.67863597    -0.56441201  
 end  
 basis  
-  * library 6-31G*  
+  * library 6-31G*  
 end  
 dft  
-  xc pbe0  
+  xc pbe0  
 end  
 
 qmd  
-  nstep_nucl  200  
-  dt_nucl     10.0  
-  com_step    10  
-  thermostat  none  
-  print_xyz   5
+  nstep_nucl  200  
+  dt_nucl     10.0  
+  com_step    10  
+  thermostat  none  
+  print_xyz   5
   property 1
 end  
 
 property
  polfromsos
 end
-task tddft qmd
+task tddft qmd
 </code></pre>
 <p>Additional sample inputs can be found in $NWCHEM_TOP/QA/tests/qmd_*
 (e.g. <a href="https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props">https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props</a>)</p>
@@ -365,36 +365,36 @@ the NWChem source.</p>
 <p>Here we compute the IR spectrum and the element-wise breakdown of the
   vibrational density of states for silicon tetrachloride (SiCl<sub>4</sub>). The
 following input file was used.</p>
-<pre><code>start SiCl4  
+<pre><code>start SiCl4  
 echo  
-print low  
-geometry noautosym noautoz  
-  Si              -0.00007905     0.00044148     0.00000001  
-  Cl               0.71289590     1.00767685     1.74385011  
-  Cl              -2.13658008    -0.00149375    -0.00000001  
-  Cl               0.71086735    -2.01430142    -0.00000001  
-  Cl               0.71289588     1.00767684    -1.74385011  
+print low  
+geometry noautosym noautoz  
+  Si              -0.00007905     0.00044148     0.00000001  
+  Cl               0.71289590     1.00767685     1.74385011  
+  Cl              -2.13658008    -0.00149375    -0.00000001  
+  Cl               0.71086735    -2.01430142    -0.00000001  
+  Cl               0.71289588     1.00767684    -1.74385011  
 end  
 basis  
-  * library 6-31G  
+  * library 6-31G  
 end  
 dft  
-  xc hfexch 1.0  
+  xc hfexch 1.0  
 end  
 qmd  
-  nstep_nucl  20000  
-  dt_nucl     10.0  
-  targ_temp   20.0  
-  com_step    10  
-  rand_seed   12345  
-  thermostat  none  
+  nstep_nucl  20000  
+  dt_nucl     10.0  
+  targ_temp   20.0  
+  com_step    10  
+  rand_seed   12345  
+  thermostat  none  
 end  
-task dft qmd
+task dft qmd
 </code></pre>
 <p>The IR spectrum and vibrational density of states were generated from
 the <a href="qmd_tools.tar.gz">qmd_analysis code</a> with the following
 command.</p>
-<pre><code>./qmd_analysis -xyz SiCl4.xyz -steps 15000 -skip 5000 -ts 10.0 -temp 20.0 -smax 800 -width 10.0
+<pre><code>./qmd_analysis -xyz SiCl4.xyz -steps 15000 -skip 5000 -ts 10.0 -temp 20.0 -smax 800 -width 10.0
 </code></pre>
 <p>where we have skipped the first 5000 steps from the simulation and only
 used the data from the last 15000 steps to compute the spectra. The time
