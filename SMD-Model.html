@@ -153,12 +153,7 @@
               
                 <h1 id="smd-solvation-model-based-on-density-model">SMD (Solvation Model Based on Density) Model<a class="headerlink" href="#smd-solvation-model-based-on-density-model" title="Permanent link">&para;</a></h1>
 <p>SMD denotes “solvation model based on density” and it is described in
-detail in the following paper:</p>
-<p>Marenich, A. V.; Cramer, C. J.; Truhlar, D. G. Universal solvation model
-based on solute electron density and on a continuum model of the solvent
-defined by the bulk dielectric constant and atomic surface tensions. J.
-Phys. Chem. B 2009, 113, 6378-6396;
-<a href="http://dx.doi.org/10.1021/jp810292n">http://dx.doi.org/10.1021/jp810292n</a>.</p>
+detail in the 2009 paper by Marenich, Cramer and Truhlar<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>.  </p>
 <p>The SMD model is a universal continuum solvation model where “universal”
 denotes its applicability to any charged or uncharged solute in any
 solvent or liquid medium for which a few key descriptors are known. The
@@ -177,8 +172,9 @@ into two components. The first component is the bulk-electrostatic
 contribution arising from a self-consistent reaction field (SCRF)
 treatment. The SCRF treatment involves an integration of the
 nonhomogeneous-dielectric Poisson equation for bulk electrostatics in
-terms of the COSMO model of Klamt and Schüürmann with the modified COSMO
-scaling factor suggested by Stefanovich and Truong and by using the SMD
+terms of the <a href="COSMO-Solvation-Model.html#cosmo-solvation-model">COSMO model</a>
+of Klamt and Schürmann with the modified <a href="COSMO-Solvation-Model.html#cosmo-input-parameters">COSMO scaling factor</a> 
+suggested by Stefanovich and Truong and by using the SMD
 intrinsic atomic Coulomb radii. These radii have been optimized for H,
 C, N, O, F, Si, P, S, Cl, and Br. For any other atom the current
 implementation of the SMD model uses scaled values of the van der Waals
@@ -938,10 +934,7 @@ block</p>
 </table>
 <p><br/><br/> </p>
 <p>When a solvent is specified by name, the descriptors for the solvent are
-based on the Minnesota Solvent Descriptor Database:</p>
-<p>Winget, P.; Dolney, D. M.; Giesen, D. J.; Cramer, C. J.; Truhlar, D. G.
-Minnesota Solvent Descriptor Database. University of Minnesota:
-Minneapolis, MN, 2010. <a href="http://comp.chem.umn.edu/solvation/mnsddb.pdf">http://comp.chem.umn.edu/solvation/mnsddb.pdf</a></p>
+based on the Minnesota Solvent Descriptor Database[^2].  </p>
 <p>The user can specify a solvent that is not on the list by omitting the
 solvent keyword and instead introducing user-provided values for the
 following solvent
@@ -997,6 +990,21 @@ cosmo
 end
 task dft energy
 </code></pre>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn_footnote_1">
+<p>Marenich, A. V.; Cramer, C. J.; Truhlar, D. G. Universal solvation model
+based on solute electron density and on a continuum model of the solvent
+defined by the bulk dielectric constant and atomic surface tensions. J.
+Phys. Chem. B 2009, 113, 6378-6396. <a href="http://dx.doi.org/10.1021/jp810292n">DOI:10.1021/jp810292n</a>.
+[^2:] Winget, P.; Dolney, D. M.; Giesen, D. J.; Cramer, C. J.; Truhlar, D. G.
+Minnesota Solvent Descriptor Database. University of Minnesota:
+Minneapolis, MN, 2010. <a href="http://comp.chem.umn.edu/solvation/mnsddb.pdf">http://comp.chem.umn.edu/solvation/mnsddb.pdf</a>&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
               
             </div>
           </div>
