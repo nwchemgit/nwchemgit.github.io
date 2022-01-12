@@ -190,7 +190,7 @@ electrostatic contribution to the solvation free energy. At the present
 gradients are calculated analytically, but frequencies are calculated by
 finite difference of the gradients. Known problems include that the code
 does not work with spherical basis functions. The non-electrostatic
-contributions can be calculated by turning on the SMD model. It should
+contributions can be calculated by turning on the <a href="SMD-Model.html">SMD model</a>. It should
 be noted that one must in general take into account the standard state
 correction besides the electrostatic and cavitation/dispersion
 contribution to the solvation free energy, when a comparison to
@@ -214,7 +214,8 @@ input block with the input options as:</p>
   [gamma_s &lt;real gammas default 1.0&gt;]  
   [sw_tol &lt;real swtol default 1.0e-4&gt;]  
   [do_gasphase  &lt;logical do_gasphase default True&gt;] 
-  [do_cosmo_ks]  
+  [do_cosmo_ks]
+  [do_cosmo_smd]
 end
 </code></pre>
 <p>followed by the task directive specifying the wavefunction and type of
@@ -323,8 +324,10 @@ This option needs to be used with care as in some cases starting the
 COSMO solvation from an unconverged electron density can generate
 unphysical charges that lock the calculation into strange electron
 distributions.</p>
-<p><code>do_cosmo_ks</code> is a flag to turn on the Klamt-Schürmann model</p>
-<p><code>do_cosmo_yk</code> is a flag to turn on the York-Karplus model (default)</p>
+<p><code>do_cosmo_ks</code> is a flag to turn on the Klamt-Schürmann model  </p>
+<p><code>do_cosmo_yk</code> is a flag to turn on the York-Karplus model (default)  </p>
+<p><code>do_cosmo_smd</code> is a flag to turn on the SMD model. More details can be found
+at the <a href="SMD-Model.html">SMD Model documentation page</a>  </p>
 <p>The following example is for a water molecule in &lsquo;water&rsquo;, using the
 HF/6-31G** level of
 theory:</p>
