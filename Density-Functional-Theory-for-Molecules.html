@@ -2216,7 +2216,7 @@ options are defined, the last one will be used. When there are
 convergence problems with multiple constraints, the user is advised to
 do one constraint first and to use the resulting orbitals for the next
 step of the constrained calculations.</p>
-<p>It is best to put &ldquo;convergence nolevelshifting&rdquo; in the dft directive to
+<p>It is best to put <code>convergence nolevelshifting</code> in the dft directive to
 avoid issues with gradient calculations and convergence in CDFT. Use
 orbital swap to get a broken-symmetry solution.</p>
 <p>An input example is given below.</p>
@@ -2832,10 +2832,9 @@ the integral evaluations for the DFT module. In most applications, the
 default values will be adequate for the calculation, but different
 values can be specified in the input for the DFT module using the
 keywords described below.</p>
-<p>The input parameter accCoul is used to define the tolerance in Schwarz
+<p>The input parameter <code>accCoul</code> is used to define the tolerance in Schwarz
 screening for the Coulomb integrals. Only integrals with estimated
-values greater than <script type="math/tex">10^{(-accCoul)}</script>
-</p>
+values greater than 10<sup>(-accCoul) are evaluated.</p>
 <pre><code> TOLERANCES accCoul &lt;integer accCoul default 8&gt;
 </code></pre>
 <p>Screening away needless computation of the XC functional (on the grid)
@@ -2843,12 +2842,12 @@ due to negligible density is also possible with the use of,</p>
 <pre><code> TOLERANCES tol_rho &lt;real tol_rho default 1e-10&gt;
 </code></pre>
 <p>XC functional computation is bypassed if the corresponding density
-elements are less than tol_rho.</p>
+elements are less than <code>tol_rho</code>.</p>
 <p>A screening parameter, radius, used in the screening of the Becke or
 Delley spatial weights is also available as,</p>
 <pre><code> TOLERANCES radius &lt;real radius default 25.0&gt;
 </code></pre>
-<p>where radius is the cutoff value in bohr.</p>
+<p>where <code>radius</code> is the cutoff value in bohr.</p>
 <p>The tolerances as discussed previously are insured at convergence. More
 sleazy tolerances are invoked early in the iterative process which can
 speed things up a bit. This can also be problematic at times because it
@@ -2873,11 +2872,11 @@ directive. The input to exercise this option is as follows,</p>
 <pre><code>  noio
 </code></pre>
 <p>If this keyword is encountered, then the two matrices (inverted
-charge-density and exchange-correlation) are computed ``on-the-fly&rsquo;&lsquo;
+charge-density and exchange-correlation) are computed &ldquo;on-the-fly&rdquo;
 whenever needed.</p>
 <p>The <code>INCORE</code> option is always assumed to be true but can be overridden
 with the option <code>DIRECT</code> in which case all integrals are computed
-``on-the-fly&rsquo;&lsquo;.</p>
+&ldquo;on-the-fly&rdquo;.</p>
 <p>The <code>SEMIDIRECT</code> option controls caching of integrals. A full description
 of this option is described in the <a href="Hartree-Fock-Theory-for-Molecules.html#direct-and-semidirect----recomputation-of-integrals">Hartree-Fock</a> section. Some functionality
 which is only compatible with the <code>DIRECT</code> option will not, at present,
@@ -2893,7 +2892,7 @@ input line is as follows;</p>
 <pre><code>  MULT &lt;integer mult default 1&gt;
 </code></pre>
 <p>When the keyword <code>MULT</code> is specified, the user can define the integer
-variable mult, where mult is equal to the number of alpha electrons
+variable <code>mult</code>, where mult is equal to the number of alpha electrons
 minus beta electrons, plus 1.</p>
 <p>When <code>MULT</code> is set to a negative number. For example, if <code>MULT = -3</code>, a
 triplet calculation will be performed with the beta electrons
@@ -2903,11 +2902,11 @@ preferentially occupied.</p>
 singlet system to be computed as an open shell system (i.e., using a
 spin-unrestricted wavefunction).</p>
 <h2 id="cgmin-quadratic-convergence-algorithm">CGMIN &ndash; Quadratic convergence algorithm<a class="headerlink" href="#cgmin-quadratic-convergence-algorithm" title="Permanent link">&para;</a></h2>
-<p>The cgmin keyword will use the quadratic convergence algorithm. It is
+<p>The <code>cgmin</code> keyword will use the quadratic convergence algorithm. It is
 possible to turn the use of the quadratic convergence algorithm off with
-the nocgmin keyword.</p>
+the <code>nocgmin</code> keyword.</p>
 <h2 id="rodft-restricted-open-shell-dft">RODFT &ndash; Restricted open-shell DFT<a class="headerlink" href="#rodft-restricted-open-shell-dft" title="Permanent link">&para;</a></h2>
-<p>The rodft keyword will perform restricted open-shell calculations. This
+<p>The <code>rodft</code> keyword will perform restricted open-shell calculations. This
 keyword can only be used with the CGMIN keyword.</p>
 <h2 id="sic-self-interaction-correction">SIC &ndash; Self-Interaction Correction<a class="headerlink" href="#sic-self-interaction-correction" title="Permanent link">&para;</a></h2>
 <pre><code>sic [perturbative || oep || oep-loc ]
@@ -2993,8 +2992,8 @@ basis
  bqO library O aug-cc-pvdz
 end
 </code></pre>
-<p>Please note that the <q>ghost</q> oxygen atom has been labeled bqO, and
-not just bq.</p>
+<p>Please note that the <em>ghost</em> oxygen atom has been labeled <code>bqO</code>, and
+not just <code>bq</code>.</p>
 <h2 id="disp-empirical-long-range-contribution-vdw">DISP &ndash; Empirical Long-range Contribution (vdW)<a class="headerlink" href="#disp-empirical-long-range-contribution-vdw" title="Permanent link">&para;</a></h2>
 <pre><code> DISP \
       [ vdw &lt;real vdw integer default 2]] \
@@ -3071,7 +3070,7 @@ Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010).</p>
 <p>This capability is also supported for energy gradients and Hessian. Is
 possible to be deactivated with OFF.</p>
 <h2 id="noscf-non-self-consistent-calculations">NOSCF &ndash;Non Self-Consistent Calculations<a class="headerlink" href="#noscf-non-self-consistent-calculations" title="Permanent link">&para;</a></h2>
-<p>The noscf keyword allows one to calculate the non self-consistent energy
+<p>The <code>noscf</code> keyword can be used to to calculate the non self-consistent energy
 for a set of input vectors. For example, the following input shows how a
 non self-consistent B3LYP energy can be calculated using a
 self-consistent set of vectors calculated at the Hartree-Fock level.</p>
@@ -3128,7 +3127,7 @@ and the website <a href="http://gatsby.ucmerced.edu/wiki/XDM">http://gatsby.ucme
 <h2 id="print-control">Print Control<a class="headerlink" href="#print-control" title="Permanent link">&para;</a></h2>
 <pre><code> PRINT||NOPRINT
 </code></pre>
-<p>The PRINT||NOPRINT options control the level of output in the DFT.
+<p>The <code>PRINT||NOPRINT</code> options control the level of output in the DFT.
 Please see some examples using this directive in <a href="#sample-input-file">Sample input
 file</a>. Known controllable print options
 are:</p>
