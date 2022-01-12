@@ -2014,9 +2014,10 @@ found in the corresponding
 <a href="Excited-State-Calculations.html">section</a>.</p>
 <h2 id="sample-input-file">Sample input file<a class="headerlink" href="#sample-input-file" title="Permanent link">&para;</a></h2>
 <p>A simple example calculates the geometry of water, using the metaGGA
-functionals xtpss03 and ctpss03. This also highlights some of the print
-features in the DFT module. Note that you must use the line task dft
-freq numerical because analytic hessians are not available for the
+functionals <code>xtpss03</code> and <code>ctpss03</code>. This also highlights some of the print
+features in the DFT module. Note that you must use the line
+<code>task dft freq numerical</code>
+because analytic hessians are not available for the
 metaGGAs:</p>
 <pre><code>title &quot;WATER 6-311G* meta-GGA XC geometry&quot;  
 echo  
@@ -2078,7 +2079,7 @@ file</a>.</p>
 <ul>
 <li>convergence of the total energy; this is defined to be when the
     total DFT energy at iteration N and at iteration N-1 differ by a
-    value less than some value (the default is 1e-6). This value can be
+    value less than a threshold value (the default is 1e-6). This value can be
     modified using the key word,</li>
 </ul>
 <pre><code>       CONVERGENCE energy &lt;real energy default 1e-6&gt;
@@ -2105,7 +2106,7 @@ the HOMO - LUMO gap is small and the Fock matrix somewhat diagonally
 dominant, then level-shifting is automatically initiated. There are a
 variety of ways to customize this procedure to whatever is desired.</p>
 <p>An alternative optimization strategy is to specify, by using the change
-in total energy (from iterations when N and N-1), when to turn damping,
+in total energy (between iterations N and N-1), when to turn damping,
 level-shifting, and/or DIIS on/off. Start and stop keywords for each of
 these is available as,</p>
 <pre><code> CONVERGENCE  [dampon &lt;real dampon default 0.0&gt;] \  
@@ -2195,13 +2196,13 @@ described in the paper: Q. Wu, T. Van Voorhis, Phys. Rev. A 72, 024502
 <pre><code> CDFT &lt;integer fatom1 latom1&gt; [&lt;integer fatom2 latom2&gt;] (charge||spin &lt;real constaint_value&gt;) \ 
       [pop (becke||mulliken||lowdin) default lowdin]
 </code></pre>
-<p>Variables fatom1 and latom1 define the first and last atom of the group
+<p>Variables <code>fatom1</code> and <code>latom1</code> define the first and last atom of the group
 of atoms to which the constraint will be applied. Therefore the atoms in
 the same group should be placed continuously in the geometry input. If
-fatom2 and latom2 are specified, the difference between group 1 and 2
+<code>fatom2</code> and <code>latom2</code> are specified, the difference between group 1 and 2
 (i.e. 1-2) is constrained.</p>
-<p>The constraint can be either on the charge or the spin density (# of
-alpha - beta electrons) with a user specified constraint_value. Note:
+<p>The constraint can be either on the charge or the spin density (number of
+alpha - beta electrons) with a user specified <code>constraint_value</code>. Note:
 No gradients have been implemented for the spin constraints case.
 Geometry optimizations can only be performed using the charge
 constraint.</p>
