@@ -297,20 +297,19 @@ Coulomb potential in the Dunlap scheme. The charge density fitting basis
 set must have the name &ldquo;cd basis&rdquo;. This can be the actual name of a
 basis set, or a basis set can be assigned this name using the
 <a href="SET.html">SET</a> directive. If this basis set is not
-defined by input, the <script type="math/tex">O(N^4)</script>
-</p>
+defined by input, the O(N<sup>4</sup>) exact Coulomb contribution is computed.</p>
 <p>The user also has the option of specifying a third basis set for the
 evaluation of the exchange-correlation potential. This basis set must
-have the name &ldquo;xc basis&rdquo;. If this basis set is not specified by input,
+have the name <code>xc basis</code>. If this basis set is not specified by input,
 the exchange contribution (XC) is evaluated by numerical quadrature. In
 most applications, this approach is efficient enough, so the &ldquo;xc basis&rdquo;
 basis set is not generally required.</p>
 <p>For the DFT module, the input options for defining the basis sets in a
-given calculation can be summarized as follows;</p>
+given calculation can be summarized as follows:</p>
 <ul>
-<li>&ldquo;ao basis&rdquo; - Kohn-Sham molecular orbitals; required for all
+<li><code>ao basis</code> - Kohn-Sham molecular orbitals; required for all
     calculations</li>
-<li>&ldquo;cd basis&rdquo; - charge density fitting basis set; optional, but
+<li><code>cd basis</code> - charge density fitting basis set; optional, but
     recommended for evaluation of the Coulomb potential</li>
 <li>&ldquo;xc basis&rdquo; - exchange-correlation (XC) fitting basis set; optional,
     and usually not recommended</li>
@@ -350,16 +349,14 @@ in the DFT Module (see table below for full list of functionals). The
 default exchange-correlation functional is defined as the local density
 approximation (LDA) for closed shell systems and its counterpart the
 local spin-density (LSD) approximation for open shell systems. Within
-this approximation the exchange functional is the Slater <script type="math/tex">\rho^{1/3}</script>
-functional (from J.C. Slater, Quantum Theory of Molecules and Solids,
-Vol. 4: The Self-Consistent Field for Molecules and Solids (McGraw-Hill,
-New York, 1974)), and the correlation functional is the
-Vosko-Wilk-Nusair (VWN) functional (functional V) (S.J. Vosko, L. Wilk
-and M. Nusair, Can. J. Phys. 58, 1200 (1980)). The parameters used in
+this approximation the exchange functional is the Slater <em>&rho;<sup>1/3</sup></em>
+functional<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>, and the correlation functional is the
+Vosko-Wilk-Nusair (VWN) functional (functional V)<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup>.
+The parameters used in
 this formula are obtained by fitting to the Ceperley and Alder Quantum
 Monte-Carlo solution of the homogeneous electron gas.</p>
 <p>These defaults can be invoked explicitly by specifying the following
-keywords within the DFT module input directive, XC slater vwn_5.</p>
+keywords within the DFT module input directive, <code>XC slater vwn_5</code>.</p>
 <p>That is, this statement in the input file</p>
 <pre><code>dft  
  XC slater vwn_5  
@@ -441,11 +438,8 @@ functionals yet.</p>
 functionals, the user has the alternative of specifying combined
 exchange and correlation functionals.</p>
 <p>The available hybrid functionals (where a Hartree-Fock Exchange
-component is present) consist of the Becke &ldquo;half and half&rdquo; (see A.D.
-Becke, J. Chem. Phys. 98, 1372 (1992)), the adiabatic connection method
-(see A.D. Becke, J. Chem. Phys. 98, 5648 (1993)), B3LYP (popularized by
-Gaussian9X), Becke 1997 (&ldquo;Becke V&rdquo; paper: A.D.Becke, J. Chem. Phys.,
-107, 8554 (1997)).</p>
+component is present) consist of the Becke &ldquo;half and half&rdquo;<sup id="fnref_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">13</a></sup>, the adiabatic connection method<sup id="fnref_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup>,
+Becke 1997 (&ldquo;Becke V&rdquo; paper<sup id="fnref_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">15</a></sup>).</p>
 <p>The keyword <code>beckehandh</code> specifies that the exchange-correlation energy
 will be computed
 as</p>
@@ -489,7 +483,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup></td>
+<td><sup id="fnref2_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup></td>
 </tr>
 <tr>
 <td>vwn_1</td>
@@ -499,7 +493,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref6_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref7_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
 </tr>
 <tr>
 <td>vwn_2</td>
@@ -509,7 +503,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref5_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref6_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
 </tr>
 <tr>
 <td>vwn_3</td>
@@ -519,7 +513,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref4_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref5_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
 </tr>
 <tr>
 <td>vwn_4</td>
@@ -529,7 +523,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref3_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref4_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
 </tr>
 <tr>
 <td>vwn_5</td>
@@ -539,7 +533,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref3_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
 </tr>
 <tr>
 <td>vwn_1_rpa</td>
@@ -549,7 +543,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref2_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
 </tr>
 <tr>
 <td>perdew81</td>
@@ -1439,7 +1433,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td><sup id="fnref_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">13</a></sup></td>
+<td><sup id="fnref2_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">13</a></sup></td>
 </tr>
 <tr>
 <td>b3lyp</td>
@@ -1449,7 +1443,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup></td>
+<td><sup id="fnref3_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup></td>
 </tr>
 <tr>
 <td>acm</td>
@@ -1459,7 +1453,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td><sup id="fnref_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup></td>
+<td><sup id="fnref2_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup></td>
 </tr>
 <tr>
 <td>becke97</td>
@@ -1469,7 +1463,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">15</a></sup></td>
+<td><sup id="fnref2_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">15</a></sup></td>
 </tr>
 <tr>
 <td>becke97-1</td>
@@ -1612,10 +1606,10 @@ to nuclear position.  </p>
 <hr />
 <ol>
 <li id="fn_footnote_1">
-<p>J.C. Slater and K.H. Johnson, Phys. Rev. B 5, 844 (1972)&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>J.C. Slater and K.H. Johnson, Phys. Rev. B 5, 844 (1972). J.C. Slater, Quantum Theory of Molecules and Solids, Vol. 4: The Self-Consistent Field for Molecules and Solids (McGraw-Hill, New York, 1974)&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_2">
-<p>S.J. Vosko, L. Wilk and M. Nusair, Can. J. Phys. 58, 1200 (1980)&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>S.J. Vosko, L. Wilk and M. Nusair, Can. J. Phys. 58, 1200 (1980)&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_3">
 <p>J.P. Perdew and A. Zunger, Phys. Rev. B 23, 5048 (1981).&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
@@ -1648,13 +1642,13 @@ to nuclear position.  </p>
 <p>A.D. Boese, N.L. Doltsinis, N.C. Handy and M. Sprik. J. Chem. Phys. 112, 1670 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_12" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_13">
-<p>A.D. Becke, J. Chem. Phys. 98, 1372 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+<p>A.D. Becke, J. Chem. Phys. 98, 1372 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_13" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_14">
-<p>A.D. Becke, J. Chem. Phys. 98, 5648 (1993)&#160;<a class="footnote-backref" href="#fnref_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+<p>A.D. Becke, J. Chem. Phys. 98, 5648 (1993)&#160;<a class="footnote-backref" href="#fnref_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_15">
-<p>A.D. Becke, J. Chem. Phys. 107, 8554 (1997)&#160;<a class="footnote-backref" href="#fnref_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+<p>A.D. Becke, J. Chem. Phys. 107, 8554 (1997)&#160;<a class="footnote-backref" href="#fnref_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_16">
 <p>H.L. Schmider and A.D. Becke, J. Chem. Phys. 108, 9624 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
