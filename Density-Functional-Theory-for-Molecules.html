@@ -366,7 +366,7 @@ task dft
 <p>is equivalent to the simple line</p>
 <pre><code>task dft
 </code></pre>
-<p>The DECOMP directive causes the components of the energy corresponding
+<p>The <code>DECOMP</code> directive causes the components of the energy corresponding
 to each functional to be printed, rather than just the total
 exchange-correlation energy which is the default. You can see an example
 of this directive in the <a href="#sample-input-file">sample
@@ -376,7 +376,7 @@ the user as listed in the table below. The following sections describe
 how to use these options.</p>
 <h3 id="exchange-correlation-functionals">Exchange-Correlation Functionals<a class="headerlink" href="#exchange-correlation-functionals" title="Permanent link">&para;</a></h3>
 <p>There are several Exchange and Correlation functionals in addition to
-the default slater and vwn_5 functionals. These are either local or
+the default <code>slater</code> and <code>vwn_5</code> functionals. These are either local or
 gradient-corrected functionals (GCA); a full list can be found in the
 table below.</p>
 <p>The Hartree-Fock exact exchange functional, (which has <script type="math/tex">O(N^4)</script>
@@ -408,15 +408,15 @@ becke88 nonlocal 0.542  xperdew91 nonlocal 0.167
 </code></pre>
 <h3 id="setting-up-common-exchange-correlation-functionals">Setting up common exchange-correlation functionals<a class="headerlink" href="#setting-up-common-exchange-correlation-functionals" title="Permanent link">&para;</a></h3>
 <ul>
-<li>B3LYP: xc b3lyp</li>
-<li>PBE0: xc pbe0</li>
-<li>PBE96: xc xpbe96 cpbe96</li>
-<li>PW91: xc xperdew91 perdew91</li>
-<li>BHLYP: xc bhlyp</li>
-<li>Becke Half and Half: xc beckehandh</li>
-<li>BP86: xc becke88 perdew86</li>
-<li>BP91: xc becke88 perdew91</li>
-<li>BLYP: xc becke88 lyp</li>
+<li>B3LYP: <code>xc b3lyp</code></li>
+<li>PBE0: <code>xc pbe0</code></li>
+<li>PBE96: <code>xc xpbe96 cpbe96</code></li>
+<li>PW91: <code>xc xperdew91 perdew91</code></li>
+<li>BHLYP: <code>xc bhlyp</code></li>
+<li>Becke Half and Half: <code>xc beckehandh</code></li>
+<li>BP86: <code>xc becke88 perdew86</code></li>
+<li>BP91: <code>xc becke88 perdew91</code></li>
+<li>BLYP: <code>xc becke88 lyp</code></li>
 </ul>
 <p>Minnesota Functionals</p>
 <ul>
@@ -2119,8 +2119,8 @@ these is available as,</p>
 on/off as desired.</p>
 <p>Another strategy can be to simply specify how many iterations (cycles)
 you wish each type of procedure to be used. The necessary keywords to
-control the number of damping cycles (ncydp), the number of DIIS cycles
-(ncyds), and the number of level-shifting cycles (ncysh) are input as,</p>
+control the number of damping cycles (<code>ncydp</code>), the number of DIIS cycles
+(<code>ncyds</code>), and the number of level-shifting cycles (<code>ncysh</code>) are input as,</p>
 <pre><code> CONVERGENCE  [ncydp &lt;integer ncydp default 2&gt;] \  
               [ncyds &lt;integer ncyds default 30&gt;] \  
               [ncysh &lt;integer ncysh default 0&gt;]
@@ -2241,7 +2241,7 @@ end
 task dft
 </code></pre>
 <h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR &ndash; Fractional Occupation of the Molecular Orbitals<a class="headerlink" href="#smear-fractional-occupation-of-the-molecular-orbitals" title="Permanent link">&para;</a></h2>
-<p>The SMEAR keyword is useful in cases with many degenerate states near
+<p>The <code>SMEAR</code> keyword is useful in cases with many degenerate states near
 the HOMO (eg metallic clusters)</p>
 <pre><code> SMEAR &lt;real smear default 0.001&gt;
 </code></pre>
@@ -2606,7 +2606,7 @@ accuracies.</p>
 <p>In addition to the simple keyword specifying the desired accuracy as
 described above, the user has the option of specifying a custom
 quadrature of this type in which ALL atoms have the same grid
-specification. This is accomplished by using the gausleg keyword.</p>
+specification. This is accomplished by using the <code>gausleg</code> keyword.</p>
 <h4 id="gauss-legendre-angular-grid">Gauss-Legendre angular grid<a class="headerlink" href="#gauss-legendre-angular-grid" title="Permanent link">&para;</a></h4>
 <pre><code> GRID gausleg &lt;integer nradpts default 50&gt; &lt;integer nagrid default 10&gt;
 </code></pre>
@@ -2618,12 +2618,12 @@ theta points. So, for example, a specification of,</p>
 points per center (or 64000 points per center before pruning).</p>
 <h4 id="lebedev-angular-grid">Lebedev angular grid<a class="headerlink" href="#lebedev-angular-grid" title="Permanent link">&para;</a></h4>
 <p>A second quadrature is the Lebedev scheme for the angular
-components11.6. Within this numerical integration procedure various
+components. Within this numerical integration procedure various
 levels of accuracy have also been defined and are available to the user.
 The input for this type of grid takes the form,</p>
 <pre><code> GRID lebedev &lt;integer radpts &gt; &lt;integer iangquad &gt;
 </code></pre>
-<p>In this context the variable iangquad specifies a certain number of
+<p>In this context the variable <code>iangquad</code> specifies a certain number of
 angular points as indicated by the table below:</p>
 <p><center></p>
 <table>
@@ -2907,7 +2907,7 @@ possible to turn the use of the quadratic convergence algorithm off with
 the <code>nocgmin</code> keyword.</p>
 <h2 id="rodft-restricted-open-shell-dft">RODFT &ndash; Restricted open-shell DFT<a class="headerlink" href="#rodft-restricted-open-shell-dft" title="Permanent link">&para;</a></h2>
 <p>The <code>rodft</code> keyword will perform restricted open-shell calculations. This
-keyword can only be used with the CGMIN keyword.</p>
+keyword can only be used with the <code>CGMIN</code> keyword.</p>
 <h2 id="sic-self-interaction-correction">SIC &ndash; Self-Interaction Correction<a class="headerlink" href="#sic-self-interaction-correction" title="Permanent link">&para;</a></h2>
 <pre><code>sic [perturbative || oep || oep-loc ]
 &lt;default perturbative&gt;
@@ -3291,7 +3291,7 @@ encounters the TASK directive (<a href="TASK.html">TASK</a>).</p>
 <pre><code> TASK SODFT
 </code></pre>
 <p>Input parameters are the same as for the DFT. Some of the DFT options
-are not available in the SODFT. These are max_ovl and sic.</p>
+are not available in the SODFT. These are <code>max_ovl</code> and <code>sic</code>.</p>
 <p>Besides using the standard ECP and basis sets, see <a href="ECP.html">Effective Core
 Potentials</a> for details, one also has to specify a
 spin-orbit (SO) potential. The input specification for the SO potential
