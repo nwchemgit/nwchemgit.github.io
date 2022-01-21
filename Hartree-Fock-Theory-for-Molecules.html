@@ -157,8 +157,8 @@ restricted Hartree-Fock (RHF) wavefunctions, restricted high-spin
 open-shell Hartree-Fock (ROHF) wavefunctions, and spin-unrestricted
 Hartree-Fock (UHF) wavefunctions. The Hartree-Fock equations are solved
 using a conjugate-gradient method with an orbital Hessian based
-preconditioner[1]. The module supports both replicated data and
-distributed data Fock builders[2].</p>
+preconditioner[^1]. The module supports both replicated data and
+distributed data Fock builders<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">1</a></sup>.</p>
 <p>The SCF directive provides input to the SCF module and is a compound
 directive that encloses additional directives specific to the SCF
 module:</p>
@@ -1123,7 +1123,7 @@ accuracy. The form of the directive is as follows:</p>
 <p>This directive contains only two keywords: one for the PCG method and
 the other for the exact Hessian (Newton Raphson, or NR). Use of PCG or
 NR is determined by the input specified for nr_switch on the NR
-directive, <a href="#nr----controlling-the-newton-raphson">Controlling the
+directive, <a href="#nr-controlling-the-newton-raphson">Controlling the
 Newton-Raphson</a> above.</p>
 <p>Specifying the keyword pcg on the LEVEL directive allows the user to
 define the level shifting for the approximate (i.e., PCG) method.
@@ -1134,12 +1134,12 @@ can be specified independently with each keyword to define the level of
 accuracy that must be attained in the solution before the level shifting
 is changed to the value specified by input in the real variable final.
 Level shifts and gradient thresholds are specified in atomic units.</p>
-<p>For the PCG method (as specified using the keyword pcg), the defaults
+<p>For the PCG method (as specified using the keyword <code>pcg</code>), the defaults
 for this input are 20.0 for initial, 0.5 for tol, and 0.0 for final.
 This means that the approximate Hessian will be shifted by 20.0 until
 the maximum element of the gradient falls below 0.5, at which point the
 shift will be set to zero.</p>
-<p>For the exact Hessian (as specified using the keyword nr), the defaults
+<p>For the exact Hessian (as specified using the keyword <code>nr</code>), the defaults
 are all zero. The exact Hessian is usually not shifted since this
 destroys quadratic convergence. An example of an input directive that
 applies a shift of 0.2 to the exact Hessian is as follows:</p>
@@ -1180,8 +1180,8 @@ using the Pipek-Mezey algorithm. If the additional directive</p>
 <pre><code> set scf:loctype FB
 </code></pre>
 <p>is included, then the Foster-boys algorithm is used. The partitioning of
-core-orbitals is performed using the atomic information described in
-Section 16.1.</p>
+core-orbitals is performed using the atomic information described in the section describing how to <a href="MP2.html.md#freeze-freezing-orbitals">freeze the orbitals
+</a>.</p>
 <p>In the next release, this functionality will be extended to included all
 wavefunctions using molecular orbitals.</p>
 <h2 id="printing-information-from-the-scf-module">Printing Information from the SCF Module<a class="headerlink" href="#printing-information-from-the-scf-module" title="Permanent link">&para;</a></h2>
@@ -1358,16 +1358,15 @@ explicitly invoked via print control. These are as follows:</p>
 </table>
 <p>Table 3: Gradient Print Control Specifications  </p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
 <ol>
-<li>Wong, A. T. and Harrison, R. J. (1995) &ldquo;Approaches to large-scale
-    parallel self-consistent field calculation&rdquo;, <em>J. Comp. Chem.</em>
-    <strong>16</strong>, 1291-1300, doi:
-    <a href="http://dx.doi.org/10.1002/jcc.540161010">10.1002/jcc.540161010</a></li>
-<li>Foster, I. T.; Tilson, J. L.; Wagner, A. F.; Shepard, R. L.;
-    Harrison, R. J.; Kendall, R. A. and Littlefield, R. J. (1996)
-    &ldquo;Toward high-performance computational chemistry: I. Scalable Fock
-    matrix construction algorithms&rdquo;, <em>J. Comp. Chem.</em> <strong>17</strong>, 109-123,</li>
+<li id="fn_footnote_2">
+<p>Foster, I. T.; Tilson, J. L.; Wagner, A. F.; Shepard, R. L.; Harrison, R. J.; Kendall, R. A. and Littlefield, R. J. (1996)   &ldquo;Toward high-performance computational chemistry: I. Scalable Fock matrix construction algorithms&rdquo;, <em>J. Comp. Chem.</em> <strong>17</strong>, 109-123,&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 </ol>
+</div>
+<p>[1^]:  Wong, A. T. and Harrison, R. J. (1995) &ldquo;Approaches to large-scale parallel self-consistent field calculation&rdquo;, <em>J. Comp. Chem.</em>  <strong>16</strong>, 1291-1300, doi: <a href="http://dx.doi.org/10.1002/jcc.540161010">10.1002/jcc.540161010</a></p>
               
             </div>
           </div>
