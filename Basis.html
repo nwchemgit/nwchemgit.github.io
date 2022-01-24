@@ -178,10 +178,9 @@ explicitly in the input, to define a particular basis set.</p>
        ...  
  END
 </code></pre>
-<p>Examining the keywords on the first line of the BASIS directive:</p>
-<ul>
-<li>
-<p><code>name</code> :<br />
+<p>The folllwing sections examine the keywords on the first line of the BASIS directive:</p>
+<h3 id="basis-set-name">Basis set NAME<a class="headerlink" href="#basis-set-name" title="Permanent link">&para;</a></h3>
+<p><code>NAME</code> :  <br />
     By default, the basis set is stored in the database with the name
     &ldquo;ao basis&rdquo;. Another name may be specified in the BASIS directive,
     thus, multiple basis sets may be stored simultaneously in the
@@ -192,9 +191,8 @@ explicitly in the input, to define a particular basis set.</p>
     relativistic method require multiple basis sets with specific names.
     The user can associate the &ldquo;ao basis&rdquo; with another named basis using
     the SET directive (see <a href="Top-level.html#SET">SET</a>).</p>
-</li>
-<li>
-<p><a href="#-spherical-or-cartesian">SPHERICAL or CARTESIAN</a> <br />
+<h3 id="spherical-or-cartesian">SPHERICAL or CARTESIAN<a class="headerlink" href="#spherical-or-cartesian" title="Permanent link">&para;</a></h3>
+<p><code>SPHERICAL</code> || <code>CARTESIAN</code> : <br />
     The keywords <code>spherical</code> and <code>cartesian</code> offer the option of using
     either spherical-harmonic (5 d, 7 f, 9 g, &hellip;) or Cartesian (6 d, 10
     f, 15 g, &hellip;) angular functions. The default is Cartesian. Note that
@@ -202,8 +200,6 @@ explicitly in the input, to define a particular basis set.</p>
     harmonics and to use these, the <code>spherical</code> keyword should be present
     in the <code>BASIS</code> directive. The use of spherical functions also helps
     eliminate problems with linear dependence.</p>
-</li>
-</ul>
 <table>
 <thead>
 <tr>
@@ -531,7 +527,7 @@ exchange</a>. </p>
 <h2 id="combinations-of-library-and-explicit-basis-set-input">Combinations of library and explicit basis set input<a class="headerlink" href="#combinations-of-library-and-explicit-basis-set-input" title="Permanent link">&para;</a></h2>
 <p>The user can use a mixture of library basis and explicit basis set input
 to define the basis sets used on the various atoms.</p>
-<p>For example, the following BASIS directive augments the Dunning cc-pvdz
+<p>For example, the following <code>BASIS</code> directive augments the Dunning cc-pvdz
 basis set for the water molecule with a diffuse s-shell on oxygen and
 adds the aug-cc-pVDZ diffuse functions onto the hydrogen.</p>
 <pre><code> basis spherical   
