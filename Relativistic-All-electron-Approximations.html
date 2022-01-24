@@ -209,23 +209,23 @@ Douglas-Kroll approximation can be invoked by specifying:</p>
                 &lt;string (FPP||DKH||DKFULL|DK3|DK3FULL) default DKH&gt;]
 </code></pre>
 <p>The ON|OFF string is used to turn on or off the Douglas-Kroll
-approximation. By default, if the DOUGLAS-KROLL keyword is found, the
+approximation. By default, if the <code>DOUGLAS-KROLL</code> keyword is found, the
 approximation will be used in the calculation. If the user wishes to
 calculate a non-relativistic quantity after turning on Douglas-Kroll,
-the user will need to define a new RELATIVISTIC block and turn the
-approximation OFF. The user could also simply put a blank RELATIVISTIC
+the user will need to define a new <code>RELATIVISTIC</code> block and turn the
+approximation <code>OFF</code>. The user could also simply put a blank <code>RELATIVISTIC</code>
 block in the input file and all options will be turned off.</p>
-<p>The FPP is the approximation based on free-particle projection
-operators<sup id="fnref_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">11</a></sup> whereas the DKH and DKFULL approximations are based on
+<p>The <code>FPP</code> is the approximation based on free-particle projection
+operators<sup id="fnref_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">11</a></sup> whereas the <code>DKH</code> and <code>DKFULL</code> approximations are based on
 external-field projection operators<sup id="fnref_footnote_12"><a class="footnote-ref" href="#fn_footnote_12">12</a></sup>. The latter two are
-considerably better approximations than the former. DKH is the
+considerably better approximations than the former. <code>DKH</code> is the
 Douglas-Kroll-Hess approach and is the approach that is generally
-implemented in quantum chemistry codes. DKFULL includes certain
-cross-product integral terms ignored in the DKH approach (see for
+implemented in quantum chemistry codes. <code>DKFULL</code> includes certain
+cross-product integral terms ignored in the <code>DKH</code> approach (see for
 example Häberlen and Rösch<sup id="fnref_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">13</a></sup>). The third-order Douglas-Kroll
 approximation has been implemented by T. Nakajima and K.
-Hirao<sup id="fnref_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup><sup id="fnref_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">15</a></sup>. This approximation can be called using DK3 (DK3
-without cross-product integral terms) or DK3FULL (DK3 with cross-product
+Hirao<sup id="fnref_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup><sup id="fnref_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">15</a></sup>. This approximation can be called using <code>DK3</code> (DK3
+without cross-product integral terms) or <code>DK3FULL</code> (DK3 with cross-product
 integral terms).</p>
 <p>The contracted basis sets used in the calculations should reflect the
 relativistic effects, i.e. one should use contracted basis sets which
@@ -248,16 +248,16 @@ basis&rdquo; (see <a href="Basis.html">Basis Sets</a>).</p>
 <h2 id="zeroth-order-regular-approximation-zora">Zeroth Order regular approximation (ZORA)<a class="headerlink" href="#zeroth-order-regular-approximation-zora" title="Permanent link">&para;</a></h2>
 <p>The spin-free and spin-orbit one-electron zeroth-order regular
 approximation (ZORA) have been implemented. ZORA can be accessed only 
-via the DFT and SO-DFT modules. The use of relativistic
+via the <a href="Density-Functional-Theory-for-Molecules.html">DFT</a> and <a href="Density-Functional-Theory-for-Molecules.html#spin-orbit-density-functional-theory-sodft">SO-DFT</a> modules. The use of relativistic
 effects with ZORA can be invoked by specifying:</p>
 <pre><code> ZORA [&lt;string (ON||OFF) default ON&gt;
 </code></pre>
-<p>The ON|OFF string is used to turn on or off ZORA. By default, if the
-ZORA keyword is found, the approximation will be used in the
+<p>The <code>ON</code>|<code>OFF</code> string is used to turn on or off ZORA. By default, if the
+<code>ZORA</code> keyword is found, the approximation will be used in the
 calculation. If the user wishes to calculate a non-relativistic quantity
-after turning on ZORA, the user will need to define a new RELATIVISTIC
+after turning on ZORA, the user will need to define a new <code>RELATIVISTIC</code>
 block and turn the approximation OFF. The user can also simply put a
-blank RELATIVISTIC block in the input file and all options will be
+blank <code>RELATIVISTIC</code> block in the input file and all options will be
 turned off.</p>
 <p>To increase the accuracy of ZORA calculations, the following settings may be used 
 in the relativistic block</p>
@@ -266,7 +266,7 @@ in the relativistic block</p>
      zora:cutoff 1d-30
  end
 </code></pre>
-<p>To invoke the relativistic ZORA model potential approach due to van Wullen (references 16 &amp; 17).</p>
+<p>To invoke the relativistic ZORA model potential approach due to van Wullen (references <sup id="fnref_footnote_16"><a class="footnote-ref" href="#fn_footnote_16">16</a></sup> and <sup id="fnref_footnote_17"><a class="footnote-ref" href="#fn_footnote_17">17</a></sup>).</p>
 <p>For model potentials constructed from 4-component densities:  </p>
 <pre><code> relativistic
      zora on
@@ -311,23 +311,23 @@ Coulomb interaction, so that the only corrections that need to be made
 are in the one-electron integrals. This is the equivalent of the
 Douglas-Kroll(-Hess) approximation as it is usually applied.</p>
 <p>The use of these approximations can be invoked with the use of the
-DYALL-MOD-DIRAC directive in the RELATIVISTIC directive block. The
+<code>DYALL-MOD-DIRAC</code> directive in the <code>RELATIVISTIC</code> directive block. The
 syntax is as follows.</p>
 <pre><code> DYALL-MOD-DIRAC [ (ON || OFF) default ON ] 
                  [ (NESC1E || NESC2E) default NESC1E ]
 </code></pre>
-<p>The ON|OFF string is used to turn on or off the Dyall&rsquo;s modified Dirac
-approximation. By default, if the DYALL-MOD-DIRAC keyword is found, the
+<p>The <code>ON</code>|<code>OFF</code> string is used to turn on or off the Dyall&rsquo;s modified Dirac
+approximation. By default, if the <code>DYALL-MOD-DIRAC</code> keyword is found, the
 approximation will be used in the calculation. If the user wishes to
 calculate a non-relativistic quantity after turning on Dyall&rsquo;s modified
-Dirac, the user will need to define a new RELATIVISTIC block and turn
-the approximation OFF. The user could also simply put a blank
-RELATIVISTIC block in the input file and all options will be turned off.</p>
-<p>Both one- and two-electron approximations are available NESC1E ||
-NESC2E, and both have analytic gradients. The one-electron approximation
-is the default. The two-electron approximation specified by NESC2E has
+Dirac, the user will need to define a new <code>RELATIVISTIC</code> block and turn
+the approximation <code>OFF</code>. The user could also simply put a blank
+<code>RELATIVISTIC</code> block in the input file and all options will be turned off.</p>
+<p>Both one- and two-electron approximations are available <code>NESC1E</code> ||
+<code>NESC2E</code>, and both have analytic gradients. The one-electron approximation
+is the default. The two-electron approximation specified by <code>NESC2E</code> has
 some sub options which are placed on the same logical line as the
-DYALL-MOD-DIRAC directive, with the following
+<code>DYALL-MOD-DIRAC</code> directive, with the following
 syntax:</p>
 <pre><code> NESC2E [ (SS1CENT [ (ON || OFF) default ON ] || SSALL) default SSALL ]
         [ (SSSS [ (ON || OFF) default ON ] || NOSSSS) default SSSS ]
@@ -340,7 +340,7 @@ to two centers. For a case with only one relativistic atom this option
 is redundant. The second controls the inclusion of the <em>(SS|SS)</em>
 integrals which are of order &alpha;<sup>4</sup>. For light atoms they may
 safely be neglected, but for heavy atoms they should be included.</p>
-<p>In addition to the selection of this keyword in the RELATIVISTIC
+<p>In addition to the selection of this keyword in the <code>RELATIVISTIC</code>
 directive block, it is necessary to supply basis sets in addition to the
 ao basis. For the one-electron approximation, three basis sets are
 needed: the atomic FW basis set, the large component basis set and the
