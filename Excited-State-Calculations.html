@@ -246,9 +246,10 @@ improved (Koopmans type) ionization potentials and Rydberg excitation
 energies. The latter, however, supply the shift by itself unlike to
 former.</p>
 <h2 id="input-syntax">Input syntax<a class="headerlink" href="#input-syntax" title="Permanent link">&para;</a></h2>
-<p>The module is called TDDFT as TDDFT employing a hybrid HF-DFT functional
+<p>The module is called <code>TDDFT</code> as time-dependent density functional
+theory employing a hybrid HF-DFT functional
 encompasses all of the above-mentioned methods implemented. To use this
-module, one needs to specify TDDFT on the task directive, e.g.,</p>
+module, one needs to specify <code>TDDFT</code> on the task directive, e.g.,</p>
 <pre><code>     TASK TDDFT ENERGY
 </code></pre>
 <p>for a single-point excitation energy calculation, and</p>
@@ -262,13 +263,13 @@ excitation energy calculation), and</p>
 first invokes DFT module for a ground-state calculation (regardless of
 whether the calculations uses a HF reference as in CIS or TDHF or a DFT
 functional), and hence there is no need to perform a separate
-ground-state DFT calculation prior to calling a TDDFT task. When no
+ground-state DFT calculation prior to calling a <code>TDDFT</code> task. When no
 second argument of the task directive is given, a single-point
 excitation energy calculation will be assumed. For geometry
 optimizations, it is usually necessary to specify the target excited
 state and its irreducible representation it belongs to. See the
-subsections TARGET and TARGETSYM for more detail.</p>
-<p>Individual parameters and keywords may be supplied in the TDDFT input
+subsections (<code>TARGET</code> and <code>TARGETSYM</code>](#target-and-targetsym&mdash;the-target-root-and-its-symmetry) for more detail.</p>
+<p>Individual parameters and keywords may be supplied in the <code>TDDFT</code> input
 block. The syntax is:</p>
 <pre><code> TDDFT
    [(CIS||RPA) default RPA]  
@@ -312,12 +313,12 @@ section of Sample input and output for more details.</p>
 <p>Note that the keyword for the asymptotic correction must be given in the
 DFT input block, since all the effects of the correction (and also
 changes in the computer program) occur in the SCF calculation stage. See
-<a href="Density-Functional-Theory-for-Molecules.html">DFT</a> (keyword CS00 and LB94) for details.</p>
+<a href="Density-Functional-Theory-for-Molecules.html#lb94-and-cs00----asymptotic-correction">DFT</a> (keywords <code>CS00</code> and <code>LB94</code>) for details.</p>
 <h2 id="keywords-of-tddft-input-block">Keywords of TDDFT input block<a class="headerlink" href="#keywords-of-tddft-input-block" title="Permanent link">&para;</a></h2>
 <h3 id="cis-and-rpa-the-tamm-dancoff-approximation">CIS and RPA &ndash; the Tamm-Dancoff approximation<a class="headerlink" href="#cis-and-rpa-the-tamm-dancoff-approximation" title="Permanent link">&para;</a></h3>
-<p>These keywords toggle the Tamm-Dancoff approximation. CIS means that the
+<p>These keywords toggle the Tamm-Dancoff approximation. <code>CIS</code> means that the
 Tamm-Dancoff approximation is used and the CIS or Tamm-Dancoff TDDFT
-calculation is requested. RPA, which is the default, requests TDHF (RPA)
+calculation is requested. <code>RPA</code>, which is the default, requests TDHF (RPA)
 or TDDFT calculation.</p>
 <p>The performance of CIS (Tamm-Dancoff TDDFT) and RPA (TDDFT) are
 comparable in accuracy. However, the computational cost is slightly
@@ -329,27 +330,27 @@ aborting the calculation due to triplet near instability or other
 instability problems.</p>
 <h3 id="nroots-the-number-of-excited-states">NROOTS &ndash; the number of excited states<a class="headerlink" href="#nroots-the-number-of-excited-states" title="Permanent link">&para;</a></h3>
 <p>One can specify the number of excited state roots to be determined. The
-default value is 1. It is advised that the users request several more
+default value for <code>NROOTS</code> is 1. It is advised that the users request several more
 roots than actually needed, since owing to the nature of the trial
 vector algorithm, some low-lying roots can be missed when they do not
 have sufficient overlap with the initial guess vectors.</p>
 <h3 id="maxvecs-the-subspace-size">MAXVECS &ndash; the subspace size<a class="headerlink" href="#maxvecs-the-subspace-size" title="Permanent link">&para;</a></h3>
-<p>This keyword limits the subspace size of Davidson&rsquo;s algorithm; in other
+<p>The <code>MAXVECS</code> keyword limits the subspace size of Davidson&rsquo;s algorithm; in other
 words, it is the maximum number of trial vectors that the calculation is
 allowed to hold. Typically, 10 to 20 trial vectors are needed for each
 excited state root to be converged. However, it need not exceed the
 product of the number of occupied orbitals and the number of virtual
 orbitals. The default value is 1000.</p>
 <h3 id="singlet-and-nosinglet-singlet-excited-states">SINGLET and NOSINGLET &ndash; singlet excited states<a class="headerlink" href="#singlet-and-nosinglet-singlet-excited-states" title="Permanent link">&para;</a></h3>
-<p>SINGLET (NOSINGLET) requests (suppresses) the calculation of singlet
+<p><code>SINGLET || NOSINGLET</code> requests (suppresses) the calculation of singlet
 excited states when the reference wave function is closed shell. The
-default is SINGLET.</p>
+default is <code>SINGLET</code>.</p>
 <h3 id="triplet-and-notriplet-triplet-excited-states">TRIPLET and NOTRIPLET &ndash; triplet excited states<a class="headerlink" href="#triplet-and-notriplet-triplet-excited-states" title="Permanent link">&para;</a></h3>
-<p>TRIPLET (NOTRIPLET) requests (suppresses) the calculation of triplet
+<p><code>TRIPLET || NOTRIPLET</code> requests (suppresses) the calculation of triplet
 excited states when the reference wave function is closed shell. The
-default is TRIPLET.</p>
+default <code>is TRIPLET</code>.</p>
 <h3 id="thresh-the-convergence-threshold-of-davidson-iteration">THRESH &ndash; the convergence threshold of Davidson iteration<a class="headerlink" href="#thresh-the-convergence-threshold-of-davidson-iteration" title="Permanent link">&para;</a></h3>
-<p>This keyword specifies the convergence threshold of Davidson&rsquo;s iterative
+<p>The <code>THRESH</code> keyword specifies the convergence threshold of Davidson&rsquo;s iterative
 algorithm to solve a matrix eigenvalue problem. The threshold refers to
 the norm of residual, namely, the difference between the left-hand side
 and right-hand side of the matrix eigenvalue equation with the current
@@ -357,26 +358,26 @@ solution vector. With the default value of 1e-4, the excitation energies
 are usually converged to 1e-5 hartree.</p>
 <h3 id="maxiter-the-maximum-number-of-davidson-iteration">MAXITER &ndash; the maximum number of Davidson iteration<a class="headerlink" href="#maxiter-the-maximum-number-of-davidson-iteration" title="Permanent link">&para;</a></h3>
 <p>It typically takes 10-30 iterations for the Davidson algorithm to get
-converged results. The default value is 100.</p>
+converged results. The default value for <code>MAXITER</code> is 100.</p>
 <h3 id="target-and-targetsym-the-target-root-and-its-symmetry">TARGET and TARGETSYM&ndash; the target root and its symmetry<a class="headerlink" href="#target-and-targetsym-the-target-root-and-its-symmetry" title="Permanent link">&para;</a></h3>
 <p>At the moment, excited-state first geometry derivatives can be
 calculated analytically for a set of functionals, while excited-state
 second geometry derivatives are obtained by numerical differentiation.
 These keywords may be used to specify which excited state root is being
 used for the geometrical derivative calculation. For instance, when
-TARGET 3 and TARGETSYM a1g are included in the input block, the total
+<code>TARGET 3</code> and <code>TARGETSYM a1g</code> are included in the input block, the total
 energy (ground state energy plus excitation energy) of the third lowest
 excited state root (excluding the ground state) transforming as the
 irreducible representation a1g will be passed to the module which
-performs the derivative calculations. The default values of these
-keywords are 1 and none, respectively.</p>
-<p>The keyword TARGETSYM is essential in excited state geometry
+performs the derivative calculations. The default values for <code>TARGET</code> and <code>TARGETSYM</code>
+ are <code>1</code> and <code>none</code>, respectively.</p>
+<p>The keyword <code>TARGETSYM</code> is essential in excited state geometry
 optimization, since it is very common that the order of excited states
 changes due to the geometry changes in the course of optimization.
-Without specifying the TARGETSYM, the optimizer could (and would likely)
+Without specifying the <code>TARGETSYM</code>, the optimizer could (and would likely)
 be optimizing the geometry of an excited state that is different from
 the one the user had intended to optimize at the starting geometry. On
-the other hand, in the frequency calculations, TARGETSYM must be none,
+the other hand, in the frequency calculations, <code>TARGETSYM</code> must be <code>none</code>,
 since the finite displacements given in the course of frequency
 calculations will lift the spatial symmetry of the equilibrium geometry.
 When these finite displacements can alter the order of excited states
@@ -385,20 +386,20 @@ feasible.</p>
 <h3 id="symmetry-restricting-the-excited-state-symmetry">SYMMETRY &ndash; restricting the excited state symmetry<a class="headerlink" href="#symmetry-restricting-the-excited-state-symmetry" title="Permanent link">&para;</a></h3>
 <p>By adding this keyword to the input block, the user can request the
 module to generate the initial guess vectors transforming as the same
-irreducible representation as TARGETSYM. This causes the final excited
+irreducible representation as <code>TARGETSYM</code>. This causes the final excited
 state roots be (exclusively) dominated by those with the specified
 irreducible representation. This may be useful, when the user is
 interested in just the optically allowed transitions, or in the geometry
 optimization of an excited state root with a particular irreducible
-representation. By default, this option is not set. TARGETSYM must be
-specified when SYMMETRY is invoked.</p>
+representation. By default, this option is not set. <code>TARGETSYM</code> must be
+specified when <code>SYMMETRY</code> is invoked.</p>
 <h3 id="ecut-energy-cutoff">ECUT &ndash; energy cutoff<a class="headerlink" href="#ecut-energy-cutoff" title="Permanent link">&para;</a></h3>
-<p>This keyword enables restricted excitation window TDDFT (REW-TDDFT).
+<p>The <code>ECUT</code> keyword enables restricted excitation window TDDFT (REW-TDDFT).
 This is an approach best suited for core excitations. By specifying this
 keyword only excitations from occupied states below the energy cutoff
 will be considered.</p>
 <h3 id="ewin-energy-window">EWIN &ndash; energy window<a class="headerlink" href="#ewin-energy-window" title="Permanent link">&para;</a></h3>
-<p>This keyword enables a restricted energy window between a lower energy
+<p>The <code>EWIN</code> keyword enables a restricted energy window between a lower energy
 cutoff and a higher energy cutoff. For example, <code>ewin -20.0 -10.0</code> will
 only consider excitations from occupied orbitals within the specified
 energy window</p>
