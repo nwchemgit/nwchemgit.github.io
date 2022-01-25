@@ -384,7 +384,7 @@ When these finite displacements can alter the order of excited states
 including the target state, the frequency calculation is not be
 feasible.</p>
 <h3 id="symmetry-restricting-the-excited-state-symmetry">SYMMETRY &ndash; restricting the excited state symmetry<a class="headerlink" href="#symmetry-restricting-the-excited-state-symmetry" title="Permanent link">&para;</a></h3>
-<p>By adding this keyword to the input block, the user can request the
+<p>By adding the <code>SYMMETRY</code> keyword to the input block, the user can request the
 module to generate the initial guess vectors transforming as the same
 irreducible representation as <code>TARGETSYM</code>. This causes the final excited
 state roots be (exclusively) dominated by those with the specified
@@ -413,7 +413,7 @@ depending on the number of roots requested and beta excitations will be
 considered from orbitals 2 through 5 depending on the number of roots
 requested.</p>
 <h3 id="civecs-ci-vectors">CIVECS &ndash; CI vectors<a class="headerlink" href="#civecs-ci-vectors" title="Permanent link">&para;</a></h3>
-<p>This keyword will result in the CI vectors being written out. By default
+<p>The <code>CIVECS</code> keyword will result in the CI vectors being written out. By default
 this is off. Please note this can be a very large file, so avoid turning
 on this keyword if you are calculating a very large number of roots. CI
 vectors are needed for excited-state gradient and transition density
@@ -422,13 +422,13 @@ calculations.</p>
 <p>Analytical TDDFT gradients can be calculated by specifying a <code>grad</code> block
 within the main <code>TDDFT</code> block</p>
 <p>For example, the following will perform a TDDFT optimization on the
-first singlet excited state (S1). Note that the civecs keyword must be
-specified. To perform a single TDDFT gradient, replace the optimize
-keyword with gradient in the task line. A complete TDDFT optimization
+first singlet excited state (S1). Note that the <code>civecs</code> keyword must be
+specified. To perform a single TDDFT gradient, replace the <code>optimize</code>
+keyword with <code>gradient</code> in the task line. A complete TDDFT optimization
 input example is given the Sample Inputs section. A TDDFT gradients
 calculation can be used to calculate the density of a
 specific excited state.
-The excited stated density is written to a file with the dmat suffix.</p>
+The excited stated density is written to a file with the <code>.dmat</code> suffix.</p>
 <pre><code>tddft
  nroots 2
  algorithm 1
@@ -476,7 +476,7 @@ diminished substantially.</p>
 <h3 id="freeze-the-frozen-corevirtual-approximation">FREEZE &ndash; the frozen core/virtual approximation<a class="headerlink" href="#freeze-the-frozen-corevirtual-approximation" title="Permanent link">&para;</a></h3>
 <p>Some of the lowest-lying core orbitals and/or some of the highest-lying
 virtual orbitals may be excluded in the CIS, TDHF, and TDDFT
-calculations by this keyword (this does not affect the ground state HF
+calculations by the <code>FREEZE</code> keyword (this does not affect the ground state HF
 or DFT calculation). No orbitals are frozen by default. To exclude the
 atom-like core regions altogether, one may request</p>
 <pre><code> FREEZE atomic
@@ -489,12 +489,12 @@ may use</p>
 equivalent to writing</p>
 <pre><code> FREEZE core 10
 </code></pre>
-<p>To freeze the highest virtual orbitals, use the virtual keyword. For
+<p>To freeze the highest virtual orbitals, use the <code>virtual</code> keyword. For
 instance, to freeze the top 5 virtuals</p>
 <pre><code> FREEZE virtual 5
 </code></pre>
 <h3 id="print-the-verbosity">PRINT &ndash; the verbosity<a class="headerlink" href="#print-the-verbosity" title="Permanent link">&para;</a></h3>
-<p>This keyword changes the level of output verbosity. One may also request
+<p>The <code>PRINT</code> keyword changes the level of output verbosity. One may also request
 some particular items in the table
 below.</p>
 <table>
