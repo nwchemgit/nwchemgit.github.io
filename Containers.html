@@ -166,11 +166,10 @@
 <pre><code> docker run --rm -v /tmp:/data ghcr.io/nwchemgit/nwchem-dev/amd64 input.nw
 </code></pre>
 <p>where the input file <code>input.nw</code> is located in the <code>/tmp</code> directory.</p>
-<p>Older Docker images are available at <a href="https://hub.docker.com/u/nwchemorg">https://hub.docker.com/u/nwchemorg</a></p>
-<p>The following docker command will pull the NWChem 7.0.0 image and run it in parallel using three processes </p>
-<pre><code>docker run  --entrypoint='mpirun' -v  /Users/edo/nwchem/tests:/data -it nwchemorg/nwchem-700.fedora.sockets  -np 3 nwchem  /data/h2o_b2lyp.nw
+<p>The following docker command will run NWChem in parallel using three processes </p>
+<pre><code>docker run --rm  --entrypoint='mpirun' -v /tmp:/data ghcr.io/nwchemgit/nwchem-dev/amd64  -np 2 nwchem /data/xvdw.nw
 </code></pre>
-<p>This example uses the input file <code>h2o_b2lyp.nw</code> available on the host directory <code>/Users/edo/nwchem/tests</code></p>
+<p>This example uses the input file <code>xvdw.nw</code> available on the host directory <code>/tmp</code></p>
 <p>The associated Dockerfile is available at<br />
 <a href="https://github.com/nwchemgit/nwchem-dockerfiles/tree/master/nwchem-700.fedora.sockets">https://github.com/nwchemgit/nwchem-dockerfiles/tree/master/nwchem-700.fedora.sockets</a> </p>
 <h1 id="singularity">Singularity<a class="headerlink" href="#singularity" title="Permanent link">&para;</a></h1>
