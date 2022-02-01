@@ -2156,7 +2156,7 @@ tolerance to 0.01 would be,</p>
 <p>Direct inversion of the iterative subspace with extrapolation of up to
 10 Fock matrices is a default optimization procedure. For large
 molecular systems the amount of available memory may preclude the
-ability to store this number of <script type="math/tex">N^2</script>
+ability to store this number of <em>N<sup>2</sup></em> arrays in global memory. The
 user may then specify the number of Fock matrices to be used in the
 extrapolation (must be greater than three (3) to be effective). To set
 the number of Fock matrices stored and used in the extrapolation
@@ -3050,7 +3050,7 @@ some functionals and triple-zeta plus double polarization basis set
 <p>Grimme&rsquo;s DFT-D3 is also available. Here the dispersion term has the
 following
 form:</p>
-<p>E<sub>disp</sub> = &sum;<sub>ij</sub> &sum;<sub>n=6,8</sub> s<sub>n</sub>  C<sup>ij</sup><sub>n</sub> &frasl; r<sub>ij</sub><sup>n</sup> &lbrace;1 + 6 &lbrack;r<sub>ij</sub> &frasl; (s<sub>r,n</sub> R<sub>0</sub><sup>ij</sup>)&rbrack;<sup>-&alpha;n</sup> &rbrace;<sup>-1</sup></p>
+<p><var>E<sub>disp</sub> = &sum;<sub>ij</sub> &sum;<sub>n=6,8</sub> s<sub>n</sub>  C<sup>ij</sup><sub>n</sub> &frasl; r<sub>ij</sub><sup>n</sup> &lbrace;1 + 6 &lbrack;r<sub>ij</sub> &frasl; (s<sub>r,n</sub> R<sub>0</sub><sup>ij</sup>)&rbrack;<sup>-&alpha;n</sup> &rbrace;<sup>-1</sup></var></p>
 <p>This new dispersion correction covers elements through Z=94.
   <em>C<sup>ij</sup><sub>n</sub> (n=6,8)</em> are coordination and geometry dependent. Details
 about the functional form can be found in S. Grimme, J. Antony, S.
@@ -3306,7 +3306,7 @@ See <a href="ECP.html">Effective Core Potentials</a> for details how to define t
 designed for the same size core, i.e., don&rsquo;t use a small core ECP
 potential with a large core SO potential (it will produce erroneous
 results).</p>
-<p>The following is an example of a calculation of UO<sub>2&lt;\sub&gt;:   </p>
+<p>The following is an example of a calculation of UO<sub>2</sub>:   </p>
 <pre><code>start uo2_sodft  
 echo  
 Memory 32 mw  
