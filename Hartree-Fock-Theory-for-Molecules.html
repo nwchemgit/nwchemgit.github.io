@@ -226,7 +226,7 @@ defeating the defaults by specifying the keywords
 may be necessary to specify these in order to modify the behavior of a
 previous calculation (see <a href="NWChem-Architecture.html">NWChem
 Architecture</a> for restart behavior).</p>
-<h2 id="sym-use-of-symmetry">SYM &ndash; use of symmetry<a class="headerlink" href="#sym-use-of-symmetry" title="Permanent link">&para;</a></h2>
+<h2 id="sym-use-of-symmetry">SYM: use of symmetry<a class="headerlink" href="#sym-use-of-symmetry" title="Permanent link">&para;</a></h2>
 <pre><code>  SYM &lt;string (ON||OFF) default ON&gt;
 </code></pre>
 <p>This directive enables/disables the use of symmetry to speed up Fock
@@ -238,7 +238,7 @@ directive</a>.</p>
 <p>For example, to disable use of symmetry in Fock matrix construction:</p>
 <pre><code> sym off
 </code></pre>
-<h2 id="adapt-symmetry-adaptation-of-mos">ADAPT - symmetry adaptation of MOs<a class="headerlink" href="#adapt-symmetry-adaptation-of-mos" title="Permanent link">&para;</a></h2>
+<h2 id="adapt-symmetry-adaptation-of-mos">ADAPT: symmetry adaptation of MOs<a class="headerlink" href="#adapt-symmetry-adaptation-of-mos" title="Permanent link">&para;</a></h2>
 <pre><code> ADAPT &lt;string (ON||OFF) default ON&gt;
 </code></pre>
 <p>The default in the SCF module calculation is to force symmetry adaption
@@ -252,7 +252,7 @@ are symmetry contaminated, this assumption may not be valid &ndash; which
 could result in incorrect energies and poor convergence of the
 calculation. It is thus advisable when specifying <code>ADAPT OFF</code> to also
 specify <code>SYM OFF</code> (<a href="#sym-use-of-symmetry">Use of Symmetry</a>).</p>
-<h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
+<h2 id="tol2e-integral-screening-threshold">TOL2E: integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
 <pre><code> TOL2E &lt;real tol2e default min(10e-7 , 0.01*thresh)&gt;
 </code></pre>
 <p>The variable tol2e is used in determining the integral screening
@@ -276,7 +276,7 @@ is, for example:</p>
 be necessary to set this parameter. A value of 10<sup>-12</sup> is
 sufficient for nearly all such
 purposes.</p>
-<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS &ndash; input/output of MO vectors<a class="headerlink" href="#vectors-inputoutput-of-mo-vectors" title="Permanent link">&para;</a></h2>
+<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS: input/output of MO vectors<a class="headerlink" href="#vectors-inputoutput-of-mo-vectors" title="Permanent link">&para;</a></h2>
 <pre><code> VECTORS [[input] (&lt;string input_movecs default atomic&gt;) || \  
                   (project &lt;string basisname&gt; &lt;string filename&gt;) || \  
                   (fragment &lt;string file1&gt; [&lt;string file2&gt; ...])] \ 
@@ -435,7 +435,7 @@ dft
 end
 task dft
 </code></pre>
-<h3 id="vectors-fragment-keyword-superposition-of-fragment-molecular-orbitals">VECTORS FRAGMENT keyword - Superposition of fragment molecular orbitals<a class="headerlink" href="#vectors-fragment-keyword-superposition-of-fragment-molecular-orbitals" title="Permanent link">&para;</a></h3>
+<h3 id="vectors-fragment-superposition-of-fragment-molecular-orbitals">VECTORS FRAGMENT: Superposition of fragment molecular orbitals<a class="headerlink" href="#vectors-fragment-superposition-of-fragment-molecular-orbitals" title="Permanent link">&para;</a></h3>
 <p>The fragment initial guess is particularly useful in the following
 instances:</p>
 <ul>
@@ -784,7 +784,7 @@ default value in the code of 10<sup>-4</sup>.  </p>
 available in the wavefunction, and the energy should be converged to
 approximately the square of this number. It should be noted, however,
 that the precision in the energy will not exceed that of the integral
-screening tolerance. This tolerance (<a href="#tol2e----integral-screening-threshold">Integral screening
+screening tolerance. This tolerance (<a href="#tol2e-integral-screening-threshold">Integral screening
 threshold</a>) is
 automatically set from the convergence threshold, so that sufficient
 precision is usually available by default.</p>
@@ -806,7 +806,7 @@ that can be attained in most circumstances.</p>
 for both ROHF/RHF and UHF calculations. For most molecules, this number
 of iterations is more than sufficient for the quadratically convergent
 SCF algorithm to obtain a solution converged to the default threshold
-(see <a href="#thresh----convergence-threshold">Convergence
+(see <a href="#thresh-convergence-threshold">Convergence
 threshold</a> above). If the
 SCF program detects that the quadratically convergent algorithm is not
 efficient, then it will resort to a linearly convergent algorithm and
@@ -847,7 +847,7 @@ of the form:</p>
 <p>The default of 5 should be adequate for most applications, but may be
 increased if convergence is poor. On large systems, it may be necessary
 to specify a lower value for diisbas, to conserve memory.</p>
-<h2 id="direct-and-semidirect-recomputation-of-integrals">DIRECT and SEMIDIRECT &ndash; recomputation of integrals<a class="headerlink" href="#direct-and-semidirect-recomputation-of-integrals" title="Permanent link">&para;</a></h2>
+<h2 id="direct-and-semidirect-recomputation-of-integrals">DIRECT and SEMIDIRECT: recomputation of integrals<a class="headerlink" href="#direct-and-semidirect-recomputation-of-integrals" title="Permanent link">&para;</a></h2>
 <p>In the context of SCF calculations direct means that all integrals are
 recomputed as required and none are stored. The other extreme are disk-
 or memory-resident (sometimes termed conventional) calculations in which
@@ -902,7 +902,7 @@ user-specified name entered in the string filename has the process
 number appended to it, so that each process has a distinct file but with
 a common base-name and directory. Therefore, it is not possible to use
 this keyword to specify different disks for different processes. The
-SCRATCH_DIR directive (see <a href="Scratch_Dir.html">File
+<code>SCRATCH_DIR</code> directive (see <a href="Scratch_Dir.html">File
 directories</a>)
 can be used for this purpose.</p>
 <p>For example, to force full recomputation of all integrals:</p>
@@ -1013,7 +1013,7 @@ that is unconditionally convergent. Basically, a search direction is
 generated by multiplying the orbital gradient (the derivative of the
 energy with respect to the orbital rotations) by an approximation to the
 inverse of the level-shifted orbital Hessian. In the initial iterations
-(see <a href="#NR_--_controlling_the_Newton-Raphson">Controlling the Newton-Raphson</a>),
+(see <a href="#NR-controlling-the-Newton-Raphson">Controlling the Newton-Raphson</a>),
 an inexpensive one-electron approximation to the inverse orbital Hessian is
 used. Closer to convergence, the full orbital Hessian is used, which
 should provide quadratic convergence. For both the full or one-electron
@@ -1070,10 +1070,10 @@ quadratic convergence &ndash; which causes more macro-iterations to be
 performed.</p>
 <p>Two main options are available when a problem will not converge:
 Newton-Raphson can be disabled temporarily or permanently (see
-<a href="#NR_--_controlling_the_Newton-Raphson">Controlling the
+<a href="#NR-controlling-the-Newton-Raphson">Controlling the
 Newton-Raphson</a>), and
 level-shifting can be applied to the matrix (see
-<a href="#LEVEL_--_level-shifting_the_orbital_Hessian">Level-shifting</a>).
+<a href="#LEVEL-level-shifting-the-orbital-Hessian">Level-shifting</a>).
 In some cases, both options may be necessary to achieve final
 convergence.</p>
 <p>If there is reason to suspect a negative eigenvalue, the first course is
@@ -1094,7 +1094,7 @@ solution will do more macro-iterations, but each one should take less
 time than it would with the unshifted Hessian.</p>
 <p>The following sections describe the directives needed to disable the
 Newton-Raphson iteration and specify level-shifting.</p>
-<h2 id="nr-controlling-the-newton-raphson">NR &ndash; controlling the Newton-Raphson<a class="headerlink" href="#nr-controlling-the-newton-raphson" title="Permanent link">&para;</a></h2>
+<h2 id="nr-controlling-the-newton-raphson">NR: controlling the Newton-Raphson<a class="headerlink" href="#nr-controlling-the-newton-raphson" title="Permanent link">&para;</a></h2>
 <pre><code>   NR &lt;real nr_switch default 0.1&gt;
 </code></pre>
 <p>The exact orbital Hessian is adopted as the preconditioner when the
@@ -1106,7 +1106,7 @@ disable the Newton-Raphson entirely, the value of nr_switch must be set
 to zero. The directive to accomplish this is as follows:</p>
 <pre><code> nr 0
 </code></pre>
-<h2 id="level-level-shifting-the-orbital-hessian">LEVEL &ndash; level-shifting the orbital Hessian<a class="headerlink" href="#level-level-shifting-the-orbital-hessian" title="Permanent link">&para;</a></h2>
+<h2 id="level-level-shifting-the-orbital-hessian">LEVEL: level-shifting the orbital Hessian<a class="headerlink" href="#level-level-shifting-the-orbital-hessian" title="Permanent link">&para;</a></h2>
 <p>This directive allows the user to specify level-shifting to obtain a
 positive-definite preconditioning matrix for the SCF solution procedure.
 Separate level shifts can be set for the first-order convergent

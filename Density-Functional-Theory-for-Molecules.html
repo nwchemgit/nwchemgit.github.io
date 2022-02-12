@@ -314,12 +314,12 @@ given calculation can be summarized as follows:</p>
 <li>&ldquo;xc basis&rdquo; - exchange-correlation (XC) fitting basis set; optional,
     and not recommended</li>
 </ul>
-<h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL &mdash; KS-MO Vectors<a class="headerlink" href="#vectors-and-max_ovl-ks-mo-vectors" title="Permanent link">&para;</a></h2>
+<h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL: KS-MO Vectors<a class="headerlink" href="#vectors-and-max_ovl-ks-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>The VECTORS directive is the same as that in the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">SCF</a> module. Currently, the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-lock-keyword">LOCK</a> keyword is not supported by the DFT module, however the directive</p>
 <pre><code> MAX_OVL
 </code></pre>
 <p>has the same effect.</p>
-<h2 id="xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash; Exchange-Correlation Potentials<a class="headerlink" href="#xc-and-decomp-exchange-correlation-potentials" title="Permanent link">&para;</a></h2>
+<h2 id="xc-and-decomp-exchange-correlation-potentials">XC and DECOMP: Exchange-Correlation Potentials<a class="headerlink" href="#xc-and-decomp-exchange-correlation-potentials" title="Permanent link">&para;</a></h2>
 <pre><code> XC [[acm] [b3lyp] [beckehandh] [pbe0] [bhlyp]\  
     [becke97]  [becke97-1] [becke97-2] [becke97-3] [becke98] [hcth] [hcth120] [hcth147] [hcth147@tz2p] \
      [hcth407] [becke97gga1] [hcth407p] \  
@@ -1988,7 +1988,7 @@ end
     perturbative second-order correlation&rdquo; Journal of Chemical Physics
     124, 034108 (2006) <a href="https://doi.org/10.1063/1.2148954">10.1063/1.2148954</a></li>
 </ol>
-<h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00 &ndash; Asymptotic correction<a class="headerlink" href="#lb94-and-cs00-asymptotic-correction" title="Permanent link">&para;</a></h3>
+<h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00: Asymptotic correction<a class="headerlink" href="#lb94-and-cs00-asymptotic-correction" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>LB94</code> will correct the asymptotic region of the XC definition
 of exchange-correlation potential by the van-Leeuwen-Baerends
 exchange-correlation potential that has the correct <script type="math/tex">-1/r</script>
@@ -2040,7 +2040,7 @@ end
 task dft optimize   
 task dft freq numerical
 </code></pre>
-<h2 id="iterations-or-maxiter-number-of-scf-iterations">ITERATIONS or MAXITER &ndash; Number of SCF iterations<a class="headerlink" href="#iterations-or-maxiter-number-of-scf-iterations" title="Permanent link">&para;</a></h2>
+<h2 id="iterations-or-maxiter-number-of-scf-iterations">ITERATIONS or MAXITER: Number of SCF iterations<a class="headerlink" href="#iterations-or-maxiter-number-of-scf-iterations" title="Permanent link">&para;</a></h2>
 <pre><code> ITERATIONS or MAXITER &lt;integer iterations default 30&gt;
 </code></pre>
 <p>The default optimization in the DFT module is to iterate on the
@@ -2056,7 +2056,7 @@ the following general form,</p>
 iterations is reached or convergence is met. See an example that uses
 this directive in <a href="#sample-input-file">Sample input
 file</a>.</p>
-<h2 id="convergence-scf-convergence-control">CONVERGENCE &ndash; SCF Convergence Control<a class="headerlink" href="#convergence-scf-convergence-control" title="Permanent link">&para;</a></h2>
+<h2 id="convergence-scf-convergence-control">CONVERGENCE: SCF Convergence Control<a class="headerlink" href="#convergence-scf-convergence-control" title="Permanent link">&para;</a></h2>
 <pre><code> CONVERGENCE [energy &lt;real energy default 1e-6&gt;] \  
              [density &lt;real density default 1e-5&gt;] \  
              [gradient &lt;real gradient default 5e-4&gt;] \  
@@ -2190,7 +2190,7 @@ end
 set quickguess t
 task dft  
 </code></pre>
-<h2 id="cdft-constrained-dft">CDFT &ndash; Constrained DFT<a class="headerlink" href="#cdft-constrained-dft" title="Permanent link">&para;</a></h2>
+<h2 id="cdft-constrained-dft">CDFT: Constrained DFT<a class="headerlink" href="#cdft-constrained-dft" title="Permanent link">&para;</a></h2>
 <p>This option enables the constrained DFT formalism by Wu and Van Voorhis
 described in the paper: Q. Wu, T. Van Voorhis, Phys. Rev. A 72, 024502
 (2005).</p>
@@ -2242,7 +2242,7 @@ dft
 end  
 task dft
 </code></pre>
-<h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR &ndash; Fractional Occupation of the Molecular Orbitals<a class="headerlink" href="#smear-fractional-occupation-of-the-molecular-orbitals" title="Permanent link">&para;</a></h2>
+<h2 id="smear-fractional-occupation-of-the-molecular-orbitals">SMEAR: Fractional Occupation of the Molecular Orbitals<a class="headerlink" href="#smear-fractional-occupation-of-the-molecular-orbitals" title="Permanent link">&para;</a></h2>
 <p>The <code>SMEAR</code> keyword is useful in cases with many degenerate states near
 the HOMO (eg metallic clusters)</p>
 <pre><code> SMEAR &lt;real smear default 0.001&gt;
@@ -2252,7 +2252,7 @@ Gaussian broadening function of exponent smear is used as described in
 the paper: R.W. Warren and B.I. Dunlap, Chem. Phys. Letters 262, 384
 (1996). The user must be aware that an additional energy term is added
 to the total energy in order to have energies and gradients consistent.</p>
-<h2 id="fon-calculations-with-fractional-numbers-of-electrons">FON &ndash; Calculations with fractional numbers of electrons<a class="headerlink" href="#fon-calculations-with-fractional-numbers-of-electrons" title="Permanent link">&para;</a></h2>
+<h2 id="fon-calculations-with-fractional-numbers-of-electrons">FON: Calculations with fractional numbers of electrons<a class="headerlink" href="#fon-calculations-with-fractional-numbers-of-electrons" title="Permanent link">&para;</a></h2>
 <h3 id="restricted">Restricted<a class="headerlink" href="#restricted" title="Permanent link">&para;</a></h3>
 <pre><code>fon partial 3 electrons 1.8 filled 2
 </code></pre>
@@ -2318,7 +2318,7 @@ directive in the input file:</p>
 end
 task dft
 </code></pre>
-<h2 id="occup-controlling-the-occupations-of-molecular-orbitals">OCCUP &ndash; Controlling the occupations of molecular orbitals<a class="headerlink" href="#occup-controlling-the-occupations-of-molecular-orbitals" title="Permanent link">&para;</a></h2>
+<h2 id="occup-controlling-the-occupations-of-molecular-orbitals">OCCUP: Controlling the occupations of molecular orbitals<a class="headerlink" href="#occup-controlling-the-occupations-of-molecular-orbitals" title="Permanent link">&para;</a></h2>
 <p>Example:</p>
 <pre><code>echo  
 start h2o_core_hole  
@@ -2348,7 +2348,7 @@ dft
 end  
 task dft
 </code></pre>
-<h2 id="grid-numerical-integration-of-the-xc-potential">GRID &ndash; Numerical Integration of the XC Potential<a class="headerlink" href="#grid-numerical-integration-of-the-xc-potential" title="Permanent link">&para;</a></h2>
+<h2 id="grid-numerical-integration-of-the-xc-potential">GRID: Numerical Integration of the XC Potential<a class="headerlink" href="#grid-numerical-integration-of-the-xc-potential" title="Permanent link">&para;</a></h2>
 <pre><code> GRID [(xcoarse||coarse||medium||fine||xfine||huge) default medium] \  
       [(gausleg||lebedev ) default lebedev ] \  
       [(becke||erf1||erf2||ssf) default erf1] \  
@@ -2824,7 +2824,7 @@ molecule</p>
 <pre><code> NODISK
 </code></pre>
 <p>This keyword turns off storage of grid points and weights on disk.</p>
-<h2 id="tolerances-screening-tolerances">TOLERANCES &ndash; Screening tolerances<a class="headerlink" href="#tolerances-screening-tolerances" title="Permanent link">&para;</a></h2>
+<h2 id="tolerances-screening-tolerances">TOLERANCES: Screening tolerances<a class="headerlink" href="#tolerances-screening-tolerances" title="Permanent link">&para;</a></h2>
 <pre><code> TOLERANCES [[tight] [tol_rho &lt;real tol_rho default 1e-10&gt;] \  
              [accCoul &lt;integer accCoul default 8&gt;] \  
              [radius &lt;real radius default 25.0&gt;]]
@@ -2860,7 +2860,7 @@ initial sleazy tolerances the user can invoke the tight option:</p>
 <p>This option sets all tolerances to their default/user specified values
 at the very first
 iteration.</p>
-<h2 id="direct-semidirect-and-noio-hardware-resource-control">DIRECT, SEMIDIRECT and NOIO &ndash; Hardware Resource Control<a class="headerlink" href="#direct-semidirect-and-noio-hardware-resource-control" title="Permanent link">&para;</a></h2>
+<h2 id="direct-semidirect-and-noio-hardware-resource-control">DIRECT, SEMIDIRECT and NOIO: Hardware Resource Control<a class="headerlink" href="#direct-semidirect-and-noio-hardware-resource-control" title="Permanent link">&para;</a></h2>
 <pre><code> DIRECT||INCORE  
  SEMIDIRECT [filesize &lt;integer filesize default disksize&gt;]  
             [memsize  &lt;integer memsize default available&gt;]  
@@ -2880,10 +2880,10 @@ whenever needed.</p>
 with the option <code>DIRECT</code> in which case all integrals are computed
 &ldquo;on-the-fly&rdquo;.</p>
 <p>The <code>SEMIDIRECT</code> option controls caching of integrals. A full description
-of this option is described in the <a href="Hartree-Fock-Theory-for-Molecules.html#direct-and-semidirect----recomputation-of-integrals">Hartree-Fock</a> section. Some functionality
+of this option is described in the <a href="Hartree-Fock-Theory-for-Molecules.html#direct-and-semidirect-recomputation-of-integrals">Hartree-Fock</a> section. Some functionality
 which is only compatible with the <code>DIRECT</code> option will not, at present,
 work when using <code>SEMIDIRECT</code>.</p>
-<h2 id="odft-and-mult-open-shell-systems">ODFT and MULT &ndash; Open shell systems<a class="headerlink" href="#odft-and-mult-open-shell-systems" title="Permanent link">&para;</a></h2>
+<h2 id="odft-and-mult-open-shell-systems">ODFT and MULT: Open shell systems<a class="headerlink" href="#odft-and-mult-open-shell-systems" title="Permanent link">&para;</a></h2>
 <pre><code> ODFT
  MULT &lt;integer mult default 1&gt;
 </code></pre>
@@ -2903,14 +2903,14 @@ preferentially occupied.</p>
 <p>The keyword <code>ODFT</code> is unnecessary except in the context of forcing a
 singlet system to be computed as an open shell system (i.e., using a
 spin-unrestricted wavefunction).</p>
-<h2 id="cgmin-quadratic-convergence-algorithm">CGMIN &ndash; Quadratic convergence algorithm<a class="headerlink" href="#cgmin-quadratic-convergence-algorithm" title="Permanent link">&para;</a></h2>
+<h2 id="cgmin-quadratic-convergence-algorithm">CGMIN: Quadratic convergence algorithm<a class="headerlink" href="#cgmin-quadratic-convergence-algorithm" title="Permanent link">&para;</a></h2>
 <p>The <code>cgmin</code> keyword will use the quadratic convergence algorithm. It is
 possible to turn the use of the quadratic convergence algorithm off with
 the <code>nocgmin</code> keyword.</p>
-<h2 id="rodft-restricted-open-shell-dft">RODFT &ndash; Restricted open-shell DFT<a class="headerlink" href="#rodft-restricted-open-shell-dft" title="Permanent link">&para;</a></h2>
+<h2 id="rodft-restricted-open-shell-dft">RODFT: Restricted open-shell DFT<a class="headerlink" href="#rodft-restricted-open-shell-dft" title="Permanent link">&para;</a></h2>
 <p>The <code>rodft</code> keyword will perform restricted open-shell calculations. This
 keyword can only be used with the <code>CGMIN</code> keyword.</p>
-<h2 id="sic-self-interaction-correction">SIC &ndash; Self-Interaction Correction<a class="headerlink" href="#sic-self-interaction-correction" title="Permanent link">&para;</a></h2>
+<h2 id="sic-self-interaction-correction">SIC: Self-Interaction Correction<a class="headerlink" href="#sic-self-interaction-correction" title="Permanent link">&para;</a></h2>
 <pre><code>sic [perturbative || oep || oep-loc ]
 &lt;default perturbative&gt;
 </code></pre>
@@ -2937,7 +2937,7 @@ Li, and G. J. Iafrate, Phys. Rev. A 45, 101 (1992); 46, 5453 (1992); 47,
     addition of localization of the Kohn-Sham orbitals in each step of
     the self-consistent process.</li>
 </ul>
-<p>With <code>oep</code> and <code>oep-loc</code> options a <code>xfine grid</code> (see section about <a href="Density-Functional-Theory-for-Molecules.html#grid-numerical-integration-of-the-xc-potential">numerical integration</a> ) must be
+<p>With <code>oep</code> and <code>oep-loc</code> options a <code>xfine grid</code> (see section about <a href="#grid-numerical-integration-of-the-xc-potential">numerical integration</a> ) must be
 used in order to avoid numerical noise, furthermore the hybrid
 functionals can not be used with these options. More details of the
 implementation of this method can be found in J. Garza, J. A. Nichols
@@ -2945,7 +2945,7 @@ and D. A. Dixon, J. Chem. Phys. 112, 7880 (2000). The components of the
 sic energy can be printed out using:</p>
 <pre><code>print &quot;SIC information&quot;
 </code></pre>
-<h2 id="mulliken-mulliken-analysis">MULLIKEN &ndash; Mulliken analysis<a class="headerlink" href="#mulliken-mulliken-analysis" title="Permanent link">&para;</a></h2>
+<h2 id="mulliken-mulliken-analysis">MULLIKEN: Mulliken analysis<a class="headerlink" href="#mulliken-mulliken-analysis" title="Permanent link">&para;</a></h2>
 <p>Mulliken analysis of the charge distribution is invoked by the keyword:</p>
 <pre><code> MULLIKEN
 </code></pre>
@@ -2959,7 +2959,7 @@ of the basis functions, use the following</p>
 end
 task dft
 </code></pre>
-<h2 id="fukui-fukui-indices">FUKUI &ndash; Fukui Indices<a class="headerlink" href="#fukui-fukui-indices" title="Permanent link">&para;</a></h2>
+<h2 id="fukui-fukui-indices">FUKUI: Fukui Indices<a class="headerlink" href="#fukui-fukui-indices" title="Permanent link">&para;</a></h2>
 <p>Fukui inidces analysis is invked by the keyword:</p>
 <pre><code> FUKUI
 </code></pre>
@@ -2972,7 +2972,7 @@ analysis can be obtained using the following</p>
  end  
  task dft
 </code></pre>
-<h2 id="bsse-basis-set-superposition-error">BSSE &ndash; Basis Set Superposition Error<a class="headerlink" href="#bsse-basis-set-superposition-error" title="Permanent link">&para;</a></h2>
+<h2 id="bsse-basis-set-superposition-error">BSSE: Basis Set Superposition Error<a class="headerlink" href="#bsse-basis-set-superposition-error" title="Permanent link">&para;</a></h2>
 <p>Particular care is required to compute BSSE by the counter-poise method
 for the DFT module. In order to include terms deriving from the
 numerical grid used in the XC integration, the user must label the ghost
@@ -2996,7 +2996,7 @@ end
 </code></pre>
 <p>Please note that the <em>ghost</em> oxygen atom has been labeled <code>bqO</code>, and
 not just <code>bq</code>.</p>
-<h2 id="disp-empirical-long-range-contribution-vdw">DISP &ndash; Empirical Long-range Contribution (vdW)<a class="headerlink" href="#disp-empirical-long-range-contribution-vdw" title="Permanent link">&para;</a></h2>
+<h2 id="disp-empirical-long-range-contribution-vdw">DISP: Empirical Long-range Contribution (vdW)<a class="headerlink" href="#disp-empirical-long-range-contribution-vdw" title="Permanent link">&para;</a></h2>
 <pre><code> DISP \
       [ vdw &lt;real vdw integer default 2]] \
       [[s6 &lt;real s6 default depends on XC functional&gt;] \
@@ -3070,7 +3070,7 @@ Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010).</p>
 </ul>
 <p>This capability is also supported for energy gradients and Hessian. Is
 possible to be deactivated with OFF.</p>
-<h2 id="noscf-non-self-consistent-calculations">NOSCF &ndash;Non Self-Consistent Calculations<a class="headerlink" href="#noscf-non-self-consistent-calculations" title="Permanent link">&para;</a></h2>
+<h2 id="noscf-non-self-consistent-calculations">NOSCF: Non Self-Consistent Calculations<a class="headerlink" href="#noscf-non-self-consistent-calculations" title="Permanent link">&para;</a></h2>
 <p>The <code>noscf</code> keyword can be used to to calculate the non self-consistent energy
 for a set of input vectors. For example, the following input shows how a
 non self-consistent B3LYP energy can be calculated using a
@@ -3098,7 +3098,7 @@ dft
 end
 task dft energy
 </code></pre>
-<h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM &ndash; Exchange-hole dipole moment dispersion model<a class="headerlink" href="#xdm-exchange-hole-dipole-moment-dispersion-model" title="Permanent link">&para;</a></h2>
+<h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM: Exchange-hole dipole moment dispersion model<a class="headerlink" href="#xdm-exchange-hole-dipole-moment-dispersion-model" title="Permanent link">&para;</a></h2>
 <pre><code>XDM  [ a1 &lt;real a1&gt; ]   [ a2 &lt;real a2&gt; ]
 </code></pre>
 <p>See details (including list of a1 and a2 parameters) in A.
