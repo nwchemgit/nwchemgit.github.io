@@ -250,8 +250,8 @@ the calculation is started using orbitals from a distorted geometry.</p>
 construction is that the density is totally symmetric. If the orbitals
 are symmetry contaminated, this assumption may not be valid &ndash; which
 could result in incorrect energies and poor convergence of the
-calculation. It is thus advisable when specifying ADAPT OFF to also
-specify SYM OFF (<a href="#sym----use-of-symmetry">Use of Symmetry</a>).</p>
+calculation. It is thus advisable when specifying <code>ADAPT OFF</code> to also
+specify <code>SYM OFF</code> (<a href="#sym-use-of-symmetry">Use of Symmetry</a>).</p>
 <h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
 <pre><code> TOL2E &lt;real tol2e default min(10e-7 , 0.01*thresh)&gt;
 </code></pre>
@@ -260,13 +260,13 @@ threshold for the evaluation of the energy and related Fock-like
 matrices. The Schwarz inequality is used to screen the product of
 integrals and density matrices in a manner that results in an accuracy
 in the energy and Fock matrices that approximates the value specified
-for tol2e.</p>
+for <code>tol2e</code>.</p>
 <p>It is generally not necessary to set this parameter directly. Specify
-instead the required precision in the wavefunction, using the THRESH
-directive (<a href="#thresh----convergence-threshold">Convergence
+instead the required precision in the wavefunction, using the <code>THRESH</code>
+directive (<a href="#thresh-convergence-threshold">Convergence
 threshold</a>). The default
 threshold is the minimum of 10<sup>-7</sup> and 0.01 times the requested
-convergence threshold for the SCF calculation (<a href="#thresh----convergence-threshold">Convergence
+convergence threshold for the SCF calculation (<a href="#thresh-convergence-threshold">Convergence
 threshold</a>).</p>
 <p>The input to specify the threshold explicitly within the SCF directive
 is, for example:</p>
@@ -524,7 +524,7 @@ use of the fragment guess, and redirecting the output MOs.</p>
     order as in the full system. This is readily accomplished by first
     generating the full geometry with atoms for each fragment
     contiguous, splitting this into numbered fragments and specifying
-    the fragment MO files in the correct order on the VECTORS directive.</li>
+    the fragment MO files in the correct order on the <code>VECTORS</code> directive.</li>
 <li>The occupation of orbitals is preserved when they are merged from
     the fragments to the full molecule and the resulting occupation must
     match the requested occupation for the full molecule. E.g., a
@@ -537,7 +537,7 @@ use of the fragment guess, and redirecting the output MOs.</p>
     presence of other fragments.</li>
 <li>MO vectors of partially occupied or strongly polarized systems are
     very sensitive to orientation. While it is possible to specify the
-    same fragment MO vector file multiple times in the VECTORS
+    same fragment MO vector file multiple times in the <code>VECTORS</code>
     directive, it is usually much better to do a separate calculation
     for each fragment.</li>
 <li>Linear dependencies which were present in a fragment calculation may
