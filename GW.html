@@ -169,7 +169,7 @@ functional chosen for the underlying DFT calculation).
 For example, it has been known that a large fraction of exact exchange
 is needed for the accurate prediction of core-level binding energies at the
 one-shot <em>G<sub>0</sub>W<sub>0</sub></em> level.</p>
-<p>For further theoretical and details about the actual implementation in
+<p>For further theoretical insights and details about the actual implementation in
 NWChem, please refer to the following paper:</p>
 <ul>
 <li>D. Mejia-Rodriguez, A. Kunitsa, E. Apr&agrave;, N. Govind,
@@ -237,6 +237,8 @@ construction. </p>
 only the Green&rsquo;s function <em>G</em> is updated with the quasiparticle energies
 of the previous iterations. <em>W<sub>0</sub></em> is kept fixed.</p>
 <p>Both partial self-consistent cycles run for <code>eviter</code> number of cycles.</p>
+<p>The use of <code>EVGW</code> or <code>EVGW0</code> will trigger the use of a scissor-shift
+operator for all states not updated in the <em>evGW</em> cycle.</p>
 <h3 id="method">METHOD<a class="headerlink" href="#method" title="Permanent link">&para;</a></h3>
 <p>Two different techniques to obtain the diagonal self-energy
 matrix elements are implemented in NWChem. </p>
@@ -293,10 +295,137 @@ meaningless for restricted closed-shell DFT calculations
 state closest to the Fermi level (HOMO) unless the keyword
 <a href="#core-and-first"><code>CORE</code></a> is present. The virtual states will <strong>always</strong>
 be counted from the state closest to the Fermi level upwards.</p>
+<p>A <strong>-1</strong> following either <code>occ</code> or <code>vir</code> stands for all
+states in the respective space.</p>
 <h3 id="convergence">CONVERGENCE<a class="headerlink" href="#convergence" title="Permanent link">&para;</a></h3>
 <p>The converegnce threshold of the quasiparticle equations can
 be controlled with the keyword <code>CONVERGENCE</code> and might be
 given either in <code>eV</code> or Hartree <code>au</code>.</p>
+<h2 id="sample-input-file">Sample Input File<a class="headerlink" href="#sample-input-file" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A <em>GW</em> calculation requesting the core-level binding 
+energies of all 1<em>s</em> states (6 Fluorines and 6 Carbons)
+using the <a href="#method">CD-GW</a> method.</li>
+</ul>
+<pre><code>title &quot;CDGW C6F6 core&quot;
+start
+echo
+
+memory 2000 mb
+
+geometry
+ C     -0.21589696     1.38358991     0.00000000
+ C     -1.30618181     0.50480033     0.00000000
+ C     -1.09023026    -0.87871037     0.00000000
+ C      0.21590562    -1.38360671     0.00000000
+ C      1.30610372    -0.50476737     0.00000000
+ C      1.09020243     0.87883094     0.00000000
+ F     -0.42025331     2.69273557     0.00000000
+ F     -2.54211642     0.98238922     0.00000000
+ F     -2.12174279    -1.71033945     0.00000000
+ F      0.42026196    -2.69275237     0.00000000
+ F      2.54203111    -0.98237286     0.00000000
+ F      2.12188428     1.71024875     0.00000000
+end
+
+basis &quot;ao basis&quot; spherical
+ * library cc-pvdz
+end
+
+basis &quot;cd basis&quot; spherical
+ * library cc-pvdz-ri
+end
+
+dft
+ xc xpbe96 0.55 hfexch 0.45 cpbe96 1.0
+ direct
+end
+
+gw
+ core
+ eta 0.01
+ method cdgw
+ solver newton 15
+ states alpha occ 12
+end
+
+task dft gw
+</code></pre>
+<ul>
+<li>A <em>valence</em> <em>GW</em> calculation to obtain the vertical ionization
+potential and the vertical electron affinity of the water
+molecule using the <a href="#method">analytic</a> method.</li>
+</ul>
+<pre><code>start
+
+geometry
+O     -0.000545       1.517541       0.000000
+H      0.094538       0.553640       0.000000
+H      0.901237       1.847958       0.000000
+end
+
+basis &quot;ao basis&quot; spherical
+ h library def2-svp
+ o library def2-svp
+end
+
+basis &quot;cd basis&quot; spherical
+ h library def2-universal-jkfit
+ o library def2-universal-jkfit
+end
+
+dft
+ mult 1
+ xc pbe96
+ grid fine
+ direct
+end
+
+gw
+ states alpha occ 1 vir 1
+end
+
+task dft gw
+</code></pre>
+<ul>
+<li>An ev<em>GW</em><sub>0</sub> calculation with 10 iterations
+using the <a href="#method">analytic</a> method.
+All occupied energies, but only 10 virtual ones, are
+updated using <em>GW</em>. The rest of the virtual states
+are shifted using the so-called scissor operator.</li>
+</ul>
+<pre><code>start
+
+geometry
+O     -0.000545       1.517541       0.000000
+H      0.094538       0.553640       0.000000
+H      0.901237       1.847958       0.000000
+end
+
+basis &quot;ao basis&quot; spherical
+ h library def2-svp
+ o library def2-svp
+end
+
+basis &quot;cd basis&quot; spherical
+ h library def2-universal-jkfit
+ o library def2-universal-jkfit
+end
+
+dft
+ mult 1
+ xc pbe96
+ grid fine
+ direct
+end
+
+gw
+ evgw0 10
+ states alpha occ -1 vir 10
+end
+
+task dft gw
+</code></pre>
               
             </div>
           </div>
