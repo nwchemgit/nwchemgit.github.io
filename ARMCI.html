@@ -178,62 +178,57 @@ native implementation of ARMCI is not available or is not reliable, the
 user should consider using one of the MPI-based implementations.</p>
 <p>There are many different ways to use MPI as the communication runtime of
 Global Arrays:</p>
-<p><center></p>
 <table>
 <thead>
 <tr>
-<th></th>
 <th align="left"></th>
 <th align="left"></th>
-<th></th>
+<th align="left"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ARMCI_NETWORK</td>
-<td align="left">Additional options</td>
+<td align="left">ARMCI_NETWORK</td>
 <td align="left">Result</td>
-<td>Notes</td>
+<td align="left">Notes</td>
 </tr>
 <tr>
-<td><code>MPI-PR</code></td>
-<td align="left"></td>
+<td align="left"><code>MPI-PR</code></td>
 <td align="left">ARMCI with progress rank</td>
-<td>Recommended, except on Blue Gene/Q.</td>
+<td align="left">Recommended, except on Blue Gene/Q.</td>
 </tr>
 <tr>
-<td><code>MPI-PT</code></td>
-<td align="left"></td>
+<td align="left"><code>MPI-PT</code></td>
 <td align="left">ARMCI with progress thread</td>
-<td>Appropriate for Blue Gene/Q.</td>
+<td align="left">Appropriate for Blue Gene/Q.</td>
 </tr>
 <tr>
-<td><code>MPI-MT</code></td>
-<td align="left"></td>
+<td align="left"><code>MPI-MT</code></td>
 <td align="left">ARMCI over multi-threaded MPI</td>
-<td><a href="https://github.com/open-mpi/ompi/issues/157">Do not use Open-MPI 1.x.</a></td>
+<td align="left"><a href="https://github.com/open-mpi/ompi/issues/157">Do not use Open-MPI 1.x.</a></td>
 </tr>
 <tr>
-<td><code>MPI-TS</code></td>
-<td align="left"></td>
+<td align="left"><code>MPI-TS</code></td>
 <td align="left">ARMCI over MPI without data server</td>
-<td></td>
-</tr>
-<tr>
-<td><code>MPI-SPAWN</code></td>
 <td align="left"></td>
-<td align="left">ARMCI over MPI using dynamic processes</td>
-<td>Requires MPI_Comm_spawn support.</td>
 </tr>
 <tr>
-<td><code>ARMCI</code></td>
-<td align="left"><code>EXTERNAL_ARMCI_PATH</code></td>
+<td align="left"><code>MPI-SPAWN</code></td>
+<td align="left">ARMCI over MPI using dynamic processes</td>
+<td align="left">Requires MPI_Comm_spawn support.</td>
+</tr>
+<tr>
+<td align="left"><code>ARMCI</code></td>
 <td align="left">Uses ARMCI-MPI (please use <em>mpi3rma</em> branch)</td>
-<td>See <a href="https://wiki.mpich.org/armci-mpi/index.php/NWChem">the ARMCI-MPI NWChem page</a> for details.</td>
+<td align="left">See <a href="https://wiki.mpich.org/armci-mpi/index.php/NWChem">the ARMCI-MPI NWChem page</a> for details.</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">requires <code>EXTERNAL_ARMCI_PATH</code></td>
 </tr>
 </tbody>
 </table>
-<p></center></p>
 <p>It is difficult to provide complete guidance to the user as to which
 option to choose. However, we observe the following:</p>
 <ul>
