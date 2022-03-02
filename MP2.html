@@ -202,7 +202,7 @@ approximations</p>
    [SCRATCHDISK &lt;integer&gt;] 
  END
 </code></pre>
-<h2 id="freeze-freezing-orbitals">FREEZE &ndash; Freezing orbitals<a class="headerlink" href="#freeze-freezing-orbitals" title="Permanent link">&para;</a></h2>
+<h2 id="freeze-freezing-orbitals">FREEZE: Freezing orbitals<a class="headerlink" href="#freeze-freezing-orbitals" title="Permanent link">&para;</a></h2>
 <p>All MP2 modules support frozen core orbitals, however, only the direct
 MP2 and RI-MP2 modules support frozen virtual orbitals.</p>
 <p>By default, no orbitals are frozen. The atomic keyword causes orbitals
@@ -299,7 +299,7 @@ orbitals to freeze. For instance, to freeze the first 10 orbitals</p>
 </code></pre>
 <p>Again, note that if the 10 orbitals to be frozen do not correspond to
 the first 10 orbitals, then the swap keyword of the VECTORS directive
-must be used to order the input orbitals correctly (<a href="#vectors----mo-vectors">MO
+must be used to order the input orbitals correctly (<a href="#vectors-mo-vectors">MO
 vectors</a>).</p>
 <p>To freeze the highest virtual orbitals, use the virtual keyword. For
 instance, to freeze the top 5 virtuals</p>
@@ -307,7 +307,7 @@ instance, to freeze the top 5 virtuals</p>
 </code></pre>
 <p>Again, note that this only works for the direct-MP2 and RI-MP2 energy
 codes.</p>
-<h2 id="tight-increased-precision">TIGHT &ndash; Increased precision<a class="headerlink" href="#tight-increased-precision" title="Permanent link">&para;</a></h2>
+<h2 id="tight-increased-precision">TIGHT: Increased precision<a class="headerlink" href="#tight-increased-precision" title="Permanent link">&para;</a></h2>
 <p>The TIGHT directive can be used to increase the precision in the MP2
 energy and gradients.</p>
 <p>By default the MP2 gradient package should compute energies accurate to
@@ -320,7 +320,7 @@ precision may be desirable.</p>
 10<sup>-6</sup> to 10<sup>-8</sup> and CPHF 10<sup>-4</sup> to $10<sup>-6</sup>
 are solved, and also tightens thresholds for computation of the AO and
 MO integrals (from 10<sup>-9</sup> to 10<sup>-11</sup> within the MP2 code.</p>
-<h2 id="scratchdisk-limiting-io-usage">SCRATCHDISK &ndash; Limiting I/O usage<a class="headerlink" href="#scratchdisk-limiting-io-usage" title="Permanent link">&para;</a></h2>
+<h2 id="scratchdisk-limiting-io-usage">SCRATCHDISK: Limiting I/O usage<a class="headerlink" href="#scratchdisk-limiting-io-usage" title="Permanent link">&para;</a></h2>
 <p>This directive - used only in the semi-direct algorithm - allows to
 limit the per process disk usage. Mandatory argument for this keyword is
 the maximum number of MBytes. For example, the following input line</p>
@@ -446,7 +446,7 @@ below.</p>
 </table>
 <p>Printable items in the MP2 modules and their default print levels</p>
 <p></center></p>
-<h2 id="vectors-mo-vectors">VECTORS &ndash; MO vectors<a class="headerlink" href="#vectors-mo-vectors" title="Permanent link">&para;</a></h2>
+<h2 id="vectors-mo-vectors">VECTORS: MO vectors<a class="headerlink" href="#vectors-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>All of the (supported) MP2 modules require use of converged canonical
 SCF (RHF or UHF) orbitals for correct results. The vectors are by
 default obtained from the preceding SCF calculation, but it is possible
@@ -454,7 +454,7 @@ to specify a different source using the VECTORS directive. For instance,
 to obtain vectors from the file /tmp/h2o.movecs, use the directive</p>
 <pre><code> vectors /tmp/h2o.movecs
 </code></pre>
-<p>As noted above (<a href="#freeze----freezing-orbitals">FREEZE</a>) if
+<p>As noted above (<a href="#freeze-freezing-orbitals">FREEZE</a>) if
 the SCF orbitals are not in the correct order, it is necessary to
 permute the input orbitals using the swap keyword of the VECTORS
 directive. For instance, if it is desired to freeze a total six orbitals
@@ -489,14 +489,14 @@ with the name &ldquo;small fitting basis&rdquo; and then defines this to be the
 </code></pre>
 <pre><code> set &quot;ri-mp2 basis&quot; &quot;small fitting basis&quot;
 </code></pre>
-<h2 id="file3c-ri-mp2-3-center-integral-filename">FILE3C &ndash; RI-MP2 3-center integral filename<a class="headerlink" href="#file3c-ri-mp2-3-center-integral-filename" title="Permanent link">&para;</a></h2>
+<h2 id="file3c-ri-mp2-3-center-integral-filename">FILE3C: RI-MP2 3-center integral filename<a class="headerlink" href="#file3c-ri-mp2-3-center-integral-filename" title="Permanent link">&para;</a></h2>
 <p>The default name for the file used to store the transformed 3-center
 integrals is &ldquo;file_prefix.mo3cint&rdquo; in the scratch directory. This may
 be overridden using the FILE3C directive. For instance, to specify the
 file /scratch/h2o.3c, use this directive</p>
 <pre><code> file3c /scratch/h2o.3c
 </code></pre>
-<h2 id="riapprox-ri-mp2-approximation">RIAPPROX &ndash; RI-MP2 Approximation<a class="headerlink" href="#riapprox-ri-mp2-approximation" title="Permanent link">&para;</a></h2>
+<h2 id="riapprox-ri-mp2-approximation">RIAPPROX: RI-MP2 Approximation<a class="headerlink" href="#riapprox-ri-mp2-approximation" title="Permanent link">&para;</a></h2>
 <p>The type of RI approximation used in the RI-MP2 calculation is
 controlled by means of the RIAPPROX directive. The two possible values
 are V and SVS (case sensitive), which correspond to the approximations
@@ -662,7 +662,7 @@ task mp2 property
 definite so it is not unusual to see a few small negative natural
 orbital occupation numbers. Significant negative occupation numbers have
 been argued to be a sign that the system might be near degenerate<sup id="fnref_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">9</a></sup>.</p>
-<h2 id="scs-mp2-spin-component-scaled-mp2">SCS-MP2 &ndash; Spin-Component Scaled MP2<a class="headerlink" href="#scs-mp2-spin-component-scaled-mp2" title="Permanent link">&para;</a></h2>
+<h2 id="scs-mp2-spin-component-scaled-mp2">SCS-MP2: Spin-Component Scaled MP2<a class="headerlink" href="#scs-mp2-spin-component-scaled-mp2" title="Permanent link">&para;</a></h2>
 <p>Each MP2 output contains the calculation of the SCS-MP2 correlation
 energies as suggested by S.Grimme<sup id="fnref_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">10</a></sup></p>
 <p>The SCS keyword is only required for gradients calculations:</p>
