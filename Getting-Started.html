@@ -226,7 +226,7 @@ allow you to overwrite the value of nwchem_basis_library in your
 .nwchemrc file and point to the new basis library. For example:</p>
 <pre><code>   % setenv NWCHEM_BASIS_LIBRARY &quot;$NWCHEM/data-5.0/libraries/&quot;
 </code></pre>
-<p>Do not forget the trailing &ldquo;/&rdquo;.</p>
+<p>Do not forget the trailing <code>"/"</code>.</p>
 <h2 id="input-file-structure">Input File Structure<a class="headerlink" href="#input-file-structure" title="Permanent link">&para;</a></h2>
 <p>The structure of an input file reflects the internal structure of
 NWChem. At the beginning of a calculation, NWChem needs to determine how
@@ -437,17 +437,17 @@ logical or physical input line must be no longer than 1023 characters.</p>
 <li>a string, token, or field is a sequence of ASCII characters (NOTE:
     if the string includes blanks or tabs (i.e., white space), the
     entire string must be enclosed in double quotes).</li>
-<li>\ (backslash) at the end of a line concatenates it with the next
+<li><code>\</code> (backslash) at the end of a line concatenates it with the next
     line. Note that a space character is automatically inserted at this
     point so that it is not possible to split tokens across lines. A
     backslash is also used to quote special characters such as
     whitespace, semi-colons, and hash symbols so as to avoid their
     special meaning (NOTE: these special symbols must be quoted with the
     backslash even when enclosed within double quotes).</li>
-<li>; (semicolon) is used to mark the end of a logical input line within
+<li><code>;</code> (semicolon) is used to mark the end of a logical input line within
     a physical line of input.</li>
-<li># (the hash or pound symbol) is the comment character. All
-    characters following # (up to the end of the physical line) are
+<li><code>#</code> (the hash or pound symbol) is the comment character. All
+    characters following <code>#</code> (up to the end of the physical line) are
     ignored.</li>
 <li>If any input line (excluding <a href="Python.html">Python programs</a> begins
     with the string INCLUDE (ignoring case) and is followed by a valid
@@ -488,16 +488,16 @@ conventions are used in the generic descriptions of the NWChem input.</p>
 <li>variable names always appear in lower case, in computer typeface,
     and enclosed in angle brackets to distinguish them from keywords
     (e.g., <code>&lt;input_filename&gt;</code>, <code>&lt;basisname&gt;</code>, <code>&lt;tag&gt;</code>).</li>
-<li>$variable$ is used to indicate the substitution of the value of a
+<li><code>$variable$</code> is used to indicate the substitution of the value of a
     variable.</li>
-<li>() is used to group items (the parentheses and other special symbols
+<li><code>()</code> is used to group items (the parentheses and other special symbols
     should not appear in the input).</li>
-<li>|| separate exclusive options, parameters, or formats.</li>
-<li>[  ] enclose optional entries that have a default value.</li>
-<li>&lt; &gt; enclose a type, a name of a value to be specified, or a
+<li><code>||</code> separate exclusive options, parameters, or formats.</li>
+<li><code>[  ]</code> enclose optional entries that have a default value.</li>
+<li><code>&lt; &gt;</code> enclose a type, a name of a value to be specified, or a
     default value, if any.</li>
-<li>\ is used to concatenate lines in a description.</li>
-<li>&hellip; is used to indicate indefinite continuation of a list.</li>
+<li><code>\</code> is used to concatenate lines in a description.</li>
+<li><code>...</code> is used to indicate indefinite continuation of a list.</li>
 </ul>
 <p>An input parameter is identified in the description of the directive by
 prefacing the name of the item with the type of data expected, i.e.,</p>
@@ -553,7 +553,7 @@ alpha or beta spin orbitals.</p>
 store the vectors, by specifying an ASCII string for the parameter
 <code>output_movecs</code>. If no entry is specified for this parameter, the default
 is to write the vectors back into either the user- specified MO vectors
-input file or, if this is not available, the file $file_prefix$.movecs.</p>
+input file or, if this is not available, the file <code>$file_prefix$.movecs</code>.</p>
 <p>A particular example of the VECTORS directive is shown below. It
 specifies both the input and output keywords, but does not use the swap
 option.</p>
