@@ -157,30 +157,27 @@
               
                 <h1 id="running-nwchem">Running NWChem<a class="headerlink" href="#running-nwchem" title="Permanent link">&para;</a></h1>
 <p>The command required to invoke NWChem is machine dependent, whereas most
-of the NWChem input is machine independent.</p>
+of the NWChem input is machine independent.  </p>
 <h2 id="sequential-execution">Sequential execution<a class="headerlink" href="#sequential-execution" title="Permanent link">&para;</a></h2>
 <p>To run NWChem sequentially on nearly all UNIX-based platforms simply use
 the command nwchem and provide the name of the input file as an
 argument. This does assume that either nwchem is in your path or you
-have set an alias of nwchem to point to the appropriate executable.</p>
+have set an alias of nwchem to point to the appropriate executable.  </p>
 <p>Output is to standard output, standard error and Fortran unit 6 (usually
 the same as standard output). Files are created by default in the
-current directory, though this may be <a href="Top-level.html#SCRATCH_DIR_.2F_PERMANENT_DIR">overridden in the
-input</a>.</p>
-<p>Generally, one will run a job with the following
-command:</p>
-<pre><code>  nwchem input.nw &gt;&amp; input.out &amp;
+current directory, though this may be
+<a href="Permanent_Dir.html">overridden in the input</a>.  </p>
+<p>Generally, one will run a job with the following command:</p>
+<pre><code>  nwchem input.nw &gt;&amp; input.out &amp;
 </code></pre>
 <h2 id="parallel-execution-on-unix-based-parallel-machines-including-workstation-clusters-using-mpi">Parallel execution on UNIX-based parallel machines including workstation clusters using MPI<a class="headerlink" href="#parallel-execution-on-unix-based-parallel-machines-including-workstation-clusters-using-mpi" title="Permanent link">&para;</a></h2>
 <p>To run with MPI, parallel should not be used. The way we usually run
-nwchem under MPI are the following</p>
+nwchem under MPI are the following  </p>
 <ul>
 <li>using mpirun:<br />
 <code>mpirun -np 8 $NWCHEM_TOP/bin/$NWCHEM_TARGET/nwchem input.nw</code>    </li>
 </ul>
-<h2 id="parallel-execution-on-mpps">Parallel execution on MPPs<a class="headerlink" href="#parallel-execution-on-mpps" title="Permanent link">&para;</a></h2>
-<p>All of these machines require use of different commands in order to gain
-exclusive access to computational resources.</p>
+<p>were <code>$NWCHEM_TARGET</code> values are described in the <a href="Compiling-NWChem.html">Compiling section</a>.</p>
               
             </div>
           </div>
