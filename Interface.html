@@ -177,7 +177,7 @@ citation:</p>
 <h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
 <p>By using DIRDYVTST, a user can carry out electronic structure
 calculations with NWChem and use the resulting energies, gradients, and
-Hessians for direct dynamics calculations with <a href="https://comp.chem.umn.edu/polyrate/" title="link">POLYRATE</a>. 
+Hessians for direct dynamics calculations with <a href="https://comp.chem.umn.edu/polyrate/">POLYRATE</a>. 
 This program
 prepares the file30 input for POLYRATE from NWChem electronic structure
 calculations of energies, gradients and Hessians at the reactant,
@@ -186,7 +186,7 @@ Cartesian geometries for the reactants, products, and saddle points need
 to be input to this program; optimization of geometries is not performed
 in this program. Note that DIRDYVTST is based on the DIRDYGAUSS program
 and is similar to two other programs: DDUTILITIES and GAUSSRATE. Users
-of this module are encouraged to read the <a href="https://comp.chem.umn.edu/polyrate/190727_Polyrate_17-C_manuall.pdf" title="link">POLYRATE manual</a> since they
+of this module are encouraged to read the <a href="https://comp.chem.umn.edu/polyrate/190727_Polyrate_17-C_manuall.pdf">POLYRATE manual</a> since they
 will need to create the file fu5 input to run calculations with
 POLYRATE.</p>
 <p>Notes about the code:</p>
@@ -247,11 +247,11 @@ molecule between NWChem and POLYRATE, this is taken care of internally
 in the DIRDYVTST module.</p>
 <h4 id="basis-specification">Basis specification<a class="headerlink" href="#basis-specification" title="Permanent link">&para;</a></h4>
 <p>The basis name on the theory or sptheory directive is that specified on
-a <a href="Release66:Basis.md">basis set directive</a> and not the name of
+a <a href="Basis.html">basis set directive</a> and not the name of
 a standard basis in the library. If not specified, the basis set for the
 sptheory defaults to the theory basis which defaults to &ldquo;ao basis&rdquo;.</p>
 <h4 id="effective-core-potentials">Effective core potentials<a class="headerlink" href="#effective-core-potentials" title="Permanent link">&para;</a></h4>
-<p>If an <a href="Release66:ECP.md">effective core potential</a> is specified
+<p>If an <a href="ECP.html">effective core potential</a> is specified
 in the usual fashion outside of the DIRDYVTST input then this will be
 used in all calculations. If an alternative ECP name (the name specified
 on the ECP directive in the same manner as done for basis sets) is
@@ -403,7 +403,7 @@ to follow the reaction path. Options are: EULER, LQA, CLQA, and CUBE.</p>
 frequencies and eigenvectors will be printed along the MEP.</p>
 <h4 id="restart">Restart<a class="headerlink" href="#restart" title="Permanent link">&para;</a></h4>
 <p>DIRDYVTST calculations should be
-<a href="Release66:Top-level.md#START_and_RESTART_--_Start-up_mode">restarted</a>
+<a href="Start_Restart.html">restarted</a>
 through the normal NWChem mechanism. The user needs to change the start
 directive to a restart directive and get rid of any information that
 will overwrite important information in the RTDB. The file.db and
