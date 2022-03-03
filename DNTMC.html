@@ -365,82 +365,89 @@ below.</p>
 defines the format for some of these files.</p>
 <ol>
 <li>
-<p>*.fdist  </p>
+<p><code>*.fdist</code>  </p>
 <p>This file is a concatenated list of radial distribution functions
 printed out every mprnt MC steps. Each distribution is normalized
 (sum equal to one) with respect to the entire (all species)
 distribution. The error is the RMS deviation of the average at each
-point. Each entry is as follows: <script type="math/tex; mode=display">1</script> # Total Configurations <script type="math/tex; mode=display">2</script>
-Species number # <script type="math/tex; mode=display">3</script>(R coordinate in Angstroms.md) (Probability)
-(Error) <script type="math/tex; mode=display">Repeats nob times</script>
-<script type="math/tex; mode=display">2 and 3 Repeats for each species</script>
-<script type="math/tex; mode=display">4</script> *** separator.  </p>
+point. Each entry is as follows:   </p>
 </li>
-<li>
-<p>*.MCdata.#  </p>
-<p>This file is a concatenated list of accepted configurations. Each
-file corresponds to a single Markov chain. The dipole is set to zero
-for methods which do not produce a dipole moment with energy
-calculations. Rsim is either the radial extent of the cluster
-(r-config) or the simulation radius (r-simulation). Each entry is as
-follows: <script type="math/tex; mode=display">1</script> (Atomic label) (X Coord.) (Y Coord.) (Z Coord.) <script type="math/tex; mode=display">1
-Repeats for each atom in the cluster configuration, units are in
-angstroms</script>
-<script type="math/tex; mode=display">2</script> Ucalc = # hartree <script type="math/tex; mode=display">3</script> Dipole = (X) (Y) (Z) au
-<script type="math/tex; mode=display">4</script> Rsim = # Angstrom <script type="math/tex; mode=display">1 through 4 repeats for each accepted
-configuration</script>
-</p>
-</li>
-<li>
-<p>*.MCout.#  </p>
-<p>This file has the same format and information content as the MCdata
-file except that additional output is included. This additional
-output includes summary statistics such as acceptance ratios,
-average potential energy, and average radius. The information
-included for accepted configurations does not include dipole moment
-or radius.  </p>
-</li>
-<li>
-<p>*.MCall.#  </p>
-<p>This file has the same format as the MCdata file expect that it
-includes information for all configurations for which an energy is
-determined. All accepted and rejected configurations are included in
-this file.  </p>
-</li>
-<li>
-<p>*.restart.#  </p>
-<p>This file contains the restart information for each subgroup. Its
-format is not very human readable but the basic fields are described
-in short here. Random number seed Potential energy in hartrees Sum
+</ol>
+<pre><code>    \[1\] \# Total Configurations 
+    \[2\] Species number \# 
+    \[3\](R coordinate in Angstroms) (Probability) (Error) 
+    \[Repeats nob times\] 
+    \[2 and 3 Repeats for each species\]
+    \[4\] \*\*\* separator.  
+ ```     
+2.  `*.MCdata.#`  
+
+    This file is a concatenated list of accepted configurations. Each
+    file corresponds to a single Markov chain. The dipole is set to zero
+    for methods which do not produce a dipole moment with energy
+    calculations. Rsim is either the radial extent of the cluster
+    (r-config) or the simulation radius (r-simulation). Each entry is as
+    follows: 
+</code></pre>
+<pre><code>\[1\] (Atomic label) (X Coord.) (Y Coord.) (Z Coord.) 
+\[1 Repeats for each atom in the cluster configuration, units are in
+angstroms\] 
+\[2\] Ucalc = \# hartree 
+\[3\] Dipole = (X) (Y) (Z) au
+\[4\] Rsim = \# Angstrom 
+\[1 through 4 repeats for each accepted configuration\]
+</code></pre>
+<pre><code>3.  `*.MCout.#`  
+
+    This file has the same format and information content as the MCdata
+    file except that additional output is included. This additional
+    output includes summary statistics such as acceptance ratios,
+    average potential energy, and average radius. The information
+    included for accepted configurations does not include dipole moment
+    or radius.  
+
+4.  `*.MCall.#`  
+
+    This file has the same format as the MCdata file expect that it
+    includes information for all configurations for which an energy is
+    determined. All accepted and rejected configurations are included in
+    this file.  
+
+5.  `*.restart.#`  
+
+    This file contains the restart information for each subgroup. Its
+    format is not very human readable but the basic fields are described
+    in short here. 
+</code></pre>
+<pre><code>Random number seed Potential energy in hartrees Sum
 of potential energy Average potential energy Sum of the squared
 potential energy Squared potential energy Dipole moment in au (x)
 (Y) (Z) Rmin and Rmax Rsim (Radius corresponds to r-config or r-sim
 methods) Array of nspecies length, value indicates the number of
 each type of monomer which lies at radius Rsim from the center of
-mass <script type="math/tex; mode=display">r-simulation sets these to zero</script> Sum of Rsim Average of Rsim
+mass \[r-simulation sets these to zero\] Sum of Rsim Average of Rsim
 Number of accepted translantional moves Number of accepted
 rotational moves Number of accepted volume moves Number of attempted
 moves (volume) (translational) (rotational) Number of accepted moves
 (Zero) Number of accepted moves (Zero) Number of MC steps completed
-<script type="math/tex; mode=display">1</script> (Atom label) (X Coord.) (Y Coord.) (Z Coord.) <script type="math/tex; mode=display">1 repeats for
-each atom in cluster configurations, units are in angstroms</script>
-<script type="math/tex; mode=display">2</script>
-Array of nspecies length, number of configurations in bin <script type="math/tex; mode=display">3</script>
+\[1\] (Atom label) (X Coord.) (Y Coord.) (Z Coord.) \[1 repeats for
+each atom in cluster configurations, units are in angstroms\] \[2\]
+Array of nspecies length, number of configurations in bin \[3\]
 Array of nspecies length, normalized number of configurations in
-each bin <script type="math/tex; mode=display">4</script> (Value of bin in Angstroms) (Array of nspecies
-length, normalized probability of bin) <script type="math/tex; mode=display">2 through 4 repeats nob
-times</script>
-</p>
-</li>
-</ol>
-<h2 id="dntmc-restart">DNTMC Restart<a class="headerlink" href="#dntmc-restart" title="Permanent link">&para;</a></h2>
-<pre><code>[procrestart &lt;integer number&gt;]
+each bin \[4\] (Value of bin in Angstroms) (Array of nspecies
+length, normalized probability of bin) \[2 through 4 repeats nob
+times\]
 </code></pre>
-<p>Flag to indicate restart postprocessing. It is suggested that this
-postprocessing run is done utilizing only one processor.</p>
-<p>In order to restart a DNTMC run, postprocessing is required to put
+<pre><code>
+## DNTMC Restart
+</code></pre>
+<p>[procrestart <integer number>]</p>
+<pre><code>Flag to indicate restart postprocessing. It is suggested that this
+postprocessing run is done utilizing only one processor.
+
+In order to restart a DNTMC run, postprocessing is required to put
 required information into the runtime database (RTDB). During a run
-restart information is written to files (Prefix.restart.#num) every
+restart information is written to files (Prefix.restart.\#num) every
 mprnt MC steps. This information must be read and deposited into the
 RTDB before a restart run can be done. The number taken as an argument
 is the number of files to read and must also equal the number of
@@ -449,100 +456,97 @@ to restart for this to work properly. All input is read as usual.
 However, values from the restart files take precedence over input
 values. Some keywords such as mcsteps are not defined in the restart
 files. Task directives are ignored. You must have a RTDB present in your
-permanent directory.</p>
-<p>Once postprocessing is done a standard restart can be done from the RTDB
-by removing the procrestart keyword and including the restart directive.</p>
-<h2 id="task-directives">Task Directives<a class="headerlink" href="#task-directives" title="Permanent link">&para;</a></h2>
-<p>The DNTMC module can be used with any level of theory which can produce
+permanent directory.
+
+Once postprocessing is done a standard restart can be done from the RTDB
+by removing the procrestart keyword and including the restart directive.
+
+## Task Directives
+
+The DNTMC module can be used with any level of theory which can produce
 energies. Gradients and Hessians are not required within this
 methodology. If dipole moments are available, they are also utilized.
-The task directive for the DNTMC module is shown below:</p>
-<pre><code>   task &lt;string theory&gt; dntmc
+The task directive for the DNTMC module is shown below:
 </code></pre>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>This example is for a molecular cluster of 10 monomers. A 50/50 mixture
-of water and ammonia. The energies are done at the SCF/6-31++G** level
+<p>task <string theory> dntmc</p>
+<pre><code>## Example
+
+This example is for a molecular cluster of 10 monomers. A 50/50 mixture
+of water and ammonia. The energies are done at the SCF/6-31++G\*\* level
 of
-theory.</p>
-<pre><code>   start  
-   # start or restart directive if a restart run  
-   MEMORY 1000 mb  
-
-   PERMANENT_DIR /home/bill  
-   # Globally accessible directory which the  
-   # rtdb (*.db) file will/does reside.  
-
-   basis &quot;ao basis&quot; spherical noprint  
-       * library 6-31++G**  
-   end  
-   # basis set directive for scf energies  
-
-   scf  
-       singlet  
-       rhf  
-       tol2e 1.0e-12  
-       vectors input atomic  
-       thresh 1.0e-06  
-       maxiter 200  
-       print none  
-   end  
-   # scf directive for scf energies  
-
-   geometry geom1 units angstroms noautosym nocenter noprint  
-   O  0.393676503613369      -1.743794626956820      -0.762291912129271  
-   H -0.427227157125777      -1.279138812526320      -0.924898279781319  
-   H  1.075463952717060      -1.095883929075060      -0.940073459864222  
-   symmetry c1  
-   end  
-   # geometry of a monomer with title &quot;geom1&quot;  
-
-   geometry geom2 units angstroms noautosym nocenter noprint  
-   N     6.36299e-08     0.00000     -0.670378  
-   H     0.916275     0.00000     -0.159874  
-   H     -0.458137     0.793517     -0.159874  
-   H     -0.458137     -0.793517     -0.159874  
-   symmetry c1  
-   end  
-   # geometry of another monomer with title &quot;geom2&quot;  
-   # other monomers may be included with different titles  
-
-   set subgroups_number 8  
-   # set directive which gives the number of subgroups  
-   # each group runs a separate MC simulation  
-
-   dntmc  
-   # DNTMC input block  
-       nspecies 2  
-       # The number of unique species (number of titled geometries  
-       # above)  
-       species geom1 geom2  
-       # An array of geometry titles (one for each  
-       # nspecies/geometry)  
-       nmol    5  5  
-       # An array stating the number of each  
-       # monomer/nspecies/geometry in simulation.  
-       temp  243.0  
-       mcsteps 1000000  
-       rmin 3.25  
-       rmax 12.25  
-       mprnt 10  
-       tdisp 0.04  
-       rdisp 0.06  
-       print none fdist mcdata  
-       # this print line first sets the print-level to none  
-       # then it states that the *.fdist and *.mcdata.(#num)  
-       # files are to be written  
-       rconfig  
-       dntmc_dir /home/bill/largefile  
-       # An accessible directory which to place the *.fdist,  
-       # *.mcdata.(#num), and *.restart.(#num) files.  
-       convergence 1.0D+00  
-   end  
-
-   task scf dntmc  
-   # task directive stating that energies are to be done at the scf  
-   #level of theory.
+theory.
 </code></pre>
+<p>start<br />
+   # start or restart directive if a restart run<br />
+   MEMORY 1000 mb  </p>
+<p>PERMANENT_DIR /home/bill<br />
+   # Globally accessible directory which the<br />
+   # rtdb (*.db) file will/does reside.  </p>
+<p>basis &ldquo;ao basis&rdquo; spherical noprint<br />
+       * library 6-31++G**<br />
+   end<br />
+   # basis set directive for scf energies  </p>
+<p>scf<br />
+       singlet<br />
+       rhf<br />
+       tol2e 1.0e-12<br />
+       vectors input atomic<br />
+       thresh 1.0e-06<br />
+       maxiter 200<br />
+       print none<br />
+   end<br />
+   # scf directive for scf energies  </p>
+<p>geometry geom1 units angstroms noautosym nocenter noprint<br />
+   O  0.393676503613369      -1.743794626956820      -0.762291912129271<br />
+   H -0.427227157125777      -1.279138812526320      -0.924898279781319<br />
+   H  1.075463952717060      -1.095883929075060      -0.940073459864222<br />
+   symmetry c1<br />
+   end<br />
+   # geometry of a monomer with title &ldquo;geom1&rdquo;  </p>
+<p>geometry geom2 units angstroms noautosym nocenter noprint<br />
+   N     6.36299e-08     0.00000     -0.670378<br />
+   H     0.916275     0.00000     -0.159874<br />
+   H     -0.458137     0.793517     -0.159874<br />
+   H     -0.458137     -0.793517     -0.159874<br />
+   symmetry c1<br />
+   end<br />
+   # geometry of another monomer with title &ldquo;geom2&rdquo;<br />
+   # other monomers may be included with different titles  </p>
+<p>set subgroups_number 8<br />
+   # set directive which gives the number of subgroups<br />
+   # each group runs a separate MC simulation  </p>
+<p>dntmc<br />
+   # DNTMC input block<br />
+       nspecies 2<br />
+       # The number of unique species (number of titled geometries<br />
+       # above)<br />
+       species geom1 geom2<br />
+       # An array of geometry titles (one for each<br />
+       # nspecies/geometry)<br />
+       nmol    5  5<br />
+       # An array stating the number of each<br />
+       # monomer/nspecies/geometry in simulation.<br />
+       temp  243.0<br />
+       mcsteps 1000000<br />
+       rmin 3.25<br />
+       rmax 12.25<br />
+       mprnt 10<br />
+       tdisp 0.04<br />
+       rdisp 0.06<br />
+       print none fdist mcdata<br />
+       # this print line first sets the print-level to none<br />
+       # then it states that the <em>.fdist and </em>.mcdata.(#num)<br />
+       # files are to be written<br />
+       rconfig<br />
+       dntmc_dir /home/bill/largefile<br />
+       # An accessible directory which to place the <em>.fdist,<br />
+       # </em>.mcdata.(#num), and *.restart.(#num) files.<br />
+       convergence 1.0D+00<br />
+   end  </p>
+<p>task scf dntmc<br />
+   # task directive stating that energies are to be done at the scf<br />
+   #level of theory.
+```   </p>
               
             </div>
           </div>
