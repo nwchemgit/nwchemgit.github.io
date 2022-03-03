@@ -154,7 +154,8 @@
                 <h1 id="dynamical-nucleation-theory-monte-carlo">Dynamical Nucleation Theory Monte Carlo<a class="headerlink" href="#dynamical-nucleation-theory-monte-carlo" title="Permanent link">&para;</a></h1>
 <ol>
 <li>Schenter, G. K.; Kathmann, S. M.; Garrett, B. C. J. Chem. Phys.
-    (1999), 110, 7951. 2.)Crosby, L. D.; Kathmann, S. M.; Windus, T. L.
+    (1999), 110, 7951.</li>
+<li>Crosby, L. D.; Kathmann, S. M.; Windus, T. L.
     J. Comput. Chem. ( 2008), submitted.</li>
 </ol>
 <p>The Dynamical Nucleation Theory Monte Carlo (DNTMC) module utilizes
@@ -167,7 +168,8 @@ monomers. Both homogenous and heterogenous clusters are supported.</p>
 <h2 id="subgroups">SubGroups<a class="headerlink" href="#subgroups" title="Permanent link">&para;</a></h2>
 <p>The DNTMC module supports the use of subgroups in the MC simulations.
 The number of subgroups is defined in the input through a set directive:</p>
-<p><code>set subgroup_number</code><integer number></p>
+<pre><code>    set subgroup_number &lt;integer number&gt;
+</code></pre>
 <p>where the number of subgroups requested is the argument. The number of
 processors that each subgroup has access to is determined by
 Total/subgroup_number. A separate MC simulation is performed within
@@ -183,28 +185,29 @@ include restart files and other data files. The NWChem runtime database
 accessible (set through the Permanent_Dir directive) to all processes.</p>
 <h2 id="input-syntax">Input Syntax<a class="headerlink" href="#input-syntax" title="Permanent link">&para;</a></h2>
 <p>The input block has the following form:</p>
-<p><code>DNTMC</code><br />
-<code>[nspecies</code><integer number><code>]</code><br />
-<code>[species  &lt;list of strings name[nspecies]]</code><br />
-<code>[nmol     &lt;list of integers number[nspecies]&gt;]</code><br />
-<code></code><br />
-<code>[temp</code><real temperature><code>]</code><br />
-<code>[rmin</code><real rmin><code>]</code><br />
-<code>[rmax</code><real rmax><code>]</code><br />
-<code>[nob</code><integer nob><code>]</code><br />
-<code>[mcsteps</code><integer number><code>]</code><br />
-<code>[tdisp</code><real disp><code>]</code><br />
-<code>[rdisp</code><real rot><code>]</code><br />
-<code>[rsim || rconfig]</code><br />
-<code>[mprnt</code><integer number><code>]</code><br />
-<code>[convergence</code><real limit><code>]</code><br />
-<code>[norestart]</code><br />
-<code>[dntmc_dir</code><string directory><code>]</code><br />
-<code></code><br />
-<code>[print &amp;&amp;|| noprint]</code><br />
-<code></code><br />
-<code>[procrestart</code><integer number><code>]</code><br />
-<code>END</code></p>
+<pre><code> DNTMC  
+    [nspecies &lt;integer number&gt;]  
+    [species  &lt;list of strings name[nspecies]]  
+    [nmol     &lt;list of integers number[nspecies]&gt;]  
+
+    [temp     &lt;real temperature&gt;]  
+    [rmin     &lt;real rmin&gt;]  
+    [rmax     &lt;real rmax&gt;]  
+    [nob      &lt;integer nob&gt;]  
+    [mcsteps  &lt;integer number&gt;]  
+    [tdisp    &lt;real disp&gt;]  
+    [rdisp    &lt;real rot&gt;]  
+    [rsim || rconfig]  
+    [mprnt    &lt;integer number&gt;]  
+    [convergence &lt;real limit&gt;]  
+    [norestart]  
+    [dntmc_dir &lt;string directory&gt;]  
+
+    [print &amp;&amp;|| noprint]  
+
+    [procrestart &lt;integer number&gt;]  
+ END
+</code></pre>
 <h2 id="definition-of-monomers">Definition of Monomers<a class="headerlink" href="#definition-of-monomers" title="Permanent link">&para;</a></h2>
 <p>Geometry information is required for each unique monomer (species). See
 the geometry input section 6 for more information. A unique label must
@@ -213,38 +216,42 @@ nocenter options are suggested for use with the DNTMC module to prevent
 NWChem from changing the input geometries. Symmetry should also not be
 used since cluster configurations will seldom exhibit any symmetry;
 although monomers themselves may exhibit symmetry.</p>
-<p><code>GEOMETRY [</code><string name species_1><code>] noautosym nocenter ...</code><br />
-<code>...</code><br />
-<code>symmetry c1</code><br />
-<code>END</code><br />
-<code></code><br />
-<code>GEOMETRY [</code><string name species_2><code>] noautosym nocenter ...</code><br />
-<code>...</code><br />
-<code>symmetry c1</code><br />
-<code>END</code><br />
-<code></code><br />
-<code>...</code></p>
+<pre><code> GEOMETRY [&lt;string name species_1&gt;] noautosym nocenter ...  
+     ...  
+ symmetry c1  
+ END  
+
+ GEOMETRY [&lt;string name species_2&gt;] noautosym nocenter ...  
+     ...  
+ symmetry c1  
+ END  
+
+ ...
+</code></pre>
 <p>The molecular cluster is defined by the number of unique monomers
 (nspecies). The geometry labels for each unique monomer is given in a
 space delimited list (species). Also required are the number of each
 unique monomer in the molecular cluster given as a space delimited list
 (nmol). These keywords are required and thus have no default values.</p>
-<p><code>[nspecies</code><integer number><code>]</code><br />
-<code>[species  &lt;list of strings name[nspecies]]</code><br />
-<code>[nmol     &lt;list of integers number[nspecies]&gt;]</code></p>
-<p>An <a href="#Example">example</a> is shown for a 10 monomer cluster
+<pre><code>    [nspecies &lt;integer number&gt;]  
+    [species  &lt;list of strings name[nspecies]]  
+    [nmol     &lt;list of integers number[nspecies]&gt;]
+</code></pre>
+<p>An <a href="#example">example</a> is shown for a 10 monomer cluster
 consisting of a 50/50 mixture of water and ammonia.</p>
 <h2 id="dntmc-runtime-options">DNTMC runtime options<a class="headerlink" href="#dntmc-runtime-options" title="Permanent link">&para;</a></h2>
 <p>Several options control the behavior of the DNTMC module. Some required
 options such as simulation temperature (temp), cluster radius (rmin and
 rmax), and maximum number of MC steps (mcsteps) are used to control the
 MC simulation.</p>
-<p><code>[temp</code><real temperature><code>]</code></p>
+<pre><code>    [temp     &lt;real temperature&gt;]
+</code></pre>
 <p>This required option gives the simulation temperature in which the MC
 simulation is run. Temperature is given in kelvin.</p>
-<p><code>[rmin</code><real rmin><code>]</code><br />
-<code>[rmax</code><real rmax><code>]</code><br />
-<code>[nob</code><integer nob><code>]</code></p>
+<pre><code>    [rmin     &lt;real rmin&gt;]  
+    [rmax     &lt;real rmax&gt;]  
+    [nob    &lt;integer nob&gt;]
+</code></pre>
 <p>These required options define the minimum and maximum extent of the
 projected reaction coordinate (The radius of a sphere centered at the
 center of mass). Rmin should be large enough to contain the entire
@@ -256,10 +263,11 @@ coordinate has a minimum value of Rmin and a maximum value of Rmax. The
 distributions are created by chopping this range into a number of
 smaller sized bins. The number of bins (nob) is controlled by the option
 of the same name.</p>
-<p><code>[mcsteps</code><integer number><code>]</code><br />
-<code>[tdisp    &lt;real disp default 0.04&gt;]</code><br />
-<code>[rdisp    &lt;real rot default 0.06&gt;]</code><br />
-<code>[convergence &lt;real limit default 0.00&gt;]</code></p>
+<pre><code>    [mcsteps  &lt;integer number&gt;]  
+    [tdisp    &lt;real disp default 0.04&gt;]  
+    [rdisp    &lt;real rot default 0.06&gt;]  
+    [convergence &lt;real limit default 0.00&gt;]
+</code></pre>
 <p>These options define some characteristics of the MC simulations. The
 maximum number of MC steps (mcsteps) to take in the course of the
 calculation run is a required option. Once the MC simulation has
@@ -270,7 +278,7 @@ rotational step size (rdisp) are optional inputs with defaults set at
 allows the convergence threshold to be set. The default is 0.00 which
 effectively turns off this checking. Once the measure of convergence
 goes below this threshold the calculation will end.</p>
-<p><code>[rsim || rconfig]</code></p>
+<p><code>[rsim || rconfig]</code></p>
 <p>These optional keywords allow the selection of two different MC sampling
 methods. rsim selects a Metropolis MC methodology which samples
 configurations according to a Canonical ensemble. The rconfig keyword
@@ -278,9 +286,10 @@ selects a MC methodology which samples configurations according to a
 derivative of the Canonical ensemble with respect to the projected
 reaction coordinate. These keywords are optional with the default method
 being rconfig.</p>
-<p><code>[mprnt    &lt;integer number default 10&gt;]</code><br />
-<code>[dntmc_dir &lt;string directory default ./&gt;]</code><br />
-<code>[norestart]</code></p>
+<pre><code>    [mprnt    &lt;integer number default 10&gt;]  
+    [dntmc_dir &lt;string directory default ./&gt;]  
+    [norestart]
+</code></pre>
 <p>These three options define some of the output and data analysis
 behavior. mprnt is an option which controls how often data analysis
 occurs during the simulation. Currently, every mprnt*nob MC steps data
@@ -425,7 +434,8 @@ times</script>
 </li>
 </ol>
 <h2 id="dntmc-restart">DNTMC Restart<a class="headerlink" href="#dntmc-restart" title="Permanent link">&para;</a></h2>
-<p><code>[procrestart</code><integer number><code>]</code></p>
+<pre><code>[procrestart &lt;integer number&gt;]
+</code></pre>
 <p>Flag to indicate restart postprocessing. It is suggested that this
 postprocessing run is done utilizing only one processor.</p>
 <p>In order to restart a DNTMC run, postprocessing is required to put
@@ -447,90 +457,92 @@ by removing the procrestart keyword and including the restart directive.</p>
 energies. Gradients and Hessians are not required within this
 methodology. If dipole moments are available, they are also utilized.
 The task directive for the DNTMC module is shown below:</p>
-<p><code>task</code><string theory><code>dntmc</code></p>
+<pre><code>   task &lt;string theory&gt; dntmc
+</code></pre>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>This example is for a molecular cluster of 10 monomers. A 50/50 mixture
 of water and ammonia. The energies are done at the SCF/6-31++G** level
 of
 theory.</p>
-<p><code>start</code><br />
-<code># start or restart directive if a restart run</code><br />
-<code>MEMORY 1000 mb</code><br />
-<code></code><br />
-<code>PERMANENT_DIR /home/bill</code><br />
-<code># Globally accessible directory which the</code><br />
-<code># rtdb (*.db) file will/does reside.</code><br />
-<code></code><br />
-<code>basis "ao basis" spherical noprint</code><br />
-<code>* library 6-31++G**</code><br />
-<code>end</code><br />
-<code># basis set directive for scf energies</code><br />
-<code></code><br />
-<code>scf</code><br />
-<code>singlet</code><br />
-<code>rhf</code><br />
-<code>tol2e 1.0e-12</code><br />
-<code>vectors input atomic</code><br />
-<code>thresh 1.0e-06</code><br />
-<code>maxiter 200</code><br />
-<code>print none</code><br />
-<code>end</code><br />
-<code># scf directive for scf energies</code><br />
-<code></code><br />
-<code>geometry geom1 units angstroms noautosym nocenter noprint</code><br />
-<code>O  0.393676503613369      -1.743794626956820      -0.762291912129271</code><br />
-<code>H -0.427227157125777      -1.279138812526320      -0.924898279781319</code><br />
-<code>H  1.075463952717060      -1.095883929075060      -0.940073459864222</code><br />
-<code>symmetry c1</code><br />
-<code>end</code><br />
-<code># geometry of a monomer with title "geom1"</code><br />
-<code></code><br />
-<code>geometry geom2 units angstroms noautosym nocenter noprint</code><br />
-<code>N     6.36299e-08     0.00000     -0.670378</code><br />
-<code>H     0.916275     0.00000     -0.159874</code><br />
-<code>H     -0.458137     0.793517     -0.159874</code><br />
-<code>H     -0.458137     -0.793517     -0.159874</code><br />
-<code>symmetry c1</code><br />
-<code>end</code><br />
-<code># geometry of another monomer with title "geom2"</code><br />
-<code># other monomers may be included with different titles</code><br />
-<code></code><br />
-<code>set subgroups_number 8</code><br />
-<code># set directive which gives the number of subgroups</code><br />
-<code># each group runs a separate MC simulation</code><br />
-<code></code><br />
-<code>dntmc</code><br />
-<code># DNTMC input block</code><br />
-<code>nspecies 2</code><br />
-<code># The number of unique species (number of titled geometries</code><br />
-<code># above)</code><br />
-<code>species geom1 geom2</code><br />
-<code># An array of geometry titles (one for each</code><br />
-<code># nspecies/geometry)</code><br />
-<code>nmol    5  5</code><br />
-<code># An array stating the number of each</code><br />
-<code># monomer/nspecies/geometry in simulation.</code><br />
-<code>temp  243.0</code><br />
-<code>mcsteps 1000000</code><br />
-<code>rmin 3.25</code><br />
-<code>rmax 12.25</code><br />
-<code>mprnt 10</code><br />
-<code>tdisp 0.04</code><br />
-<code>rdisp 0.06</code><br />
-<code>print none fdist mcdata</code><br />
-<code># this print line first sets the print-level to none</code><br />
-<code># then it states that the *.fdist and *.mcdata.(#num)</code><br />
-<code># files are to be written</code><br />
-<code>rconfig</code><br />
-<code>dntmc_dir /home/bill/largefile</code><br />
-<code># An accessible directory which to place the *.fdist,</code><br />
-<code># *.mcdata.(#num), and *.restart.(#num) files.</code><br />
-<code>convergence 1.0D+00</code><br />
-<code>end</code><br />
-<code></code><br />
-<code>task scf dntmc</code><br />
-<code># task directive stating that energies are to be done at the scf</code><br />
-<code>#level of theory.</code></p>
+<pre><code>   start  
+   # start or restart directive if a restart run  
+   MEMORY 1000 mb  
+
+   PERMANENT_DIR /home/bill  
+   # Globally accessible directory which the  
+   # rtdb (*.db) file will/does reside.  
+
+   basis &quot;ao basis&quot; spherical noprint  
+       * library 6-31++G**  
+   end  
+   # basis set directive for scf energies  
+
+   scf  
+       singlet  
+       rhf  
+       tol2e 1.0e-12  
+       vectors input atomic  
+       thresh 1.0e-06  
+       maxiter 200  
+       print none  
+   end  
+   # scf directive for scf energies  
+
+   geometry geom1 units angstroms noautosym nocenter noprint  
+   O  0.393676503613369      -1.743794626956820      -0.762291912129271  
+   H -0.427227157125777      -1.279138812526320      -0.924898279781319  
+   H  1.075463952717060      -1.095883929075060      -0.940073459864222  
+   symmetry c1  
+   end  
+   # geometry of a monomer with title &quot;geom1&quot;  
+
+   geometry geom2 units angstroms noautosym nocenter noprint  
+   N     6.36299e-08     0.00000     -0.670378  
+   H     0.916275     0.00000     -0.159874  
+   H     -0.458137     0.793517     -0.159874  
+   H     -0.458137     -0.793517     -0.159874  
+   symmetry c1  
+   end  
+   # geometry of another monomer with title &quot;geom2&quot;  
+   # other monomers may be included with different titles  
+
+   set subgroups_number 8  
+   # set directive which gives the number of subgroups  
+   # each group runs a separate MC simulation  
+
+   dntmc  
+   # DNTMC input block  
+       nspecies 2  
+       # The number of unique species (number of titled geometries  
+       # above)  
+       species geom1 geom2  
+       # An array of geometry titles (one for each  
+       # nspecies/geometry)  
+       nmol    5  5  
+       # An array stating the number of each  
+       # monomer/nspecies/geometry in simulation.  
+       temp  243.0  
+       mcsteps 1000000  
+       rmin 3.25  
+       rmax 12.25  
+       mprnt 10  
+       tdisp 0.04  
+       rdisp 0.06  
+       print none fdist mcdata  
+       # this print line first sets the print-level to none  
+       # then it states that the *.fdist and *.mcdata.(#num)  
+       # files are to be written  
+       rconfig  
+       dntmc_dir /home/bill/largefile  
+       # An accessible directory which to place the *.fdist,  
+       # *.mcdata.(#num), and *.restart.(#num) files.  
+       convergence 1.0D+00  
+   end  
+
+   task scf dntmc  
+   # task directive stating that energies are to be done at the scf  
+   #level of theory.
+</code></pre>
               
             </div>
           </div>
