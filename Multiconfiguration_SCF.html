@@ -156,33 +156,33 @@
 complete active space SCF (CASSCF) calculations with at most 20 active
 orbitals and about 500 basis
 functions.</p>
-<pre><code> MCSCF  
-   STATE &lt;string state&gt;  
-   ACTIVE &lt;integer nactive&gt;  
-   ACTELEC &lt;integer nactelec&gt;  
-   MULTIPLICITY &lt;integer multiplicity&gt;  
-   [SYMMETRY &lt;integer symmetry default 1&gt;]  
-   [VECTORS [[input] &lt;string input_file default file_prefix.movecs&gt;]   
-          [swap &lt;integer vec1 vec2&gt; ...] \  
-          [output &lt;string output_file default input_file&gt;] \  
-          [lock]  
-   [HESSIAN (exact||onel)]  
-   [MAXITER &lt;integer maxiter default 20&gt;]  
-   [THRESH  &lt;real thresh default 1.0e-4&gt;]  
-   [TOL2E &lt;real tol2e default 1.0e-9&gt;] 
-   [LEVEL &lt;real shift default 0.1d0&gt;]  
- END
+<pre><code> MCSCF  
+   STATE &lt;string state&gt;  
+   ACTIVE &lt;integer nactive&gt;  
+   ACTELEC &lt;integer nactelec&gt;  
+   MULTIPLICITY &lt;integer multiplicity&gt;  
+   [SYMMETRY &lt;integer symmetry default 1&gt;]  
+   [VECTORS [[input] &lt;string input_file default file_prefix.movecs&gt;]   
+          [swap &lt;integer vec1 vec2&gt; ...] \  
+          [output &lt;string output_file default input_file&gt;] \  
+          [lock]  
+   [HESSIAN (exact||onel)]  
+   [MAXITER &lt;integer maxiter default 20&gt;]  
+   [THRESH  &lt;real thresh default 1.0e-4&gt;]  
+   [TOL2E &lt;real tol2e default 1.0e-9&gt;] 
+   [LEVEL &lt;real shift default 0.1d0&gt;]  
+ END
 </code></pre>
 <p>Note that the <code>ACTIVE</code>, <code>ACTELEC</code>, and <code>MULTIPLICITY</code> directives are required.
 The symmetry and multiplicity may alternatively be entered using the
 STATE directive.</p>
-<h2 id="active-number-of-active-orbitals">ACTIVE &ndash; Number of active orbitals<a class="headerlink" href="#active-number-of-active-orbitals" title="Permanent link">&para;</a></h2>
+<h2 id="active-number-of-active-orbitals">ACTIVE: Number of active orbitals<a class="headerlink" href="#active-number-of-active-orbitals" title="Permanent link">&para;</a></h2>
 <p>The number of orbitals in the CASSCF active space must be specified
 using the ACTIVE directive.</p>
 <p>E.g.,</p>
-<pre><code> active 10
+<pre><code> active 10
 </code></pre>
-<p>The input molecular orbitals (see the vectors directive in <a href="#VECTORS_--_Input/output_of_MO_vectors">MCSCF
+<p>The input molecular orbitals (see the vectors directive in <a href="#vectors-inputoutput-of-mo-vectors">MCSCF
 Vectors</a> and <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">SCF
 Vectors</a>)
 must be arranged in order</p>
@@ -191,7 +191,7 @@ must be arranged in order</p>
 <li>active orbitals, and</li>
 <li>unoccupied orbitals.</li>
 </ol>
-<h2 id="actelec-number-of-active-electrons">ACTELEC &ndash; Number of active electrons<a class="headerlink" href="#actelec-number-of-active-electrons" title="Permanent link">&para;</a></h2>
+<h2 id="actelec-number-of-active-electrons">ACTELEC: Number of active electrons<a class="headerlink" href="#actelec-number-of-active-electrons" title="Permanent link">&para;</a></h2>
 <p>The number of electrons in the CASSCF active space must be specified
 using the <code>ACTELEC</code> directive. An error is reported if the number of
 active electrons and the multiplicity are inconsistent.</p>
@@ -203,28 +203,28 @@ charge).</p>
 <p>The spin multiplicity must be specified and is enforced by projection of
 the determinant wavefunction.</p>
 <p>E.g., to obtain a triplet state</p>
-<pre><code> multiplicity 3
+<pre><code> multiplicity 3
 </code></pre>
-<h2 id="symmetry-spatial-symmetry-of-the-wavefunction">SYMMETRY &ndash; Spatial symmetry of the wavefunction<a class="headerlink" href="#symmetry-spatial-symmetry-of-the-wavefunction" title="Permanent link">&para;</a></h2>
+<h2 id="symmetry-spatial-symmetry-of-the-wavefunction">SYMMETRY: Spatial symmetry of the wavefunction<a class="headerlink" href="#symmetry-spatial-symmetry-of-the-wavefunction" title="Permanent link">&para;</a></h2>
 <p>This species the irreducible representation of the wavefunction as an
 integer in the range 1&ndash;8 using the same numbering of representations as
 output by the SCF program. Note that only Abelian point groups are
 supported.</p>
 <p>E.g., to specify a B<sub>1</sub> state when using the C<sub>2v</sub> group</p>
-<pre><code> symmetry 3
+<pre><code> symmetry 3
 </code></pre>
-<h2 id="state-symmetry-and-multiplicity">STATE &ndash; Symmetry and multiplicity<a class="headerlink" href="#state-symmetry-and-multiplicity" title="Permanent link">&para;</a></h2>
+<h2 id="state-symmetry-and-multiplicity">STATE: Symmetry and multiplicity<a class="headerlink" href="#state-symmetry-and-multiplicity" title="Permanent link">&para;</a></h2>
 <p>The electronic state (spatial symmetry and multiplicity) may
 alternatively be specified using the conventional notation for an
 electronic state, such as <sup>3</sup>B<sub>2</sub> for a triplet state of B<sub>2</sub>
 symmetry. This would be accomplished with the input</p>
-<pre><code> state 3b2
+<pre><code> state 3b2
 </code></pre>
 <p>which is equivalent to</p>
-<pre><code> symmetry 4 
- multiplicity 3
+<pre><code> symmetry 4 
+ multiplicity 3
 </code></pre>
-<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS &ndash; Input/output of MO vectors<a class="headerlink" href="#vectors-inputoutput-of-mo-vectors" title="Permanent link">&para;</a></h2>
+<h2 id="vectors-inputoutput-of-mo-vectors">VECTORS: Input/output of MO vectors<a class="headerlink" href="#vectors-inputoutput-of-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>Calculations are best started from RHF/ROHF molecular orbitals (see
 <a href="Hartree-Fock-Theory-for-Molecules.html">SCF</a>), and by
 default vectors are taken from the previous MCSCF or SCF calculation. To
@@ -256,7 +256,7 @@ follows:</p>
     that in the case of degenerate occupations that this does not fully
     determine the orbitals.</li>
 </ul>
-<h2 id="hessian-select-preconditioner">HESSIAN &ndash; Select preconditioner<a class="headerlink" href="#hessian-select-preconditioner" title="Permanent link">&para;</a></h2>
+<h2 id="hessian-select-preconditioner">HESSIAN: Select preconditioner<a class="headerlink" href="#hessian-select-preconditioner" title="Permanent link">&para;</a></h2>
 <p>The MCSCF will use a one-electron approximation to the orbital-orbital
 Hessian until some degree of convergence is obtained, whereupon it will
 attempt to use the exact orbital-orbital Hessian which makes the micro
@@ -264,9 +264,9 @@ iterations more expensive but potentially reduces the total number of
 macro iterations. Either choice may be forced throughout the calculation
 by specifying the appropriate keyword on the <code>HESSIAN</code> directive.</p>
 <p>E.g., to specify the one-electron approximation throughout</p>
-<pre><code> hessian onel
+<pre><code> hessian onel
 </code></pre>
-<h2 id="level-level-shift-for-convergence">LEVEL &ndash; Level shift for convergence<a class="headerlink" href="#level-level-shift-for-convergence" title="Permanent link">&para;</a></h2>
+<h2 id="level-level-shift-for-convergence">LEVEL: Level shift for convergence<a class="headerlink" href="#level-level-shift-for-convergence" title="Permanent link">&para;</a></h2>
 <p>The <a href="Hessians-and-Vibrational-Frequencies.html">Hessian</a>
 used in the MCSCF optimization is by default level shifted by 0.1 until
 the orbital gradient norm falls below 0.01, at which point the level
@@ -274,12 +274,11 @@ shift is reduced to zero. The initial value of 0.1 may be changed using
 the LEVEL directive. Increasing the level shift may make convergence
 more stable in some instances.</p>
 <p>E.g., to set the initial level shift to 0.5</p>
-<pre><code> level 0.5
+<pre><code> level 0.5
 </code></pre>
 <h2 id="print-and-noprint">PRINT and NOPRINT<a class="headerlink" href="#print-and-noprint" title="Permanent link">&para;</a></h2>
 <p>Specific output items can be selectively enabled or disabled using the
-<a href="Top-level.html#PRINT_.2F_NOPRINT">print control
-mechanism</a> with the
+<a href="Print_Noprint.html">print control mechanism</a> with the
 available print options listed in the table
 below.</p>
 <p><center></p>
