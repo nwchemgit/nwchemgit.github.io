@@ -169,10 +169,10 @@ Northwest Laboratory, Richland, Washington</p>
 <p>If you use the DIRDYVTST portion of NWChem, please use following
 citation in addition to the usual NWChem
 citation:</p>
-<pre><code>   DIRDYVTST, Yao-Yuan Chuang and Donald G. Truhlar, Department of Chemistry and Super Computer Institute,   
-   University of Minnesota; Ricky A. Kendall,Scalable Computing Laboratory, Ames Laboratory and Iowa State   
-   University; Bruce C. Garrett and Theresa L. Windus, Environmental Molecular Sciences Laboratory,  
-   Pacific Northwest Laboratory. `
+<pre><code>   DIRDYVTST, Yao-Yuan Chuang and Donald G. Truhlar, Department of Chemistry and Super Computer Institute,   
+   University of Minnesota; Ricky A. Kendall,Scalable Computing Laboratory, Ames Laboratory and Iowa State   
+   University; Bruce C. Garrett and Theresa L. Windus, Environmental Molecular Sciences Laboratory,  
+   Pacific Northwest Laboratory. `
 </code></pre>
 <h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
 <p>By using DIRDYVTST, a user can carry out electronic structure
@@ -220,13 +220,13 @@ wavefunction).</p>
 POLYRATE input. The first set of inputs are for NWChem with the general
 input block of the
 form:</p>
-<pre><code> DIRDYVTST [autosym [real tol default 1d-2] | noautosym]  
-   [THEORY &lt;string theory&gt; [basis &lt;string basis default &quot;ao basis&quot;&gt;] \  
-                        [ecp &lt;string ecp&gt;] [input &lt;string input&gt;]]  
-   [SPTHEORY &lt;string theory&gt; [basis &lt;string basis default &quot;ao basis&quot;&gt;]   
-                        [ecp &lt;string ecp&gt;] [input &lt;string input&gt;`]]  
-   ...
- END
+<pre><code> DIRDYVTST [autosym [real tol default 1d-2] | noautosym]  
+   [THEORY &lt;string theory&gt; [basis &lt;string basis default &quot;ao basis&quot;&gt;] \  
+                        [ecp &lt;string ecp&gt;] [input &lt;string input&gt;]]  
+   [SPTHEORY &lt;string theory&gt; [basis &lt;string basis default &quot;ao basis&quot;&gt;]   
+                        [ecp &lt;string ecp&gt;] [input &lt;string input&gt;`]]  
+   ...
+ END
 </code></pre>
 <h4 id="use-of-symmetry">Use of symmetry<a class="headerlink" href="#use-of-symmetry" title="Permanent link">&para;</a></h4>
 <p>The use of symmetry in the calculation is controlled by the keyword
@@ -273,13 +273,13 @@ desired results. Since the NWChem database is persistent, the input
 strings should fully define the calculation you wish to have happen.</p>
 <p>For instance, if the theory model is DFT/LDA/3-21g and the sptheory
 model is DFT/B3LYP/6-311g**, the DIRDYVTST input might look like this</p>
-<pre><code>   dirdyvtst  
-     theory  dft basis 3-21g    input &quot;dft\; xc\; end&quot;  
-     sptheory dft basis 6-311g** input &quot;dft\; xc b3lyp\; end&quot;  
-     ....  
-   end
+<pre><code>   dirdyvtst  
+     theory  dft basis 3-21g    input &quot;dft\; xc\; end&quot;  
+     sptheory dft basis 6-311g** input &quot;dft\; xc b3lyp\; end&quot;  
+     ....  
+   end
 </code></pre>
-<p>The empty XC directive restores the default <a href="Density-Functional-Theory-for-Molecules.html#XC-and-DECOMP----Exchange-Correlation-Potentials">LDA exchange-correlation
+<p>The empty XC directive restores the default <a href="Density-Functional-Theory-for-Molecules.html#xc-and-decomp-exchange-correlation-potentials">LDA exchange-correlation
 functional</a>.
 Note that semi-colons and other quotation marks inside the input string
 must be preceded by a backslash to avoid special interpretation.</p>
@@ -291,30 +291,30 @@ sections.</p>
 <p>The GENERAL section has the following format:</p>
 <pre><code>  * GENERAL
 
- [TITLE &lt;string title&gt;]  
- ATOMS  
-   &lt;integer num&gt; &lt;string tag&gt; [&lt;real mass&gt;]  
-   ...  
- END  
- [SINGLEPOINT]  
- [SAVEFILE (vecs || hess || spc)
+ [TITLE &lt;string title&gt;]  
+ ATOMS  
+   &lt;integer num&gt; &lt;string tag&gt; [&lt;real mass&gt;]  
+   ...  
+ END  
+ [SINGLEPOINT]  
+ [SAVEFILE (vecs || hess || spc)
 </code></pre>
 <p>Descriptions</p>
 <p>TITLE is a keyword that allows the user to input a description of the
 calculation. In this version, the user can only have a single-line
 description.</p>
 <p>For example:</p>
-<p><code>TITLE Calculation of D + HCl reaction</code></p>
+<p><code>TITLE Calculation of D + HCl reaction</code></p>
 <p>ATOMS is a list keyword that is used to input a list of the atoms. It is
 similar to POLYRATE in that the order of the atom and the atomic symbol
 are required in a single line. If isotope of the element is considered
 then the atomic mass is required in units of amu.</p>
 <p>For example:</p>
-<pre><code>                         ATOMS  
-                           1     H     2.014  
-                           2     H  
-                           3     Cl  
-                         END`
+<pre><code>                         ATOMS  
+                           1     H     2.014  
+                           2     H  
+                           3     Cl  
+                         END`
 </code></pre>
 <p>SINGLEPOINT is a keyword that specifies that a single point calculation
 is to be performed at the reactants, products and saddle point
@@ -327,12 +327,12 @@ calculation movecs.</p>
 <h5 id="react1-react2-prod1-prod2-and-start-sections">REACT1, REACT2, PROD1, PROD2, and START sections<a class="headerlink" href="#react1-react2-prod1-prod2-and-start-sections" title="Permanent link">&para;</a></h5>
 <p>These sections have the following
 format:</p>
-<pre><code>*(REACT1 || REACT2 || PROD1 || PROD2 || START)  
-  GEOM  
-    &lt;integer num&gt; &lt;real x y z&gt;  
-    ...  
-  END  
-  SPECIES (ATOMIC || LINRP || NONLINRP || LINTS || NONLINTS default NONLINRP)
+<pre><code>*(REACT1 || REACT2 || PROD1 || PROD2 || START)  
+  GEOM  
+    &lt;integer num&gt; &lt;real x y z&gt;  
+    ...  
+  END  
+  SPECIES (ATOMIC || LINRP || NONLINRP || LINTS || NONLINTS default NONLINRP)
 </code></pre>
 <p>REACT1 and REACT2 are input for each of the reactants and PROD1 and
 PROD2 are input for each of the products. REACT1 and PROD1 are required.
@@ -342,29 +342,29 @@ point to follow downhill the MEP.</p>
 <p>GEOM is a list keyword that indicates the geometry of the molecule in
 Cartesian coordinates with atomic unit.</p>
 <p>For example:</p>
-<pre><code>                         GEOM  
-                            1      0.0     0.0     0.0  
-                            2      0.0     0.0     1.5  
-                         END
+<pre><code>                         GEOM  
+                            1      0.0     0.0     0.0  
+                            2      0.0     0.0     1.5  
+                         END
 </code></pre>
 <p>SPECIES is a variable keyword that indicates the type of the molecule.
 Options are: ATOMIC (atomic reactant or product), LINRP (linear reactant
 or product), NONLINRP (nonlinear reactant or product), LINTS (linear
 transition state), and NONLINTS (nonlinear transition state).</p>
 <p>For example:</p>
-<p><code>SPECIES atomic</code></p>
+<p><code>SPECIES atomic</code></p>
 <h5 id="path-section">PATH section<a class="headerlink" href="#path-section" title="Permanent link">&para;</a></h5>
 <p>The Path section has the format:</p>
 <pre><code>*PATH  
- [SCALEMASS &lt;real scalemass default 1.0&gt;]  
- [SSTEP &lt;real sstep default 0.01&gt;]  
- [SSAVE &lt;real ssave default 0.1&gt;]  
- [SHESS &lt;real shess default SSAVE&gt;]  
- [SLP &lt;real slp default 1.0&gt;]  
- [SLM &lt;real slm default -1.0&gt;]  
- [SIGN (REACTANT || PRODUCT default REACTANT)]  
- [INTEGRA (EULER || LQA || CLQA || CUBE default EULER)] 
- [PRINTFREQ (on || off default off)]
+ [SCALEMASS &lt;real scalemass default 1.0&gt;]  
+ [SSTEP &lt;real sstep default 0.01&gt;]  
+ [SSAVE &lt;real ssave default 0.1&gt;]  
+ [SHESS &lt;real shess default SSAVE&gt;]  
+ [SLP &lt;real slp default 1.0&gt;]  
+ [SLM &lt;real slm default -1.0&gt;]  
+ [SIGN (REACTANT || PRODUCT default REACTANT)]  
+ [INTEGRA (EULER || LQA || CLQA || CUBE default EULER)] 
+ [PRINTFREQ (on || off default off)]
 </code></pre>
 <p>Descriptions</p>
 <p>SCALEMASS is a variable keyword that indicates the arbitrary mass (in
@@ -416,89 +416,89 @@ supermolecule, a doublet. In this example, the initial energies,
 gradients, and Hessians are calculated at the UHF/3-21G level of theory
 and the singlepoint calculations are calculated at the MP2/cc-pVDZ level
 of theory with a tighter convergence threshold than the first SCF.</p>
-<pre><code>start h3test  
+<pre><code>start h3test  
 
 basis  
- h library 3-21G  
-end  
+ h library 3-21G  
+end  
 
-basis singlepoint  
- h library cc-pVDZ  
+basis singlepoint  
+ h library cc-pVDZ  
 end  
 
 scf  
-  uhf  
-  doublet  
-  thresh 1.0e-6  
+  uhf  
+  doublet  
+  thresh 1.0e-6  
 end  
 
-dirdyvtst autosym 0.001  
-  theory scf input &quot;scf\; uhf\; doublet\; thresh 1.0e-06\; end&quot;  
-  sptheory mp2 basis singlepoint input \  
-    &quot;scf\; uhf\; doublet\; thresh 1.0e-07\; end&quot;  
+dirdyvtst autosym 0.001  
+  theory scf input &quot;scf\; uhf\; doublet\; thresh 1.0e-06\; end&quot;  
+  sptheory mp2 basis singlepoint input \  
+    &quot;scf\; uhf\; doublet\; thresh 1.0e-07\; end&quot;  
 *GENERAL  
-  TITLE  
-    Test run: H+H2 reaction, Page-McIver CLQA algorithm, no restart  
+  TITLE  
+    Test run: H+H2 reaction, Page-McIver CLQA algorithm, no restart  
 
-  ATOMS 
-     1    H 
-     2    H  
-     3    H  
-  END 
+  ATOMS 
+     1    H 
+     2    H  
+     3    H  
+  END 
 
-  SINGLEPOINT  
+  SINGLEPOINT  
 
 *REACT1  
-   GEOM  
-     1  0.0   0.0   0.0  
-     2  0.0   0.0   1.3886144 
-   END  
+   GEOM  
+     1  0.0   0.0   0.0  
+     2  0.0   0.0   1.3886144 
+   END  
 
-   SPECIES LINRP  
+   SPECIES LINRP  
 
 *REACT2  
-  GEOM  
-    3    0.0   0.0 190.3612132  
-  END  
+  GEOM  
+    3    0.0   0.0 190.3612132  
+  END  
 
-  SPECIES  ATOMIC  
+  SPECIES  ATOMIC  
 
 *PROD2  
-  GEOM  
-    1   0.0   0.0 190.3612132  
-  END  
+  GEOM  
+    1   0.0   0.0 190.3612132  
+  END  
 
-  SPECIES   ATOMIC  
+  SPECIES   ATOMIC  
 
 *PROD1  
 
-  GEOM  
-    2  0.0   0.0   1.3886144 
-    3   0.0   0.0   0.0  
-  END  
+  GEOM  
+    2  0.0   0.0   1.3886144 
+    3   0.0   0.0   0.0  
+  END  
 
-  SPECIES  LINRP  
+  SPECIES  LINRP  
 
 *START  
 
-  GEOM  
-    1  0.0   0.0  -1.76531973  
-    2  0.0   0.0   0.0  
-    3  0.0   0.0   1.76531973  
-  END  
+  GEOM  
+    1  0.0   0.0  -1.76531973  
+    2  0.0   0.0   0.0  
+    3  0.0   0.0   1.76531973  
+  END  
 
-  SPECIES  LINTS  
+  SPECIES  LINTS  
 
 *PATH  
-  SSTEP  0.05  
-  SSAVE  0.05  
-  SLP    0.50  
-  SLM   -0.50  
-  SCALEMASS 0.6718993  
-  INTEGRA   CLQA  
+  SSTEP  0.05  
+  SSAVE  0.05  
+  SLP    0.50  
+  SLM   -0.50  
+  SCALEMASS 0.6718993  
+  INTEGRA   CLQA  
 end  
 
-task dirdyvtst
+task dirdyvtst
 </code></pre>
               
             </div>
