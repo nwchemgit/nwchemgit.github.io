@@ -104,6 +104,78 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#building-the-nwchem-binary">Building the NWChem binary</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-linux-platforms">How-to: Linux platforms</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#nwchem-66-on-ubuntu-1404-trusty-tahr">NWChem 6.6 on Ubuntu 14.04 (Trusty Tahr)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nwchem-66-on-fedora-22">NWChem 6.6 on Fedora 22</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nwchem-68-on-centos-71fedora-27">NWChem 6.8 on Centos 7.1/Fedora 27</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nwchem-66-on-redhat-6">NWChem 6.6 on RedHat 6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nwchem-66-on-redhat-6-epel-repository">NWChem 6.6 on RedHat 6 &amp; EPEL repository</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nwchem-66-on-opensuse-13">NWChem 6.6 on OpenSuse 13</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-mac-platforms">How to: Mac platforms</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#compilation-of-nwchem-65-release-on-mac-os-x-109-x86_64">Compilation of NWChem 6.5 release on Mac OS X 10.9 x86_64</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#compilation-of-nwchem-66-on-mac-os-x-1010-yosemite-x86_64">Compilation of NWChem 6.6 on Mac OS X 10.10 (Yosemite) x86_64</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#method-1-using-gfortran-from-hpcsfnet-and-mpich-from-macports">Method #1: using gfortran from hpc.sf.net and mpich from macports</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#method-2-using-gfortran-and-openmpi-from-brew">Method #2: using gfortran and openmpi from brew</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#method-3-using-intel-compilers-and-mkl">Method #3: using Intel compilers and MKL</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-cray-platforms">How-to: Cray platforms</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#method-2-armci_networkmpi-pr">Method #2: ARMCI_NETWORK=MPI-PR</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#example-olcf-titan">Example: OLCF Titan</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aries-eg-xc30xc40">Aries, e.g. XC30/XC40</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#method-1-armci_networkmpi-pr">Method #1: ARMCI_NETWORK=MPI-PR</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-nersc-edison">Example: NERSC Edison</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example-nersc-cori">Example: NERSC Cori</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-intel-xeon-phi">How-to: Intel Xeon Phi</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-ibm-platforms">How-to: IBM platforms</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-commodity-clusters-with-infiniband">How-to: Commodity clusters with Infiniband</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-commodity-clusters-with-intel-omni-path">How-to: Commodity clusters with Intel Omni-Path</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#how-to-windows-platforms">How-to: Windows Platforms</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mingw">MingW</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#msys2">MSYS2</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wsl-on-windows-10">WSL on Windows 10</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#general-site-installation">General site installation</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -706,7 +778,7 @@ COPTIMIZE variables. The reason is that the default values for FOPTIMIZE
 and COPTIMIZE have been tested by the NWChem developers (using the
 internal QA suites, among others), while any modification might produce
 incorrect results.</p>
-<h1 id="how-to-linux-platforms">How-to: Linux platforms<a class="headerlink" href="#how-to-linux-platforms" title="Permanent link">&para;</a></h1>
+<h2 id="how-to-linux-platforms">How-to: Linux platforms<a class="headerlink" href="#how-to-linux-platforms" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Common environmental variables for building in serial or in
     parallel with MPI</strong></li>
@@ -742,7 +814,7 @@ mpif90 to the PATH variable, instead.</p>
 % make nwchem_config
 % make FC=gfortran &gt;&amp; make.log
 </code></pre>
-<h4 id="nwchem-66-on-ubuntu-1404-trusty-tahr">NWChem 6.6 on Ubuntu 14.04 (Trusty Tahr)<a class="headerlink" href="#nwchem-66-on-ubuntu-1404-trusty-tahr" title="Permanent link">&para;</a></h4>
+<h3 id="nwchem-66-on-ubuntu-1404-trusty-tahr">NWChem 6.6 on Ubuntu 14.04 (Trusty Tahr)<a class="headerlink" href="#nwchem-66-on-ubuntu-1404-trusty-tahr" title="Permanent link">&para;</a></h3>
 <p>These instruction are likely to work (with minor modifications) on all
 Debian based distributions</p>
 <ul>
@@ -771,7 +843,7 @@ export USE_64TO32=y
 make 64_to_32
 make
 </code></pre>
-<h4 id="nwchem-66-on-fedora-22">NWChem 6.6 on Fedora 22<a class="headerlink" href="#nwchem-66-on-fedora-22" title="Permanent link">&para;</a></h4>
+<h3 id="nwchem-66-on-fedora-22">NWChem 6.6 on Fedora 22<a class="headerlink" href="#nwchem-66-on-fedora-22" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Packages
 required:</li>
@@ -798,7 +870,7 @@ export USE_ARUR=y
 <pre><code>make nwchem_config NWCHEM_MODULES=&quot;all python&quot;
 make
 </code></pre>
-<h4 id="nwchem-68-on-centos-71fedora-27">NWChem 6.8 on Centos 7.1/Fedora 27<a class="headerlink" href="#nwchem-68-on-centos-71fedora-27" title="Permanent link">&para;</a></h4>
+<h3 id="nwchem-68-on-centos-71fedora-27">NWChem 6.8 on Centos 7.1/Fedora 27<a class="headerlink" href="#nwchem-68-on-centos-71fedora-27" title="Permanent link">&para;</a></h3>
 <p>Once you have added the <a href="https://docs.fedoraproject.org/en-US/epel/">EPEL
 repository</a> to your Centos/Fedora/RedHat
 installation, you can have a more efficient NWChem build. </p>
@@ -837,7 +909,7 @@ make nwchem_config NWCHEM_MODULES=&quot;all python&quot;
 make 64_to_32  
 make
 </code></pre>
-<h4 id="nwchem-66-on-redhat-6">NWChem 6.6 on RedHat 6<a class="headerlink" href="#nwchem-66-on-redhat-6" title="Permanent link">&para;</a></h4>
+<h3 id="nwchem-66-on-redhat-6">NWChem 6.6 on RedHat 6<a class="headerlink" href="#nwchem-66-on-redhat-6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Packages required:</li>
 </ul>
@@ -861,13 +933,13 @@ export PATH=/usr/lib64/openmpi/bin/:$PATH
 <pre><code>make nwchem_config NWCHEM_MODULES=&quot;all python&quot;
 make
 </code></pre>
-<h4 id="nwchem-66-on-redhat-6-epel-repository">NWChem 6.6 on RedHat 6 &amp; EPEL repository<a class="headerlink" href="#nwchem-66-on-redhat-6-epel-repository" title="Permanent link">&para;</a></h4>
+<h3 id="nwchem-66-on-redhat-6-epel-repository">NWChem 6.6 on RedHat 6 &amp; EPEL repository<a class="headerlink" href="#nwchem-66-on-redhat-6-epel-repository" title="Permanent link">&para;</a></h3>
 <p>Once you have added the <a href="https://fedoraproject.org/wiki/EPEL">EPEL
 repository</a> to you RedHat 6
 installation, you can have a more efficient NWChem build. The settings
 are exactly the same as
 <a href="Compiling-NWChem.html#nwchem-68-on-centos-71fedora-27">Centos 7.1</a></p>
-<h4 id="nwchem-66-on-opensuse-13">NWChem 6.6 on OpenSuse 13<a class="headerlink" href="#nwchem-66-on-opensuse-13" title="Permanent link">&para;</a></h4>
+<h3 id="nwchem-66-on-opensuse-13">NWChem 6.6 on OpenSuse 13<a class="headerlink" href="#nwchem-66-on-opensuse-13" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Packages
 required:</li>
@@ -896,8 +968,8 @@ export PATH=/usr/lib64/openmpi/bin/:$PATH
 make 64_to_32
 make
 </code></pre>
-<h1 id="how-to-mac-platforms">How to: Mac platforms<a class="headerlink" href="#how-to-mac-platforms" title="Permanent link">&para;</a></h1>
-<h2 id="compilation-of-nwchem-65-release-on-mac-os-x-109-x86_64">Compilation of NWChem 6.5 release on Mac OS X 10.9 x86_64<a class="headerlink" href="#compilation-of-nwchem-65-release-on-mac-os-x-109-x86_64" title="Permanent link">&para;</a></h2>
+<h2 id="how-to-mac-platforms">How to: Mac platforms<a class="headerlink" href="#how-to-mac-platforms" title="Permanent link">&para;</a></h2>
+<h3 id="compilation-of-nwchem-65-release-on-mac-os-x-109-x86_64">Compilation of NWChem 6.5 release on Mac OS X 10.9 x86_64<a class="headerlink" href="#compilation-of-nwchem-65-release-on-mac-os-x-109-x86_64" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Download and unpack latest NWChem tarball to the directory of your
     choosing, say /Users/johndoe/nwchem</li>
@@ -932,7 +1004,7 @@ export NWCHEM_TOP=/Users/johndoe/nwchem
 make nwchem_config
 make
 </code></pre>
-<h2 id="compilation-of-nwchem-66-on-mac-os-x-1010-yosemite-x86_64">Compilation of NWChem 6.6 on Mac OS X 10.10 (Yosemite) x86_64<a class="headerlink" href="#compilation-of-nwchem-66-on-mac-os-x-1010-yosemite-x86_64" title="Permanent link">&para;</a></h2>
+<h3 id="compilation-of-nwchem-66-on-mac-os-x-1010-yosemite-x86_64">Compilation of NWChem 6.6 on Mac OS X 10.10 (Yosemite) x86_64<a class="headerlink" href="#compilation-of-nwchem-66-on-mac-os-x-1010-yosemite-x86_64" title="Permanent link">&para;</a></h3>
 <h4 id="method-1-using-gfortran-from-hpcsfnet-and-mpich-from-macports">Method #1: using gfortran from hpc.sf.net and mpich from macports<a class="headerlink" href="#method-1-using-gfortran-from-hpcsfnet-and-mpich-from-macports" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Download and unpack latest NWChem tarball to the directory of your
@@ -1019,7 +1091,7 @@ USE_OPENMP=T
 </code></pre>
 <p>MPICH and ARMCI-MPI work reliably on Mac. See <a href="ARMCI.html">Choosing the ARMCI
 Library</a> for details on ARMCI-MPI</p>
-<h1 id="how-to-cray-platforms">How-to: Cray platforms<a class="headerlink" href="#how-to-cray-platforms" title="Permanent link">&para;</a></h1>
+<h2 id="how-to-cray-platforms">How-to: Cray platforms<a class="headerlink" href="#how-to-cray-platforms" title="Permanent link">&para;</a></h2>
 <p>Common environmental variables for building and running on the Cray XT, XE, XC and XK:</p>
 <pre><code>  % export NWCHEM_TOP=&lt;your path&gt;/nwchem  
   % export NWCHEM_TARGET=LINUX64  
@@ -1042,13 +1114,13 @@ Library</a> for details on ARMCI-MPI</p>
 </code></pre>
 <p>The step <code>make 64_to_32</code> is required only if either SCALAPACK_SIZE or
 BLAS_SIZE are set equal to 4.</p>
-<h4 id="method-2-armci_networkmpi-pr">Method #2: ARMCI_NETWORK=MPI-PR<a class="headerlink" href="#method-2-armci_networkmpi-pr" title="Permanent link">&para;</a></h4>
+<h3 id="method-2-armci_networkmpi-pr">Method #2: ARMCI_NETWORK=MPI-PR<a class="headerlink" href="#method-2-armci_networkmpi-pr" title="Permanent link">&para;</a></h3>
 <p>This is a <strong><span style="color:#FF0000">new option available in NWChem
 6.6.</span></strong></p>
 <p>Set the environmental variables for compilation:</p>
 <pre><code>  % export ARMCI_NETWORK=MPI-PR
 </code></pre>
-<h4 id="example-olcf-titan">Example: OLCF Titan<a class="headerlink" href="#example-olcf-titan" title="Permanent link">&para;</a></h4>
+<h3 id="example-olcf-titan">Example: OLCF Titan<a class="headerlink" href="#example-olcf-titan" title="Permanent link">&para;</a></h3>
 <p>These are variables used for compilation on the <a href="https://www.olcf.ornl.gov/olcf-resources/compute-systems/titan/">OLCF Titan, a Cray
 XK7</a> We
 assume use of Portland Group compilers programming environment (<code>module
@@ -1144,7 +1216,7 @@ MPICH_GNI_NDREG_MAXSIZE=16777216
 MPICH_GNI_MBOX_PLACEMENT=nic
 COMEX_MAX_NB_OUTSTANDING=6
 </code></pre>
-<h1 id="how-to-intel-xeon-phi">How-to: Intel Xeon Phi<a class="headerlink" href="#how-to-intel-xeon-phi" title="Permanent link">&para;</a></h1>
+<h2 id="how-to-intel-xeon-phi">How-to: Intel Xeon Phi<a class="headerlink" href="#how-to-intel-xeon-phi" title="Permanent link">&para;</a></h2>
 <p>This section describes both the newer KNL and older KNC hardware, in
 reverse chronological order.</p>
 <ul>
@@ -1269,7 +1341,7 @@ required, even in the case when the Xeon Phi hardware is not
 utilized.</p>
 <pre><code>% export ARMCI_OPENIB_DEVICE=mlx4_0
 </code></pre>
-<h1 id="how-to-ibm-platforms">How-to: IBM platforms<a class="headerlink" href="#how-to-ibm-platforms" title="Permanent link">&para;</a></h1>
+<h2 id="how-to-ibm-platforms">How-to: IBM platforms<a class="headerlink" href="#how-to-ibm-platforms" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Compiling NWChem on BLUEGENE/L</strong></li>
 </ul>
@@ -1369,7 +1441,7 @@ of alternative ARMCI_NETWORKs other than MPI-TS)</p>
 % make nwchem_config
 % make FC=xlf &gt;&amp; make.log
 </code></pre>
-<h1 id="how-to-commodity-clusters-with-infiniband">How-to: Commodity clusters with Infiniband<a class="headerlink" href="#how-to-commodity-clusters-with-infiniband" title="Permanent link">&para;</a></h1>
+<h2 id="how-to-commodity-clusters-with-infiniband">How-to: Commodity clusters with Infiniband<a class="headerlink" href="#how-to-commodity-clusters-with-infiniband" title="Permanent link">&para;</a></h2>
 <p>Common environmental variables for building and running on most
 Infiniband clusters are:</p>
 <pre><code>  export NWCHEM_TOP=&lt;your path&gt;/nwchem  
@@ -1396,7 +1468,7 @@ Infiniband clusters are:</p>
 
   make &gt;&amp; make.log
 </code></pre>
-<h1 id="how-to-commodity-clusters-with-intel-omni-path">How-to: Commodity clusters with Intel Omni-Path<a class="headerlink" href="#how-to-commodity-clusters-with-intel-omni-path" title="Permanent link">&para;</a></h1>
+<h2 id="how-to-commodity-clusters-with-intel-omni-path">How-to: Commodity clusters with Intel Omni-Path<a class="headerlink" href="#how-to-commodity-clusters-with-intel-omni-path" title="Permanent link">&para;</a></h2>
 <ul>
 <li>On  clusters with the Intel Omni-Path network, the following
     environment variables should be defined</li>
@@ -1415,8 +1487,8 @@ Infiniband clusters are:</p>
 <p><a href="https://github.com/GlobalArrays/ga/issues/126">https://github.com/GlobalArrays/ga/issues/126</a></p>
 </li>
 </ul>
-<h1 id="how-to-windows-platforms">How-to: Windows Platforms<a class="headerlink" href="#how-to-windows-platforms" title="Permanent link">&para;</a></h1>
-<h2 id="mingw">MingW<a class="headerlink" href="#mingw" title="Permanent link">&para;</a></h2>
+<h2 id="how-to-windows-platforms">How-to: Windows Platforms<a class="headerlink" href="#how-to-windows-platforms" title="Permanent link">&para;</a></h2>
+<h3 id="mingw">MingW<a class="headerlink" href="#mingw" title="Permanent link">&para;</a></h3>
 <p>The current recommended approach for building a NWChem binary for a
 Windows platform is to build with the
 <a href="https://sourceforge.net/projects/mingw/files/">MinGW/Mingw32</a> environment. MinGW can be
@@ -1471,14 +1543,14 @@ installation file</p>
 % make nwchem_config  
 % make FC=gfortran DEPEND_CC=gcc
 </code></pre>
-<h3 id="msys2">MSYS2<a class="headerlink" href="#msys2" title="Permanent link">&para;</a></h3>
+<h4 id="msys2">MSYS2<a class="headerlink" href="#msys2" title="Permanent link">&para;</a></h4>
 <p>https://github.com/msys2/msys2/wiki/MSYS2-installation</p>
 <pre><code>pacman -Syuu
 pacman -S mingw32/mingw-w64-i686-gcc-fortran
 pacman -S mingw32/mingw-w64-i686-python3
 pacman -S msys/make
 </code></pre>
-<h2 id="wsl-on-windows-10">WSL on Windows 10<a class="headerlink" href="#wsl-on-windows-10" title="Permanent link">&para;</a></h2>
+<h3 id="wsl-on-windows-10">WSL on Windows 10<a class="headerlink" href="#wsl-on-windows-10" title="Permanent link">&para;</a></h3>
 <p>A good alternative only on Windows 10 is <strong>Windows Subsystem for Linux</strong> (WSL).
 This option gives the best performance on Windows when <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WLS 2</a> is used.
 <strong>WSL</strong> allows you to obtain a functional command line Linux 64-bit NWChem environment, either by compiling the NWChem code from scratch or by using the Ubuntu precompiled NWChem package. Here is a link to the install guide</p>
@@ -1486,7 +1558,7 @@ This option gives the best performance on Windows when <a href="https://docs.mic
 <p>Once Ubuntu is installed, the quickest method to install NWChem is by fetching the Ubuntu NWChem package by typing</p>
 <pre><code>sudo apt install nwchem
 </code></pre>
-<h1 id="general-site-installation">General site installation<a class="headerlink" href="#general-site-installation" title="Permanent link">&para;</a></h1>
+<h2 id="general-site-installation">General site installation<a class="headerlink" href="#general-site-installation" title="Permanent link">&para;</a></h2>
 <p>The build procedures outlined above will allow use of NWChem within the
 NWChem directory structure. The code will look for the basis set library
 file in a default place within that directory structure. To install the
