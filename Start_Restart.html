@@ -160,8 +160,8 @@ directive, the user must be quite certain that the contents of the
 database will result in the desired action. It is usually more prudent
 to specify the directive explicitly, using the following
 format:</p>
-<pre><code>(RESTART || START) [&lt;string file_prefix default input_file_prefix&gt;] \  
-                   [rtdb &lt;string rtdb_file_name default file_prefix.db&gt;]
+<pre><code>(RESTART || START) [&lt;string file_prefix default input_file_prefix&gt;] \  
+                   [rtdb &lt;string rtdb_file_name default file_prefix.db&gt;]
 </code></pre>
 <p>The START directive indicates that the calculation is one in which a new
 database is to be created. Any relevant information that already exists
@@ -169,7 +169,7 @@ in a previous database of the same name is destroyed. The string
 variable <file_prefix> will be used as the prefix to name any files
 created in the course of the calculation.</p>
 <p>E.g., to start a new calculation on water, one might specify</p>
-<pre><code>start water
+<pre><code>start water
 </code></pre>
 <p>which will make all files begin with &ldquo;water.&rdquo;.</p>
 <p>If the user does not specify an entry for <file_prefix> on the START
@@ -219,21 +219,21 @@ If the database with name file_prefix.db does exist, then the
 calculation is performed as if a RESTART directive had been encountered.</p>
 <p>For example, NWChem can be run using an input file with the name
 water.nw by typing the UNIX command line,</p>
-<pre><code>nwchem water.nw
+<pre><code>nwchem water.nw
 </code></pre>
 <p>If the NWChem input file water.nw does not contain a START or RESTART
 directive, the code sets the variable <file_prefix> to water. Files
 created by the job will have this prefix, and the database will be named
 water.db. If the database water.db does not exist already, the code
 behaves as if the input file contains the directive,</p>
-<pre><code>start water
+<pre><code>start water
 </code></pre>
 <p>If the database water.db does exist, the code behaves as if the input
 file contained the directive,</p>
-<pre><code>restart water
+<pre><code>restart water
 </code></pre>
 <h3 id="use-of-permanent_dir">Use of permanent_dir<a class="headerlink" href="#use-of-permanent_dir" title="Permanent link">&para;</a></h3>
-<p>We suggest the user to add the <a href="#use-of-permanent-dir">permanent directory</a> line to the input file. This allows to store files in a specific directory for easy re-use between start and restart stages.<br />
+<p>We suggest the user to add the <a href="Permanent_dir.md">permanent directory</a> line to the input file. This allows to store files in a specific directory for easy re-use between start and restart stages.<br />
 The start file then becomes</p>
 <pre><code>start water
 permanent_dir /home/doe/nwchem_files
