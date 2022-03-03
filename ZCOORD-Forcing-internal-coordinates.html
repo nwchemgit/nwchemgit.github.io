@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="canonical" href="https://nwchemgit.github.io/Geometry.html">
+  <link rel="canonical" href="https://nwchemgit.github.io/ZCOORD-Forcing-internal-coordinates.html">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Geometry - NWChem</title>
+  <title>ZCOORD Forcing internal coordinates - NWChem</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Geometry";
-    var mkdocs_page_input_path = "Geometry.md";
-    var mkdocs_page_url = "/Geometry.html";
+    var mkdocs_page_name = "ZCOORD Forcing internal coordinates";
+    var mkdocs_page_input_path = "ZCOORD-Forcing-internal-coordinates.md";
+    var mkdocs_page_url = "/ZCOORD-Forcing-internal-coordinates.html";
   </script>
   
   <script src="js/jquery-2.1.1.min.js" defer></script>
@@ -136,10 +136,10 @@
     
       
     
-    <li>Geometry</li>
+    <li>ZCOORD Forcing internal coordinates</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Geometry.md"
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/ZCOORD-Forcing-internal-coordinates.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -151,114 +151,98 @@
           <div role="main">
             <div class="section">
               
-                <p>The GEOMETRY directive is a compound directive that allows the user to
-define the geometry to be used for a given calculation. The directive
-allows the user to specify the geometry with a relatively small amount
-of input, but there are a large number of optional keywords and
-additional subordinate directives that the user can specify, if needed.
-The directive therefore appears to be rather long and complicated when
-presented in its general form, as
+                <h2 id="zcoord-forcing-internal-coordinates">ZCOORD: Forcing internal coordinates<a class="headerlink" href="#zcoord-forcing-internal-coordinates" title="Permanent link">&para;</a></h2>
+<p>By default redundant internal coordinates are generated for use in
+geometry optimizations. Connectivity is inferred by comparing
+inter-atomic distances with the sum of the van der Waals radii of the
+two atoms involved in a possible bond, times a scaling factor. The
+scaling factor is an input parameter of ZCOORD which maybe changed from
+its default value of 1.3. Under some circumstances (unusual bonding,
+bond dissociation, &hellip;) it will be necessary to augment the
+automatically generated list of internal coordinates to force some
+specific internal coordinates to be included in among the internal
+coordinates. This is accomplished by including the optional directive
+ZCOORD within the geometry directive. The general form of the ZCOORD
+directive is as
 follows:</p>
-<pre><code> GEOMETRY [&lt;string name default geometry&gt;] \  
-          [units &lt;string units default angstroms&gt;] \  
-          [(angstrom_to_au || ang2au) \  
-                 &lt;real angstrom_to_au default 1.8897265&gt;] \  
-          [print [xyz] || noprint] \  
-          [center || nocenter] \  
-          [bqbq] \  
-          [autosym [real tol default 1d-2] || noautosym] \  
-          [autoz || noautoz] \  
-          [adjust] \  
-          [(nuc || nucl || nucleus) &lt;string nucmodel&gt;]  
-   [SYMMETRY [group] &lt;string group_name&gt; [print] \  
-          [tol &lt;real tol default 1d-2&gt;]]  
-   [ [LOAD] [format xyz||pdb]  [frame &lt;int frame&gt;] \  
-          [select [not] \  
-               [name &lt;string atomname&gt;] \  
-               [rname &lt;string residue-name&gt;]  
-               [id  &lt;int atom-id&gt;|&lt;int range atom-id1:atom-id2&gt; ... ]  
-               [resi &lt;int residue-id&gt;|&lt;int range residue-id1:residue-id2&gt; ... ]  
-         ]  
-   &lt;string filename&gt; ]  
-
-   &lt;string tag&gt; &lt;real x y z&gt; [vx vy vz] [charge &lt;real charge&gt;] \  
-          [mass &lt;real mass&gt;] \  
-          [(nuc || nucl || nucleus) &lt;string nucmodel&gt;]  
-   ... ]  
-   [ZMATRIX || ZMT || ZMAT  
-        &lt;string tagn&gt; &lt;list_of_zmatrix_variables&gt;  
-        ...   
-        [VARIABLES  
-             &lt;string symbol&gt; &lt;real value&gt;  
-             ... ]  
-        [CONSTANTS  
-             &lt;string symbol&gt; &lt;real value&gt;  
-             ... ]  
-    (END || ZEND)]  
-    [ZCOORD  
-         CVR_SCALING &lt;real value&gt;  
-         BOND    &lt;integer i&gt; &lt;integer j&gt; \  
-                 [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
-         ANGLE   &lt;integer i&gt; &lt;integer j&gt; \  
-                     [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
-         TORSION &lt;integer i&gt; &lt;integer j&gt; &lt;integer k&gt; &lt;integer l&gt; \  
-                 [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
-     END]  
-
-     [SYSTEM surface  &lt;molecule polymer surface crystal default molecule&gt;  
-          lat_a &lt;real lat_a&gt; lat_b &lt;real lat_b&gt; lat_c &lt;real lat_c&gt;  
-          alpha &lt;real alpha&gt; beta &lt;real beta&gt; gamma &lt;real gamma&gt;  
-     END]  
-  END
+<pre><code> ZCOORD  
+    CVR_SCALING &lt;real value&gt;  
+    BOND    &lt;integer i&gt; &lt;integer j&gt; \  
+            [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
+    ANGLE   &lt;integer i&gt; &lt;integer j&gt; &lt;integer k&gt; \  
+            [&lt;real value&gt;] [&lt;string name&gt;] [constant]` 
+    TORSION &lt;integer i&gt; &lt;integer j&gt; &lt;integer k&gt; &lt;integer l&gt; \  
+            [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
+ END
 </code></pre>
-<p>The three main parts of the GEOMETRY directive are:</p>
+<p>The centers i, j, k and l must be specified using the numbers of the
+centers, as supplied in the input for the Cartesian coordinates. The
+ZCOORD input parameters are defined as follows:</p>
 <ul>
-<li>keywords on the first line of the directive (to specify such
-    optional input as the geometry name, input units, and print level
-    for the output)</li>
-<li>symmetry information</li>
-<li>Cartesian coordinates or Z-matrix input to specify the locations of
-    the atoms and centers</li>
-<li>lattice parameters (needed only for periodic systems)</li>
+<li>cvr_scaling &ndash; scaling factor applied to van der Waals radii.</li>
+<li>bond &ndash; a bond between the two centers.</li>
+<li>angle &ndash; an angle among the three atoms i, j and k.</li>
+<li>torsion &ndash; a torsion (or dihedral) angle. The angle between the
+    planes i-j-k and j-k-l.</li>
 </ul>
-<p>The following sections present the input for this compound directive in
-detail, describing the options available and the usages of the various
-keywords in each of the three main parts.</p>
-<ul>
-<li>
-<p><a href="Keywords-on-the-GEOMETRY-directive.html">Keywords on the GEOMETRY
-    directive</a></p>
-</li>
-<li>
-<p><a href="SYMMETRY----Symmetry-Group-Input.html">SYMMETRY &ndash; Symmetry Group
-    Input</a></p>
-</li>
-<li>
-<p><a href="Names-of-3-dimensional-space-groups.html">Names of 3-dimensional space
-    groups</a></p>
-</li>
-<li>
-<p><a href="Cartesian-coordinate-input.html">Cartesian coordinate
-    input</a></p>
-</li>
-<li>
-<p><a href="ZMATRIX-Z-matrix-input.html">ZMATRIX &ndash; Z-matrix
-    input</a></p>
-</li>
-<li>
-<p><a href="ZCOORD----Forcing-internal-coordinates.md">ZCOORD &ndash; Forcing internal
-    coordinates</a></p>
-</li>
-<li>
-<p><a href="SYSTEM----Lattice-parameters-for-periodic-systems.html">SYSTEM &ndash; Lattice parameters for periodic
-    systems</a></p>
-</li>
-<li>
-<p><a href="Geometry-load.html">LOAD &ndash; Load geometry from 
-     XYZ file</a></p>
-</li>
-</ul>
-<!-- end list -->
+<p>A value may be specified for a user-defined internal coordinate, in
+which case it is forced upon the input Cartesian coordinates while
+attempting to make only small changes in the other internal coordinates.
+If no value is provided the value implicit in the input coordinates is
+kept. If the keyword constant is specified, then that internal variable
+is not modified during a geometry optimization with
+<a href="Geometry-Optimization.html#geometry-optimization-with-driver">DRIVER</a>.
+Each internal coordinate may also be named either for easy
+identification in the output, or for the application of constraints
+(<a href="#applying-constraints-in-geometry-optimizations">Applying constraints in geometry
+optimizations</a>).</p>
+<p>If the keyword adjust is specified on the main GEOMETRY directive, only
+ZCOORD data may be specified and it can be used to change the
+user-defined internal coordinates, including adding/removing constraints
+and changing their values.</p>
+<h2 id="applying-constraints-in-geometry-optimizations">Applying constraints in geometry optimizations<a class="headerlink" href="#applying-constraints-in-geometry-optimizations" title="Permanent link">&para;</a></h2>
+<p>Internal coordinates specified as constant in a ZCOORD directive or in
+the constants section of a ZMATRIX directive, will be frozen at their
+initial values if a geometry optimization is performed with DRIVER
+(Section 20).</p>
+<p>If internal coordinates have the same name (give or take an optional
+sign for torsions) then they are forced to have the same value. This may
+be used to force bonds or angles to be equal even if they are not
+related by symmetry.</p>
+<p>When atoms have been specified by their Cartesian coordinates, and
+internal coordinates are not being used, it is possible to freeze the
+cartesian position of selected atoms. This is useful for such purposes
+as optimizing a molecule absorbed on the surface of a cluster with fixed
+geometry. Only the gradients associated with the active atoms are
+computed. This can result in a big computational saving, since gradients
+associated with frozen atoms are forced to zero (Note, however, that
+this destroys the translational and rotational invariance of the
+gradient. This is not yet fully accommodated by the
+<a href="Geometry-Optimization.html#geometry-optimization-with-stepper">STEPPER</a>
+geometry optimization software, and can sometimes result in slower
+convergence of the optimization. The DRIVER optimization package does
+not suffer from this problem).</p>
+<p>The <a href="SET.html">SET</a> directive is used to freeze atoms,
+by specifying a directive of the form:</p>
+<pre><code> set geometry:actlist &lt;integer list_of_center_numbers&gt;
+</code></pre>
+<p>This defines only the centers in the list as active. All other centers
+will have zero force assigned to them, and will remain frozen at their
+starting coordinates during a geometry optimization.</p>
+<p>For example, the following directive specifies that atoms numbered 1, 5,
+6, 7, 8, and 15 are active and all other atoms are frozen:</p>
+<pre><code> set geometry:actlist 1 5:8 15
+</code></pre>
+<p>or equivalently,</p>
+<pre><code> set geometry:actlist 1 5 6 7 8 15
+</code></pre>
+<p>If this option is not specified by entering a <a href="SET.html">SET</a>
+directive, the default behavior in the code is to treat all atoms as
+active. To revert to this default behavior after the option to define
+frozen atoms has been invoked, the <a href="UNSET.html">UNSET</a> directive
+must be used. The form of the UNSET directive is as follows:</p>
+<pre><code> unset geometry:actlist
+</code></pre>
               
             </div>
           </div>
