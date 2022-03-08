@@ -456,7 +456,7 @@ task tce energy
 <p>New task scheduling should reduce time to solutions and provide better
 parallel performance especially in large CCSD/EOMCCSD runs.</p>
 <h2 id="keywords-of-tce-input-block">Keywords of TCE input block<a class="headerlink" href="#keywords-of-tce-input-block" title="Permanent link">&para;</a></h2>
-<h3 id="hf-scf-or-dft-the-reference-wave-function">HF, SCF, or DFT &ndash; the reference wave function<a class="headerlink" href="#hf-scf-or-dft-the-reference-wave-function" title="Permanent link">&para;</a></h3>
+<h3 id="hf-scf-or-dft-the-reference-wave-function">HF, SCF, or DFT: the reference wave function<a class="headerlink" href="#hf-scf-or-dft-the-reference-wave-function" title="Permanent link">&para;</a></h3>
 <p>This keyword tells the module which of the HF (SCF) or DFT module is
 going to be used for the calculation of a reference wave function. The
 keyword HF and SCF are one and the same keyword internally, and are
@@ -517,7 +517,7 @@ calculation of an open-shell doublet system,</p>
 </code></pre>
 <p>Note that the default model of the DFT module is
 LDA.</p>
-<h3 id="ccsdccsdtccsdtqcisdcisdtcisdtq-mbpt2mbpt3mbpt4-etc-the-correlation-models">CCSD,CCSDT,CCSDTQ,CISD,CISDT,CISDTQ, MBPT2,MBPT3,MBPT4, etc. &ndash; the correlation models<a class="headerlink" href="#ccsdccsdtccsdtqcisdcisdtcisdtq-mbpt2mbpt3mbpt4-etc-the-correlation-models" title="Permanent link">&para;</a></h3>
+<h3 id="ccsdccsdtccsdtqcisdcisdtcisdtq-mbpt2mbpt3mbpt4-etc-the-correlation-models">CCSD,CCSDT,CCSDTQ,CISD,CISDT,CISDTQ, MBPT2,MBPT3,MBPT4, etc.: the correlation models<a class="headerlink" href="#ccsdccsdtccsdtqcisdcisdtcisdtq-mbpt2mbpt3mbpt4-etc-the-correlation-models" title="Permanent link">&para;</a></h3>
 <p>These keywords stand for the following models:</p>
 <ul>
 <li>LCCD: linearized coupled-cluster doubles,</li>
@@ -1011,15 +1011,15 @@ way. For example if one is looks for 1 IP-EOMCCSD root of a1 symmetry ,</p>
 <p>directive should be used (there is only one occupied orbital of a1
 symmetry with the absolute value of orbital energy less than 0.24),
 etc.</p>
-<h3 id="thresh-the-convergence-threshold-of-iterative-solutions-of-amplitude-equations">THRESH &ndash; the convergence threshold of iterative solutions of amplitude equations<a class="headerlink" href="#thresh-the-convergence-threshold-of-iterative-solutions-of-amplitude-equations" title="Permanent link">&para;</a></h3>
+<h3 id="thresh-the-convergence-threshold-of-iterative-solutions-of-amplitude-equations">THRESH: the convergence threshold of iterative solutions of amplitude equations<a class="headerlink" href="#thresh-the-convergence-threshold-of-iterative-solutions-of-amplitude-equations" title="Permanent link">&para;</a></h3>
 <p>This keyword specifies the convergence threshold of iterative solutions
 of amplitude equations, and applies to all of the CI, CC, and MBPT
 models. The threshold refers to the norm of residual, namely, the
 deviation from the amplitude equations. The default value is 1e-6.</p>
-<h3 id="maxiter-the-maximum-number-of-iterations">MAXITER &ndash; the maximum number of iterations<a class="headerlink" href="#maxiter-the-maximum-number-of-iterations" title="Permanent link">&para;</a></h3>
+<h3 id="maxiter-the-maximum-number-of-iterations">MAXITER: the maximum number of iterations<a class="headerlink" href="#maxiter-the-maximum-number-of-iterations" title="Permanent link">&para;</a></h3>
 <p>It sets the maximum allowed number iterations for the iterative
 solutions of amplitude equations. The default value is 100.</p>
-<h3 id="io-parallel-io-scheme">IO &ndash; parallel I/O scheme<a class="headerlink" href="#io-parallel-io-scheme" title="Permanent link">&para;</a></h3>
+<h3 id="io-parallel-io-scheme">IO: parallel I/O scheme<a class="headerlink" href="#io-parallel-io-scheme" title="Permanent link">&para;</a></h3>
 <p>There are five parallel I/O schemes implemented for all the models,
 which need to be wisely chosen for a particular problem and computer
 architecture.</p>
@@ -1073,7 +1073,7 @@ the 4-index transformation are accessible using the 2emet options. See
 <a href="#2emet-alternative-storage-of-two-electron-integrals">Alternative storage of two-electron
 integrals</a> 
 for details.</p>
-<h3 id="diis-the-convergence-acceleration">DIIS &ndash; the convergence acceleration<a class="headerlink" href="#diis-the-convergence-acceleration" title="Permanent link">&para;</a></h3>
+<h3 id="diis-the-convergence-acceleration">DIIS: the convergence acceleration<a class="headerlink" href="#diis-the-convergence-acceleration" title="Permanent link">&para;</a></h3>
 <p>It sets the number iterations in which a DIIS extrapolation is performed
 to accelerate the convergence of excitation amplitudes. The default
 value is 5, which means in every five iteration, one DIIS extrapolation
@@ -1089,7 +1089,7 @@ up-dates for cluster amplitudes. Typical values for lshift oscillates
 between 0.3 and 0.5 for CC calculations for ground states of
 multi-configurational character. Otherwise, the value of lshift is by
 default set equal to 0.</p>
-<h3 id="freeze-the-frozen-corevirtual-approximation">FREEZE &ndash; the frozen core/virtual approximation<a class="headerlink" href="#freeze-the-frozen-corevirtual-approximation" title="Permanent link">&para;</a></h3>
+<h3 id="freeze-the-frozen-corevirtual-approximation">FREEZE: the frozen core/virtual approximation<a class="headerlink" href="#freeze-the-frozen-corevirtual-approximation" title="Permanent link">&para;</a></h3>
 <p>Some of the lowest-lying core orbitals and/or some of the highest-lying
 virtual orbitals may be excluded in the calculations by this keyword
 (this does not affect the ground state HF or DFT calculation). No
@@ -1109,13 +1109,13 @@ equivalent to writing</p>
 instance, to freeze the top 5 virtuals</p>
 <pre><code> FREEZE virtual 5
 </code></pre>
-<h3 id="nroots-the-number-of-excited-states">NROOTS &ndash; the number of excited states<a class="headerlink" href="#nroots-the-number-of-excited-states" title="Permanent link">&para;</a></h3>
+<h3 id="nroots-the-number-of-excited-states">NROOTS: the number of excited states<a class="headerlink" href="#nroots-the-number-of-excited-states" title="Permanent link">&para;</a></h3>
 <p>One can specify the number of excited state roots to be determined. The
 default value is 1. It is advised that the users request several more
 roots than actually needed, since owing to the nature of the trial
 vector algorithm, some low-lying roots can be missed when they do not
 have sufficient overlap with the initial guess vectors.</p>
-<h3 id="target-and-targetsym-the-target-root-and-its-symmetry">TARGET and TARGETSYM &ndash; the target root and its symmetry<a class="headerlink" href="#target-and-targetsym-the-target-root-and-its-symmetry" title="Permanent link">&para;</a></h3>
+<h3 id="target-and-targetsym-the-target-root-and-its-symmetry">TARGET and TARGETSYM: the target root and its symmetry<a class="headerlink" href="#target-and-targetsym-the-target-root-and-its-symmetry" title="Permanent link">&para;</a></h3>
 <p>At the moment, the first and second geometrical derivatives of
 excitation energies that are needed in force, geometry, and frequency
 calculations are obtained by numerical differentiation. These keywords
@@ -1139,13 +1139,13 @@ calculations will lift the spatial symmetry of the equilibrium geometry.
 When these finite displacements can alter the order of excited states
 including the target state, the frequency calculation is not be
 feasible.</p>
-<h3 id="symmetry-restricting-the-excited-state-symmetry">SYMMETRY &ndash; restricting the excited state symmetry<a class="headerlink" href="#symmetry-restricting-the-excited-state-symmetry" title="Permanent link">&para;</a></h3>
+<h3 id="symmetry-restricting-the-excited-state-symmetry">SYMMETRY: restricting the excited state symmetry<a class="headerlink" href="#symmetry-restricting-the-excited-state-symmetry" title="Permanent link">&para;</a></h3>
 <p>By adding this keyword to the input block, the user can request the
 module to seek just the roots of the specified irreducible
 representation as <code>TARGETSYM</code>. By default, this option is not set.
 <code>TARGETSYM</code> must be specified when <code>SYMMETRY</code> is
 invoked.</p>
-<h3 id="eomsol-alternative-solver-for-the-right-eomccsd-eigenvalue-problem">EOMSOL &ndash; alternative solver for the right EOMCCSD eigenvalue problem<a class="headerlink" href="#eomsol-alternative-solver-for-the-right-eomccsd-eigenvalue-problem" title="Permanent link">&para;</a></h3>
+<h3 id="eomsol-alternative-solver-for-the-right-eomccsd-eigenvalue-problem">EOMSOL: alternative solver for the right EOMCCSD eigenvalue problem<a class="headerlink" href="#eomsol-alternative-solver-for-the-right-eomccsd-eigenvalue-problem" title="Permanent link">&para;</a></h3>
 <p>The EOMSOL enables the user to switch between two algorithms for solving
 EOMCCSD eigenproblem. When EOMSOL is set equal to 1 (<code>eomsol 1</code>
 directive in the tce group) the old solver is invoked. The advantage of
@@ -1207,7 +1207,7 @@ task tce energy
 <p>In this example the CCSD equations are solved with the 1.0d-6 threshold,
 the first n (2) EOMCCSD roots are determined with the 10d-4 accuracy,
 while the buffer root is determined with relax conv. criterion 1.0d-3.</p>
-<h3 id="2eorb-alternative-storage-of-two-electron-integrals">2EORB &ndash; alternative storage of two-electron integrals<a class="headerlink" href="#2eorb-alternative-storage-of-two-electron-integrals" title="Permanent link">&para;</a></h3>
+<h3 id="2eorb-alternative-storage-of-two-electron-integrals">2EORB: alternative storage of two-electron integrals<a class="headerlink" href="#2eorb-alternative-storage-of-two-electron-integrals" title="Permanent link">&para;</a></h3>
 <p>In the 5.0 version a new option has been added in order to provide more
 economical way of storing two-electron integrals used in CC calculations
 based on the RHF and ROHF references. The <code>2EORB</code> keyword can be used for
@@ -1225,7 +1225,7 @@ the first half of 4-index transformation and final file with fully
 transformed two-electron integrals. Savings in the memory requirements
 on the order of magnitude (and more) have been observed for large-scale
 open-shell calculations.</p>
-<h3 id="2emet-alternative-storage-of-two-electron-integrals">2EMET &ndash; alternative storage of two-electron integrals<a class="headerlink" href="#2emet-alternative-storage-of-two-electron-integrals" title="Permanent link">&para;</a></h3>
+<h3 id="2emet-alternative-storage-of-two-electron-integrals">2EMET: alternative storage of two-electron integrals<a class="headerlink" href="#2emet-alternative-storage-of-two-electron-integrals" title="Permanent link">&para;</a></h3>
 <p>Several new computation-intensive algorithms has been added with the
 purpose of improving scalability and overcoming local memory bottleneck
 of the 5.0 <code>2EORB</code> 4-index transformation. In order to give the user a
@@ -1332,7 +1332,7 @@ Seattle). In order to enable these versions it is enough to add</p>
 <p>which defines maximum memory size (in MB) for the slice of 6-dimensional
 tensors (in the current example 100 MB; for more details see QA tests
 tce_ccsd_t_xmem and tce_cr_eomccsd_t_xmem).</p>
-<h3 id="dipole-the-ground-and-excited-state-dipole-moments">DIPOLE &ndash; the ground- and excited-state dipole moments<a class="headerlink" href="#dipole-the-ground-and-excited-state-dipole-moments" title="Permanent link">&para;</a></h3>
+<h3 id="dipole-the-ground-and-excited-state-dipole-moments">DIPOLE: the ground- and excited-state dipole moments<a class="headerlink" href="#dipole-the-ground-and-excited-state-dipole-moments" title="Permanent link">&para;</a></h3>
 <p>When this is set, the ground-state CC calculation will enter another
 round of iterative step for the so-called &Lambda; equation to obtain
 the one-particle density matrix and dipole moments. Likewise, for
@@ -1342,16 +1342,19 @@ EOM-CC left hand side solutions will be sought incurring approximately
 three times the computational cost of excitation energies alone (note
 that the EOM-CC effective Hamiltonian is not Hermitian and has distinct
 left and right eigenvectors).</p>
-<h3 id="nofock-not-recompute-fock-matrix">(NO)FOCK &ndash; (not) recompute Fock matrix<a class="headerlink" href="#nofock-not-recompute-fock-matrix" title="Permanent link">&para;</a></h3>
-<p>The default is FOCK meaning that the Fock matrix will be reconstructed
+<h3 id="nofock-not-recompute-fock-matrix">(NO)FOCK: (not) recompute Fock matrix<a class="headerlink" href="#nofock-not-recompute-fock-matrix" title="Permanent link">&para;</a></h3>
+<p>The default is <code>FOCK</code> meaning that the Fock matrix will be reconstructed
 (as opposed to using the orbital energies as the diagonal part of Fock).
 This is essential in getting correct correlation energies with ROHF or
 DFT reference wave functions. However, currently, this module cannot
 reconstruct the Fock matrix when one-component relativistic effects are
 operative. So when a user wishes to run TCE&rsquo;s correlation methods with
-DK or other relativistic reference, NOFOCK must be set and orbital
+DK or other relativistic reference, <code>NOFOCK</code> must be set and orbital
 energies must be used for the Fock matrix.</p>
-<h3 id="print-the-verbosity">PRINT &ndash; the verbosity<a class="headerlink" href="#print-the-verbosity" title="Permanent link">&para;</a></h3>
+<h3 id="densmat">DENSMAT<a class="headerlink" href="#densmat" title="Permanent link">&para;</a></h3>
+<p>Generate Density Matrix that can be used in the DPLOT module as described in
+the <a href="DPLOT.html#example-of-ccsd-charge-density-plot-with-gaussian-cube-output">Example section</a>. </p>
+<h3 id="print-the-verbosity">PRINT: the verbosity<a class="headerlink" href="#print-the-verbosity" title="Permanent link">&para;</a></h3>
 <p>This keyword changes the level of output verbosity. One may also request
 some particular items in the table
 below.</p>
