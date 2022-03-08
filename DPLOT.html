@@ -245,7 +245,7 @@ always plotted unless <code>spin</code> is set to <code>beta</code>.</p>
 </code></pre>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="charge-density">Charge Density<a class="headerlink" href="#charge-density" title="Permanent link">&para;</a></h3>
-<p>Example of charge density plot (with Gaussian Cube output):</p>
+<h3 id="example-of-hf-charge-density-plot-with-gaussian-cube-output">Example of HF charge density plot (with Gaussian Cube output)<a class="headerlink" href="#example-of-hf-charge-density-plot-with-gaussian-cube-output" title="Permanent link">&para;</a></h3>
 <pre><code>start n2  
 geometry  
   n  0 0   0.53879155 
@@ -267,6 +267,32 @@ dplot
   output chargedensity.cube  
 end  
 task scf       
+task dplot
+</code></pre>
+<h3 id="example-of-ccsd-charge-density-plot-with-gaussian-cube-output">Example of CCSD charge density plot (with Gaussian Cube output)<a class="headerlink" href="#example-of-ccsd-charge-density-plot-with-gaussian-cube-output" title="Permanent link">&para;</a></h3>
+<pre><code>start n2
+geometry
+ n 0 0  0.53879155
+ n 0 0 -0.53879155
+ symmetry c2v
+end
+basis; n library cc-pvdz;end
+tce
+ ccsd
+ densmat n2.densmat
+end
+task tce energy
+dplot
+ TITLE HOMO
+ LimitXYZ
+ -3.0 3.0 10
+ -3.0 3.0 10
+ -3.0 3.0 10
+ spin total
+ gaussian
+ densmat n2.densmat
+ output ccsddensity.cube
+end
 task dplot
 </code></pre>
 <h3 id="molecular-orbital">Molecular Orbital<a class="headerlink" href="#molecular-orbital" title="Permanent link">&para;</a></h3>
