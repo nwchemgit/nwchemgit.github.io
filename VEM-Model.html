@@ -9,7 +9,7 @@
   
   <link rel="canonical" href="https://nwchemgit.github.io/VEM-Model.html">
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>VEM Model - NWChem</title>
+  <title>VEM (Vertical Excitation or Emission) Model - NWChem</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -17,7 +17,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "VEM Model";
+    var mkdocs_page_name = "VEM (Vertical Excitation or Emission) Model";
     var mkdocs_page_input_path = "VEM-Model.md";
     var mkdocs_page_url = "/VEM-Model.html";
   </script>
@@ -140,7 +140,7 @@
     
       
     
-    <li>VEM Model</li>
+    <li>VEM (Vertical Excitation or Emission) Model</li>
     <li class="wy-breadcrumbs-aside">
       
         <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/VEM-Model.md"
@@ -155,15 +155,17 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="vem-vertical-excitation-or-emission-model">VEM (Vertical Excitation or Emission) Model<a class="headerlink" href="#vem-vertical-excitation-or-emission-model" title="Permanent link">&para;</a></h2>
+                <h1 id="vem-vertical-excitation-or-emission-model">VEM (Vertical Excitation or Emission) Model<a class="headerlink" href="#vem-vertical-excitation-or-emission-model" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The VEM is a model for calculating the vertical excitation (absorption)
 or vertical emission (fluorescence) energy in solution according to a
 two-time-scale model of solvent polarization. The model is described in reference<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>.  </p>
 <p>The current implementation is based on the VEM(d,RD) algorithm as
-described in the above paper. The method is available only at the TDDFT
+described in the above paper. The method is available only at the <a href="Excited-State-Calculations.html">TDDFT</a>
 level of theory, including both full-linear response TDDFT (sometimes
 called LR-TDDFT or regular TDDFT) and the Tamm–Dancoff approximation,
-TDDFT-TDA (sometimes just called TDA). The configuration interaction
+<a href="Excited-State-Calculations.html#cis-and-rpa-the-tamm-dancoff-approximation">TDDFT-TDA</a>
+(sometimes just called TDA). The configuration interaction
 singles (CIS) wave function method can also be used along with VEM by
 considering CIS to be a special case of TDDFT-TDA.</p>
 <p>The abbreviation VEM originally referred to the vertical excitation
@@ -210,15 +212,20 @@ polarizability (SMSSP) described in reference<sup id="fnref_footnote_3"><a class
 <p>In this case, the user needs to provide values of ground- and
 excited-state spherically averaged molecular polarizabilities of the
 solvent.</p>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <p>The VEM-specific input options are as
 follows:</p>
-<p><code>do_cosmo_vem (integer input))</code><br />
-<code>0</code> (do not do any VEM calculation even if the task tddft gradient line is present; default).<br />
-<code>1</code> (do a nonequilibrium VEM excitation energy calculation;<br />
+<h3 id="do_cosmo_vem">DO_COSMO_VEM:<a class="headerlink" href="#do_cosmo_vem" title="Permanent link">&para;</a></h3>
+<pre><code> do_cosmo_vem &lt;integer do_cosmo_vem default 0&gt;
+</code></pre>
+<p>The <code>do_cosmo_vem</code> can be set to the following values:<br />
+<em> <code>0</code> (do not do any VEM calculation even if the task tddft gradient line is present; default).<br />
+</em> <code>1</code> (do a nonequilibrium VEM excitation energy calculation;<br />
 in this case the <code>task tddft gradient</code> line should be present, too)  <br />
-<code>2</code> (do an equilibrium VEM excitation energy calculation followed by<br />
+* <code>2</code> (do an equilibrium VEM excitation energy calculation followed by<br />
 a nonequilibrium emission energy calculation;<br />
 <code>task tddft gradient</code> line should be present)    </p>
+<h3 id="vem-solvent">VEM Solvent<a class="headerlink" href="#vem-solvent" title="Permanent link">&para;</a></h3>
 <p>The VEM solvent (which is water by default) can be specified by using
 the solvent keyword described in the SMD section of this manual or by
 specifying the VEM solvent descriptors such as</p>
@@ -236,6 +243,7 @@ program will run VEM ground- and excited-state bulk-electrostatic
 calculations using the COSMO algorithm with the SMD Coulomb radii by
 default. If the user wants to use the default COSMO radii in such
 calculations (this is not recommended) the option <code>do_cosmo_smd .false.</code> should be specified.</p>
+<h2 id="smssp-estimate-of-the-solutesolvent-dispersion-contribution">SMSSP estimate of the solute–solvent dispersion contribution<a class="headerlink" href="#smssp-estimate-of-the-solutesolvent-dispersion-contribution" title="Permanent link">&para;</a></h2>
 <p>If the SMSSP estimate of a solute–solvent dispersion contribution to the
 solvatochromic shift is desired, the following options should be
 used:</p>
@@ -243,6 +251,7 @@ used:</p>
 user-provided value of the spherically-averaged molecular polarizability of the solute in the ground state (in Å<sup>3</sup>)</p>
 <p><code>poles_cosmo_vem (real input)</code><br />
 user-provided value of the spherically-averaged molecular polarizability of the solute in an exited state of interest (in Å<sup>3</sup>)</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>An example of the VEM input file is provided
 below.</p>
 <pre><code>echo  
