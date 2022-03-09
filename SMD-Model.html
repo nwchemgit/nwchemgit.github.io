@@ -156,6 +156,7 @@
             <div class="section">
               
                 <h1 id="smd-solvation-model-based-on-density-model">SMD (Solvation Model Based on Density) Model<a class="headerlink" href="#smd-solvation-model-based-on-density-model" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>SMD denotes “solvation model based on density” and it is described in
 detail in the 2009 paper by Marenich, Cramer and Truhlar<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>.  </p>
 <p>The SMD model is a universal continuum solvation model where “universal”
@@ -197,12 +198,15 @@ This contribution is called the cavity–dispersion–solvent-structure
 geometry-dependent proportionality constants called atomic surface
 tensions) to the solvent-accessible surface areas (SASAs) of the
 individual atoms of the solute.</p>
+<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <p>At the moment the SMD model is available in NWChem only with the DFT
 block</p>
 <p>The SMD input options are as follows:</p>
+<h3 id="do_cosmo_smd">DO_COSMO_SMD:<a class="headerlink" href="#do_cosmo_smd" title="Permanent link">&para;</a></h3>
 <pre><code>do_cosmo_smd &lt;logical do_cosmo_smd default .true.&gt;
 </code></pre>
 <p>The <code>do_cosmo_smd</code> keyword instructs NWChem to perform a ground-state SMD calculation</p>
+<h3 id="solvent">SOLVENT:<a class="headerlink" href="#solvent" title="Permanent link">&para;</a></h3>
 <pre><code>solvent (keyword)
 </code></pre>
 <p>a <code>solvent</code> keyword from a list of available SMD solvent names below:</p>
@@ -966,6 +970,7 @@ cal mol<sup>–1</sup> Å<sup>–2</sup><br />
 <pre><code>soln (real input)
 </code></pre>
 <p>index of refraction at optical frequencies at 293 K  </p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <p>An example of an SMD input file is as
 follows:</p>
 <pre><code>echo 
