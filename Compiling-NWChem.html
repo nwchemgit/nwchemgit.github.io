@@ -550,7 +550,10 @@ preprocessor (for both Fortran and C), e.g.</p>
 NWChem to run, where the units are in doubles. Instead of manually
 defining this environment variable, one can use the <a href="https://github.com/nwchemgit/nwchem/blob/master/contrib/getmem.nwchem">getmem.nwchem</a> script in the
 <code>$NWCHEM_TOP/contrib</code> directory. This script should be run after an
-initial build of the binary has been completed. The script will choose the default memory settings based on the available physical memory, recompile the appropriate files and relink.</p>
+initial build of the binary has been completed. The script will choose the default memory settings based on the available physical memory, recompile the appropriate files and relink. Here is an example of its usage:  </p>
+<pre><code>cd $NWCHEM_TOP/src
+../contrib/getmem.nwchem
+</code></pre>
 <p><strong>MRCC_METHODS</strong> can be set to request the multireference coupled
 cluster capability to be included in the code, e.g.</p>
 <pre><code>export MRCC_METHODS=TRUE
