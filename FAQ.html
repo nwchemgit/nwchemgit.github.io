@@ -118,6 +118,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#discrepancy-on-the-number-of-basis-functions-spherical-vs-cartesian-functions">Discrepancy on the number of basis functions: spherical vs cartesian functions</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#starting-nwchem-with-mpirun-np-1-crashes">Starting NWChem with mpirun -np 1 crashes</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -535,6 +537,10 @@ If you need to use spherical functions, the beginning of the basis input field n
 </code></pre>
 <p>More details in the documentation at the link <a href="https://nwchemgit.github.io/Basis.html#spherical-or-cartesian">https://nwchemgit.github.io/Basis.html#spherical-or-cartesian</a>.</p>
 <p>See also the following <a href="https://groups.google.com/g/nwchem-forum/search?q=default%20cartesian">forum entries</a>.</p>
+<h2 id="starting-nwchem-with-mpirun-np-1-crashes">Starting NWChem with <code>mpirun -np 1</code> crashes<a class="headerlink" href="#starting-nwchem-with-mpirun-np-1-crashes" title="Permanent link">&para;</a></h2>
+<p>This is most likely due to the fact that NWChem was compiled with the setting <code>ARMCI_NETWORK=MPI-PR</code>.<br />
+This is the expected behavior, since <code>ARMCI_NETWORK=MPI-PR</code> requires asking for  for n+1 processes. In other words, a serial run (with a single computing process) is triggered by executing <code>mpirun -np 2</code>.<br />
+If you would prefer  <code>mpirun -np 1</code> to work, other choice of <code>ARMCI_NETWORK</code> are possible as described in the <a href="ARMCI.html">ARMCI documentation</a>.</p>
               
             </div>
           </div>
