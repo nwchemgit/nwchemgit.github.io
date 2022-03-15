@@ -448,7 +448,7 @@ Becke 1997 (&ldquo;Becke V&rdquo; paper<sup id="fnref_footnote_15"><a class="foo
 will be computed
 as</p>
 <p>E<sub>XC</sub> &asymp; &frac12;E<sub>X</sub><sup>HF</sup> + &frac12;E<sub>X</sub><sup>Slater</sup> + &frac12;E<sub>C</sub><sup>PW91LDA</sup>  </p>
-<p>We know this is NOT the correct Becke prescribed implementation that 
+<p>We know this is NOT the correct Becke prescribed implementation that
 requires the XC potential in the energy expression. But this is what is
 currently implemented as an approximation to it.</p>
 <p>The keyword <code>acm</code> specifies that the exchange-correlation energy is
@@ -3016,15 +3016,16 @@ where:</p>
   atoms.  <em>R<sub>vdw</sub></em> and  <em>R<sub>ij</sub></em> are related with van der Waals atom
 radii and the nucleus distance respectively. The  <em>&alpha;</em> value
 contributes to control the corrections at intermediate distances.</p>
-<p>There are available three ways to compute   <em>C<sup>6</sup><sub>ij</sub></em>: </p>
+<p>There are available three ways to compute   <em>C<sup>6</sup><sub>ij</sub></em>:</p>
 <ol>
 <li>
-<p>
 <script type="math/tex; mode=display">C_6^{ij}= \,\! \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}</script>
-where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from Q. Wu and W. Yang,
+</li>
+</ol>
+<p>where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from Q. Wu and W. Yang,
 J. Chem. Phys. 116 515 (2002) and U. Zimmerli, M Parrinello and P.
 Koumoutsakos J. Chem. Phys. 120 2693 (2004). (Use <code>vdw 0</code>)  </p>
-</li>
+<ol>
 <li>
 <p>
 <script type="math/tex; mode=display">C_6^{ij}=2\,\!\frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}</script>
@@ -3038,7 +3039,7 @@ Koumoutsakos J. Chem. Phys. 120 2693 (2004). (Use <code>vdw 0</code>)  </p>
 </ol>
 <p>Note that in each option there is a certain set of <em>C<sub>6</sub></em> and <em>R<sub>vdw</sub></em>.
 Also note that Grimme only defined parameters for elements
-up to Z=54 for the dispersion correction above. 
+up to Z=54 for the dispersion correction above.
 <em>C<sub>6</sub></em> values for
 elements above Z=54 have been set to zero.</p>
 <p>For options <code>vdw 1</code> and <code>vdw 2</code> , there are s<sub>6</sub> values by default for
@@ -3051,7 +3052,7 @@ some functionals and triple-zeta plus double polarization basis set
 </ul>
 <p>Grimme&rsquo;s DFT-D3 is also available. Here the dispersion term has the
 following form:</p>
-<p><var>E<sub>disp</sub> = &sum;<sub>ij</sub> &sum;<sub>n=6,8</sub> s<sub>n</sub>  C<sup>ij</sup><sub>n</sub> &frasl; r<sub>ij</sub><sup>n</sup> &lbrace;1 + 6 &lbrack;r<sub>ij</sub> &frasl; (s<sub>r,n</sub> R<sub>0</sub><sup>ij</sup>)&rbrack;<sup>-&alpha;n</sup> &rbrace;<sup>-1</sup></var>   </p>
+<p><var>E<sub>disp</sub> = &sum;<sub>ij</sub> &sum;<sub>n=6,8</sub> s<sub>n</sub>  C<sup>ij</sup><sub>n</sub> &frasl; r<sub>ij</sub><sup>n</sup> &lbrace;1 + 6 &lbrack;r<sub>ij</sub> &frasl; (s<sub>r,n</sub> R<sub>0</sub><sup>ij</sup>)&rbrack;<sup>-&alpha;n</sup> &rbrace;<sup>-1</sup></var></p>
 <p>This new dispersion correction covers elements through Z=94.
   <em>C<sup>ij</sup><sub>n</sub> (n=6,8)</em> are coordination and geometry dependent. Details
 about the functional form can be found in S. Grimme, J. Antony, S.
@@ -3283,10 +3284,10 @@ are:</p>
 <p>DFT Print Control Specifications</p>
 <p></center></p>
 <h1 id="spin-orbit-density-functional-theory-sodft">Spin-Orbit Density Functional Theory (SODFT)<a class="headerlink" href="#spin-orbit-density-functional-theory-sodft" title="Permanent link">&para;</a></h1>
-<p>The spin-orbit DFT module (SODFT) in the NWChem code allows for the variational <br />
-treatment of the one-electron spin-orbit operator within the DFT framework. Calculations <br />
-can be performed either with an electron relativistic approach (<a href="Relativistic-All-electron-Approximations.html#zeroth-order-regular-approximation-zora">ZORA</a>) or with an  <br />
-effective core potential (ECP) and a matching spin-orbit potential (SO). The current <br />
+<p>The spin-orbit DFT module (SODFT) in the NWChem code allows for the variational
+treatment of the one-electron spin-orbit operator within the DFT framework. Calculations
+can be performed either with an electron relativistic approach (<a href="Relativistic-All-electron-Approximations.html#zeroth-order-regular-approximation-zora">ZORA</a>) or with an
+effective core potential (ECP) and a matching spin-orbit potential (SO). The current
 implementation does NOT use symmetry.</p>
 <p>The actual SODFT calculation will be performed when the input module
 encounters the TASK directive (<a href="TASK.html">TASK</a>).</p>
@@ -3300,13 +3301,13 @@ spin-orbit (SO) potential. The input specification for the SO potential
 can be found in <a href="ECP.html#spin-orbit-ecps">Effective Core
 Potentials</a>. At this time we have not
 included any spin-orbit potentials in the basis set library. However,
-one can get these from the Stuttgart/Köln web pages  <br />
+one can get these from the Stuttgart/Köln web pages
 <a href="http://www.tc.uni-koeln.de/PP/clickpse.en.html">http://www.tc.uni-koeln.de/PP/clickpse.en.html</a>.</p>
 <p>Note: One should use a combination of ECP and SO potentials that were
 designed for the same size core, i.e., don&rsquo;t use a small core ECP
 potential with a large core SO potential (it will produce erroneous
 results).</p>
-<p>The following is an example of a calculation of UO<sub>2</sub>:   </p>
+<p>The following is an example of a calculation of UO<sub>2</sub>:</p>
 <pre><code>start uo2_sodft  
 echo  
 

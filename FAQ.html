@@ -232,9 +232,11 @@ uses a fast network and you are aiming to get optimal communication
 performance, you might want to assign a non-default value to
 <code>ARMCI_NETWORK</code>.<br />
 The following links contained useful information about
-<code>ARMCI_NETWORK</code>:<br />
-- <a href="ARMCI.html"> Choosing the ARMCI library</a> <br />
-- <a href="Compiling-NWChem.html#setting-up-the-proper-environment-variables"> Choosing the proper environment variables when compiling NWChem</a>  </p>
+<code>ARMCI_NETWORK</code>:  </p>
+<ul>
+<li><a href="ARMCI.html">Choosing the ARMCI library</a></li>
+<li><a href="Compiling-NWChem.html#setting-up-the-proper-environment-variables">Choosing the proper environment variables when compiling NWChem</a>  </li>
+</ul>
 <h2 id="input-problem-no-output">Input Problem: no output<a class="headerlink" href="#input-problem-no-output" title="Permanent link">&para;</a></h2>
 <p>You might encounter the following error message:</p>
 <pre><code>! warning: processed input with no task
@@ -261,13 +263,17 @@ able to figure out how to connect things.</p>
 <p>Once the obvious has been checked, there are several possible modes of
 failure, some of which may be worked around in the input.</p>
 <ol>
-<li>Strictly linear molecules with 3 or more atoms. AUTOZ does not
+<li>
+<p>Strictly linear molecules with 3 or more atoms. AUTOZ does not
 generate linear bend coordinates, but, just as in a real Z-matrix, you
 can specify a dummy center that is not co-linear. There are two relevant
-tips:</li>
-<li>constrain the dummy center to be not co-linear otherwise the
+tips:</p>
+</li>
+<li>
+<p>constrain the dummy center to be not co-linear otherwise the
 center could become co-linear. Also, the inevitable small forces on the
-dummy center can confuse the optimizer.</li>
+dummy center can confuse the optimizer.</p>
+</li>
 <li>put the dummy center far
 enough away so that only one connection is generated.</li>
 </ol>
@@ -396,16 +402,18 @@ mechanism if one is available. This may result in lower performance.
 <p>The error can be fixed with the following command</p>
 <pre><code>echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
 </code></pre>
-<p>More details at
-* <a href="https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710">https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710</a><br />
-* <a href="https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html">https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html</a>  </p>
+<p>More details at</p>
+<ul>
+<li><a href="https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710">https://github.com/Microsoft/WSL/issues/3397#issuecomment-417876710</a>  </li>
+<li><a href="https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html">https://nwchemgit.github.io/Special_AWCforum/st/id2939/mpirun_nwchem_on_Windows_Subsyst....html</a>  </li>
+</ul>
 <h2 id="how-do-i-increase-the-number-of-digits-of-the-s-matrix-printout">How do I increase the number of digits of the S matrix printout<a class="headerlink" href="#how-do-i-increase-the-number-of-digits-of-the-s-matrix-printout" title="Permanent link">&para;</a></h2>
 <p>The only way to increase the number of digits of the AO overlap matrix printout is by modify the source code of
 the <code>ga_print()</code> function.</p>
 <p>For example, in the cagse NWChem 7.0.2, you can do this by editing the C source code in
 $NWCHEM_TOP/src/tools/ga-5.7.2/global/src/global.util.c by increaseing the number of digits from 5 to 7</p>
-<pre><code>--- global.util.c.org   1969-07-20 15:50:45.000000000 -0700
-+++ global.util.c   1969-07-20 15:51:19.000000000 -0700
+<pre><code>--- global.util.c.org 1969-07-20 15:50:45.000000000 -0700
++++ global.util.c 1969-07-20 15:51:19.000000000 -0700
 @@ -122,22 +122,22 @@
              case C_DBL:
                pnga_get(g_a, lo, hi, dbuf, &amp;ld);
@@ -524,8 +532,8 @@ $NWCHEM_TOP/src/tools/ga-5.7.2/global/src/global.util.c by increaseing the numbe
 </code></pre>
 <p><a href="https://nwchemgit.github.io/Special_AWCforum/sp/id3358.html">https://nwchemgit.github.io/Special_AWCforum/sp/id3358.html</a></p>
 <h2 id="linear-dependencies">Linear Dependencies<a class="headerlink" href="#linear-dependencies" title="Permanent link">&para;</a></h2>
-<p>Two or more basis functions can be consider linearly dependent when they span the same region of space. This can result in SCF converge problems. Analysis of the eigenvectors of the S<sup>-1/2</sup> matrix (where S is the overlap matrix) is used to detect linear dependencies: if there are eigenvalues  close to zero, the basis set goes through the process of canonical orthogonalization (as described in Section 3.4.5 of <a href="https://store.doverpublications.com/0486691861.html">Szabo &amp; Ostlund &ldquo;Modern Quantum Chemistry&rdquo; book</a>). This has net effect of a reduction of number of basis function used, compared to the original number set by input. 
-By setting </p>
+<p>Two or more basis functions can be consider linearly dependent when they span the same region of space. This can result in SCF converge problems. Analysis of the eigenvectors of the S<sup>-1/2</sup> matrix (where S is the overlap matrix) is used to detect linear dependencies: if there are eigenvalues  close to zero, the basis set goes through the process of canonical orthogonalization (as described in Section 3.4.5 of <a href="https://store.doverpublications.com/0486691861.html">Szabo &amp; Ostlund &ldquo;Modern Quantum Chemistry&rdquo; book</a>). This has net effect of a reduction of number of basis function used, compared to the original number set by input.
+By setting</p>
 <pre><code>set lindep:n_dep 0
 </code></pre>
 <p>this orthogonalization process is skipped.</p>
