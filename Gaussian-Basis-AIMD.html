@@ -427,18 +427,20 @@ Journal of Chemical Theory and Computation  16 (10), pp. 6418-6427 (2020)
   [nstates &lt;integer default 2&gt;]
   [dt_elec &lt;double default 0.01&gt;]
   [deco &lt;logical default .false.]
+  [tdks &lt;integer default 1&gt;]
 [end]  
 </code></pre>
-<p>In the namd sub-block within the qmd block, please note:</p>
+<p>In the <code>namd</code> sub-block within the <code>qmd</code> block, please note:</p>
 <ul>
 <li>The number of roots requested in the tddft block must be at least nstates-1.</li>
-<li>The nuclear time step (dt_nucl) must be an integer multiple of the electronic time step (mod(dt_nucl,dt_elec)</li>
+<li>The nuclear time step (dt_nucl) must be an integer multiple of the electronic time step (<code>mod(dt_nucl,dt_elec)=0</code>).</li>
 </ul>
 <h4 id="deco-decoherence-flag">deco: Decoherence flag<a class="headerlink" href="#deco-decoherence-flag" title="Permanent link">&para;</a></h4>
-<p>The <code>deco</code> flag applies the decoherence correction described in the following paper:<br />
+<p>The <code>deco</code> flag applies the EDC electronic decoherence correction described in the paper:<br />
 G. Granucci and M. Persico,
-``Critical appraisal of the fewest switches algorithm for surface hopping&rsquo;&lsquo;, J. Chem. Phys. 126, 134114 (2007)
-<a href="https://dx.doi.org/10.1063/1.2715585">DOI:10.1063/1.2715585</a>.</p>
+<code>`Critical appraisal of the fewest switches algorithm for surface hopping'', J. Chem. Phys. 126, 134114 (2007)
+[DOI:10.1063/1.2715585](https://dx.doi.org/10.1063/1.2715585).
+The default value is</code>.false.`, i.e. no decoherence correction is applied.</p>
 <h4 id="dt_elec-electronic-dynamics-time-step">dt_elec: Electronic dynamics time step<a class="headerlink" href="#dt_elec-electronic-dynamics-time-step" title="Permanent link">&para;</a></h4>
 <p>The keyword <code>dt_elec</code> sets the electronic time step in atomic units.</p>
 <h4 id="n_states-number-of-states">n_states: Number of states<a class="headerlink" href="#n_states-number-of-states" title="Permanent link">&para;</a></h4>
@@ -450,7 +452,17 @@ the numbering for this keyword and the output that reports the currently
 occupied state runs from 0 (ground state) to <code>nstates-1</code>.
 So if you want to start a calculation in the first excited state, you would set
 <code>init_state</code> to 1.</p>
+<h4 id="tdks-time-dependent-kohn-sham">tdks: Time-Dependent Kohn-Sham<a class="headerlink" href="#tdks-time-dependent-kohn-sham" title="Permanent link">&para;</a></h4>
+<p>The keyword <code>tdks</code> will use Time-Dependent Kohn-Sham instead of the default <a href="Excited-State-Calculations.html#cis-and-rpa-the-tamm-dancoff-approximation">Tamm-Dancoff</a> approximation.<br />
+The keyword requires the keyword (<code>odft</code>)[Density-Functional-Theory-for-Molecules.html#odft-and-mult-open-shell-systems]
+in the <code>dft</code> input block to
+It can have two values:</p>
+<ul>
+<li><code>1</code> (default) selects the alpha spin channel</li>
+<li><code>2</code>  selects the beta spin channel</li>
+</ul>
 <h4 id="namd-input-example">NAMD Input Example<a class="headerlink" href="#namd-input-example" title="Permanent link">&para;</a></h4>
+<p>Example input for  fewest-switches surface-hopping (FSSH) approach.</p>
 <pre><code>geometry noautosym nocenter
 O 0.0000  0.0000  0.1197
 H 0.0000  0.7615 -0.4790
