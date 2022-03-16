@@ -155,7 +155,8 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+                <h1 id="gaussian-basis-aimd">Gaussian Basis AIMD<a class="headerlink" href="#gaussian-basis-aimd" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>This module performs adiabatic ab initio molecular dynamics on finite
 systems. The nuclei are integrated using the velocity-Verlet algorithm,
 and the electronic potential can be provided by any of the Gaussian
@@ -182,7 +183,8 @@ Phys. Chem. B, 120 (8), pp 1429–1436 (2016), <a href="https://dx.doi.org/10.10
   [print_xyz &lt;integer default 1&gt;]  
   [linear]   
   [property &lt;integer default 1&gt;] 
-  [tddft &lt;integer default 1&gt;]   
+  [tddft &lt;integer default 1&gt;]
+  [namd ]
 END
 </code></pre>
 <p>The module is called as:</p>
@@ -190,18 +192,18 @@ END
 </code></pre>
 <p>where <level of theory> is any Gaussian basis set method in NWChem</p>
 <h2 id="qmd-keywords">QMD Keywords<a class="headerlink" href="#qmd-keywords" title="Permanent link">&para;</a></h2>
-<h3 id="dt_nucl-nuclear-time-step">dt_nucl &ndash; Nuclear time step<a class="headerlink" href="#dt_nucl-nuclear-time-step" title="Permanent link">&para;</a></h3>
+<h3 id="dt_nucl-nuclear-time-step">dt_nucl: Nuclear time step<a class="headerlink" href="#dt_nucl-nuclear-time-step" title="Permanent link">&para;</a></h3>
 <p>This specifies the nuclear time step in atomic units (1 a.u. = 0.02419
 fs). Default 10.0 a.u.</p>
-<h3 id="nstep_nucl-simulation-steps">nstep_nucl &ndash; Simulation steps<a class="headerlink" href="#nstep_nucl-simulation-steps" title="Permanent link">&para;</a></h3>
+<h3 id="nstep_nucl-simulation-steps">nstep_nucl: Simulation steps<a class="headerlink" href="#nstep_nucl-simulation-steps" title="Permanent link">&para;</a></h3>
 <p>This specifies the number of steps to take in the nuclear dynamics.
 Default 1000</p>
-<h3 id="targ_temp-temperature-of-the-system">targ_temp &ndash; Temperature of the system<a class="headerlink" href="#targ_temp-temperature-of-the-system" title="Permanent link">&para;</a></h3>
+<h3 id="targ_temp-temperature-of-the-system">targ_temp: Temperature of the system<a class="headerlink" href="#targ_temp-temperature-of-the-system" title="Permanent link">&para;</a></h3>
 <p>This specifies the temperature to use with the thermostat. Also it is
 used in generating initial velocities from the Maxwell-Boltzmann
 distribution. Default 298.15
 K</p>
-<h3 id="thermostat-thermostat-for-controling-temperature-of-the-simulation">thermostat &ndash; Thermostat for controling temperature of the simulation<a class="headerlink" href="#thermostat-thermostat-for-controling-temperature-of-the-simulation" title="Permanent link">&para;</a></h3>
+<h3 id="thermostat-thermostat-for-controling-temperature-of-the-simulation">thermostat: Thermostat for controling temperature of the simulation<a class="headerlink" href="#thermostat-thermostat-for-controling-temperature-of-the-simulation" title="Permanent link">&para;</a></h3>
 <p>This specifies the thermostat to use for regulating the temperature of
 the nuclei. Possible options are:</p>
 <ul>
@@ -227,29 +229,29 @@ the nuclei. Possible options are:</p>
 <li><strong>rescale</strong></li>
 </ul>
 <p>Velocity rescaling, i.e. isokinetic ensemble  </p>
-<h3 id="rand_seed-seed-for-the-random-number-generator">rand_seed &ndash; Seed for the random number generator<a class="headerlink" href="#rand_seed-seed-for-the-random-number-generator" title="Permanent link">&para;</a></h3>
+<h3 id="rand_seed-seed-for-the-random-number-generator">rand_seed: Seed for the random number generator<a class="headerlink" href="#rand_seed-seed-for-the-random-number-generator" title="Permanent link">&para;</a></h3>
 <p>This specifies the seed for initializing the random number generator. If
 not given, a unique random seed will be generated. Even without a
 thermostat, this will influence the initial
 velocities.</p>
-<h3 id="com_step-how-often-center-of-mass-translations-and-rotations-are-removed">com_step &ndash; How often center-of-mass translations and rotations are removed<a class="headerlink" href="#com_step-how-often-center-of-mass-translations-and-rotations-are-removed" title="Permanent link">&para;</a></h3>
+<h3 id="com_step-how-often-center-of-mass-translations-and-rotations-are-removed">com_step: How often center-of-mass translations and rotations are removed<a class="headerlink" href="#com_step-how-often-center-of-mass-translations-and-rotations-are-removed" title="Permanent link">&para;</a></h3>
 <p>This specifies that center-of-mass translations and rotations will be
 removed every com_step steps. Default 10 COM translations and rotations
 are removed on startup (either randomized initial velocities or those
 read from the restart file).</p>
-<h3 id="print_xyz-how-often-to-print-trajectory-information-to-xyz-file">print_xyz &ndash; How often to print trajectory information to xyz file<a class="headerlink" href="#print_xyz-how-often-to-print-trajectory-information-to-xyz-file" title="Permanent link">&para;</a></h3>
+<h3 id="print_xyz-how-often-to-print-trajectory-information-to-xyz-file">print_xyz: How often to print trajectory information to xyz file<a class="headerlink" href="#print_xyz-how-often-to-print-trajectory-information-to-xyz-file" title="Permanent link">&para;</a></h3>
 <p>This specifies that the trajectory information (coordinates, velocities,
 total energy, step number, dipole (if available)) to the xyz file. The
 units for the coordinates and velocities in the xyz file are Angstrom
 and Angstrom/fs, respectively.</p>
-<h3 id="linear-flag-for-linear-molecules">linear &ndash; Flag for linear molecules<a class="headerlink" href="#linear-flag-for-linear-molecules" title="Permanent link">&para;</a></h3>
+<h3 id="linear-flag-for-linear-molecules">linear: Flag for linear molecules<a class="headerlink" href="#linear-flag-for-linear-molecules" title="Permanent link">&para;</a></h3>
 <p>If present, the code assumes the molecule is linear.</p>
-<h3 id="property-how-often-to-calculate-molecular-properties-as-part-of-the-md-simulation">property &ndash; How often to calculate molecular properties as part of the MD simulation<a class="headerlink" href="#property-how-often-to-calculate-molecular-properties-as-part-of-the-md-simulation" title="Permanent link">&para;</a></h3>
+<h3 id="property-how-often-to-calculate-molecular-properties-as-part-of-the-md-simulation">property: How often to calculate molecular properties as part of the MD simulation<a class="headerlink" href="#property-how-often-to-calculate-molecular-properties-as-part-of-the-md-simulation" title="Permanent link">&para;</a></h3>
 <p>If present, the code will look for the property block and calculate the requested properties.<br />
 For example, property 5 will calculate properties on the current geometry every 5 steps.  </p>
-<h3 id="tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation">tddft &ndash; How often to peform TDDFT calculation as part of the MD simulation<a class="headerlink" href="#tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation" title="Permanent link">&para;</a></h3>
+<h3 id="tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation">tddft: How often to peform TDDFT calculation as part of the MD simulation<a class="headerlink" href="#tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation" title="Permanent link">&para;</a></h3>
 <p>If present, the code will look for the tddft block and calculate the absorption spectrum.<br />
-For example, tddft 5 will perform tddft calculations on the current geometry every 5 steps.    </p>
+For example, tddft 5 will perform tddft calculations on the current geometry every 5 steps.</p>
 <h2 id="sample-input-files">Sample input files<a class="headerlink" href="#sample-input-files" title="Permanent link">&para;</a></h2>
 <h3 id="ground-state-molecular-dynamics">Ground state Molecular Dynamics<a class="headerlink" href="#ground-state-molecular-dynamics" title="Permanent link">&para;</a></h3>
 <p>The following is a sample input for a ground state MD simulation. The
@@ -411,8 +413,78 @@ output to 800 wave numbers. The width option sets the full-width at
 half-maximum of the peaks in the resulting spectra.</p>
 <p>The computed IR spectrum and vibrational density of states are shown
 here.</p>
-<p><img alt="pic1" src="SiCl4IR.png" /> 
+<p><img alt="pic1" src="SiCl4IR.png" />
 <img alt="pic2" src="SiCl4VDOS.png" /></p>
+<h3 id="namd-non-adiabatic-excited-stated-molecular-dynamics">NAMD: Non-adiabatic Excited Stated Molecular Dynamics<a class="headerlink" href="#namd-non-adiabatic-excited-stated-molecular-dynamics" title="Permanent link">&para;</a></h3>
+<p>For  details of the NAMD implementation, please
+refer to the following paper:
+H. Song, S. A. Fischer, Y. Zhang, C. J. Cramer, S. Mukamel, N. Govind and S. Tretiak,
+``First Principles Nonadiabatic Excited-State Molecular Dynamics in NWChem&rsquo;&lsquo;,
+Journal of Chemical Theory and Computation  16 (10), pp. 6418-6427 (2020)
+<a href="https://dx.doi.org/10.1021/acs.jctc.0c00295">DOI:10.1021/acs.jctc.0c00295</a>.</p>
+<pre><code>[namd]
+  [init_state &lt;integer default 2&gt;]
+  [nstates &lt;integer default 2&gt;]
+  [dt_elec &lt;double default 0.01&gt;]
+  [deco &lt;logical default .false.]
+[end]  
+</code></pre>
+<p>In the namd sub-block within the qmd block, please note:</p>
+<ul>
+<li>The number of roots requested in the tddft block must be at least nstates-1.</li>
+<li>The nuclear time step (dt_nucl) must be an integer multiple of the electronic time step (mod(dt_nucl,dt_elec)</li>
+</ul>
+<h4 id="deco-decoherence-flag">deco: Decoherence flag<a class="headerlink" href="#deco-decoherence-flag" title="Permanent link">&para;</a></h4>
+<p>Granucci &amp; Persico J. Chem. Phys. 126, 134114 (2007)</p>
+<h4 id="dt_elec-electronic-dynamics-time-step">dt_elec: Electronic dynamics time step<a class="headerlink" href="#dt_elec-electronic-dynamics-time-step" title="Permanent link">&para;</a></h4>
+<p>The keyword <code>dt_elec</code> sets the electronic time step in atomic units.</p>
+<h4 id="n_states-number-of-states">n_states: Number of states<a class="headerlink" href="#n_states-number-of-states" title="Permanent link">&para;</a></h4>
+<p>The keyword <code>nstates</code> sets the number of electronic states to include in the calculation, i.e.
+the number of states for use with Eq. 5 of the paper above.</p>
+<h4 id="init_state-initial-state">init_state: Initial state<a class="headerlink" href="#init_state-initial-state" title="Permanent link">&para;</a></h4>
+<p>The keyword <code>init_state</code> sets the initial electronic state to be occupied;
+the numbering for this keyword and the output that reports the currently
+occupied state runs from 0 (ground state) to <code>nstates-1</code>.
+So if you want to start a calculation in the first excited state, you would set
+<code>init_state</code> to 1.</p>
+<h4 id="namd-input-example">NAMD Input Example<a class="headerlink" href="#namd-input-example" title="Permanent link">&para;</a></h4>
+<pre><code>geometry noautosym nocenter
+O 0.0000  0.0000  0.1197
+H 0.0000  0.7615 -0.4790
+H 0.0000 -0.7615 -0.4790
+end
+basis
+* library 6-31G*
+end
+
+dft
+  xc b3lyp
+end
+
+tddft
+  nroots 10
+  notriplet
+  cis
+  civecs
+  grad
+    root 1
+  end
+end
+
+qmd
+  nstep_nucl 50
+  dt_nucl 0.5
+  targ_temp 300.0
+  thermostat svr 500
+  namd 
+    nstates 5
+    init_state 3
+    dt_elec 0.1
+    deco .true.
+  end
+end
+task tddft qmd
+</code></pre>
               
             </div>
           </div>
