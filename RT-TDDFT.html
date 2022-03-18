@@ -173,7 +173,8 @@ the following paper:</p>
 <ol>
 <li>K. Lopata, N. Govind,&rdquo;Modeling Fast Electron Dynamics with Real-Time
     Time-Dependent Density Functional Theory: Application to Small
-    Molecules and Chromophores&rdquo;, J. Chem. Theory Comput., 7, 1344 (2011)</li>
+    Molecules and Chromophores&rdquo;, J. Chem. Theory Comput., 7, 1344 (2011)
+    <a href="https://dx.doi.org/10.1021/ct200137z">DOI:10.1021/ct200137z</a></li>
 </ol>
 <p>This functionality is built on the <a href="Density-Functional-Theory-for-Molecules.html">Gaussian basis set
 DFT</a> module, and
@@ -535,6 +536,25 @@ end
   load restart
 end
 </code></pre>
+<h3 id="mocap-sub-block-for-molecular-orbital-complex-absorbing-potential">MOCAP: Sub-block for molecular orbital complex absorbing potential<a class="headerlink" href="#mocap-sub-block-for-molecular-orbital-complex-absorbing-potential" title="Permanent link">&para;</a></h3>
+<p>The
+K. Lopata and N. Govind,
+&ldquo;Near and Above Ionization Electronic Excitations with Non-Hermitian
+Real-Time Time-Dependent Density Functional Theory&rdquo;,
+Journal of Chemical Theory and Computation 9 (11), 4939-4946 (2013)
+    <a href="https://dx.doi.org/10.1021/ct400569s">DOI:10.1021/ct400569s</a></p>
+<pre><code>  mocap
+    maxval 100.0     # clamp CAP at this value (in Ha)
+    emin 0.5         # any MO with eigenvalue &gt;= 0.5 Ha will have CAP applied to it
+    prefac 1.0       # prefactor for exponential
+    expconst 1.0     # exponential constant for CAP
+    off              # turn off CAP
+    nochecks         # disable checks for speed
+    noprint          # don't print CAP value
+  end
+</code></pre>
+<h4 id="maxval-exponential-maximum-value">MAXVAL: Exponential Maximum Value<a class="headerlink" href="#maxval-exponential-maximum-value" title="Permanent link">&para;</a></h4>
+<h4 id="emin-vacuum-energy-level">EMIN: Vacuum Energy Level<a class="headerlink" href="#emin-vacuum-energy-level" title="Permanent link">&para;</a></h4>
 <h2 id="worked-examples">Worked Examples<a class="headerlink" href="#worked-examples" title="Permanent link">&para;</a></h2>
 <h3 id="absorption-spectrum-of-water">Absorption spectrum of water<a class="headerlink" href="#absorption-spectrum-of-water" title="Permanent link">&para;</a></h3>
 <p>Here, we compute the 6-31G/TD-PBE0 absorption spectrum of gas-phase
@@ -666,7 +686,7 @@ Fourier transform, I &ldquo;paste&rdquo; the three files together to easily plot
 absorption, which is constructed from the trace of the polarizability
 matrix, i.e., the sum of the imaginary parts of the FFTs of the dipole
 moments.</p>
-<p><em>S (&omega;) = (4&pi;&omega;)/(3c&kappa;)  </em>Tr[Im<em> &alpha;(&omega;)</em>]  </p>
+<p><em>S (&omega;) = (4&pi;&omega;)/(3c&kappa;)</em>Tr[Im<em> &alpha;(&omega;)</em>]  </p>
 <p>where <em>c</em> is the speed of light (137 in atomic units), <em>&kappa;</em>  is
 the kick electric field strength, and <em>&alpha;(&omega;)</em> is the linear
 polarizabilty tensor computed from the Fourier transforms of the
@@ -1052,6 +1072,52 @@ note, however, this starting point is highly non-physical, specifically
 converging the two fragments together and &ldquo;gluing&rdquo; them together
 introduces an indeterminate amount of energy to the system, but this
 simulation shows how charge dynamics simulations can be done.</p>
+<h3 id="mo-cap-example">MO CAP example<a class="headerlink" href="#mo-cap-example" title="Permanent link">&para;</a></h3>
+<pre><code>## aug-cc-pvtz/PBE0 optimized
+geometry &quot;system&quot; units angstroms noautosym noautoz nocenter
+  O     0.00000043     0.11188833     0.00000000
+  H     0.76000350    -0.47275229     0.00000000
+  H    -0.76000393    -0.47275063     0.00000000
+end
+
+set geometry &quot;system&quot;
+
+basis spherical
+  * library 6-31G*
+end
+
+dft
+  xc pbe0
+  convergence density 1d-9
+end
+task dft
+
+rt_tddft
+  dt 0.2
+  tmax 250.0
+
+  print dipole field energy charge
+
+  mocap
+    expconst 1.0     # exponential constant for CAP
+    emin 0.5         # any MO with eigenvalue &gt;= 0.5 Ha will have CAP applied to it
+    prefac 1.0       # prefactor for exponential
+    maxval 100.0     # clamp CAP at this value (in Ha)
+    off              # turn off CAP
+    nochecks         # disable checks for speed
+    noprint          # don't print CAP value
+  end
+
+  field &quot;kick&quot;
+    type delta
+    max 0.0001
+    polarization z
+  end
+
+  excite &quot;system&quot; with &quot;kick&quot;
+end
+task dft rt_tddft
+</code></pre>
               
             </div>
           </div>
