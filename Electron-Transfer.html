@@ -182,9 +182,9 @@ third reference details the method used in the ET module.</p>
 <li>A. Farazdel, M. Dupuis, E. Clementi, and A. Aviram, J. Am. Chem.
     Soc., 112, 4206 (1990).</li>
 </ol>
-<h2 id="vectors-input-of-mo-vectors-for-et-reactant-and-product-states">VECTORS &ndash; input of MO vectors for ET reactant and product states<a class="headerlink" href="#vectors-input-of-mo-vectors-for-et-reactant-and-product-states" title="Permanent link">&para;</a></h2>
-<pre><code> VECTORS [reactants] &lt;string reactants_filename&gt;  
- VECTORS [products ] &lt;string products_filename&gt;
+<h2 id="vectors-input-of-mo-vectors-for-et-reactant-and-product-states">VECTORS: input of MO vectors for ET reactant and product states<a class="headerlink" href="#vectors-input-of-mo-vectors-for-et-reactant-and-product-states" title="Permanent link">&para;</a></h2>
+<pre><code> VECTORS [reactants] &lt;string reactants_filename&gt;  
+ VECTORS [products ] &lt;string products_filename&gt;
 </code></pre>
 <p>In the VECTORS directive the user specifies the source of the molecular
 orbital vectors for the ET reactant and product states. This is required
@@ -192,8 +192,8 @@ input, as no default filename will be set by the program. In fact, this
 is the only required input in the ET module, although there are other
 optional keywords described
 below.</p>
-<h2 id="focknofock-method-for-calculating-the-two-electron-contribution-to-vrp">FOCK/NOFOCK &ndash; method for calculating the two-electron contribution to  <i>V<sub>RP</sub></i><a class="headerlink" href="#focknofock-method-for-calculating-the-two-electron-contribution-to-vrp" title="Permanent link">&para;</a></h2>
-<pre><code>  &lt;string (FOCK||NOFOCK) default FOCK&gt;
+<h2 id="focknofock-method-for-calculating-the-two-electron-contribution-to-vrp">FOCK/NOFOCK: method for calculating the two-electron contribution to  <i>V<sub>RP</sub></i><a class="headerlink" href="#focknofock-method-for-calculating-the-two-electron-contribution-to-vrp" title="Permanent link">&para;</a></h2>
+<pre><code>  &lt;string (FOCK||NOFOCK) default FOCK&gt;
 </code></pre>
 <p>This directive enables/disables the use of the NWChem&rsquo;s Fock matrix
 routine in the calculation of the two-electron portion of the ET
@@ -203,8 +203,8 @@ accuracy and parallel performance, it is the most efficient choice.</p>
 the ET Hamiltonian with another subroutine which may be more accurate
 for systems with a small number of basis functions, although it is
 slower.</p>
-<h2 id="tol2e-integral-screening-threshold">TOL2E &ndash; integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
-<pre><code> TOL2E &lt;real tol2e default max(10e-12,min(10e-7, S(RP)*10e-7 )&gt;
+<h2 id="tol2e-integral-screening-threshold">TOL2E: integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
+<pre><code> TOL2E &lt;real tol2e default max(10e-12,min(10e-7, S(RP)*10e-7 )&gt;
 </code></pre>
 <p>The variable tol2e is used in determining the integral screening
 threshold for the evaluation of the two-electron contribution to the
@@ -214,9 +214,9 @@ between the ET reactant and product states (<i>S<sub>RP</sub></i>), and is not l
 than 1.0d-12 or greater than 1.0d-7.</p>
 <p>The input to specify the threshold explicitly within the ET directive
 is, for example:</p>
-<pre><code> tol2e 1e-9
+<pre><code> tol2e 1e-9
 </code></pre>
-<!---  ##  FMO -- Fragment Orbital Approach 
+<!---  ##  FMO: Fragment Orbital Approach 
 
 The keyword <tt>FMO</tt> can be used to compute electronic couplings by means of the fragment orbital approach
 (EF Valeev, V Coropceanu, DA da Silva Filho, S Salman, JL Bredas,. J. Am. Chem. Soc., 128, 9882 (2006))
