@@ -2119,12 +2119,14 @@ can be modified by the following keywords</p>
               [lshift &lt;real lshift default 0.5&gt;] \  
               [hl_tol &lt;real hl_tol default 0.1&gt;]]
 </code></pre>
+<h3 id="convergence-damp-keyword">CONVERGENCE DAMP Keyword<a class="headerlink" href="#convergence-damp-keyword" title="Permanent link">&para;</a></h3>
 <p>Damping is defined to be the percentage of the previous iterations
 density mixed with the current iterations density. So, for example</p>
 <pre><code> CONVERGENCE damp 70
 </code></pre>
 <p>would mix 30% of the current iteration density with 70% of the previous
 iteration density.</p>
+<h3 id="convergence-lshift-keyword">CONVERGENCE LSHIFT Keyword<a class="headerlink" href="#convergence-lshift-keyword" title="Permanent link">&para;</a></h3>
 <p>Level-Shifting is defined as the amount of shift applied to the diagonal
 elements of the unoccupied block of the Fock matrix. The shift is
 specified by the keyword <code>lshift</code>. For example the directive,</p>
@@ -2138,6 +2140,7 @@ the directive hl_tol. An example of changing the HOMO-LUMO gap
 tolerance to 0.01 would be,</p>
 <pre><code> CONVERGENCE hl_tol 0.01
 </code></pre>
+<h3 id="convergence-diis-keyword">CONVERGENCE DIIS Keyword<a class="headerlink" href="#convergence-diis-keyword" title="Permanent link">&para;</a></h3>
 <p>Direct inversion of the iterative subspace with extrapolation of up to
 10 Fock matrices is a default optimization procedure. For large
 molecular systems the amount of available memory may preclude the
@@ -2164,6 +2167,7 @@ the number of cycles where the Rabuck method is active, you need to use
 the following line</p>
 <pre><code> CONVERGENCE rabuck 30
 </code></pre>
+<h3 id="convergence-fast-keyword">CONVERGENCE FAST Keyword<a class="headerlink" href="#convergence-fast-keyword" title="Permanent link">&para;</a></h3>
 <p><code>convergence fast</code> turns on a series of parameters that most often speed-up convergence, but not in 100% of the cases.</p>
 <pre><code>  CONVERGENCE fast
 </code></pre>
