@@ -538,6 +538,7 @@ Journal of Chemical Theory and Computation 9 (11), 4939-4946 (2013)
 </code></pre>
 <h4 id="maxval-exponential-maximum-value">MAXVAL: Exponential Maximum Value<a class="headerlink" href="#maxval-exponential-maximum-value" title="Permanent link">&para;</a></h4>
 <h4 id="emin-vacuum-energy-level">EMIN: Vacuum Energy Level<a class="headerlink" href="#emin-vacuum-energy-level" title="Permanent link">&para;</a></h4>
+<h4 id="onoff-turn-onoff-cap">ON/OFF: Turn on/off CAP<a class="headerlink" href="#onoff-turn-onoff-cap" title="Permanent link">&para;</a></h4>
 <h2 id="worked-examples">Worked Examples<a class="headerlink" href="#worked-examples" title="Permanent link">&para;</a></h2>
 <h3 id="absorption-spectrum-of-water">Absorption spectrum of water<a class="headerlink" href="#absorption-spectrum-of-water" title="Permanent link">&para;</a></h3>
 <p>Here, we compute the 6-31G/TD-PBE0 absorption spectrum of gas-phase
@@ -1101,6 +1102,8 @@ rt_tddft
 end
 task dft rt_tddft
 </code></pre>
+<p>After running the parser script on the output files from the input above using either with the <code>on</code> or <code>off</code> keywords, the following plot can be produced from the data file obtained with the command <code>nw_rtparse.py   -xdipole -pz -t"&lt;rt_tddft&gt;"</code>
+<img alt="Time dependent dipole with and without CAP" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/cap_dipole.png" align=middle with="364pt" height="275pt"/></p>
               
             </div>
           </div><footer>
