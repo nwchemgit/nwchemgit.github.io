@@ -366,7 +366,7 @@ how to use these options.</p>
 the default <code>slater</code> and <code>vwn_5</code> functionals. These are either local or
 gradient-corrected functionals (GCA); a full list can be found in the
 table below.</p>
-<p>The Hartree-Fock exact exchange functional, (which has <script type="math/tex">O(N^4)</script>
+<p>The Hartree-Fock exact exchange functional, (which has $O(N^4)$
 computation expense), is invoked by specifying</p>
 <pre><code>  XC HFexch
 </code></pre>
@@ -1798,8 +1798,7 @@ these functionals with the accompanying local PW91LDA. The user cannot
 <h3 id="range-separated-functionals">Range-Separated Functionals<a class="headerlink" href="#range-separated-functionals" title="Permanent link">&para;</a></h3>
 <p>Using the Ewald decomposition</p>
 <p>
-<script type="math/tex; mode=display">\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}</script>
-</p>
+<script type="math/tex; mode=display">\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}</script>&ldquo;</p>
 <p>we can split the the Exchange interaction as</p>
 <p>
 <script type="math/tex; mode=display">E_{X} = E_X^{LR} + E_X^{SR}</script>
@@ -1975,7 +1974,7 @@ end
 <h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00: Asymptotic correction<a class="headerlink" href="#lb94-and-cs00-asymptotic-correction" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>LB94</code> will correct the asymptotic region of the XC definition
 of exchange-correlation potential by the van-Leeuwen-Baerends
-exchange-correlation potential that has the correct <script type="math/tex">-1/r</script>
+exchange-correlation potential that has the correct $-1/r$ asymptotic
 behavior. The total energy will be computed by the XC definition of
 exchange-correlation functional. This scheme is known to tend to
 overcorrect the deficiency of most uncorrected exchange-correlation
@@ -2794,8 +2793,7 @@ molecule</p>
 </ul>
 <p>Erf<em>n</em> partitioning functions</p>
 <p>
-<script type="math/tex; mode=display">\begin{array}{lcl}  w_A(r) & = & \prod_{B\neq A}\frac{1}{2} \left[1 \ - \ erf(\mu^\prime_{AB})\right] \\  \mu^\prime_{AB} & = & \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\  \mu_{AB} & = & \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|} \end{array}</script>
-</p>
+<script type="math/tex; mode=display">\begin{array}{lcl}  w_A(r) & = & \prod_{B\neq A}\frac{1}{2} \left[1 \ - \ erf(\mu^\prime_{AB})\right] \\  \mu^\prime_{AB} & = & \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\  \mu_{AB} & = & \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|} \end{array}</script>&ldquo;</p>
 <h3 id="radial-grids">Radial grids<a class="headerlink" href="#radial-grids" title="Permanent link">&para;</a></h3>
 <pre><code> GRID [[euler||mura||treutler]  default mura]
 </code></pre>
@@ -2993,7 +2991,7 @@ not just <code>bq</code>.</p>
 </code></pre>
 <p>When systems with high dependence on van der Waals interactions are
 computed, the dispersion term may be added empirically through
-long-range contribution DFT-D, i.e. <script type="math/tex; mode=display">E_{DFT-D}=E_{DFT-KS}+E_{disp}</script>
+long-range contribution DFT-D, i.e. $E_{DFT-D}=E_{DFT-KS}+E_{disp}$, 
 where:</p>
 <p>
 <script type="math/tex; mode=display">E_{disp}=-s_6\sum^{N_{atom}-1}_{i=1}\sum^{N_{atom}}_{j=i+1} \frac{C_{6}^{ij}}{R_{ij}^{6}} \left( 1+e^{-\alpha (\frac{R_{ij}}{R_{vdw}} -1)} \right)^{-1}</script>
@@ -3006,20 +3004,15 @@ contributes to control the corrections at intermediate distances.</p>
 <p>There are available three ways to compute   <em>C<sup>6</sup><sub>ij</sub></em>:</p>
 <ol>
 <li>
-<p>
-<script type="math/tex; mode=display">C_6^{ij}= \,\! \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}</script>
+<p>$C_6^{ij}= \,! \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}$  where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from Q. Wu and W. Yang,
 J. Chem. Phys. 116 515 (2002) and U. Zimmerli, M Parrinello and P.
 Koumoutsakos J. Chem. Phys. 120 2693 (2004). (Use <code>vdw 0</code>)  </p>
 </li>
 <li>
-<p>
-<script type="math/tex; mode=display">C_6^{ij}=2\,\!\frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}</script>
-</p>
+<p>$C_6^{ij}=2\,!\frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}$. See details in S. Grimme J. Comp. Chem. 25 1463 (2004). (Use <code>vdw 1)</code>  </p>
 </li>
 <li>
-<p>
-<script type="math/tex; mode=display">C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}</script>
-</p>
+<p>$C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}$ See details in S. Grimme J. Comp. Chem. 271787 (2006). (Use <code>vdw 2</code>)  </p>
 </li>
 </ol>
 <p>Note that in each option there is a certain set of <em>C<sub>6</sub></em> and <em>R<sub>vdw</sub></em>.
