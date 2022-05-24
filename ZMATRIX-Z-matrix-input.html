@@ -166,7 +166,7 @@ torsion angles. Cartesian coordinate input for a center consists of
 three real numbers defining the x,y,z coordinates of the atom.</p>
 <p>Within the Z-matrix input, bond lengths and Cartesian coordinates must
 be input in the user-specified units, as defined by the value specified
-for the variable <units> on the first line of the GEOMETRY directive.
+for the variable <code>units</code> on the first line of the GEOMETRY directive.
 All angles are specified in degrees.</p>
 <p>The individual centers (denoted as i, j, and k below) used to specify
 Z-matrix connectivity may be designated either as integers (identifying
@@ -194,7 +194,7 @@ be in the range 0 &lt; α &lt; 180.</p>
 following discussion, the tag or number of the center being currently
 defined is labeled as C (C for current). The values entered for these
 tags for centers defined in the Z-matrix input are interpreted in the
-same way as the <tag> entries for Cartesian coordinates described above
+same way as the <code>tag</code> entries for Cartesian coordinates described above
 (see <a href="Cartesian-coordinate-input.html">Cartesian coordinate
 input</a>). Figures 1, 2 and 3
 display the relationships between the input data and the definitions of
@@ -237,7 +237,7 @@ Z-matrix input with optional parameter specified as -1.</p>
 <p>By default, β is interpreted as a dihedral angle (see Figure 1), but if
 the optional final parameter (<code>orient</code>) is specified with the value ±1,
 then β is interpreted as the angle <img alt="$\widehat{Cik}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f378ddbbfa1730f1afcf8fae7f95e7d8.svg?invert_in_darkmode&sanitize=true" align=middle width="27.564405pt" height="33.24123pt"/>. The sign of
-<orient> specifies the direction of the bond angle relative to the plane
+<code>orient</code> specifies the direction of the bond angle relative to the plane
 containing the three reference atoms. If <code>orient</code> is +1, then the new
 center (C) is above the plane (Figure 2); and if <code>orient</code> is -1, then C
 is below the plane (Figure 3).</p>
@@ -318,7 +318,7 @@ inputs for the <code>VARIABLES</code> and <code>CONSTANTS</code> directives.</p>
 end
 </code></pre>
 <p>The input for any centers specified with Cartesian coordinates must be
-specified using the format of the <tag> lines described in <a href="Cartesian-coordinate-input.html">Cartesian
+specified using the format of the <code>tag</code> lines described in <a href="Cartesian-coordinate-input.html">Cartesian
 coordinate input</a> above.
 However, in order to correctly specify these Cartesian coordinates
 within the Z-matrix, the user must understand the orientation of centers
