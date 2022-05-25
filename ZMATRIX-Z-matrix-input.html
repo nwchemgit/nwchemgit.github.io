@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://nwchemgit.github.io/ZMATRIX.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://nwchemgit.github.io/ZMATRIX-Z-matrix-input.html" />
       <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>ZMATRIX - NWChem</title>
+    <title>ZMATRIX Z matrix input - NWChem</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "ZMATRIX";
-        var mkdocs_page_input_path = "ZMATRIX.md";
-        var mkdocs_page_url = "/ZMATRIX.html";
+        var mkdocs_page_name = "ZMATRIX Z matrix input";
+        var mkdocs_page_input_path = "ZMATRIX-Z-matrix-input.md";
+        var mkdocs_page_url = "/ZMATRIX-Z-matrix-input.html";
       </script>
     
     <script src="js/jquery-3.6.0.min.js" defer></script>
@@ -126,9 +126,9 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>ZMATRIX</li>
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>ZMATRIX Z matrix input</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/ZMATRIX.md"
+        <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/ZMATRIX-Z-matrix-input.md"
           class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
@@ -166,7 +166,7 @@ torsion angles. Cartesian coordinate input for a center consists of
 three real numbers defining the x,y,z coordinates of the atom.</p>
 <p>Within the Z-matrix input, bond lengths and Cartesian coordinates must
 be input in the user-specified units, as defined by the value specified
-for the variable <code>units</code> on the first line of the <code>GEOMETRY</code> directive.
+for the variable <code>units</code> on the first line of the GEOMETRY directive.
 All angles are specified in degrees.</p>
 <p>The individual centers (denoted as i, j, and k below) used to specify
 Z-matrix connectivity may be designated either as integers (identifying
@@ -181,8 +181,8 @@ symbolic strings labeled <code>VARIABLES</code> may be subject to changes during
 geometry optimization say, while the numerical values of the symbolic
 strings labeled <code>CONSTANTS</code> will stay frozen to the value given in the
 input. The same symbolic string can be used more than once, and any
-mixture of numeric data and symbols is acceptable. Bond angles (<em>α</em>) must
-be in the range 0 &lt; <em>α</em> &lt; 180.</p>
+mixture of numeric data and symbols is acceptable. Bond angles (α) must
+be in the range 0 &lt; α &lt; 180.</p>
 <p>The Z-matrix input is specified sequentially as follows:</p>
 <pre><code>  tag1  
   tag2 i R  
@@ -220,14 +220,14 @@ Z-matrix input with optional parameter specified as -1.</p>
     Only a tag is required for the first center.</li>
 <li><code>tag2 i R</code><br />
     The second center requires specification of its tag and the bond
-    length (<em>R<sub>Ci</sub></em>) distance to a previous atom, which is identified by <em>i</em>.</li>
+    length (<em>R<sub>Ci</sub></em>) distance to a previous atom, which is identified by i.</li>
 <li><code>tag3 i R j alpha</code><br />
     The third center requires specification of its tag, its bond length
     distance (<em>R<sub>Ci</sub></em>) to one of the two previous centers (identified
     by the value of i), and the bond angle  <img alt="$\alpha = \widehat{Cij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/75131bd9f30067d5c20cee14b40231f3.svg?invert_in_darkmode&sanitize=true" align=middle width="58.61163pt" height="32.87592pt"/>.</li>
 <li><code>tag i R j alpha k beta [&lt;integer orient default 0&gt;]</code><br />
     The fourth, and all subsequent centers, require the tag, a bond
-   length (<em>R<sub>Ci</sub></em>) relative to center <em>i</em>, the bond angle with
+   length (<em>R<sub>Ci</sub></em>) relative to center i, the bond angle with
     centers i and j ( <img alt="$\alpha = \widehat{Cij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/75131bd9f30067d5c20cee14b40231f3.svg?invert_in_darkmode&sanitize=true" align=middle width="58.61163pt" height="32.87592pt"/>), and either the
     dihedral angle (β) between the current center and centers i, j, and
     k (Figure 1), or a second bond angle <img alt="$\beta = \widehat{Cik}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7a54fc2c3b8cd34f0e2bd17402b0c9b3.svg?invert_in_darkmode&sanitize=true" align=middle width="59.565pt" height="33.24123pt"/> and
@@ -236,7 +236,7 @@ Z-matrix input with optional parameter specified as -1.</p>
 </ol>
 <p>By default, <em>β</em> is interpreted as a dihedral angle (see Figure 1), but if
 the optional final parameter (<code>orient</code>) is specified with the value ±1,
-then <em>β</em> is interpreted as the angle <img alt="$\widehat{Cik}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f378ddbbfa1730f1afcf8fae7f95e7d8.svg?invert_in_darkmode&sanitize=true" align=middle width="27.564405pt" height="33.24123pt"/>. The sign of
+then β is interpreted as the angle <img alt="$\widehat{Cik}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f378ddbbfa1730f1afcf8fae7f95e7d8.svg?invert_in_darkmode&sanitize=true" align=middle width="27.564405pt" height="33.24123pt"/>. The sign of
 <code>orient</code> specifies the direction of the bond angle relative to the plane
 containing the three reference atoms. If <code>orient</code> is +1, then the new
 center (C) is above the plane (Figure 2); and if <code>orient</code> is -1, then C
@@ -255,7 +255,7 @@ its value, for clarity in reading the input file.</p>
 <p>Following the <code>VARIABLES</code> directive, the <code>CONSTANTS</code> directive may be used
 to define any Z-matrix symbolic variables that remain unchanged during
 geometry optimizations. To freeze the Cartesian coordinates of an atom,
-refer to the section <a href="ZCOORD-Forcing-internal-coordinates.html#applying_constraints-in-geometry-optimizations">Applying constraints in geometry optimizations</a>.
+refer to <a href="ZCOORD-Forcing-internal-coordinates.html#applying_constraints-in-geometry-optimizations">Applying constraints in geometry optimizations.md</a>.
 The general form of this directive is as follows:</p>
 <pre><code> CONSTANTS  
    &lt;string symbol&gt;  &lt;real value&gt;  
