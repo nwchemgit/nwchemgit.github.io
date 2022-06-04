@@ -115,6 +115,10 @@
     <li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#singularity">Singularity</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#instruction-for-running-on-emsl-tahoma">Instruction for running on EMSL Tahoma</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#podman">Podman</a>
     </li>
@@ -170,6 +174,30 @@
 <a href="https://github.com/edoapra/nwchem-singularity">https://github.com/edoapra/nwchem-singularity</a></p>
 <p>Singularity images are available at<br />
 <a href="https://cloud.sylabs.io/library/edoapra">https://cloud.sylabs.io/library/edoapra</a></p>
+<h3 id="instruction-for-running-on-emsl-tahoma">Instruction for running on EMSL Tahoma<a class="headerlink" href="#instruction-for-running-on-emsl-tahoma" title="Permanent link">&para;</a></h3>
+<p>Instructions for running NWChem Singularity images on <a href="https://www.emsl.pnnl.gov/MSC/UserGuide/tahoma/tahoma_overview.html">EMSL tahoma</a></p>
+<pre><code>#!/bin/bash
+#SBATCH -N 2
+#SBATCH -t 00:29:00
+#SBATCH -A allocation_name
+#SBATCH --ntasks-per-node 18
+#SBATCH -o singularity_library.output.%j
+#SBATCH -e ./singularity_library.err.%j
+#SBATCH -J singularity_library
+#SBATCH --export ALL
+source /etc/profile.d/modules.sh
+export https_proxy=http://proxy.emsl.pnl.gov:3128
+module purge
+module load openmpi
+# remove old images
+rm -f ./nwchems_`id -u`.img
+# pull new image to the current directory
+singularity pull --name ./nwchems_`id -u`.img pull library://edoapra/default/nwchem-dev.ompi40x.ifort.skylake:latest
+# copy image from current directory to local /big_scratch/ on compute nodes
+srun -N $SLURM_NNODES -n $SLURM_NNODES cp ./nwchems_`id -u`.img /big_scratch/nwchems.img
+# run
+srun singularity exec /big_scratch/nwchems.img nwchem  &quot;file name&quot;
+</code></pre>
 <h2 id="podman">Podman<a class="headerlink" href="#podman" title="Permanent link">&para;</a></h2>
 <p>Docker images could be run using podman commands</p>
 <pre><code>podman run --rm --shm-size 256m --volume /tmp:/data -i -t ghcr.io/nwchemgit/nwchem-dev/amd64 xvdw.nw
