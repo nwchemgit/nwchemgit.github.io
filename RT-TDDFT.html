@@ -318,7 +318,7 @@ end
 <h3 id="nrestarts-number-of-restart-checkpoints">NRESTARTS: Number of restart checkpoints<a class="headerlink" href="#nrestarts-number-of-restart-checkpoints" title="Permanent link">&para;</a></h3>
 <p>This sets the number of run-time check points where the time-dependent
 complex density matrix is saved to file, allowing the simulation to be
-<a href="RT-TDDFT.html#Restarts">restarted</a>) from that point. By
+<a href="#load-restart">restarted</a>) from that point. By
 default this is set to 0. There is no significant computational cost to
 restart checkpointing, but of course there is some disk I/O cost (which
 may become somewhat significant for larger systems). For example, in the
@@ -512,7 +512,7 @@ files.</p>
 end
 </code></pre>
 <h3 id="load-restart">LOAD RESTART<a class="headerlink" href="#load-restart" title="Permanent link">&para;</a></h3>
-<p>This keyword needs to be added to restart a calculation. In the following example, the calculation will restart from the previous calculation and extend the run to the new <code>tmax</code></p>
+<p>This keyword needs to be added to <a href="Start_Restart.html">restart</a> a calculation. In the following example, the calculation will restart from the previous calculation and extend the run to the new <code>tmax</code></p>
 <pre><code>rt_tddft
   ...
   tmax 10.0        # new end time
