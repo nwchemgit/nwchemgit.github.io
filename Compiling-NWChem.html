@@ -536,6 +536,10 @@ initial build of the binary has been completed. The script will choose the defau
 <pre><code>cd $NWCHEM_TOP/src
 ../contrib/getmem.nwchem
 </code></pre>
+<p>If non default compiler are used, the <code>getmem.nwchem</code> script must be called, using bash shell, by first specifying the compiler environment variable. The example below  uses ifort as Fortran compiler</p>
+<pre><code>cd $NWCHEM_TOP/src
+FC=ifort ../contrib/getmem.nwchem
+</code></pre>
 <p><strong>MRCC_METHODS</strong> can be set to request the multireference coupled
 cluster capability to be included in the code, e.g.</p>
 <pre><code>export MRCC_METHODS=TRUE
