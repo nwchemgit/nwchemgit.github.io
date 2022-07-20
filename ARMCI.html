@@ -126,7 +126,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Choosing the ARMCI Library</li>
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Choosing the ARMCI Library</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/ARMCI.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -134,7 +135,6 @@
   </ul>
   <hr/>
 </div>
-
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
@@ -168,46 +168,46 @@ Global Arrays:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">ARMCI_NETWORK</th>
-<th style="text-align: left;">Result</th>
-<th style="text-align: left;">Notes</th>
+<th align="left">ARMCI_NETWORK</th>
+<th align="left">Result</th>
+<th align="left">Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>MPI-PR</code></td>
-<td style="text-align: left;">ARMCI with progress rank</td>
-<td style="text-align: left;">Recommended, except on Blue Gene/Q.</td>
+<td align="left"><code>MPI-PR</code></td>
+<td align="left">ARMCI with progress rank</td>
+<td align="left">Recommended, except on Blue Gene/Q.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>MPI-PT</code></td>
-<td style="text-align: left;">ARMCI with progress thread</td>
-<td style="text-align: left;">Appropriate for Blue Gene/Q.</td>
+<td align="left"><code>MPI-PT</code></td>
+<td align="left">ARMCI with progress thread</td>
+<td align="left">Appropriate for Blue Gene/Q.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>MPI-MT</code></td>
-<td style="text-align: left;">ARMCI over multi-threaded MPI</td>
-<td style="text-align: left;"><a href="https://github.com/open-mpi/ompi/issues/157">Do not use Open-MPI 1.x.</a></td>
+<td align="left"><code>MPI-MT</code></td>
+<td align="left">ARMCI over multi-threaded MPI</td>
+<td align="left"><a href="https://github.com/open-mpi/ompi/issues/157">Do not use Open-MPI 1.x.</a></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>MPI-TS</code></td>
-<td style="text-align: left;">ARMCI over MPI without data server</td>
-<td style="text-align: left;"></td>
+<td align="left"><code>MPI-TS</code></td>
+<td align="left">ARMCI over MPI without data server</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>MPI-SPAWN</code></td>
-<td style="text-align: left;">ARMCI using MPI dynamic processes</td>
-<td style="text-align: left;">Requires MPI_Comm_spawn support.</td>
+<td align="left"><code>MPI-SPAWN</code></td>
+<td align="left">ARMCI using MPI dynamic processes</td>
+<td align="left">Requires MPI_Comm_spawn support.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>ARMCI</code></td>
-<td style="text-align: left;">Uses ARMCI-MPI</td>
-<td style="text-align: left;">See <a href="https://wiki.mpich.org/armci-mpi/index.php/NWChem">the ARMCI-MPI NWChem page</a> for details.</td>
+<td align="left"><code>ARMCI</code></td>
+<td align="left">Uses ARMCI-MPI</td>
+<td align="left">See <a href="https://wiki.mpich.org/armci-mpi/index.php/NWChem">the ARMCI-MPI NWChem page</a> for details.</td>
 </tr>
 <tr>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">(please use <em>mpi3rma</em> branch)</td>
-<td style="text-align: left;">requires <code>EXTERNAL_ARMCI_PATH</code></td>
+<td align="left"></td>
+<td align="left">(please use <em>mpi3rma</em> branch)</td>
+<td align="left">requires <code>EXTERNAL_ARMCI_PATH</code></td>
 </tr>
 </tbody>
 </table>

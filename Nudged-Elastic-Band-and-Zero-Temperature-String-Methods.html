@@ -126,7 +126,8 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li><li>Nudged Elastic Band (NEB) method</li>
+    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Nudged Elastic Band (NEB) method</li>
     <li class="wy-breadcrumbs-aside">
         <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Nudged-Elastic-Band-and-Zero-Temperature-String-Methods.md"
           class="icon icon-github"> Edit on GitHub</a>
@@ -134,7 +135,6 @@
   </ul>
   <hr/>
 </div>
-
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
@@ -154,7 +154,7 @@ used</p>
 <pre><code>TASK &lt;theory&gt; NEB  
 TASK &lt;theory&gt; NEB ignore
 </code></pre>
-<p>where \&lt;theory&gt; is SCF, HF, DFT, PSPW, BAND, MP2, CCSD, TCE, etc.. The
+<p>where <code>&lt;theory&gt;</code> is SCF, HF, DFT, PSPW, BAND, MP2, CCSD, TCE, etc.. The
 Task directive with the ignore option is recommended, otherwise NWChem
 will crash if the path is not optimized in the allowed maximum number of
 iterations.</p>
@@ -206,17 +206,17 @@ directive,</p>
     the path to be aligned with one another</li>
 <li>HASMIDDLE - if specified causes the initial path to use the the
     &ldquo;midgeom&rdquo; geometry to be used as the midpoint, i.e. the initial path
-    is defined as a linear morphing from &ldquo;geometry&rdquo; &ndash;&gt; &ldquo;midgeom&rdquo; &ndash;&gt;
+    is defined as a linear morphing from &ldquo;geometry&rdquo; &ndash;> &ldquo;midgeom&rdquo; &ndash;>
     &ldquo;endgeom&rdquo;</li>
 <li>XYZ_PATH - if specified the initial path is defined from the
     sequence of geometries contained in <strong>xyzfilename</strong></li>
 <li>RESET - if specified causes the NEB optimization and path to be
     started from scratch</li>
-<li><strong>print_shift</strong> - setting the PRINT_SHIFT directive causes the path
-    energies and geometries to be outputed every \&lt;print_shift&gt; steps.
+<li><strong>print_shift</strong> - setting the <code>PRINT_SHIFT</code> directive causes the path
+    energies and geometries to be outputed every <code>&lt;print_shift&gt;</code> steps.
     The current path energies are appended to the file
-    jobname.neb_epath and the current geometries are appended to the
-    file jobname.nebpath_&ldquo;current iteration&rdquo;.xyz.</li>
+    <code>jobname.neb_epath</code> and the current geometries are appended to the
+    file <code>jobname.nebpath_"current iteration".xyz</code>.</li>
 </ul>
 <h2 id="setting-up-initial-path">Setting up initial path<a class="headerlink" href="#setting-up-initial-path" title="Permanent link">&para;</a></h2>
 <p>There are three different ways to define the initial path for NEB
@@ -521,7 +521,7 @@ is used</p>
 <pre><code>TASK &lt;theory&gt; STRING
 TASK &lt;theory&gt; STRING ignore
 </code></pre>
-<p>where \&lt;theory&gt; is SCF, HF, DFT, PSPW, BAND, MP2, CCSD, TCE, etc.. The
+<p>where <code>&lt;theory&gt;</code> is SCF, HF, DFT, PSPW, BAND, MP2, CCSD, TCE, etc.. The
 Task directive with the ignore option is recommended, otherwise NWChem
 will crash if the path is not optimized in the allowed maximum number of
 iterations.</p>
@@ -556,26 +556,26 @@ directive,</p>
 <li><strong>nhist</strong> - number of histories to use for quasi-Newton optimization
     (algorithm =0)</li>
 <li><strong>tol</strong> - value for the maximum gradient used to determine convergence</li>
-<li><strong>freeze1</strong> - .true.: first bead of simulation frozen, .false.:first
+<li><strong>freeze1</strong> - <code>.true.</code>: first bead of simulation frozen, <code>.false.</code>:first
     bead of simulation not frozen.</li>
-<li><strong>freezeN</strong> - .true.:last bead of simulation frozen, .false.:last bead
+<li><strong>freezeN</strong> - <code>.true.</code>:last bead of simulation frozen, <code>.false.</code>:last bead
     of simulation not frozen</li>
 <li><strong>interpol</strong> - 1: linear, 2: spline, 3: Akima spline</li>
 <li>IMPOSE - if specified causes the initial geometries used to specify
     the path to be aligned with one another</li>
 <li>HASMIDDLE - if specified causes the initial path to use the the
     &ldquo;midgeom&rdquo; geometry to be used as the midpoint, i.e. the initial path
-    is defined as a linear morphing from &ldquo;geometry&rdquo; &ndash;&gt; &ldquo;midgeom&rdquo; &ndash;&gt;
+    is defined as a linear morphing from &ldquo;geometry&rdquo; &ndash;> &ldquo;midgeom&rdquo; &ndash;>
     &ldquo;endgeom&rdquo;</li>
 <li>XYZ_PATH - if specified the initial path is defined from the
     sequence of geometries contained in <strong>xyzfilename</strong></li>
 <li>RESET - if specified causes the NEB optimization and path to be
     started from scratch</li>
 <li><strong>print_shift</strong> - setting the PRINT_SHIFT directive causes the path
-    energies and geometries to be outputed every \&lt;print_shift&gt; steps.
+    energies and geometries to be outputed every <code>&lt;print_shift&gt;</code> steps.
     The current path energies are appended to the file
-    jobname.neb_epath and the current geometries are appended to the
-    file jobname.nebpath_&ldquo;current iteration&rdquo;.xyz.</li>
+    <code>jobname.neb_epath</code> and the current geometries are appended to the
+    file <code>jobname.nebpath _"current iteration".xyz</code></li>
 </ul>
 <h2 id="setting-up-the-initial-path">Setting up the initial path<a class="headerlink" href="#setting-up-the-initial-path" title="Permanent link">&para;</a></h2>
 <p>There are three different ways to define the initial path for NEB
@@ -643,7 +643,7 @@ STRING
 END
 ...
 </code></pre>
-<h2 id="string-tutorial-1hcn-hnc-path-optimization">String Tutorial 1:HCN &ndash;&gt; HNC path optimization<a class="headerlink" href="#string-tutorial-1hcn-hnc-path-optimization" title="Permanent link">&para;</a></h2>
+<h2 id="string-tutorial-1hcn-hnc-path-optimization">String Tutorial 1:HCN &ndash;> HNC path optimization<a class="headerlink" href="#string-tutorial-1hcn-hnc-path-optimization" title="Permanent link">&para;</a></h2>
 <p>(input:<a href="HCN-string1.nw">HCN-string1.nw</a>,
 output:<a href="HCN-string1.nwout">HCN-string1.nwout</a>,
 datafiles:
@@ -664,12 +664,12 @@ HCN-string1.stringpath_000030.xyz</a>
 HCN-string1.stringpath_final.xyz</a>
 )</p>
 <p><center></p>
-<p><img alt="HCN--&gt;HNC Reaction Pathway" src="hcn-hnc-dft.gif" /></p>
+<p><img alt="HCN-->HNC Reaction Pathway" src="hcn-hnc-dft.gif" /></p>
 <p></center></p>
 <p><center></p>
 <p><img alt="400px" src="hcn-hnc-dft.png" /></p>
 <p></center></p>
-<p>In this example, the path energy for the reaction HCN &ndash;&gt; HNC is
+<p>In this example, the path energy for the reaction HCN &ndash;> HNC is
 calculated.</p>
 <pre><code>#    
 # The initial path has the Carbon moving through the Nitrogen.  
