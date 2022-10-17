@@ -174,7 +174,7 @@
 <p>Singularity images are available at<br />
 <a href="https://cloud.sylabs.io/library/edoapra">https://cloud.sylabs.io/library/edoapra</a>
 or at
-<a href="https://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi40">ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi40x</a></p>
+<a href="https://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x">ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x</a></p>
 <h3 id="instruction-for-running-on-emsl-tahoma">Instruction for running on EMSL Tahoma<a class="headerlink" href="#instruction-for-running-on-emsl-tahoma" title="Permanent link">&para;</a></h3>
 <p>Instructions for running NWChem Singularity images on <a href="https://www.emsl.pnnl.gov/MSC/UserGuide/tahoma/tahoma_overview.html">EMSL tahoma</a></p>
 <pre><code>#!/bin/bash
@@ -192,7 +192,7 @@ module purge
 module load gcc/9.3.0
 module load openmpi/4.1.4
 # pull new image to the current directory
-singularity pull -F --name ./nwchems_`id -u`.img oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi40x:latest
+singularity pull -F --name ./nwchems_`id -u`.img oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x:latest
 # copy image from current directory to local /big_scratch/ on compute nodes
 srun -N $SLURM_NNODES -n $SLURM_NNODES cp ./nwchems_`id -u`.img /big_scratch/nwchems.img
 # basis library files
