@@ -487,7 +487,7 @@ block.</p>
     Note Ewald summation is only used if the simulation_cell is
     periodic.</li>
 </ul>
-<p>Default set to be <img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
+<p>Default set to be <img alt="<script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE || &hellip;) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
@@ -577,36 +577,36 @@ set nwpw:lstress_numerical .true.
 high-frequency components of the wavefunction in the atomic sphere
 region. Effectively this splits the original wavefunction into two
 parts:</p>
-<p><img alt="$\psi_n(\mathbf{r}) = \tilde{\psi}_n(\mathbf{r}) + \sum_I \psi_n^I(\mathbf{r})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/68f3a0f1e1d66f32691ef41bf0ab5c89.svg?invert_in_darkmode&sanitize=true" align=middle width="189.915495pt" height="30.55107pt"/></p>
-<p>The first part <img alt="$\tilde{\psi}_n(\mathbf{r})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/08adcb3a29f050420c64eeffd66743c2.svg?invert_in_darkmode&sanitize=true" align=middle width="40.14978pt" height="30.55107pt"/> is smooth and can be
+<p><img alt="<script type="math/tex">\psi_n(\mathbf{r}) = \tilde{\psi}_n(\mathbf{r}) + \sum_I \psi_n^I(\mathbf{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/68f3a0f1e1d66f32691ef41bf0ab5c89.svg?invert_in_darkmode&sanitize=true" align=middle width="189.915495pt" height="30.55107pt"/></p>
+<p>The first part <img alt="<script type="math/tex">\tilde{\psi}_n(\mathbf{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/08adcb3a29f050420c64eeffd66743c2.svg?invert_in_darkmode&sanitize=true" align=middle width="40.14978pt" height="30.55107pt"/> is smooth and can be
 represented using a plane wave basis set of practical size. The second
 term is localized with the atomic spheres and is represented on radial
 grids centered on the atoms
 as</p>
 <p><center></p>
-<p><img alt="$\psi_n^I(\mathbf{r}) = \sum_{\alpha} (\varphi_{\alpha}^I(\mathbf{r})-\tilde{\varphi}_{\alpha}^I(\mathbf{r}))c_{n\alpha}^I$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/848aa7ada3c2deaf67b284abb866fa5d.svg?invert_in_darkmode&sanitize=true" align=middle width="226.367295pt" height="27.59823pt"/></p>
+<p><img alt="<script type="math/tex">\psi_n^I(\mathbf{r}) = \sum_{\alpha} (\varphi_{\alpha}^I(\mathbf{r})-\tilde{\varphi}_{\alpha}^I(\mathbf{r}))c_{n\alpha}^I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/848aa7ada3c2deaf67b284abb866fa5d.svg?invert_in_darkmode&sanitize=true" align=middle width="226.367295pt" height="27.59823pt"/></p>
 <p></center></p>
-<p>where the coefficients <img alt="$c_{n\alpha}^I$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9912f4d7691c2b7812f92088b00f8e79.svg?invert_in_darkmode&sanitize=true" align=middle width="23.69697pt" height="27.59823pt"/>are given by</p>
+<p>where the coefficients <img alt="<script type="math/tex">c_{n\alpha}^I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9912f4d7691c2b7812f92088b00f8e79.svg?invert_in_darkmode&sanitize=true" align=middle width="23.69697pt" height="27.59823pt"/>are given by</p>
 <p>
 <script type="math/tex; mode=display"> c_{n\alpha}^I = <\tilde{p}_{\alpha}^I | \tilde{\psi}_n></script>
 </p>
 <p>This decomposition can be expressed using an invertible linear
-transformation, <img alt="$T$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f118ee06d05f3c2d98361d9c30e38ce.svg?invert_in_darkmode&sanitize=true" align=middle width="11.84502pt" height="22.38192pt"/>, is defined which relates the stiff one-electron
-wavefunctions <img alt="$\psi_n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b13a79228c80e7215dae92bab7edf28d.svg?invert_in_darkmode&sanitize=true" align=middle width="18.76347pt" height="22.74591pt"/> to a set of smooth one-electron wavefunctions
-<img alt="$\tilde{\psi}_n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fcc9c90d3a7f00d625fc3d3e14eedf6d.svg?invert_in_darkmode&sanitize=true" align=middle width="18.76347pt" height="30.55107pt"/></p>
+transformation, <img alt="<script type="math/tex">T</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f118ee06d05f3c2d98361d9c30e38ce.svg?invert_in_darkmode&sanitize=true" align=middle width="11.84502pt" height="22.38192pt"/>, is defined which relates the stiff one-electron
+wavefunctions <img alt="<script type="math/tex">\psi_n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b13a79228c80e7215dae92bab7edf28d.svg?invert_in_darkmode&sanitize=true" align=middle width="18.76347pt" height="22.74591pt"/> to a set of smooth one-electron wavefunctions
+<img alt="<script type="math/tex">\tilde{\psi}_n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fcc9c90d3a7f00d625fc3d3e14eedf6d.svg?invert_in_darkmode&sanitize=true" align=middle width="18.76347pt" height="30.55107pt"/></p>
 <p><center></p>
-<p><img alt="$\tilde{\psi}_n = T \psi_n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1a3eb7230098a1f7704e75960d236e1a.svg?invert_in_darkmode&sanitize=true" align=middle width="72.14262pt" height="30.55107pt"/></p>
+<p><img alt="<script type="math/tex">\tilde{\psi}_n = T \psi_n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1a3eb7230098a1f7704e75960d236e1a.svg?invert_in_darkmode&sanitize=true" align=middle width="72.14262pt" height="30.55107pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$\psi_n = T^{-1} \tilde{\psi}_n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d60e712a65cbf6e8756e2aa49179f051.svg?invert_in_darkmode&sanitize=true" align=middle width="89.75109pt" height="30.55107pt"/></p>
+<p><img alt="<script type="math/tex">\psi_n = T^{-1} \tilde{\psi}_n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d60e712a65cbf6e8756e2aa49179f051.svg?invert_in_darkmode&sanitize=true" align=middle width="89.75109pt" height="30.55107pt"/></p>
 <p></center></p>
 <p>which can be represented by fairly small plane-wave basis. The
-transformation <img alt="$T$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f118ee06d05f3c2d98361d9c30e38ce.svg?invert_in_darkmode&sanitize=true" align=middle width="11.84502pt" height="22.38192pt"/> is defined using a local PAW basis, which consists
-of atomic orbitals, <img alt="$\varphi{\alpha}^I(\mathbf{r})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/74bd0086a3bdc1567a34307fac0dc58c.svg?invert_in_darkmode&sanitize=true" align=middle width="40.57515pt" height="27.59823pt"/>, 
+transformation <img alt="<script type="math/tex">T</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f118ee06d05f3c2d98361d9c30e38ce.svg?invert_in_darkmode&sanitize=true" align=middle width="11.84502pt" height="22.38192pt"/> is defined using a local PAW basis, which consists
+of atomic orbitals, <img alt="<script type="math/tex">\varphi{\alpha}^I(\mathbf{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/74bd0086a3bdc1567a34307fac0dc58c.svg?invert_in_darkmode&sanitize=true" align=middle width="40.57515pt" height="27.59823pt"/>, 
 smooth atomic
-orbitals, <img alt="$\tilde{\varphi}_{\alpha}^I(\mathbf{r})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5074914e7109591ffd03fd70b2673b18.svg?invert_in_darkmode&sanitize=true" align=middle width="40.615245pt" height="27.59823pt"/> which coincide with
+orbitals, <img alt="<script type="math/tex">\tilde{\varphi}_{\alpha}^I(\mathbf{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5074914e7109591ffd03fd70b2673b18.svg?invert_in_darkmode&sanitize=true" align=middle width="40.615245pt" height="27.59823pt"/> which coincide with
 the atomic orbitals outside a defined atomic sphere, and projector
-functions, <img alt="$p_{\alpha}^I(\mathbf{r})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9f91dd583ac30baa6a15f183e53d7c21.svg?invert_in_darkmode&sanitize=true" align=middle width="38.10147pt" height="27.59823pt"/>. Where I is the atomic index and
+functions, <img alt="<script type="math/tex">p_{\alpha}^I(\mathbf{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9f91dd583ac30baa6a15f183e53d7c21.svg?invert_in_darkmode&sanitize=true" align=middle width="38.10147pt" height="27.59823pt"/>. Where I is the atomic index and
 α is the orbital index. The projector functions are constructed such
 that they are localized within the defined atomic sphere and in addition
 are orthonormal to the atomic orbitals. Blöchl defined the invertible
@@ -635,29 +635,29 @@ the following 15 terms.</p>
 pseudopotential plane-wave program, minus the non-local pseudopotential,
 where</p>
 <p><center></p>
-<p><img alt="$\tilde{E}_{kinetic-pw} = \sum_i \sum_{\mathbf{G}} \frac{|\mathbf{G}|^2}{2} \tilde{\psi}_i^{*}(\mathbf{G}) \tilde{\psi}_i(\mathbf{G})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8f506d88a55dc627eac295f43d272b1f.svg?invert_in_darkmode&sanitize=true" align=middle width="281.516895pt" height="36.42078pt"/></p>
+<p><img alt="<script type="math/tex">\tilde{E}_{kinetic-pw} = \sum_i \sum_{\mathbf{G}} \frac{|\mathbf{G}|^2}{2} \tilde{\psi}_i^{*}(\mathbf{G}) \tilde{\psi}_i(\mathbf{G})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8f506d88a55dc627eac295f43d272b1f.svg?invert_in_darkmode&sanitize=true" align=middle width="281.516895pt" height="36.42078pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$\tilde{E}_{vlocal-pw} = \sum_{\mathbf{G}} \tilde{\rho}(\mathbf{G}) V_{local}(\mathbf{G})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4aec437e3fcb7e03dc6a868a6c8e6e75.svg?invert_in_darkmode&sanitize=true" align=middle width="231.082995pt" height="30.18576pt"/></p>
+<p><img alt="<script type="math/tex">\tilde{E}_{vlocal-pw} = \sum_{\mathbf{G}} \tilde{\rho}(\mathbf{G}) V_{local}(\mathbf{G})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4aec437e3fcb7e03dc6a868a6c8e6e75.svg?invert_in_darkmode&sanitize=true" align=middle width="231.082995pt" height="30.18576pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$\tilde{E}_{Coulomb-pw} = \frac{\Omega}{2} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|} \tilde{\rho}^{*}(\mathbf{G}) \tilde{\rho}(\mathbf{G})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/af889cf26290b2444c71aacebddf820b.svg?invert_in_darkmode&sanitize=true" align=middle width="266.008545pt" height="30.18576pt"/></p>
+<p><img alt="<script type="math/tex">\tilde{E}_{Coulomb-pw} = \frac{\Omega}{2} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|} \tilde{\rho}^{*}(\mathbf{G}) \tilde{\rho}(\mathbf{G})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/af889cf26290b2444c71aacebddf820b.svg?invert_in_darkmode&sanitize=true" align=middle width="266.008545pt" height="30.18576pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$\tilde{E}_{xc-pw} = \frac{\Omega}{N_1 N_2 N_3} \sum_{\mathbf{r}} \tilde{\rho}(\mathbf{r}) \epsilon_{xc}(\tilde{\rho}(\mathbf{r}))$" src="svgs/b3516c11341b2721685de47027419b10.svg?invert_in_darkmode&sanitize=true" align=middle width="250.779045pt" height="30.18576pt"/></p>
+<p><img alt="<script type="math/tex">\tilde{E}_{xc-pw} = \frac{\Omega}{N_1 N_2 N_3} \sum_{\mathbf{r}} \tilde{\rho}(\mathbf{r}) \epsilon_{xc}(\tilde{\rho}(\mathbf{r}))</script>" src="svgs/b3516c11341b2721685de47027419b10.svg?invert_in_darkmode&sanitize=true" align=middle width="250.779045pt" height="30.18576pt"/></p>
 <p></center></p>
-<p><img alt="$E_{ion-ion} = \frac{1}{2\Omega} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|^2} \exp(\frac{|\mathbf{G}|^2}{4\epsilon}) \sum_{I,J} Z_I \exp (-i \mathbf{G} \cdot \mathbf{R}_I) Z_J \exp ( -i  \mathbf{G} \cdot \mathbf{R}_J) \\ + \frac{1}{2}\sum_{\mathbf{a}} \sum_{I,J \in |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} Z_I Z_J \frac{erf(\epsilon |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|)}{|\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} - \frac{\epsilon}{\pi}\sum_I Z_I^2 - \frac{\pi}{2\epsilon^2\Omega} \left( \sum_I Z_I \right)^2 $" src="svgs/0df3a031b119b9a2b3c868b59e78f681.svg?invert_in_darkmode&sanitize=true" align=middle width="714.572595pt" height="60.10323pt"/></p>
-<p>The local potential in the <img alt="$\tilde{E}_{vlocal-pw}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ed7e25bd59dfd54bb862a0196b05c232.svg?invert_in_darkmode&sanitize=true" align=middle width="73.65996pt" height="30.18576pt"/> term is the Fourier
+<p><img alt="<script type="math/tex">E_{ion-ion} = \frac{1}{2\Omega} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|^2} \exp(\frac{|\mathbf{G}|^2}{4\epsilon}) \sum_{I,J} Z_I \exp (-i \mathbf{G} \cdot \mathbf{R}_I) Z_J \exp ( -i  \mathbf{G} \cdot \mathbf{R}_J) \\ + \frac{1}{2}\sum_{\mathbf{a}} \sum_{I,J \in |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} Z_I Z_J \frac{erf(\epsilon |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|)}{|\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} - \frac{\epsilon}{\pi}\sum_I Z_I^2 - \frac{\pi}{2\epsilon^2\Omega} \left( \sum_I Z_I \right)^2 </script>" src="svgs/0df3a031b119b9a2b3c868b59e78f681.svg?invert_in_darkmode&sanitize=true" align=middle width="714.572595pt" height="60.10323pt"/></p>
+<p>The local potential in the <img alt="<script type="math/tex">\tilde{E}_{vlocal-pw}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ed7e25bd59dfd54bb862a0196b05c232.svg?invert_in_darkmode&sanitize=true" align=middle width="73.65996pt" height="30.18576pt"/> term is the Fourier
 transform of</p>
 <p><center></p>
-<p><img alt="$V_{local}(\mathbf{r}) = -\sum_I Z_I \frac{\frac{|\mathbf{r}-\mathbf{R}_I|}{\sigma_I}}{|\mathbf{r}-\mathbf{R}_I|} + v_{ps}^I(|\mathbf{|\mathbf{r}-\mathbf{R}_I|})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1f9c2f2151db8a770069f8a5a9dc6599.svg?invert_in_darkmode&sanitize=true" align=middle width="304.936995pt" height="48.96771pt"/></p>
+<p><img alt="<script type="math/tex">V_{local}(\mathbf{r}) = -\sum_I Z_I \frac{\frac{|\mathbf{r}-\mathbf{R}_I|}{\sigma_I}}{|\mathbf{r}-\mathbf{R}_I|} + v_{ps}^I(|\mathbf{|\mathbf{r}-\mathbf{R}_I|})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1f9c2f2151db8a770069f8a5a9dc6599.svg?invert_in_darkmode&sanitize=true" align=middle width="304.936995pt" height="48.96771pt"/></p>
 <p></center></p>
-<p>It turns out that for many atoms <img alt="$\sigma_I$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9c034260f882e456bbf355fe7fdafe10.svg?invert_in_darkmode&sanitize=true" align=middle width="16.053345pt" height="14.10255pt"/> needs to be fairly small.
-This results in <img alt="$V_{local} (\mathbf{r})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1e432f41caeffa48726fe348135edd39.svg?invert_in_darkmode&sanitize=true" align=middle width="58.81029pt" height="24.56553pt"/> being stiff. However, since
+<p>It turns out that for many atoms <img alt="<script type="math/tex">\sigma_I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9c034260f882e456bbf355fe7fdafe10.svg?invert_in_darkmode&sanitize=true" align=middle width="16.053345pt" height="14.10255pt"/> needs to be fairly small.
+This results in <img alt="<script type="math/tex">V_{local} (\mathbf{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1e432f41caeffa48726fe348135edd39.svg?invert_in_darkmode&sanitize=true" align=middle width="58.81029pt" height="24.56553pt"/> being stiff. However, since
 in the integral above this function is multiplied by a smooth density
-<img alt="$\tilde{\rho}(\mathbf{G})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/305950daa7ae8b7ebefd828bffb6e35f.svg?invert_in_darkmode&sanitize=true" align=middle width="36.044085pt" height="24.56553pt"/> the expansion of <em>V<sub>local</sub>(<strong>G</strong>)</em>
+<img alt="<script type="math/tex">\tilde{\rho}(\mathbf{G})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/305950daa7ae8b7ebefd828bffb6e35f.svg?invert_in_darkmode&sanitize=true" align=middle width="36.044085pt" height="24.56553pt"/> the expansion of <em>V<sub>local</sub>(<strong>G</strong>)</em>
 only needs to be the same as the smooth density. The auxiliary
-pseudoptential <img alt="$v_{ps}^I (|\mathbf{r}-\mathbf{R}_I |)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/68955ed882742db5a988dfd352804c70.svg?invert_in_darkmode&sanitize=true" align=middle width="93.04416pt" height="27.59823pt"/> is defined to
+pseudoptential <img alt="<script type="math/tex">v_{ps}^I (|\mathbf{r}-\mathbf{R}_I |)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/68955ed882742db5a988dfd352804c70.svg?invert_in_darkmode&sanitize=true" align=middle width="93.04416pt" height="27.59823pt"/> is defined to
 be localized within the atomic sphere and is introduced to remove ghost
 states due to local basis set incompleteness.</p>
 <p>The next four terms are atomic based and they essentially take into
@@ -692,37 +692,37 @@ densities.</p>
 </p>
 <p>In the first two formulas the first terms are computed using plane-waves
 and the second terms are computed using Gaussian two center integrals.
-The smooth local potential in the <img alt="$E_{cmp-vloc}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f662a7095d0a4f4c7567d46cf7ceda31.svg?invert_in_darkmode&sanitize=true" align=middle width="70.0392pt" height="22.38192pt"/> term is the Fourier
+The smooth local potential in the <img alt="<script type="math/tex">E_{cmp-vloc}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f662a7095d0a4f4c7567d46cf7ceda31.svg?invert_in_darkmode&sanitize=true" align=middle width="70.0392pt" height="22.38192pt"/> term is the Fourier
 transform
 of</p>
 <p><center></p>
-<p><img alt="$\tilde{V}_{local}(\mathbf{r})=- \sum_I Z_I    \frac{ erf( \frac{ |\mathbf{r}-\mathbf{R}_I | }{\tilde{\sigma}_I })} {|r-R_I |}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1a0d812242e714c4218fa7b300898302.svg?invert_in_darkmode&sanitize=true" align=middle width="216.355095pt" height="48.96771pt"/></p>
+<p><img alt="<script type="math/tex">\tilde{V}_{local}(\mathbf{r})=- \sum_I Z_I    \frac{ erf( \frac{ |\mathbf{r}-\mathbf{R}_I | }{\tilde{\sigma}_I })} {|r-R_I |}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1a0d812242e714c4218fa7b300898302.svg?invert_in_darkmode&sanitize=true" align=middle width="216.355095pt" height="48.96771pt"/></p>
 <p></center></p>
 <p>The stiff and smooth compensation charge densities in the above formula
 are</p>
 <p><center></p>
-<p><img alt="$\rho_{cmp}(r)=\sum_I\sum_{lm} Q_{lm}^I g_{lm}^(\sigma_I ) (r-R_I )$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3eb755504671afe017d10c089812abf5.svg?invert_in_darkmode&sanitize=true" align=middle width="278.545245pt" height="34.27314pt"/></p>
+<p><img alt="<script type="math/tex">\rho_{cmp}(r)=\sum_I\sum_{lm} Q_{lm}^I g_{lm}^(\sigma_I ) (r-R_I )</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3eb755504671afe017d10c089812abf5.svg?invert_in_darkmode&sanitize=true" align=middle width="278.545245pt" height="34.27314pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$\tilde{\rho}_{cmp}(r)=\sum_I \sum_{lm} Q_{lm}^I g_{lm}^(\tilde{\sigma}_I ) (r-R_I )$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/82d5c2a76f9e68c2d3683cbb2e6a9017.svg?invert_in_darkmode&sanitize=true" align=middle width="278.611245pt" height="34.27314pt"/></p>
+<p><img alt="<script type="math/tex">\tilde{\rho}_{cmp}(r)=\sum_I \sum_{lm} Q_{lm}^I g_{lm}^(\tilde{\sigma}_I ) (r-R_I )</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/82d5c2a76f9e68c2d3683cbb2e6a9017.svg?invert_in_darkmode&sanitize=true" align=middle width="278.611245pt" height="34.27314pt"/></p>
 <p></center></p>
 <p>where</p>
 <p><center></p>
-<p><img alt="$Q_{lm}^I = \sum_i \sum_{\alpha\beta} &lt;\tilde{\psi}_i|\tilde{p}_\alpha^I &gt; &lt;\tilde{p}_\beta^I|\tilde{\psi}_i &gt;  \tau_{l_\alpha m_\alpha, l_\beta m_\beta}^{lm} (q_{comp}^I )_{\alpha\beta}^l$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/22f28431631b00f6b1445d5c2f15d179.svg?invert_in_darkmode&sanitize=true" align=middle width="410.314245pt" height="30.55107pt"/></p>
+<p><img alt="<script type="math/tex">Q_{lm}^I = \sum_i \sum_{\alpha\beta} &lt;\tilde{\psi}_i|\tilde{p}_\alpha^I &gt; &lt;\tilde{p}_\beta^I|\tilde{\psi}_i &gt;  \tau_{l_\alpha m_\alpha, l_\beta m_\beta}^{lm} (q_{comp}^I )_{\alpha\beta}^l</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/22f28431631b00f6b1445d5c2f15d179.svg?invert_in_darkmode&sanitize=true" align=middle width="410.314245pt" height="30.55107pt"/></p>
 <p></center></p>
-<p>The decay parameter <img alt="$\sigma_I$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9c034260f882e456bbf355fe7fdafe10.svg?invert_in_darkmode&sanitize=true" align=middle width="16.053345pt" height="14.10255pt"/> is defined the same as above, and
-<img alt="$\tilde{\sigma}_I$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/868716a1beb2c79093e4eceb0dd3946e.svg?invert_in_darkmode&sanitize=true" align=middle width="16.053345pt" height="21.87504pt"/> is defined to be smooth enough in order that ρ̃_cmp (r) and <img alt="$\tilde{V}_{local}(r)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/408502d1bcbe2ef8af49657dd00ed880.svg?invert_in_darkmode&sanitize=true" align=middle width="58.93503pt" height="30.18576pt"/> can readily be expanded in
+<p>The decay parameter <img alt="<script type="math/tex">\sigma_I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9c034260f882e456bbf355fe7fdafe10.svg?invert_in_darkmode&sanitize=true" align=middle width="16.053345pt" height="14.10255pt"/> is defined the same as above, and
+<img alt="<script type="math/tex">\tilde{\sigma}_I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/868716a1beb2c79093e4eceb0dd3946e.svg?invert_in_darkmode&sanitize=true" align=middle width="16.053345pt" height="21.87504pt"/> is defined to be smooth enough in order that ρ̃_cmp (r) and <img alt="<script type="math/tex">\tilde{V}_{local}(r)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/408502d1bcbe2ef8af49657dd00ed880.svg?invert_in_darkmode&sanitize=true" align=middle width="58.93503pt" height="30.18576pt"/> can readily be expanded in
 terms of plane-waves.</p>
 <p>The final three terms are the energies that contain the core
 densities</p>
 <p><center></p>
-<p><img alt="$E_{valence-core}=\sum_i\sum_I\sum_{\alpha \beta}&lt;\tilde{\psi}_i|\tilde{p}_\alpha^I &gt;  (V_{valence-core})_{\alpha \beta}^I &lt;\tilde{p}_\beta^I|\tilde{\psi}_i &gt;$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9fd3923375f91fcd62987cee67cd367f.svg?invert_in_darkmode&sanitize=true" align=middle width="482.714595pt" height="30.55107pt"/></p>
+<p><img alt="<script type="math/tex">E_{valence-core}=\sum_i\sum_I\sum_{\alpha \beta}&lt;\tilde{\psi}_i|\tilde{p}_\alpha^I &gt;  (V_{valence-core})_{\alpha \beta}^I &lt;\tilde{p}_\beta^I|\tilde{\psi}_i &gt;</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9fd3923375f91fcd62987cee67cd367f.svg?invert_in_darkmode&sanitize=true" align=middle width="482.714595pt" height="30.55107pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$E_{kinetic-core}=\sum_c \int_0^\infty [ (\varphi_{n_c l_c}^I (r))^' (\varphi_{n_c l_c}^I (r))^' + l_c (l_c+1)  \frac{\varphi_{n_c l_c}^I (r) \varphi_{n_c l_c}^I (r)}{r^2} ]  dr$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6ccdb6f864b6c62e5aa4419e97773fe1.svg?invert_in_darkmode&sanitize=true" align=middle width="470.012895pt" height="62.7957pt"/></p>
+<p><img alt="<script type="math/tex">E_{kinetic-core}=\sum_c \int_0^\infty [ (\varphi_{n_c l_c}^I (r))^' (\varphi_{n_c l_c}^I (r))^' + l_c (l_c+1)  \frac{\varphi_{n_c l_c}^I (r) \varphi_{n_c l_c}^I (r)}{r^2} ]  dr</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6ccdb6f864b6c62e5aa4419e97773fe1.svg?invert_in_darkmode&sanitize=true" align=middle width="470.012895pt" height="62.7957pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$E_{ion-core}= \sum_I \frac{1}{2} \iint \frac{\rho_c^I (r) \rho_c^I (r')}{|r-r'|}  drdr^' - \int  \frac{\rho_c^I (r)}{|r|}  (Z_I+Z_I^{core} ) dr$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/eaf6a50f69f909c52ce138457f0cb8da.svg?invert_in_darkmode&sanitize=true" align=middle width="392.716995pt" height="47.73054pt"/></p>
+<p><img alt="<script type="math/tex">E_{ion-core}= \sum_I \frac{1}{2} \iint \frac{\rho_c^I (r) \rho_c^I (r')}{|r-r'|}  drdr^' - \int  \frac{\rho_c^I (r)}{|r|}  (Z_I+Z_I^{core} ) dr</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/eaf6a50f69f909c52ce138457f0cb8da.svg?invert_in_darkmode&sanitize=true" align=middle width="392.716995pt" height="47.73054pt"/></p>
 <p></center></p>
 <p>The matrix elements contained in the above formula
 are
@@ -730,25 +730,25 @@ are
 + l_\alpha (l_\alpha+1)  \frac{ \varphi_{n_\alpha l_\alpha}^I (r) \varphi_{n_\beta l_\beta}^I (r) - \tilde{\varphi}_{n_\alpha l_\alpha}^I (r) \tilde{\varphi}_{n_\beta l_\beta}^I (r) \; \; \; \; \; \; \; \; \;  }{r^2 } \right]  dr</script>
 </p>
 <p><center></p>
-<p><img alt="$(u_{atom}^I )_{\alpha \beta} =\frac{Z_I}{4\pi} (V_{comp}^I )_{\alpha \beta}^{l=0} + \frac{2Z_I}{(\sqrt{2\pi} \sigma_I } (q_comp^I )_{\alpha \beta}^(l=0) +\delta_{m_\alpha m_\beta } \delta_{l_\alpha l_\beta } \int_0^{r_{cut}^I} [ \varphi_{n_\alpha l_\alpha}^I (r) \varphi_(n_\beta l_\beta)^I (r) \frac{-Z_I}{r} + \tilde{\varphi}_{n_\alpha l_\alpha}^I (r) \tilde{\varphi}_{n_\beta l_\beta}^I (r) (-v_{ps}^I (r)) ] dr$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c3956550cbb1cea530525ffac2a250c2.svg?invert_in_darkmode&sanitize=true" align=middle width="728.65155pt" height="67.7325pt"/></p>
+<p><img alt="<script type="math/tex">(u_{atom}^I )_{\alpha \beta} =\frac{Z_I}{4\pi} (V_{comp}^I )_{\alpha \beta}^{l=0} + \frac{2Z_I}{(\sqrt{2\pi} \sigma_I } (q_comp^I )_{\alpha \beta}^(l=0) +\delta_{m_\alpha m_\beta } \delta_{l_\alpha l_\beta } \int_0^{r_{cut}^I} [ \varphi_{n_\alpha l_\alpha}^I (r) \varphi_(n_\beta l_\beta)^I (r) \frac{-Z_I}{r} + \tilde{\varphi}_{n_\alpha l_\alpha}^I (r) \tilde{\varphi}_{n_\beta l_\beta}^I (r) (-v_{ps}^I (r)) ] dr</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c3956550cbb1cea530525ffac2a250c2.svg?invert_in_darkmode&sanitize=true" align=middle width="728.65155pt" height="67.7325pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$(V_{Heff}^I )_{\alpha \beta \mu \nu}^l = (V_H^I )_{\alpha\beta\mu\nu}^l - 2(V_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l -(v_g^I )^l (q_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ebbca749223f7e0c738c3aaf6bff0ee.svg?invert_in_darkmode&sanitize=true" align=middle width="535.913895pt" height="27.85299pt"/></p>
+<p><img alt="<script type="math/tex">(V_{Heff}^I )_{\alpha \beta \mu \nu}^l = (V_H^I )_{\alpha\beta\mu\nu}^l - 2(V_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l -(v_g^I )^l (q_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ebbca749223f7e0c738c3aaf6bff0ee.svg?invert_in_darkmode&sanitize=true" align=middle width="535.913895pt" height="27.85299pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$(V_H^I )_{\alpha\beta\mu\nu}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \left( \frac{r_{&lt;}^l}{r_{&gt;}^{l+1} } \right)( \varphi_{n_\alpha l_\alpha } (r) \varphi_{n_\beta l_\beta } (r) \varphi_{n_\mu l_\mu } (r) \varphi_{n_\nu l_\nu } (r) - \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_(n_\beta l_\beta ) (r) \tilde{\varphi}_{n_\mu l_\mu } (r) \tilde{\varphi}_{n_\nu l_\nu } (r) )  drdr'$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ff12fa7251c5bf99929a8e560d9fe29f.svg?invert_in_darkmode&sanitize=true" align=middle width="809.904645pt" height="39.72045pt"/></p>
+<p><img alt="<script type="math/tex">(V_H^I )_{\alpha\beta\mu\nu}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \left( \frac{r_{&lt;}^l}{r_{&gt;}^{l+1} } \right)( \varphi_{n_\alpha l_\alpha } (r) \varphi_{n_\beta l_\beta } (r) \varphi_{n_\mu l_\mu } (r) \varphi_{n_\nu l_\nu } (r) - \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_(n_\beta l_\beta ) (r) \tilde{\varphi}_{n_\mu l_\mu } (r) \tilde{\varphi}_{n_\nu l_\nu } (r) )  drdr'</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ff12fa7251c5bf99929a8e560d9fe29f.svg?invert_in_darkmode&sanitize=true" align=middle width="809.904645pt" height="39.72045pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$(V_{comp}^I )_{\alpha\beta}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_{n_\beta l_\beta } (r) \left( \frac{r_{&lt;}^l}{r_{&gt;}^{l+1} } \right) g_l^I (r')  r'^2  drdr'$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2a90167eda488ad3fbf03ed3ddf701c9.svg?invert_in_darkmode&sanitize=true" align=middle width="476.061795pt" height="39.72045pt"/></p>
+<p><img alt="<script type="math/tex">(V_{comp}^I )_{\alpha\beta}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_{n_\beta l_\beta } (r) \left( \frac{r_{&lt;}^l}{r_{&gt;}^{l+1} } \right) g_l^I (r')  r'^2  drdr'</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2a90167eda488ad3fbf03ed3ddf701c9.svg?invert_in_darkmode&sanitize=true" align=middle width="476.061795pt" height="39.72045pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$(q_{comp}^I )_{\alpha\beta}^l = \int_0^\infty r^l \left( \varphi_{n_\alpha l_\alpha } (r) \varphi_{n_\beta l_\beta } (r)- \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_{n_\beta l_\beta } (r) \right) dr$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/372a5217d6536e226cf320e63a95bf77.svg?invert_in_darkmode&sanitize=true" align=middle width="430.833645pt" height="28.2282pt"/></p>
+<p><img alt="<script type="math/tex">(q_{comp}^I )_{\alpha\beta}^l = \int_0^\infty r^l \left( \varphi_{n_\alpha l_\alpha } (r) \varphi_{n_\beta l_\beta } (r)- \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_{n_\beta l_\beta } (r) \right) dr</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/372a5217d6536e226cf320e63a95bf77.svg?invert_in_darkmode&sanitize=true" align=middle width="430.833645pt" height="28.2282pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$(v_g^I )^l =\frac{4\sqrt{2\pi}}{ (2l+1)(2l+1)!! \sigma_I^{2l+1} }$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/13f02fbbfa62b0975ff9313c9bd5ce5d.svg?invert_in_darkmode&sanitize=true" align=middle width="172.963395pt" height="33.20526pt"/></p>
+<p><img alt="<script type="math/tex">(v_g^I )^l =\frac{4\sqrt{2\pi}}{ (2l+1)(2l+1)!! \sigma_I^{2l+1} }</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/13f02fbbfa62b0975ff9313c9bd5ce5d.svg?invert_in_darkmode&sanitize=true" align=middle width="172.963395pt" height="33.20526pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="$\tau_{l_\alpha m_\alpha,l_\beta m_\beta}^{lm}= \int_0^{2\pi} \int_0^{\pi} T_{lm} (\theta,\phi) T_{l_\alpha m_\alpha } (\theta,\phi) T_{l_\beta m_\beta } (\theta,\phi)  \sin(\theta) d\theta d\phi$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/aa22bd7b752349e96d6a8f4953dd5b90.svg?invert_in_darkmode&sanitize=true" align=middle width="452.729145pt" height="33.132pt"/></p>
+<p><img alt="<script type="math/tex">\tau_{l_\alpha m_\alpha,l_\beta m_\beta}^{lm}= \int_0^{2\pi} \int_0^{\pi} T_{lm} (\theta,\phi) T_{l_\alpha m_\alpha } (\theta,\phi) T_{l_\beta m_\beta } (\theta,\phi)  \sin(\theta) d\theta d\phi</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/aa22bd7b752349e96d6a8f4953dd5b90.svg?invert_in_darkmode&sanitize=true" align=middle width="452.729145pt" height="33.132pt"/></p>
 <p></center></p>
 <h3 id="exchange-correlation-potentials">Exchange-Correlation Potentials<a class="headerlink" href="#exchange-correlation-potentials" title="Permanent link">&para;</a></h3>
 <h4 id="dft-u-corrections">DFT + U Corrections<a class="headerlink" href="#dft-u-corrections" title="Permanent link">&para;</a></h4>
@@ -1233,9 +1233,9 @@ END
     orbitals</li>
 <li><code>output_wavefunctions</code> - name that will point to file containing the
     one-electron orbitals at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass (<img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/>). This
+<li><code>fake_mass</code> - value for the electronic fake mass (<img alt="<script type="math/tex">\mu</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/>). This
     parameter is not presently used in a conjugate gradient simulation</li>
-<li><code>time_step</code> - value for the time step (<img alt="$\Delta t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a63739e01952f6a63389340c037ae29.svg?invert_in_darkmode&sanitize=true" align=middle width="19.56141pt" height="22.38192pt"/>). This parameter
+<li><code>time_step</code> - value for the time step (<img alt="<script type="math/tex">\Delta t</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a63739e01952f6a63389340c037ae29.svg?invert_in_darkmode&sanitize=true" align=middle width="19.56141pt" height="22.38192pt"/>). This parameter
     is not presently used in a conjugate gradient simulation.</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies and tolerances</li>
@@ -1259,7 +1259,7 @@ END
     Note Ewald summation is only used if the simulation_cell is
     periodic.</li>
 </ul>
-<p>Default set to be <img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
+<p>Default set to be <img alt="<script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
@@ -1623,7 +1623,7 @@ END
     Note Ewald summation is only used if the simulation_cell is
     periodic.</li>
 </ul>
-<p>Default set to be <img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
+<p>Default set to be <img alt="<script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE || &hellip;) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
@@ -1827,60 +1827,60 @@ is a powerful, non-equilibrium molecular dynamics method which
 accelerates the sampling of the multidimensional free energy surfaces of
 chemical reactions. This is achieved by adding an external
 time-dependent bias potential that is a function of user defined
-collective variables, <img alt="$\bold{s}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ac1f4e1dab5841b672f5e0b7c71e768.svg?invert_in_darkmode&sanitize=true" align=middle width="7.428762pt" height="14.55729pt"/>. The bias potential discourages the
-system from sampling previously visited values of <img alt="$\bold{s}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ac1f4e1dab5841b672f5e0b7c71e768.svg?invert_in_darkmode&sanitize=true" align=middle width="7.428762pt" height="14.55729pt"/> (i.e.,
-encourages the system to explore new values of <img alt="$\bold{s}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ac1f4e1dab5841b672f5e0b7c71e768.svg?invert_in_darkmode&sanitize=true" align=middle width="7.428762pt" height="14.55729pt"/>). During the
+collective variables, <img alt="<script type="math/tex">\bold{s}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ac1f4e1dab5841b672f5e0b7c71e768.svg?invert_in_darkmode&sanitize=true" align=middle width="7.428762pt" height="14.55729pt"/>. The bias potential discourages the
+system from sampling previously visited values of <img alt="<script type="math/tex">\bold{s}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ac1f4e1dab5841b672f5e0b7c71e768.svg?invert_in_darkmode&sanitize=true" align=middle width="7.428762pt" height="14.55729pt"/> (i.e.,
+encourages the system to explore new values of <img alt="<script type="math/tex">\bold{s}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ac1f4e1dab5841b672f5e0b7c71e768.svg?invert_in_darkmode&sanitize=true" align=middle width="7.428762pt" height="14.55729pt"/>). During the
 simulation the bias potential accumulates in low energy wells which then
 allows the system to cross energy barriers much more quickly than would
-occur in standard dynamics. The collective variable <img alt="$\bold{s}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ac1f4e1dab5841b672f5e0b7c71e768.svg?invert_in_darkmode&sanitize=true" align=middle width="7.428762pt" height="14.55729pt"/> is a
-generic function of the system coordinates, <img alt="$\bold{R}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/88676c53c0045c08c941fe2cd832be75.svg?invert_in_darkmode&sanitize=true" align=middle width="14.125155pt" height="22.473pt"/> (e.g. bond
+occur in standard dynamics. The collective variable <img alt="<script type="math/tex">\bold{s}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ac1f4e1dab5841b672f5e0b7c71e768.svg?invert_in_darkmode&sanitize=true" align=middle width="7.428762pt" height="14.55729pt"/> is a
+generic function of the system coordinates, <img alt="<script type="math/tex">\bold{R}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/88676c53c0045c08c941fe2cd832be75.svg?invert_in_darkmode&sanitize=true" align=middle width="14.125155pt" height="22.473pt"/> (e.g. bond
 distance, bond angle, coordination numbers, etc.) that is capable of
 describing the chemical reaction of interest.
-<img alt="$\bold{s}\left(\bold{R}\right)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc95a580b006c998fc3862504df87633.svg?invert_in_darkmode&sanitize=true" align=middle width="37.05504pt" height="24.56553pt"/> can be regarded as a reaction
+<img alt="<script type="math/tex">\bold{s}\left(\bold{R}\right)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc95a580b006c998fc3862504df87633.svg?invert_in_darkmode&sanitize=true" align=middle width="37.05504pt" height="24.56553pt"/> can be regarded as a reaction
 coordinate if it can distinguish between the reactant, transition, and
 products states, and also capture the kinetics of the reaction.</p>
 <p>The biasing is achieved by “flooding” the energy landscape with
 repulsive Gaussian “hills” centered on the current location of
-<img alt="$\bold{s}\left(\bold{R}\right)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc95a580b006c998fc3862504df87633.svg?invert_in_darkmode&sanitize=true" align=middle width="37.05504pt" height="24.56553pt"/> at a constant time interval
-<img alt="$\Delta t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a63739e01952f6a63389340c037ae29.svg?invert_in_darkmode&sanitize=true" align=middle width="19.56141pt" height="22.38192pt"/>. If the height of the Gaussians is constant in time then we
+<img alt="<script type="math/tex">\bold{s}\left(\bold{R}\right)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc95a580b006c998fc3862504df87633.svg?invert_in_darkmode&sanitize=true" align=middle width="37.05504pt" height="24.56553pt"/> at a constant time interval
+<img alt="<script type="math/tex">\Delta t</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a63739e01952f6a63389340c037ae29.svg?invert_in_darkmode&sanitize=true" align=middle width="19.56141pt" height="22.38192pt"/>. If the height of the Gaussians is constant in time then we
 have standard metadynamics; if the heights vary (slowly decreased) over
 time then we have well-tempered metadynamics. In between the addition of
 Gaussians, the system is propagated by normal (but out of equilibrium)
-dynamics. Suppose that the dimension of the collective space is <img alt="$d$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2103f85b8b1477f430fc407cad462224.svg?invert_in_darkmode&sanitize=true" align=middle width="8.524065pt" height="22.74591pt"/>,
+dynamics. Suppose that the dimension of the collective space is <img alt="<script type="math/tex">d</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2103f85b8b1477f430fc407cad462224.svg?invert_in_darkmode&sanitize=true" align=middle width="8.524065pt" height="22.74591pt"/>,
 i.e.
-<img alt="$\bold{s}\left(\bold{R}\right)=\left\{s_1\left(\bold{R}\right),s_2\left(\bold{R}\right),\ldots,s_d\left(\bold{R}\right)\right\}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/48c11959e32b7d6c14bacefa2825cad1.svg?invert_in_darkmode&sanitize=true" align=middle width="259.225395pt" height="24.56553pt"/>
-and that prior to any time <img alt="$t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4f4f4e395762a3af4575de74c019ebb5.svg?invert_in_darkmode&sanitize=true" align=middle width="5.913963pt" height="20.1465pt"/> during the simulation, <img alt="$N +1$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ee9f6cc10642a33f4191e28713116513.svg?invert_in_darkmode&sanitize=true" align=middle width="43.182645pt" height="22.38192pt"/>
+<img alt="<script type="math/tex">\bold{s}\left(\bold{R}\right)=\left\{s_1\left(\bold{R}\right),s_2\left(\bold{R}\right),\ldots,s_d\left(\bold{R}\right)\right\}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/48c11959e32b7d6c14bacefa2825cad1.svg?invert_in_darkmode&sanitize=true" align=middle width="259.225395pt" height="24.56553pt"/>
+and that prior to any time <img alt="<script type="math/tex">t</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4f4f4e395762a3af4575de74c019ebb5.svg?invert_in_darkmode&sanitize=true" align=middle width="5.913963pt" height="20.1465pt"/> during the simulation, <img alt="<script type="math/tex">N +1</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ee9f6cc10642a33f4191e28713116513.svg?invert_in_darkmode&sanitize=true" align=middle width="43.182645pt" height="22.38192pt"/>
 Gaussians centered on 
-<img alt="$\bold{S}^{t_g}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d50809746605bae17ac22ee2985f51b4.svg?invert_in_darkmode&sanitize=true" align=middle width="21.44076pt" height="26.03337pt"/>
+<img alt="<script type="math/tex">\bold{S}^{t_g}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d50809746605bae17ac22ee2985f51b4.svg?invert_in_darkmode&sanitize=true" align=middle width="21.44076pt" height="26.03337pt"/>
 are deposited along the
-trajectory of <img alt="$\bold{s}\left(\bold{R}\right)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc95a580b006c998fc3862504df87633.svg?invert_in_darkmode&sanitize=true" align=middle width="37.05504pt" height="24.56553pt"/> at times
-<img alt="$t_g = 0, \Delta t, 2\Delta t, \ldots ,N\Delta t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d494fcac6fb74e9eb5e8b51ea1efd390.svg?invert_in_darkmode&sanitize=true" align=middle width="176.515845pt" height="22.38192pt"/>. Then, the value of
-the bias potential, <img alt="$V$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a9a3a4a202d80326bda413b5562d5cd1.svg?invert_in_darkmode&sanitize=true" align=middle width="13.192575pt" height="22.38192pt"/>, at an arbitrary point,
-<img alt="$\bold{s}\left(\bold{R}\right)=\left\{s_1\left(\bold{R}\right),s_2\left(\bold{R}\right),\ldots,s_d\left(\bold{R}\right)\right\}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/48c11959e32b7d6c14bacefa2825cad1.svg?invert_in_darkmode&sanitize=true" align=middle width="259.225395pt" height="24.56553pt"/>,
-along the trajectory of <img alt="$\bold{s}\left(\bold{R}\right)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc95a580b006c998fc3862504df87633.svg?invert_in_darkmode&sanitize=true" align=middle width="37.05504pt" height="24.56553pt"/> at time <img alt="$t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4f4f4e395762a3af4575de74c019ebb5.svg?invert_in_darkmode&sanitize=true" align=middle width="5.913963pt" height="20.1465pt"/>
+trajectory of <img alt="<script type="math/tex">\bold{s}\left(\bold{R}\right)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc95a580b006c998fc3862504df87633.svg?invert_in_darkmode&sanitize=true" align=middle width="37.05504pt" height="24.56553pt"/> at times
+<img alt="<script type="math/tex">t_g = 0, \Delta t, 2\Delta t, \ldots ,N\Delta t</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d494fcac6fb74e9eb5e8b51ea1efd390.svg?invert_in_darkmode&sanitize=true" align=middle width="176.515845pt" height="22.38192pt"/>. Then, the value of
+the bias potential, <img alt="<script type="math/tex">V</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a9a3a4a202d80326bda413b5562d5cd1.svg?invert_in_darkmode&sanitize=true" align=middle width="13.192575pt" height="22.38192pt"/>, at an arbitrary point,
+<img alt="<script type="math/tex">\bold{s}\left(\bold{R}\right)=\left\{s_1\left(\bold{R}\right),s_2\left(\bold{R}\right),\ldots,s_d\left(\bold{R}\right)\right\}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/48c11959e32b7d6c14bacefa2825cad1.svg?invert_in_darkmode&sanitize=true" align=middle width="259.225395pt" height="24.56553pt"/>,
+along the trajectory of <img alt="<script type="math/tex">\bold{s}\left(\bold{R}\right)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc95a580b006c998fc3862504df87633.svg?invert_in_darkmode&sanitize=true" align=middle width="37.05504pt" height="24.56553pt"/> at time <img alt="<script type="math/tex">t</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4f4f4e395762a3af4575de74c019ebb5.svg?invert_in_darkmode&sanitize=true" align=middle width="5.913963pt" height="20.1465pt"/>
 is given
 by</p>
 <p>
 <script type="math/tex; mode=display">V_{meta}\left(\pmb{s},t\right) = \sum_{t_g=0}^{t_g<} W(t) \exp\left(-\sum_{i=1}^{d}\frac{({s_i}-{s_i}^{t_g})^2}{2\sigma_i^2}\right)</script>
 </p>
 <p>where
-<img alt="$W(t)=W_0 \exp\left(-\frac{V_{meta}\left(\bold{s},t-\Delta t\right)}{k_B T_{tempered}}\right)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b6380e48009b8ba62daa7b38a4b38831.svg?invert_in_darkmode&sanitize=true" align=middle width="234.305445pt" height="37.80348pt"/>
-is the time-dependent Gaussian height. <img alt="$\sigma_i \,(i=1,2,\ldots,d)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6a4feb4eaf24154e2dbf69ee77dc37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="126.50517pt" height="24.56553pt"/>
-and <img alt="$W_0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e0ab31cb9c791e75fc086f61bfb584f8.svg?invert_in_darkmode&sanitize=true" align=middle width="21.995325pt" height="22.38192pt"/> are width and initial height respectively of Gaussians, and
-<img alt="$T_{tempered}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c171d6d6a35960b377dc402f1c0752cf.svg?invert_in_darkmode&sanitize=true" align=middle width="64.78296pt" height="22.38192pt"/>
+<img alt="<script type="math/tex">W(t)=W_0 \exp\left(-\frac{V_{meta}\left(\bold{s},t-\Delta t\right)}{k_B T_{tempered}}\right)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b6380e48009b8ba62daa7b38a4b38831.svg?invert_in_darkmode&sanitize=true" align=middle width="234.305445pt" height="37.80348pt"/>
+is the time-dependent Gaussian height. <img alt="<script type="math/tex">\sigma_i \,(i=1,2,\ldots,d)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6a4feb4eaf24154e2dbf69ee77dc37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="126.50517pt" height="24.56553pt"/>
+and <img alt="<script type="math/tex">W_0</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e0ab31cb9c791e75fc086f61bfb584f8.svg?invert_in_darkmode&sanitize=true" align=middle width="21.995325pt" height="22.38192pt"/> are width and initial height respectively of Gaussians, and
+<img alt="<script type="math/tex">T_{tempered}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c171d6d6a35960b377dc402f1c0752cf.svg?invert_in_darkmode&sanitize=true" align=middle width="64.78296pt" height="22.38192pt"/>
 is the tempered metadynamics temperature.
-<img alt="$T_{tempered}=0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc97e81aef93d0c15221d229b5a795ff.svg?invert_in_darkmode&sanitize=true" align=middle width="95.86896pt" height="22.38192pt"/>
+<img alt="<script type="math/tex">T_{tempered}=0</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fc97e81aef93d0c15221d229b5a795ff.svg?invert_in_darkmode&sanitize=true" align=middle width="95.86896pt" height="22.38192pt"/>
 corresponds to standard molecular dynamics because
-<img alt="$W(t)=0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b2bf00c013c2220b61f833468d71e1b5.svg?invert_in_darkmode&sanitize=true" align=middle width="66.460185pt" height="24.56553pt"/>
-and therfore there is no bias. <img alt="$T_{tempered}=\infty$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0d51bc543d9e21b68ced229d5732fca1.svg?invert_in_darkmode&sanitize=true" align=middle width="104.057415pt" height="22.38192pt"/>
+<img alt="<script type="math/tex">W(t)=0</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b2bf00c013c2220b61f833468d71e1b5.svg?invert_in_darkmode&sanitize=true" align=middle width="66.460185pt" height="24.56553pt"/>
+and therfore there is no bias. <img alt="<script type="math/tex">T_{tempered}=\infty</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0d51bc543d9e21b68ced229d5732fca1.svg?invert_in_darkmode&sanitize=true" align=middle width="104.057415pt" height="22.38192pt"/>
 corresponds to standard metadynamics since in this case
-<img alt="$W(t)=W_0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d58716ccf76b6173a819a3ce8284f153.svg?invert_in_darkmode&sanitize=true" align=middle width="80.26689pt" height="24.56553pt"/>=constant. A positive, finite value of <img alt="$T_{tempered}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c171d6d6a35960b377dc402f1c0752cf.svg?invert_in_darkmode&sanitize=true" align=middle width="64.78296pt" height="22.38192pt"/> (eg.
-<img alt="$T_{tempered}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c171d6d6a35960b377dc402f1c0752cf.svg?invert_in_darkmode&sanitize=true" align=middle width="64.78296pt" height="22.38192pt"/> &gt;=1500 K) corresponds to <em>well-tempered</em> metadynamics in which  <script type="math/tex">0 < W(t)\le W_0</script>.</p>
-<p>For sufficiently large <img alt="$t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4f4f4e395762a3af4575de74c019ebb5.svg?invert_in_darkmode&sanitize=true" align=middle width="5.913963pt" height="20.1465pt"/>, the history potential
-<img alt="$V_{meta}\left(\bold{s},t\right)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/392e208085b8f9af761c4619c8dcf343.svg?invert_in_darkmode&sanitize=true" align=middle width="76.505715pt" height="24.56553pt"/> will nearly flatten the free energy
-surface, <img alt="$F(\bold{s})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/063f008708730bb84ce011fd262fe8c6.svg?invert_in_darkmode&sanitize=true" align=middle width="32.98086pt" height="24.56553pt"/>, along <img alt="$\bold{S}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7ff7f7f69e6fa5b699da44dd00bd6af0.svg?invert_in_darkmode&sanitize=true" align=middle width="10.46298pt" height="22.473pt"/> and an unbiased estimator
+<img alt="<script type="math/tex">W(t)=W_0</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d58716ccf76b6173a819a3ce8284f153.svg?invert_in_darkmode&sanitize=true" align=middle width="80.26689pt" height="24.56553pt"/>=constant. A positive, finite value of <img alt="<script type="math/tex">T_{tempered}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c171d6d6a35960b377dc402f1c0752cf.svg?invert_in_darkmode&sanitize=true" align=middle width="64.78296pt" height="22.38192pt"/> (eg.
+<img alt="<script type="math/tex">T_{tempered}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c171d6d6a35960b377dc402f1c0752cf.svg?invert_in_darkmode&sanitize=true" align=middle width="64.78296pt" height="22.38192pt"/> &gt;=1500 K) corresponds to <em>well-tempered</em> metadynamics in which  <script type="math/tex">0 < W(t)\le W_0</script>.</p>
+<p>For sufficiently large <img alt="<script type="math/tex">t</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/4f4f4e395762a3af4575de74c019ebb5.svg?invert_in_darkmode&sanitize=true" align=middle width="5.913963pt" height="20.1465pt"/>, the history potential
+<img alt="<script type="math/tex">V_{meta}\left(\bold{s},t\right)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/392e208085b8f9af761c4619c8dcf343.svg?invert_in_darkmode&sanitize=true" align=middle width="76.505715pt" height="24.56553pt"/> will nearly flatten the free energy
+surface, <img alt="<script type="math/tex">F(\bold{s})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/063f008708730bb84ce011fd262fe8c6.svg?invert_in_darkmode&sanitize=true" align=middle width="32.98086pt" height="24.56553pt"/>, along <img alt="<script type="math/tex">\bold{S}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/7ff7f7f69e6fa5b699da44dd00bd6af0.svg?invert_in_darkmode&sanitize=true" align=middle width="10.46298pt" height="22.473pt"/> and an unbiased estimator
 of F(s) is given by</p>
-<p><img alt="$F(\bold{s}) = -\left(1+\frac{T}{T_{tempered}}\right)\lim_{t \to \infty} V_{meta}(\bold{s},t)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/76a69f25685ddfb910031c5a10b6fb10.svg?invert_in_darkmode&sanitize=true" align=middle width="314.238045pt" height="37.80348pt"/></p>
+<p><img alt="<script type="math/tex">F(\bold{s}) = -\left(1+\frac{T}{T_{tempered}}\right)\lim_{t \to \infty} V_{meta}(\bold{s},t)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/76a69f25685ddfb910031c5a10b6fb10.svg?invert_in_darkmode&sanitize=true" align=middle width="314.238045pt" height="37.80348pt"/></p>
 <h4 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h4>
 <p>Input to a metadynamics simulation is contained within the METADYNAMICS
 sub-block. Listed below is the the format of a METADYNAMICS
@@ -1941,71 +1941,71 @@ END
 <h4 id="input_1">Input<a class="headerlink" href="#input_1" title="Permanent link">&para;</a></h4>
 <h3 id="collective-variables">Collective Variables<a class="headerlink" href="#collective-variables" title="Permanent link">&para;</a></h3>
 <h4 id="bond-distance-collective-variable">Bond Distance Collective Variable<a class="headerlink" href="#bond-distance-collective-variable" title="Permanent link">&para;</a></h4>
-<p>This describes the bond distance between any pair of atoms <img alt="$i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> and
-<img alt="$j$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/36b5afebdba34564d884d347484ac0c7.svg?invert_in_darkmode&sanitize=true" align=middle width="7.6816575pt" height="21.60213pt"/>:</p>
-<p><img alt="$s\left(r_{ij}\right) = \left \vert \bold{r}_{i}-\bold{r}_j\right\vert = r_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/762bbee86acf8585c59ad9d10c3085cd.svg?invert_in_darkmode&sanitize=true" align=middle width="161.231895pt" height="24.56553pt"/></p>
+<p>This describes the bond distance between any pair of atoms <img alt="<script type="math/tex">i</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> and
+<img alt="<script type="math/tex">j</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/36b5afebdba34564d884d347484ac0c7.svg?invert_in_darkmode&sanitize=true" align=middle width="7.6816575pt" height="21.60213pt"/>:</p>
+<p><img alt="<script type="math/tex">s\left(r_{ij}\right) = \left \vert \bold{r}_{i}-\bold{r}_j\right\vert = r_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/762bbee86acf8585c59ad9d10c3085cd.svg?invert_in_darkmode&sanitize=true" align=middle width="161.231895pt" height="24.56553pt"/></p>
 <h4 id="angle-collective-variable">Angle Collective Variable<a class="headerlink" href="#angle-collective-variable" title="Permanent link">&para;</a></h4>
-<p>This describes the bond angle formed at <img alt="$i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> by the triplet <script type="math/tex"><ijk></script>
+<p>This describes the bond angle formed at <img alt="<script type="math/tex">i</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> by the triplet <script type="math/tex"><ijk></script>
 </p>
 <p>
 <script type="math/tex; mode=display">s\left(r_{ij},r_{ik}\right) = \frac{\pmb{r}_{ij}\cdot\pmb{r}_{ik}}{r_{ij}r_{ik}}</script>
 </p>
 <h4 id="coordination-collective-variable">Coordination Collective Variable<a class="headerlink" href="#coordination-collective-variable" title="Permanent link">&para;</a></h4>
 <p>The coordination number collective variable is defined as</p>
-<p><img alt="$s\left(r_{ij},r_{0}\right) =\sum_{i,j}\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c5bdbbe7fc39d51bb9d6f9ab718cbcf7.svg?invert_in_darkmode&sanitize=true" align=middle width="139.61475pt" height="24.65793pt"/></p>
-<p>where the summation over <img alt="$i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> and <img alt="$j$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/36b5afebdba34564d884d347484ac0c7.svg?invert_in_darkmode&sanitize=true" align=middle width="7.6816575pt" height="21.60213pt"/> runs over two types of atoms,
-<img alt="$\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> is the <em>weighting function</em>, and <img alt="$r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/> is the cut-off
+<p><img alt="<script type="math/tex">s\left(r_{ij},r_{0}\right) =\sum_{i,j}\xi_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c5bdbbe7fc39d51bb9d6f9ab718cbcf7.svg?invert_in_darkmode&sanitize=true" align=middle width="139.61475pt" height="24.65793pt"/></p>
+<p>where the summation over <img alt="<script type="math/tex">i</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> and <img alt="<script type="math/tex">j</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/36b5afebdba34564d884d347484ac0c7.svg?invert_in_darkmode&sanitize=true" align=middle width="7.6816575pt" height="21.60213pt"/> runs over two types of atoms,
+<img alt="<script type="math/tex">\xi_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> is the <em>weighting function</em>, and <img alt="<script type="math/tex">r_{0}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/> is the cut-off
 distance. In the standard procedure for computing the coordination
-number, <img alt="$\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> =1 if <img alt="$r_{ij}&amp;lt;r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/70c5fddc4b0f648ba5d4cc8f918c0990.svg?invert_in_darkmode&sanitize=true" align=middle width="51.295365pt" height="22.74591pt"/>, otherwise 
-<img alt="$\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> =0,
-implying that <img alt="$\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> is not continuous when 
-<img alt="$r_{ij}=r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5f9111eb45cfbada3002d54aa5a1632d.svg?invert_in_darkmode&sanitize=true" align=middle width="54.752445pt" height="14.10255pt"/>. To
+number, <img alt="<script type="math/tex">\xi_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> =1 if <img alt="<script type="math/tex">r_{ij}&amp;lt;r_{0}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/70c5fddc4b0f648ba5d4cc8f918c0990.svg?invert_in_darkmode&sanitize=true" align=middle width="51.295365pt" height="22.74591pt"/>, otherwise 
+<img alt="<script type="math/tex">\xi_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> =0,
+implying that <img alt="<script type="math/tex">\xi_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> is not continuous when 
+<img alt="<script type="math/tex">r_{ij}=r_{0}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5f9111eb45cfbada3002d54aa5a1632d.svg?invert_in_darkmode&sanitize=true" align=middle width="54.752445pt" height="14.10255pt"/>. To
 ensure a smooth and continuous definition of the coordination number, we
 adopt two variants of the weighting function. The first variant
 is</p>
-<p><img alt="$\xi_{ij} = \frac{1-\left(r_{ij}/r_{0}\right)^n}{1-\left(r_{ij}/r_{0}\right)^m}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f3601f11912ffe438c9e1ba76f363c68.svg?invert_in_darkmode&sanitize=true" align=middle width="116.48505pt" height="33.8712pt"/></p>
-<p>where <img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> and <img alt="$m$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e51a2dede42189d77627c4d742822c3.svg?invert_in_darkmode&sanitize=true" align=middle width="14.379255pt" height="14.10255pt"/> are integers (m &gt; n) chosen such that
-<img alt="$\xi_{ij}\approx 1$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/84700304a3d7acf0008cfbe96f43964d.svg?invert_in_darkmode&sanitize=true" align=middle width="48.800565pt" height="22.74591pt"/> when
+<p><img alt="<script type="math/tex">\xi_{ij} = \frac{1-\left(r_{ij}/r_{0}\right)^n}{1-\left(r_{ij}/r_{0}\right)^m}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f3601f11912ffe438c9e1ba76f363c68.svg?invert_in_darkmode&sanitize=true" align=middle width="116.48505pt" height="33.8712pt"/></p>
+<p>where <img alt="<script type="math/tex">n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> and <img alt="<script type="math/tex">m</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e51a2dede42189d77627c4d742822c3.svg?invert_in_darkmode&sanitize=true" align=middle width="14.379255pt" height="14.10255pt"/> are integers (m &gt; n) chosen such that
+<img alt="<script type="math/tex">\xi_{ij}\approx 1</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/84700304a3d7acf0008cfbe96f43964d.svg?invert_in_darkmode&sanitize=true" align=middle width="48.800565pt" height="22.74591pt"/> when
 <script type="math/tex">r_{ij}<r_{0}</script>  and
-<img alt="$\xi_{ij}\rightarrow 0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/75a2aa9692825f1c8a743993e42c61ac.svg?invert_in_darkmode&sanitize=true" align=middle width="52.43997pt" height="22.74591pt"/> when <img alt="$r_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/92e0822b1528090efc2435d2ae60c9ee.svg?invert_in_darkmode&sanitize=true" align=middle width="18.103965pt" height="14.10255pt"/> is much larger than <img alt="$r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/>.
+<img alt="<script type="math/tex">\xi_{ij}\rightarrow 0</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/75a2aa9692825f1c8a743993e42c61ac.svg?invert_in_darkmode&sanitize=true" align=middle width="52.43997pt" height="22.74591pt"/> when <img alt="<script type="math/tex">r_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/92e0822b1528090efc2435d2ae60c9ee.svg?invert_in_darkmode&sanitize=true" align=middle width="18.103965pt" height="14.10255pt"/> is much larger than <img alt="<script type="math/tex">r_{0}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/>.
 For example, the parameters of the O-H coordination in water is well
-described by <img alt="$r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/> =1.6 Å, 
-<img alt="$n=6$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/600979b5b6b2bf60cc96e3ebb182b871.svg?invert_in_darkmode&sanitize=true" align=middle width="39.88842pt" height="21.10812pt"/>
-and <img alt="$m=18$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f05a0a759783bdcc5e02151882f0db17.svg?invert_in_darkmode&sanitize=true" align=middle width="52.62609pt" height="21.10812pt"/>. 
-In practice, <img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/>
-and <img alt="$m$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e51a2dede42189d77627c4d742822c3.svg?invert_in_darkmode&sanitize=true" align=middle width="14.379255pt" height="14.10255pt"/> must tuned for a given <img alt="$r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/> to ensure that <img alt="$\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/>
+described by <img alt="<script type="math/tex">r_{0}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/> =1.6 Å, 
+<img alt="<script type="math/tex">n=6</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/600979b5b6b2bf60cc96e3ebb182b871.svg?invert_in_darkmode&sanitize=true" align=middle width="39.88842pt" height="21.10812pt"/>
+and <img alt="<script type="math/tex">m=18</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f05a0a759783bdcc5e02151882f0db17.svg?invert_in_darkmode&sanitize=true" align=middle width="52.62609pt" height="21.10812pt"/>. 
+In practice, <img alt="<script type="math/tex">n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/>
+and <img alt="<script type="math/tex">m</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e51a2dede42189d77627c4d742822c3.svg?invert_in_darkmode&sanitize=true" align=middle width="14.379255pt" height="14.10255pt"/> must tuned for a given <img alt="<script type="math/tex">r_{0}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/> to ensure that <img alt="<script type="math/tex">\xi_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/>
 is smooth and satisfies the above mentioned properties, particularly the
-large <img alt="$r_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/92e0822b1528090efc2435d2ae60c9ee.svg?invert_in_darkmode&sanitize=true" align=middle width="18.103965pt" height="14.10255pt"/></p>
+large <img alt="<script type="math/tex">r_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/92e0822b1528090efc2435d2ae60c9ee.svg?invert_in_darkmode&sanitize=true" align=middle width="18.103965pt" height="14.10255pt"/></p>
 <p>The second form of the weighting function, which is due to Sprik, is</p>
-<p><img alt="$\xi_{ij}=\frac{1}{1 + \exp\left[n\left(r_{ij}-r_{0}\right)\right]}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/dad6ece196b905622d4e51f840a6bd2a.svg?invert_in_darkmode&sanitize=true" align=middle width="144.506505pt" height="27.72033pt"/></p>
-<p>In this definition <img alt="$\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> is analogous to the Fermi function and
-its width is controlled by the parameter <img alt="$\frac{1}{n}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/179b80cc86f52ed7205e115c2a3ddc1b.svg?invert_in_darkmode&sanitize=true" align=middle width="8.126085pt" height="27.72033pt"/>. Large and
-small values of <img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> respectively correspond to sharp and soft
-transitions at <img alt="$r_{ij} = r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/603ddac5711cb486f42d9f3bb061b1e6.svg?invert_in_darkmode&sanitize=true" align=middle width="54.752445pt" height="14.10255pt"/>. 
-Furthermore <img alt="$\xi_{ij}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> should
+<p><img alt="<script type="math/tex">\xi_{ij}=\frac{1}{1 + \exp\left[n\left(r_{ij}-r_{0}\right)\right]}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/dad6ece196b905622d4e51f840a6bd2a.svg?invert_in_darkmode&sanitize=true" align=middle width="144.506505pt" height="27.72033pt"/></p>
+<p>In this definition <img alt="<script type="math/tex">\xi_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> is analogous to the Fermi function and
+its width is controlled by the parameter <img alt="<script type="math/tex">\frac{1}{n}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/179b80cc86f52ed7205e115c2a3ddc1b.svg?invert_in_darkmode&sanitize=true" align=middle width="8.126085pt" height="27.72033pt"/>. Large and
+small values of <img alt="<script type="math/tex">n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> respectively correspond to sharp and soft
+transitions at <img alt="<script type="math/tex">r_{ij} = r_{0}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/603ddac5711cb486f42d9f3bb061b1e6.svg?invert_in_darkmode&sanitize=true" align=middle width="54.752445pt" height="14.10255pt"/>. 
+Furthermore <img alt="<script type="math/tex">\xi_{ij}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bde59bc86fe700f4e70a89734832be39.svg?invert_in_darkmode&sanitize=true" align=middle width="17.880225pt" height="22.74591pt"/> should
 approach 1 and 0 when <script type="math/tex">r_{ij} < 0</script>
 and
 <script type="math/tex">r_{ij} < r_0 </script>
 respectively. In practice 
-<img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> =6-10 Å 
-<img alt="$^{-1}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2351d2e88576cfc62e0f3db8a8ab779c.svg?invert_in_darkmode&sanitize=true" align=middle width="16.76367pt" height="26.70657pt"/>. 
+<img alt="<script type="math/tex">n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> =6-10 Å 
+<img alt="<script type="math/tex">^{-1}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2351d2e88576cfc62e0f3db8a8ab779c.svg?invert_in_darkmode&sanitize=true" align=middle width="16.76367pt" height="26.70657pt"/>. 
 For example, a good set
-of parameters of the O-H coordination in water is <img alt="$r_{0}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/> =1.4 Å and
-<img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> =10 Å <img alt="$^{-1}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2351d2e88576cfc62e0f3db8a8ab779c.svg?invert_in_darkmode&sanitize=true" align=middle width="16.76367pt" height="26.70657pt"/>.</p>
+of parameters of the O-H coordination in water is <img alt="<script type="math/tex">r_{0}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/14cf9c352461f38102beb9f9c5157738.svg?invert_in_darkmode&sanitize=true" align=middle width="13.91676pt" height="14.10255pt"/> =1.4 Å and
+<img alt="<script type="math/tex">n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/> =10 Å <img alt="<script type="math/tex">^{-1}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2351d2e88576cfc62e0f3db8a8ab779c.svg?invert_in_darkmode&sanitize=true" align=middle width="16.76367pt" height="26.70657pt"/>.</p>
 <h4 id="n-plane-collective-variable">N-Plane Collective Variable<a class="headerlink" href="#n-plane-collective-variable" title="Permanent link">&para;</a></h4>
 <p>The N-Plane collective variable is useful for probing the adsorption of
 adatom/admolecules to a surface. It is defined as the <em>average distance</em>
 of the adatom/admolecule from a given layer in the slab along the
 surface normal:</p>
-<p><img alt="$s = Z_{ads}-\frac{1}{N_{plane}}\sum_{i=1}^{N_{plane}}Z_i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/21585c657d6e7a7bc667ba9140327eba.svg?invert_in_darkmode&sanitize=true" align=middle width="206.042595pt" height="33.6765pt"/></p>
-<p>where <img alt="$Z_{ads}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/79893c344f6963e41e3e8f21bafa8ed4.svg?invert_in_darkmode&sanitize=true" align=middle width="31.28202pt" height="22.38192pt"/> denotes the position of the adatom/admolecule/impurity
+<p><img alt="<script type="math/tex">s = Z_{ads}-\frac{1}{N_{plane}}\sum_{i=1}^{N_{plane}}Z_i</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/21585c657d6e7a7bc667ba9140327eba.svg?invert_in_darkmode&sanitize=true" align=middle width="206.042595pt" height="33.6765pt"/></p>
+<p>where <img alt="<script type="math/tex">Z_{ads}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/79893c344f6963e41e3e8f21bafa8ed4.svg?invert_in_darkmode&sanitize=true" align=middle width="31.28202pt" height="22.38192pt"/> denotes the position of the adatom/admolecule/impurity
 along the surface normal (here, we assume the surface normal to be the
 z-axis) and the summation over 
-<img alt="$i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> 
+<img alt="<script type="math/tex">i</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/77a3b857d53fb44e33b53e4c8b68351a.svg?invert_in_darkmode&sanitize=true" align=middle width="5.642109pt" height="21.60213pt"/> 
 runs over 
-<img alt="$N_{plane}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9fec83962e01db7093a670f089a6a7e1.svg?invert_in_darkmode&sanitize=true" align=middle width="45.530925pt" height="22.38192pt"/> 
+<img alt="<script type="math/tex">N_{plane}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9fec83962e01db7093a670f089a6a7e1.svg?invert_in_darkmode&sanitize=true" align=middle width="45.530925pt" height="22.38192pt"/> 
 atoms at
-<img alt="$Z_i$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ed35373880183d013fc1bba898b2e3ae.svg?invert_in_darkmode&sanitize=true" align=middle width="15.813105pt" height="22.38192pt"/> which form the layer. The layer could be on the face or in the
+<img alt="<script type="math/tex">Z_i</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ed35373880183d013fc1bba898b2e3ae.svg?invert_in_darkmode&sanitize=true" align=middle width="15.813105pt" height="22.38192pt"/> which form the layer. The layer could be on the face or in the
 interior of the
 slab.</p>
 <h4 id="user-defined-collective-variable">User defined Collective Variable<a class="headerlink" href="#user-defined-collective-variable" title="Permanent link">&para;</a></h4>
@@ -2095,7 +2095,7 @@ sub-block.</p>
     Note Ewald summation is only used if the simulation_cell is
     periodic.</li>
 </ul>
-<p>Default set to be <img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
+<p>Default set to be <img alt="<script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE || &hellip;) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
@@ -2142,9 +2142,9 @@ input in detail.</p>
 </ul>
 <p>Alternatively, instead of explicitly entering lattice vectors, users can
 enter the unit cell using the standard cell parameters, a, b, c,
-<img alt="$\alpha$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width="10.537065pt" height="14.10255pt"/>,
-<img alt="$\beta$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8217ed3c32a785f0b5aad4055f432ad8.svg?invert_in_darkmode&sanitize=true" align=middle width="10.1277pt" height="22.74591pt"/>, 
-and <img alt="$\gamma$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/11c596de17c342edeed29f489aa4b274.svg?invert_in_darkmode&sanitize=true" align=middle width="9.388665pt" height="14.10255pt"/>, by using the LATTICE block. The
+<img alt="<script type="math/tex">\alpha</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c745b9b57c145ec5577b82542b2df546.svg?invert_in_darkmode&sanitize=true" align=middle width="10.537065pt" height="14.10255pt"/>,
+<img alt="<script type="math/tex">\beta</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8217ed3c32a785f0b5aad4055f432ad8.svg?invert_in_darkmode&sanitize=true" align=middle width="10.1277pt" height="22.74591pt"/>, 
+and <img alt="<script type="math/tex">\gamma</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/11c596de17c342edeed29f489aa4b274.svg?invert_in_darkmode&sanitize=true" align=middle width="9.388665pt" height="14.10255pt"/>, by using the LATTICE block. The
 format for input is as follows:</p>
 <pre><code>NWPW 
 ... 
@@ -2232,10 +2232,10 @@ to the non-local psp for up/down spins on atoms and angular momentum
 that you specify.</p>
 <p>Basically, the pseudopotential
 energy</p>
-<p><img alt="$E_{psp}= \sum_{\sigma=\uparrow,\downarrow} \sum_{i=1}^{n_{elc}^\sigma} \sum_{I=1}^{n_{ions}} \left( &amp;lt;\psi_i^\sigma|V_{local}^{I}|\psi_i^\sigma&amp;gt;  + \sum_{l=0}^{l_{max}^I} \sum_{m=-l}^{l} \sum_{n=1}^{n_{max}^I} \sum_{n'=1}^{n_{max}^I} &amp;lt;\psi_i^\sigma|P_{nlm}^I&amp;gt; h_{l,n,n'}^I &amp;lt;P_{n'lm}^{I}|\psi_i^\sigma&amp;gt; \right)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ebf5b6cffb11b24b8340ba90b370b03.svg?invert_in_darkmode&sanitize=true" align=middle width="830.321745pt" height="39.01194pt"/></p>
+<p><img alt="<script type="math/tex">E_{psp}= \sum_{\sigma=\uparrow,\downarrow} \sum_{i=1}^{n_{elc}^\sigma} \sum_{I=1}^{n_{ions}} \left( &amp;lt;\psi_i^\sigma|V_{local}^{I}|\psi_i^\sigma&amp;gt;  + \sum_{l=0}^{l_{max}^I} \sum_{m=-l}^{l} \sum_{n=1}^{n_{max}^I} \sum_{n'=1}^{n_{max}^I} &amp;lt;\psi_i^\sigma|P_{nlm}^I&amp;gt; h_{l,n,n'}^I &amp;lt;P_{n'lm}^{I}|\psi_i^\sigma&amp;gt; \right)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ebf5b6cffb11b24b8340ba90b370b03.svg?invert_in_darkmode&sanitize=true" align=middle width="830.321745pt" height="39.01194pt"/></p>
 <p>was modified
 to</p>
-<p><img alt="$E_{psp}= \sum_{\sigma=\uparrow,\downarrow} \sum_{i=1}^{n_{elc}^\sigma} \sum_{I=1}^{n_{ions}} \left( &amp;lt;\psi_i^\sigma|V_{local}^{I}|\psi_i^\sigma&amp;gt;  + \sum_{l=0}^{l_{max}^I} \sum_{m=-l}^{l} \sum_{n=1}^{n_{max}^I} \sum_{n'=1}^{n_{max}^I}  \left(1-\delta_{l,l^\sigma} \delta_{I,ionlist^\sigma}(\xi^\sigma-1)\right) &amp;lt;\psi_i^\sigma|P_{nlm}^I&amp;gt; h_{l,n,n'}^I &amp;lt;P_{n'lm}^{I}|\psi_i^\sigma&amp;gt; \right)$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c0af951100d1f7a3b61c91a36abaebd7.svg?invert_in_darkmode&sanitize=true" align=middle width="1026.227895pt" height="39.01194pt"/></p>
+<p><img alt="<script type="math/tex">E_{psp}= \sum_{\sigma=\uparrow,\downarrow} \sum_{i=1}^{n_{elc}^\sigma} \sum_{I=1}^{n_{ions}} \left( &amp;lt;\psi_i^\sigma|V_{local}^{I}|\psi_i^\sigma&amp;gt;  + \sum_{l=0}^{l_{max}^I} \sum_{m=-l}^{l} \sum_{n=1}^{n_{max}^I} \sum_{n'=1}^{n_{max}^I}  \left(1-\delta_{l,l^\sigma} \delta_{I,ionlist^\sigma}(\xi^\sigma-1)\right) &amp;lt;\psi_i^\sigma|P_{nlm}^I&amp;gt; h_{l,n,n'}^I &amp;lt;P_{n'lm}^{I}|\psi_i^\sigma&amp;gt; \right)</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c0af951100d1f7a3b61c91a36abaebd7.svg?invert_in_darkmode&sanitize=true" align=middle width="1026.227895pt" height="39.01194pt"/></p>
 <p>An example input is as follows:</p>
 <pre><code>title &quot;hematite 10 atoms&quot;
 
@@ -2361,8 +2361,8 @@ following input</p>
 END
 </code></pre>
 <p>defines the local pseudopotential for the O^ MM atom , where
-<img alt="$Z_{ion}=-0.8476$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8c301378f33eb82930d006117829a286.svg?invert_in_darkmode&sanitize=true" align=middle width="111.366255pt" height="22.38192pt"/>, 
-<img alt="$n_{\sigma}=4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e56942592d9ad471b92a22dba2b133c6.svg?invert_in_darkmode&sanitize=true" align=middle width="48.74067pt" height="21.10812pt"/>, and <img alt="$r_c=0.7$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9c3a2feed51f0f36f7a17124ccead504.svg?invert_in_darkmode&sanitize=true" align=middle width="56.881275pt" height="21.10812pt"/>. The following
+<img alt="<script type="math/tex">Z_{ion}=-0.8476</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/8c301378f33eb82930d006117829a286.svg?invert_in_darkmode&sanitize=true" align=middle width="111.366255pt" height="22.38192pt"/>, 
+<img alt="<script type="math/tex">n_{\sigma}=4</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e56942592d9ad471b92a22dba2b133c6.svg?invert_in_darkmode&sanitize=true" align=middle width="48.74067pt" height="21.10812pt"/>, and <img alt="<script type="math/tex">r_c=0.7</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9c3a2feed51f0f36f7a17124ccead504.svg?invert_in_darkmode&sanitize=true" align=middle width="56.881275pt" height="21.10812pt"/>. The following
 input can be used to define the local pseudopotentials for all the MM
 atoms in the geometry block defined above</p>
 <pre><code>NWPW   
@@ -2499,8 +2499,8 @@ to define the pseudopotential. After the ATOMIC_FILLING: <ncore>
 <nvalence> line, the core states are listed (one per line), and then the
 valence states are listed (one per line). Each state contains two
 integer and a value. The first integer specifies the radial quantum
-number, <img alt="$n$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/>, the second integer specifies the angular momentum quantum
-number, <img alt="$l$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f2322dff5bde89c37bcae4116fe20a8.svg?invert_in_darkmode&sanitize=true" align=middle width="5.2088685pt" height="22.74591pt"/>, and the third value specifies the occupation of the
+number, <img alt="<script type="math/tex">n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/55a049b8f161ae7cfeb0197d75aff967.svg?invert_in_darkmode&sanitize=true" align=middle width="9.83004pt" height="14.10255pt"/>, the second integer specifies the angular momentum quantum
+number, <img alt="<script type="math/tex">l</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f2322dff5bde89c37bcae4116fe20a8.svg?invert_in_darkmode&sanitize=true" align=middle width="5.2088685pt" height="22.74591pt"/>, and the third value specifies the occupation of the
 state.</p>
 <p>For example to define a pseudopotential for the Neon atom in the
 <script type="math/tex">1s^2 2s^2 2p^6</script> state could have the block</p>
@@ -2509,7 +2509,7 @@ state.</p>
  2 s 2.0 #valence state - 2s^2   
  2 p 6.0 #valence state - 2p^6
 </code></pre>
-<p>for a pseudopotential with a <img alt="$2s$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3b3b95a23e582b767082e556418815ee.svg?invert_in_darkmode&sanitize=true" align=middle width="15.865245pt" height="21.10812pt"/> and <img alt="$2p$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b647ff71634d36e3d4cecfae0ce1446d.svg?invert_in_darkmode&sanitize=true" align=middle width="16.428225pt" height="21.10812pt"/> valence electrons or the
+<p>for a pseudopotential with a <img alt="<script type="math/tex">2s</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3b3b95a23e582b767082e556418815ee.svg?invert_in_darkmode&sanitize=true" align=middle width="15.865245pt" height="21.10812pt"/> and <img alt="<script type="math/tex">2p</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b647ff71634d36e3d4cecfae0ce1446d.svg?invert_in_darkmode&sanitize=true" align=middle width="16.428225pt" height="21.10812pt"/> valence electrons or the
 block</p>
 <pre><code>ATOMIC_FILLING: 3 0   
  1 s 2.0 #core state   
@@ -2633,7 +2633,7 @@ END
     one-electron orbitals at the end of the run.</li>
 <li><code>fake_mass</code> - value for the electronic fake mass <script type="math/tex">\mu</script>. This
     parameter is not presently used in a conjugate gradient simulation</li>
-<li><code>time_step</code> - value for the time step (<img alt="$\Delta t$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a63739e01952f6a63389340c037ae29.svg?invert_in_darkmode&sanitize=true" align=middle width="19.56141pt" height="22.38192pt"/>). This parameter
+<li><code>time_step</code> - value for the time step (<img alt="<script type="math/tex">\Delta t</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5a63739e01952f6a63389340c037ae29.svg?invert_in_darkmode&sanitize=true" align=middle width="19.56141pt" height="22.38192pt"/>). This parameter
     is not presently used in a conjugate gradient simulation.</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies and tolerances</li>
@@ -2656,7 +2656,7 @@ END
 <li><code>rcut</code> - value for the cutoff radius used in the smooth compensation
     summation.</li>
 </ul>
-<p>Default set to be <img alt="$\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
+<p>Default set to be <img alt="<script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/ca7404f1852e7155791bf9b98b1cc5a0.svg?invert_in_darkmode&sanitize=true" align=middle width="138.472455pt" height="33.14091pt"/>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE) - Choose between Vosko et al&rsquo;s LDA
     parametrization or the original and revised Perdew, Burke, and
@@ -2850,12 +2850,12 @@ theory (R. Car and M. Parrinello, Phys. Rev. Lett. <strong>55</strong>, 2471, (1
 heart of this method they introduced a fictitious kinetic energy
 functional for the Kohn-Sham
 orbitals.</p>
-<p><img alt="$\begin{align}KE \left ( \left \{ \psi_{i,\sigma}(\vec{r}) \right \} \right ) = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2\end{align}$&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
+<p><img alt="klzzwxh:0443&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
 <p>Given this kinetic energy the constrained equations of motion are found
 by taking the first variation of the auxiliary Lagrangian.</p>
-<p><img alt="$\begin{align} = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2;     + \frac{1}{2} \sum_{I} M_I \left | \dot{\vec{R}}_{I} \right | ^2 - E \left [ \left \{ \psi_{i,\sigma}(\vec{r}) \right \} , \left \{ \vec{R}_I \right \} \right ] \\ + \sum_{ij,\sigma} \Lambda_{ij,\sigma} \left ( \int d\vec{r}\ \psi_{i,\sigma}^{*}(\vec{r}) \psi_{j,\sigma}(\vec{r}) - \delta_{ij\sigma} \right )\end{align}$" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
+<p><img alt="klzzwxh:0446" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
 <p>Which generates a dynamics for the wavefunctions
-<img alt="$\psi_{i,\sigma}(\vec{r})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/730a1523e8e8ba1c187f863f8d4f37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="48.685725pt" height="24.56553pt"/> and atoms positions <img alt="$\vec{R}_I$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/57ac99f1caf72f8bb91bbfe4da0441aa.svg?invert_in_darkmode&sanitize=true" align=middle width="19.1301pt" height="31.71135pt"/> through
+<img alt="<script type="math/tex">\psi_{i,\sigma}(\vec{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/730a1523e8e8ba1c187f863f8d4f37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="48.685725pt" height="24.56553pt"/> and atoms positions <img alt="<script type="math/tex">\vec{R}_I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/57ac99f1caf72f8bb91bbfe4da0441aa.svg?invert_in_darkmode&sanitize=true" align=middle width="19.1301pt" height="31.71135pt"/> through
 the constrained equations of motion:</p>
 <p>
 <script type="math/tex; mode=display">\begin{matrix}\mu \ddot{\psi}_{i,\sigma}(\vec{r},t) = -\frac{\delta E}{\delta \psi_{i,\sigma }^{*} \left( \vec{r},t \right) } + \sum\limits_j \Lambda_{ij,\sigma} \psi_{j,\sigma} \left( \vec{r},t \right) \end{matrix}</script>
@@ -2863,12 +2863,12 @@ the constrained equations of motion:</p>
 <p>
 <script type="math/tex; mode=display">\begin{matrix}M_I \ddot{\vec{R}}_I = -\frac{\partial E}{\partial \vec{R}_I} \end{matrix}</script>
 </p>
-<p>where <img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is the fictitious mass for the electronic degrees of
-freedom and <img alt="$M_I$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/00cbfe86d6a32a76c7a606e0c0d804da.svg?invert_in_darkmode&sanitize=true" align=middle width="22.58322pt" height="22.38192pt"/> are the ionic masses. The adjustable parameter
-<img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is used to describe the relative rate at which the wavefunctions
-change with time. <img alt="$\Lambda_{ij,\sigma}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bfbdae12ad4ca99f779237e04cd6148.svg?invert_in_darkmode&sanitize=true" align=middle width="33.272745pt" height="22.38192pt"/> are the Lagrangian multipliers
+<p>where <img alt="<script type="math/tex">\mu</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is the fictitious mass for the electronic degrees of
+freedom and <img alt="<script type="math/tex">M_I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/00cbfe86d6a32a76c7a606e0c0d804da.svg?invert_in_darkmode&sanitize=true" align=middle width="22.58322pt" height="22.38192pt"/> are the ionic masses. The adjustable parameter
+<img alt="<script type="math/tex">\mu</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is used to describe the relative rate at which the wavefunctions
+change with time. <img alt="<script type="math/tex">\Lambda_{ij,\sigma}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bfbdae12ad4ca99f779237e04cd6148.svg?invert_in_darkmode&sanitize=true" align=middle width="33.272745pt" height="22.38192pt"/> are the Lagrangian multipliers
 for the orthonormalization of the single-particle orbitals
-<img alt="$\psi_{i,\sigma}(\vec{r})$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/730a1523e8e8ba1c187f863f8d4f37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="48.685725pt" height="24.56553pt"/>. They are defined by the orthonormalization
+<img alt="<script type="math/tex">\psi_{i,\sigma}(\vec{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/730a1523e8e8ba1c187f863f8d4f37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="48.685725pt" height="24.56553pt"/>. They are defined by the orthonormalization
 constraint conditions and can be rigorously found. However, the
 equations of motion for the Lagrange multipliers depend on the specific
 algorithm used to integrate the Eqns. above.</p>
@@ -2899,20 +2899,20 @@ in</p>
 <p>In this molecular dynamic procedure we have to know variational
 derivative
 <script type="math/tex; mode=display">\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}\end{align}</script>
-and the matrix <img alt="$\Lambda_{ij,\sigma}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bfbdae12ad4ca99f779237e04cd6148.svg?invert_in_darkmode&sanitize=true" align=middle width="33.272745pt" height="22.38192pt"/>. The variational derivative
+and the matrix <img alt="<script type="math/tex">\Lambda_{ij,\sigma}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bfbdae12ad4ca99f779237e04cd6148.svg?invert_in_darkmode&sanitize=true" align=middle width="33.272745pt" height="22.38192pt"/>. The variational derivative
 <script type="math/tex; mode=display">\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}\end{align}</script>
 can be analytically found and is  </p>
 <p>
 <script type="math/tex; mode=display">\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}  = -\frac{1}{2} \nabla^2 \psi_{i,\sigma}(\vec{r}) \\  + \int d\vec{r^{\prime}} W_{ext}(\vec{r},\vec{r^{\prime}}) \psi_{i,\sigma}(\vec{r^{\prime}}) \\  + \int d\vec{r^{\prime}} \frac{n(\vec{r^{\prime}})}{|\vec{r}-\vec{r^{\prime}}|} \psi_{i,\sigma}(\vec{r})\\  + \mu_{xc}^{\sigma}(\vec{r}) \psi_{i,\sigma}(\vec{r}) \\  \equiv \hat{H} \psi_{i,\sigma} \end{align}</script>
 </p>
-<p>To find the matrix <img alt="$\Lambda_{ij,\sigma}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bfbdae12ad4ca99f779237e04cd6148.svg?invert_in_darkmode&sanitize=true" align=middle width="33.272745pt" height="22.38192pt"/> we impose the orthonormality
-constraint on <img alt="$\psi_{i,\sigma}^{t+\Delta t}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f5a90d4417795f4ac627995a6be27500.svg?invert_in_darkmode&sanitize=true" align=middle width="41.964615pt" height="29.73135pt"/> to obtain a matrix
+<p>To find the matrix <img alt="<script type="math/tex">\Lambda_{ij,\sigma}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6bfbdae12ad4ca99f779237e04cd6148.svg?invert_in_darkmode&sanitize=true" align=middle width="33.272745pt" height="22.38192pt"/> we impose the orthonormality
+constraint on <img alt="<script type="math/tex">\psi_{i,\sigma}^{t+\Delta t}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f5a90d4417795f4ac627995a6be27500.svg?invert_in_darkmode&sanitize=true" align=middle width="41.964615pt" height="29.73135pt"/> to obtain a matrix
 Riccatti equation, and then Riccatti equation is solved by an iterative
 solution.</p>
 <h3 id="constant-temperature-simulations-nose-hoover-thermostats">Constant Temperature Simulations: Nose-Hoover Thermostats<a class="headerlink" href="#constant-temperature-simulations-nose-hoover-thermostats" title="Permanent link">&para;</a></h3>
 <p>Nose-Hoover Thermostats for the electrons and ions can also be added to
 the Car-Parrinello simulation. In this type of simulation thermostats
-variables <img alt="$x_e$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a2132016f1d31f96de56a06d8cdf390f.svg?invert_in_darkmode&sanitize=true" align=middle width="15.573525pt" height="14.10255pt"/> and <img alt="$x_R$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c096d689340fd96e5e112ea66a4b2abd.svg?invert_in_darkmode&sanitize=true" align=middle width="19.28454pt" height="14.10255pt"/> are added to the simulation by adding the
+variables <img alt="<script type="math/tex">x_e</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a2132016f1d31f96de56a06d8cdf390f.svg?invert_in_darkmode&sanitize=true" align=middle width="15.573525pt" height="14.10255pt"/> and <img alt="<script type="math/tex">x_R</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c096d689340fd96e5e112ea66a4b2abd.svg?invert_in_darkmode&sanitize=true" align=middle width="19.28454pt" height="14.10255pt"/> are added to the simulation by adding the
 auxiliary energy functionals to the total
 energy.</p>
 <p>
@@ -2922,7 +2922,7 @@ energy.</p>
 <p>
 <script type="math/tex; mode=display">\begin{matrix}E_{R0} = \frac{1}{2} f k_B T \end{matrix}</script>
 </p>
-<p>where <img alt="$f$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/190083ef7a1625fbc75f243cffb9c96d.svg?invert_in_darkmode&sanitize=true" align=middle width="9.780705pt" height="22.74591pt"/> is the number of atomic degrees of freedom, <img alt="$k_B$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bad54364b5669c56b4b0a72d42c7da00.svg?invert_in_darkmode&sanitize=true" align=middle width="18.979455pt" height="22.74591pt"/> is
+<p>where <img alt="<script type="math/tex">f</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/190083ef7a1625fbc75f243cffb9c96d.svg?invert_in_darkmode&sanitize=true" align=middle width="9.780705pt" height="22.74591pt"/> is the number of atomic degrees of freedom, <img alt="<script type="math/tex">k_B</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/bad54364b5669c56b4b0a72d42c7da00.svg?invert_in_darkmode&sanitize=true" align=middle width="18.979455pt" height="22.74591pt"/> is
 Boltzmann&rsquo;s constant, and T is the desired t emperature. Defining the
 average fictitious kinetic energy of the electrons is not as
 straightforward. Blöchl and Parrinello (P.E. Blöchl and M. Parrinello,
@@ -2932,26 +2932,26 @@ energy</p>
 <p>
 <script type="math/tex; mode=display">\begin{matrix}E_{e0} = 4 k_B T \frac{\mu}{M} \sum_{i} <\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}> \end{matrix}</script>
 </p>
-<p>where <img alt="$\mu$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is the fictitious electronic mass, <img alt="$M$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fb97d38bcc19230b0acd442e17db879c.svg?invert_in_darkmode&sanitize=true" align=middle width="17.67348pt" height="22.38192pt"/> is average mass
+<p>where <img alt="<script type="math/tex">\mu</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/07617f9d8fe48b4a7b3f523d6730eef0.svg?invert_in_darkmode&sanitize=true" align=middle width="9.86799pt" height="14.10255pt"/> is the fictitious electronic mass, <img alt="<script type="math/tex">M</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fb97d38bcc19230b0acd442e17db879c.svg?invert_in_darkmode&sanitize=true" align=middle width="17.67348pt" height="22.38192pt"/> is average mass
 of one atom, and
 <script type="math/tex; mode=display">\begin{matrix}\sum_{i} <\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}> \end{matrix}</script>
 is the kinetic energy of the electrons.</p>
 <p>Blöchl and Parrinello suggested that the choice of mass parameters,
-<img alt="$Q_e$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/25d99aa5082492b57d3beef5928ffac3.svg?invert_in_darkmode&sanitize=true" align=middle width="19.16046pt" height="22.38192pt"/>, and <img alt="$Q_R$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3ed261b38de3a90e4d91fe27c8f513b1.svg?invert_in_darkmode&sanitize=true" align=middle width="22.871475pt" height="22.38192pt"/> should be made such that the period of oscillating
+<img alt="<script type="math/tex">Q_e</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/25d99aa5082492b57d3beef5928ffac3.svg?invert_in_darkmode&sanitize=true" align=middle width="19.16046pt" height="22.38192pt"/>, and <img alt="<script type="math/tex">Q_R</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3ed261b38de3a90e4d91fe27c8f513b1.svg?invert_in_darkmode&sanitize=true" align=middle width="22.871475pt" height="22.38192pt"/> should be made such that the period of oscillating
 thermostats should be chosen larger than the typical time scale for the
 dynamical events of interest but shorter than the simulation time.</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}P_{ion}  = 2\pi \sqrt{\frac{Q_R}{4E_{R0}}}\\P_{electron}  = 2\pi \sqrt{\frac{Q_e}{4E_{e0}}}\end{align}</script>
 </p>
-<p>where <img alt="$P_{ion}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a4e38e59b681f3b803b72b09f581f67f.svg?invert_in_darkmode&sanitize=true" align=middle width="29.707755pt" height="22.38192pt"/> and <img alt="$P_{electron}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e29a4bd79ecd185b4b23ff25948575c7.svg?invert_in_darkmode&sanitize=true" align=middle width="58.94427pt" height="22.38192pt"/> are the periods of oscillation
+<p>where <img alt="<script type="math/tex">P_{ion}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a4e38e59b681f3b803b72b09f581f67f.svg?invert_in_darkmode&sanitize=true" align=middle width="29.707755pt" height="22.38192pt"/> and <img alt="<script type="math/tex">P_{electron}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e29a4bd79ecd185b4b23ff25948575c7.svg?invert_in_darkmode&sanitize=true" align=middle width="58.94427pt" height="22.38192pt"/> are the periods of oscillation
 for the ionic and fictitious electronic thermostats.</p>
 <p>In simulated annealing simulations the electronic and ionic Temperatures
 are scaled according to an exponential cooling schedule,</p>
 <p>
 <script type="math/tex; mode=display">\begin{align}T_e(t)  = T_e^0 \exp^{-\frac{t}{\tau_e}}\\T_{ionic}(t)  = T_{ionic}^0 \exp^{-\frac{t}{\tau_{ionic}}} \end{align}</script>
 </p>
-<p>where <img alt="$T_e^0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/02f92fea930bab9b0cb5b411829b7bf4.svg?invert_in_darkmode&sanitize=true" align=middle width="18.381495pt" height="26.70657pt"/> and <img alt="$T_{ionic}^0$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2d76ae8eb00a93d64de686b4f03b596d.svg?invert_in_darkmode&sanitize=true" align=middle width="39.2502pt" height="26.70657pt"/> are the initial temperatures, and
-<img alt="$\tau_e$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e34a134b05ac6daa10ed56dc39d42035.svg?invert_in_darkmode&sanitize=true" align=middle width="13.37292pt" height="14.10255pt"/> and <img alt="$\tau_{ionic}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a8fa93ce0ad82bb2691c5d3740bcf14a.svg?invert_in_darkmode&sanitize=true" align=middle width="36.839055pt" height="14.10255pt"/> are the cooling rates in atomic units.</p>
+<p>where <img alt="<script type="math/tex">T_e^0</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/02f92fea930bab9b0cb5b411829b7bf4.svg?invert_in_darkmode&sanitize=true" align=middle width="18.381495pt" height="26.70657pt"/> and <img alt="<script type="math/tex">T_{ionic}^0</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2d76ae8eb00a93d64de686b4f03b596d.svg?invert_in_darkmode&sanitize=true" align=middle width="39.2502pt" height="26.70657pt"/> are the initial temperatures, and
+<img alt="<script type="math/tex">\tau_e</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e34a134b05ac6daa10ed56dc39d42035.svg?invert_in_darkmode&sanitize=true" align=middle width="13.37292pt" height="14.10255pt"/> and <img alt="<script type="math/tex">\tau_{ionic}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/a8fa93ce0ad82bb2691c5d3740bcf14a.svg?invert_in_darkmode&sanitize=true" align=middle width="36.839055pt" height="14.10255pt"/> are the cooling rates in atomic units.</p>
 <h2 id="nwpw-tutorial-1-s2-dimer-examples-with-pspw">NWPW Tutorial 1: S<sub>2</sub> dimer examples with PSPW<a class="headerlink" href="#nwpw-tutorial-1-s2-dimer-examples-with-pspw" title="Permanent link">&para;</a></h2>
 <p>A description of all the examples in NWPW Tutorial 1 can be found in the
 attached pdf <a href="nwpwexample1.pdf">nwpwexample1.pdf</a></p>
@@ -3015,7 +3015,7 @@ be</p>
 <h3 id="structural-optimization-of-s2-dimer-with-lda-approximation">Structural optimization of S<sub>2</sub> dimer with LDA approximation<a class="headerlink" href="#structural-optimization-of-s2-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="s2-example2.nw">Media:s2-example2.nw</a>,
 output:<a href="s2-example2.nwout">Media:s2-example2.nwout</a>)</p>
-<p>In this example, the structure of the S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using results
+<p>In this example, the structure of the S<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using results
 generated from prior energy calculation is calculated. Since most of the
 parameters are already stored in the run-time database the input is very
 simple.</p>
@@ -3089,10 +3089,10 @@ be</p>
 
  ...
 </code></pre>
-<h3 id="frequency-calculation-of-s-dimer-with-lda-approximation">Frequency calculation of S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer with LDA approximation<a class="headerlink" href="#frequency-calculation-of-s-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
+<h3 id="frequency-calculation-of-s_2-srchttpsrawgithubusercontentcomwikinwchemgitnwchemsvgs10f8f9bf55a697fc978ffe2990e3209dsvginvert_in_darkmodesanitizetrue-alignmiddle-width65281095pt-height1410255pt-dimer-with-lda-approximation">Frequency calculation of S<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer with LDA approximation<a class="headerlink" href="#frequency-calculation-of-s_2-srchttpsrawgithubusercontentcomwikinwchemgitnwchemsvgs10f8f9bf55a697fc978ffe2990e3209dsvginvert_in_darkmodesanitizetrue-alignmiddle-width65281095pt-height1410255pt-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="s2-example3.nw">Media:s2-example3.nw</a>,
 output:<a href="s2-example3.nwout">Media:s2-example3.nwout</a>)</p>
-<p>In this example, the vibrational frequency of the S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using
+<p>In this example, the vibrational frequency of the S<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using
 results generated from prior geometry optimization is calculated. Since
 most of the parameters are already stored in the run-time database the
 input is very simple.</p>
@@ -3142,12 +3142,12 @@ generated</p>
   ----------------------------------------------------------------------------  
  ...
 </code></pre>
-<h3 id="ab-initio-molecular-dynamics-simulation-car-parrinello-of-s-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Car-Parrinello) of S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using the LDA approximation<a class="headerlink" href="#ab-initio-molecular-dynamics-simulation-car-parrinello-of-s-dimer-using-the-lda-approximation" title="Permanent link">&para;</a></h3>
+<h3 id="ab-initio-molecular-dynamics-simulation-car-parrinello-of-s_2-srchttpsrawgithubusercontentcomwikinwchemgitnwchemsvgs10f8f9bf55a697fc978ffe2990e3209dsvginvert_in_darkmodesanitizetrue-alignmiddle-width65281095pt-height1410255pt-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Car-Parrinello) of S<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using the LDA approximation<a class="headerlink" href="#ab-initio-molecular-dynamics-simulation-car-parrinello-of-s_2-srchttpsrawgithubusercontentcomwikinwchemgitnwchemsvgs10f8f9bf55a697fc978ffe2990e3209dsvginvert_in_darkmodesanitizetrue-alignmiddle-width65281095pt-height1410255pt-dimer-using-the-lda-approximation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="s2-example4.nw">Media:s2-example4.nw</a>,
 output:<a href="s2-example4.nwout">Media:s2-example4.nwout</a>
 <a href="s2-md.xyz">Media:s2-md.xyz</a>
 <a href="s2-md.emotion.dat">Media:s2-md.emotion.dat</a> )</p>
-<p>In this example, a constant energy Car-Parrinello simulation of S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>
+<p>In this example, a constant energy Car-Parrinello simulation of S<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>
 dimer using LDA approximation is calculated. A brief introduction to the
 Car-Parrinello method can be found in
 <a href="cpmd-lecture.pdf">cpmd-lecture.pdf</a></p>
@@ -3211,7 +3211,7 @@ i.e.,</p>
  gnuplot&gt; plot &quot;s2-md.emotion&quot;,&quot;s2-md.emotion&quot; using 1:3  
  gnuplot&gt; 
 </code></pre>
-<p>The following plot shows the Car-Parrinello <img alt="$^3\Sigma_g^-$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2223ae97efb963660ddc1ec0e60d2d36.svg?invert_in_darkmode&sanitize=true" align=middle width="29.43798pt" height="26.70657pt"/> S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>
+<p>The following plot shows the Car-Parrinello <img alt="<script type="math/tex">^3\Sigma_g^-</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2223ae97efb963660ddc1ec0e60d2d36.svg?invert_in_darkmode&sanitize=true" align=middle width="29.43798pt" height="26.70657pt"/> S<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>
 energy surface generated from the
 simulation.</p>
 <p><img alt="s2-md" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/s2-md.png" align=middle with="600pt" height="450pt"/>  </p>
@@ -3252,7 +3252,7 @@ nwpw
 end 
 task pspw born-oppenheimer
 </code></pre>
-<p>The following plot shows the <img alt="$^3\Sigma_g^-$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2223ae97efb963660ddc1ec0e60d2d36.svg?invert_in_darkmode&sanitize=true" align=middle width="29.43798pt" height="26.70657pt"/> S<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> energy surface
+<p>The following plot shows the <img alt="<script type="math/tex">^3\Sigma_g^-</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2223ae97efb963660ddc1ec0e60d2d36.svg?invert_in_darkmode&sanitize=true" align=middle width="29.43798pt" height="26.70657pt"/> S<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> energy surface
 generated from the
 simulation.</p>
 <p><img alt="s2-bomd" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/s2-bomd.png" align=middle with="600pt" height="450pt"/>  </p>
@@ -3278,13 +3278,13 @@ forces are calculated from ab initio calculations that are performed
 “on-the-fly” as the molecular dynamics trajectory is generated.</p>
 <p>The following examples demonstrate how to use the ab initio molecular
 dynamics methods and simulated annealing strategies of NWChem to
-determine the lowest energy structures of the B<img alt="$_{12}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b969a189f1d72cb1b766b0414d53d618.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="14.10255pt"/> cluster. This
+determine the lowest energy structures of the B<img alt="<script type="math/tex">_{12}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b969a189f1d72cb1b766b0414d53d618.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="14.10255pt"/> cluster. This
 example is based on a study performed by Kiran Boggavarapu et al.. One
 might expect from chemical intuition that lowest energy structure of
-B<img alt="$_{12}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b969a189f1d72cb1b766b0414d53d618.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="14.10255pt"/> will be an icosahedran, since B<img alt="$_{12}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b969a189f1d72cb1b766b0414d53d618.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="14.10255pt"/> icosahedra are a
+B<img alt="<script type="math/tex">_{12}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b969a189f1d72cb1b766b0414d53d618.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="14.10255pt"/> will be an icosahedran, since B<img alt="<script type="math/tex">_{12}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b969a189f1d72cb1b766b0414d53d618.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="14.10255pt"/> icosahedra are a
 common structural unit found in many boron rich materials. Despite this
 prevalence, ab initio calculations performed by several researchers have
-suggested that B<img alt="$_{12}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b969a189f1d72cb1b766b0414d53d618.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="14.10255pt"/>, as well as B<img alt="$_{12}^+$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9688308038c1d0faef7ec46d707cd750.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="28.25757pt"/> and B<img alt="$_{12}^-$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/76b163dea42b9afe111cd4adae744905.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="28.25757pt"/>,
+suggested that B<img alt="<script type="math/tex">_{12}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b969a189f1d72cb1b766b0414d53d618.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="14.10255pt"/>, as well as B<img alt="<script type="math/tex">_{12}^+</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9688308038c1d0faef7ec46d707cd750.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="28.25757pt"/> and B<img alt="<script type="math/tex">_{12}^-</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/76b163dea42b9afe111cd4adae744905.svg?invert_in_darkmode&sanitize=true" align=middle width="13.05612pt" height="28.25757pt"/>,
 will have a more open geometry.</p>
 <p><img alt="boron" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/boron.png" align=middle with="600pt" height="246pt"/>  </p>
 <h3 id="simulated-annealing-using-constant-energy-simulation">Simulated Annealing Using Constant Energy Simulation<a class="headerlink" href="#simulated-annealing-using-constant-energy-simulation" title="Permanent link">&para;</a></h3>
@@ -3363,7 +3363,7 @@ output:<a href="b12-example2b.nwout">Media:b12-example2b.nwout</a>
 <p>The simulated annealing calculation in this example uses a constant
 temperature Car-Parrinello simulation with an exponential cooling
 schedule,</p>
-<p><img alt="$T(t)=T_0e^{-t/\tau}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c85ce616a87e043e02bbcb4ca8004687.svg?invert_in_darkmode&sanitize=true" align=middle width="106.202745pt" height="29.12679pt"/></p>
+<p><img alt="<script type="math/tex">T(t)=T_0e^{-t/\tau}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c85ce616a87e043e02bbcb4ca8004687.svg?invert_in_darkmode&sanitize=true" align=middle width="106.202745pt" height="29.12679pt"/></p>
 <p>where T0 and τ are an initial temperature and a time scale of cooling,
 respectively. In the present calculations T0=3500K and τ=4.134e+4 au
 (1.0 ps) were used and the thermostat masses were kept fixed to the
@@ -3398,10 +3398,10 @@ effects, are included will the heat of formation from ab initio
 electronic structure methods be accurate to within one kcal/mol.
 Although one can now accurately calculate the heats of formation of
 molecules with up to 6 first row atoms, such high-level calculations are
-extremely demanding and scale computationally as <img alt="$N^7$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3b9c3ee9199da80ec95872baf2648b4e.svg?invert_in_darkmode&sanitize=true" align=middle width="21.47871pt" height="26.70657pt"/> for <img alt="$N$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode&sanitize=true" align=middle width="14.94405pt" height="22.38192pt"/> basis
+extremely demanding and scale computationally as <img alt="<script type="math/tex">N^7</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/3b9c3ee9199da80ec95872baf2648b4e.svg?invert_in_darkmode&sanitize=true" align=middle width="21.47871pt" height="26.70657pt"/> for <img alt="<script type="math/tex">N</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/f9c4988898e7f532b9f826a75014ed3c.svg?invert_in_darkmode&sanitize=true" align=middle width="14.94405pt" height="22.38192pt"/> basis
 functions.</p>
 <p>Examples of these types of large errors are shown in the following
-Table, where the enthalpies of formation of CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH are calculated
+Table, where the enthalpies of formation of CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH are calculated
 by using atomization energies from different levels of ab initio
 theory.</p>
 <p><center></p>
@@ -3426,7 +3426,7 @@ theory.</p>
 <td>G2 Theory</td>
 </tr>
 <tr>
-<td>ΔH <img alt="$_f^o$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/></td>
+<td>ΔH <img alt="<script type="math/tex">_f^o</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/></td>
 <td>+4.9</td>
 <td>-80.0</td>
 <td>-2.6</td>
@@ -3443,8 +3443,8 @@ theory.</p>
 </tr>
 </tbody>
 </table>
-<p>Table 1: Standard enthalpy of formation (ΔH<img alt="$_f^o$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K) for
-CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH in kcal/mol from atomization energies with various
+<p>Table 1: Standard enthalpy of formation (ΔH<img alt="<script type="math/tex">_f^o</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K) for
+CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH in kcal/mol from atomization energies with various
 electronic structure methods. Results taken from reference [2].</p>
 <p></center></p>
 <p>Differences of up to 106.5 kcal/mol are found between different levels
@@ -3466,11 +3466,11 @@ electron pair correlation, whereas ab initio methods are expected to be
 more accurate for estimating neighboring interactions and long-range
 through-bond effects.</p>
 <p>The following isodesmic reaction can be used determine the enthalpy of
-formation for CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH that is significantly more accurate than the
+formation for CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH that is significantly more accurate than the
 estimates based on atomization energies.</p>
 <p><center></p>
-<p>CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH + CH<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> <img alt="$\rightarrow$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e5d134f35dc4949fab12ec64d186248a.svg?invert_in_darkmode&sanitize=true" align=middle width="16.377075pt" height="14.10255pt"/> CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH + CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H,
-ΔH<img alt="$_r$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0a76558af80d8b34ac99d40ce5b8bc9f.svg?invert_in_darkmode&sanitize=true" align=middle width="6.4333665pt" height="14.10255pt"/>(calc).</p>
+<p>CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH + CH<img alt="<script type="math/tex">_4</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> <img alt="<script type="math/tex">\rightarrow</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e5d134f35dc4949fab12ec64d186248a.svg?invert_in_darkmode&sanitize=true" align=middle width="16.377075pt" height="14.10255pt"/> CH<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH + CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H,
+ΔH<img alt="<script type="math/tex">_r</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0a76558af80d8b34ac99d40ce5b8bc9f.svg?invert_in_darkmode&sanitize=true" align=middle width="6.4333665pt" height="14.10255pt"/>(calc).</p>
 <p></center></p>
 <p>The first step is to calculate the reaction enthalpy of this reaction
 from electronic, thermal and vibrational energy differences at 298.15K
@@ -3478,26 +3478,26 @@ at a consistent level of theory. The defining property of an isodesmic
 reaction that there are an equal number of like bonds on the left-hand
 and right-hand sides of the reaction helps to minimize the error in the
 calculation of the reaction energy. The enthalpy of formation of
-CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH can then be calculated by using Hess’s law with the
+CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH can then be calculated by using Hess’s law with the
 calculated enthalpy change and the experimentally known heats of
 formation of the other 3 species (see Table 3).</p>
 <p><center></p>
-<p>ΔH<img alt="$_f$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e84ab6c3c44c562e682dc11bb308e8f3.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="14.10255pt"/>(CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH) = ΔH<img alt="$_f$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e84ab6c3c44c562e682dc11bb308e8f3.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="14.10255pt"/>(CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH)(exp) +
-ΔH<img alt="$_f$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e84ab6c3c44c562e682dc11bb308e8f3.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="14.10255pt"/>(CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H)(exp) - ΔH<img alt="$_f$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e84ab6c3c44c562e682dc11bb308e8f3.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="14.10255pt"/>(CH<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>)(exp)- ΔH<img alt="$_r$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0a76558af80d8b34ac99d40ce5b8bc9f.svg?invert_in_darkmode&sanitize=true" align=middle width="6.4333665pt" height="14.10255pt"/>(calc).</p>
+<p>ΔH<img alt="<script type="math/tex">_f</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e84ab6c3c44c562e682dc11bb308e8f3.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="14.10255pt"/>(CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH) = ΔH<img alt="<script type="math/tex">_f</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e84ab6c3c44c562e682dc11bb308e8f3.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="14.10255pt"/>(CH<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH)(exp) +
+ΔH<img alt="<script type="math/tex">_f</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e84ab6c3c44c562e682dc11bb308e8f3.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="14.10255pt"/>(CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H)(exp) - ΔH<img alt="<script type="math/tex">_f</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e84ab6c3c44c562e682dc11bb308e8f3.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="14.10255pt"/>(CH<img alt="<script type="math/tex">_4</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>)(exp)- ΔH<img alt="<script type="math/tex">_r</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0a76558af80d8b34ac99d40ce5b8bc9f.svg?invert_in_darkmode&sanitize=true" align=middle width="6.4333665pt" height="14.10255pt"/>(calc).</p>
 <p></center></p>
 <p>In this example, try to design and run NWPW simulations that can be used
-to estimate the enthalpy of formation for CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH using its
+to estimate the enthalpy of formation for CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH using its
 atomization energy and using the reaction enthalpy of the isodesmic
 reaction and compare your results to Table 2. Be careful to make sure
 that you use the same cutoff energy for all the simulations (.e.g.
 cutoff 35.0). You might also try to estimate enthalpies of formation for
-CHCl<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH and CH<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>ClSH. Also try designing simulations that use
+CHCl<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH and CH<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>ClSH. Also try designing simulations that use
 the SCF, DFT, MP2, and TCE modules.</p>
 <p><center></p>
-<p>CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH + CH<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> <img alt="$\rightarrow$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e5d134f35dc4949fab12ec64d186248a.svg?invert_in_darkmode&sanitize=true" align=middle width="16.377075pt" height="14.10255pt"/> CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH + CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H</p>
+<p>CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH + CH<img alt="<script type="math/tex">_4</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> <img alt="<script type="math/tex">\rightarrow</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e5d134f35dc4949fab12ec64d186248a.svg?invert_in_darkmode&sanitize=true" align=middle width="16.377075pt" height="14.10255pt"/> CH<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH + CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H</p>
 <p></center></p>
-<p>Un-optimized geometries for CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH, CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH, CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H and
-CH<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> which are needed to design your simulations are contained in
+<p>Un-optimized geometries for CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH, CH<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH, CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H and
+CH<img alt="<script type="math/tex">_4</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> which are needed to design your simulations are contained in
 the file
 <a href="thermodynamics.xyz">Media:thermodynamics.xyz</a>. You
 will also need to calculate the energies for the H, C, S, and Cl atoms
@@ -3507,7 +3507,7 @@ the enthalpy of a molecule. The enthalpy of a molecule at 298.15K is sum
 of the total energy and a thermal correction to the enthalpy. A good
 estimate for the thermal correction to the enthalpy can be obtained from
 a frequency calculation, i.e.</p>
-<p>H = E + H<img alt="$_{correction}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d07640e8892ddec9206d9f1ae6a1f2cc.svg?invert_in_darkmode&sanitize=true" align=middle width="61.39353pt" height="14.10255pt"/></p>
+<p>H = E + H<img alt="<script type="math/tex">_{correction}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d07640e8892ddec9206d9f1ae6a1f2cc.svg?invert_in_darkmode&sanitize=true" align=middle width="61.39353pt" height="14.10255pt"/></p>
 <p>Thermodynamic output from a frequency
 calculation:</p>
 <pre><code>Temperature                      =   298.15K  
@@ -3517,7 +3517,7 @@ Zero-Point correction to Energy  =   27.528 kcal/mol  (  0.043869 au)
 Thermal correction to Energy     =   29.329 kcal/mol  (  0.046739 au)
 </code></pre>
 <p>The following line contains the value for
-H<img alt="$_{correction}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d07640e8892ddec9206d9f1ae6a1f2cc.svg?invert_in_darkmode&sanitize=true" align=middle width="61.39353pt" height="14.10255pt"/></p>
+H<img alt="<script type="math/tex">_{correction}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d07640e8892ddec9206d9f1ae6a1f2cc.svg?invert_in_darkmode&sanitize=true" align=middle width="61.39353pt" height="14.10255pt"/></p>
 <pre><code>Thermal correction to Enthalpy   =   29.922 kcal/mol  (  0.047683 au)
 
 Total Entropy                    =   44.401 cal/mol-K  
@@ -3563,7 +3563,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 <td></td>
 </tr>
 <tr>
-<td>CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH</td>
+<td>CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH</td>
 <td>-13.40</td>
 <td>-11.86</td>
 <td>-8.68</td>
@@ -3572,7 +3572,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 <td></td>
 </tr>
 <tr>
-<td>CHCl<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH</td>
+<td>CHCl<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH</td>
 <td>-11.48</td>
 <td>-11.07</td>
 <td>-8.66</td>
@@ -3581,7 +3581,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 <td></td>
 </tr>
 <tr>
-<td>CH<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>ClSH</td>
+<td>CH<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>ClSH</td>
 <td>-7.01</td>
 <td>-6.66</td>
 <td>-5.44</td>
@@ -3590,7 +3590,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 <td></td>
 </tr>
 <tr>
-<td>CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH</td>
+<td>CH<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH</td>
 <td></td>
 <td></td>
 <td></td>
@@ -3609,7 +3609,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 </tr>
 </tbody>
 </table>
-<p>Table 2: Gas-phase standard enthalpies of formation ( ΔH<img alt="$_f^o$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K))
+<p>Table 2: Gas-phase standard enthalpies of formation ( ΔH<img alt="<script type="math/tex">_f^o</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K))
 in kcal/mol from isodesmic reactions and G2 Theory calculations taken
 from [3].</p>
 <p></center></p>
@@ -3624,7 +3624,7 @@ from [3].</p>
 <tbody>
 <tr>
 <td>Compounds</td>
-<td>ΔH<img alt="$_f^o$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K)</td>
+<td>ΔH<img alt="<script type="math/tex">_f^o</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0e16cbde2103f5bf61f317d716efe063.svg?invert_in_darkmode&sanitize=true" align=middle width="7.671147pt" height="21.80244pt"/>(298K)</td>
 </tr>
 <tr>
 <td>H</td>
@@ -3643,27 +3643,27 @@ from [3].</p>
 <td>29.082</td>
 </tr>
 <tr>
-<td>CCl<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/></td>
+<td>CCl<img alt="<script type="math/tex">_4</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/></td>
 <td>-24.59</td>
 </tr>
 <tr>
-<td>CCl<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H</td>
+<td>CCl<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H</td>
 <td>-24.65</td>
 </tr>
 <tr>
-<td>CCl<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/></td>
+<td>CCl<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>H<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/></td>
 <td>-22.10</td>
 </tr>
 <tr>
-<td>CClH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/></td>
+<td>CClH<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/></td>
 <td>-19.32</td>
 </tr>
 <tr>
-<td>CH<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/></td>
+<td>CH<img alt="<script type="math/tex">_4</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/></td>
 <td>-17.88</td>
 </tr>
 <tr>
-<td>CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH</td>
+<td>CH<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>SH</td>
 <td>-5.34</td>
 </tr>
 <tr>
@@ -3685,12 +3685,12 @@ from [3].</p>
 <li>Chase, M. W., Jr. Phys. Chem. Ref. Data, Monograph No. 9 1998, 9,
     1-1951.</li>
 </ol>
-<h2 id="nwpw-tutorial-4-aimdmm-simulation-of-ccl-64-ho">NWPW Tutorial 4: AIMD/MM simulation of CCl<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> + 64 H<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>O<a class="headerlink" href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl-64-ho" title="Permanent link">&para;</a></h2>
+<h2 id="nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-srchttpsrawgithubusercontentcomwikinwchemgitnwchemsvgs5dfc3ab84de9c94bbfee2e75b72e1184svginvert_in_darkmodesanitizetrue-alignmiddle-width65281095pt-height1410255pt-64-h_2-srchttpsrawgithubusercontentcomwikinwchemgitnwchemsvgs10f8f9bf55a697fc978ffe2990e3209dsvginvert_in_darkmodesanitizetrue-alignmiddle-width65281095pt-height1410255pto">NWPW Tutorial 4: AIMD/MM simulation of CCl<img alt="<script type="math/tex">_4</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> + 64 H<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>O<a class="headerlink" href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-srchttpsrawgithubusercontentcomwikinwchemgitnwchemsvgs5dfc3ab84de9c94bbfee2e75b72e1184svginvert_in_darkmodesanitizetrue-alignmiddle-width65281095pt-height1410255pt-64-h_2-srchttpsrawgithubusercontentcomwikinwchemgitnwchemsvgs10f8f9bf55a697fc978ffe2990e3209dsvginvert_in_darkmodesanitizetrue-alignmiddle-width65281095pt-height1410255pto" title="Permanent link">&para;</a></h2>
 <p>(input:<a href="ccl4-64water.nw">Media:ccl4-64water.nw</a>,
 output:<a href="ccl4-64water.nwout">Media:ccl4-64water.nwout</a>)</p>
 <p>In this section we show how use the PSPW module to perform a
-Car-Parrinello AIMD/MM simulation for a CCl<img alt="$_4$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> molecule in a box of
-64 H<img alt="$_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>O. Before running a PSPW Car-Parrinello simulation the system
+Car-Parrinello AIMD/MM simulation for a CCl<img alt="<script type="math/tex">_4</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/5dfc3ab84de9c94bbfee2e75b72e1184.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> molecule in a box of
+64 H<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>O. Before running a PSPW Car-Parrinello simulation the system
 should be on the Born-Oppenheimer surface, i.e. the one-electron
 orbitals should be minimized with respect to the total energy (i.e. task
 pspw energy). In this example, default pseudopotentials from the
@@ -3857,8 +3857,8 @@ quantity that can be calculated from this simulation is the cohesive
 energy.The cohesive energy of a crystal is the energy needed to separate
 the atoms of the solid into isolated atoms,
 i.e.</p>
-<p><img alt="$\begin{align} E_{coh}= -\left( E_{solid} - \sum_{a} E_{atom}^a  \right)  \end{align}$" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
-<p>where <img alt="$E_{solid}$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0479f37244fd4da93d764e9132414dcf.svg?invert_in_darkmode&sanitize=true" align=middle width="40.39431pt" height="22.38192pt"/> is the energy of the solid and <img alt="$E_{atom}^a$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c8cd94d8d58f10c3091c4f26c69f3140.svg?invert_in_darkmode&sanitize=true" align=middle width="42.225975pt" height="22.38192pt"/> are
+<p><img alt="klzzwxh:0690" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
+<p>where <img alt="<script type="math/tex">E_{solid}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0479f37244fd4da93d764e9132414dcf.svg?invert_in_darkmode&sanitize=true" align=middle width="40.39431pt" height="22.38192pt"/> is the energy of the solid and <img alt="<script type="math/tex">E_{atom}^a</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c8cd94d8d58f10c3091c4f26c69f3140.svg?invert_in_darkmode&sanitize=true" align=middle width="42.225975pt" height="22.38192pt"/> are
 the energies of the isolated atoms. In order to calculate the cohesive
 energy the energy of an isolated carbon atom at the same level of theory
 and cutoff energy will need to be calculated. The following input can be
@@ -3896,7 +3896,7 @@ calculated to be</p>
 <script type="math/tex; mode=display">\begin{align} E_{coh}= -\left( -45.07688304au/8 - (-5.421213534au)  \right)= 0.2133968 au = 5.8 eV \end{align}</script>
 </p>
 <p>This value is substantially lower than the experimental value of
-<img alt="$7.37eV$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/74d9051358c1ca8aaea0239dcd57965a.svg?invert_in_darkmode&sanitize=true" align=middle width="49.932795pt" height="22.38192pt"/>! It turns out this error is a result of the unit cell being
+<img alt="<script type="math/tex">7.37eV</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/74d9051358c1ca8aaea0239dcd57965a.svg?invert_in_darkmode&sanitize=true" align=middle width="49.932795pt" height="22.38192pt"/>! It turns out this error is a result of the unit cell being
 too small for the diamond calculation (or too small of a Brillioun zone
 sampling). In the next section, we show how increasing the Brillouin
 zone sampling reduces the error in the calculated cohesive
@@ -4856,7 +4856,7 @@ Hausdorff distribution parameters:
 <p></center></p>
 <h2 id="nwpw-tutorial-9-free-energy-simulations">NWPW Tutorial 9: Free Energy Simulations<a class="headerlink" href="#nwpw-tutorial-9-free-energy-simulations" title="Permanent link">&para;</a></h2>
 <p>A description of using the WHAM method for generating free energy of the
-gas-phase dissociation reaction CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>Cl <img alt="$\rightarrow$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e5d134f35dc4949fab12ec64d186248a.svg?invert_in_darkmode&sanitize=true" align=middle width="16.377075pt" height="14.10255pt"/> CH<img alt="$_3$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>+Cl
+gas-phase dissociation reaction CH<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>Cl <img alt="<script type="math/tex">\rightarrow</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/e5d134f35dc4949fab12ec64d186248a.svg?invert_in_darkmode&sanitize=true" align=middle width="16.377075pt" height="14.10255pt"/> CH<img alt="<script type="math/tex">_3</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d9485a0bfce3e0c6a2177e8dedee19f4.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/>+Cl
 can be found in the attached pdf
 (<a href="nwchem-new-pmf.pdf">nwchem-new-pmf.pdf</a>)</p>
 <h2 id="paw-tutorial">PAW Tutorial<a class="headerlink" href="#paw-tutorial" title="Permanent link">&para;</a></h2>
@@ -4937,15 +4937,15 @@ task paw optimize
 </code></pre>
 <h3 id="running-a-car-parrinello-simulation">Running a Car-Parrinello Simulation<a class="headerlink" href="#running-a-car-parrinello-simulation" title="Permanent link">&para;</a></h3>
 <p>In this section we show how use the PAW module to perform a
-Car-Parrinello molecular dynamic simulation for a <img alt="$C_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/85f3e1190907b9a8e94ce25bec4ec435.svg?invert_in_darkmode&sanitize=true" align=middle width="18.232995pt" height="22.38192pt"/> molecule at
+Car-Parrinello molecular dynamic simulation for a <img alt="<script type="math/tex">C_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/85f3e1190907b9a8e94ce25bec4ec435.svg?invert_in_darkmode&sanitize=true" align=middle width="18.232995pt" height="22.38192pt"/> molecule at
 the LDA level. Before running a PAW Car-Parrinello simulation the system
 should be on the Born-Oppenheimer surface, i.e. the one-electron
 orbitals should be minimized with respect to the total energy (i.e. task
 pspw energy). The input needed is basically the same as for optimizing
-the geometry of a <img alt="$C_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/85f3e1190907b9a8e94ce25bec4ec435.svg?invert_in_darkmode&sanitize=true" align=middle width="18.232995pt" height="22.38192pt"/> molecule at the LDA level,except that and
+the geometry of a <img alt="<script type="math/tex">C_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/85f3e1190907b9a8e94ce25bec4ec435.svg?invert_in_darkmode&sanitize=true" align=middle width="18.232995pt" height="22.38192pt"/> molecule at the LDA level,except that and
 additional Car-Parrinello sub-block is added.</p>
 <p>In the following example we show the input needed to run a
-Car-Parrinello simulation for a <img alt="$C_2$" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/85f3e1190907b9a8e94ce25bec4ec435.svg?invert_in_darkmode&sanitize=true" align=middle width="18.232995pt" height="22.38192pt"/> molecule at the LDA level. In
+Car-Parrinello simulation for a <img alt="<script type="math/tex">C_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/85f3e1190907b9a8e94ce25bec4ec435.svg?invert_in_darkmode&sanitize=true" align=middle width="18.232995pt" height="22.38192pt"/> molecule at the LDA level. In
 this example, default pseudopotentials from the pseudopotential library
 are used for C, the boundary condition is free-space, the exchange
 correlation functional is LDA, The boundary condition is free-space, and
