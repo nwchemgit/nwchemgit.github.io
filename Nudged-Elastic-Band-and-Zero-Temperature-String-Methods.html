@@ -376,11 +376,6 @@ output:<a href="h2o-neb.nwout">h2o-neb.nwout</a>, datafiles:
 echo
 start h2o-neb
 
-memory 1600 mb  
-
-permanent_dir ./perm2  
-scratch_dir      ./perm2  
-
 geometry nocenter noautosym noautoz  
 O  0.00000000    -0.02293938     0.00000000  
 H  0.00000000     0.55046969     0.75406534  
@@ -590,9 +585,9 @@ optimization.</p>
 <p>The geometries in the path are defined
 by</p>
 <p>
-<script type="math/tex; mode=display">\vec{R}^i\_{xyz} = \vec{R}^1_{xyz} + \frac{i-1}{nbeads-1} (\vec{R}^{nbeads}_{xyz}-\vec{R}^{1}_{xyz}), \  for \   i=1,nbeads</script>
+<script type="math/tex; mode=display">\vec{R}^i_{xyz} = \vec{R}^1_{xyz} + \frac{i-1}{nbeads-1} (\vec{R}^{nbeads}_{xyz}-\vec{R}^{1}_{xyz}), \  for \   i=1,nbeads</script>
 </p>
-<p>where the starting geometry  <script type="math/tex">\vec{R}^1\_{xyz}</script>  is entered in the
+<p>where the starting geometry  <script type="math/tex">\vec{R}^1_{xyz}</script>  is entered in the
 geometry block labeled <code>geometry</code>, e.g.</p>
 <pre><code>geometry nocenter noautosym noautoz  
 O  0.00000000    -0.02293938     0.00000000  
@@ -600,7 +595,7 @@ H  0.00000000     0.55046969     0.75406534
 H  0.00000000     0.55046969    -0.75406534  
 end
 </code></pre>
-<p>and the last geometry in the path  <script type="math/tex">\vec{R}^{nbeads}\_{xyz}</script>  is
+<p>and the last geometry in the path  <script type="math/tex">\vec{R}^{nbeads}_{xyz}</script>  is
 entered in the geometry block label <code>endgeom</code>, e.g.</p>
 <pre><code>geometry endgeom nocenter noautosym noautoz  
 O  0.00000000     0.02293938     0.00000000  
@@ -618,10 +613,10 @@ by</p>
 </p>
 <p>and</p>
 <p>
-<script type="math/tex; mode=display">\vec{R}^i_{xyz} = \vec{R}^{nbeads/2}\_{xyz} + \frac{i-nbeads/2}{nbeads/2-1} (\vec{R}^{nbeads}\_{xyz}-\vec{R}^{nbeads/2}\_{xyz}), \  for \   i=nbeads/2+1,nbeads</script>
+<script type="math/tex; mode=display">\vec{R}^i_{xyz} = \vec{R}^{nbeads/2}_{xyz} + \frac{i-nbeads/2}{nbeads/2-1} (\vec{R}^{nbeads}_{xyz}-\vec{R}^{nbeads/2}_{xyz}), \  for \   i=nbeads/2+1,nbeads</script>
 </p>
-<p>where the starting  <script type="math/tex">\vec{R}^{1}\_{xyz}</script> , middle
-<script type="math/tex">\vec{R}^{nbeads/2}\_{xyz}</script>  and last  <script type="math/tex">\vec{R}^{nbeads}\_{xyz}</script>&rdquo; 
+<p>where the starting  <script type="math/tex">\vec{R}^{1}_{xyz}</script> , middle
+<script type="math/tex">\vec{R}^{nbeads/2}_{xyz}</script>  and last  <script type="math/tex">\vec{R}^{nbeads}_{xyz}</script>&rdquo; 
 geometries are entered in the geometry blocks <code>geometry</code>, <code>midgeom</code> and
 <code>endgeom</code> respectively, e.g.</p>
 <pre><code>geometry nocenter noautosym noautoz  
@@ -643,9 +638,9 @@ H  0.00000000    -0.55046969    -0.75406534
 end
 </code></pre>
 <ul>
-<li>Using xyz_path to explicitly input a path of geometries</li>
+<li>Using <code>xyz_path</code> to explicitly input a path of geometries</li>
 </ul>
-<p>The &ldquo;xyz_path&rdquo; option can also be used to define the initial path, e.g.</p>
+<p>The <code>xyz_path</code> option can also be used to define the initial path, e.g.</p>
 <pre><code>...
 STRING
    ...
@@ -692,9 +687,6 @@ Title &quot;HCN --&gt; HNC Zero-Temperature String Simulation&quot;
 echo  
 start hcn-hnc-dft  
 
-permanent_dir ./perm  
-scratch_dir ./perm  
-   
 geometry noautoz noautosym  
 C         0.00000000     0.00000000    -0.49484657  
 N         0.00000000     0.00000000     0.64616359  
@@ -878,11 +870,6 @@ gnuplot&gt; 
 echo  
 start sio4h4-dimer  
 
-memory 1800 mb  
-
-permanent_dir ./perm  
-scratch_dir   ./perm  
-   
 geometry noautoz noautosym  
 Si        -3.90592       -0.11789        0.03791   
 O         -2.32450       -0.24327       -0.05259  
