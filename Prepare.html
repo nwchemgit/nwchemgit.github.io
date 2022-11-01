@@ -326,7 +326,7 @@ current &lt;string dir_c&gt;[&lt;string par_c&gt;]
 
  &lt;real dist1&gt; &lt;real dist2&gt;  &lt;real dist3&gt; &lt;real forc1&gt; &lt;real forc2&gt;
 </code></pre>
-<p>This directive specifies a distance restraint potential between atoms <em>atom1</em> and <em>atom2</em>, with a harmonic function with force constant <em>forc1</em> between <em>dist1</em> and <em>dist2</em>, and a harmonic function with force constant <em>forc2</em> between <em>dist2</em> and <em>dist3</em>. For distances shorter than <em>dist1</em> or larger than <em>dist3</em>, a constant force is applied such that force and energy are continuous at <em>dist1</em> and <em>dist3</em>, respectively. Distances are given in nm, force constants in <img alt="<script type="math/tex">kJ mol^{-1} nm^{-2}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/56c2c4cf32fcf191f3e45838c1bc1a89.svg?invert_in_darkmode&sanitize=true" align=middle width="105.854595pt" height="26.70657pt"/>.</p>
+<p>This directive specifies a distance restraint potential between atoms <em>atom1</em> and <em>atom2</em>, with a harmonic function with force constant <em>forc1</em> between <em>dist1</em> and <em>dist2</em>, and a harmonic function with force constant <em>forc2</em> between <em>dist2</em> and <em>dist3</em>. For distances shorter than <em>dist1</em> or larger than <em>dist3</em>, a constant force is applied such that force and energy are continuous at <em>dist1</em> and <em>dist3</em>, respectively. Distances are given in nm, force constants in <script type="math/tex">kJ mol^{-1} nm^{-2}</script>.</p>
 <pre><code>select &lt;integer isel&gt; { &lt;string atoms&gt; }
 </code></pre>
 <p>Directive select specifies a group of atoms used in the definition of potential of mean force potentials.</p>
@@ -374,7 +374,7 @@ pmf [bias] (zaxis | zaxis-cog) &lt;integer isel&gt; &lt;integer jsel&gt; &lt;int
 <pre><code>expand &lt;real xpndw default 0.1&gt;
 </code></pre>
 <p>The variable xpndw specifies the size in nm with which the simulation volume will be increased after solvation.</p>
-<pre><code>read [rst | rst_old | pdb] `&lt;string filename&gt;
+<pre><code>read [rst | rst_old | pdb] &lt;string filename&gt;
 write [rst | [solute [&lt;integer nsolvent&gt;]] ( [large] pdb | xyz)] &lt;string filename&gt;
 </code></pre>
 <p>These directives read and write the file filename in the specified format. The solute option instructs to write out the coordinates for solute and all, or if specified the first nsolvent, crystal solvent molecules only. If no format is specified, it will be derived from the extension of the filename. Recognized extensions are rst, rst_old (read only), pdb, xyz (write only) and pov (write only). Reading and then writing the same restart file will cause the sub-block size information to be lost. If this information needs to be retained a shell copy command needs to be used. The large keyword allows PDB files to be written with more than 9999 residues. Since the PDB file will not conform to the PDB convention, this option should only be used if required. NWChem will be able to read the resulting PDB file, but other codes may not.</p>
