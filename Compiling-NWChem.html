@@ -452,21 +452,26 @@ NWChem will figure out the values of <code>LIBMPI</code>, <code>MPI_LIB</code> a
 <code>MPI_LIB</code> and <code>MPI_INCLUDE</code> and add the location of <code>mpif90</code> to the <code>PATH</code>
 variable, instead. Therefore, the next section can be considered obsolete.</p>
 <h4 id="obsolete-how-to-set-the-mpi-variables">OBSOLETE: How to set the MPI variables<a class="headerlink" href="#obsolete-how-to-set-the-mpi-variables" title="Permanent link">&para;</a></h4>
+<p>The infomation of this section should not be used becuase of the automatic detection of MPI variables described in the previous 
+<a href="#automatic-detection-of-mpi-variables-with-mpif90">section</a>.  </p>
 <p><del>The output of the command</del></p>
-<pre><code>mpif90 -show
-</code></pre>
+<pre><del>mpif90 -show</del></pre>
+
 <p><del>can be used to extract the values of LIBMPI, MPI_LIB and MPI_INCLUDE</del></p>
 <p><del>E.g. for MPICH2, this might look like:</del></p>
-<pre><code>$ mpif90 -show
+<pre><del>
+$ mpif90 -show
 f95 -I/usr/local/mpich2.141p1/include -I/usr/local/mpich2.141p1/include -L/usr/local/mpich2.141p1/lib \
 -lmpichf90 -lmpichf90 -lmpich -lopa -lmpl -lrt -lpthread
-</code></pre>
+</del></pre>
 <p><del>The corresponding environment variables are</del></p>
-<pre><code>  % export USE_MPI=y
-  % export LIBMPI=&quot;-lmpich -lopa -lmpl -lpthread -lmpichf90 -lfmpich -lmpich&quot;
+<pre><del>
+  % export USE_MPI=y
+  % export LIBMPI="-lmpich -lopa -lmpl -lpthread -lmpichf90 -lfmpich -lmpich"
   % export MPI_LIB=/usr/local/mpich2.141p1/lib 
   % export MPI_INCLUDE='/usr/local/mpich2.141p1/include
-</code></pre>
+</del></pre>
+
 <h4 id="how-to-start-nwchem">How to start NWChem<a class="headerlink" href="#how-to-start-nwchem" title="Permanent link">&para;</a></h4>
 <p>When MPI is used, the appropriate MPI run command should be used to
 start an NWChem calculation, e.g.</p>
