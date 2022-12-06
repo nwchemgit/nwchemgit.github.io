@@ -577,8 +577,10 @@ set nwpw:lstress_numerical .true.
 high-frequency components of the wavefunction in the atomic sphere
 region. Effectively this splits the original wavefunction into two
 parts:</p>
-<p><img alt="<script type="math/tex">\psi_n(\mathbf{r}) = \tilde{\psi}_n(\mathbf{r}) + \sum_I \psi_n^I(\mathbf{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/68f3a0f1e1d66f32691ef41bf0ab5c89.svg?invert_in_darkmode&sanitize=true" align=middle width="189.915495pt" height="30.55107pt"/></p>
-<p>The first part <img alt="<script type="math/tex">\tilde{\psi}_n(\mathbf{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/08adcb3a29f050420c64eeffd66743c2.svg?invert_in_darkmode&sanitize=true" align=middle width="40.14978pt" height="30.55107pt"/> is smooth and can be
+<p>
+<script type="math/tex; mode=display">\psi_n(\mathbf{r}) = \tilde{\psi}_n(\mathbf{r}) + \sum_I \psi_n^I(\mathbf{r})</script>
+</p>
+<p>The first part <script type="math/tex">\tilde{\psi}_n(\mathbf{r})</script> is smooth and can be
 represented using a plane wave basis set of practical size. The second
 term is localized with the atomic spheres and is represented on radial
 grids centered on the atoms
@@ -720,15 +722,19 @@ densities</p>
 <p><img alt="<script type="math/tex">E_{kinetic-core}=\sum_c \int_0^\infty [ (\varphi_{n_c l_c}^I (r))^' (\varphi_{n_c l_c}^I (r))^' + l_c (l_c+1)  \frac{\varphi_{n_c l_c}^I (r) \varphi_{n_c l_c}^I (r)}{r^2} ]  dr</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/6ccdb6f864b6c62e5aa4419e97773fe1.svg?invert_in_darkmode&sanitize=true" align=middle width="470.012895pt" height="62.7957pt"/></p>
 <p></center></p>
 <p><center></p>
-<p><img alt="<script type="math/tex">E_{ion-core}= \sum_I \frac{1}{2} \iint \frac{\rho_c^I (r) \rho_c^I (r')}{|r-r'|}  drdr^' - \int  \frac{\rho_c^I (r)}{|r|}  (Z_I+Z_I^{core} ) dr</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/eaf6a50f69f909c52ce138457f0cb8da.svg?invert_in_darkmode&sanitize=true" align=middle width="392.716995pt" height="47.73054pt"/></p>
+<p>
+<script type="math/tex; mode=display">E_{ion-core}= \sum_I \frac{1}{2} \iint \frac{\rho_c^{I} (r) \rho_c^{I} (r')}{|r-r'|}  drdr^{'} - \int  \frac{\rho_c^{I} (r)}{|r|}  (Z_I+Z_I^{core} ) dr</script>
+</p>
 <p></center></p>
-<p>The matrix elements contained in the above formula
-are
-<script type="math/tex; mode=display">(t_{atom}^I )_{\alpha \beta}= {\delta_{m_\alpha m_\beta} \delta_{l_\alpha l_\beta }}{2}  \int_0^{r_{cut}^I}  \left[ (\varphi_{n_\alpha l_\alpha}^I (r))'  (\varphi_{n_\beta l_\beta}^I (r))' - (\tilde{\varphi}_{n_\alpha l_\alpha}^I (r))' (\tilde{\varphi}_{n_\beta l_\beta}^I (r))' \\
-+ l_\alpha (l_\alpha+1)  \frac{ \varphi_{n_\alpha l_\alpha}^I (r) \varphi_{n_\beta l_\beta}^I (r) - \tilde{\varphi}_{n_\alpha l_\alpha}^I (r) \tilde{\varphi}_{n_\beta l_\beta}^I (r) \; \; \; \; \; \; \; \; \;  }{r^2 } \right]  dr</script>
+<p>The matrix elements contained in the above formula are</p>
+<p>
+<script type="math/tex; mode=display">(t_{atom}^{I} )_{\alpha \beta}= {\delta_{m_\alpha m_\beta} \delta_{l_\alpha l_\beta }}2  \int_0^{r_{cut}^I}  \left[
+  (\varphi_{n_\alpha l_\alpha}^{I} (r))' (\varphi_{n_\beta l_\beta}^{I} (r))' - (\tilde{\varphi}_{n_\alpha l_\alpha}^{I} (r))' (\tilde{\varphi}_{n_\beta l_\beta}^{I} (r))' + l_\alpha (l_\alpha+1)  \frac{ \varphi_{n_\alpha l_\alpha}^{I}(r) \varphi_{n_\beta l_\beta}^{I}(r) - \tilde{\varphi}_{n_\alpha l_\alpha}^{I}(r) \tilde{\varphi}_{n_\beta l_\beta}^I }{r^2 } \right]  dr</script>
 </p>
 <p><center></p>
-<p><img alt="<script type="math/tex">(u_{atom}^I )_{\alpha \beta} =\frac{Z_I}{4\pi} (V_{comp}^I )_{\alpha \beta}^{l=0} + \frac{2Z_I}{(\sqrt{2\pi} \sigma_I } (q_comp^I )_{\alpha \beta}^(l=0) +\delta_{m_\alpha m_\beta } \delta_{l_\alpha l_\beta } \int_0^{r_{cut}^I} [ \varphi_{n_\alpha l_\alpha}^I (r) \varphi_(n_\beta l_\beta)^I (r) \frac{-Z_I}{r} + \tilde{\varphi}_{n_\alpha l_\alpha}^I (r) \tilde{\varphi}_{n_\beta l_\beta}^I (r) (-v_{ps}^I (r)) ] dr</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c3956550cbb1cea530525ffac2a250c2.svg?invert_in_darkmode&sanitize=true" align=middle width="728.65155pt" height="67.7325pt"/></p>
+<p>
+<script type="math/tex; mode=display">(u_{atom}^I )_{\alpha \beta} =\frac{Z_I}{4\pi} (V_{comp}^I )_{\alpha \beta}^{l=0} + \frac{2Z_I}{(\sqrt{2\pi} \sigma_I } (q_comp^I )_{\alpha \beta}^(l=0) +\delta_{m_\alpha m_\beta } \delta_{l_\alpha l_\beta } \int_0^{r_{cut}^I} [ \varphi_{n_\alpha l_\alpha}^I (r) \varphi_(n_\beta l_\beta)^I (r) \frac{-Z_I}{r} + \tilde{\varphi}_{n_\alpha l_\alpha}^I (r) \tilde{\varphi}_{n_\beta l_\beta}^I (r) (-v_{ps}^I (r)) ] dr</script>
+</p>
 <p></center></p>
 <p><center></p>
 <p><img alt="<script type="math/tex">(V_{Heff}^I )_{\alpha \beta \mu \nu}^l = (V_H^I )_{\alpha\beta\mu\nu}^l - 2(V_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l -(v_g^I )^l (q_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2ebbca749223f7e0c738c3aaf6bff0ee.svg?invert_in_darkmode&sanitize=true" align=middle width="535.913895pt" height="27.85299pt"/></p>
@@ -2848,10 +2854,10 @@ theory (R. Car and M. Parrinello, Phys. Rev. Lett. <strong>55</strong>, 2471, (1
 heart of this method they introduced a fictitious kinetic energy
 functional for the Kohn-Sham
 orbitals.</p>
-<p><img alt="klzzwxh:0443&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
+<p><img alt="klzzwxh:0439&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
 <p>Given this kinetic energy the constrained equations of motion are found
 by taking the first variation of the auxiliary Lagrangian.</p>
-<p><img alt="klzzwxh:0446" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
+<p><img alt="klzzwxh:0442" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
 <p>Which generates a dynamics for the wavefunctions
 <img alt="<script type="math/tex">\psi_{i,\sigma}(\vec{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/730a1523e8e8ba1c187f863f8d4f37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="48.685725pt" height="24.56553pt"/> and atoms positions <img alt="<script type="math/tex">\vec{R}_I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/57ac99f1caf72f8bb91bbfe4da0441aa.svg?invert_in_darkmode&sanitize=true" align=middle width="19.1301pt" height="31.71135pt"/> through
 the constrained equations of motion:</p>
@@ -3855,7 +3861,7 @@ quantity that can be calculated from this simulation is the cohesive
 energy.The cohesive energy of a crystal is the energy needed to separate
 the atoms of the solid into isolated atoms,
 i.e.</p>
-<p><img alt="klzzwxh:0690" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
+<p><img alt="klzzwxh:0686" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
 <p>where <img alt="<script type="math/tex">E_{solid}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0479f37244fd4da93d764e9132414dcf.svg?invert_in_darkmode&sanitize=true" align=middle width="40.39431pt" height="22.38192pt"/> is the energy of the solid and <img alt="<script type="math/tex">E_{atom}^a</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c8cd94d8d58f10c3091c4f26c69f3140.svg?invert_in_darkmode&sanitize=true" align=middle width="42.225975pt" height="22.38192pt"/> are
 the energies of the isolated atoms. In order to calculate the cohesive
 energy the energy of an isolated carbon atom at the same level of theory
