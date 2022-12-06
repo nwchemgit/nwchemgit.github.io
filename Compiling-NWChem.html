@@ -78,7 +78,7 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#automatic-detection-of-mpi-variables-with-mpif90">Automatic detection of MPI variables with mpif90</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#obsolete-how-to-set-the-mpi-variables">Obsolete:  How to set the MPI variables</a>
+    <li class="toctree-l4"><a class="reference internal" href="#obsolete-how-to-set-the-mpi-variables">OBSOLETE: How to set the MPI variables</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#how-to-start-nwchem">How to start NWChem</a>
     </li>
@@ -450,19 +450,18 @@ location of the <code>mpif90</code> command is part of your <code>PATH</code> en
 NWChem will figure out the values of <code>LIBMPI</code>, <code>MPI_LIB</code> and <code>MPI_INCLUDE</code>
 (if they are not set). Therefore, we do <strong>NOT</strong> recommend to set <code>LIBMPI</code>,
 <code>MPI_LIB</code> and <code>MPI_INCLUDE</code> and add the location of <code>mpif90</code> to the <code>PATH</code>
-variable, instead. Therefore, the next section can be considered obsolete in the most common cases.</p>
-<h4 id="obsolete-how-to-set-the-mpi-variables">Obsolete:  How to set the MPI variables<a class="headerlink" href="#obsolete-how-to-set-the-mpi-variables" title="Permanent link">&para;</a></h4>
-<p>The output of the command</p>
+variable, instead. Therefore, the next section can be considered obsolete.</p>
+<h4 id="obsolete-how-to-set-the-mpi-variables">OBSOLETE: How to set the MPI variables<a class="headerlink" href="#obsolete-how-to-set-the-mpi-variables" title="Permanent link">&para;</a></h4>
+<p>~~The output of the command~~</p>
 <pre><code>mpif90 -show
 </code></pre>
-<p>can be used to extract the values of LIBMPI, MPI_LIB and MPI_INCLUDE</p>
-<p>E.g. for MPICH2, this might look
-like:</p>
+<p>~~can be used to extract the values of LIBMPI, MPI_LIB and MPI_INCLUDE~~</p>
+<p>~~E.g. for MPICH2, this might look like:~~</p>
 <pre><code>$ mpif90 -show
 f95 -I/usr/local/mpich2.141p1/include -I/usr/local/mpich2.141p1/include -L/usr/local/mpich2.141p1/lib \
 -lmpichf90 -lmpichf90 -lmpich -lopa -lmpl -lrt -lpthread
 </code></pre>
-<p>The corresponding environment variables are  </p>
+<p>~~The corresponding environment variables are~~</p>
 <pre><code>  % export USE_MPI=y
   % export LIBMPI=&quot;-lmpich -lopa -lmpl -lpthread -lmpichf90 -lfmpich -lmpich&quot;
   % export MPI_LIB=/usr/local/mpich2.141p1/lib 
@@ -754,10 +753,6 @@ MPI:</p>
 % export USE_MPIF=y
 % export USE_MPIF4=y
 
-% export MPI_LOC=&lt;your path&gt;/openmpi-1.4.3  (for example, if you are using OpenMPI)
-% export MPI_LIB=&lt;your path&gt;/openmpi-1.4.3/lib
-% export MPI_INCLUDE=&lt;your path&gt;/openmpi-1.4.3/include
-% export LIBMPI=&quot;-lmpi_f90 -lmpi_f77 -lmpi -lpthread&quot;
 </code></pre>
 <p><strong>New in NWChem 6.6:</strong> If the location of the mpif90 command is part of
 your PATH env. variable, NWChem will figure out the values of LIBMPI,
@@ -1388,10 +1383,6 @@ of alternative ARMCI_NETWORKs other than MPI-TS)</p>
 % export ARMCI_NETWORK=MPI-MT
 % export OBJECT_MODE=64
 % export USE_MPI=y
-% export LARGE_FILES=TRUE
-% export MPI_LIB=/usr/lpp/ppe.poe/lib
-% export MPI_INCLUDE=/usr/lpp/ppe.poe/include
-% export LIBMPI=&quot;-lmpi -lpthreads&quot;
 </code></pre>
 <p>To compile, the following commands should be used:</p>
 <pre><code>% cd $NWCHEM_TOP/src
