@@ -557,7 +557,7 @@ control the execution of NWChem. To build with Python, Python needs to
 be available on your machine. The software can be download from
 <a href="https://www.python.org">https://www.python.org</a> . Follow the Python instructions for
 installation and testing. NWChem has been tested with Python versions
-up to 3.10</p>
+up to 3.11</p>
 <p>The following environment variables need to be set when compiling with
 Python, together with having the location of your installed python binary part of
 the <code>PATH</code> environment variable:</p>
@@ -682,8 +682,14 @@ using the following procedure:</p>
 <p><strong><em>New in NWChem 7.0.2</em></strong>:   </p>
 <ol>
 <li>The environment variable <code>BUILD_OPENBLAS</code> can be used to automatically build the OpenBLAS library during a NWChem compilation (either using <code>BLAS_SIZE=8</code> or <code>BLAS_SIZE=4</code>)  </li>
-<li>The environment variable <code>BUILD_SCALAPACK</code> can be used to automatically build the ScaLapack library during a NWChem compilation (either using <code>SCALAPACK_SIZE=8</code> or <code>SCALAPACK_SIZE=4</code>)  </li>
+<li>The environment variable <code>BUILD_SCALAPACK</code> can be used to automatically build the ScaLapack library during a NWChem compilation (either using <code>SCALAPACK_SIZE=8</code> or <code>SCALAPACK_SIZE=4</code>)</li>
 </ol>
+<p>The following settings are strongly recommended:</p>
+<pre><code>BUILD_OPENBLAS=1
+BUILD_SCALAPACK=1
+BLAS_SIZE=8
+SCALAPACK_SIZE=8
+</code></pre>
 <h3 id="linking-in-nbo">Linking in NBO<a class="headerlink" href="#linking-in-nbo" title="Permanent link">&para;</a></h3>
 <p>The 5.0 (obsolete) version of NBO provides a utility to generate source
 code that can be linked into computational chemistry packages such as
