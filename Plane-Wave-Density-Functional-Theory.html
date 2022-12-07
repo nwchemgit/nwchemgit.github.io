@@ -648,8 +648,9 @@ where</p>
 <script type="math/tex; mode=display">\tilde{E}_{xc-pw} = \frac{\Omega}{N_1 N_2 N_3} \sum_{\mathbf{r}} \tilde{\rho}(\mathbf{r}) \epsilon_{xc}(\tilde{\rho}(\mathbf{r}))</script>
 </p>
 <p>
-<script type="math/tex; mode=display">E_{ion-ion} = \frac{1}{2\Omega} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|^2} \exp(\frac{|\mathbf{G}|^2}{4\epsilon}) \sum_{I,J} Z_I \exp (-i \mathbf{G} \cdot \mathbf{R}_I) Z_J \exp ( -i  \mathbf{G} \cdot \mathbf{R}_J) \\ + \frac{1}{2}\sum_{\mathbf{a}} \sum_{I,J \in |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} Z_I Z_J \frac{erf(\epsilon |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|)}{|\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} - \frac{\epsilon}{\pi}\sum_I Z_I^2 +  </script>
-<script type="math/tex; mode=display"> - \frac{\pi}{2\epsilon^2\Omega} \left( \sum_I Z_I \right)^2 </script>
+<script type="math/tex; mode=display">E_{ion-ion} = \frac{1}{2\Omega} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|^2} \exp(\frac{|\mathbf{G}|^2}{4\epsilon}) \sum_{I,J} Z_I \exp (-i \mathbf{G} \cdot \mathbf{R}_I) Z_J \exp ( -i  \mathbf{G} \cdot \mathbf{R}_J) + </script>
+<script type="math/tex; mode=display">\frac{1}{2}\sum_{\mathbf{a}} \sum_{I,J \in |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} Z_I Z_J \frac{erf(\epsilon |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|)}{|\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} - \frac{\epsilon}{\pi}\sum_I Z_I^2 +  </script>
+<script type="math/tex; mode=display"> - \frac{\pi}{2\epsilon^2\Omega} \left( \sum_{I} Z_{I} \right)^2 </script>
 </p>
 <p>The local potential in the <script type="math/tex">\tilde{E}_{vlocal-pw}</script> term is the Fourier
 transform of</p>
@@ -1238,9 +1239,9 @@ END
     orbitals</li>
 <li><code>output_wavefunctions</code> - name that will point to file containing the
     one-electron orbitals at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass (<script type="math/tex">\mu</script>). This
+<li><code>fake_mass</code> - value for the electronic fake mass <script type="math/tex">\mu</script>. This
     parameter is not presently used in a conjugate gradient simulation</li>
-<li><code>time_step</code> - value for the time step (<script type="math/tex">\Delta t</script>). This parameter
+<li><code>time_step</code> - value for the time step <script type="math/tex">\Delta t</script>. This parameter
     is not presently used in a conjugate gradient simulation.</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies and tolerances</li>
@@ -1979,8 +1980,7 @@ is</p>
 <script type="math/tex; mode=display">\xi_{ij} = \frac{1-\left(r_{ij}/r_{0}\right)^n}{1-\left(r_{ij}/r_{0}\right)^m}</script>
 </p>
 <p>where <script type="math/tex">n</script> and <script type="math/tex">m</script> are integers (m &gt; n) chosen such that
-<script type="math/tex">\xi_{ij}\approx 1</script> when
-<script type="math/tex">r_{ij}<r_{0}</script>  and
+<script type="math/tex">\xi_{ij}\approx 1</script> when <script type="math/tex">r_{ij} < r_0</script>  and
 <script type="math/tex">\xi_{ij}\rightarrow 0</script> when <script type="math/tex">r_{ij}</script> is much larger than <script type="math/tex">r_{0}</script>.
 For example, the parameters of the O-H coordination in water is well
 described by <script type="math/tex">r_{0}</script> =1.6 Å, 
@@ -2001,11 +2001,8 @@ small values of <script type="math/tex">n</script> respectively correspond to sh
 transitions at <script type="math/tex">r_{ij} = r_{0}</script>. 
 Furthermore <script type="math/tex">\xi_{ij}</script> should
 approach 1 and 0 when <script type="math/tex">r_{ij} < 0</script>
-and
-<script type="math/tex">r_{ij} < r_0 </script>
-respectively. In practice 
-<script type="math/tex">n</script> =6-10 Å 
-<script type="math/tex">^{-1}</script>. 
+and <script type="math/tex">r_{ij} < r_0 </script>
+respectively. In practice <script type="math/tex">n</script> =6-10 Å <script type="math/tex">^{-1}</script>. 
 For example, a good set
 of parameters of the O-H coordination in water is <script type="math/tex">r_{0}</script> =1.4 Å and
 <script type="math/tex">n</script> =10 Å <script type="math/tex">^{-1}</script>.</p>
@@ -3880,7 +3877,7 @@ quantity that can be calculated from this simulation is the cohesive
 energy.The cohesive energy of a crystal is the energy needed to separate
 the atoms of the solid into isolated atoms,
 i.e.</p>
-<p><img alt="klzzwxh:0490" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
+<p><img alt="klzzwxh:0491" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
 <p>where <img alt="<script type="math/tex">E_{solid}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0479f37244fd4da93d764e9132414dcf.svg?invert_in_darkmode&sanitize=true" align=middle width="40.39431pt" height="22.38192pt"/> is the energy of the solid and <img alt="<script type="math/tex">E_{atom}^a</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c8cd94d8d58f10c3091c4f26c69f3140.svg?invert_in_darkmode&sanitize=true" align=middle width="42.225975pt" height="22.38192pt"/> are
 the energies of the isolated atoms. In order to calculate the cohesive
 energy the energy of an isolated carbon atom at the same level of theory
