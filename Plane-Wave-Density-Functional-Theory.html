@@ -2878,7 +2878,7 @@ orbitals.</p>
 <p>Given this kinetic energy the constrained equations of motion are found
 by taking the first variation of the auxiliary Lagrangian.</p>
 <p>
-<script type="math/tex; mode=display">\begin{align} = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2;     + \frac{1}{2} \sum_{I} M_I \left | \dot{\vec{R}}_{I} \right | ^2 - E \left [ \left \bigl[ \psi_{i,\sigma}(\vec{r}) \right \bigr] , \left \bigl \vec{R}_I \right \bigr] \right ] \\ + \sum_{ij,\sigma} \Lambda_{ij,\sigma} \left ( \int d\vec{r}\ \psi_{i,\sigma}^{*}(\vec{r}) \psi_{j,\sigma}(\vec{r}) - \delta_{ij\sigma} \right )\end{align}</script>
+<script type="math/tex; mode=display"> L = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2;     + \frac{1}{2} \sum_{I} M_I \left | \dot{\vec{R}}_{I} \right | ^2 - E \left [  \bigl[ \psi_{i,\sigma}(\vec{r}) \right \bigr] , \bigl[ \vec{R}_I \right \bigr] \right ] \\ + \sum_{ij,\sigma} \Lambda_{ij,\sigma} \left ( \int d\vec{r}\ \psi_{i,\sigma}^{*}(\vec{r}) \psi_{j,\sigma}(\vec{r}) - \delta_{ij\sigma} \right )</script>
 </p>
 <p>Which generates a dynamics for the wavefunctions
 <script type="math/tex">\psi_{i,\sigma}(\vec{r})</script> and atoms positions <script type="math/tex">\vec{R}_I</script> through
@@ -2947,7 +2947,8 @@ variables <script type="math/tex">x_e</script> and <script type="math/tex">x_R</
 auxiliary energy functionals to the total
 energy.</p>
 <p>
-<script type="math/tex; mode=display">\begin{align} ION\_{THERMOSTAT}(x_R)  = \frac{1}{2} Q_R \dot{x_R} + E_{R0}x_R \\ ELECTRON\_{THERMOSTAT}(x_e)  = \frac{1}{2} Q_e \dot{x_e} + E_{e0}x_e \end{align}</script>
+<script type="math/tex; mode=display"> ION_{THERMOSTAT}(x_R)  = \frac{1}{2} Q_R \dot{x_R} + E_{R0}x_R</script>
+<script type="math/tex; mode=display">ELECTRON_{THERMOSTAT}(x_e)  = \frac{1}{2} Q_e \dot{x_e} + E_{e0}x_e </script>
 </p>
 <p>In these equations, the average kinetic energy for the ions is</p>
 <p>
@@ -2972,14 +2973,16 @@ is the kinetic energy of the electrons.</p>
 thermostats should be chosen larger than the typical time scale for the
 dynamical events of interest but shorter than the simulation time.</p>
 <p>
-<script type="math/tex; mode=display">\begin{align}P_{ion}  = 2\pi \sqrt{\frac{Q_R}{4E_{R0}}}\\P_{electron}  = 2\pi \sqrt{\frac{Q_e}{4E_{e0}}}\end{align}</script>
+<script type="math/tex; mode=display">P_{ion}  = 2\pi \sqrt{\frac{Q_R}{4E_{R0}}}</script>
+<script type="math/tex; mode=display">P_{electron}  = 2\pi \sqrt{\frac{Q_e}{4E_{e0}}}</script>
 </p>
 <p>where <script type="math/tex">P_{ion}</script> and <script type="math/tex">P_{electron}</script> are the periods of oscillation
 for the ionic and fictitious electronic thermostats.</p>
 <p>In simulated annealing simulations the electronic and ionic Temperatures
 are scaled according to an exponential cooling schedule,</p>
 <p>
-<script type="math/tex; mode=display">\begin{align}T_e(t)  = T_e^0 \exp^{-\frac{t}{\tau_e}}\\T_{ionic}(t)  = T_{ionic}^0 \exp^{-\frac{t}{\tau_{ionic}}} \end{align}</script>
+<script type="math/tex; mode=display">T_e(t)  = T_e^0 \exp^{-\frac{t}{\tau_e}}</script>
+<script type="math/tex; mode=display">T_{ionic}(t)  = T_{ionic}^0 \exp^{-\frac{t}{\tau_{ionic}}}</script>
 </p>
 <p>where <script type="math/tex">T_e^0</script> and <script type="math/tex">T_{ionic}^0</script> are the initial temperatures, and
 <script type="math/tex">\tau_e</script> and <script type="math/tex">\tau_{ionic}</script> are the cooling rates in atomic units.</p>
@@ -3876,7 +3879,7 @@ quantity that can be calculated from this simulation is the cohesive
 energy.The cohesive energy of a crystal is the energy needed to separate
 the atoms of the solid into isolated atoms,
 i.e.</p>
-<p><img alt="klzzwxh:0487" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
+<p><img alt="klzzwxh:0490" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
 <p>where <img alt="<script type="math/tex">E_{solid}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0479f37244fd4da93d764e9132414dcf.svg?invert_in_darkmode&sanitize=true" align=middle width="40.39431pt" height="22.38192pt"/> is the energy of the solid and <img alt="<script type="math/tex">E_{atom}^a</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c8cd94d8d58f10c3091c4f26c69f3140.svg?invert_in_darkmode&sanitize=true" align=middle width="42.225975pt" height="22.38192pt"/> are
 the energies of the isolated atoms. In order to calculate the cohesive
 energy the energy of an isolated carbon atom at the same level of theory
