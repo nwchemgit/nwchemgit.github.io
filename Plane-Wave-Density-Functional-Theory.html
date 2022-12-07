@@ -586,22 +586,25 @@ term is localized with the atomic spheres and is represented on radial
 grids centered on the atoms
 as</p>
 <p><center></p>
-<p><img alt="<script type="math/tex">\psi_n^I(\mathbf{r}) = \sum_{\alpha} (\varphi_{\alpha}^I(\mathbf{r})-\tilde{\varphi}_{\alpha}^I(\mathbf{r}))c_{n\alpha}^I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/848aa7ada3c2deaf67b284abb866fa5d.svg?invert_in_darkmode&sanitize=true" align=middle width="226.367295pt" height="27.59823pt"/></p>
+<p>
+<script type="math/tex; mode=display">\psi_n^I(\mathbf{r}) = \sum_{\alpha} (\varphi_{\alpha}^I(\mathbf{r})-\tilde{\varphi}_{\alpha}^I(\mathbf{r}))c_{n\alpha}^I</script>
+</p>
 <p></center></p>
-<p>where the coefficients <img alt="<script type="math/tex">c_{n\alpha}^I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/9912f4d7691c2b7812f92088b00f8e79.svg?invert_in_darkmode&sanitize=true" align=middle width="23.69697pt" height="27.59823pt"/>are given by</p>
+<p>where the coefficients <script type="math/tex">c_{n\alpha}^I</script> are given by</p>
 <p>
 <script type="math/tex; mode=display"> c_{n\alpha}^I = <\tilde{p}_{\alpha}^I | \tilde{\psi}_n></script>
 </p>
 <p>This decomposition can be expressed using an invertible linear
-transformation, <img alt="<script type="math/tex">T</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f118ee06d05f3c2d98361d9c30e38ce.svg?invert_in_darkmode&sanitize=true" align=middle width="11.84502pt" height="22.38192pt"/>, is defined which relates the stiff one-electron
-wavefunctions <img alt="<script type="math/tex">\psi_n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/b13a79228c80e7215dae92bab7edf28d.svg?invert_in_darkmode&sanitize=true" align=middle width="18.76347pt" height="22.74591pt"/> to a set of smooth one-electron wavefunctions
-<img alt="<script type="math/tex">\tilde{\psi}_n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/fcc9c90d3a7f00d625fc3d3e14eedf6d.svg?invert_in_darkmode&sanitize=true" align=middle width="18.76347pt" height="30.55107pt"/></p>
-<p><center></p>
-<p><img alt="<script type="math/tex">\tilde{\psi}_n = T \psi_n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/1a3eb7230098a1f7704e75960d236e1a.svg?invert_in_darkmode&sanitize=true" align=middle width="72.14262pt" height="30.55107pt"/></p>
-<p></center></p>
-<p><center></p>
-<p><img alt="<script type="math/tex">\psi_n = T^{-1} \tilde{\psi}_n</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/d60e712a65cbf6e8756e2aa49179f051.svg?invert_in_darkmode&sanitize=true" align=middle width="89.75109pt" height="30.55107pt"/></p>
-<p></center></p>
+transformation, <script type="math/tex">T</script>, is defined which relates the stiff one-electron
+wavefunctions <script type="math/tex">\psi_n</script> to a set of smooth one-electron wavefunctions
+<script type="math/tex">\tilde{\psi}_n</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\tilde{\psi}_n = T \psi_n</script>
+</p>
+<p>
+<script type="math/tex; mode=display">\psi_n = T^{-1} \tilde{\psi}_n</script>
+</p>
 <p>which can be represented by fairly small plane-wave basis. The
 transformation <img alt="<script type="math/tex">T</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/2f118ee06d05f3c2d98361d9c30e38ce.svg?invert_in_darkmode&sanitize=true" align=middle width="11.84502pt" height="22.38192pt"/> is defined using a local PAW basis, which consists
 of atomic orbitals, <img alt="<script type="math/tex">\varphi{\alpha}^I(\mathbf{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/74bd0086a3bdc1567a34307fac0dc58c.svg?invert_in_darkmode&sanitize=true" align=middle width="40.57515pt" height="27.59823pt"/>, 
@@ -2854,10 +2857,10 @@ theory (R. Car and M. Parrinello, Phys. Rev. Lett. <strong>55</strong>, 2471, (1
 heart of this method they introduced a fictitious kinetic energy
 functional for the Kohn-Sham
 orbitals.</p>
-<p><img alt="klzzwxh:0439&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
+<p><img alt="klzzwxh:0428&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
 <p>Given this kinetic energy the constrained equations of motion are found
 by taking the first variation of the auxiliary Lagrangian.</p>
-<p><img alt="klzzwxh:0442" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
+<p><img alt="klzzwxh:0431" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
 <p>Which generates a dynamics for the wavefunctions
 <img alt="<script type="math/tex">\psi_{i,\sigma}(\vec{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/730a1523e8e8ba1c187f863f8d4f37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="48.685725pt" height="24.56553pt"/> and atoms positions <img alt="<script type="math/tex">\vec{R}_I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/57ac99f1caf72f8bb91bbfe4da0441aa.svg?invert_in_darkmode&sanitize=true" align=middle width="19.1301pt" height="31.71135pt"/> through
 the constrained equations of motion:</p>
@@ -3861,7 +3864,7 @@ quantity that can be calculated from this simulation is the cohesive
 energy.The cohesive energy of a crystal is the energy needed to separate
 the atoms of the solid into isolated atoms,
 i.e.</p>
-<p><img alt="klzzwxh:0686" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
+<p><img alt="klzzwxh:0675" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
 <p>where <img alt="<script type="math/tex">E_{solid}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0479f37244fd4da93d764e9132414dcf.svg?invert_in_darkmode&sanitize=true" align=middle width="40.39431pt" height="22.38192pt"/> is the energy of the solid and <img alt="<script type="math/tex">E_{atom}^a</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c8cd94d8d58f10c3091c4f26c69f3140.svg?invert_in_darkmode&sanitize=true" align=middle width="42.225975pt" height="22.38192pt"/> are
 the energies of the isolated atoms. In order to calculate the cohesive
 energy the energy of an isolated carbon atom at the same level of theory
