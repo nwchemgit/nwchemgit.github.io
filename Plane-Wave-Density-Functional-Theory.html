@@ -1835,44 +1835,44 @@ is a powerful, non-equilibrium molecular dynamics method which
 accelerates the sampling of the multidimensional free energy surfaces of
 chemical reactions. This is achieved by adding an external
 time-dependent bias potential that is a function of user defined
-collective variables, <script type="math/tex">\bold{s}</script>. The bias potential discourages the
-system from sampling previously visited values of <script type="math/tex">\bold{s}</script> (i.e.,
-encourages the system to explore new values of <script type="math/tex">\bold{s}</script>. During the
+collective variables, <script type="math/tex">\mathbf{s}</script>. The bias potential discourages the
+system from sampling previously visited values of <script type="math/tex">\mathbf{s}</script> (i.e.,
+encourages the system to explore new values of <script type="math/tex">\mathbf{s}</script>. During the
 simulation the bias potential accumulates in low energy wells which then
 allows the system to cross energy barriers much more quickly than would
-occur in standard dynamics. The collective variable <script type="math/tex">\bold{s}</script> is a
-generic function of the system coordinates, <script type="math/tex">\bold{R}</script> (e.g. bond
+occur in standard dynamics. The collective variable <script type="math/tex">\mathbf{s}</script> is a
+generic function of the system coordinates, <script type="math/tex">\mathbf{R}</script> (e.g. bond
 distance, bond angle, coordination numbers, etc.) that is capable of
 describing the chemical reaction of interest.
-<script type="math/tex">\bold{s}\left(\bold{R}\right)</script> can be regarded as a reaction
+<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> can be regarded as a reaction
 coordinate if it can distinguish between the reactant, transition, and
 products states, and also capture the kinetics of the reaction.</p>
 <p>The biasing is achieved by “flooding” the energy landscape with
 repulsive Gaussian “hills” centered on the current location of
-<script type="math/tex">\bold{s}\left(\bold{R}\right)</script> at a constant time interval
+<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at a constant time interval
 <script type="math/tex">\Delta t</script>. If the height of the Gaussians is constant in time then we
 have standard metadynamics; if the heights vary (slowly decreased) over
 time then we have well-tempered metadynamics. In between the addition of
 Gaussians, the system is propagated by normal (but out of equilibrium)
 dynamics. Suppose that the dimension of the collective space is <script type="math/tex">d</script>,
 i.e.
-<script type="math/tex">\bold{s}\left(\bold{R}\right)=\left\{s_1\left(\bold{R}\right),s_2\left(\bold{R}\right),\ldots,s_d\left(\bold{R}\right)\right\}</script>
+<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)=\left\{s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\right\}</script>
 and that prior to any time <script type="math/tex">t</script> during the simulation, <script type="math/tex">N +1</script>
 Gaussians centered on 
-<script type="math/tex">\bold{S}^{t_g}</script>
+<script type="math/tex">\mathbf{S}^{t_g}</script>
 are deposited along the
-trajectory of <script type="math/tex">\bold{s}\left(\bold{R}\right)</script> at times
+trajectory of <script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at times
 <script type="math/tex">t_g = 0, \Delta t, 2\Delta t, \ldots ,N\Delta t</script>. Then, the value of
 the bias potential, <script type="math/tex">V</script>, at an arbitrary point,
-<script type="math/tex">\bold{s}\left(\bold{R}\right)=\left\{s_1\left(\bold{R}\right),s_2\left(\bold{R}\right),\ldots,s_d\left(\bold{R}\right)\right\}</script>,
-along the trajectory of <script type="math/tex">\bold{s}\left(\bold{R}\right)</script> at time <script type="math/tex">t</script>
+<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)=\left\{s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\right\}</script>,
+along the trajectory of <script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at time <script type="math/tex">t</script>
 is given
 by</p>
 <p>
 <script type="math/tex; mode=display">V_{meta}\left(\pmb{s},t\right) = \sum_{t_g=0}^{t_g<} W(t) \exp\left(-\sum_{i=1}^{d}\frac{({s_i}-{s_i}^{t_g})^2}{2\sigma_i^2}\right)</script>
 </p>
 <p>where
-<script type="math/tex">W(t)=W_0 \exp\left(-\frac{V_{meta}\left(\bold{s},t-\Delta t\right)}{k_B T_{tempered}}\right)</script>
+<script type="math/tex">W(t)=W_0 \exp\left(-\frac{V_{meta}\left(\mathbf{s},t-\Delta t\right)}{k_B T_{tempered}}\right)</script>
 is the time-dependent Gaussian height. <script type="math/tex">\sigma_i \,(i=1,2,\ldots,d)</script>
 and <script type="math/tex">W_0</script> are width and initial height respectively of Gaussians, and
 <script type="math/tex">T_{tempered}</script>
@@ -1885,11 +1885,11 @@ corresponds to standard metadynamics since in this case
 <script type="math/tex">W(t)=W_0</script>=constant. A positive, finite value of <script type="math/tex">T_{tempered}</script> (eg.
 <script type="math/tex">T_{tempered}</script> &gt;=1500 K) corresponds to <em>well-tempered</em> metadynamics in which  <script type="math/tex">0 < W(t)\le W_0</script>.</p>
 <p>For sufficiently large <script type="math/tex">t</script>, the history potential
-<script type="math/tex">V_{meta}\left(\bold{s},t\right)</script> will nearly flatten the free energy
-surface, <script type="math/tex">F(\bold{s})</script>, along <script type="math/tex">\bold{S}</script> and an unbiased estimator
+<script type="math/tex">V_{meta}\left(\mathbf{s},t\right)</script> will nearly flatten the free energy
+surface, <script type="math/tex">F(\mathbf{s})</script>, along <script type="math/tex">\mathbf{S}</script> and an unbiased estimator
 of F(s) is given by</p>
 <p>
-<script type="math/tex; mode=display">F(\bold{s}) = -\left(1+\frac{T}{T_{tempered}}\right)\lim_{t \to \infty} V_{meta}(\bold{s},t)</script>
+<script type="math/tex; mode=display">F(\mathbf{s}) = -\left(1+\frac{T}{T_{tempered}}\right)\lim_{t \to \infty} V_{meta}(\mathbf{s},t)</script>
 </p>
 <h4 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h4>
 <p>Input to a metadynamics simulation is contained within the METADYNAMICS
@@ -1954,7 +1954,7 @@ END
 <p>This describes the bond distance between any pair of atoms <script type="math/tex">i</script> and
 <script type="math/tex">j</script>:</p>
 <p>
-<script type="math/tex; mode=display">s\left(r_{ij}\right) = \left \vert \bold{r}_{i}-\bold{r}_j\right\vert = r_{ij}</script>
+<script type="math/tex; mode=display">s\left(r_{ij}\right) = \left \vert \mathbf{r}_{i}-\mathbf{r}_j\right\vert = r_{ij}</script>
 </p>
 <h4 id="angle-collective-variable">Angle Collective Variable<a class="headerlink" href="#angle-collective-variable" title="Permanent link">&para;</a></h4>
 <p>This describes the bond angle formed at <script type="math/tex">i</script> by the triplet <script type="math/tex"><ijk></script>
