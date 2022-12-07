@@ -1856,9 +1856,7 @@ time then we have well-tempered metadynamics. In between the addition of
 Gaussians, the system is propagated by normal (but out of equilibrium)
 dynamics. Suppose that the dimension of the collective space is <script type="math/tex">d</script>,
 i.e.
-<script type="math/tex; mode=display">\mathbf{s}\left(\mathbf{R}\right)=</script>
-<script type="math/tex; mode=display">\mathbf{s}\left(\mathbf{R}\right)=\left{s_1\right}</script>
-<script type="math/tex; mode=display">\mathbf{s}\left(\mathbf{R}\right)=\left{s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\right}</script>
+<script type="math/tex; mode=display">\mathbf{s}\left(\mathbf{R}\right)=\left[s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\right]</script>
 and that prior to any time <script type="math/tex">t</script> during the simulation, <script type="math/tex">N +1</script>
 Gaussians centered on 
 <script type="math/tex">\mathbf{S}^{t_g}</script>
@@ -1866,7 +1864,7 @@ are deposited along the
 trajectory of <script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at times
 <script type="math/tex">t_g = 0, \Delta t, 2\Delta t, \ldots ,N\Delta t</script>. Then, the value of
 the bias potential, <script type="math/tex">V</script>, at an arbitrary point,
-<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)=\left\{s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\right\}</script>,
+<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)=\left[s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\right]</script>,
 along the trajectory of <script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at time <script type="math/tex">t</script>
 is given
 by</p>
@@ -2866,10 +2864,10 @@ theory (R. Car and M. Parrinello, Phys. Rev. Lett. <strong>55</strong>, 2471, (1
 heart of this method they introduced a fictitious kinetic energy
 functional for the Kohn-Sham
 orbitals.</p>
-<p><img alt="klzzwxh:0325&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
+<p><img alt="klzzwxh:0323&quot;" src="svgs/804dff8a7e91191f883aba3d46f1fe7c.svg" /></p>
 <p>Given this kinetic energy the constrained equations of motion are found
 by taking the first variation of the auxiliary Lagrangian.</p>
-<p><img alt="klzzwxh:0328" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
+<p><img alt="klzzwxh:0326" src="svgs/bace631069baebda741a776e136b0e1a.svg" /></p>
 <p>Which generates a dynamics for the wavefunctions
 <img alt="<script type="math/tex">\psi_{i,\sigma}(\vec{r})</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/730a1523e8e8ba1c187f863f8d4f37c5.svg?invert_in_darkmode&sanitize=true" align=middle width="48.685725pt" height="24.56553pt"/> and atoms positions <img alt="<script type="math/tex">\vec{R}_I</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/57ac99f1caf72f8bb91bbfe4da0441aa.svg?invert_in_darkmode&sanitize=true" align=middle width="19.1301pt" height="31.71135pt"/> through
 the constrained equations of motion:</p>
@@ -3873,7 +3871,7 @@ quantity that can be calculated from this simulation is the cohesive
 energy.The cohesive energy of a crystal is the energy needed to separate
 the atoms of the solid into isolated atoms,
 i.e.</p>
-<p><img alt="klzzwxh:0572" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
+<p><img alt="klzzwxh:0570" src="svgs/93cf8b8da88e9e3067b160ad32c5d9eb.svg" /></p>
 <p>where <img alt="<script type="math/tex">E_{solid}</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/0479f37244fd4da93d764e9132414dcf.svg?invert_in_darkmode&sanitize=true" align=middle width="40.39431pt" height="22.38192pt"/> is the energy of the solid and <img alt="<script type="math/tex">E_{atom}^a</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/c8cd94d8d58f10c3091c4f26c69f3140.svg?invert_in_darkmode&sanitize=true" align=middle width="42.225975pt" height="22.38192pt"/> are
 the energies of the isolated atoms. In order to calculate the cohesive
 energy the energy of an isolated carbon atom at the same level of theory
