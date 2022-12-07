@@ -1828,7 +1828,7 @@ are deposited along the
 trajectory of <script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at times
 <script type="math/tex">t_g = 0, \Delta t, 2\Delta t, \ldots ,N\Delta t</script>. Then, the value of
 the bias potential, <script type="math/tex">V</script>, at an arbitrary point,
-<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)=\left\{s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\right\}</script>,
+<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)=\bigl[s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\bigr]</script>,
 along the trajectory of <script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at time <script type="math/tex">t</script>
 is given
 by</p>
@@ -1847,7 +1847,7 @@ corresponds to standard molecular dynamics because
 and therfore there is no bias. <script type="math/tex">T_{tempered}=\infty</script>
 corresponds to standard metadynamics since in this case
 <script type="math/tex">W(t)=W_0</script>=constant. A positive, finite value of <script type="math/tex">T_{tempered}</script> (eg.
-<script type="math/tex">T_{tempered}</script> &gt;=1500 K) corresponds to <em>well-tempered</em> metadynamics in which  <script type="math/tex">0 < W(t)\le W_0</script>.</p>
+<script type="math/tex">T_{tempered}</script> &gt;=1500 K) corresponds to <em>well-tempered</em> metadynamics in which  <script type="math/tex">0 < W(t)<= W_0</script>.</p>
 <p>For sufficiently large <script type="math/tex">t</script>, the history potential
 <script type="math/tex">V_{meta}\left(\mathbf{s},t\right)</script> will nearly flatten the free energy
 surface, <script type="math/tex">F(\mathbf{s})</script>, along <script type="math/tex">\mathbf{S}</script> and an unbiased estimator
@@ -2995,7 +2995,7 @@ be</p>
 <h3 id="structural-optimization-of-s2-dimer-with-lda-approximation">Structural optimization of S<sub>2</sub> dimer with LDA approximation<a class="headerlink" href="#structural-optimization-of-s2-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
 <p>(input:<a href="s2-example2.nw">Media:s2-example2.nw</a>,
 output:<a href="s2-example2.nwout">Media:s2-example2.nwout</a>)</p>
-<p>In this example, the structure of the S<img alt="<script type="math/tex">_2</script>" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/svgs/10f8f9bf55a697fc978ffe2990e3209d.svg?invert_in_darkmode&sanitize=true" align=middle width="6.5281095pt" height="14.10255pt"/> dimer using results
+<p>In this example, the structure of the S<sub>2</sub> dimer using results
 generated from prior energy calculation is calculated. Since most of the
 parameters are already stored in the run-time database the input is very
 simple.</p>
