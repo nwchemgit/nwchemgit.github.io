@@ -1,143 +1,2845 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://nwchemgit.github.io/Plane-Wave-Density-Functional-Theory.html" />
-      <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>Plane Wave Density Functional Theory - NWChem</title>
-    <link rel="stylesheet" href="css/theme.css" />
-    <link rel="stylesheet" href="css/theme_extra.css" />
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Plane Wave Density Functional Theory";
-        var mkdocs_page_input_path = "Plane-Wave-Density-Functional-Theory.md";
-        var mkdocs_page_url = "/Plane-Wave-Density-Functional-Theory.html";
-      </script>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="NWChem Website">
+      
+      
+      
+        <link rel="canonical" href="https://nwchemgit.github.io/Plane-Wave-Density-Functional-Theory.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
     
-    <script src="js/jquery-3.6.0.min.js" defer></script>
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-    <![endif]--> 
-</head>
+    
+      
+        <title>Plane Wave Density Functional Theory - NWChem</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.975780f9.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.2505c338.min.css">
+        
+      
+      
 
-<body class="wy-body-for-nav" role="document">
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="." class="icon icon-home"> NWChem
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#contents" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Home.html">NWChem Manual</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Download.html">How to download and install NWChem</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction </a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Quantum-Mechanical-Methods.html">Quantum Mechanical Methods</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Quantum-Molecular-Dynamics.html">Quantum Molecular Dynamics</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Hybrid-Approaches.html">Hybrid Approaches</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Other-Capabilities.html">Other Capabilities</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Examples.html">NWChem Examples</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Compiling-NWChem.html">How to Compile NWChem</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Benchmarks.html">Benchmarks performed with NWChem</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Known-Bugs.html">Known Bugs</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Tutorials.html">NWChem Tutorials</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Forum.html">Forum</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Archived-Forum.html">Archived Forum</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="EMSL_Arrows.html">EMSL Arrows</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Software-supporting-NWChem.html">Software supporting NWChem</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Supplementary-Information.html">Supplementary Information</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="Containers.html">Containers</a>
-                </li>
-              </ul>
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="NWChem" class="md-header__button md-logo" aria-label="NWChem" data-md-component="logo">
+      
+  <img src="assets/MS3logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NWChem
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plane Wave Density Functional Theory
+            
+          </span>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href=".">NWChem</a>
+    
+      <form class="md-header__option" data-md-component="palette">
         
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Plane Wave Density Functional Theory</li>
-    <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Plane-Wave-Density-Functional-Theory.md" class="icon icon-github"> Edit on GitHub</a>
-    </li>
-  </ul>
-  <hr/>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/nwchemgit/nwchem-wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
               
-                <h5 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h5>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="NWChem" class="md-nav__button md-logo" aria-label="NWChem" data-md-component="logo">
+      
+  <img src="assets/MS3logo.png" alt="logo">
+
+    </a>
+    NWChem
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/nwchemgit/nwchem-wiki" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Home.html" class="md-nav__link">
+        NWChem Manual
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          How to download and install NWChem
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="How to download and install NWChem" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          How to download and install NWChem
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Download.html" class="md-nav__link">
+        How to download and install NWChem
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Compiling-NWChem.html" class="md-nav__link">
+        Compiling NWChem from source
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Introduction 
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introduction " data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction 
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Getting-Started.html" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="NWChem-Architecture.html" class="md-nav__link">
+        NWChem Architecture
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Quantum-Mechanical-Methods
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Quantum-Mechanical-Methods" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Quantum-Mechanical-Methods
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Hartree-Fock-Theory-for-Molecules.html" class="md-nav__link">
+        Hartree-Fock
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Density-Functional-Theory-for-Molecules.html" class="md-nav__link">
+        Density Functional Theory (DFT)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Excited-State-Calculations.html" class="md-nav__link">
+        CIS, TDHF, TDDFT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="RT-TDDFT.html" class="md-nav__link">
+        Real-time TDDFT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Plane-Wave-Density-Functional-Theory.html" class="md-nav__link">
+        Plane-Wave Density Functional Theory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="TCE.html" class="md-nav__link">
+        Tensor Contraction Engine Module: CI, MBPT, and CC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="MP2.html" class="md-nav__link">
+        MP2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CCSD.html" class="md-nav__link">
+        Coupled Cluster Calculations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Multiconfiguration_SCF.html" class="md-nav__link">
+        MCSCF
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="GW.html" class="md-nav__link">
+        Molecular GW
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Quantum Molecular Dynamics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Quantum Molecular Dynamics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Quantum Molecular Dynamics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Plane Wave Density Functional Theory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Plane-Wave-Density-Functional-Theory.html" class="md-nav__link md-nav__link--active">
+        Plane Wave Density Functional Theory
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudopotential-plane-wave-density-functional-theory-nwpw" class="md-nav__link">
+    Pseudopotential plane-wave density functional theory (NWPW)
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudopotential plane-wave density functional theory (NWPW)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pspw-tasks-gamma-point-calculations" class="md-nav__link">
+    PSPW Tasks: Gamma Point Calculations
+  </a>
+  
+    <nav class="md-nav" aria-label="PSPW Tasks: Gamma Point Calculations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paw-potentials" class="md-nav__link">
+    PAW Potentials
+  </a>
+  
+    <nav class="md-nav" aria-label="PAW Potentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paw-implementation-notes" class="md-nav__link">
+    PAW Implementation Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exchange-correlation-potentials" class="md-nav__link">
+    Exchange-Correlation Potentials
+  </a>
+  
+    <nav class="md-nav" aria-label="Exchange-Correlation Potentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dft-u-corrections" class="md-nav__link">
+    DFT + U Corrections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langreth-style-vdw-and-vdw-van-der-wall-functionals" class="md-nav__link">
+    Langreth style vdw and vdw van der Wall functionals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grimme-dispersion-corrections" class="md-nav__link">
+    Grimme Dispersion Corrections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-exchange-correlation-potentials-available-in-the-dft-module" class="md-nav__link">
+    Using Exchange-Correlation Potentials Available in the DFT Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact-exchange" class="md-nav__link">
+    Exact Exchange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-interaction-corrections" class="md-nav__link">
+    Self-Interaction Corrections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wannier" class="md-nav__link">
+    Wannier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mulliken-analysis" class="md-nav__link">
+    Mulliken Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-of-states" class="md-nav__link">
+    Density of States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projected-density-of-states" class="md-nav__link">
+    Projected Density of States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-charge-analysis" class="md-nav__link">
+    Point Charge Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pspw_dplot-generate-gaussian-cube-files" class="md-nav__link">
+    PSPW_DPLOT: Generate Gaussian Cube Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-tasks-multiple-k-point-calculations" class="md-nav__link">
+    Band Tasks: Multiple k-point Calculations
+  </a>
+  
+    <nav class="md-nav" aria-label="Band Tasks: Multiple k-point Calculations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brillouin-zone" class="md-nav__link">
+    Brillouin Zone
+  </a>
+  
+    <nav class="md-nav" aria-label="Brillouin Zone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#band-structure-paths" class="md-nav__link">
+    Band Structure Paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-points-of-different-space-groups-conventional-cells" class="md-nav__link">
+    Special Points of Different Space Groups (Conventional Cells)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screened-exchange" class="md-nav__link">
+    Screened Exchange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-of-states-and-projected-density-of-states" class="md-nav__link">
+    Density of States and Projected Density of States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-component-wavefunctions-spin-orbit-zora" class="md-nav__link">
+    Two-Component Wavefunctions (Spin-Orbit ZORA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band_dplot-generate-gaussian-cube-files" class="md-nav__link">
+    BAND_DPLOT: Generate Gaussian Cube Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-parrinello" class="md-nav__link">
+    Car-Parrinello
+  </a>
+  
+    <nav class="md-nav" aria-label="Car-Parrinello">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-geometry-constraints-to-a-car-parrinello-simulation" class="md-nav__link">
+    Adding Geometry Constraints to a Car-Parrinello Simulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-parrinello-output-datafiles" class="md-nav__link">
+    Car-Parrinello Output Datafiles
+  </a>
+  
+    <nav class="md-nav" aria-label="Car-Parrinello Output Datafiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xyz-motion-file" class="md-nav__link">
+    XYZ motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ion_motion-motion-file" class="md-nav__link">
+    ION_MOTION motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emotion-motion-file" class="md-nav__link">
+    EMOTION motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hmotion-motion-file" class="md-nav__link">
+    HMOTION motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eigmotion-motion-file" class="md-nav__link">
+    EIGMOTION motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omotion-motion-file" class="md-nav__link">
+    OMOTION motion file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#born-oppenheimer-molecular-dynamics" class="md-nav__link">
+    Born-Oppenheimer Molecular Dynamics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-pi-socket-communication" class="md-nav__link">
+    i-PI Socket Communication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metropolis-monte-carlo" class="md-nav__link">
+    Metropolis Monte-Carlo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free-energy-simulations" class="md-nav__link">
+    Free Energy Simulations
+  </a>
+  
+    <nav class="md-nav" aria-label="Free Energy Simulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadynamics" class="md-nav__link">
+    MetaDynamics
+  </a>
+  
+    <nav class="md-nav" aria-label="MetaDynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamd-temperature-accelerated-molecular-dynamics" class="md-nav__link">
+    TAMD - Temperature Accelerated Molecular Dynamics
+  </a>
+  
+    <nav class="md-nav" aria-label="TAMD - Temperature Accelerated Molecular Dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input_1" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collective-variables" class="md-nav__link">
+    Collective Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Collective Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bond-distance-collective-variable" class="md-nav__link">
+    Bond Distance Collective Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angle-collective-variable" class="md-nav__link">
+    Angle Collective Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordination-collective-variable" class="md-nav__link">
+    Coordination Collective Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-plane-collective-variable" class="md-nav__link">
+    N-Plane Collective Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-defined-collective-variable" class="md-nav__link">
+    User defined Collective Variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-x-ray-absorption-fine-structure-exafs-integration-with-feff6l" class="md-nav__link">
+    Extended X-Ray Absorption Fine Structure (EXAFS) - Integration with FEFF6L
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frozen-phonon-calculations" class="md-nav__link">
+    Frozen Phonon Calculations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steepest-descent" class="md-nav__link">
+    Steepest Descent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-cell" class="md-nav__link">
+    Simulation Cell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-cell-optimization" class="md-nav__link">
+    Unit Cell Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smear-fractional-occupation-of-the-molecular-orbitals" class="md-nav__link">
+    SMEAR - Fractional Occupation of the Molecular Orbitals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-penalty-functions" class="md-nav__link">
+    Spin Penalty Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aimdmm-qmmm" class="md-nav__link">
+    AIMD/MM (QM/MM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psp_generator" class="md-nav__link">
+    PSP_GENERATOR
+  </a>
+  
+    <nav class="md-nav" aria-label="PSP_GENERATOR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atomic_filling-block" class="md-nav__link">
+    ATOMIC_FILLING Block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cutoff" class="md-nav__link">
+    CUTOFF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semicore_radius" class="md-nav__link">
+    SEMICORE_RADIUS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paw-tasks-legacy-implementation" class="md-nav__link">
+    PAW Tasks: Legacy Implementation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudopotential-and-paw-basis-libraries" class="md-nav__link">
+    Pseudopotential and PAW basis Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-rtdb-entries-and-miscellaneous-datafiles" class="md-nav__link">
+    NWPW RTDB Entries and Miscellaneous DataFiles
+  </a>
+  
+    <nav class="md-nav" aria-label="NWPW RTDB Entries and Miscellaneous DataFiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ion-positions" class="md-nav__link">
+    Ion Positions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ion-velocities" class="md-nav__link">
+    Ion Velocities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wavefunction-datafile" class="md-nav__link">
+    Wavefunction Datafile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-wavefunction-datafile" class="md-nav__link">
+    Velocity Wavefunction Datafile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatted-pseudopotential-datafile" class="md-nav__link">
+    Formatted Pseudopotential Datafile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-dimensional-pseudopotential-datafile" class="md-nav__link">
+    One-Dimensional Pseudopotential Datafile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-parrinello-scheme-for-ab-initio-molecular-dynamics" class="md-nav__link">
+    Car-Parrinello Scheme for Ab Initio Molecular Dynamics
+  </a>
+  
+    <nav class="md-nav" aria-label="Car-Parrinello Scheme for Ab Initio Molecular Dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verlet-algorithm-for-integration" class="md-nav__link">
+    Verlet Algorithm for Integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-temperature-simulations-nose-hoover-thermostats" class="md-nav__link">
+    Constant Temperature Simulations: Nose-Hoover Thermostats
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-1-s2-dimer-examples-with-pspw" class="md-nav__link">
+    NWPW Tutorial 1: S2 dimer examples with PSPW
+  </a>
+  
+    <nav class="md-nav" aria-label="NWPW Tutorial 1: S2 dimer examples with PSPW">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-energy-of-s2-dimer-with-lda-approximation" class="md-nav__link">
+    Total energy of S2 dimer with LDA approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-optimization-of-s2-dimer-with-lda-approximation" class="md-nav__link">
+    Structural optimization of S2 dimer with LDA approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequency-calculation-of-s2-dimer-with-lda-approximation" class="md-nav__link">
+    Frequency calculation of S2 dimer with LDA approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab-initio-molecular-dynamics-simulation-car-parrinello-of-s2-dimer-using-the-lda-approximation" class="md-nav__link">
+    Ab initio molecular dynamics simulation (Car-Parrinello) of S2 dimer using the LDA approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab-initio-molecular-dynamics-simulation-born-oppenheimer-of-ssub2-dimer-using-the-lda-approximation" class="md-nav__link">
+    Ab initio molecular dynamics simulation (Born-Oppenheimer) of S&lt;sub2 dimer using the LDA approximation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-2-using-pspw-car-parrinello-simulated-annealing-simulations-to-optimize-structures" class="md-nav__link">
+    NWPW Tutorial 2: Using PSPW Car-Parrinello Simulated Annealing Simulations to Optimize Structures
+  </a>
+  
+    <nav class="md-nav" aria-label="NWPW Tutorial 2: Using PSPW Car-Parrinello Simulated Annealing Simulations to Optimize Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulated-annealing-using-constant-energy-simulation" class="md-nav__link">
+    Simulated Annealing Using Constant Energy Simulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulated-annealing-using-constant-temperature-simulation" class="md-nav__link">
+    Simulated Annealing Using Constant Temperature Simulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-3-using-isodesmic-reaction-energies-to-estimate-gas-phase-thermodynamics" class="md-nav__link">
+    NWPW Tutorial 3: using isodesmic reaction energies to estimate gas-phase thermodynamics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o" class="md-nav__link">
+    NWPW Tutorial 4: AIMD/MM simulation of CCl_4 + 64 H_2O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-5-optimizing-the-unit-cell-and-geometry-of-diamond" class="md-nav__link">
+    NWPW Tutorial 5: Optimizing the Unit Cell and Geometry of Diamond
+  </a>
+  
+    <nav class="md-nav" aria-label="NWPW Tutorial 5: Optimizing the Unit Cell and Geometry of Diamond">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-the-unit-cell-and-geometry-for-an-8-atom-supercell-of-diamond-with-pspw" class="md-nav__link">
+    Optimizing the Unit Cell and Geometry for an 8 Atom Supercell of Diamond with PSPW
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-the-unit-cell-for-an-8-atom-supercell-of-diamond-with-band" class="md-nav__link">
+    Optimizing the Unit Cell for an 8 Atom Supercell of Diamond with BAND
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-band-to-optimize-the-unit-cell-for-a-2-atom-primitive-cell-of-diamond" class="md-nav__link">
+    Using BAND to Optimize the Unit Cell for a 2 Atom Primitive Cell of Diamond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-band-to-calculate-the-band-structures-of-diamond" class="md-nav__link">
+    Using BAND to Calculate the Band Structures of Diamond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-band-to-calculate-the-density-of-states-of-diamond" class="md-nav__link">
+    Using BAND to Calculate the Density of States of Diamond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate-the-phonon-spectrum-of-diamond" class="md-nav__link">
+    Calculate the Phonon Spectrum of Diamond
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-6-optimizing-the-unit-cell-of-nickel-with-fractional-occupation" class="md-nav__link">
+    NWPW Tutorial 6: optimizing the unit cell of nickel with fractional occupation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-7-optimizing-the-unit-cells-with-symmetry-diamond-with-fd-3m-symmetry-and-brucite-with-p-3m1-symmetry" class="md-nav__link">
+    NWPW Tutorial 7: Optimizing the unit cells with symmetry: Diamond with Fd-3m symmetry and Brucite with P-3m1 symmetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-8-nvt-metropolis-monte-carlo-simulations" class="md-nav__link">
+    NWPW Tutorial 8: NVT Metropolis Monte-Carlo Simulations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-9-npt-metropolis-monte-carlo-simulations" class="md-nav__link">
+    NWPW Tutorial 9: NPT Metropolis Monte-Carlo Simulations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-9-free-energy-simulations" class="md-nav__link">
+    NWPW Tutorial 9: Free Energy Simulations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paw-tutorial" class="md-nav__link">
+    PAW Tutorial
+  </a>
+  
+    <nav class="md-nav" aria-label="PAW Tutorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-water-molecule" class="md-nav__link">
+    Optimizing a water molecule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-unit-cell-and-geometry-for-silicon-carbide" class="md-nav__link">
+    Optimizing a unit cell and geometry for Silicon-Carbide
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-car-parrinello-simulation" class="md-nav__link">
+    Running a Car-Parrinello Simulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-capabilities-and-limitations" class="md-nav__link">
+    NWPW Capabilities and Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions-and-difficulties" class="md-nav__link">
+    Questions and Difficulties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Gaussian-Basis-AIMD.html" class="md-nav__link">
+        Gaussian Basis AIMD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Hybrid Approaches
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hybrid Approaches" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Hybrid Approaches
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="COSMO-Solvation-Model.html" class="md-nav__link">
+        COSMO Solvation Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="SMD-Model.html" class="md-nav__link">
+        SMD (Solvation Model Based on Density) Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VEM-Model.html" class="md-nav__link">
+        VEM (Vertical Excitation or Emission) Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ONIOM.html" class="md-nav__link">
+        Hybrid Calculations with ONIOM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="QMMM.html" class="md-nav__link">
+        QMMM Simulations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Bq.html" class="md-nav__link">
+        Bq
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="1D-RISM.html" class="md-nav__link">
+        1D RISM
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Potential Energy Surface Analysis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Potential Energy Surface Analysis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Potential Energy Surface Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Geometry-Optimization.html" class="md-nav__link">
+        Geometry Optimization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Hessians-and-Vibrational-Frequencies.html" class="md-nav__link">
+        Hessians
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Constraints.html" class="md-nav__link">
+        Constraints
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Nudged-Elastic-Band-and-Zero-Temperature-String-Methods.html" class="md-nav__link">
+        Nudged Elastic Band (NEB) method
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          Other-Capabilities
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Other-Capabilities" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Other-Capabilities
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Electron-Transfer.html" class="md-nav__link">
+        Electron Transfer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Python.html" class="md-nav__link">
+        Controlling NWChem with Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Quantum.html" class="md-nav__link">
+        Quantum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="VSCF.html" class="md-nav__link">
+        Vibrational SCF (VSCF)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="CCCA_method.html" class="md-nav__link">
+        Correlation consistent Composite Approach (ccCA)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Interface.html" class="md-nav__link">
+        Interfaces to Other Programs
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Examples.html" class="md-nav__link">
+        NWChem Examples
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Benchmarks.html" class="md-nav__link">
+        Benchmarks performed with NWChem
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Known-Bugs.html" class="md-nav__link">
+        Known Bugs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FAQ.html" class="md-nav__link">
+        FAQ
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Tutorials.html" class="md-nav__link">
+        NWChem Tutorials
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Forum.html" class="md-nav__link">
+        Forum
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Archived-Forum.html" class="md-nav__link">
+        Archived Forum
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="EMSL_Arrows.html" class="md-nav__link">
+        EMSL Arrows
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Software-supporting-NWChem.html" class="md-nav__link">
+        Software supporting NWChem
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Supplementary-Information.html" class="md-nav__link">
+        Supplementary Information
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Containers.html" class="md-nav__link">
+        Containers
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contents" class="md-nav__link">
+    Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pseudopotential-plane-wave-density-functional-theory-nwpw" class="md-nav__link">
+    Pseudopotential plane-wave density functional theory (NWPW)
+  </a>
+  
+    <nav class="md-nav" aria-label="Pseudopotential plane-wave density functional theory (NWPW)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pspw-tasks-gamma-point-calculations" class="md-nav__link">
+    PSPW Tasks: Gamma Point Calculations
+  </a>
+  
+    <nav class="md-nav" aria-label="PSPW Tasks: Gamma Point Calculations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paw-potentials" class="md-nav__link">
+    PAW Potentials
+  </a>
+  
+    <nav class="md-nav" aria-label="PAW Potentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paw-implementation-notes" class="md-nav__link">
+    PAW Implementation Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exchange-correlation-potentials" class="md-nav__link">
+    Exchange-Correlation Potentials
+  </a>
+  
+    <nav class="md-nav" aria-label="Exchange-Correlation Potentials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dft-u-corrections" class="md-nav__link">
+    DFT + U Corrections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#langreth-style-vdw-and-vdw-van-der-wall-functionals" class="md-nav__link">
+    Langreth style vdw and vdw van der Wall functionals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grimme-dispersion-corrections" class="md-nav__link">
+    Grimme Dispersion Corrections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-exchange-correlation-potentials-available-in-the-dft-module" class="md-nav__link">
+    Using Exchange-Correlation Potentials Available in the DFT Module
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exact-exchange" class="md-nav__link">
+    Exact Exchange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-interaction-corrections" class="md-nav__link">
+    Self-Interaction Corrections
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wannier" class="md-nav__link">
+    Wannier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mulliken-analysis" class="md-nav__link">
+    Mulliken Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-of-states" class="md-nav__link">
+    Density of States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projected-density-of-states" class="md-nav__link">
+    Projected Density of States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#point-charge-analysis" class="md-nav__link">
+    Point Charge Analysis
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pspw_dplot-generate-gaussian-cube-files" class="md-nav__link">
+    PSPW_DPLOT: Generate Gaussian Cube Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band-tasks-multiple-k-point-calculations" class="md-nav__link">
+    Band Tasks: Multiple k-point Calculations
+  </a>
+  
+    <nav class="md-nav" aria-label="Band Tasks: Multiple k-point Calculations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brillouin-zone" class="md-nav__link">
+    Brillouin Zone
+  </a>
+  
+    <nav class="md-nav" aria-label="Brillouin Zone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#band-structure-paths" class="md-nav__link">
+    Band Structure Paths
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#special-points-of-different-space-groups-conventional-cells" class="md-nav__link">
+    Special Points of Different Space Groups (Conventional Cells)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screened-exchange" class="md-nav__link">
+    Screened Exchange
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#density-of-states-and-projected-density-of-states" class="md-nav__link">
+    Density of States and Projected Density of States
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-component-wavefunctions-spin-orbit-zora" class="md-nav__link">
+    Two-Component Wavefunctions (Spin-Orbit ZORA)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#band_dplot-generate-gaussian-cube-files" class="md-nav__link">
+    BAND_DPLOT: Generate Gaussian Cube Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-parrinello" class="md-nav__link">
+    Car-Parrinello
+  </a>
+  
+    <nav class="md-nav" aria-label="Car-Parrinello">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-geometry-constraints-to-a-car-parrinello-simulation" class="md-nav__link">
+    Adding Geometry Constraints to a Car-Parrinello Simulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-parrinello-output-datafiles" class="md-nav__link">
+    Car-Parrinello Output Datafiles
+  </a>
+  
+    <nav class="md-nav" aria-label="Car-Parrinello Output Datafiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xyz-motion-file" class="md-nav__link">
+    XYZ motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ion_motion-motion-file" class="md-nav__link">
+    ION_MOTION motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emotion-motion-file" class="md-nav__link">
+    EMOTION motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hmotion-motion-file" class="md-nav__link">
+    HMOTION motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eigmotion-motion-file" class="md-nav__link">
+    EIGMOTION motion file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#omotion-motion-file" class="md-nav__link">
+    OMOTION motion file
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#born-oppenheimer-molecular-dynamics" class="md-nav__link">
+    Born-Oppenheimer Molecular Dynamics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-pi-socket-communication" class="md-nav__link">
+    i-PI Socket Communication
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metropolis-monte-carlo" class="md-nav__link">
+    Metropolis Monte-Carlo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free-energy-simulations" class="md-nav__link">
+    Free Energy Simulations
+  </a>
+  
+    <nav class="md-nav" aria-label="Free Energy Simulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metadynamics" class="md-nav__link">
+    MetaDynamics
+  </a>
+  
+    <nav class="md-nav" aria-label="MetaDynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tamd-temperature-accelerated-molecular-dynamics" class="md-nav__link">
+    TAMD - Temperature Accelerated Molecular Dynamics
+  </a>
+  
+    <nav class="md-nav" aria-label="TAMD - Temperature Accelerated Molecular Dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input_1" class="md-nav__link">
+    Input
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#collective-variables" class="md-nav__link">
+    Collective Variables
+  </a>
+  
+    <nav class="md-nav" aria-label="Collective Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bond-distance-collective-variable" class="md-nav__link">
+    Bond Distance Collective Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angle-collective-variable" class="md-nav__link">
+    Angle Collective Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coordination-collective-variable" class="md-nav__link">
+    Coordination Collective Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#n-plane-collective-variable" class="md-nav__link">
+    N-Plane Collective Variable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-defined-collective-variable" class="md-nav__link">
+    User defined Collective Variable
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-x-ray-absorption-fine-structure-exafs-integration-with-feff6l" class="md-nav__link">
+    Extended X-Ray Absorption Fine Structure (EXAFS) - Integration with FEFF6L
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frozen-phonon-calculations" class="md-nav__link">
+    Frozen Phonon Calculations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steepest-descent" class="md-nav__link">
+    Steepest Descent
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-cell" class="md-nav__link">
+    Simulation Cell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-cell-optimization" class="md-nav__link">
+    Unit Cell Optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smear-fractional-occupation-of-the-molecular-orbitals" class="md-nav__link">
+    SMEAR - Fractional Occupation of the Molecular Orbitals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spin-penalty-functions" class="md-nav__link">
+    Spin Penalty Functions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aimdmm-qmmm" class="md-nav__link">
+    AIMD/MM (QM/MM)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psp_generator" class="md-nav__link">
+    PSP_GENERATOR
+  </a>
+  
+    <nav class="md-nav" aria-label="PSP_GENERATOR">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atomic_filling-block" class="md-nav__link">
+    ATOMIC_FILLING Block
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cutoff" class="md-nav__link">
+    CUTOFF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semicore_radius" class="md-nav__link">
+    SEMICORE_RADIUS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paw-tasks-legacy-implementation" class="md-nav__link">
+    PAW Tasks: Legacy Implementation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pseudopotential-and-paw-basis-libraries" class="md-nav__link">
+    Pseudopotential and PAW basis Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-rtdb-entries-and-miscellaneous-datafiles" class="md-nav__link">
+    NWPW RTDB Entries and Miscellaneous DataFiles
+  </a>
+  
+    <nav class="md-nav" aria-label="NWPW RTDB Entries and Miscellaneous DataFiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ion-positions" class="md-nav__link">
+    Ion Positions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ion-velocities" class="md-nav__link">
+    Ion Velocities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wavefunction-datafile" class="md-nav__link">
+    Wavefunction Datafile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#velocity-wavefunction-datafile" class="md-nav__link">
+    Velocity Wavefunction Datafile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formatted-pseudopotential-datafile" class="md-nav__link">
+    Formatted Pseudopotential Datafile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-dimensional-pseudopotential-datafile" class="md-nav__link">
+    One-Dimensional Pseudopotential Datafile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#car-parrinello-scheme-for-ab-initio-molecular-dynamics" class="md-nav__link">
+    Car-Parrinello Scheme for Ab Initio Molecular Dynamics
+  </a>
+  
+    <nav class="md-nav" aria-label="Car-Parrinello Scheme for Ab Initio Molecular Dynamics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verlet-algorithm-for-integration" class="md-nav__link">
+    Verlet Algorithm for Integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constant-temperature-simulations-nose-hoover-thermostats" class="md-nav__link">
+    Constant Temperature Simulations: Nose-Hoover Thermostats
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-1-s2-dimer-examples-with-pspw" class="md-nav__link">
+    NWPW Tutorial 1: S2 dimer examples with PSPW
+  </a>
+  
+    <nav class="md-nav" aria-label="NWPW Tutorial 1: S2 dimer examples with PSPW">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-energy-of-s2-dimer-with-lda-approximation" class="md-nav__link">
+    Total energy of S2 dimer with LDA approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-optimization-of-s2-dimer-with-lda-approximation" class="md-nav__link">
+    Structural optimization of S2 dimer with LDA approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frequency-calculation-of-s2-dimer-with-lda-approximation" class="md-nav__link">
+    Frequency calculation of S2 dimer with LDA approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab-initio-molecular-dynamics-simulation-car-parrinello-of-s2-dimer-using-the-lda-approximation" class="md-nav__link">
+    Ab initio molecular dynamics simulation (Car-Parrinello) of S2 dimer using the LDA approximation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab-initio-molecular-dynamics-simulation-born-oppenheimer-of-ssub2-dimer-using-the-lda-approximation" class="md-nav__link">
+    Ab initio molecular dynamics simulation (Born-Oppenheimer) of S&lt;sub2 dimer using the LDA approximation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-2-using-pspw-car-parrinello-simulated-annealing-simulations-to-optimize-structures" class="md-nav__link">
+    NWPW Tutorial 2: Using PSPW Car-Parrinello Simulated Annealing Simulations to Optimize Structures
+  </a>
+  
+    <nav class="md-nav" aria-label="NWPW Tutorial 2: Using PSPW Car-Parrinello Simulated Annealing Simulations to Optimize Structures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simulated-annealing-using-constant-energy-simulation" class="md-nav__link">
+    Simulated Annealing Using Constant Energy Simulation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulated-annealing-using-constant-temperature-simulation" class="md-nav__link">
+    Simulated Annealing Using Constant Temperature Simulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-3-using-isodesmic-reaction-energies-to-estimate-gas-phase-thermodynamics" class="md-nav__link">
+    NWPW Tutorial 3: using isodesmic reaction energies to estimate gas-phase thermodynamics
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o" class="md-nav__link">
+    NWPW Tutorial 4: AIMD/MM simulation of CCl_4 + 64 H_2O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-5-optimizing-the-unit-cell-and-geometry-of-diamond" class="md-nav__link">
+    NWPW Tutorial 5: Optimizing the Unit Cell and Geometry of Diamond
+  </a>
+  
+    <nav class="md-nav" aria-label="NWPW Tutorial 5: Optimizing the Unit Cell and Geometry of Diamond">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-the-unit-cell-and-geometry-for-an-8-atom-supercell-of-diamond-with-pspw" class="md-nav__link">
+    Optimizing the Unit Cell and Geometry for an 8 Atom Supercell of Diamond with PSPW
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-the-unit-cell-for-an-8-atom-supercell-of-diamond-with-band" class="md-nav__link">
+    Optimizing the Unit Cell for an 8 Atom Supercell of Diamond with BAND
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-band-to-optimize-the-unit-cell-for-a-2-atom-primitive-cell-of-diamond" class="md-nav__link">
+    Using BAND to Optimize the Unit Cell for a 2 Atom Primitive Cell of Diamond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-band-to-calculate-the-band-structures-of-diamond" class="md-nav__link">
+    Using BAND to Calculate the Band Structures of Diamond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-band-to-calculate-the-density-of-states-of-diamond" class="md-nav__link">
+    Using BAND to Calculate the Density of States of Diamond
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate-the-phonon-spectrum-of-diamond" class="md-nav__link">
+    Calculate the Phonon Spectrum of Diamond
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-6-optimizing-the-unit-cell-of-nickel-with-fractional-occupation" class="md-nav__link">
+    NWPW Tutorial 6: optimizing the unit cell of nickel with fractional occupation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-7-optimizing-the-unit-cells-with-symmetry-diamond-with-fd-3m-symmetry-and-brucite-with-p-3m1-symmetry" class="md-nav__link">
+    NWPW Tutorial 7: Optimizing the unit cells with symmetry: Diamond with Fd-3m symmetry and Brucite with P-3m1 symmetry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-8-nvt-metropolis-monte-carlo-simulations" class="md-nav__link">
+    NWPW Tutorial 8: NVT Metropolis Monte-Carlo Simulations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-9-npt-metropolis-monte-carlo-simulations" class="md-nav__link">
+    NWPW Tutorial 9: NPT Metropolis Monte-Carlo Simulations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-tutorial-9-free-energy-simulations" class="md-nav__link">
+    NWPW Tutorial 9: Free Energy Simulations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paw-tutorial" class="md-nav__link">
+    PAW Tutorial
+  </a>
+  
+    <nav class="md-nav" aria-label="PAW Tutorial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-water-molecule" class="md-nav__link">
+    Optimizing a water molecule
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimizing-a-unit-cell-and-geometry-for-silicon-carbide" class="md-nav__link">
+    Optimizing a unit cell and geometry for Silicon-Carbide
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-a-car-parrinello-simulation" class="md-nav__link">
+    Running a Car-Parrinello Simulation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nwpw-capabilities-and-limitations" class="md-nav__link">
+    NWPW Capabilities and Limitations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions-and-difficulties" class="md-nav__link">
+    Questions and Difficulties
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Plane-Wave-Density-Functional-Theory.md" title="Edit this page" class="md-content__button md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+<h5 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h5>
 <ul>
 <li><a href="#pseudopotential-plane-wave-density-functional-theory-nwpw">1 Pseudopotential plane-wave density functional theory (NWPW)</a></li>
 <li><a href="#pspw-tasks-gamma-point-calculations">1.1 PSPW Tasks - Gamma Point Calculations</a><ul>
@@ -5015,47 +7717,92 @@ task paw Car-Parrinello
 <p>Questions and encountered problems should be reported to the <a href="Forum.html">NWChem
 Community Forum</a> or to Eric J. Bylaska,
 Eric.Bylaska@pnl.gov</p>
-              
+
+
+
+
+
+                
+              </article>
             </div>
-          </div><footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
+          
           
         </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
     
-        <span>
-          <a href="https://github.com/nwchemgit/nwchem-wiki" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
-        </span>
-    
-    
-    
-  </span>
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="GW.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Molecular GW" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Molecular GW
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="Gaussian-Basis-AIMD.html" class="md-footer__link md-footer__link--next" aria-label="Next: Gaussian Basis AIMD" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Gaussian Basis AIMD
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-    <script>var base_url = '.';</script>
-    <script src="js/theme_extra.js" defer></script>
-    <script src="js/theme.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML" defer></script>
-      <script src="search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "navigation.top"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+    
+    
+  </body>
 </html>
