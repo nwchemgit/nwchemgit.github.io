@@ -17,7 +17,7 @@
     
     
       
-        <title>Vibration - NWChem</title>
+        <title>Vibrational frequencies - NWChem</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Vibration
+              Vibrational frequencies
             
           </span>
         </div>
@@ -257,6 +257,12 @@
       
       
       
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_2">
           How to download and install NWChem
@@ -319,6 +325,12 @@
       
       
       
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_3">
           Introduction 
@@ -380,6 +392,28 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4">
@@ -555,6 +589,12 @@
       
       
       
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_5">
           Quantum Molecular Dynamics
@@ -616,6 +656,22 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_6">
@@ -707,7 +763,7 @@
   
     <li class="md-nav__item">
       <a href="Bq.html" class="md-nav__link">
-        Bq
+        Point charges
       </a>
     </li>
   
@@ -721,7 +777,7 @@
   
     <li class="md-nav__item">
       <a href="1D-RISM.html" class="md-nav__link">
-        1D RISM
+        1-D RISM
       </a>
     </li>
   
@@ -748,6 +804,16 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_7">
@@ -838,6 +904,20 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
       
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_8">
@@ -1124,6 +1204,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1132,8 +1214,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vibrational-frequencies" class="md-nav__link">
-    Vibrational frequencies
+  <a href="#overview" class="md-nav__link">
+    Overview
   </a>
   
 </li>
@@ -1219,7 +1301,8 @@
   </a>
 
 
-<h2 id="vibrational-frequencies">Vibrational frequencies<a class="headerlink" href="#vibrational-frequencies" title="Permanent link">&para;</a></h2>
+<h1 id="vibrational-frequencies">Vibrational frequencies<a class="headerlink" href="#vibrational-frequencies" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The nuclear hessian which is used to compute the vibrational frequencies
 can be computed by finite difference for any ab initio wave-function
 that has analytic gradients or by analytic methods for SCF and DFT (see
@@ -1243,18 +1326,18 @@ most abundant isotope of each element. If the abundance was roughly
 equal, the mass of the isotope with the longest half life was used.</p>
 <p>In addition, the vibrational analysis is given at the default standard
 temperature of 298.15 degrees.</p>
-<h1 id="vibrational-module-input">Vibrational Module Input<a class="headerlink" href="#vibrational-module-input" title="Permanent link">&para;</a></h1>
+<h2 id="vibrational-module-input">Vibrational Module Input<a class="headerlink" href="#vibrational-module-input" title="Permanent link">&para;</a></h2>
 <p>All input for the Vibrational Module is optional since the default
 definitions will compute the frequencies and IR intensities. The generic
 module input can begin with vib, freq, frequency and has the form:</p>
-<pre><code> {freq || vib || frequency}  
-   [reuse [&lt;string hessian_filename&gt;]]  
-   [mass &lt;integer lexical_index&gt; &lt;real new_mass&gt;]  
-   [mass &lt;string tag_identifier&gt; &lt;real new_mass&gt;]  
-   [{temp || temperature} &lt;integer number_of_temperatures&gt; \  
-         &lt;real temperature1 temperature2 ...&gt;]  
-   [animate [&lt;real step_size_for_animation&gt;]]  
- end
+<pre><code> {freq || vib || frequency}  
+   [reuse [&lt;string hessian_filename&gt;]]  
+   [mass &lt;integer lexical_index&gt; &lt;real new_mass&gt;]  
+   [mass &lt;string tag_identifier&gt; &lt;real new_mass&gt;]  
+   [{temp || temperature} &lt;integer number_of_temperatures&gt; \  
+         &lt;real temperature1 temperature2 ...&gt;]  
+   [animate [&lt;real step_size_for_animation&gt;]]  
+ end
 </code></pre>
 <h3 id="hessian-file-reuse">Hessian File Reuse<a class="headerlink" href="#hessian-file-reuse" title="Permanent link">&para;</a></h3>
 <p>By default the task <theory> frequencies directive will recompute the
@@ -1262,7 +1345,7 @@ hessian. To reuse the previously computed hessian you need only specify
 reuse in the module input block. If you have stored the hessian in an
 alternate place you may redirect the reuse directive to that file by
 specifying the path to that file.</p>
-<pre><code> reuse /path_to_hessian_file
+<pre><code> reuse /path_to_hessian_file
 </code></pre>
 <p>This will reuse your saved Hessian data but one caveat is that the
 geometry specification at the point where the hessian is computed must
@@ -1272,13 +1355,13 @@ projection to work properly.</p>
 <p>You may also modify the mass of a specific center or a group of centers
 via the input.</p>
 <p>To modify the mass of a specific center you can simply use:</p>
-<pre><code> mass 3 4.00260324
+<pre><code> mass 3 4.00260324
 </code></pre>
 <p>which will set the mass of center 3 to 4.00260324 AMUs. The lexical
 index of centers is determined by the geometry object.</p>
 <p>To modify all Hydrogen atoms in a molecule you may use the tag based
 mechanism:</p>
-<pre><code> mass hydrogen 2.014101779
+<pre><code> mass hydrogen 2.014101779
 </code></pre>
 <p>The mass redefinitions always start with the default masses and change
 the masses in the order given in the input. Care must be taken to change
@@ -1292,43 +1375,43 @@ run-time-data-base. Each input block that redefines masses will
 invalidate the mass definitions of the previous input block. For
 example,</p>
 <pre><code>freq  
-  reuse  
-  mass hydrogen 2.014101779  
+  reuse  
+  mass hydrogen 2.014101779  
 end  
-task scf frequencies  
+task scf frequencies  
 freq  
-  reuse  
-  mass oxygen 17.9991603  
+  reuse  
+  mass oxygen 17.9991603  
 end  
-task scf frequencies
+task scf frequencies
 </code></pre>
 <p>will use the new mass for all hydrogens in the first frequency analysis.
 The mass of the oxygen atoms will be redefined in the second frequency
 analysis but the hydrogen atoms will use the default mass. To get a
 modified oxygen and hydrogen analysis you would have to use:</p>
 <pre><code>freq  
-  reuse  
-  mass hydrogen 2.014101779  
+  reuse  
+  mass hydrogen 2.014101779  
 end  
-task scf frequencies  
+task scf frequencies  
 freq  
-  reuse  
-  mass hydrogen 2.014101779  
-  mass oxygen 17.9991603  
+  reuse  
+  mass hydrogen 2.014101779  
+  mass oxygen 17.9991603  
 end  
-task scf frequencies
+task scf frequencies
 </code></pre>
 <h3 id="temp-or-temperature">Temp or Temperature<a class="headerlink" href="#temp-or-temperature" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module can generate the vibrational analysis at various
 temperatures other than at standard room temperature. Either temp or
 temperature can be used to initiate this command.</p>
 <p>To modify the temperature of the computation you can simply use:</p>
-<pre><code> temp 4 298.15 300.0 350.0 400.0
+<pre><code> temp 4 298.15 300.0 350.0 400.0
 </code></pre>
 <p>At this point, the temperatures are persistant and so the user must
 &ldquo;reset&rdquo; the temperature if the standard behavior is required after
 setting the temperatures in a previous &ldquo;VIB&rdquo; command, i.e.</p>
-<pre><code> temp 1 298.15
+<pre><code> temp 1 298.15
 </code></pre>
 <h3 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">&para;</a></h3>
 <p>The &ldquo;VIB&rdquo; module also can generate mode animation input files in the
@@ -1340,13 +1423,13 @@ positive direction of the mode vector, back to 5 steps in the negative
 direction of the mode vector, and finally back to the equilibrium
 geometry. By default these files are not generated. To activate this
 mechanism simply use the following input directive</p>
-<pre><code> animate
+<pre><code> animate
 </code></pre>
 <p>anywhere in the frequency/vib input block.</p>
 <h4 id="controlling-the-step-size-along-the-mode-vector">Controlling the Step Size Along the Mode Vector<a class="headerlink" href="#controlling-the-step-size-along-the-mode-vector" title="Permanent link">&para;</a></h4>
 <p>By default, the step size used is 0.15 a.u. which will give reliable
 animations for most systems. This can be changed via the input directive</p>
-<pre><code> animate real &lt;step_size&gt;
+<pre><code> animate real &lt;step_size&gt;
 </code></pre>
 <p>where <step_size> is the real number that is the magnitude of each step
 along the eigenvector of each nuclear hessian mode in atomic units.</p>
@@ -1354,44 +1437,44 @@ along the eigenvector of each nuclear hessian mode in atomic units.</p>
 <p>This example input deck will optimize the geometry for the given basis
 set, compute the frequencies for H<sub>2</sub>O, H<sub>2</sub>O at different
 temperatures, D<sub>2</sub>O, HDO, and TDO.</p>
-<pre><code>start  h2o  
-title Water   
-geometry units au autosym  
-  O      0.00000000    0.00000000    0.00000000  
-  H      0.00000000    1.93042809   -1.10715266  
-  H      0.00000000   -1.93042809   -1.10715266  
+<pre><code>start  h2o  
+title Water   
+geometry units au autosym  
+  O      0.00000000    0.00000000    0.00000000  
+  H      0.00000000    1.93042809   -1.10715266  
+  H      0.00000000   -1.93042809   -1.10715266  
 end  
-basis noprint  
-  H library sto-3g   
-  O library sto-3g  
+basis noprint  
+  H library sto-3g   
+  O library sto-3g  
 end  
-scf; thresh 1e-6; end  
-driver; tight; end  
-task scf optimize  
+scf; thresh 1e-6; end  
+driver; tight; end  
+task scf optimize  
 
-scf; thresh 1e-8; print none; end  
-task scf freq   
-
-freq  
- reuse; temp 4 298.15 300.0 350.0 400.0  
-end  
-task scf freq  
-
-freq   
- reuse; mass H 2.014101779  
- temp 1 298.15  
-end  
-task scf freq  
+scf; thresh 1e-8; print none; end  
+task scf freq   
 
 freq  
- reuse; mass 2 2.014101779  
+ reuse; temp 4 298.15 300.0 350.0 400.0  
 end  
-task scf freq  
+task scf freq  
+
+freq   
+ reuse; mass H 2.014101779  
+ temp 1 298.15  
+end  
+task scf freq  
 
 freq  
- reuse; mass 2 2.014101779 ; mass 3 3.01604927  
+ reuse; mass 2 2.014101779  
 end  
-task scf freq
+task scf freq  
+
+freq  
+ reuse; mass 2 2.014101779 ; mass 3 3.01604927  
+end  
+task scf freq
 </code></pre>
 
 
@@ -1435,7 +1518,7 @@ task scf freq
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "navigation.top"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.5a2dcb6a.min.js"></script>
