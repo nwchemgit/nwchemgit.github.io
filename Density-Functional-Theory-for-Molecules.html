@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://nwchemgit.github.io/Density-Functional-Theory-for-Molecules.html" />
       <link rel="shortcut icon" href="img/favicon.ico" />
-    <title>Density Functional Theory for Molecules - NWChem</title>
+    <title>Density Functional Theory (DFT) - NWChem</title>
     <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/theme_extra.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Density Functional Theory for Molecules";
+        var mkdocs_page_name = "Density Functional Theory (DFT)";
         var mkdocs_page_input_path = "Density-Functional-Theory-for-Molecules.md";
         var mkdocs_page_url = "/Density-Functional-Theory-for-Molecules.html";
       </script>
@@ -127,7 +127,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Density Functional Theory for Molecules</li>
+      <li>Density Functional Theory (DFT)</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/nwchemgit/nwchem-wiki/blob/master/Density-Functional-Theory-for-Molecules.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -137,70 +137,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <ul>
-<li><a href="#density-functional-theory-dft">Density Functional Theory (DFT)</a></li>
-<li><a href="#specification-of-basis-sets-for-the-dft-module">Specification of Basis Sets for the DFT Module</a></li>
-<li><a href="#vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL: KS-MO Vectors</a></li>
-<li><a href="#xc-and-decomp-exchange-correlation-potentials">XC and DECOMP: Exchange-Correlation Potentials</a><ul>
-<li><a href="#exchange-correlation-functionals">Exchange-Correlation Functionals</a></li>
-<li><a href="#setting-up-common-exchange-correlation-functionals">Setting up common exchange-correlation functionals</a></li>
-<li><a href="#combined-exchange-and-correlation-functionals">Combined Exchange and Correlation Functionals</a></li>
-</ul>
-</li>
-<li><a href="#xc-functionals-summary">XC Functionals Summary</a><ul>
-<li><a href="#references-for-xc-functionals">References for XC Functionals</a></li>
-<li><a href="#meta-gga-functionals">Meta-GGA Functionals</a></li>
-<li><a href="#range-separated-functionals">Range-Separated Functionals</a></li>
-<li><a href="#ssb-d-functional">SSB-D functional</a></li>
-<li><a href="#semi-empirical-hybrid-dft-combined-with-perturbative-mp2">Semi-empirical hybrid DFT combined with perturbative MP2</a></li>
-<li><a href="#lb94-and-cs00-asymptotic-correction">LB94 and CS00: Asymptotic correction</a></li>
-</ul>
-</li>
-<li><a href="#sample-input-file">Sample input file</a></li>
-<li><a href="#iterations-or-maxiter-number-of-scf-iterations">ITERATIONS or MAXITER: Number of SCF iterations</a></li>
-<li><a href="#convergence-scf-convergence-control">CONVERGENCE: SCF Convergence Control</a><ul>
-<li><a href="#convergence-damp-keyword">CONVERGENCE DAMP Keyword</a></li>
-<li><a href="#convergence-lshift-keyword">CONVERGENCE LSHIFT Keyword</a></li>
-<li><a href="#convergence-diis-keyword">CONVERGENCE DIIS Keyword</a></li>
-<li><a href="#convergence-fast-keyword">CONVERGENCE FAST Keyword</a></li>
-</ul>
-</li>
-<li><a href="#cdft-constrained-dft">CDFT: Constrained DFT</a></li>
-<li><a href="#smear-fractional-occupation-of-the-molecular-orbitals">SMEAR: Fractional Occupation of the Molecular Orbitals</a></li>
-<li><a href="#fon-calculations-with-fractional-numbers-of-electrons">FON: Calculations with fractional numbers of electrons</a><ul>
-<li><a href="#restricted">Restricted</a></li>
-<li><a href="#unrestricted">Unrestricted</a></li>
-</ul>
-</li>
-<li><a href="#occup-controlling-the-occupations-of-molecular-orbitals">OCCUP: Controlling the occupations of molecular orbitals</a></li>
-<li><a href="#grid-numerical-integration-of-the-xc-potential">GRID: Numerical Integration of the XC Potential</a><ul>
-<li><a href="#angular-grids">Angular grids</a><ul>
-<li><a href="#gauss-legendre-angular-grid">Gauss-Legendre angular grid</a></li>
-<li><a href="#lebedev-angular-grid">Lebedev angular grid</a></li>
-</ul>
-</li>
-<li><a href="#partitioning-functions">Partitioning functions</a></li>
-<li><a href="#radial-grids">Radial grids</a></li>
-<li><a href="#disk-usage-for-grid">Disk usage for Grid</a></li>
-</ul>
-</li>
-<li><a href="#tolerances-screening-tolerances">TOLERANCES: Screening tolerances</a></li>
-<li><a href="#direct-semidirect-and-noio-hardware-resource-control">DIRECT, SEMIDIRECT and NOIO: Hardware Resource Control</a></li>
-<li><a href="#odft-and-mult-open-shell-systems">ODFT and MULT: Open shell systems</a></li>
-<li><a href="#cgmin-quadratic-convergence-algorithm">CGMIN: Quadratic convergence algorithm</a></li>
-<li><a href="#rodft-restricted-open-shell-dft">RODFT: Restricted open-shell DFT</a></li>
-<li><a href="#sic-self-interaction-correction">SIC: Self-Interaction Correction</a></li>
-<li><a href="#mulliken-mulliken-analysis">MULLIKEN: Mulliken analysis</a></li>
-<li><a href="#fukui-fukui-indices">FUKUI: Fukui Indices</a></li>
-<li><a href="#bsse-basis-set-superposition-error">BSSE: Basis Set Superposition Error</a></li>
-<li><a href="#disp-empirical-long-range-contribution-vdw">DISP: Empirical Long-range Contribution (vdW)</a></li>
-<li><a href="#noscf-non-self-consistent-calculations">NOSCF: Non Self-Consistent Calculations</a></li>
-<li><a href="#xdm-exchange-hole-dipole-moment-dispersion-model">XDM: Exchange-hole dipole moment dispersion model</a></li>
-<li><a href="#print-control">Print Control</a></li>
-<li><a href="#spin-orbit-density-functional-theory-sodft">Spin-Orbit Density Functional Theory (SODFT)</a></li>
-<li><a href="#sym-and-adapt">SYM and ADAPT</a></li>
-</ul>
-<h1 id="density-functional-theory-dft">Density Functional Theory (DFT)<a class="headerlink" href="#density-functional-theory-dft" title="Permanent link">&para;</a></h1>
+                <h1 id="density-functional-theory-dft">Density Functional Theory (DFT)<a class="headerlink" href="#density-functional-theory-dft" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The NWChem density functional theory (DFT) module uses the Gaussian
 basis set approach to compute closed shell and open shell densities and
 Kohn-Sham orbitals in the:</p>

@@ -137,7 +137,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="gaussian-basis-aimd">Gaussian Basis AIMD<a class="headerlink" href="#gaussian-basis-aimd" title="Permanent link">&para;</a></h1>
+                <div class="toc">
+<ul>
+<li><a href="#gaussian-basis-aimd">Gaussian Basis AIMD</a><ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#qmd-keywords">QMD Keywords</a><ul>
+<li><a href="#dt_nucl-nuclear-time-step">DT_NUCL: Nuclear time step</a></li>
+<li><a href="#nstep_nucl-simulation-steps">NSTEP_NUCL: Simulation steps</a></li>
+<li><a href="#targ_temp-temperature-of-the-system">TARG_TEMP: Temperature of the system</a></li>
+<li><a href="#thermostat-thermostat-for-controling-temperature-of-the-simulation">THERMOSTAT: Thermostat for controling temperature of the simulation</a></li>
+<li><a href="#rand_seed-seed-for-the-random-number-generator">RAND_SEED: Seed for the random number generator</a></li>
+<li><a href="#com_step-how-often-center-of-mass-translations-and-rotations-are-removed">COM_STEP: How often center-of-mass translations and rotations are removed</a></li>
+<li><a href="#print_xyz-how-often-to-print-trajectory-information-to-xyz-file">PRINT_XYZ: How often to print trajectory information to xyz file</a></li>
+<li><a href="#linear-flag-for-linear-molecules">LINEAR: Flag for linear molecules</a></li>
+<li><a href="#property-how-often-to-calculate-molecular-properties-as-part-of-the-md-simulation">PROPERTY: How often to calculate molecular properties as part of the MD simulation</a></li>
+<li><a href="#tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation">TDDFT: How often to peform TDDFT calculation as part of the MD simulation</a></li>
+</ul>
+</li>
+<li><a href="#sample-input-files">Sample input files</a><ul>
+<li><a href="#ground-state-molecular-dynamics">Ground state Molecular Dynamics</a></li>
+<li><a href="#excited-state-molecular-dynamics">Excited state Molecular Dynamics</a></li>
+<li><a href="#property-calculation-in-a-molecular-dynamics-simulation">Property calculation in a Molecular Dynamics simulation</a></li>
+</ul>
+</li>
+<li><a href="#processing-the-output-of-a-qmd-run">Processing the output of a QMD run</a><ul>
+<li><a href="#namd-non-adiabatic-excited-stated-molecular-dynamics">NAMD: Non-adiabatic Excited Stated Molecular Dynamics</a><ul>
+<li><a href="#deco-decoherence-flag">DECO: Decoherence flag</a></li>
+<li><a href="#dt_elec-electronic-dynamics-time-step">DT_ELEC: Electronic dynamics time step</a></li>
+<li><a href="#n_states-number-of-states">N_STATES: Number of states</a></li>
+<li><a href="#init_state-initial-state">INIT_STATE: Initial state</a></li>
+<li><a href="#tdks-time-dependent-kohn-sham">TDKS: Time-Dependent Kohn-Sham</a></li>
+<li><a href="#namd-input-example">NAMD Input Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="gaussian-basis-aimd">Gaussian Basis AIMD<a class="headerlink" href="#gaussian-basis-aimd" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>This module performs adiabatic ab initio molecular dynamics on finite
 systems. The nuclei are integrated using the velocity-Verlet algorithm,
