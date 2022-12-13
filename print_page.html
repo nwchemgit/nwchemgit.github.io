@@ -1661,6 +1661,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_10">
@@ -1711,6 +1713,20 @@
     <li class="md-nav__item">
       <a href="Analysis.html" class="md-nav__link">
         Analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Format_of_MD_Files.html" class="md-nav__link">
+        Format of MD files
       </a>
     </li>
   
@@ -2418,6 +2434,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#format_of_md_files" class="md-nav__link">
+    40. Format of MD files
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2433,14 +2456,14 @@
         
           <li class="md-nav__item">
   <a href="#sample" class="md-nav__link">
-    40. Sample input files
+    41. Sample input files
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#geometry-examples" class="md-nav__link">
-    41. Examples of geometries using symmetry
+    42. Examples of geometries using symmetry
   </a>
   
 </li>
@@ -2452,49 +2475,49 @@
       
         <li class="md-nav__item">
   <a href="#benchmarks" class="md-nav__link">
-    42. Benchmarks performed with NWChem
+    43. Benchmarks performed with NWChem
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#known-bugs" class="md-nav__link">
-    43. Known Bugs
+    44. Known Bugs
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#faq" class="md-nav__link">
-    44. FAQ
+    45. FAQ
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#tutorials" class="md-nav__link">
-    45. NWChem Tutorials
+    46. NWChem Tutorials
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#forum" class="md-nav__link">
-    46. Forum
+    47. Forum
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#archived-forum" class="md-nav__link">
-    47. Archived Forum
+    48. Archived Forum
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#emsl_arrows" class="md-nav__link">
-    48. EMSL Arrows
+    49. EMSL Arrows
   </a>
   
 </li>
@@ -2509,7 +2532,7 @@
         
           <li class="md-nav__item">
   <a href="#armci" class="md-nav__link">
-    49. Choosing the ARMCI Library
+    50. Choosing the ARMCI Library
   </a>
   
 </li>
@@ -2521,14 +2544,14 @@
       
         <li class="md-nav__item">
   <a href="#software-supporting-nwchem" class="md-nav__link">
-    50. Software supporting NWChem
+    51. Software supporting NWChem
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#containers" class="md-nav__link">
-    51. Containers
+    52. Containers
   </a>
   
 </li>
@@ -21671,8 +21694,8 @@ follows</p>
 END
 </code></pre>
 <p>which are described in detail below.</p>
-<p>For better validation of user input, the HIGH, LOW and MODEL directives
-must always be specified. If the one of the MEDIUM or INTER directives
+<p>For better validation of user input, the <code>HIGH</code>, <code>LOW</code> and <code>MODEL</code> directives
+must always be specified. If the one of the <code>MEDIUM</code> or <code>INTER</code> directives
 are specified, then so must the other.</p>
 <h2 id="oniom-real-model-and-intermediate-geometries">Real, model and intermediate geometries<a class="headerlink" href="#oniom-real-model-and-intermediate-geometries" title="Permanent link">&para;</a></h2>
 <p>The geometry and total charge of the full or real system should be
@@ -21705,8 +21728,8 @@ atom (implicitly the first in the geometry) is in the model system</p>
 </code></pre>
 <h3 id="oniom-link-atoms">Link atoms<a class="headerlink" href="#oniom-link-atoms" title="Permanent link">&para;</a></h3>
 <p>Link atoms for bonds spanning two regions are automatically generated
-from the bond information. The additional parameters on the MODEL and
-INTER directives describe the broken bonds including scale factors for
+from the bond information. The additional parameters on the <code>MODEL</code> and
+<code>INTER</code> directives describe the broken bonds including scale factors for
 placement of the link atom and, optionally, the type of link atom. The
 type of link atom defaults to hydrogen, but any type may be specified
 (actually here you are specifying a geometry tag which is used to
@@ -21782,7 +21805,7 @@ calculations. If an alternative ECP name (the name specified on the ECP
 directive in the same manner as done for basis sets) is specified on one
 of the theory directives, then this ECP will be used in preference for
 that level of theory. See the
-<a href="#oniom-a-three-layer-example">ONIOM#a-three-layer-example</a>
+<a href="#oniom-a-three-layer-example">ONIOM three layer example</a>
 for sample input.</p>
 <h3 id="oniom-general-input-strings">General input strings<a class="headerlink" href="#oniom-general-input-strings" title="Permanent link">&para;</a></h3>
 <p>For many purposes, the ability to specify the theory, basis and
@@ -21792,7 +21815,7 @@ theory (e.g., DFT) is to be used with different options for the ONIOM
 theoretical models, then the general input strings must be used. These
 strings are processed as NWChem input each time the theoretical model is
 invoked. The strings may contain any NWChem input, except for options
-pertaining to ONIOM and the task directive. The intent that the strings
+pertaining to ONIOM and the <code>task</code> directive. The intent that the strings
 be used just to control the options pertaining to the theory being used.</p>
 <p>A word of caution. Be sure to check that the options are producing the
 desired results. Since the NWChem database is persistent and the ONIOM
@@ -21860,7 +21883,7 @@ guess</a>
 as a starting guess for the real system. The resulting converged
 molecular orbitals can be saved either with the default name (as
 described above in this section), in which case no additional input is
-necessary. If an alternative name is desired, then the VECTORS directive
+necessary. If an alternative name is desired, then the <code>VECTORS</code> directive
 may be used as follows</p>
 <pre><code>   vectors low-real /u/rjh/jobs/fe_ether_water.mos
 </code></pre>
@@ -27614,7 +27637,8 @@ charmm_2 /soft/nwchem/share/charmm/charmm_x/
 <p>For example, to link atom SG in segment 20 with atom FE in segment 55, use:</p>
 <pre><code>link 20:_SG 55:FE
 </code></pre>
-<p>The format of the sequence file is given in Table 36.9. In addition to the list of segments this file also includes links between non-standard segments or other non-standard links. These links are generated based on distances found between atoms on the pdb file. When atoms are involved in such non-standard links that have not been identified in the fragment of segment files as a non-chain link atom, the prepare module will ignore these links and report them as skipped. If one or more of these links are required, the user has to include them with explicit link directives in the sequence file, making them forced links. Alternatively, these links can be made forced-links by changing link into LINK in the sequence file.</p>
+<p>The format of the sequence file is given in <a href="#format_of_md_files-format-of-sequence-file">this table</a>.
+In addition to the list of segments this file also includes links between non-standard segments or other non-standard links. These links are generated based on distances found between atoms on the pdb file. When atoms are involved in such non-standard links that have not been identified in the fragment of segment files as a non-chain link atom, the prepare module will ignore these links and report them as skipped. If one or more of these links are required, the user has to include them with explicit link directives in the sequence file, making them forced links. Alternatively, these links can be made forced-links by changing link into LINK in the sequence file.</p>
 <pre><code>fraction { &lt;integer imol&gt; }
 </code></pre>
 <p>Directive fraction can be used to separate solute molecules into fractions for which energies will be separately reported during molecular dynamics simulations. The listed molecules will be the last molecule in a fraction. Up to 10 molecules may be specified in this directive.</p>
@@ -28826,7 +28850,1570 @@ color green 34 45 _C??
 <p>The input coordinates are taken from the xyzq file that can be generated from a rst by the prepare module. Parameter spacing specifies the number of gridpoints per nm, rcut specifies extent of the charge grid beyond the molecule. Periodic boundaries will be used if periodic is specified. If iper is set to 2, periodic boundary conditions are applied in x and y dimensions only. If periodic is specified, a negative value of rcut will extend the grid in the periodic dimensions by abs(rcut), otherwise this value will be ignored in the periodic dimensions. The resulting plt formatted file pltfile can be viewed with the gOpenMol program. The resulting electrostatic potential grid is in units of <script type="math/tex">kJ mol^{-1} e^{-1}</script>. If no files are specified, only the parameters are set. This analysis applies to solute(s) only.  </p>
 <p>The electrostatic potential at specific point are evaluated using  </p>
 <pre><code>esp_points [&lt;string filpin&gt; [&lt;string filhol&gt; [&lt;string filpou&gt; [&lt;string filavg&gt;]]]]
-</code></pre></section><h1 class='nav-section-title-end'>Ended: Molecular Mechanics</h1>
+</code></pre></section><section class="print-page" id="format_of_md_files"><h1 id="format_of_md_files-format-of-md-files">Format of MD files<a class="headerlink" href="#format_of_md_files-format-of-md-files" title="Permanent link">&para;</a></h1>
+<h2 id="format_of_md_files-format-of-fragment-file">Format of fragment file<a class="headerlink" href="#format_of_md_files-format-of-fragment-file" title="Permanent link">&para;</a></h2>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">I-1-1</td>
+<td align="left">a1</td>
+<td align="left">$ or # comments to describe fragment</td>
+</tr>
+<tr>
+<td align="left">I-2-1</td>
+<td align="left">i5</td>
+<td align="left">number of atoms in the fragment</td>
+</tr>
+<tr>
+<td align="left">I-2-2</td>
+<td align="left">i5</td>
+<td align="left">number of parameter sets</td>
+</tr>
+<tr>
+<td align="left">I-2-3</td>
+<td align="left">i5</td>
+<td align="left">default parameter set</td>
+</tr>
+<tr>
+<td align="left">I-2-4</td>
+<td align="left">i5</td>
+<td align="left">number of z-matrix definition</td>
+</tr>
+<tr>
+<td align="left"><strong>For each parameter</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>set one card I-3</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">I-3-1</td>
+<td align="left">a</td>
+<td align="left">residue name for parameter set</td>
+</tr>
+<tr>
+<td align="left"><strong>For each atom one deck II</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-1-1</td>
+<td align="left">i5</td>
+<td align="left">atom sequence number</td>
+</tr>
+<tr>
+<td align="left">II-1-2</td>
+<td align="left">a6</td>
+<td align="left">atom name</td>
+</tr>
+<tr>
+<td align="left">II-1-3</td>
+<td align="left">a5</td>
+<td align="left">atom type</td>
+</tr>
+<tr>
+<td align="left">II-1-4</td>
+<td align="left">a1</td>
+<td align="left">dynamics type</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">blank : normal</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D : dummy atom</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">S: solute interactions only</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Q : quantum atom</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">other : intramolecular solute interactions only</td>
+</tr>
+<tr>
+<td align="left">II-1-5</td>
+<td align="left">i5</td>
+<td align="left">link number</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: no link</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">1: first atom in chain</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2: second atom in chain</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3 and up: other links</td>
+</tr>
+<tr>
+<td align="left">II-1-6</td>
+<td align="left">i5</td>
+<td align="left">environment type</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: no special identifier</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">1: planar, using improper torsion</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2: tetrahedral, using improper torsion</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3: tetrahedral, using improper torsion</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4: atom in aromatic ring</td>
+</tr>
+<tr>
+<td align="left">II-1-7</td>
+<td align="left">i5</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-1-8</td>
+<td align="left">i5</td>
+<td align="left">charge group</td>
+</tr>
+<tr>
+<td align="left">II-1-9</td>
+<td align="left">i5</td>
+<td align="left">polarization group</td>
+</tr>
+<tr>
+<td align="left">II-1-10</td>
+<td align="left">f12.6</td>
+<td align="left">atomic partial charge</td>
+</tr>
+<tr>
+<td align="left">II-1-11</td>
+<td align="left">f12.6</td>
+<td align="left">atomic polarizability</td>
+</tr>
+<tr>
+<td align="left"><strong>For each additional</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>parameter set on card II-2</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">11x,a6</td>
+<td align="left">atom type</td>
+</tr>
+<tr>
+<td align="left">II-2-2</td>
+<td align="left">a1</td>
+<td align="left">dynamics type</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">blank : normal</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D : dummy atom</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">S : solute interactions only</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Q : quantum atom</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">other : intramolecular solute interactions only</td>
+</tr>
+<tr>
+<td align="left">II-2-7</td>
+<td align="left">25x,f12.6</td>
+<td align="left">atomic partial charge</td>
+</tr>
+<tr>
+<td align="left">II-2-8</td>
+<td align="left">f12.6</td>
+<td align="left">atomic polarizability</td>
+</tr>
+<tr>
+<td align="left"><strong>Any number of cards in deck III to</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>specify complete connectivity</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">III-1-1</td>
+<td align="left">16i5</td>
+<td align="left">connectivity, duplication allowed</td>
+</tr>
+<tr>
+<td align="left"><strong>One blank card to signal</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>the end of the connectivity list</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>For each z-matrix definition one card IV</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">IV-1-1</td>
+<td align="left">i5</td>
+<td align="left">atom i</td>
+</tr>
+<tr>
+<td align="left">IV-1-2</td>
+<td align="left">i5</td>
+<td align="left">atom j</td>
+</tr>
+<tr>
+<td align="left">IV-1-3</td>
+<td align="left">i5</td>
+<td align="left">atom k</td>
+</tr>
+<tr>
+<td align="left">IV-1-4</td>
+<td align="left">i5</td>
+<td align="left">atom l</td>
+</tr>
+<tr>
+<td align="left">IV-1-5</td>
+<td align="left">f12.6</td>
+<td align="left">bond length i-j</td>
+</tr>
+<tr>
+<td align="left">IV-1-6</td>
+<td align="left">f12.6</td>
+<td align="left">angle i-j-k</td>
+</tr>
+<tr>
+<td align="left">IV-1-7</td>
+<td align="left">f12.6</td>
+<td align="left">torson i-j-k-l</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-1-of-7">Format of segment file (1 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-1-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">I-0-1</td>
+<td align="left"></td>
+<td align="left"># lines at top are comments</td>
+</tr>
+<tr>
+<td align="left">I-1-1</td>
+<td align="left">a1</td>
+<td align="left">$ to identify the start of a segment</td>
+</tr>
+<tr>
+<td align="left">I-1-2</td>
+<td align="left">a10</td>
+<td align="left">name of the segment, the tenth character</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">N: identifies beginning of a chain</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">C: identifies end of a chain</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">blank: identifies chain fragment</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">M: identifies an integral molecule</td>
+</tr>
+<tr>
+<td align="left">I-2-1</td>
+<td align="left">f12.6</td>
+<td align="left">version number</td>
+</tr>
+<tr>
+<td align="left">I-3-1</td>
+<td align="left">i5</td>
+<td align="left">number of atoms in the segment</td>
+</tr>
+<tr>
+<td align="left">I-3-2</td>
+<td align="left">i5</td>
+<td align="left">number of bonds in the segment</td>
+</tr>
+<tr>
+<td align="left">I-3-3</td>
+<td align="left">i5</td>
+<td align="left">number of angles in the segment</td>
+</tr>
+<tr>
+<td align="left">I-3-4</td>
+<td align="left">i5</td>
+<td align="left">number of proper dihedrals in the segment</td>
+</tr>
+<tr>
+<td align="left">I-3-5</td>
+<td align="left">i5</td>
+<td align="left">number of improper dihedrals in the segment</td>
+</tr>
+<tr>
+<td align="left">I-3-6</td>
+<td align="left">i5</td>
+<td align="left">number of z-matrix definitions</td>
+</tr>
+<tr>
+<td align="left">I-3-7</td>
+<td align="left">i5</td>
+<td align="left">number of parameter sets</td>
+</tr>
+<tr>
+<td align="left">1-3-8</td>
+<td align="left">i5</td>
+<td align="left">default parameter set</td>
+</tr>
+<tr>
+<td align="left">For each parameter set one card I-4</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">I-4-1</td>
+<td align="left">f12.6</td>
+<td align="left">dipole correction energy</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-2-of-7">Format of segment file (2 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-2-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">For each atom one deck II</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-1-1</td>
+<td align="left">i5</td>
+<td align="left">atom sequence number</td>
+</tr>
+<tr>
+<td align="left">II-1-2</td>
+<td align="left">a6</td>
+<td align="left">atom name</td>
+</tr>
+<tr>
+<td align="left">II-1-3</td>
+<td align="left">i5</td>
+<td align="left">link number</td>
+</tr>
+<tr>
+<td align="left">II-1-4</td>
+<td align="left">i5</td>
+<td align="left">environment type</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: no special identifier</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">1: planar, using improper torsion</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2: tetrahedral, using improper torsion</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">3: tetrahedral, using improper torsion</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">4: atom in aromatic ring</td>
+</tr>
+<tr>
+<td align="left">II-1-5</td>
+<td align="left">i5</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-1-6</td>
+<td align="left">i5</td>
+<td align="left">charge group</td>
+</tr>
+<tr>
+<td align="left">II-1-7</td>
+<td align="left">i5</td>
+<td align="left">polarization group</td>
+</tr>
+<tr>
+<td align="left">For each parameter set one card II-2</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">5x,a5</td>
+<td align="left">atom type</td>
+</tr>
+<tr>
+<td align="left">II-2-2</td>
+<td align="left">a1</td>
+<td align="left">dynamics type</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">blank : normal</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D : dummy atom</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">S : solute interactions only</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">Q : quantum atom</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">other : intramolecular solute interactions only</td>
+</tr>
+<tr>
+<td align="left">II-2-3</td>
+<td align="left">f12.6</td>
+<td align="left">atomic partial charge in e</td>
+</tr>
+<tr>
+<td align="left">II-2-4</td>
+<td align="left">f12.6</td>
+<td align="left">atomic polarizability (4 &pi; &epsilon;<sub>o</sub> in nm<sup>3</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-3-of-7">Format of segment file (3 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-3-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">For each bond a deck III</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">III-1-1</td>
+<td align="left">i5</td>
+<td align="left">bond sequence number</td>
+</tr>
+<tr>
+<td align="left">III-1-2</td>
+<td align="left">i5</td>
+<td align="left">bond atom i</td>
+</tr>
+<tr>
+<td align="left">III-1-3</td>
+<td align="left">i5</td>
+<td align="left">bond atom j</td>
+</tr>
+<tr>
+<td align="left">III-1-4</td>
+<td align="left">i5</td>
+<td align="left">bond type</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: harmonic</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">1: constrained bond</td>
+</tr>
+<tr>
+<td align="left">III-1-5</td>
+<td align="left">i5</td>
+<td align="left">bond parameter origin</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: from database, next card ignored</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">1: from next card</td>
+</tr>
+<tr>
+<td align="left">For each parameter set one card III-2</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">III-2-1</td>
+<td align="left">f12.6</td>
+<td align="left">bond length in nm</td>
+</tr>
+<tr>
+<td align="left">III-2-2</td>
+<td align="left">e12.5</td>
+<td align="left">bond force constant in (kJ nm<sup>2</sup> mol<sup>-1</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-4-of-7">Format of segment file (4 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-4-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">For each angle a deck IV</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">IV-1-1</td>
+<td align="left">i5</td>
+<td align="left">angle sequence number</td>
+</tr>
+<tr>
+<td align="left">IV-1-2</td>
+<td align="left">i5</td>
+<td align="left">angle atom i</td>
+</tr>
+<tr>
+<td align="left">IV-1-3</td>
+<td align="left">i5</td>
+<td align="left">angle atom j</td>
+</tr>
+<tr>
+<td align="left">IV-1-4</td>
+<td align="left">i5</td>
+<td align="left">angle atom k</td>
+</tr>
+<tr>
+<td align="left">IV-1-5</td>
+<td align="left">i5</td>
+<td align="left">angle type</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: harmonic</td>
+</tr>
+<tr>
+<td align="left">IV-1-6</td>
+<td align="left">i5</td>
+<td align="left">angle parameter origin</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: from database, next card ignored</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">1: from next card</td>
+</tr>
+<tr>
+<td align="left">For each parameter set one card IV-2</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">IV-2-1</td>
+<td align="left">f10.6</td>
+<td align="left">angle in radians</td>
+</tr>
+<tr>
+<td align="left">IV-2-2</td>
+<td align="left">e12.5</td>
+<td align="left">angle force constant in (kJ mol<sup>-1</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-5-of-7">Format of segment file (5 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-5-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">For each proper dihedral a deck V</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">V-1-1</td>
+<td align="left">i5</td>
+<td align="left">proper dihedral sequence number</td>
+</tr>
+<tr>
+<td align="left">V-1-2</td>
+<td align="left">i5</td>
+<td align="left">proper dihedral atom i</td>
+</tr>
+<tr>
+<td align="left">V-1-3</td>
+<td align="left">i5</td>
+<td align="left">proper dihedral atom j</td>
+</tr>
+<tr>
+<td align="left">V-1-4</td>
+<td align="left">i5</td>
+<td align="left">proper dihedral atom k</td>
+</tr>
+<tr>
+<td align="left">V-1-5</td>
+<td align="left">i5</td>
+<td align="left">proper dihedral atom l</td>
+</tr>
+<tr>
+<td align="left">V-1-6</td>
+<td align="left">i5</td>
+<td align="left">proper dihedral type</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: (<em>C</em>cos(m&phi;-&delta;)</td>
+</tr>
+<tr>
+<td align="left">V-1-7</td>
+<td align="left">i5</td>
+<td align="left">proper dihedral parameter origin</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: from database, next card ignored</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">1: from next card</td>
+</tr>
+<tr>
+<td align="left">For each parameter set one card V-2</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">V-2-1</td>
+<td align="left">i3</td>
+<td align="left">multiplicity</td>
+</tr>
+<tr>
+<td align="left">V-2-2</td>
+<td align="left">f10.6</td>
+<td align="left">proper dihedral in radians</td>
+</tr>
+<tr>
+<td align="left">V-2-3</td>
+<td align="left">e12.5</td>
+<td align="left">proper dihedral force constant in (kJ mol<sup>-1</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-6-of-7">Format of segment file (6 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-6-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">For each improper dihedral a deck VI</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">VI-1-1</td>
+<td align="left">i5</td>
+<td align="left">improper dihedral sequence number</td>
+</tr>
+<tr>
+<td align="left">VI-1-2</td>
+<td align="left">i5</td>
+<td align="left">improper dihedral atom i</td>
+</tr>
+<tr>
+<td align="left">VI-1-3</td>
+<td align="left">i5</td>
+<td align="left">improper dihedral atom j</td>
+</tr>
+<tr>
+<td align="left">VI-1-4</td>
+<td align="left">i5</td>
+<td align="left">improper dihedral atom k</td>
+</tr>
+<tr>
+<td align="left">VI-1-5</td>
+<td align="left">i5</td>
+<td align="left">improper dihedral atom l</td>
+</tr>
+<tr>
+<td align="left">VI-1-6</td>
+<td align="left">i5</td>
+<td align="left">improper dihedral type</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: harmonic</td>
+</tr>
+<tr>
+<td align="left">VI-1-7</td>
+<td align="left">i5</td>
+<td align="left">improper dihedral parameter origin</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">0: from database, next card ignored</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">1: from next card</td>
+</tr>
+<tr>
+<td align="left">For each parameter set one card VI-2</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">VI-2-1</td>
+<td align="left">3x,f10.6</td>
+<td align="left">improper dihedral in radians</td>
+</tr>
+<tr>
+<td align="left">VI-2-2</td>
+<td align="left">e12.5</td>
+<td align="left">improper dihedral force constant in (kJ mol<sup>-1</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-7-of-7">Format of segment file (7 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-7-of-7" title="Permanent link">&para;</a></h2>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">For each z-matrix definition one card VII</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">VII-1-1</td>
+<td align="left">i5</td>
+<td align="left">atom i</td>
+</tr>
+<tr>
+<td align="left">VII-1-2</td>
+<td align="left">i5</td>
+<td align="left">atom j</td>
+</tr>
+<tr>
+<td align="left">VII-1-3</td>
+<td align="left">i5</td>
+<td align="left">atom k</td>
+</tr>
+<tr>
+<td align="left">VII-1-4</td>
+<td align="left">i5</td>
+<td align="left">atom l</td>
+</tr>
+<tr>
+<td align="left">VII-1-5</td>
+<td align="left">f12.6</td>
+<td align="left">bond length i-j</td>
+</tr>
+<tr>
+<td align="left">VII-1-6</td>
+<td align="left">f12.6</td>
+<td align="left">angle i-j-k</td>
+</tr>
+<tr>
+<td align="left">VII-1-7</td>
+<td align="left">f12.6</td>
+<td align="left">torson i-j-k-l</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-sequence-file">Format of sequence file<a class="headerlink" href="#format_of_md_files-format-of-sequence-file" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">I-1-1</td>
+<td align="left">a1</td>
+<td align="left">$ to identify the start of a sequence</td>
+</tr>
+<tr>
+<td align="left">I-1-2</td>
+<td align="left">a10</td>
+<td align="left">name of the sequence</td>
+</tr>
+<tr>
+<td align="left">Any number of cards 1 and 2 in deck II</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">to specify the system</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-1-1</td>
+<td align="left">i5</td>
+<td align="left">segment number</td>
+</tr>
+<tr>
+<td align="left">II-1-2</td>
+<td align="left">a10</td>
+<td align="left">segment name, last character will be determined from chain</td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">a</td>
+<td align="left">break to identify a break in the molecule chain</td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">a</td>
+<td align="left">molecule to identify the end of a solute molecule</td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">a</td>
+<td align="left">fraction to identify the end of a solute fraction</td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">a5</td>
+<td align="left">link to specify a link</td>
+</tr>
+<tr>
+<td align="left">II-2-2</td>
+<td align="left">i5</td>
+<td align="left">segment number of first link atom</td>
+</tr>
+<tr>
+<td align="left">II-2-3</td>
+<td align="left">a4</td>
+<td align="left">name of first link atom</td>
+</tr>
+<tr>
+<td align="left">II-2-4</td>
+<td align="left">i5</td>
+<td align="left">segment number of second link atom</td>
+</tr>
+<tr>
+<td align="left">II-2-5</td>
+<td align="left">a4</td>
+<td align="left">name of second link atom</td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">a</td>
+<td align="left">solvent to identify solvent definition on next card</td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">a</td>
+<td align="left">stop to identify the end of the sequence</td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">a6</td>
+<td align="left">repeat to repeat next ncard cards ncount times</td>
+</tr>
+<tr>
+<td align="left">II-2-2</td>
+<td align="left">i5</td>
+<td align="left">number of cards to repeat (ncards)</td>
+</tr>
+<tr>
+<td align="left">II-2-3</td>
+<td align="left">i5</td>
+<td align="left">number of times to repeat cards (ncount)</td>
+</tr>
+<tr>
+<td align="left">Any number of cards in deck II</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">to specify the system</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-trajectory-file">Format of trajectory file<a class="headerlink" href="#format_of_md_files-format-of-trajectory-file" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">I-1-1</td>
+<td align="left">a6</td>
+<td align="left">keyword header</td>
+</tr>
+<tr>
+<td align="left">I-2-1</td>
+<td align="left">i10</td>
+<td align="left">number of atoms per solvent molecule</td>
+</tr>
+<tr>
+<td align="left">I-2-2</td>
+<td align="left">i10</td>
+<td align="left">number of solute atoms</td>
+</tr>
+<tr>
+<td align="left">I-2-3</td>
+<td align="left">i10</td>
+<td align="left">number of solute bonds</td>
+</tr>
+<tr>
+<td align="left">I-2-4</td>
+<td align="left">i10</td>
+<td align="left">number of solvent bonds</td>
+</tr>
+<tr>
+<td align="left">I-2-5</td>
+<td align="left">i10</td>
+<td align="left">number of solvent molecules</td>
+</tr>
+<tr>
+<td align="left">I-2-6</td>
+<td align="left">i10</td>
+<td align="left">precision of the coordinates. 0=standard, 1=high</td>
+</tr>
+<tr>
+<td align="left">For each atom per solvent molecule one card I-3</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">I-3-1</td>
+<td align="left">a5</td>
+<td align="left">solvent name</td>
+</tr>
+<tr>
+<td align="left">I-3-2</td>
+<td align="left">a5</td>
+<td align="left">atom name</td>
+</tr>
+<tr>
+<td align="left">For each solute atom one card I-4</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">I-4-1</td>
+<td align="left">a5</td>
+<td align="left">segment name</td>
+</tr>
+<tr>
+<td align="left">I-4-2</td>
+<td align="left">a5</td>
+<td align="left">atom name</td>
+</tr>
+<tr>
+<td align="left">I-4-3</td>
+<td align="left">i6</td>
+<td align="left">segment number</td>
+</tr>
+<tr>
+<td align="left">I-4-4</td>
+<td align="left">i10</td>
+<td align="left">solute atom counter</td>
+</tr>
+<tr>
+<td align="left">I-4-5</td>
+<td align="left">i5</td>
+<td align="left">integer 1</td>
+</tr>
+<tr>
+<td align="left">For each solvent bond one card I-5</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">I-5-1</td>
+<td align="left">i8</td>
+<td align="left">atom index i for bond between i and j</td>
+</tr>
+<tr>
+<td align="left">I-5-2</td>
+<td align="left">i8</td>
+<td align="left">atom index j for bond between i and j</td>
+</tr>
+<tr>
+<td align="left">For each solute bond one card I-6</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">I-6-1</td>
+<td align="left">i8</td>
+<td align="left">atom index i for bond between i and j</td>
+</tr>
+<tr>
+<td align="left">I-6-2</td>
+<td align="left">i8</td>
+<td align="left">atom index j for bond between i and j</td>
+</tr>
+<tr>
+<td align="left">For each frame one deck II</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-1-1</td>
+<td align="left">a5</td>
+<td align="left">keyword frame</td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">f12.6</td>
+<td align="left">time of frame in ps</td>
+</tr>
+<tr>
+<td align="left">II-2-2</td>
+<td align="left">12.6</td>
+<td align="left">temperature of frame in K</td>
+</tr>
+<tr>
+<td align="left">II-2-3</td>
+<td align="left">e12.5</td>
+<td align="left">pressure of frame in Pa</td>
+</tr>
+<tr>
+<td align="left">II-2-4</td>
+<td align="left">a10</td>
+<td align="left">date</td>
+</tr>
+<tr>
+<td align="left">II-2-5</td>
+<td align="left">a10</td>
+<td align="left">time</td>
+</tr>
+<tr>
+<td align="left">II-3-1</td>
+<td align="left">f12.6</td>
+<td align="left">box dimension x</td>
+</tr>
+<tr>
+<td align="left">II-3-2</td>
+<td align="left">12x,f12.6</td>
+<td align="left">box dimension y</td>
+</tr>
+<tr>
+<td align="left">II-3-3</td>
+<td align="left">24x,f12.6</td>
+<td align="left">box dimension z</td>
+</tr>
+<tr>
+<td align="left">II-4-1</td>
+<td align="left">l1</td>
+<td align="left">logical lxw for solvent coordinates</td>
+</tr>
+<tr>
+<td align="left">II-4-2</td>
+<td align="left">l1</td>
+<td align="left">logical lvw for solvent velocities</td>
+</tr>
+<tr>
+<td align="left">II-4-3</td>
+<td align="left">l1</td>
+<td align="left">logical lfw for solvent forces</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">I-4-4</td>
+<td align="left">l1</td>
+</tr>
+<tr>
+<td align="left">II-4-5</td>
+<td align="left">l1</td>
+<td align="left">logical lxs for solute coordinates</td>
+</tr>
+<tr>
+<td align="left">II-4-6</td>
+<td align="left">l1</td>
+<td align="left">logical lvs for solute velocities</td>
+</tr>
+<tr>
+<td align="left">II-4-7</td>
+<td align="left">l1</td>
+<td align="left">logical lfs for solute forces</td>
+</tr>
+<tr>
+<td align="left">II-4-8</td>
+<td align="left">l1</td>
+<td align="left">logical lps for solute induced dipoles</td>
+</tr>
+<tr>
+<td align="left">II-4-5</td>
+<td align="left">i10</td>
+<td align="left">number of solvent molecules</td>
+</tr>
+<tr>
+<td align="left">II-4-6</td>
+<td align="left">i10</td>
+<td align="left">number of solvent atoms</td>
+</tr>
+<tr>
+<td align="left">II-4-7</td>
+<td align="left">i10</td>
+<td align="left">number of solute atoms</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>For each solvent molecule one card II-5</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>for each atom, if standard precision</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-5-1</td>
+<td align="left">3f8.3</td>
+<td align="left">solvent atom coordinates, if lxw or lvw</td>
+</tr>
+<tr>
+<td align="left">II-5-4</td>
+<td align="left">3f8.3</td>
+<td align="left">solvent atom velocities, if lvw</td>
+</tr>
+<tr>
+<td align="left">II-5-7</td>
+<td align="left">3f8.1</td>
+<td align="left">solvent atom forces, if lfw</td>
+</tr>
+<tr>
+<td align="left"><strong>For each solute atom one card II-6</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>for each atom, if standard precision</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-6-1</td>
+<td align="left">3f8.3</td>
+<td align="left">solute atom coordinates, if lxs or lvs</td>
+</tr>
+<tr>
+<td align="left">II-6-4</td>
+<td align="left">3f8.3</td>
+<td align="left">solute atom velocities, if lvs</td>
+</tr>
+<tr>
+<td align="left">II-6-7</td>
+<td align="left">3f8.1</td>
+<td align="left">solute atom forces, if lfs</td>
+</tr>
+<tr>
+<td align="left"><strong>For each solvent molecule one card II-5</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>for each atom, if high precision</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-5-1</td>
+<td align="left">3e12.6</td>
+<td align="left">solvent atom coordinates, if lxw or lvw</td>
+</tr>
+<tr>
+<td align="left">II-5-4</td>
+<td align="left">3e12.6</td>
+<td align="left">solvent atom velocities, if lvw</td>
+</tr>
+<tr>
+<td align="left">II-5-7</td>
+<td align="left">3e12.6</td>
+<td align="left">solvent atom forces, if lfw (on new card if both lxw and lvw)</td>
+</tr>
+<tr>
+<td align="left"><strong>For each solute atom one card II-6</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><strong>for each atom, if high precision</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-6-1</td>
+<td align="left">3e12.6</td>
+<td align="left">solute atom coordinates, if lxs or lvs</td>
+</tr>
+<tr>
+<td align="left">II-6-4</td>
+<td align="left">3e12.6</td>
+<td align="left">solute atom velocities, if lvs</td>
+</tr>
+<tr>
+<td align="left">II-6-7</td>
+<td align="left">3e12.6</td>
+<td align="left">solute atom forces, if lfs (on new card if both lxs and lvs)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-free-energy-file">Format of free energy file<a class="headerlink" href="#format_of_md_files-format-of-free-energy-file" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">For each step in &lambda; one deck I</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">I-1-1</td>
+<td align="left">i7</td>
+<td align="left">number nderiv of data summed in derivative decomposition array deriv</td>
+</tr>
+<tr>
+<td align="left">I-1-2</td>
+<td align="left">i7</td>
+<td align="left">length ndata of total derivative array drf</td>
+</tr>
+<tr>
+<td align="left">I-1-3</td>
+<td align="left">f12.6</td>
+<td align="left">current value of &lambda;</td>
+</tr>
+<tr>
+<td align="left">I-1-4</td>
+<td align="left">f12.6</td>
+<td align="left">step size of &lambda;</td>
+</tr>
+<tr>
+<td align="left">I-2-1</td>
+<td align="left">4e12.12</td>
+<td align="left">derivative decomposition array deriv(1:24)</td>
+</tr>
+<tr>
+<td align="left">I-3-1</td>
+<td align="left">4e12.12</td>
+<td align="left">total derivative array dfr(1:nda)</td>
+</tr>
+<tr>
+<td align="left">I-4-1</td>
+<td align="left">i10</td>
+<td align="left">size of ensemble at current &lambda;</td>
+</tr>
+<tr>
+<td align="left">I-4-2</td>
+<td align="left">e20.12</td>
+<td align="left">average temperature at current &lambda;</td>
+</tr>
+<tr>
+<td align="left">I-4-3</td>
+<td align="left">e20.12</td>
+<td align="left">average exponent reverse perturbation energy at current &lambda;</td>
+</tr>
+<tr>
+<td align="left">I-4-4</td>
+<td align="left">e20.12</td>
+<td align="left">average exponent forward perturbation energy at current &lambda;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-root-mean-square-deviation-file">Format of root mean square deviation file<a class="headerlink" href="#format_of_md_files-format-of-root-mean-square-deviation-file" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">For each analyzed time step one card I-1</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">I-1-1</td>
+<td align="left">f12.6</td>
+<td align="left">time in ps</td>
+</tr>
+<tr>
+<td align="left">I-1-2</td>
+<td align="left">f12.6</td>
+<td align="left">total rms deviation of the selected atoms before superimposition</td>
+</tr>
+<tr>
+<td align="left">I-1-3</td>
+<td align="left">f12.6</td>
+<td align="left">total rms deviation of the selected atoms after superimposition</td>
+</tr>
+<tr>
+<td align="left">II-1-1</td>
+<td align="left">a8</td>
+<td align="left">keyword analysis</td>
+</tr>
+<tr>
+<td align="left">For each solute atom one card II-2</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-2-1</td>
+<td align="left">a5</td>
+<td align="left">segment name</td>
+</tr>
+<tr>
+<td align="left">II-2-2</td>
+<td align="left">a5</td>
+<td align="left">atom name</td>
+</tr>
+<tr>
+<td align="left">II-2-3</td>
+<td align="left">i6</td>
+<td align="left">segment number</td>
+</tr>
+<tr>
+<td align="left">II-2-4</td>
+<td align="left">i10</td>
+<td align="left">atom number</td>
+</tr>
+<tr>
+<td align="left">II-2-5</td>
+<td align="left">i5</td>
+<td align="left">selected if 1</td>
+</tr>
+<tr>
+<td align="left">II-2-6</td>
+<td align="left">f12.6</td>
+<td align="left">average atom rms deviation after superimposition</td>
+</tr>
+<tr>
+<td align="left">III-1-1</td>
+<td align="left">a8</td>
+<td align="left">keyword analysis</td>
+</tr>
+<tr>
+<td align="left">For each solute segment one card III-2</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">III-2-1</td>
+<td align="left">a5</td>
+<td align="left">segment name</td>
+</tr>
+<tr>
+<td align="left">III-2-2</td>
+<td align="left">i6</td>
+<td align="left">segment number</td>
+</tr>
+<tr>
+<td align="left">III-2-3</td>
+<td align="left">f12.6</td>
+<td align="left">average segment rms deviation after superimposition</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-property-file">Format of property file<a class="headerlink" href="#format_of_md_files-format-of-property-file" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Card</th>
+<th align="left">Format</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">i7</td>
+<td align="left">number nprop of recorded properties</td>
+</tr>
+<tr>
+<td align="left">I-1-2</td>
+<td align="left">1x,2a10</td>
+<td align="left">date and time</td>
+</tr>
+<tr>
+<td align="left">For each of the nprop properties one card I-2</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">I-2-1</td>
+<td align="left">a50</td>
+<td align="left">description of recorded property</td>
+</tr>
+<tr>
+<td align="left">For each recorded step one deck II</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">II-1-1</td>
+<td align="left">4(1pe12.5)</td>
+<td align="left">value of property</td>
+</tr>
+</tbody>
+</table></section><h1 class='nav-section-title-end'>Ended: Molecular Mechanics</h1>
                         <h1 class='nav-section-title' id='section-nwchem-examples'>
                             NWChem Examples <a class='headerlink' href='#section-nwchem-examples' title='Permanent link'>↵</a>
                         </h1>

@@ -1821,6 +1821,8 @@
         
           
         
+          
+        
       
       
         <label class="md-nav__link" for="__nav_10">
@@ -1871,6 +1873,20 @@
     <li class="md-nav__item">
       <a href="Analysis.html" class="md-nav__link">
         Analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Format_of_MD_Files.html" class="md-nav__link">
+        Format of MD files
       </a>
     </li>
   
@@ -2424,8 +2440,8 @@ follows</p>
 END
 </code></pre>
 <p>which are described in detail below.</p>
-<p>For better validation of user input, the HIGH, LOW and MODEL directives
-must always be specified. If the one of the MEDIUM or INTER directives
+<p>For better validation of user input, the <code>HIGH</code>, <code>LOW</code> and <code>MODEL</code> directives
+must always be specified. If the one of the <code>MEDIUM</code> or <code>INTER</code> directives
 are specified, then so must the other.</p>
 <h2 id="real-model-and-intermediate-geometries">Real, model and intermediate geometries<a class="headerlink" href="#real-model-and-intermediate-geometries" title="Permanent link">&para;</a></h2>
 <p>The geometry and total charge of the full or real system should be
@@ -2458,8 +2474,8 @@ atom (implicitly the first in the geometry) is in the model system</p>
 </code></pre>
 <h3 id="link-atoms">Link atoms<a class="headerlink" href="#link-atoms" title="Permanent link">&para;</a></h3>
 <p>Link atoms for bonds spanning two regions are automatically generated
-from the bond information. The additional parameters on the MODEL and
-INTER directives describe the broken bonds including scale factors for
+from the bond information. The additional parameters on the <code>MODEL</code> and
+<code>INTER</code> directives describe the broken bonds including scale factors for
 placement of the link atom and, optionally, the type of link atom. The
 type of link atom defaults to hydrogen, but any type may be specified
 (actually here you are specifying a geometry tag which is used to
@@ -2535,7 +2551,7 @@ calculations. If an alternative ECP name (the name specified on the ECP
 directive in the same manner as done for basis sets) is specified on one
 of the theory directives, then this ECP will be used in preference for
 that level of theory. See the
-<a href="ONIOM.html#a-three-layer-example">ONIOM#a-three-layer-example</a>
+<a href="#a-three-layer-example">ONIOM three layer example</a>
 for sample input.</p>
 <h3 id="general-input-strings">General input strings<a class="headerlink" href="#general-input-strings" title="Permanent link">&para;</a></h3>
 <p>For many purposes, the ability to specify the theory, basis and
@@ -2545,7 +2561,7 @@ theory (e.g., DFT) is to be used with different options for the ONIOM
 theoretical models, then the general input strings must be used. These
 strings are processed as NWChem input each time the theoretical model is
 invoked. The strings may contain any NWChem input, except for options
-pertaining to ONIOM and the task directive. The intent that the strings
+pertaining to ONIOM and the <code>task</code> directive. The intent that the strings
 be used just to control the options pertaining to the theory being used.</p>
 <p>A word of caution. Be sure to check that the options are producing the
 desired results. Since the NWChem database is persistent and the ONIOM
@@ -2613,7 +2629,7 @@ guess</a>
 as a starting guess for the real system. The resulting converged
 molecular orbitals can be saved either with the default name (as
 described above in this section), in which case no additional input is
-necessary. If an alternative name is desired, then the VECTORS directive
+necessary. If an alternative name is desired, then the <code>VECTORS</code> directive
 may be used as follows</p>
 <pre><code>   vectors low-real /u/rjh/jobs/fe_ether_water.mos
 </code></pre>
