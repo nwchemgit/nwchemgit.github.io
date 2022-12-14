@@ -504,6 +504,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#adft" class="md-nav__link">
+    ADFT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vectors-and-max_ovl-ks-mo-vectors" class="md-nav__link">
     VECTORS and MAX_OVL: KS-MO Vectors
   </a>
@@ -2461,6 +2468,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#adft" class="md-nav__link">
+    ADFT
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vectors-and-max_ovl-ks-mo-vectors" class="md-nav__link">
     VECTORS and MAX_OVL: KS-MO Vectors
   </a>
@@ -2975,7 +2989,7 @@ named &ldquo;ao basis&rdquo;, or it must be assigned to this default name using 
 density fitting basis set can also be specified in the input directives
 for the DFT module. This basis set is used for the evaluation of the
 Coulomb potential in the Dunlap scheme. The charge density fitting basis
-set must have the name &ldquo;cd basis&rdquo;. This can be the actual name of a
+set must have the name <code>cd basis</code>. This can be the actual name of a
 basis set, or a basis set can be assigned this name using the
 <a href="SET.html">SET</a> directive. If this basis set is not
 defined by input, the O(N<sup>4</sup>) exact Coulomb contribution is computed.</p>
@@ -2995,6 +3009,9 @@ given calculation can be summarized as follows:</p>
 <li>&ldquo;xc basis&rdquo; - exchange-correlation (XC) fitting basis set; optional,
     and not recommended</li>
 </ul>
+<h2 id="adft">ADFT<a class="headerlink" href="#adft" title="Permanent link">&para;</a></h2>
+<p>Use of the auxiliary density functional theory method (ADFT) method  can be triggered by means of the <code>adft</code> keyword. This can result in a large speed-up when using GGA functionals (e.g. PBE96). <br />
+The ADFT method requires a charge density fitting basis set (see <a href="#specification-of-basis-sets-for-the-dft-module">DFT basis set section</a>). If not <code>cd basis</code> set is provided, the <code>weigend coulomb fitting</code> basis set will be loaded.</p>
 <h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL: KS-MO Vectors<a class="headerlink" href="#vectors-and-max_ovl-ks-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>The VECTORS directive is the same as that in the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">SCF</a> module. Currently, the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-lock-keyword">LOCK</a> keyword is not supported by the DFT module, however the directive</p>
 <pre><code> MAX_OVL
