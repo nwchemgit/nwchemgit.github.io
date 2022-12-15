@@ -513,6 +513,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bse-keyword" class="md-nav__link">
+    BSE keyword
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2310,6 +2317,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#bse-keyword" class="md-nav__link">
+    BSE keyword
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2387,8 +2401,8 @@ explicitly in the input, to define a particular basis set.</p>
 <p>The general form of the BASIS directive is as follows:</p>
 <pre><code> BASIS [&lt;string name default &quot;ao basis&quot;&gt;] \  
        [(spherical || cartesian) default cartesian] \  
-       [(print || noprint) default print]  
-       [rel]  
+       [(print || noprint) default print]  \
+       [rel] [bse] 
     &lt;string tag&gt; library [&lt;string tag_in_lib&gt;] \  
                  &lt;string standard_set&gt; [file &lt;filename&gt;] \  
                  [except &lt;string tag list&gt;] [rel]  
@@ -2550,6 +2564,13 @@ explicitly in the input, to define a particular basis set.</p>
     Dirac-Hamiltonian
     approximation</a>
     for more details.</p>
+<h3 id="bse-keyword">BSE keyword<a class="headerlink" href="#bse-keyword" title="Permanent link">&para;</a></h3>
+<p><code>BSE</code> <strong><em>New in NWChem 7.2.0</em></strong>:<br />
+    This keyword loads the basis set <a href="#basis-set-library">library</a> using data in <code>$NWCHEM_TOP/src/basis/libraries.bse</code>
+    from <a href="#how-to-use-basis-files-from-httpswwwbasissetexchangeorg-new-in-2019">basisetexchanger.org</a>.
+    CAVEAT: use of this keyword will also use the
+    <a href="#spherical-or-cartesian">spherical/cartesian</a>
+    keywords from the basis library files.</p>
 <h2 id="basis-sets-tags">Basis sets tags<a class="headerlink" href="#basis-sets-tags" title="Permanent link">&para;</a></h2>
 <p>Basis sets are associated with centers by using the tag of a center in a
 <a href="Geometry.html">geometry</a> that has either been input by
@@ -2577,9 +2598,9 @@ for that if necessary.</p>
 library, and finally, how to define a basis set using exponents and
 coefficients.</p>
 <h2 id="basis-set-library">Basis set library<a class="headerlink" href="#basis-set-library" title="Permanent link">&para;</a></h2>
-<p>The keyword library associated with each specific tag entry specifies
+<p>The keyword <code>library</code> associated with each specific tag entry specifies
 that the calculation will use the standard basis set in NWChem for that
-center. The variable <standard_set> is the name that identifies the
+center. The string <code>&lt;standard_set&gt;</code> is the name that identifies the
 functions in the library. The names of standard basis sets are not case
 sensitive. For a complete list of basis sets and associated ECPs in the
 NWChem library see the <a href="AvailableBasisSets.html">available basis
