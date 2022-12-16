@@ -650,13 +650,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#references-for-xc-functionals" class="md-nav__link">
-    References for XC Functionals
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#meta-gga-functionals" class="md-nav__link">
     Meta-GGA Functionals
   </a>
@@ -2629,13 +2622,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#references-for-xc-functionals" class="md-nav__link">
-    References for XC Functionals
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#meta-gga-functionals" class="md-nav__link">
     Meta-GGA Functionals
   </a>
@@ -3115,7 +3101,7 @@ given calculation can be summarized as follows:</p>
     and not recommended</li>
 </ul>
 <h2 id="adft-new-in-nwchem-720">ADFT <strong><em>New in NWChem 7.2.0</em></strong>:<a class="headerlink" href="#adft-new-in-nwchem-720" title="Permanent link">&para;</a></h2>
-<p>Use of the auxiliary density functional theory method (ADFT) method  can be triggered by means of the <code>adft</code> keyword. This can result in a large speed-up when using GGA functionals (e.g. PBE96). <br />
+<p>Use of the auxiliary density functional theory method (ADFT)[^0} can be triggered by means of the <code>adft</code> keyword. This can result in a large speed-up when using GGA functionals (e.g. PBE96). <br />
 The ADFT method requires a charge density fitting basis set (see <a href="#specification-of-basis-sets-for-the-dft-module">DFT basis set section</a>). If not <code>cd basis</code> set is provided, the <code>weigend coulomb fitting</code> basis set will be loaded.</p>
 <h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL: KS-MO Vectors<a class="headerlink" href="#vectors-and-max_ovl-ks-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>The VECTORS directive is the same as that in the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">SCF</a> module. Currently, the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-lock-keyword">LOCK</a> keyword is not supported by the DFT module, however the directive</p>
@@ -3153,8 +3139,8 @@ default exchange-correlation functional is defined as the local density
 approximation (LDA) for closed shell systems and its counterpart the
 local spin-density (LSD) approximation for open shell systems. Within
 this approximation, the exchange functional is the Slater &rho;<sup>1/3</sup>
-functional<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>, and the correlation functional is the
-Vosko-Wilk-Nusair (VWN) functional (functional V)<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup>.
+functional<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">2</a></sup>, and the correlation functional is the
+Vosko-Wilk-Nusair (VWN) functional (functional V)<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">3</a></sup>.
 The parameters used in
 this formula are obtained by fitting to the Ceperley and Alder Quantum
 Monte-Carlo solution of the homogeneous electron gas.</p>
@@ -3241,8 +3227,8 @@ functionals yet.</p>
 functionals, the user has the alternative of specifying combined
 exchange and correlation functionals.</p>
 <p>The available hybrid functionals (where a Hartree-Fock Exchange
-component is present) consist of the Becke &ldquo;half and half&rdquo;<sup id="fnref_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">13</a></sup>, the adiabatic connection method<sup id="fnref_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup>,
-Becke 1997 (&ldquo;Becke V&rdquo; paper<sup id="fnref_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">15</a></sup>).</p>
+component is present) consist of the Becke &ldquo;half and half&rdquo;<sup id="fnref_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">14</a></sup>, the adiabatic connection method<sup id="fnref_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">15</a></sup>,
+Becke 1997 (&ldquo;Becke V&rdquo; paper<sup id="fnref_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">16</a></sup>).</p>
 <p>The keyword <code>beckehandh</code> specifies that the exchange-correlation energy
 will be computed
 as</p>
@@ -3286,7 +3272,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup></td>
+<td><sup id="fnref2_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">2</a></sup></td>
 </tr>
 <tr>
 <td>vwn_1</td>
@@ -3296,7 +3282,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref7_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref7_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">3</a></sup></td>
 </tr>
 <tr>
 <td>vwn_2</td>
@@ -3306,7 +3292,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref6_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref6_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">3</a></sup></td>
 </tr>
 <tr>
 <td>vwn_3</td>
@@ -3316,7 +3302,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref5_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref5_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">3</a></sup></td>
 </tr>
 <tr>
 <td>vwn_4</td>
@@ -3326,7 +3312,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref4_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref4_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">3</a></sup></td>
 </tr>
 <tr>
 <td>vwn_5</td>
@@ -3336,7 +3322,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref3_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref3_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">3</a></sup></td>
 </tr>
 <tr>
 <td>vwn_1_rpa</td>
@@ -3346,7 +3332,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup></td>
+<td><sup id="fnref2_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">3</a></sup></td>
 </tr>
 <tr>
 <td>perdew81</td>
@@ -3356,7 +3342,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">3</a></sup></td>
+<td><sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">4</a></sup></td>
 </tr>
 <tr>
 <td>pw91lda</td>
@@ -3366,7 +3352,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">4</a></sup></td>
+<td><sup id="fnref_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">5</a></sup></td>
 </tr>
 <tr>
 <td>xbecke86b</td>
@@ -3376,7 +3362,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_54"><a class="footnote-ref" href="#fn_footnote_54">53</a></sup></td>
+<td><sup id="fnref_footnote_54"><a class="footnote-ref" href="#fn_footnote_54">54</a></sup></td>
 </tr>
 <tr>
 <td>becke88</td>
@@ -3386,7 +3372,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup></td>
+<td><sup id="fnref_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">6</a></sup></td>
 </tr>
 <tr>
 <td>xperdew86</td>
@@ -3396,7 +3382,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_53"><a class="footnote-ref" href="#fn_footnote_53">52</a></sup></td>
+<td><sup id="fnref_footnote_53"><a class="footnote-ref" href="#fn_footnote_53">53</a></sup></td>
 </tr>
 <tr>
 <td>xperdew91</td>
@@ -3406,7 +3392,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">6</a></sup></td>
+<td><sup id="fnref2_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">7</a></sup></td>
 </tr>
 <tr>
 <td>xpbe96</td>
@@ -3416,7 +3402,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">7</a></sup></td>
+<td><sup id="fnref2_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">8</a></sup></td>
 </tr>
 <tr>
 <td>gill96</td>
@@ -3426,7 +3412,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_8"><a class="footnote-ref" href="#fn_footnote_8">8</a></sup></td>
+<td><sup id="fnref_footnote_8"><a class="footnote-ref" href="#fn_footnote_8">9</a></sup></td>
 </tr>
 <tr>
 <td>optx</td>
@@ -3436,7 +3422,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_20"><a class="footnote-ref" href="#fn_footnote_20">20</a></sup></td>
+<td><sup id="fnref_footnote_20"><a class="footnote-ref" href="#fn_footnote_20">21</a></sup></td>
 </tr>
 <tr>
 <td>mpw91</td>
@@ -3446,7 +3432,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_23"><a class="footnote-ref" href="#fn_footnote_23">23</a></sup></td>
+<td><sup id="fnref_footnote_23"><a class="footnote-ref" href="#fn_footnote_23">24</a></sup></td>
 </tr>
 <tr>
 <td>xft97</td>
@@ -3456,7 +3442,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref3_footnote_24"><a class="footnote-ref" href="#fn_footnote_24">24</a></sup></td>
+<td><sup id="fnref3_footnote_24"><a class="footnote-ref" href="#fn_footnote_24">25</a></sup></td>
 </tr>
 <tr>
 <td>rpbe</td>
@@ -3466,7 +3452,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_33"><a class="footnote-ref" href="#fn_footnote_33">33</a></sup></td>
+<td><sup id="fnref2_footnote_33"><a class="footnote-ref" href="#fn_footnote_33">34</a></sup></td>
 </tr>
 <tr>
 <td>revpbe</td>
@@ -3476,7 +3462,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_34"><a class="footnote-ref" href="#fn_footnote_34">34</a></sup></td>
+<td><sup id="fnref2_footnote_34"><a class="footnote-ref" href="#fn_footnote_34">35</a></sup></td>
 </tr>
 <tr>
 <td>xpw6b95</td>
@@ -3486,7 +3472,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref6_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">36</a></sup></td>
+<td><sup id="fnref6_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">37</a></sup></td>
 </tr>
 <tr>
 <td>xpwb6k</td>
@@ -3496,7 +3482,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref5_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">36</a></sup></td>
+<td><sup id="fnref5_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">37</a></sup></td>
 </tr>
 <tr>
 <td>perdew86</td>
@@ -3506,7 +3492,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">9</a></sup></td>
+<td><sup id="fnref_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">10</a></sup></td>
 </tr>
 <tr>
 <td>lyp</td>
@@ -3516,7 +3502,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">10</a></sup></td>
+<td><sup id="fnref_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">11</a></sup></td>
 </tr>
 <tr>
 <td>perdew91</td>
@@ -3526,7 +3512,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">6</a></sup></td>
+<td><sup id="fnref_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">7</a></sup></td>
 </tr>
 <tr>
 <td>cpbe96</td>
@@ -3536,7 +3522,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">7</a></sup></td>
+<td><sup id="fnref_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">8</a></sup></td>
 </tr>
 <tr>
 <td>cft97</td>
@@ -3546,7 +3532,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_24"><a class="footnote-ref" href="#fn_footnote_24">24</a></sup></td>
+<td><sup id="fnref2_footnote_24"><a class="footnote-ref" href="#fn_footnote_24">25</a></sup></td>
 </tr>
 <tr>
 <td>op</td>
@@ -3556,7 +3542,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_31"><a class="footnote-ref" href="#fn_footnote_31">31</a></sup></td>
+<td><sup id="fnref2_footnote_31"><a class="footnote-ref" href="#fn_footnote_31">32</a></sup></td>
 </tr>
 <tr>
 <td>hcth</td>
@@ -3566,7 +3552,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">11</a></sup></td>
+<td><sup id="fnref2_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">12</a></sup></td>
 </tr>
 <tr>
 <td>hcth120</td>
@@ -3576,7 +3562,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_12"><a class="footnote-ref" href="#fn_footnote_12">12</a></sup></td>
+<td><sup id="fnref2_footnote_12"><a class="footnote-ref" href="#fn_footnote_12">13</a></sup></td>
 </tr>
 <tr>
 <td>hcth147</td>
@@ -3586,7 +3572,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_12"><a class="footnote-ref" href="#fn_footnote_12">12</a></sup></td>
+<td><sup id="fnref_footnote_12"><a class="footnote-ref" href="#fn_footnote_12">13</a></sup></td>
 </tr>
 <tr>
 <td>hcth147@tz2p</td>
@@ -3596,7 +3582,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_61"><a class="footnote-ref" href="#fn_footnote_61">60</a></sup></td>
+<td><sup id="fnref_footnote_61"><a class="footnote-ref" href="#fn_footnote_61">61</a></sup></td>
 </tr>
 <tr>
 <td>hcth407</td>
@@ -3606,7 +3592,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_19"><a class="footnote-ref" href="#fn_footnote_19">19</a></sup></td>
+<td><sup id="fnref_footnote_19"><a class="footnote-ref" href="#fn_footnote_19">20</a></sup></td>
 </tr>
 <tr>
 <td>becke97gga1</td>
@@ -3616,7 +3602,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_18"><a class="footnote-ref" href="#fn_footnote_18">18</a></sup></td>
+<td><sup id="fnref_footnote_18"><a class="footnote-ref" href="#fn_footnote_18">19</a></sup></td>
 </tr>
 <tr>
 <td>hcthp14</td>
@@ -3626,7 +3612,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_21"><a class="footnote-ref" href="#fn_footnote_21">21</a></sup></td>
+<td><sup id="fnref_footnote_21"><a class="footnote-ref" href="#fn_footnote_21">22</a></sup></td>
 </tr>
 <tr>
 <td>ft97</td>
@@ -3636,7 +3622,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_24"><a class="footnote-ref" href="#fn_footnote_24">24</a></sup></td>
+<td><sup id="fnref_footnote_24"><a class="footnote-ref" href="#fn_footnote_24">25</a></sup></td>
 </tr>
 <tr>
 <td>htch407p</td>
@@ -3646,7 +3632,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_27"><a class="footnote-ref" href="#fn_footnote_27">27</a></sup></td>
+<td><sup id="fnref_footnote_27"><a class="footnote-ref" href="#fn_footnote_27">28</a></sup></td>
 </tr>
 <tr>
 <td>bop</td>
@@ -3656,7 +3642,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_31"><a class="footnote-ref" href="#fn_footnote_31">31</a></sup></td>
+<td><sup id="fnref_footnote_31"><a class="footnote-ref" href="#fn_footnote_31">32</a></sup></td>
 </tr>
 <tr>
 <td>pbeop</td>
@@ -3666,7 +3652,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_32"><a class="footnote-ref" href="#fn_footnote_32">32</a></sup></td>
+<td><sup id="fnref_footnote_32"><a class="footnote-ref" href="#fn_footnote_32">33</a></sup></td>
 </tr>
 <tr>
 <td>xpkzb99</td>
@@ -3676,7 +3662,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_26"><a class="footnote-ref" href="#fn_footnote_26">26</a></sup></td>
+<td><sup id="fnref2_footnote_26"><a class="footnote-ref" href="#fn_footnote_26">27</a></sup></td>
 </tr>
 <tr>
 <td>cpkzb99</td>
@@ -3686,7 +3672,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_26"><a class="footnote-ref" href="#fn_footnote_26">26</a></sup></td>
+<td><sup id="fnref_footnote_26"><a class="footnote-ref" href="#fn_footnote_26">27</a></sup></td>
 </tr>
 <tr>
 <td>xtpss03</td>
@@ -3696,7 +3682,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_28"><a class="footnote-ref" href="#fn_footnote_28">28</a></sup></td>
+<td><sup id="fnref2_footnote_28"><a class="footnote-ref" href="#fn_footnote_28">29</a></sup></td>
 </tr>
 <tr>
 <td>ctpss03</td>
@@ -3706,7 +3692,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_28"><a class="footnote-ref" href="#fn_footnote_28">28</a></sup></td>
+<td><sup id="fnref_footnote_28"><a class="footnote-ref" href="#fn_footnote_28">29</a></sup></td>
 </tr>
 <tr>
 <td>bc95</td>
@@ -3716,7 +3702,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_33"><a class="footnote-ref" href="#fn_footnote_33">33</a></sup></td>
+<td><sup id="fnref_footnote_33"><a class="footnote-ref" href="#fn_footnote_33">34</a></sup></td>
 </tr>
 <tr>
 <td>cpw6b95</td>
@@ -3726,7 +3712,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref4_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">36</a></sup></td>
+<td><sup id="fnref4_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">37</a></sup></td>
 </tr>
 <tr>
 <td>cpwb6k</td>
@@ -3736,7 +3722,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref3_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">36</a></sup></td>
+<td><sup id="fnref3_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">37</a></sup></td>
 </tr>
 <tr>
 <td>xm05</td>
@@ -3746,7 +3732,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref3_footnote_37"><a class="footnote-ref" href="#fn_footnote_37">37</a></sup>,<sup id="fnref2_footnote_39"><a class="footnote-ref" href="#fn_footnote_39">38</a></sup></td>
+<td><sup id="fnref3_footnote_37"><a class="footnote-ref" href="#fn_footnote_37">38</a></sup>,<sup id="fnref2_footnote_39"><a class="footnote-ref" href="#fn_footnote_39">39</a></sup></td>
 </tr>
 <tr>
 <td>cm05</td>
@@ -3756,7 +3742,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_37"><a class="footnote-ref" href="#fn_footnote_37">37</a></sup>,<sup id="fnref_footnote_39"><a class="footnote-ref" href="#fn_footnote_39">38</a></sup></td>
+<td><sup id="fnref2_footnote_37"><a class="footnote-ref" href="#fn_footnote_37">38</a></sup>,<sup id="fnref_footnote_39"><a class="footnote-ref" href="#fn_footnote_39">39</a></sup></td>
 </tr>
 <tr>
 <td>m05-2x</td>
@@ -3766,7 +3752,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref3_footnote_40"><a class="footnote-ref" href="#fn_footnote_40">39</a></sup></td>
+<td><sup id="fnref3_footnote_40"><a class="footnote-ref" href="#fn_footnote_40">40</a></sup></td>
 </tr>
 <tr>
 <td>xm05-2x</td>
@@ -3776,7 +3762,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref2_footnote_40"><a class="footnote-ref" href="#fn_footnote_40">39</a></sup></td>
+<td><sup id="fnref2_footnote_40"><a class="footnote-ref" href="#fn_footnote_40">40</a></sup></td>
 </tr>
 <tr>
 <td>cm05-2x</td>
@@ -3786,7 +3772,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_40"><a class="footnote-ref" href="#fn_footnote_40">39</a></sup></td>
+<td><sup id="fnref_footnote_40"><a class="footnote-ref" href="#fn_footnote_40">40</a></sup></td>
 </tr>
 <tr>
 <td>xctpssh</td>
@@ -3796,7 +3782,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_29"><a class="footnote-ref" href="#fn_footnote_29">29</a></sup></td>
+<td><sup id="fnref_footnote_29"><a class="footnote-ref" href="#fn_footnote_29">30</a></sup></td>
 </tr>
 <tr>
 <td>bb1k</td>
@@ -3806,7 +3792,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_34"><a class="footnote-ref" href="#fn_footnote_34">34</a></sup></td>
+<td><sup id="fnref_footnote_34"><a class="footnote-ref" href="#fn_footnote_34">35</a></sup></td>
 </tr>
 <tr>
 <td>mpw1b95</td>
@@ -3816,7 +3802,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref2_footnote_35"><a class="footnote-ref" href="#fn_footnote_35">35</a></sup></td>
+<td><sup id="fnref2_footnote_35"><a class="footnote-ref" href="#fn_footnote_35">36</a></sup></td>
 </tr>
 <tr>
 <td>mpwb1k</td>
@@ -3826,7 +3812,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_35"><a class="footnote-ref" href="#fn_footnote_35">35</a></sup></td>
+<td><sup id="fnref_footnote_35"><a class="footnote-ref" href="#fn_footnote_35">36</a></sup></td>
 </tr>
 <tr>
 <td>pw6b95</td>
@@ -3836,7 +3822,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref2_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">36</a></sup></td>
+<td><sup id="fnref2_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">37</a></sup></td>
 </tr>
 <tr>
 <td>pwb6k</td>
@@ -3846,7 +3832,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">36</a></sup></td>
+<td><sup id="fnref_footnote_36"><a class="footnote-ref" href="#fn_footnote_36">37</a></sup></td>
 </tr>
 <tr>
 <td>m05</td>
@@ -3856,7 +3842,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_37"><a class="footnote-ref" href="#fn_footnote_37">37</a></sup></td>
+<td><sup id="fnref_footnote_37"><a class="footnote-ref" href="#fn_footnote_37">38</a></sup></td>
 </tr>
 <tr>
 <td>vs98</td>
@@ -3866,7 +3852,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref3_footnote_41"><a class="footnote-ref" href="#fn_footnote_41">40</a></sup></td>
+<td><sup id="fnref3_footnote_41"><a class="footnote-ref" href="#fn_footnote_41">41</a></sup></td>
 </tr>
 <tr>
 <td>xvs98</td>
@@ -3876,7 +3862,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_41"><a class="footnote-ref" href="#fn_footnote_41">40</a></sup></td>
+<td><sup id="fnref2_footnote_41"><a class="footnote-ref" href="#fn_footnote_41">41</a></sup></td>
 </tr>
 <tr>
 <td>cvs98</td>
@@ -3886,7 +3872,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_41"><a class="footnote-ref" href="#fn_footnote_41">40</a></sup></td>
+<td><sup id="fnref_footnote_41"><a class="footnote-ref" href="#fn_footnote_41">41</a></sup></td>
 </tr>
 <tr>
 <td>m06-L</td>
@@ -3896,7 +3882,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref6_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">41</a></sup></td>
+<td><sup id="fnref6_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">42</a></sup></td>
 </tr>
 <tr>
 <td>xm06-L</td>
@@ -3906,7 +3892,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref5_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">41</a></sup></td>
+<td><sup id="fnref5_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">42</a></sup></td>
 </tr>
 <tr>
 <td>cm06-L</td>
@@ -3916,7 +3902,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref4_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">41</a></sup></td>
+<td><sup id="fnref4_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">42</a></sup></td>
 </tr>
 <tr>
 <td>m06-hf</td>
@@ -3926,7 +3912,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref3_footnote_43"><a class="footnote-ref" href="#fn_footnote_43">42</a></sup></td>
+<td><sup id="fnref3_footnote_43"><a class="footnote-ref" href="#fn_footnote_43">43</a></sup></td>
 </tr>
 <tr>
 <td>xm06-hf</td>
@@ -3936,7 +3922,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref2_footnote_43"><a class="footnote-ref" href="#fn_footnote_43">42</a></sup></td>
+<td><sup id="fnref2_footnote_43"><a class="footnote-ref" href="#fn_footnote_43">43</a></sup></td>
 </tr>
 <tr>
 <td>cm06-hf</td>
@@ -3946,7 +3932,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_43"><a class="footnote-ref" href="#fn_footnote_43">42</a></sup></td>
+<td><sup id="fnref_footnote_43"><a class="footnote-ref" href="#fn_footnote_43">43</a></sup></td>
 </tr>
 <tr>
 <td>m06</td>
@@ -3956,7 +3942,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref3_footnote_44"><a class="footnote-ref" href="#fn_footnote_44">43</a></sup></td>
+<td><sup id="fnref3_footnote_44"><a class="footnote-ref" href="#fn_footnote_44">44</a></sup></td>
 </tr>
 <tr>
 <td>xm06</td>
@@ -3966,7 +3952,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref2_footnote_44"><a class="footnote-ref" href="#fn_footnote_44">43</a></sup></td>
+<td><sup id="fnref2_footnote_44"><a class="footnote-ref" href="#fn_footnote_44">44</a></sup></td>
 </tr>
 <tr>
 <td>cm06</td>
@@ -3976,7 +3962,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_44"><a class="footnote-ref" href="#fn_footnote_44">43</a></sup></td>
+<td><sup id="fnref_footnote_44"><a class="footnote-ref" href="#fn_footnote_44">44</a></sup></td>
 </tr>
 <tr>
 <td>m06-2x</td>
@@ -3986,7 +3972,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref3_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">41</a></sup></td>
+<td><sup id="fnref3_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">42</a></sup></td>
 </tr>
 <tr>
 <td>xm06-2x</td>
@@ -3996,7 +3982,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref2_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">41</a></sup></td>
+<td><sup id="fnref2_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">42</a></sup></td>
 </tr>
 <tr>
 <td>cm06-2x</td>
@@ -4006,7 +3992,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">41</a></sup></td>
+<td><sup id="fnref_footnote_42"><a class="footnote-ref" href="#fn_footnote_42">42</a></sup></td>
 </tr>
 <tr>
 <td>cm08-hx</td>
@@ -4016,7 +4002,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref6_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">45</a></sup></td>
+<td><sup id="fnref6_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">46</a></sup></td>
 </tr>
 <tr>
 <td>xm08-hx</td>
@@ -4026,7 +4012,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref5_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">45</a></sup></td>
+<td><sup id="fnref5_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">46</a></sup></td>
 </tr>
 <tr>
 <td>m08-hx</td>
@@ -4036,7 +4022,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref4_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">45</a></sup></td>
+<td><sup id="fnref4_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">46</a></sup></td>
 </tr>
 <tr>
 <td>cm08-so</td>
@@ -4046,7 +4032,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref3_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">45</a></sup></td>
+<td><sup id="fnref3_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">46</a></sup></td>
 </tr>
 <tr>
 <td>xm08-so</td>
@@ -4056,7 +4042,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">45</a></sup></td>
+<td><sup id="fnref2_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">46</a></sup></td>
 </tr>
 <tr>
 <td>m08-so</td>
@@ -4066,7 +4052,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">45</a></sup></td>
+<td><sup id="fnref_footnote_46"><a class="footnote-ref" href="#fn_footnote_46">46</a></sup></td>
 </tr>
 <tr>
 <td>cm11</td>
@@ -4076,7 +4062,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref3_footnote_47"><a class="footnote-ref" href="#fn_footnote_47">46</a></sup></td>
+<td><sup id="fnref3_footnote_47"><a class="footnote-ref" href="#fn_footnote_47">47</a></sup></td>
 </tr>
 <tr>
 <td>xm11</td>
@@ -4086,7 +4072,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_47"><a class="footnote-ref" href="#fn_footnote_47">46</a></sup></td>
+<td><sup id="fnref2_footnote_47"><a class="footnote-ref" href="#fn_footnote_47">47</a></sup></td>
 </tr>
 <tr>
 <td>m11</td>
@@ -4096,7 +4082,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_47"><a class="footnote-ref" href="#fn_footnote_47">46</a></sup></td>
+<td><sup id="fnref_footnote_47"><a class="footnote-ref" href="#fn_footnote_47">47</a></sup></td>
 </tr>
 <tr>
 <td>cm11-l</td>
@@ -4106,7 +4092,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref3_footnote_48"><a class="footnote-ref" href="#fn_footnote_48">47</a></sup></td>
+<td><sup id="fnref3_footnote_48"><a class="footnote-ref" href="#fn_footnote_48">48</a></sup></td>
 </tr>
 <tr>
 <td>xm11-l</td>
@@ -4116,7 +4102,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_48"><a class="footnote-ref" href="#fn_footnote_48">47</a></sup></td>
+<td><sup id="fnref2_footnote_48"><a class="footnote-ref" href="#fn_footnote_48">48</a></sup></td>
 </tr>
 <tr>
 <td>m11-l</td>
@@ -4126,7 +4112,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_48"><a class="footnote-ref" href="#fn_footnote_48">47</a></sup></td>
+<td><sup id="fnref_footnote_48"><a class="footnote-ref" href="#fn_footnote_48">48</a></sup></td>
 </tr>
 <tr>
 <td>csogga</td>
@@ -4136,7 +4122,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref3_footnote_49"><a class="footnote-ref" href="#fn_footnote_49">48</a></sup></td>
+<td><sup id="fnref3_footnote_49"><a class="footnote-ref" href="#fn_footnote_49">49</a></sup></td>
 </tr>
 <tr>
 <td>xsogga</td>
@@ -4146,7 +4132,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_49"><a class="footnote-ref" href="#fn_footnote_49">48</a></sup></td>
+<td><sup id="fnref2_footnote_49"><a class="footnote-ref" href="#fn_footnote_49">49</a></sup></td>
 </tr>
 <tr>
 <td>sogga</td>
@@ -4156,7 +4142,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_49"><a class="footnote-ref" href="#fn_footnote_49">48</a></sup></td>
+<td><sup id="fnref_footnote_49"><a class="footnote-ref" href="#fn_footnote_49">49</a></sup></td>
 </tr>
 <tr>
 <td>csogga11</td>
@@ -4166,7 +4152,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref3_footnote_50"><a class="footnote-ref" href="#fn_footnote_50">49</a></sup></td>
+<td><sup id="fnref3_footnote_50"><a class="footnote-ref" href="#fn_footnote_50">50</a></sup></td>
 </tr>
 <tr>
 <td>xsogga11</td>
@@ -4176,7 +4162,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_50"><a class="footnote-ref" href="#fn_footnote_50">49</a></sup></td>
+<td><sup id="fnref2_footnote_50"><a class="footnote-ref" href="#fn_footnote_50">50</a></sup></td>
 </tr>
 <tr>
 <td>sogga11</td>
@@ -4186,7 +4172,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_50"><a class="footnote-ref" href="#fn_footnote_50">49</a></sup></td>
+<td><sup id="fnref_footnote_50"><a class="footnote-ref" href="#fn_footnote_50">50</a></sup></td>
 </tr>
 <tr>
 <td>csogga11-x</td>
@@ -4196,7 +4182,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref3_footnote_51"><a class="footnote-ref" href="#fn_footnote_51">50</a></sup></td>
+<td><sup id="fnref3_footnote_51"><a class="footnote-ref" href="#fn_footnote_51">51</a></sup></td>
 </tr>
 <tr>
 <td>xsogga11-x</td>
@@ -4206,7 +4192,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref2_footnote_51"><a class="footnote-ref" href="#fn_footnote_51">50</a></sup></td>
+<td><sup id="fnref2_footnote_51"><a class="footnote-ref" href="#fn_footnote_51">51</a></sup></td>
 </tr>
 <tr>
 <td>sogga11-x</td>
@@ -4216,7 +4202,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_51"><a class="footnote-ref" href="#fn_footnote_51">50</a></sup></td>
+<td><sup id="fnref_footnote_51"><a class="footnote-ref" href="#fn_footnote_51">51</a></sup></td>
 </tr>
 <tr>
 <td>dldf</td>
@@ -4226,7 +4212,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_52"><a class="footnote-ref" href="#fn_footnote_52">51</a></sup></td>
+<td><sup id="fnref_footnote_52"><a class="footnote-ref" href="#fn_footnote_52">52</a></sup></td>
 </tr>
 <tr>
 <td>beckehandh</td>
@@ -4236,7 +4222,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">13</a></sup></td>
+<td><sup id="fnref2_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">14</a></sup></td>
 </tr>
 <tr>
 <td>b3lyp</td>
@@ -4246,7 +4232,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td><sup id="fnref3_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup></td>
+<td><sup id="fnref3_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">15</a></sup></td>
 </tr>
 <tr>
 <td>acm</td>
@@ -4256,7 +4242,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td><sup id="fnref2_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup></td>
+<td><sup id="fnref2_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">15</a></sup></td>
 </tr>
 <tr>
 <td>becke97</td>
@@ -4266,7 +4252,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref2_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">15</a></sup></td>
+<td><sup id="fnref2_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">16</a></sup></td>
 </tr>
 <tr>
 <td>becke97-1</td>
@@ -4276,7 +4262,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">11</a></sup></td>
+<td><sup id="fnref_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">12</a></sup></td>
 </tr>
 <tr>
 <td>becke97-2</td>
@@ -4286,7 +4272,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_22"><a class="footnote-ref" href="#fn_footnote_22">22</a></sup></td>
+<td><sup id="fnref_footnote_22"><a class="footnote-ref" href="#fn_footnote_22">23</a></sup></td>
 </tr>
 <tr>
 <td>becke97-3</td>
@@ -4296,7 +4282,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_30"><a class="footnote-ref" href="#fn_footnote_30">30</a></sup></td>
+<td><sup id="fnref_footnote_30"><a class="footnote-ref" href="#fn_footnote_30">31</a></sup></td>
 </tr>
 <tr>
 <td>becke97-d</td>
@@ -4306,7 +4292,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_45"><a class="footnote-ref" href="#fn_footnote_45">44</a></sup></td>
+<td><sup id="fnref_footnote_45"><a class="footnote-ref" href="#fn_footnote_45">45</a></sup></td>
 </tr>
 <tr>
 <td>becke98</td>
@@ -4316,7 +4302,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_16"><a class="footnote-ref" href="#fn_footnote_16">16</a></sup></td>
+<td><sup id="fnref_footnote_16"><a class="footnote-ref" href="#fn_footnote_16">17</a></sup></td>
 </tr>
 <tr>
 <td>pbe0</td>
@@ -4326,7 +4312,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td><sup id="fnref_footnote_17"><a class="footnote-ref" href="#fn_footnote_17">17</a></sup></td>
+<td><sup id="fnref_footnote_17"><a class="footnote-ref" href="#fn_footnote_17">18</a></sup></td>
 </tr>
 <tr>
 <td>mpw1k</td>
@@ -4336,7 +4322,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td><sup id="fnref_footnote_25"><a class="footnote-ref" href="#fn_footnote_25">25</a></sup></td>
+<td><sup id="fnref_footnote_25"><a class="footnote-ref" href="#fn_footnote_25">26</a></sup></td>
 </tr>
 <tr>
 <td>xmvs15</td>
@@ -4346,7 +4332,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_55"><a class="footnote-ref" href="#fn_footnote_55">54</a></sup></td>
+<td><sup id="fnref_footnote_55"><a class="footnote-ref" href="#fn_footnote_55">55</a></sup></td>
 </tr>
 <tr>
 <td>hle16</td>
@@ -4356,7 +4342,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>Y</td>
-<td><sup id="fnref_footnote_56"><a class="footnote-ref" href="#fn_footnote_56">55</a></sup></td>
+<td><sup id="fnref_footnote_56"><a class="footnote-ref" href="#fn_footnote_56">56</a></sup></td>
 </tr>
 <tr>
 <td>scan</td>
@@ -4366,7 +4352,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_57"><a class="footnote-ref" href="#fn_footnote_57">56</a></sup></td>
+<td><sup id="fnref_footnote_57"><a class="footnote-ref" href="#fn_footnote_57">57</a></sup></td>
 </tr>
 <tr>
 <td>scanl</td>
@@ -4376,7 +4362,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_58"><a class="footnote-ref" href="#fn_footnote_58">57</a></sup></td>
+<td><sup id="fnref_footnote_58"><a class="footnote-ref" href="#fn_footnote_58">58</a></sup></td>
 </tr>
 <tr>
 <td>revm06-L</td>
@@ -4386,7 +4372,7 @@ computed as</p>
 <td>*</td>
 <td></td>
 <td>N</td>
-<td><sup id="fnref_footnote_59"><a class="footnote-ref" href="#fn_footnote_59">58</a></sup></td>
+<td><sup id="fnref_footnote_59"><a class="footnote-ref" href="#fn_footnote_59">59</a></sup></td>
 </tr>
 <tr>
 <td>revm06</td>
@@ -4396,7 +4382,7 @@ computed as</p>
 <td>*</td>
 <td>*</td>
 <td>N</td>
-<td><sup id="fnref_footnote_60"><a class="footnote-ref" href="#fn_footnote_60">59</a></sup></td>
+<td><sup id="fnref_footnote_60"><a class="footnote-ref" href="#fn_footnote_60">60</a></sup></td>
 </tr>
 </tbody>
 </table>
@@ -4404,192 +4390,6 @@ computed as</p>
 the Generalized Gradient Approximation, and Meta refers to Meta-GGAs.
 The column 2nd refers to second derivatives of the energy with respect
 to nuclear position.  </p>
-<h3 id="references-for-xc-functionals">References for XC Functionals<a class="headerlink" href="#references-for-xc-functionals" title="Permanent link">&para;</a></h3>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn_footnote_1">
-<p>J.C. Slater and K.H. Johnson, Phys. Rev. B 5, 844 (1972). J.C. Slater, Quantum Theory of Molecules and Solids, Vol. 4: The Self-Consistent Field for Molecules and Solids (McGraw-Hill, New York, 1974)&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_2">
-<p>S.J. Vosko, L. Wilk and M. Nusair, Can. J. Phys. 58, 1200 (1980)&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_3">
-<p>J.P. Perdew and A. Zunger, Phys. Rev. B 23, 5048 (1981).&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_4">
-<p>J.P. Perdew and Y. Wang, Phys. Rev. B 45, 13244 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_5">
-<p>A.D. Becke, Phys. Rev. A 88, 3098 (1988)&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_6">
-<p>J.P. Perdew, J.A. Chevary, S.H. Vosko, K.A. Jackson, M.R. Pederson, D.J. Singh and C. Fiolhais, Phys. Rev. B 46, 6671 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_7">
-<p>J.P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996); 78 , 1396 (1997)&#160;<a class="footnote-backref" href="#fnref_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_8">
-<p>P.W.Gill , Mol. Phys. 89, 433 (1996)&#160;<a class="footnote-backref" href="#fnref_footnote_8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_9">
-<p>J.P. Perdew, Phys. Rev. B 33, 8822 (1986)&#160;<a class="footnote-backref" href="#fnref_footnote_9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_10">
-<p>C. Lee, W. Yang and R. G. Parr, Phys. Rev. B 37, 785 (1988)&#160;<a class="footnote-backref" href="#fnref_footnote_10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_11">
-<p>F.A. Hamprecht, A.J. Cohen, D.J.Tozer and N.C. Handy, J. Chem. Phys. 109, 6264 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_11" title="Jump back to footnote 11 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_12">
-<p>A.D. Boese, N.L. Doltsinis, N.C. Handy and M. Sprik. J. Chem. Phys. 112, 1670 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_12" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_13">
-<p>A.D. Becke, J. Chem. Phys. 98, 1372 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_13" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_14">
-<p>A.D. Becke, J. Chem. Phys. 98, 5648 (1993)&#160;<a class="footnote-backref" href="#fnref_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_15">
-<p>A.D. Becke, J. Chem. Phys. 107, 8554 (1997)&#160;<a class="footnote-backref" href="#fnref_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_16">
-<p>H.L. Schmider and A.D. Becke, J. Chem. Phys. 108, 9624 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_17">
-<p>C. Adamo and V.Barone, J. Chem. Phys. 110, 6158 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_18">
-<p>A.J. Cohen and N.C. Handy, Chem. Phys. Lett. 316, 160 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_19">
-<p>A.D. Boese, N.C. Handy, J. Chem. Phys. 114, 5497 (2001)&#160;<a class="footnote-backref" href="#fnref_footnote_19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_20">
-<p>N.C. Handy, A.J. Cohen, Mol. Phys. 99, 403 (2001)&#160;<a class="footnote-backref" href="#fnref_footnote_20" title="Jump back to footnote 20 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_21">
-<p>G. Menconi, P.J. Wilson, D.J. Tozer, J. Chem. Phys 114, 3958 (2001)&#160;<a class="footnote-backref" href="#fnref_footnote_21" title="Jump back to footnote 21 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_22">
-<p>P.J. Wilson, T.J. Bradley, D.J. Tozer, J. Chem. Phys 115, 9233 (2001)&#160;<a class="footnote-backref" href="#fnref_footnote_22" title="Jump back to footnote 22 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_23">
-<p>C. Adamo and V. Barone, J. Chem. Phys. 108, 664 (1998); Y. Zhao and  D.G. Truhlar, J. Phys. Chem. A 109, 5656 (2005)&#160;<a class="footnote-backref" href="#fnref_footnote_23" title="Jump back to footnote 23 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_24">
-<p>M.Filatov and W.Thiel, Mol.Phys. 91, 847 (1997). M.Filatov and W.Thiel, Int.J.Quantum Chem. 62, 603 (1997)&#160;<a class="footnote-backref" href="#fnref_footnote_24" title="Jump back to footnote 24 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_24" title="Jump back to footnote 24 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_24" title="Jump back to footnote 24 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_25">
-<p>B.J. Lynch, P.L. Fast, M. Harris and D.G. Truhlar, J. Phys. Chem. A 104, 4811 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_25" title="Jump back to footnote 25 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_26">
-<p>J.P. Perdew, S. Kurth, A. Zupan and P. Blaha, Phys. Rev. Lett. 82, 2544 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_26" title="Jump back to footnote 26 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_26" title="Jump back to footnote 26 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_27">
-<p>A. D. Boese, A. Chandra, J. M. L. Martin and D. Marx, J. Chem. Phys. 119, 5965 (2003)&#160;<a class="footnote-backref" href="#fnref_footnote_27" title="Jump back to footnote 27 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_28">
-<p>J. Tao,J.Perdew, V. Staroverov and G. Scuseria, Phys. Rev. Let. 91, 146401-1 (2003)&#160;<a class="footnote-backref" href="#fnref_footnote_28" title="Jump back to footnote 28 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_28" title="Jump back to footnote 28 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_29">
-<p>V. Staroverov, G. Scuseria, J. Tao and J.Perdew, J. Chem.Phys. 119, 12129 (2003)&#160;<a class="footnote-backref" href="#fnref_footnote_29" title="Jump back to footnote 29 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_30">
-<p>T.W. Keal, D.J. Tozer, J. Chem. Phys 123, 121103 (2005)&#160;<a class="footnote-backref" href="#fnref_footnote_30" title="Jump back to footnote 30 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_31">
-<p>T. Tsuneda, T. Suzumura and K. Hirao, J. Chem Phys. 110, 10664 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_31" title="Jump back to footnote 31 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_31" title="Jump back to footnote 31 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_32">
-<p>T. Tsuneda, T. Suzumura and K. Hirao, J. Chem Phys. 111, 5656 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_32" title="Jump back to footnote 32 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_33">
-<p>B. Hammer, L. B. Hansen and J. Nørskov , Phys. Rev. B 58, 7413    (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_33" title="Jump back to footnote 33 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_33" title="Jump back to footnote 33 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_34">
-<p>Y. Zhang and W. Yang, Phys. Rev. Letters 80, 890 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_34" title="Jump back to footnote 34 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_34" title="Jump back to footnote 34 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_35">
-<p>A. D. Becke, J. Chem. Phys. 104, 1040 (1996)&#160;<a class="footnote-backref" href="#fnref_footnote_35" title="Jump back to footnote 35 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_35" title="Jump back to footnote 35 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_36">
-<p>Y. Zhao and D. G. Truhlar, J. Phys. Chem. A 108, 2715 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_36" title="Jump back to footnote 36 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_36" title="Jump back to footnote 36 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_36" title="Jump back to footnote 36 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_36" title="Jump back to footnote 36 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_36" title="Jump back to footnote 36 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_36" title="Jump back to footnote 36 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_37">
-<p>Y. Zhao and D. G. Truhlar, J. Phys. Chem. A 108, 6908 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_37" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_37" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_37" title="Jump back to footnote 37 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_39">
-<p>Y. Zhao, N. E. Schultz and D. G. Truhlar, J. Chem. Phys. 123, 161103 (2005)&#160;<a class="footnote-backref" href="#fnref_footnote_39" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_39" title="Jump back to footnote 38 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_40">
-<p>Y. Zhao, N. E. Schultz and D. G. Truhlar, J. Chem. Theory Comput. 2, 364 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_40" title="Jump back to footnote 39 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_40" title="Jump back to footnote 39 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_40" title="Jump back to footnote 39 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_41">
-<p>T. Van Voorhis, G. E. Scuseria, J. Chem. Phys. 109, 400 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_41" title="Jump back to footnote 40 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_41" title="Jump back to footnote 40 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_41" title="Jump back to footnote 40 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_42">
-<p>Y. Zhao, D. G. Truhlar, J. Chem. Phys. 125, 194101 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_42" title="Jump back to footnote 41 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_42" title="Jump back to footnote 41 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_42" title="Jump back to footnote 41 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_42" title="Jump back to footnote 41 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_42" title="Jump back to footnote 41 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_42" title="Jump back to footnote 41 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_43">
-<p>Y. Zhao, D. G. Truhlar, J. Phys. Chem. A. 110, 13126 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_43" title="Jump back to footnote 42 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_43" title="Jump back to footnote 42 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_43" title="Jump back to footnote 42 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_44">
-<p>Y. Zhao, D. G. Truhlar, Theor. Chem. Acc. 20, 215–241 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_44" title="Jump back to footnote 43 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_44" title="Jump back to footnote 43 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_44" title="Jump back to footnote 43 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_45">
-<p>S. Grimme, J. Comp. Chem. 27, 1787 (2006).&#160;<a class="footnote-backref" href="#fnref_footnote_45" title="Jump back to footnote 44 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_46">
-<p>Y. Zhao and D. G. Truhlar, J. Chem. Theory Comput. 4, 1849 (2008)&#160;<a class="footnote-backref" href="#fnref_footnote_46" title="Jump back to footnote 45 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_46" title="Jump back to footnote 45 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_46" title="Jump back to footnote 45 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_46" title="Jump back to footnote 45 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_46" title="Jump back to footnote 45 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_46" title="Jump back to footnote 45 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_47">
-<p>R. Peverati and D. G. Truhlar, J. Phys. Chem. Letters 2, 2810 (2011)&#160;<a class="footnote-backref" href="#fnref_footnote_47" title="Jump back to footnote 46 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_47" title="Jump back to footnote 46 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_47" title="Jump back to footnote 46 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_48">
-<p>R. Peverati and D. G. Truhlar, J. Phys. Chem. Letters 3, 117 (2012)&#160;<a class="footnote-backref" href="#fnref_footnote_48" title="Jump back to footnote 47 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_48" title="Jump back to footnote 47 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_48" title="Jump back to footnote 47 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_49">
-<p>Y. Zhao and D. G. Truhlar, J. Chem. Phys. 128, 184109 (2008)&#160;<a class="footnote-backref" href="#fnref_footnote_49" title="Jump back to footnote 48 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_49" title="Jump back to footnote 48 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_49" title="Jump back to footnote 48 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_50">
-<p>R. Peverati, Y. Zhao and D. G. Truhlar, J. Phys. Chem. Lett. 2, 1911 (2011)&#160;<a class="footnote-backref" href="#fnref_footnote_50" title="Jump back to footnote 49 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_50" title="Jump back to footnote 49 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_50" title="Jump back to footnote 49 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_51">
-<p>R. Peverati and D.G. Truhlar, J. Chem. Phys. , 135, 191102 (2011)&#160;<a class="footnote-backref" href="#fnref_footnote_51" title="Jump back to footnote 50 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_51" title="Jump back to footnote 50 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_51" title="Jump back to footnote 50 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_52">
-<p>K. Pernal, R. Podeszwa, K. Patkowski and K. Szalewicz, Phys. Rev.  Lett. 103, 263201 (2009)&#160;<a class="footnote-backref" href="#fnref_footnote_52" title="Jump back to footnote 51 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_53">
-<p>J. P. Perdew and W. Yue, Phys. Rev. B 33, 8800 (1986)&#160;<a class="footnote-backref" href="#fnref_footnote_53" title="Jump back to footnote 52 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_54">
-<p>A. D. Becke, J. Chem. Phys. 85, 7184 (1986)&#160;<a class="footnote-backref" href="#fnref_footnote_54" title="Jump back to footnote 53 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_55">
-<p>J. Sun, J. P. Perdew, and A. Ruzsinszky, PNAS 112, 685 (2015).&#160;<a class="footnote-backref" href="#fnref_footnote_55" title="Jump back to footnote 54 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_56">
-<p>P. Verma and D. G. Truhlar, J. of Phys. Chem. Letters  8, 380 (2017).&#160;<a class="footnote-backref" href="#fnref_footnote_56" title="Jump back to footnote 55 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_57">
-<p>Z. Yang, H. Peng, J. Sun, and J. P. Perdew, Phys. Rev. B 93, 205205 (2016).&#160;<a class="footnote-backref" href="#fnref_footnote_57" title="Jump back to footnote 56 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_58">
-<p>D. Mejia-Rodriguez and S. B. Trickey, Phys. Rev. A 96, 052512 (2017).&#160;<a class="footnote-backref" href="#fnref_footnote_58" title="Jump back to footnote 57 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_59">
-<p>Y. Wang, X. Jin, H. S. Yu, D. G. Truhlar, X. He, PNAS  114, 8487 (2017).&#160;<a class="footnote-backref" href="#fnref_footnote_59" title="Jump back to footnote 58 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_60">
-<p>Y. Wang, P. Verma, X. Jin, D. G. Truhlar, and X. He, PNAS 115, 10257 (2018).&#160;<a class="footnote-backref" href="#fnref_footnote_60" title="Jump back to footnote 59 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_61">
-<p>A. D. Boese and J. M. L. Martin, J. Chem. Phys. 119, 3005 (2003).&#160;<a class="footnote-backref" href="#fnref_footnote_61" title="Jump back to footnote 60 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 <h3 id="meta-gga-functionals">Meta-GGA Functionals<a class="headerlink" href="#meta-gga-functionals" title="Permanent link">&para;</a></h3>
 <p>One way to calculate meta-GGA energies is to use orbitals and densities
 from fully self-consistent GGA or LDA calculations and run them in one
@@ -4604,8 +4404,8 @@ file with this is shown below, in <a href="#sample-input-file">Sample input
 file</a>. In this instance, the energy is
 calculated self-consistently and geometry is optimized using the
 analytical gradients.</p>
-<p>(For more information on metaGGAs, see S. Kurth, J. Perdew, P. Blaha,
-Int. J. Quant. Chem 75, 889 (1999) for a brief description of meta-GGAs,
+<p>(For more information on metaGGAs, see Kurth et al 1999 <sup id="fnref_footnote_62"><a class="footnote-ref" href="#fn_footnote_62">62</a></sup>
+ for a brief description of meta-GGAs,
 and citations 14-27 therein for thorough background)</p>
 <p>Note: both TPSS and PKZB correlation require the PBE GGA CORRELATION
 (which is itself dependent on an LDA). The decision has been made to use
@@ -4688,25 +4488,8 @@ cam 0.33 cam_alpha 0.0 cam_beta 1.0
 <pre><code>xc xpbe96 1.0 xcampbe96 -0.25 cpbe96 1.0 srhfexch 0.25
 cam 0.11 cam_alpha 0.0 cam_beta 1.0
 </code></pre>
-<p>Please see the following papers (not a complete list) for further
+<p>Please see references <sup id="fnref_footnote_63"><a class="footnote-ref" href="#fn_footnote_63">63</a></sup> to <sup id="fnref_footnote_76"><a class="footnote-ref" href="#fn_footnote_76">76</a></sup>  (not a complete list) for further
 details about the theory behind these functionals and applications.</p>
-<ol>
-<li>A. Savin, In Recent Advances in Density Functional Methods Part I;
-    D.P. Chong, Ed.; World Scientific: Singapore, 1995; Vol. 129.</li>
-<li>H. Iikura, T. Tsuneda, T. Yanai, K. Hirao, J. Chem. Phys. 115, 3540 (2001)</li>
-<li>Y. Tawada, T. Tsuneda, S. Yanahisawa, T. Yanai, K. Hirao, J. Chem.Phys. 120, 8425 (2004)</li>
-<li>T. Yanai, D.P. Tew, N.C. Handy, Chem. Phys. Lett. 393, 51 (2004)</li>
-<li>M. J. G. Peach, A. J. Cohen, D. J. Tozer, Phys. Chem. Chem. Phys. 8, 4543 (2006)</li>
-<li>O.A. Vydrov, G.E. Scuseria J. Chem. Phys. 125 234109 (2006)</li>
-<li>J.-W. Song, T. Hirosawa, T. Tsuneda, K. Hirao, J. Chem. Phys. 126, 154105 (2007)</li>
-<li>E. Livshits, R. Baer, Phys. Chem. Chem. Phys. 9, 2932 (2007)</li>
-<li>A. J. Cohen, P. Mori-Sanchez, and W. Yang, J. Chem. Phys. 126, 191109 (2007)</li>
-<li>M.A. Rohrdanz, J.M. Herbert, J. Chem. Phys. 129 034107 (2008)</li>
-<li>N. Govind, M. Valiev, L. Jensen, K. Kowalski, J. Phys. Chem. A, 113, 6041 (2009)</li>
-<li>R. Baer, E. Livshits, U. Salzner, Annu. Rev. Phys. Chem. 61, 85 (2010)</li>
-<li>J. Autschbach, M. Srebro, Acc. Chem. Res. 47, 2592 (2014)</li>
-<li>P. Verma and R. J. Bartlett, J. Chem. Phys. 140, 18A534 (2014)</li>
-</ol>
 <p>Example illustrating the CAM-B3LYP functional:</p>
 <pre><code>start h2o-camb3lyp  
 geometry units angstrom  
@@ -4753,7 +4536,7 @@ end
 task dft energy
 </code></pre>
 <h3 id="ssb-d-functional">SSB-D functional<a class="headerlink" href="#ssb-d-functional" title="Permanent link">&para;</a></h3>
-<p>The recently developed SSB-D is a small correction to the non-empirical
+<p>The SSB-D<sup id="fnref_footnote_78"><a class="footnote-ref" href="#fn_footnote_78">78</a></sup> functional is a small correction to the non-empirical
 PBE functional and includes a portion of Grimme&rsquo;s dispersion correction
 (s6=0.847455). It is designed to reproduce the good results of OPBE for
 spin-state splittings and reaction barriers, and the good results of PBE
@@ -4762,12 +4545,8 @@ systems, including for difficult systems for DFT (dimerization of
 anthracene, branching of octane, water-hexamer isomers, C12H12 isomers,
 stacked adenine dimers), and for NMR chemical shieldings.</p>
 <ol>
-<li>M. Swart, M. Solà, F.M. Bickelhaupt, J. Chem. Phys. 131, 094103
-    (2009)</li>
-<li>M. Swart, M. Solà, F.M. Bickelhaupt, J. Comp. Meth. Sci. Engin. 9,
-    69 (2009)</li>
+<li>It can be specified as</li>
 </ol>
-<p>It can be specified as</p>
 <pre><code>xc ssb-d
 </code></pre>
 <h3 id="semi-empirical-hybrid-dft-combined-with-perturbative-mp2">Semi-empirical hybrid DFT combined with perturbative MP2<a class="headerlink" href="#semi-empirical-hybrid-dft-combined-with-perturbative-mp2" title="Permanent link">&para;</a></h3>
@@ -4782,12 +4561,7 @@ dft
  dftmp2 
 end
 </code></pre>
-<p>For details of the theory, please see the following reference:</p>
-<ol>
-<li>S. Grimme, &ldquo;Semiempirical hybrid density functional with
-    perturbative second-order correlation&rdquo; Journal of Chemical Physics
-    124, 034108 (2006) <a href="https://doi.org/10.1063/1.2148954">10.1063/1.2148954</a></li>
-</ol>
+<p>For details of the theory, please see reference<sup id="fnref_footnote_80"><a class="footnote-ref" href="#fn_footnote_80">80</a></sup>.</p>
 <h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00: Asymptotic correction<a class="headerlink" href="#lb94-and-cs00-asymptotic-correction" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>LB94</code> will correct the asymptotic region of the XC definition
 of exchange-correlation potential by the van-Leeuwen-Baerends
@@ -4973,8 +4747,8 @@ deemed undesirable with the obvious keywords,</p>
 </code></pre>
 <p>For systems where the initial guess is very poor, the user can try using
 fractional occupation of the orbital levels during the initial cycles of
-the SCF convergence (A. D. Rabuck and G. E. Scuseria, J. Chem. Phys
-110,695 (1999)). The input has the following form</p>
+the SCF convergence<sup id="fnref_footnote_77"><a class="footnote-ref" href="#fn_footnote_77">77</a></sup>.
+The input has the following form</p>
 <pre><code> CONVERGENCE rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;]]
 </code></pre>
 <p>where the optional value <code>n_rabuck</code> determines the number of SCF cycles
@@ -4995,9 +4769,7 @@ set quickguess t
 task dft  
 </code></pre>
 <h2 id="cdft-constrained-dft">CDFT: Constrained DFT<a class="headerlink" href="#cdft-constrained-dft" title="Permanent link">&para;</a></h2>
-<p>This option enables the constrained DFT formalism by Wu and Van Voorhis
-described in the paper: Q. Wu, T. Van Voorhis, Phys. Rev. A 72, 024502
-(2005).</p>
+<p>This option enables the constrained DFT formalism by Wu and Van Voorhis<sup id="fnref_footnote_79"><a class="footnote-ref" href="#fn_footnote_79">79</a></sup>: </p>
 <pre><code> CDFT &lt;integer fatom1 latom1&gt; [&lt;integer fatom2 latom2&gt;] (charge||spin &lt;real constaint_value&gt;) \ 
       [pop (becke||mulliken||lowdin) default lowdin]
 </code></pre>
@@ -5053,8 +4825,8 @@ the HOMO (eg metallic clusters)</p>
 </code></pre>
 <p>This option allows fractional occupation of the molecular orbitals. A
 Gaussian broadening function of exponent smear is used as described in
-the paper: R.W. Warren and B.I. Dunlap, Chem. Phys. Letters 262, 384
-(1996). The user must be aware that an additional energy term is added
+the paper by Warren and Dunlap<sup id="fnref_footnote_81"><a class="footnote-ref" href="#fn_footnote_81">81</a></sup>.
+The user must be aware that an additional energy term is added
 to the total energy in order to have energies and gradients consistent.</p>
 <h2 id="fon-calculations-with-fractional-numbers-of-electrons">FON: Calculations with fractional numbers of electrons<a class="headerlink" href="#fon-calculations-with-fractional-numbers-of-electrons" title="Permanent link">&para;</a></h2>
 <h3 id="restricted">Restricted<a class="headerlink" href="#restricted" title="Permanent link">&para;</a></h3>
@@ -5602,9 +5374,8 @@ molecule</p>
 <pre><code>GRID [(becke||erf1||erf2||ssf) default erf1]
 </code></pre>
 <ul>
-<li>becke : A. D. Becke, J. Chem. Phys. 88, 1053 (1988).</li>
-<li>ssf : R.E.Stratmann, G.Scuseria and M.J.Frisch, Chem. Phys. Lett.
-    257, 213 (1996).</li>
+<li>becke : see paper<sup id="fnref2_footnote_81"><a class="footnote-ref" href="#fn_footnote_81">81</a></sup></li>
+<li>ssf : see paper<sup id="fnref_footnote_82"><a class="footnote-ref" href="#fn_footnote_82">82</a></sup></li>
 <li>erf1 : modified ssf</li>
 <li>erf2 : modified ssf</li>
 </ul>
@@ -5616,13 +5387,11 @@ molecule</p>
 <pre><code> GRID [[euler||mura||treutler]  default mura]
 </code></pre>
 <ul>
-<li>euler : Euler-McLaurin quadrature wih the transformation devised by
-    C.W. Murray, N.C. Handy, and G.L. Laming, Mol. Phys.78, 997 (1993).</li>
-<li>mura : Modification of the Murray-Handy-Laming scheme by M.E.Mura
-    and P.J.Knowles, J Chem Phys 104, 9848 (1996) (we are not using the
-    scaling factors proposed in this paper).</li>
-<li>treutler : Gauss-Chebyshev using the transformation suggested by
-    O.Treutler and R.Alrhichs, J.Chem.Phys 102, 346 (1995).</li>
+<li>euler : Euler-McLaurin quadrature with the transformation devised by
+    Murray et al<sup id="fnref_footnote_84"><a class="footnote-ref" href="#fn_footnote_84">84</a></sup>.</li>
+<li>mura : Modification of the Murray-Handy-Laming scheme (we are not using the same
+    scaling factors proposed in the paper by Mura and Knowles<sup id="fnref_footnote_85"><a class="footnote-ref" href="#fn_footnote_85">85</a></sup>).</li>
+<li>treutler : Gauss-Chebyshev using the transformation suggested by Treutler<sup id="fnref_footnote_86"><a class="footnote-ref" href="#fn_footnote_86">86</a></sup>.</li>
 </ul>
 <h3 id="disk-usage-for-grid">Disk usage for Grid<a class="headerlink" href="#disk-usage-for-grid" title="Permanent link">&para;</a></h3>
 <pre><code> NODISK
@@ -5718,14 +5487,10 @@ keyword can only be used with the <code>CGMIN</code> keyword.</p>
 <pre><code>sic [perturbative || oep || oep-loc ]
 &lt;default perturbative&gt;
 </code></pre>
-<p>The Perdew and Zunger (see J. P. Perdew and A. Zunger, Phys. Rev. B 23,
-5048 (1981)) method to remove the self-interaction contained in many
+<p>The Perdew and Zunger<sup id="fnref_footnote_87"><a class="footnote-ref" href="#fn_footnote_87">87</a></sup> method to remove the self-interaction contained in many
 exchange-correlation functionals has been implemented with the Optimized
-Effective Potential method (see R. T. Sharp and G. K. Horton, Phys. Rev.
-90, 317 (1953), J. D. Talman and W. F. Shadwick, Phys. Rev. A 14, 36
-(1976)) within the Krieger-Li-Iafrate approximation (J. B. Krieger, Y.
-Li, and G. J. Iafrate, Phys. Rev. A 45, 101 (1992); 46, 5453 (1992); 47,
-165 (1993)) Three variants of these methods are included in NWChem:</p>
+Effective Potential method<sup id="fnref_footnote_88"><a class="footnote-ref" href="#fn_footnote_88">88</a></sup> within the Krieger-Li-Iafrate approximation<sup id="fnref_footnote_89"><a class="footnote-ref" href="#fn_footnote_89">89</a></sup>.
+Three variants of these methods are included in NWChem:</p>
 <ul>
 <li><code>sic perturbative</code> This is the default option for the sic directive.
     After a self-consistent calculation, the Kohn-Sham orbitals are
@@ -5744,8 +5509,7 @@ Li, and G. J. Iafrate, Phys. Rev. A 45, 101 (1992); 46, 5453 (1992); 47,
 <p>With <code>oep</code> and <code>oep-loc</code> options a <code>xfine grid</code> (see section about <a href="#grid-numerical-integration-of-the-xc-potential">numerical integration</a> ) must be
 used in order to avoid numerical noise, furthermore the hybrid
 functionals can not be used with these options. More details of the
-implementation of this method can be found in J. Garza, J. A. Nichols
-and D. A. Dixon, J. Chem. Phys. 112, 7880 (2000). The components of the
+implementation of this method can be found in the paper by Garza<sup id="fnref_footnote_90"><a class="footnote-ref" href="#fn_footnote_90">90</a></sup>. The components of the
 sic energy can be printed out using:</p>
 <pre><code>print &quot;SIC information&quot;
 </code></pre>
@@ -5823,17 +5587,15 @@ contributes to control the corrections at intermediate distances.</p>
 <ol>
 <li>
 <p>
-<script type="math/tex; mode=display">C_6^{ij}= \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}</script>  where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from Q. Wu and W. Yang,
-J. Chem. Phys. 116 515 (2002) and U. Zimmerli, M Parrinello and P.
-Koumoutsakos J. Chem. Phys. 120 2693 (2004). (Use <code>vdw 0</code>)  </p>
+<script type="math/tex; mode=display">C_6^{ij}= \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}</script>  where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from references <sup id="fnref_footnote_91"><a class="footnote-ref" href="#fn_footnote_91">91</a></sup> and <sup id="fnref_footnote_92"><a class="footnote-ref" href="#fn_footnote_92">92</a></sup> (Use <code>vdw 0</code>)  </p>
 </li>
 <li>
 <p>
-<script type="math/tex; mode=display">C_6^{ij}=2\ \frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}</script>. See details in S. Grimme J. Comp. Chem. 25 1463 (2004). (Use <code>vdw 1)</code>  </p>
+<script type="math/tex; mode=display">C_6^{ij}=2\ \frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}</script>. See details in reference<sup id="fnref_footnote_93"><a class="footnote-ref" href="#fn_footnote_93">93</a></sup>. (Use <code>vdw 1)</code>  </p>
 </li>
 <li>
 <p>
-<script type="math/tex; mode=display">C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}</script> See details in S. Grimme J. Comp. Chem. 271787 (2006). (Use <code>vdw 2</code>)  </p>
+<script type="math/tex; mode=display">C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}</script> See details in reference<sup id="fnref_footnote_94"><a class="footnote-ref" href="#fn_footnote_94">94</a></sup>. (Use <code>vdw 2</code>)  </p>
 </li>
 </ol>
 <p>Note that in each option there is a certain set of <em>C<sub>6</sub></em> and <em>R<sub>vdw</sub></em>.
@@ -5856,8 +5618,7 @@ following form:</p>
 </p>
 <p>This new dispersion correction covers elements through Z=94.
   <em>C<sup>ij</sup><sub>n</sub> (n=6,8)</em> are coordination and geometry dependent. Details
-about the functional form can be found in S. Grimme, J. Antony, S.
-Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010).</p>
+about the functional form can be found in reference <sup id="fnref_footnote_95"><a class="footnote-ref" href="#fn_footnote_95">95</a></sup>.</p>
 <p>To use the Grimme DFT-D3 dispersion correction, use the option</p>
 <ul>
 <li>
@@ -5904,8 +5665,7 @@ task dft energy
 <h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM: Exchange-hole dipole moment dispersion model<a class="headerlink" href="#xdm-exchange-hole-dipole-moment-dispersion-model" title="Permanent link">&para;</a></h2>
 <pre><code>XDM  [ a1 &lt;real a1&gt; ]   [ a2 &lt;real a2&gt; ]
 </code></pre>
-<p>See details (including list of a1 and a2 parameters) in A.
-Otero-de-la-Roza and E. R. Johnson, J. Chem. Phys. 138, 204109 (2013)
+<p>See details (including list of a1 and a2 parameters) in  paper[^96]
 and the website <a href="http://schooner.chem.dal.ca/wiki/XDM">http://schooner.chem.dal.ca/wiki/XDM</a></p>
 <pre><code>    geometry 
       O         -0.190010095135     -1.168397415155      0.925531922479
@@ -6148,6 +5908,302 @@ task sodft
 <p>The options <code>SYM</code> and <code>ADAPT</code> works the same way as the analogous options for the SCF code.
 Therefore please use the following links for <a href="Hartree-Fock-Theory-for-Molecules.html#sym-use-of-symmetry">SYM</a> and
 <a href="Hartree-Fock-Theory-for-Molecules.html#adapt-symmetry-adaptation-of-mos">ADAPT</a>, respectively.</p>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h3>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn_footnote_0">
+<p>A. M. Köster, J. U. Reveles, and J. M. del Campo, J. Chem. Phys. 121, 3417-3424 (2004).
+<a href="https://dx.doi.org/10.1063/1.1771638">DOI:10.1063/1.1771638</a>&#160;<a class="footnote-backref" href="#fnref_footnote_0" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_1">
+<p>J.C. Slater and K.H. Johnson, Phys. Rev. B 5, 844 (1972). J.C. Slater, Quantum Theory of Molecules and Solids, Vol. 4: The Self-Consistent Field for Molecules and Solids (McGraw-Hill, New York, 1974)&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_1" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_2">
+<p>S.J. Vosko, L. Wilk and M. Nusair, Can. J. Phys. 58, 1200 (1980)&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_3">
+<p>J.P. Perdew and A. Zunger, Phys. Rev. B 23, 5048 (1981).&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_4">
+<p>J.P. Perdew and Y. Wang, Phys. Rev. B 45, 13244 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_5">
+<p>A.D. Becke, Phys. Rev. A 88, 3098 (1988)&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_6">
+<p>J.P. Perdew, J.A. Chevary, S.H. Vosko, K.A. Jackson, M.R. Pederson, D.J. Singh and C. Fiolhais, Phys. Rev. B 46, 6671 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_6" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_6" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_7">
+<p>J.P. Perdew, K. Burke and M. Ernzerhof, Phys. Rev. Lett. 77, 3865 (1996); 78 , 1396 (1997)&#160;<a class="footnote-backref" href="#fnref_footnote_7" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_7" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_8">
+<p>P.W.Gill , Mol. Phys. 89, 433 (1996)&#160;<a class="footnote-backref" href="#fnref_footnote_8" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_9">
+<p>J.P. Perdew, Phys. Rev. B 33, 8822 (1986)&#160;<a class="footnote-backref" href="#fnref_footnote_9" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_10">
+<p>C. Lee, W. Yang and R. G. Parr, Phys. Rev. B 37, 785 (1988)&#160;<a class="footnote-backref" href="#fnref_footnote_10" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_11">
+<p>F.A. Hamprecht, A.J. Cohen, D.J.Tozer and N.C. Handy, J. Chem. Phys. 109, 6264 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_11" title="Jump back to footnote 12 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_11" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_12">
+<p>A.D. Boese, N.L. Doltsinis, N.C. Handy and M. Sprik. J. Chem. Phys. 112, 1670 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_12" title="Jump back to footnote 13 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_12" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_13">
+<p>A.D. Becke, J. Chem. Phys. 98, 1372 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_13" title="Jump back to footnote 14 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_13" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_14">
+<p>A.D. Becke, J. Chem. Phys. 98, 5648 (1993)&#160;<a class="footnote-backref" href="#fnref_footnote_14" title="Jump back to footnote 15 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_14" title="Jump back to footnote 15 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_14" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_15">
+<p>A.D. Becke, J. Chem. Phys. 107, 8554 (1997)&#160;<a class="footnote-backref" href="#fnref_footnote_15" title="Jump back to footnote 16 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_15" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_16">
+<p>H.L. Schmider and A.D. Becke, J. Chem. Phys. 108, 9624 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_16" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_17">
+<p>C. Adamo and V.Barone, J. Chem. Phys. 110, 6158 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_17" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_18">
+<p>A.J. Cohen and N.C. Handy, Chem. Phys. Lett. 316, 160 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_18" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_19">
+<p>A.D. Boese, N.C. Handy, J. Chem. Phys. 114, 5497 (2001)&#160;<a class="footnote-backref" href="#fnref_footnote_19" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_20">
+<p>N.C. Handy, A.J. Cohen, Mol. Phys. 99, 403 (2001)&#160;<a class="footnote-backref" href="#fnref_footnote_20" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_21">
+<p>G. Menconi, P.J. Wilson, D.J. Tozer, J. Chem. Phys 114, 3958 (2001)&#160;<a class="footnote-backref" href="#fnref_footnote_21" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_22">
+<p>P.J. Wilson, T.J. Bradley, D.J. Tozer, J. Chem. Phys 115, 9233 (2001)&#160;<a class="footnote-backref" href="#fnref_footnote_22" title="Jump back to footnote 23 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_23">
+<p>C. Adamo and V. Barone, J. Chem. Phys. 108, 664 (1998); Y. Zhao and  D.G. Truhlar, J. Phys. Chem. A 109, 5656 (2005)&#160;<a class="footnote-backref" href="#fnref_footnote_23" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_24">
+<p>M.Filatov and W.Thiel, Mol.Phys. 91, 847 (1997). M.Filatov and W.Thiel, Int.J.Quantum Chem. 62, 603 (1997)&#160;<a class="footnote-backref" href="#fnref_footnote_24" title="Jump back to footnote 25 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_24" title="Jump back to footnote 25 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_24" title="Jump back to footnote 25 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_25">
+<p>B.J. Lynch, P.L. Fast, M. Harris and D.G. Truhlar, J. Phys. Chem. A 104, 4811 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_25" title="Jump back to footnote 26 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_26">
+<p>J.P. Perdew, S. Kurth, A. Zupan and P. Blaha, Phys. Rev. Lett. 82, 2544 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_26" title="Jump back to footnote 27 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_26" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_27">
+<p>A. D. Boese, A. Chandra, J. M. L. Martin and D. Marx, J. Chem. Phys. 119, 5965 (2003)&#160;<a class="footnote-backref" href="#fnref_footnote_27" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_28">
+<p>J. Tao,J.Perdew, V. Staroverov and G. Scuseria, Phys. Rev. Let. 91, 146401-1 (2003)&#160;<a class="footnote-backref" href="#fnref_footnote_28" title="Jump back to footnote 29 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_28" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_29">
+<p>V. Staroverov, G. Scuseria, J. Tao and J.Perdew, J. Chem.Phys. 119, 12129 (2003)&#160;<a class="footnote-backref" href="#fnref_footnote_29" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_30">
+<p>T.W. Keal, D.J. Tozer, J. Chem. Phys 123, 121103 (2005)&#160;<a class="footnote-backref" href="#fnref_footnote_30" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_31">
+<p>T. Tsuneda, T. Suzumura and K. Hirao, J. Chem Phys. 110, 10664 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_31" title="Jump back to footnote 32 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_31" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_32">
+<p>T. Tsuneda, T. Suzumura and K. Hirao, J. Chem Phys. 111, 5656 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_32" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_33">
+<p>B. Hammer, L. B. Hansen and J. Nørskov , Phys. Rev. B 58, 7413    (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_33" title="Jump back to footnote 34 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_33" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_34">
+<p>Y. Zhang and W. Yang, Phys. Rev. Letters 80, 890 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_34" title="Jump back to footnote 35 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_34" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_35">
+<p>A. D. Becke, J. Chem. Phys. 104, 1040 (1996)&#160;<a class="footnote-backref" href="#fnref_footnote_35" title="Jump back to footnote 36 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_35" title="Jump back to footnote 36 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_36">
+<p>Y. Zhao and D. G. Truhlar, J. Phys. Chem. A 108, 2715 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_36" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_36" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_36" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_36" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_36" title="Jump back to footnote 37 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_36" title="Jump back to footnote 37 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_37">
+<p>Y. Zhao and D. G. Truhlar, J. Phys. Chem. A 108, 6908 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_37" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_37" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_37" title="Jump back to footnote 38 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_39">
+<p>Y. Zhao, N. E. Schultz and D. G. Truhlar, J. Chem. Phys. 123, 161103 (2005)&#160;<a class="footnote-backref" href="#fnref_footnote_39" title="Jump back to footnote 39 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_39" title="Jump back to footnote 39 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_40">
+<p>Y. Zhao, N. E. Schultz and D. G. Truhlar, J. Chem. Theory Comput. 2, 364 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_40" title="Jump back to footnote 40 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_40" title="Jump back to footnote 40 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_40" title="Jump back to footnote 40 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_41">
+<p>T. Van Voorhis, G. E. Scuseria, J. Chem. Phys. 109, 400 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_41" title="Jump back to footnote 41 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_41" title="Jump back to footnote 41 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_41" title="Jump back to footnote 41 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_42">
+<p>Y. Zhao, D. G. Truhlar, J. Chem. Phys. 125, 194101 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_42" title="Jump back to footnote 42 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_42" title="Jump back to footnote 42 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_42" title="Jump back to footnote 42 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_42" title="Jump back to footnote 42 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_42" title="Jump back to footnote 42 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_42" title="Jump back to footnote 42 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_43">
+<p>Y. Zhao, D. G. Truhlar, J. Phys. Chem. A. 110, 13126 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_43" title="Jump back to footnote 43 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_43" title="Jump back to footnote 43 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_43" title="Jump back to footnote 43 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_44">
+<p>Y. Zhao, D. G. Truhlar, Theor. Chem. Acc. 20, 215–241 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_44" title="Jump back to footnote 44 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_44" title="Jump back to footnote 44 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_44" title="Jump back to footnote 44 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_45">
+<p>S. Grimme, J. Comp. Chem. 27, 1787 (2006).&#160;<a class="footnote-backref" href="#fnref_footnote_45" title="Jump back to footnote 45 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_46">
+<p>Y. Zhao and D. G. Truhlar, J. Chem. Theory Comput. 4, 1849 (2008)&#160;<a class="footnote-backref" href="#fnref_footnote_46" title="Jump back to footnote 46 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_46" title="Jump back to footnote 46 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_46" title="Jump back to footnote 46 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_46" title="Jump back to footnote 46 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_46" title="Jump back to footnote 46 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_46" title="Jump back to footnote 46 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_47">
+<p>R. Peverati and D. G. Truhlar, J. Phys. Chem. Letters 2, 2810 (2011)&#160;<a class="footnote-backref" href="#fnref_footnote_47" title="Jump back to footnote 47 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_47" title="Jump back to footnote 47 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_47" title="Jump back to footnote 47 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_48">
+<p>R. Peverati and D. G. Truhlar, J. Phys. Chem. Letters 3, 117 (2012)&#160;<a class="footnote-backref" href="#fnref_footnote_48" title="Jump back to footnote 48 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_48" title="Jump back to footnote 48 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_48" title="Jump back to footnote 48 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_49">
+<p>Y. Zhao and D. G. Truhlar, J. Chem. Phys. 128, 184109 (2008)&#160;<a class="footnote-backref" href="#fnref_footnote_49" title="Jump back to footnote 49 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_49" title="Jump back to footnote 49 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_49" title="Jump back to footnote 49 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_50">
+<p>R. Peverati, Y. Zhao and D. G. Truhlar, J. Phys. Chem. Lett. 2, 1911 (2011)&#160;<a class="footnote-backref" href="#fnref_footnote_50" title="Jump back to footnote 50 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_50" title="Jump back to footnote 50 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_50" title="Jump back to footnote 50 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_51">
+<p>R. Peverati and D.G. Truhlar, J. Chem. Phys. , 135, 191102 (2011)&#160;<a class="footnote-backref" href="#fnref_footnote_51" title="Jump back to footnote 51 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_51" title="Jump back to footnote 51 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_51" title="Jump back to footnote 51 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_52">
+<p>K. Pernal, R. Podeszwa, K. Patkowski and K. Szalewicz, Phys. Rev.  Lett. 103, 263201 (2009)&#160;<a class="footnote-backref" href="#fnref_footnote_52" title="Jump back to footnote 52 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_53">
+<p>J. P. Perdew and W. Yue, Phys. Rev. B 33, 8800 (1986)&#160;<a class="footnote-backref" href="#fnref_footnote_53" title="Jump back to footnote 53 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_54">
+<p>A. D. Becke, J. Chem. Phys. 85, 7184 (1986)&#160;<a class="footnote-backref" href="#fnref_footnote_54" title="Jump back to footnote 54 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_55">
+<p>J. Sun, J. P. Perdew, and A. Ruzsinszky, PNAS 112, 685 (2015).&#160;<a class="footnote-backref" href="#fnref_footnote_55" title="Jump back to footnote 55 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_56">
+<p>P. Verma and D. G. Truhlar, J. of Phys. Chem. Letters  8, 380 (2017).&#160;<a class="footnote-backref" href="#fnref_footnote_56" title="Jump back to footnote 56 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_57">
+<p>Z. Yang, H. Peng, J. Sun, and J. P. Perdew, Phys. Rev. B 93, 205205 (2016).&#160;<a class="footnote-backref" href="#fnref_footnote_57" title="Jump back to footnote 57 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_58">
+<p>D. Mejia-Rodriguez and S. B. Trickey, Phys. Rev. A 96, 052512 (2017).&#160;<a class="footnote-backref" href="#fnref_footnote_58" title="Jump back to footnote 58 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_59">
+<p>Y. Wang, X. Jin, H. S. Yu, D. G. Truhlar, X. He, PNAS  114, 8487 (2017).&#160;<a class="footnote-backref" href="#fnref_footnote_59" title="Jump back to footnote 59 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_60">
+<p>Y. Wang, P. Verma, X. Jin, D. G. Truhlar, and X. He, PNAS 115, 10257 (2018).&#160;<a class="footnote-backref" href="#fnref_footnote_60" title="Jump back to footnote 60 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_61">
+<p>A. D. Boese and J. M. L. Martin, J. Chem. Phys. 119, 3005 (2003).&#160;<a class="footnote-backref" href="#fnref_footnote_61" title="Jump back to footnote 61 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_62">
+<p>S. Kurth, J. Perdew, P. Blaha, Int. J. Quant. Chem 75, 889 (1999).&#160;<a class="footnote-backref" href="#fnref_footnote_62" title="Jump back to footnote 62 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_63">
+<p>A. Savin, In Recent Advances in Density Functional Methods Part I;
+D.P. Chong, Ed.; World Scientific: Singapore, 1995; Vol. 129.&#160;<a class="footnote-backref" href="#fnref_footnote_63" title="Jump back to footnote 63 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_64">
+<p>H. Iikura, T. Tsuneda, T. Yanai, K. Hirao, J. Chem. Phys. 115, 3540 (2001)&#160;<a class="footnote-backref" href="#fnref_footnote_64" title="Jump back to footnote 64 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_65">
+<p>Y. Tawada, T. Tsuneda, S. Yanahisawa, T. Yanai, K. Hirao, J. Chem.Phys. 120, 8425 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_65" title="Jump back to footnote 65 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_66">
+<p>T. Yanai, D.P. Tew, N.C. Handy, Chem. Phys. Lett. 393, 51 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_66" title="Jump back to footnote 66 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_67">
+<p>M. J. G. Peach, A. J. Cohen, D. J. Tozer, Phys. Chem. Chem. Phys. 8, 4543 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_67" title="Jump back to footnote 67 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_68">
+<p>O.A. Vydrov, G.E. Scuseria J. Chem. Phys. 125 234109 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_68" title="Jump back to footnote 68 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_69">
+<p>J.-W. Song, T. Hirosawa, T. Tsuneda, K. Hirao, J. Chem. Phys. 126, 154105 (2007)&#160;<a class="footnote-backref" href="#fnref_footnote_69" title="Jump back to footnote 69 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_70">
+<p>E. Livshits, R. Baer, Phys. Chem. Chem. Phys. 9, 2932 (2007)&#160;<a class="footnote-backref" href="#fnref_footnote_70" title="Jump back to footnote 70 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_71">
+<p>A. J. Cohen, P. Mori-Sanchez, and W. Yang, J. Chem. Phys. 126, 191109 (2007)&#160;<a class="footnote-backref" href="#fnref_footnote_71" title="Jump back to footnote 71 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_72">
+<p>M.A. Rohrdanz, J.M. Herbert, J. Chem. Phys. 129 034107 (2008)&#160;<a class="footnote-backref" href="#fnref_footnote_72" title="Jump back to footnote 72 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_73">
+<p>N. Govind, M. Valiev, L. Jensen, K. Kowalski, J. Phys. Chem. A, 113, 6041 (2009)&#160;<a class="footnote-backref" href="#fnref_footnote_73" title="Jump back to footnote 73 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_74">
+<p>R. Baer, E. Livshits, U. Salzner, Annu. Rev. Phys. Chem. 61, 85 (2010)&#160;<a class="footnote-backref" href="#fnref_footnote_74" title="Jump back to footnote 74 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_75">
+<p>J. Autschbach, M. Srebro, Acc. Chem. Res. 47, 2592 (2014)&#160;<a class="footnote-backref" href="#fnref_footnote_75" title="Jump back to footnote 75 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_76">
+<p>P. Verma and R. J. Bartlett, J. Chem. Phys. 140, 18A534 (2014)&#160;<a class="footnote-backref" href="#fnref_footnote_76" title="Jump back to footnote 76 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_77">
+<p>A. D. Rabuck and G. E. Scuseria, J. Chem. Phys 110,695 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_77" title="Jump back to footnote 77 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_78">
+<p>M. Swart, M. Solà, F.M. Bickelhaupt, J. Chem. Phys. 131, 094103 (2009);
+   M. Swart, M. Solà, F.M. Bickelhaupt, J. Comp. Meth. Sci. Engin. 9, 69 (2009)&#160;<a class="footnote-backref" href="#fnref_footnote_78" title="Jump back to footnote 78 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_79">
+<p>Q. Wu, T. Van Voorhis, Phys. Rev. A 72, 024502 (2005)&#160;<a class="footnote-backref" href="#fnref_footnote_79" title="Jump back to footnote 79 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_80">
+<p>S. Grimme,  J. Chem. Phys. 124, 034108 (2006) <a href="https://dx.doi.org/10.1063/1.2148954">DOI:10.1063/1.2148954</a>&#160;<a class="footnote-backref" href="#fnref_footnote_80" title="Jump back to footnote 80 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_81">
+<p>R.W. Warren and B.I. Dunlap, Chem. Phys. Letters 262, 384 (1996)&#160;<a class="footnote-backref" href="#fnref_footnote_81" title="Jump back to footnote 81 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_81" title="Jump back to footnote 81 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_82">
+<p>A. D. Becke, J. Chem. Phys. 88, 1053 (1988)&#160;<a class="footnote-backref" href="#fnref_footnote_82" title="Jump back to footnote 82 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_83">
+<p>R.E.Stratmann, G.Scuseria and M.J.Frisch, Chem. Phys. Lett. 257, 213 (1996)&#160;<a class="footnote-backref" href="#fnref_footnote_83" title="Jump back to footnote 83 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_84">
+<p>C.W. Murray, N.C. Handy, and G.L. Laming, Mol. Phys.78, 997 (1993)&#160;<a class="footnote-backref" href="#fnref_footnote_84" title="Jump back to footnote 84 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_85">
+<p>M.E.Mura and P.J.Knowles, J Chem Phys 104, 9848 (1996)&#160;<a class="footnote-backref" href="#fnref_footnote_85" title="Jump back to footnote 85 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_86">
+<p>O.Treutler and R.Alrhichs, J.Chem.Phys 102, 346 (1995)&#160;<a class="footnote-backref" href="#fnref_footnote_86" title="Jump back to footnote 86 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_87">
+<p>J. P. Perdew and A. Zunger, Phys. Rev. B 23, 5048 (1981)&#160;<a class="footnote-backref" href="#fnref_footnote_87" title="Jump back to footnote 87 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_88">
+<p>R. T. Sharp and G. K. Horton, Phys. Rev. 90, 317 (1953);
+   J. D. Talman and W. F. Shadwick, Phys. Rev. A 14, 36 (1976)&#160;<a class="footnote-backref" href="#fnref_footnote_88" title="Jump back to footnote 88 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_89">
+<p>J. B. Krieger, Y. Li, and G. J. Iafrate, Phys. Rev. A 45, 101 (1992); 46, 5453 (1992);
+   <em>ibid</em>, 47, 165 (1993))&#160;<a class="footnote-backref" href="#fnref_footnote_89" title="Jump back to footnote 89 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_90">
+<p>J. Garza, J. A. Nichols and D. A. Dixon, J. Chem. Phys. 112, 7880 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_90" title="Jump back to footnote 90 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_91">
+<p>A. Otero-de-la-Roza and E. R. Johnson, J. Chem. Phys. 138, 204109 (2013)&#160;<a class="footnote-backref" href="#fnref_footnote_91" title="Jump back to footnote 91 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_92">
+<p>U. Zimmerli, M Parrinello and P. Koumoutsakos J. Chem. Phys. 120 2693 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_92" title="Jump back to footnote 92 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_93">
+<p>S. Grimme J. Comp. Chem. 25 1463 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_93" title="Jump back to footnote 93 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_94">
+<p>S. Grimme, J. Comp. Chem. 271787 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_94" title="Jump back to footnote 94 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_95">
+<p>S. Grimme, J. Antony, S. Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010)&#160;<a class="footnote-backref" href="#fnref_footnote_95" title="Jump back to footnote 95 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
