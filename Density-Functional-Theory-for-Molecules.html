@@ -3342,7 +3342,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td><sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">4</a></sup></td>
+<td><sup id="fnref2_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">4</a></sup></td>
 </tr>
 <tr>
 <td>pw91lda</td>
@@ -5488,9 +5488,9 @@ keyword can only be used with the <code>CGMIN</code> keyword.</p>
 <pre><code>sic [perturbative || oep || oep-loc ]
 &lt;default perturbative&gt;
 </code></pre>
-<p>The Perdew and Zunger<sup id="fnref_footnote_87"><a class="footnote-ref" href="#fn_footnote_87">87</a></sup> method to remove the self-interaction contained in many
+<p>The Perdew and Zunger<sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">4</a></sup> method to remove the self-interaction contained in many
 exchange-correlation functionals has been implemented with the Optimized
-Effective Potential method<sup id="fnref_footnote_88"><a class="footnote-ref" href="#fn_footnote_88">88</a></sup> within the Krieger-Li-Iafrate approximation<sup id="fnref_footnote_89"><a class="footnote-ref" href="#fn_footnote_89">89</a></sup>.
+Effective Potential method<sup id="fnref_footnote_87"><a class="footnote-ref" href="#fn_footnote_87">87</a></sup> within the Krieger-Li-Iafrate approximation<sup id="fnref_footnote_88"><a class="footnote-ref" href="#fn_footnote_88">88</a></sup>.
 Three variants of these methods are included in NWChem:</p>
 <ul>
 <li><code>sic perturbative</code> This is the default option for the sic directive.
@@ -5510,7 +5510,7 @@ Three variants of these methods are included in NWChem:</p>
 <p>With <code>oep</code> and <code>oep-loc</code> options a <code>xfine grid</code> (see section about <a href="#grid-numerical-integration-of-the-xc-potential">numerical integration</a> ) must be
 used in order to avoid numerical noise, furthermore the hybrid
 functionals can not be used with these options. More details of the
-implementation of this method can be found in the paper by Garza<sup id="fnref_footnote_90"><a class="footnote-ref" href="#fn_footnote_90">90</a></sup>. The components of the
+implementation of this method can be found in the paper by Garza<sup id="fnref_footnote_89"><a class="footnote-ref" href="#fn_footnote_89">89</a></sup>. The components of the
 sic energy can be printed out using:</p>
 <pre><code>print &quot;SIC information&quot;
 </code></pre>
@@ -5588,15 +5588,15 @@ contributes to control the corrections at intermediate distances.</p>
 <ol>
 <li>
 <p>
-<script type="math/tex; mode=display">C_6^{ij}= \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}</script>  where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from references <sup id="fnref_footnote_91"><a class="footnote-ref" href="#fn_footnote_91">91</a></sup> and <sup id="fnref_footnote_92"><a class="footnote-ref" href="#fn_footnote_92">92</a></sup> (Use <code>vdw 0</code>)  </p>
+<script type="math/tex; mode=display">C_6^{ij}= \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}</script>  where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from references <sup id="fnref_footnote_90"><a class="footnote-ref" href="#fn_footnote_90">90</a></sup> and <sup id="fnref_footnote_91"><a class="footnote-ref" href="#fn_footnote_91">91</a></sup> (Use <code>vdw 0</code>)  </p>
 </li>
 <li>
 <p>
-<script type="math/tex; mode=display">C_6^{ij}=2\ \frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}</script> See details in reference<sup id="fnref_footnote_93"><a class="footnote-ref" href="#fn_footnote_93">93</a></sup>. (Use <code>vdw 1)</code>  </p>
+<script type="math/tex; mode=display">C_6^{ij}=2\ \frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}</script> See details in reference<sup id="fnref_footnote_92"><a class="footnote-ref" href="#fn_footnote_92">92</a></sup>. (Use <code>vdw 1)</code>  </p>
 </li>
 <li>
 <p>
-<script type="math/tex; mode=display">C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}</script> See details in reference<sup id="fnref_footnote_94"><a class="footnote-ref" href="#fn_footnote_94">94</a></sup>. (Use <code>vdw 2</code>)  </p>
+<script type="math/tex; mode=display">C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}</script> See details in reference<sup id="fnref_footnote_93"><a class="footnote-ref" href="#fn_footnote_93">93</a></sup>. (Use <code>vdw 2</code>)  </p>
 </li>
 </ol>
 <p>Note that in each option there is a certain set of <em>C<sub>6</sub></em> and <em>R<sub>vdw</sub></em>.
@@ -5619,7 +5619,7 @@ following form:</p>
 </p>
 <p>This new dispersion correction covers elements through Z=94.
   <em>C<sup>ij</sup><sub>n</sub> (n=6,8)</em> are coordination and geometry dependent. Details
-about the functional form can be found in reference <sup id="fnref_footnote_95"><a class="footnote-ref" href="#fn_footnote_95">95</a></sup>.</p>
+about the functional form can be found in reference <sup id="fnref_footnote_94"><a class="footnote-ref" href="#fn_footnote_94">94</a></sup>.</p>
 <p>To use the Grimme DFT-D3 dispersion correction, use the option</p>
 <ul>
 <li>
@@ -5666,7 +5666,7 @@ task dft energy
 <h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM: Exchange-hole dipole moment dispersion model<a class="headerlink" href="#xdm-exchange-hole-dipole-moment-dispersion-model" title="Permanent link">&para;</a></h2>
 <pre><code>XDM  [ a1 &lt;real a1&gt; ]   [ a2 &lt;real a2&gt; ]
 </code></pre>
-<p>See details (including list of a1 and a2 parameters) in  paper<sup id="fnref_footnote_96"><a class="footnote-ref" href="#fn_footnote_96">96</a></sup>
+<p>See details (including list of a1 and a2 parameters) in  paper<sup id="fnref_footnote_95"><a class="footnote-ref" href="#fn_footnote_95">95</a></sup>
 and the website <a href="http://schooner.chem.dal.ca/wiki/XDM">http://schooner.chem.dal.ca/wiki/XDM</a></p>
 <pre><code>    geometry 
       O         -0.190010095135     -1.168397415155      0.925531922479
@@ -5924,7 +5924,7 @@ Therefore please use the following links for <a href="Hartree-Fock-Theory-for-Mo
 <p>S. J. Vosko, L. Wilk and M. Nusair, Can. J. Phys. 58, 1200 (1980)&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7_footnote_2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_3">
-<p>J. P. Perdew and A. Zunger, Phys. Rev. B 23, 5048 (1981).&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>J. P. Perdew and A. Zunger, Phys. Rev. B 23, 5048 (1981).&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_4">
 <p>J. P. Perdew and Y. Wang, Phys. Rev. B 45, 13244 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 5 in the text">&#8617;</a></p>
@@ -6175,36 +6175,33 @@ D.P. Chong, Ed.; World Scientific: Singapore, 1995; Vol. 129.&#160;<a class="foo
 <p>O.Treutler and R.Alrhichs, J.Chem.Phys 102, 346 (1995)&#160;<a class="footnote-backref" href="#fnref_footnote_86" title="Jump back to footnote 86 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_87">
-<p>J. P. Perdew and A. Zunger, Phys. Rev. B 23, 5048 (1981)&#160;<a class="footnote-backref" href="#fnref_footnote_87" title="Jump back to footnote 87 in the text">&#8617;</a></p>
+<p>R. T. Sharp and G. K. Horton, Phys. Rev. 90, 317 (1953);
+   J. D. Talman and W. F. Shadwick, Phys. Rev. A 14, 36 (1976)&#160;<a class="footnote-backref" href="#fnref_footnote_87" title="Jump back to footnote 87 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_88">
-<p>R. T. Sharp and G. K. Horton, Phys. Rev. 90, 317 (1953);
-   J. D. Talman and W. F. Shadwick, Phys. Rev. A 14, 36 (1976)&#160;<a class="footnote-backref" href="#fnref_footnote_88" title="Jump back to footnote 88 in the text">&#8617;</a></p>
+<p>J. B. Krieger, Y. Li, and G. J. Iafrate, Phys. Rev. A 45, 101 (1992); 46, 5453 (1992);
+   <em>ibid</em>, 47, 165 (1993))&#160;<a class="footnote-backref" href="#fnref_footnote_88" title="Jump back to footnote 88 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_89">
-<p>J. B. Krieger, Y. Li, and G. J. Iafrate, Phys. Rev. A 45, 101 (1992); 46, 5453 (1992);
-   <em>ibid</em>, 47, 165 (1993))&#160;<a class="footnote-backref" href="#fnref_footnote_89" title="Jump back to footnote 89 in the text">&#8617;</a></p>
+<p>J. Garza, J. A. Nichols and D. A. Dixon, J. Chem. Phys. 112, 7880 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_89" title="Jump back to footnote 89 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_90">
-<p>J. Garza, J. A. Nichols and D. A. Dixon, J. Chem. Phys. 112, 7880 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_90" title="Jump back to footnote 90 in the text">&#8617;</a></p>
+<p>Q. Wu and W. Yang, J. Chem. Phys. 116 515 (2002)&#160;<a class="footnote-backref" href="#fnref_footnote_90" title="Jump back to footnote 90 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_91">
-<p>Q. Wu and W. Yang, J. Chem. Phys. 116 515 (2002)&#160;<a class="footnote-backref" href="#fnref_footnote_91" title="Jump back to footnote 91 in the text">&#8617;</a></p>
+<p>U. Zimmerli, M Parrinello and P. Koumoutsakos J. Chem. Phys. 120 2693 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_91" title="Jump back to footnote 91 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_92">
-<p>U. Zimmerli, M Parrinello and P. Koumoutsakos J. Chem. Phys. 120 2693 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_92" title="Jump back to footnote 92 in the text">&#8617;</a></p>
+<p>S. Grimme J. Comput. Chem. 25 1463 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_92" title="Jump back to footnote 92 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_93">
-<p>S. Grimme J. Comp. Chem. 25 1463 (2004)&#160;<a class="footnote-backref" href="#fnref_footnote_93" title="Jump back to footnote 93 in the text">&#8617;</a></p>
+<p>S. Grimme, J. Comput. Chem. 27 1787 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_93" title="Jump back to footnote 93 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_94">
-<p>S. Grimme, J. Comp. Chem. 271787 (2006)&#160;<a class="footnote-backref" href="#fnref_footnote_94" title="Jump back to footnote 94 in the text">&#8617;</a></p>
+<p>S. Grimme, J. Antony, S. Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010)&#160;<a class="footnote-backref" href="#fnref_footnote_94" title="Jump back to footnote 94 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_95">
-<p>S. Grimme, J. Antony, S. Ehrlich, H. Krieg, J. Chem. Phys. 132, 154104 (2010)&#160;<a class="footnote-backref" href="#fnref_footnote_95" title="Jump back to footnote 95 in the text">&#8617;</a></p>
-</li>
-<li id="fn_footnote_96">
-<p>A. Otero-de-la-Roza and E. R. Johnson, J. Chem. Phys. 138, 204109 (2013)&#160;<a class="footnote-backref" href="#fnref_footnote_96" title="Jump back to footnote 96 in the text">&#8617;</a></p>
+<p>A. Otero-de-la-Roza and E. R. Johnson, J. Chem. Phys. 138, 204109 (2013)&#160;<a class="footnote-backref" href="#fnref_footnote_95" title="Jump back to footnote 95 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
