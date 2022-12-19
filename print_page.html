@@ -5653,8 +5653,9 @@ approximations:</p>
   [DOUGLAS-KROLL [&lt;string (ON||OFF) default ON&gt; \  
                 &lt;string (FPP||DKH||DKFULL||DK3||DK3FULL) default DKH&gt;]  || 
    ZORA [ (ON || OFF) default ON ] ||   
-   DYALL-MOD-DIRAC [ (ON || OFF) default ON ]   
-                 [ (NESC1E || NESC2E) default NESC1E ] ]  
+   DYALL-MOD-DIRAC [ (ON || OFF) default ON ]  ||
+                 [ (NESC1E || NESC2E) default NESC1E ] ]  ||
+   X2C [ (ON || OFF) default ON ]
   [CLIGHT &lt;real clight default 137.0359895&gt;]  
  END
 </code></pre>
@@ -5665,8 +5666,8 @@ the speed of light in atomic units:</p>
 <pre><code> CLIGHT &lt;real clight default 137.0359895&gt;
 </code></pre>
 <p>The following sections describe the optional sub-directives that can be
-specified within the RELATIVISTIC block.</p>
-<h2 id="relativistic-all-electron-approximations-douglas-kroll-approximation">Douglas-Kroll approximation<a class="headerlink" href="#relativistic-all-electron-approximations-douglas-kroll-approximation" title="Permanent link">&para;</a></h2>
+specified within the <code>RELATIVISTIC</code> block.</p>
+<h3 id="relativistic-all-electron-approximations-douglas-kroll-approximation">Douglas-Kroll approximation<a class="headerlink" href="#relativistic-all-electron-approximations-douglas-kroll-approximation" title="Permanent link">&para;</a></h3>
 <p>The spin-free and spin-orbit one-electron Douglas-Kroll approximation
 have been implemented. The use of relativistic effects from this
 Douglas-Kroll approximation can be invoked by specifying:</p>
@@ -5710,7 +5711,7 @@ chemistry codes that include the Douglas-Kroll method. Additional
 flexibility is available to the user by explicitly specifying a
 Douglas-Kroll fitting basis set. This basis set must be named
 <code>D-K basis</code> (see <a href="#basis">Basis Sets</a>).</p>
-<h2 id="relativistic-all-electron-approximations-zeroth-order-regular-approximation-zora">Zeroth Order regular approximation (ZORA)<a class="headerlink" href="#relativistic-all-electron-approximations-zeroth-order-regular-approximation-zora" title="Permanent link">&para;</a></h2>
+<h3 id="relativistic-all-electron-approximations-zeroth-order-regular-approximation-zora">Zeroth Order regular approximation (ZORA)<a class="headerlink" href="#relativistic-all-electron-approximations-zeroth-order-regular-approximation-zora" title="Permanent link">&para;</a></h3>
 <p>The spin-free and spin-orbit one-electron zeroth-order regular
 approximation (ZORA) have been implemented. ZORA can be accessed only 
 via the <a href="#density-functional-theory-for-molecules">DFT</a> and <a href="#density-functional-theory-for-molecules-spin-orbit-density-functional-theory-sodft">SO-DFT</a> modules. The use of relativistic
@@ -5747,7 +5748,7 @@ in the relativistic block</p>
  end
 </code></pre>
 <p>Both approaches are comparable in accuracy and depends on the system.</p>
-<h2 id="relativistic-all-electron-approximations-dyalls-modified-dirac-hamitonian-approximation">Dyall&rsquo;s Modified Dirac Hamitonian approximation<a class="headerlink" href="#relativistic-all-electron-approximations-dyalls-modified-dirac-hamitonian-approximation" title="Permanent link">&para;</a></h2>
+<h3 id="relativistic-all-electron-approximations-dyalls-modified-dirac-hamitonian-approximation">Dyall&rsquo;s Modified Dirac Hamitonian approximation<a class="headerlink" href="#relativistic-all-electron-approximations-dyalls-modified-dirac-hamitonian-approximation" title="Permanent link">&para;</a></h3>
 <p>The approximate methods described in this section are all based on
 Dyall&rsquo;s modified Dirac Hamiltonian. This Hamiltonian is entirely
 equivalent to the original Dirac Hamiltonian, and its solutions have the
@@ -5903,60 +5904,90 @@ nonrelativistic.</p>
  end
  task scf
 </code></pre>
-<h3 id="relativistic-all-electron-approximations-references">References<a class="headerlink" href="#relativistic-all-electron-approximations-references" title="Permanent link">&para;</a></h3>
+<h3 id="relativistic-all-electron-approximations-x2c-exact-two-component-hamiltonian">X2C: exact two-component Hamiltonian<a class="headerlink" href="#relativistic-all-electron-approximations-x2c-exact-two-component-hamiltonian" title="Permanent link">&para;</a></h3>
+<p>The exact two-component Hamiltonian<sup id="fnref_footnote_18"><a class="footnote-ref" href="#relativistic-all-electron-approximations-fn_footnote_18">18</a></sup> has been implemented in NWChem<sup id="fnref_footnote_19"><a class="footnote-ref" href="#relativistic-all-electron-approximations-fn_footnote_19">19</a></sup><sup>,</sup><sup id="fnref_footnote_20"><a class="footnote-ref" href="#relativistic-all-electron-approximations-fn_footnote_20">20</a></sup><sup>,</sup><sup id="fnref_footnote_21"><a class="footnote-ref" href="#relativistic-all-electron-approximations-fn_footnote_21">21</a></sup>.</p>
+<pre><code> X2C [&lt;string (ON||OFF) default ON&gt;
+</code></pre>
+<p>The <code>ON</code>|<code>OFF</code> string is used to turn on or off X2C. By default, if the
+<code>X2C</code> keyword is found, the approximation will be used in the
+calculation. If the user wishes to calculate a non-relativistic quantity
+after turning on X2C, the user will need to define a new <code>RELATIVISTIC</code>
+block and turn the approximation OFF. The user can also simply put a
+blank <code>RELATIVISTIC</code> block in the input file and all options will be
+turned off.</p>
+<p>To increase the accuracy of X2C calculations, the following settings may be used 
+in the relativistic block</p>
+<pre><code> relativistic
+     x2c on
+     x2c:cutoff 1d-15
+ end
+</code></pre>
+<h2 id="relativistic-all-electron-approximations-references">References<a class="headerlink" href="#relativistic-all-electron-approximations-references" title="Permanent link">&para;</a></h2>
 <div class="footnote">
 <hr />
 <ol>
 <li id="relativistic-all-electron-approximations-fn_footnote_1">
-<p>Douglas, M.; Kroll, N.M. (1974). &ldquo;Quantum electrodynamical corrections to the fine structure of helium&rdquo;. Annals of Physics 82: 89-155. doi:<a href="https://dx.doi.org/10.1016/0003-4916(74)90333-9">10.1016/0003-4916(74)90333-9</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Douglas, M.; Kroll, N.M. (1974). &ldquo;Quantum electrodynamical corrections to the fine structure of helium&rdquo;. Annals of Physics 82: 89-155. <a href="https://dx.doi.org/10.1016/0003-4916(74)90333-9">DOI:10.1016/0003-4916(74)90333-9</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_2">
-<p>Hess, B.A. (1985). &ldquo;Applicability of the no-pair equation with free-particle projection operators to atomic and molecular structure calculations&rdquo;. Physical Review A 32: 756-763. doi:<a href="https://dx.doi.org/10.1103/PhysRevA.32.756">10.1103/PhysRevA.32.756</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Hess, B.A. (1985). &ldquo;Applicability of the no-pair equation with free-particle projection operators to atomic and molecular structure calculations&rdquo;. Physical Review A 32: 756-763. <a href="https://dx.doi.org/10.1103/PhysRevA.32.756">DOI:10.1103/PhysRevA.32.756</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_3">
-<p>Hess, B.A. (1986). &ldquo;Relativistic electronic-structure calculations employing a two-component no-pair formalism with external-field projection operators&rdquo;. Physical Review A 33: 3742-3748. doi:<a href="https://dx.doi.org/10.1103/PhysRevA.33.3742">10.1103/PhysRevA.33.3742</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Hess, B.A. (1986). &ldquo;Relativistic electronic-structure calculations employing a two-component no-pair formalism with external-field projection operators&rdquo;. Physical Review A 33: 3742-3748. <a href="https://dx.doi.org/10.1103/PhysRevA.33.3742">DOI:10.1103/PhysRevA.33.3742</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_4">
-<p>Chang, C; Pelissier, M; Durand, M (1986). &ldquo;Regular Two-Component Pauli-Like Effective Hamiltonians in Dirac Theory&rdquo;. Physica Scripta 34: 394. doi:<a href="https://dx.doi.org/10.1088/0031-8949/34/5/007">10.1088/0031-8949/34/5/007</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Chang, C; Pelissier, M; Durand, M (1986). &ldquo;Regular Two-Component Pauli-Like Effective Hamiltonians in Dirac Theory&rdquo;. Physica Scripta 34: 394. <a href="https://dx.doi.org/10.1088/0031-8949/34/5/007">DOI:10.1088/0031-8949/34/5/007</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_5">
 <p>van Lenthe, E (1996). &ldquo;The ZORA Equation&rdquo; (in English).&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_6">
-<p>Faas, S.; Snijders, J.G.; van Lenthe, J.H.; van Lenthe, E.; Baerends, E.J. (1995). &ldquo;The ZORA formalism applied to the Dirac-Fock equation&rdquo;. Chemical Physics Letters 246: 632-640. doi:<a href="https://dx.doi.org/10.1016/0009-2614(95)01156-0">10.1016/0009-2614(95)01156-0</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>Faas, S.; Snijders, J.G.; van Lenthe, J.H.; van Lenthe, E.; Baerends, E.J. (1995). &ldquo;The ZORA formalism applied to the Dirac-Fock equation&rdquo;. Chemical Physics Letters 246: 632-640. <a href="https://dx.doi.org/10.1016/0009-2614(95)01156-0">DOI:10.1016/0009-2614(95)01156-0</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_7">
-<p>Nichols, P.; Govind, N.; Bylaska, E.J.; de Jong, W.A. (2009). &ldquo;Gaussian Basis Set and Planewave Relativistic Spin-Orbit Methods in NWChem&rdquo;. Journal of Chemical Theory and Computation 5: 491-499. doi:<a href="https://dx.doi.org/10.1021/ct8002892">10.1021/ct8002892</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>Nichols, P.; Govind, N.; Bylaska, E.J.; de Jong, W.A. (2009). &ldquo;Gaussian Basis Set and Planewave Relativistic Spin-Orbit Methods in NWChem&rdquo;. Journal of Chemical Theory and Computation 5: 491-499. <a href="https://dx.doi.org/10.1021/ct8002892">DOI:10.1021/ct8002892</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_8">
-<p>Dyall, K.G. (1994). &ldquo;An exact separation of the spin-free and spin-dependent terms of the Dirac&ndash;Coulomb&ndash;Breit Hamiltonian&rdquo;. The Journal of Chemical Physics 100: 2118-2127. doi:<a href="https://dx.doi.org/10.1063/1.466508">10.1063/1.466508</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<p>Dyall, K.G. (1994). &ldquo;An exact separation of the spin-free and spin-dependent terms of the Dirac&ndash;Coulomb&ndash;Breit Hamiltonian&rdquo;. The Journal of Chemical Physics 100: 2118-2127. <a href="https://dx.doi.org/10.1063/1.466508">DOI:10.1063/1.466508</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_9">
-<p>Dyall, K.G. (1997). &ldquo;Interfacing relativistic and nonrelativistic methods. I. Normalized elimination of the small component in the modified Dirac equation&rdquo;. The Journal of Chemical Physics 106: 9618-9626. doi:<a href="https://dx.doi.org/10.1063/1.473860">10.1063/1.473860</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+<p>Dyall, K.G. (1997). &ldquo;Interfacing relativistic and nonrelativistic methods. I. Normalized elimination of the small component in the modified Dirac equation&rdquo;. The Journal of Chemical Physics 106: 9618-9626. <a href="https://dx.doi.org/10.1063/1.473860">DOI:10.1063/1.473860</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_10">
-<p>Dyall, K.G.; Enevoldsen, T. (1999). &ldquo;Interfacing relativistic and nonrelativistic methods. III. Atomic 4-spinor expansions and integral approximations&rdquo;. The Journal of Chemical Physics 111: 10000-10007. doi:<a href="https://dx.doi.org/10.1063/1.480353">10.1063/1.480353</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+<p>Dyall, K.G.; Enevoldsen, T. (1999). &ldquo;Interfacing relativistic and nonrelativistic methods. III. Atomic 4-spinor expansions and integral approximations&rdquo;. The Journal of Chemical Physics 111: 10000-10007. <a href="https://dx.doi.org/10.1063/1.480353">DOI:10.1063/1.480353</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_11">
-<p>Hess, B.A. (1985). &ldquo;Applicability of the no-pair equation with free-particle projection operators to atomic and molecular structure calculations&rdquo;. Physical Review A 32: 756-763. doi:<a href="https://dx.doi.org/10.1103/PhysRevA.32.756">10.1103/PhysRevA.32.756</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+<p>Hess, B.A. (1985). &ldquo;Applicability of the no-pair equation with free-particle projection operators to atomic and molecular structure calculations&rdquo;. Physical Review A 32: 756-763. <a href="https://dx.doi.org/10.1103/PhysRevA.32.756">DOI:10.1103/PhysRevA.32.756</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_12">
-<p>Hess, B.A. (1986). &ldquo;Relativistic electronic-structure calculations employing a two-component no-pair formalism with external-field projection operators&rdquo;. Physical Review A 33: 3742-3748. doi:<a href="https://dx.doi.org/10.1103/PhysRevA.33.3742">10.1103/PhysRevA.33.3742</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+<p>Hess, B.A. (1986). &ldquo;Relativistic electronic-structure calculations employing a two-component no-pair formalism with external-field projection operators&rdquo;. Physical Review A 33: 3742-3748. <a href="https://dx.doi.org/10.1103/PhysRevA.33.3742">DOI:10.1103/PhysRevA.33.3742</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_13">
-<p>Haeberlen, O.D.; Roesch, N. (1992). &ldquo;A scalar-relativistic extension of the linear combination of Gaussian-type orbitals local density functional method: application to AuH, AuCl and Au2&rdquo;. Chemical Physics Letters 199: 491-496. doi:<a href="https://dx.doi.org/10.1016/0009-2614(92)87033-L">10.1016/0009-2614(92)87033-L</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+<p>Haeberlen, O.D.; Roesch, N. (1992). &ldquo;A scalar-relativistic extension of the linear combination of Gaussian-type orbitals local density functional method: application to AuH, AuCl and Au2&rdquo;. Chemical Physics Letters 199: 491-496. <a href="https://dx.doi.org/10.1016/0009-2614(92)87033-L">DOI:10.1016/0009-2614(92)87033-L</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_14">
-<p>Nakajima, T.; Hirao, K. (2000). &ldquo;Numerical illustration of third-order Douglas-Kroll method: atomic and molecular properties of superheavy element 112&rdquo;. Chemical Physics Letters 329: 511-516. doi:<a href="https://dx.doi.org/10.1016/S0009-2614(00)01035-6">10.1016/S0009-2614(00)01035-6</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+<p>Nakajima, T.; Hirao, K. (2000). &ldquo;Numerical illustration of third-order Douglas-Kroll method: atomic and molecular properties of superheavy element 112&rdquo;. Chemical Physics Letters 329: 511-516. <a href="https://dx.doi.org/10.1016/S0009-2614(00)01035-6">DOI:10.1016/S0009-2614(00)01035-6</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_15">
-<p>Nakajima, T.; Hirao, K. (2000). &ldquo;The higher-order Douglas&ndash;Kroll transformation&rdquo;. The Journal of Chemical Physics 113: 7786-7789. doi:<a href="https://dx.doi.org/10.1063/1.1316037">10.1063/1.1316037</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+<p>Nakajima, T.; Hirao, K. (2000). &ldquo;The higher-order Douglas&ndash;Kroll transformation&rdquo;. The Journal of Chemical Physics 113: 7786-7789. <a href="https://dx.doi.org/10.1063/1.1316037">DOI:10.1063/1.1316037</a>.&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_16">
-<p>van Wullen, C. (1998). &ldquo;Molecular density functional calculations in the regular relativistic approximation: Method, application to coinage metal diatomics, hydrides, fluorides and chlorides, and comparison with first-order relativistic calculations&rdquo;. The Journal of Chemical Physics 109: 392-399  doi:<a href="https://dx.doi.org/10.1063/1.476576">10.1063/1.476576</a>&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+<p>van Wullen, C. (1998). &ldquo;Molecular density functional calculations in the regular relativistic approximation: Method, application to coinage metal diatomics, hydrides, fluorides and chlorides, and comparison with first-order relativistic calculations&rdquo;. The Journal of Chemical Physics 109: 392-399  <a href="https://dx.doi.org/10.1063/1.476576">DOI:10.1063/1.476576</a>&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
 </li>
 <li id="relativistic-all-electron-approximations-fn_footnote_17">
-<p>van Wullen, C.; Michauk, C. (2005). &ldquo;Accurate and efficient treatment of two-electron contributions in quasirelativistic high-order Douglas-Kroll density-functional calculations&rdquo;. The Journal of Chemical Physics 123, 204113 doi:<a href="https://dx.doi.org/10.1063/1.2133731">10.1063/1.2133731</a>&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+<p>van Wullen, C.; Michauk, C. (2005). &ldquo;Accurate and efficient treatment of two-electron contributions in quasirelativistic high-order Douglas-Kroll density-functional calculations&rdquo;. The Journal of Chemical Physics 123, 204113 <a href="https://dx.doi.org/10.1063/1.2133731">DOI:10.1063/1.2133731</a>&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="relativistic-all-electron-approximations-fn_footnote_18">
+<p>Liu, W.; Peng, D. (2009). J. Chem. Phys. 2009, 131, 031104 <a href="https://dx.doi.org/10.1063/1.3159445">DOI:10.1063/1.3159445</a>&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="relativistic-all-electron-approximations-fn_footnote_19">
+<p>Autschbach, J.; Peng, D; Reiher, M. (2012). J. Chem. Theory Comput. 2012, 8,  4239–4248 <a href="https://dx.doi.org/10.1021/ct300623j">DOI:10.1021/ct300623j</a>&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="relativistic-all-electron-approximations-fn_footnote_20">
+<p>Peng, D.; Reiher, M. (2012). Theor. Chem. Acc. 131, 1081 <a href="https://dx.doi.org/10.1007/s00214-011-1081-y">DOI:10.1007/s00214-011-1081-y</a>&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_20" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="relativistic-all-electron-approximations-fn_footnote_21">
+<p>Autschbach, J. (2021). Quantum Theory for Chemical Applications:From Basic Concepts to Advanced Topics, Oxford, University Press, Chapter 24 <a href="https://dx.doi.org/10.1093/oso/9780190920807.001.0001">DOI:10.1093/oso/9780190920807.001.0001</a>&#160;<a class="footnote-backref" href="#relativistic-all-electron-approximations-fnref_footnote_21" title="Jump back to footnote 21 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></section>
