@@ -7380,8 +7380,10 @@ given calculation can be summarized as follows:</p>
     and not recommended</li>
 </ul>
 <h2 id="density-functional-theory-for-molecules-adft-new-in-nwchem-720">ADFT <strong><em>New in NWChem 7.2.0</em></strong>:<a class="headerlink" href="#density-functional-theory-for-molecules-adft-new-in-nwchem-720" title="Permanent link">&para;</a></h2>
-<p>Use of the auxiliary density functional theory method (ADFT)<sup id="fnref_footnote_0"><a class="footnote-ref" href="#density-functional-theory-for-molecules-fn_footnote_0">1</a></sup> can be triggered by means of the <code>adft</code> keyword. This can result in a large speed-up when using GGA functionals (e.g. PBE96). <br />
-The ADFT method requires a charge density fitting basis set (see <a href="#density-functional-theory-for-molecules-specification-of-basis-sets-for-the-dft-module">DFT basis set section</a>). If no <code>cd basis</code> set is provided, the <code>weigend coulomb fitting</code> basis set will be loaded.</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Use of the auxiliary density functional theory method (ADFT)<sup id="density-functional-theory-for-molecules-fnref_footnote_0"><a class="footnote-ref" href="#density-functional-theory-for-molecules-fn_footnote_0">1</a></sup> can be triggered by means of the <code>adft</code> keyword. This can result in a large speed-up when using &ldquo;pure&rdquo; GGA functionals (e.g. PBE96) and Laplacian-dependent mGGA functionals (e.g. SCAN-L). The speed-up comes from the use of the fitted density obtained with the charge density fitting technique to approximate both the Coulomb and Exchange-Correlation contributions.</p>
+<p>The ADFT method is similar in spirit to the exchange-correlation fitting technique triggered by specifying an <code>xc basis</code> without the <code>adft</code> keyword. It is important to note that, different to the old exchange-correlation fitting, <em>energy derivatives are well-defined</em> within the ADFT framework. As a consequence, geometry optimizations and harmonic vibrational frequencies are well-behaved.</p>
+<p>The ADFT method requires a charge density fitting basis set (see <a href="#density-functional-theory-for-molecules-specification-of-basis-sets-for-the-dft-module">DFT basis set section</a>). If not <code>cd basis</code> set is provided, the <code>weigend coulomb fitting</code> basis set will be loaded.</p>
 <h2 id="density-functional-theory-for-molecules-vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL: KS-MO Vectors<a class="headerlink" href="#density-functional-theory-for-molecules-vectors-and-max_ovl-ks-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>The VECTORS directive is the same as that in the <a href="#hartree-fock-theory-for-molecules-vectors-inputoutput-of-mo-vectors">SCF</a> module. Currently, the <a href="#hartree-fock-theory-for-molecules-vectors-lock-keyword">LOCK</a> keyword is not supported by the DFT module, however the directive</p>
 <pre><code> MAX_OVL
@@ -10194,7 +10196,8 @@ Therefore please use the following links for <a href="#hartree-fock-theory-for-m
 <ol>
 <li id="density-functional-theory-for-molecules-fn_footnote_0">
 <p>A. M. Köster, J. U. Reveles, and J. M. del Campo, J. Chem. Phys. 121, 3417-3424 (2004).
-<a href="https://dx.doi.org/10.1063/1.1771638">DOI:10.1063/1.1771638</a>&#160;<a class="footnote-backref" href="#density-functional-theory-for-molecules-fnref_footnote_0" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<a href="https://dx.doi.org/10.1063/1.1771638">DOI:10.1063/1.1771638</a>;
+  P. Calaminici et al. Auxiliary Density Functional Theory: From Molecules to Nanostructures. In: J. Leszczynski, A. Kaczmarek-Kedziera, T. Puzyn, M.G. Papadopoulos, H. Reis, M. Shukla (eds) Handbook of Computational Chemistry, (Springer, 2017) <a href="https://dx.doi.org/10.1007/978-3-319-27282-5_16">DOI:10.1007/978-3-319-27282-5_16</a>;&#160;<a class="footnote-backref" href="#density-functional-theory-for-molecules-fnref_footnote_0" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="density-functional-theory-for-molecules-fn_footnote_1">
 <p>J. C. Slater and K. H. Johnson, Phys. Rev. B 5, 844 (1972)<a href="https://dx.doi.org/10.1103/PhysRevB.5.844">DOI:10.1103/PhysRevB.5.844</a>;
