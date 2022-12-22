@@ -4140,12 +4140,13 @@ cp -r libraryps /usr/local/NWChem/data
 <ul>
 <li>Each user will need a .nwchemrc file to point to these default data
     files. A global one could be put in /usr/local/NWChem/data and a
-    symbolic link made in each users <script type="math/tex">HOME directory is probably the
-    best plan for new installs. Users would have to issue the following
-    command prior to using NWChem: ln -s
-    /usr/local/NWChem/data/default.nwchemrc </script>HOME/.nwchemrc</li>
+    symbolic link made in each users <code>$HOME</code> directory is probably the
+    best plan for new installations. Users would have to issue the following
+    command prior to using NWChem:</li>
 </ul>
-<p>Contents of the default.nwchemrc file based on the above information
+<pre><code>ln -s /usr/local/NWChem/data/default.nwchemrc $HOME/.nwchemrc
+</code></pre>
+<p>Contents of the <code>default.nwchemrc</code> file based on the above information
 should be:</p>
 <pre><code>nwchem_basis_library /usr/local/NWChem/data/libraries/
 nwchem_nwpw_library /usr/local/NWChem/data/libraryps/
@@ -4160,10 +4161,10 @@ charmm_x /usr/local/NWChem/data/charmm_x/
 </code></pre>
 <p>Of course users can copy this file instead of making the symbolic link
 described above and change these defaults at their discretion.</p>
-<p>It is can also be useful to use the NWCHEM_BASIS_LIBRARY environment
+<p>It is can also be useful to use the <code>NWCHEM_BASIS_LIBRARY</code> environment
 variable when testing a new installation when an old one exists. This
-will allow you to overwrite the value of nwchem_basis_library in your
-.nwchemrc file and point to the new basis library. For example:</p>
+will allow you to overwrite the value of <code>nwchem_basis_library</code> in your
+<code>.nwchemrc</code> file and point to the new basis library. For example:</p>
 <pre><code>% export NWCHEM_BASIS_LIBRARY=&quot;$NWCHEM/data-5.0/libraries/&quot;
 </code></pre>
 <p>Do not forget the trailing &ldquo;/&rdquo;.</p></section><h1 class='nav-section-title-end'>Ended: How to get NWChem</h1>
