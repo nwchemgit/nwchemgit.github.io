@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://nwchemgit.github.io/Density-Functional-Theory-for-Molecules_bibtext.html">
       
       <link rel="icon" href="assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
+      <meta name="generator" content="mkdocs-1.4.0, mkdocs-material-8.5.10">
     
     
       
@@ -2715,7 +2715,7 @@ given calculation can be summarized as follows:</p>
     and not recommended</li>
 </ul>
 <h2 id="adft-new-in-nwchem-720">ADFT <strong><em>New in NWChem 7.2.0</em></strong>:<a class="headerlink" href="#adft-new-in-nwchem-720" title="Permanent link">&para;</a></h2>
-<p>Use of the auxiliary density functional theory method (ADFT)[@Koester2004;@Calaminici2017] can be triggered by means of the <code>adft</code> keyword. This can result in a large speed-up when using &ldquo;pure&rdquo; GGA functionals (e.g. PBE96) and Laplacian-dependent mGGA functionals (e.g. SCAN-L). The speed-up comes from the use of the fitted density obtained with the charge density fitting technique to approximate both the Coulomb and Exchange-Correlation contributions.</p>
+<p>Use of the auxiliary density functional theory method (ADFT)<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">84</a></sup><sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">85</a></sup> can be triggered by means of the <code>adft</code> keyword. This can result in a large speed-up when using &ldquo;pure&rdquo; GGA functionals (e.g. PBE96) and Laplacian-dependent mGGA functionals (e.g. SCAN-L). The speed-up comes from the use of the fitted density obtained with the charge density fitting technique to approximate both the Coulomb and Exchange-Correlation contributions.</p>
 <p>The ADFT method is similar in spirit to the exchange-correlation fitting technique triggered by specifying an <a href="#specification-of-basis-sets-for-the-dft-module">xc basis</a> without the <code>adft</code> keyword. It is important to note that, different to straight exchange-correlation fitting, <em>energy derivatives are well-defined</em> within the ADFT framework. As a consequence, geometry optimizations and harmonic vibrational frequencies are well-behaved.</p>
 <p>The ADFT method requires a charge density fitting basis set (see <a href="#specification-of-basis-sets-for-the-dft-module">DFT basis set section</a>). If not <code>cd basis</code> set is provided, the <code>weigend coulomb fitting</code> basis set will be loaded.</p>
 <h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL: KS-MO Vectors<a class="headerlink" href="#vectors-and-max_ovl-ks-mo-vectors" title="Permanent link">&para;</a></h2>
@@ -2754,8 +2754,8 @@ default exchange-correlation functional is defined as the local density
 approximation (LDA) for closed shell systems and its counterpart the
 local spin-density (LSD) approximation for open shell systems. Within
 this approximation, the exchange functional is the Slater &rho;<sup>1/3</sup>
-functional[@slater1972;@slater1974], and the correlation functional is the
-Vosko-Wilk-Nusair (VWN) functional (functional V)[@vosko1980].
+functional<sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">86</a></sup><sup id="fnref_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">87</a></sup>, and the correlation functional is the
+Vosko-Wilk-Nusair (VWN) functional (functional V)<sup id="fnref_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">88</a></sup>.
 The parameters used in
 this formula are obtained by fitting to the Ceperley and Alder Quantum
 Monte-Carlo solution of the homogeneous electron gas.</p>
@@ -2887,7 +2887,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@slater1972;@slater1974]</td>
+<td><sup id="fnref2_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">86</a></sup><sup id="fnref2_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">87</a></sup></td>
 </tr>
 <tr>
 <td>vwn_1</td>
@@ -2897,7 +2897,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@vosko1980]</td>
+<td><sup id="fnref7_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">88</a></sup></td>
 </tr>
 <tr>
 <td>vwn_2</td>
@@ -2907,7 +2907,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@vosko1980]</td>
+<td><sup id="fnref6_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">88</a></sup></td>
 </tr>
 <tr>
 <td>vwn_3</td>
@@ -2917,7 +2917,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@vosko1980]</td>
+<td><sup id="fnref5_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">88</a></sup></td>
 </tr>
 <tr>
 <td>vwn_4</td>
@@ -2927,7 +2927,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@vosko1980]</td>
+<td><sup id="fnref4_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">88</a></sup></td>
 </tr>
 <tr>
 <td>vwn_5</td>
@@ -2937,7 +2937,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@vosko1980]</td>
+<td><sup id="fnref3_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">88</a></sup></td>
 </tr>
 <tr>
 <td>vwn_1_rpa</td>
@@ -2947,7 +2947,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@vosko1980]</td>
+<td><sup id="fnref2_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">88</a></sup></td>
 </tr>
 <tr>
 <td>perdew81</td>
@@ -2957,7 +2957,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@perdew1981]</td>
+<td><sup id="fnref2_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">89</a></sup></td>
 </tr>
 <tr>
 <td>pw91lda</td>
@@ -2967,7 +2967,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@perdew1992]</td>
+<td><sup id="fnref2_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">90</a></sup></td>
 </tr>
 <tr>
 <td>xbecke86b</td>
@@ -3007,7 +3007,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@perdew1992]</td>
+<td><sup id="fnref_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">90</a></sup></td>
 </tr>
 <tr>
 <td>xpbe96</td>
@@ -3017,7 +3017,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@perdew1996;@perdew1997]</td>
+<td><sup id="fnref2_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">91</a></sup><sup id="fnref2_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">92</a></sup></td>
 </tr>
 <tr>
 <td>gill96</td>
@@ -3027,7 +3027,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@gill1996]</td>
+<td><sup id="fnref2_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">93</a></sup></td>
 </tr>
 <tr>
 <td>optx</td>
@@ -3107,7 +3107,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@perdew1986]</td>
+<td><sup id="fnref3_footnote_12"><a class="footnote-ref" href="#fn_footnote_12">1</a></sup></td>
 </tr>
 <tr>
 <td>lyp</td>
@@ -3117,7 +3117,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@lee1988]</td>
+<td><sup id="fnref3_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">2</a></sup></td>
 </tr>
 <tr>
 <td>perdew91</td>
@@ -3127,7 +3127,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@perdew1992a;@perdew1993]</td>
+<td><sup id="fnref4_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">3</a></sup><sup id="fnref3_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">4</a></sup></td>
 </tr>
 <tr>
 <td>cpbe96</td>
@@ -3137,7 +3137,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>Y</td>
-<td>[@perdew1996;@perdew1997]</td>
+<td><sup id="fnref_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">91</a></sup><sup id="fnref_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">92</a></sup></td>
 </tr>
 <tr>
 <td>cft97</td>
@@ -3167,7 +3167,7 @@ computed as</p>
 <td></td>
 <td></td>
 <td>N</td>
-<td>[@hamprecht1998]</td>
+<td><sup id="fnref2_footnote_16"><a class="footnote-ref" href="#fn_footnote_16">5</a></sup></td>
 </tr>
 <tr>
 <td>hcth120</td>
@@ -3877,7 +3877,7 @@ computed as</p>
 <td></td>
 <td>*</td>
 <td>N</td>
-<td>[^11]</td>
+<td><sup id="fnref_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">93</a></sup></td>
 </tr>
 <tr>
 <td>becke97-2</td>
@@ -5103,7 +5103,7 @@ keyword can only be used with the <code>CGMIN</code> keyword.</p>
 <pre><code>sic [perturbative || oep || oep-loc ]
 &lt;default perturbative&gt;
 </code></pre>
-<p>The Perdew and Zunger[@perdew1981] method to remove the self-interaction contained in many
+<p>The Perdew and Zunger<sup id="fnref_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">89</a></sup> method to remove the self-interaction contained in many
 exchange-correlation functionals has been implemented with the Optimized
 Effective Potential method<sup id="fnref_footnote_87"><a class="footnote-ref" href="#fn_footnote_87">75</a></sup> within the Krieger-Li-Iafrate approximation<sup id="fnref_footnote_88"><a class="footnote-ref" href="#fn_footnote_88">76</a></sup>.
 Three variants of these methods are included in NWChem:</p>
@@ -5529,19 +5529,19 @@ Therefore please use the following links for <a href="Hartree-Fock-Theory-for-Mo
 <hr />
 <ol>
 <li id="fn_footnote_12">
-<p>A. D. Boese, N.L. Doltsinis, N.C. Handy and M. Sprik. J. Chem. Phys. 112, 1670 (2000)&#160;<a class="footnote-backref" href="#fnref_footnote_12" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_12" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>(1) Perdew, J. P. Density-Functional Approximation for the Correlation Energy of the Inhomogeneous Electron Gas. <em>Physical Review B</em> <strong>1986</strong>, <em>33</em> (12), 8822–8824. <a href="https://doi.org/10.1103/PhysRevB.33.8822">https://doi.org/10.1103/PhysRevB.33.8822</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_12" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_12" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_12" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_13">
-<p>A. D. Becke, J. Chem. Phys. 98, 1372 (1992)&#160;<a class="footnote-backref" href="#fnref_footnote_13" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_13" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>(1) Lee, C.; Yang, W.; Parr, R. G. Development of the Colle-Salvetti correlation-energy formula into a functional of the electron density. <em>Physical Review B</em> <strong>1988</strong>, <em>37</em> (2), 785–789. <a href="https://doi.org/10.1103/PhysRevB.37.785">https://doi.org/10.1103/PhysRevB.37.785</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_13" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_13" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_13" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_14">
-<p>A. D. Becke, J. Chem. Phys. 98, 5648 (1993)&#160;<a class="footnote-backref" href="#fnref_footnote_14" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_14" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_14" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>(1) Perdew, J. P.; Chevary, J. A.; Vosko, S. H.; Jackson, K. A.; Pederson, M. R.; Singh, D. J.; Fiolhais, C. Atoms, Molecules, Solids, and Surfaces: Applications of the Generalized Gradient Approximation for Exchange and Correlation. <em>Physical Review B</em> <strong>1992</strong>, <em>46</em> (11), 6671–6687. <a href="https://doi.org/10.1103/PhysRevB.46.6671">https://doi.org/10.1103/PhysRevB.46.6671</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_14" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_14" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_14" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_14" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_15">
-<p>A. D. Becke, J. Chem. Phys. 107, 8554 (1997)&#160;<a class="footnote-backref" href="#fnref_footnote_15" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_15" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>(1) Perdew, J. P.; Chevary, J. A.; Vosko, S. H.; Jackson, K. A.; Pederson, M. R.; Singh, D. J.; Fiolhais, C. Erratum: Atoms, Molecules, Solids, and Surfaces: Applications of the Generalized Gradient Approximation for Exchange and Correlation. <em>Physical Review B</em> <strong>1993</strong>, <em>48</em> (7), 4978–4978. <a href="https://doi.org/10.1103/PhysRevB.48.4978.2">https://doi.org/10.1103/PhysRevB.48.4978.2</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_15" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_15" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_15" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_16">
-<p>H. L. Schmider and A. D. Becke, J. Chem. Phys. 108, 9624 (1998)&#160;<a class="footnote-backref" href="#fnref_footnote_16" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>(1) Hamprecht, F. A.; Cohen, A. J.; Tozer, D. J.; Handy, N. C. Development and Assessment of New Exchange-Correlation Functionals. <em>The Journal of Chemical Physics</em> <strong>1998</strong>, <em>109</em> (15), 6264–6271. <a href="https://doi.org/10.1063/1.477267">https://doi.org/10.1063/1.477267</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_16" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_16" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_17">
 <p>C. Adamo and V. Barone, J. Chem. Phys. 110, 6158 (1999)&#160;<a class="footnote-backref" href="#fnref_footnote_17" title="Jump back to footnote 6 in the text">&#8617;</a></p>
@@ -5780,6 +5780,36 @@ D.P. Chong, Ed.; World Scientific: Singapore, 1995; Vol. 129.&#160;<a class="foo
 </li>
 <li id="fn_footnote_95">
 <p>A. Otero-de-la-Roza and E. R. Johnson, J. Chem. Phys. 138, 204109 (2013)&#160;<a class="footnote-backref" href="#fnref_footnote_95" title="Jump back to footnote 83 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_1">
+<p>(1) Köster, A. M.; Reveles, J. U.; Campo, J. M. del. Calculation of exchange-correlation potentials with auxiliary function densities. <em>The Journal of Chemical Physics</em> <strong>2004</strong>, <em>121</em> (8), 3417–3424. <a href="https://doi.org/10.1063/1.1771638">https://doi.org/10.1063/1.1771638</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 84 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_2">
+<p>(1) Calaminici, P.; Alvarez-Ibarra, A.; Cruz-Olvera, D.; Domìnguez-Soria, V.-D.; Flores-Moreno, R.; Gamboa, G. U.; Geudtner, G.; Goursot, A.; Mejía-Rodríguez, D.; Salahub, D. R.; Zuniga-Gutierrez, B.; Köster, A. M. Auxiliary Density Functional Theory: From Molecules to Nanostructures. In <em>Handbook of Computational Chemistry</em>; Leszczynski, J., Kaczmarek-Kedziera, A., Puzyn, T., G. Papadopoulos, M., Reis, H., K. Shukla, M., Eds.; Springer International Publishing, 2017; pp 795–860. <a href="https://doi.org/10.1007/978-3-319-27282-5_16">https://doi.org/10.1007/978-3-319-27282-5\_16</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 85 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_3">
+<p>(1) Slater, J. C.; Johnson, K. H. Self-Consistent-Field <em>X</em><em>α</em> Cluster Method for Polyatomic Molecules and Solids. <em>Phys. Rev. B</em> <strong>1972</strong>, <em>5</em> (3), 844–853. <a href="https://doi.org/10.1103/PhysRevB.5.844">https://doi.org/10.1103/PhysRevB.5.844</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 86 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_3" title="Jump back to footnote 86 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_4">
+<p>(1) Slater, J. C. Quantum Theory of Molecular and Solids. <em>The self-Consistent Field for Molecular and solids</em> <strong>1974</strong>, <em>4</em>.&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 87 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_4" title="Jump back to footnote 87 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_5">
+<p>(1) Vosko, S. H.; Wilk, L.; Nusair, M. Accurate Spin-Dependent Electron Liquid Correlation Energies for Local Spin Density Calculations: A Critical Analysis. <em>Canadian Journal of physics</em> <strong>1980</strong>, <em>58</em> (8), 1200–1211. <a href="https://doi.org/10.1139/p80-159">https://doi.org/10.1139/p80-159</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 88 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_5" title="Jump back to footnote 88 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_5" title="Jump back to footnote 88 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4_footnote_5" title="Jump back to footnote 88 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5_footnote_5" title="Jump back to footnote 88 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6_footnote_5" title="Jump back to footnote 88 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7_footnote_5" title="Jump back to footnote 88 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_6">
+<p>(1) Perdew, J. P.; Zunger, A. Self-interaction correction to density-functional approximations for many-electron systems. <em>Phys. Rev. B</em> <strong>1981</strong>, <em>23</em> (10), 5048–5079. <a href="https://doi.org/10.1103/PhysRevB.23.5048">https://doi.org/10.1103/PhysRevB.23.5048</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_6" title="Jump back to footnote 89 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_6" title="Jump back to footnote 89 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_7">
+<p>(1) Perdew, J. P.; Wang, Y. Accurate and simple analytic representation of the electron-gas correlation energy. <em>Phys. Rev. B</em> <strong>1992</strong>, <em>45</em> (23), 13244–13249. <a href="https://doi.org/10.1103/PhysRevB.45.13244">https://doi.org/10.1103/PhysRevB.45.13244</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_7" title="Jump back to footnote 90 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_7" title="Jump back to footnote 90 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_9">
+<p>(1) Perdew, J. P.; Burke, K.; Ernzerhof, M. Errata: Generalized Gradient Approximation Made Simple. <em>Phys. Rev. Lett.</em> <strong>1996</strong>, <em>77</em> (18), 3865–3868. <a href="https://doi.org/10.1103/PhysRevLett.77.3865">https://doi.org/10.1103/PhysRevLett.77.3865</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_9" title="Jump back to footnote 91 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_9" title="Jump back to footnote 91 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_10">
+<p>(1) Perdew, J. P.; Burke, K.; Ernzerhof, M. Generalized Gradient Approximation Made Simple. <em>Phys. Rev. Lett.</em> <strong>1997</strong>, <em>78</em> (7), 1396–1396. <a href="https://doi.org/10.1103/PhysRevLett.78.1396">https://doi.org/10.1103/PhysRevLett.78.1396</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_10" title="Jump back to footnote 92 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_10" title="Jump back to footnote 92 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_11">
+<p>(1) Gill, P. M. W. A New Gradient-Corrected Exchange Functional. <em>Molecular Physics</em> <strong>1996</strong>, <em>89</em> (2), 433–445. <a href="https://doi.org/10.1080/002689796173813">https://doi.org/10.1080/002689796173813</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_11" title="Jump back to footnote 93 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_11" title="Jump back to footnote 93 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
