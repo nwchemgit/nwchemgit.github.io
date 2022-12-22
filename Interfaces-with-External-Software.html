@@ -2187,7 +2187,7 @@
       
         <li class="md-nav__item">
   <a href="#libxc" class="md-nav__link">
-    LibXC
+    Libxc
   </a>
   
 </li>
@@ -2245,13 +2245,28 @@ SCALAPACK_SIZE=8
 </code></pre>
 <h2 id="elpa">ELPA<a class="headerlink" href="#elpa" title="Permanent link">&para;</a></h2>
 <p>To build NWChem with the <a href="https://gitlab.mpcdf.mpg.de/elpa/elpa">ELPA</a> eigensolver library,
-you need first to set the ScaLAPACK settings as describe in the previous <a href="#ScaLAPACK">section</a> and
+you need first to set the ScaLAPACK settings as described in the previous <a href="#ScaLAPACK">section</a> and
 then you need to define the following environment variables at compile time:  </p>
 <pre><code>BUILD_ELPA=1
 </code></pre>
 <h2 id="plumed">Plumed<a class="headerlink" href="#plumed" title="Permanent link">&para;</a></h2>
-<h2 id="libxc">LibXC<a class="headerlink" href="#libxc" title="Permanent link">&para;</a></h2>
+<p>The <code>BUILD_PLUMED</code> environment variable installs <a href="https://www.plumed.org/">Plumed</a> and
+interfaces it with the <a href="Gaussian-Basis-AIMD.html">qmd</a> module.</p>
+<h2 id="libxc">Libxc<a class="headerlink" href="#libxc" title="Permanent link">&para;</a></h2>
+<p>Building NWChem with the <a href="https://www.tddft.org/programs/libxc/">libxc</a> DFT library requires
+setting the environment variable <code>USE_LIBXC=1</code></p>
+<p>If you wish to use an existing libxc library, the following environment variables must be set:
+- <code>LIBXC_INCLUDE</code>
+- <code>LIBXC_LIB</code>  </p>
 <h2 id="xtb">XTB<a class="headerlink" href="#xtb" title="Permanent link">&para;</a></h2>
+<p><a href="tblite.readthedocs.io.md">Light-weight tight-binding framework</a></p>
+<p>environment variable <code>USE_TBLITE=1</code></p>
+<p>add <code>xtb</code> to <code>NWCHEM_MODULES</code></p>
+<p>Example:</p>
+<pre><code>make nwchem_config NWCHEM_MODULES='tinyqmpw xtb'
+export USE_TBLITE=1
+make
+</code></pre>
 
 
 
