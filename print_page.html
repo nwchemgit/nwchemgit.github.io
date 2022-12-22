@@ -2093,6 +2093,21 @@
   
   
     <li class="md-nav__item">
+      <a href="Interfaces-with-External-Software.html" class="md-nav__link">
+        Interfaces with External Software
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Software-supporting-NWChem.html" class="md-nav__link">
         Software supporting NWChem
       </a>
@@ -2697,15 +2712,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#interfaces-with-external-software" class="md-nav__link">
+    58. Interfaces with External Software
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#software-supporting-nwchem" class="md-nav__link">
-    58. Software supporting NWChem
+    59. Software supporting NWChem
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#containers" class="md-nav__link">
-    59. Containers
+    60. Containers
   </a>
   
 </li>
@@ -33305,7 +33327,58 @@ an Intel product.</em></p>
 <p>If you wish to use ARMCI-MPI, a script is available to automatically
 install it:</p>
 <pre><code>cd $NWCHEM_TOP/tools &amp;&amp; ./install-armci-mpi
-</code></pre></section><h1 class='nav-section-title-end'>Ended: Supplementary Information</h1><section class="print-page" id="software-supporting-nwchem"><h1 id="software-supporting-nwchem-software-supporting-nwchem">Software supporting NWChem<a class="headerlink" href="#software-supporting-nwchem-software-supporting-nwchem" title="Permanent link">&para;</a></h1>
+</code></pre></section><h1 class='nav-section-title-end'>Ended: Supplementary Information</h1><section class="print-page" id="interfaces-with-external-software"><h1 id="interfaces-with-external-software-interfaces-with-external-software">Interfaces with External Software<a class="headerlink" href="#interfaces-with-external-software-interfaces-with-external-software" title="Permanent link">&para;</a></h1>
+<p>NWChem can be interfaced with external software packages by following the instructions below.</p>
+<h2 id="interfaces-with-external-software-simint-integrals-library">Simint integrals library<a class="headerlink" href="#interfaces-with-external-software-simint-integrals-library" title="Permanent link">&para;</a></h2>
+<p>To generate the <a href="https://www.bennyp.org/research/simint/">Simint</a>
+library and enable the NWChem interface (only for energy and first derivative code),
+you need to define the following environment variables at compile time:  </p>
+<ul>
+<li><code>USE_SIMINT=y</code> (mandatory)   </li>
+<li><code>SIMINT_MAXAM=</code>&ldquo;Maximum angular momentum&rdquo; (optional, default is 3, therefore up to f orbitals)   </li>
+</ul>
+<p>The following set directives are required in the input file to trigger use of Simint</p>
+<pre><code>set int:cando_txs f
+set int:cando_nw f
+</code></pre>
+<h2 id="interfaces-with-external-software-openblas">OpenBLAS<a class="headerlink" href="#interfaces-with-external-software-openblas" title="Permanent link">&para;</a></h2>
+<p>To build NWChem with the optimized BLAS and Lapack <a href="https://github.com/xianyi/OpenBLAS">OpenBLAS</a> library,
+you need to define the following environment variables at compile time:  </p>
+<pre><code>BUILD_OPENBLAS=1
+BLAS_SIZE=8
+</code></pre>
+<h2 id="interfaces-with-external-software-scalapack">ScaLAPACK<a class="headerlink" href="#interfaces-with-external-software-scalapack" title="Permanent link">&para;</a></h2>
+<p>To build NWChem with the <a href="https://github.com/Reference-ScaLAPACK/scalapack">ScaLAPACK</a> library,
+you need to define the following environment variables at compile time:  </p>
+<pre><code>BUILD_SCALAPACK=1
+SCALAPACK_SIZE=8
+</code></pre>
+<h2 id="interfaces-with-external-software-elpa">ELPA<a class="headerlink" href="#interfaces-with-external-software-elpa" title="Permanent link">&para;</a></h2>
+<p>To build NWChem with the <a href="https://gitlab.mpcdf.mpg.de/elpa/elpa">ELPA</a> eigensolver library,
+you need first to set the ScaLAPACK settings as described in the previous <a href="#interfaces-with-external-software-ScaLAPACK">section</a> and
+then you need to define the following environment variables at compile time:  </p>
+<pre><code>BUILD_ELPA=1
+</code></pre>
+<h2 id="interfaces-with-external-software-plumed">Plumed<a class="headerlink" href="#interfaces-with-external-software-plumed" title="Permanent link">&para;</a></h2>
+<p>The <code>BUILD_PLUMED</code> environment variable installs <a href="https://www.plumed.org/">Plumed</a> and
+interfaces it with the <a href="#gaussian-basis-aimd">qmd</a> module.</p>
+<h2 id="interfaces-with-external-software-libxc">Libxc<a class="headerlink" href="#interfaces-with-external-software-libxc" title="Permanent link">&para;</a></h2>
+<p>Building NWChem with the <a href="https://www.tddft.org/programs/libxc/">libxc</a> DFT library requires
+setting the environment variable <code>USE_LIBXC=1</code></p>
+<p>If you wish to use an existing libxc library, the following environment variables must be set:   </p>
+<ul>
+<li><code>LIBXC_INCLUDE</code>   </li>
+<li><code>LIBXC_LIB</code>     </li>
+</ul>
+<h2 id="interfaces-with-external-software-xtb">XTB<a class="headerlink" href="#interfaces-with-external-software-xtb" title="Permanent link">&para;</a></h2>
+<p><a href="#tblite.readthedocs.io.md">Light-weight tight-binding framework</a></p>
+<p>environment variable <code>USE_TBLITE=1</code></p>
+<p>add <code>xtb</code> to <code>NWCHEM_MODULES</code></p>
+<p>Example:</p>
+<pre><code>make nwchem_config NWCHEM_MODULES='tinyqmpw xtb'
+export USE_TBLITE=1
+make
+</code></pre></section><section class="print-page" id="software-supporting-nwchem"><h1 id="software-supporting-nwchem-software-supporting-nwchem">Software supporting NWChem<a class="headerlink" href="#software-supporting-nwchem-software-supporting-nwchem" title="Permanent link">&para;</a></h1>
 <h2 id="software-supporting-nwchem-overview">Overview<a class="headerlink" href="#software-supporting-nwchem-overview" title="Permanent link">&para;</a></h2>
 <p>While we have done our best to compile an exhaustive list of software
 using NWChem, we might have missed packages and/or incorrectly described
