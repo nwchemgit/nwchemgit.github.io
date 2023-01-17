@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#qmmm-eref" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -2197,6 +2202,105 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-eref" class="md-nav__link">
+    QM/MM eref
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-bqzone" class="md-nav__link">
+    QM/MM bqzone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-mm_charges" class="md-nav__link">
+    QM/MM mm_charges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-link_atoms" class="md-nav__link">
+    QM/MM link_atoms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-link_ecp" class="md-nav__link">
+    QM/MM link_ecp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-region" class="md-nav__link">
+    QM/MM region
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-method" class="md-nav__link">
+    QM/MM method
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-maxiter" class="md-nav__link">
+    QM/MM maxiter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-ncycles" class="md-nav__link">
+    QM/MM ncycles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-density" class="md-nav__link">
+    QM/MM density
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-rename" class="md-nav__link">
+    QM/MM rename
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-convergence" class="md-nav__link">
+    QM/MM convergence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qmmm-nsamples" class="md-nav__link">
+    QM/MM nsamples
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2227,6 +2331,8 @@
 
 
 
+  <h1>QMMM Parameters</h1>
+
 <p>The QM/MM interface
 parameters define the interaction between classical and quantum
 regions.</p>
@@ -2251,19 +2357,239 @@ regions.</p>
 </code></pre>
 <p>Detailed explanation of the subdirectives in the QM/MM input block is
 given below:</p>
-<p><a href="qmmm_eref.html">qmmm_eref</a></p>
-<p><a href="qmmm_bq_zone.html">qmmm_bq_zone</a></p>
-<p><a href="qmmm_mm_charges.html">qmmm_mm_charges</a></p>
-<p><a href="qmmm_link_atoms.html">qmmm_link_atoms</a></p>
-<p><a href="qmmm_link_ecp.html">qmmm_link_ecp</a></p>
-<p><a href="Qmmm_region.html">Qmmm_region</a></p>
-<p><a href="qmmm_method.html">qmmm_method</a></p>
-<p><a href="Qmmm_maxiter.html">Qmmm_maxiter</a></p>
-<p><a href="Qmmm_ncycles.html">Qmmm_ncycles</a></p>
-<p><a href="Qmmm_density.html">Qmmm_density</a></p>
-<p><a href="Qmmm_rename.html">Qmmm_rename</a></p>
-<p><a href="Qmmm_convergence.html">Qmmm_convergence</a></p>
-<p><a href="Qmmm_nsamples.html">Qmmm_nsamples</a></p>
+<h3 id="qmmm-eref">QM/MM eref<a class="headerlink" href="#qmmm-eref" title="Permanent link">&para;</a></h3>
+<pre><code>eref &lt;double precision default 0.0d0&gt;
+</code></pre>
+<p>This directive sets the relative zero of energy for the QM component of
+the system. The need for this directive arises from different
+definitions of zero energy for QM and MM methods. In QM methods the zero
+of energy for the system is typically vacuum. The zero of energy for the
+MM system is by definition of most parameterized force fields the
+separated atom energy. Therefore in many cases the energetics of the QM
+system will likely overshadow the MM component of the system. This
+imbalance can be corrected by suitably chosen value of <code>eref</code>. In most
+cases <em>IT IS OK</em> to leave <code>eref</code> at its default value of zero.</p>
+<h3 id="qmmm-bqzone">QM/MM bqzone<a class="headerlink" href="#qmmm-bqzone" title="Permanent link">&para;</a></h3>
+<pre><code>bqzone &lt;double precision default 9.0d0&gt;
+</code></pre>
+<p>This directive defines the radius of the zone (in angstroms) around the
+quantum region where classical residues/segments will be allowed to
+interact with quantum region both electrostatically and through Van der
+Waals interactions. It should be noted that classical atoms interacting
+with quantum region via bonded interactions are always included (this is
+true even if bqzone is set to 0). In addition, even if one atom of a
+given charged group is in the bqzone (residues are typically treated as
+one charged group) then the whole group will be included.</p>
+<h3 id="qmmm-mm_charges">QM/MM mm_charges<a class="headerlink" href="#qmmm-mm_charges" title="Permanent link">&para;</a></h3>
+<pre><code>mm_charges [exclude &lt;(none||all||linkbond||linkbond_H) default none&gt;]
+           [expand  &lt;none||all||solute||solvent&gt; default none]
+           [update  &lt;integer default 0&gt;]
+</code></pre>
+<p>This directive controls treatment of classical point (MM) charges that
+are interacting with QM region. For most QM/MM applications the use of
+directive will be not be necessary. Its absence would be simply mean
+that all MM charges within the cuttof distance ( as specified by cutoff
+) as well those belonging to the charges groups directly bonded to QM
+region will be allowed to interact with QM region.</p>
+<p>Keyword <code>exclude</code> specifies the subset MM charges that will be
+specifically excluded from interacting with QM region.</p>
+<ul>
+<li><code>none</code> default value reverts to the original set of MM charges as
+    described above.</li>
+<li><code>all</code> excludes all MM charges from interacting with QM region (&ldquo;gas
+    phase&rdquo; calculation).</li>
+<li><code>linkbond</code> excludes MM charges that are connected to a quantum region
+    by at most two bonds,</li>
+<li><code>linkbond_H</code> similar to <code>linkbond</code> but excludes only hydrogen atoms.</li>
+</ul>
+<p>Keyword <code>expand</code> expands the set MM charges interacting with QM region
+beyond the limits imposed by cutoff value.</p>
+<ul>
+<li><code>none</code> default value reverts to the original set of MM charges</li>
+<li><code>solute</code> expands electrostatic interaction to all solute MM charges</li>
+<li><code>solvent</code> expands electrostatic interaction to all solvent MM charges</li>
+<li><code>all</code> expands electrostatic interaction to all MM charges</li>
+</ul>
+<p>Keyword <code>update</code> specifies how often list of MM charges will be updated in
+the course of the calculation. Default behavior is not to update.</p>
+<h3 id="qmmm-link_atoms">QM/MM link_atoms<a class="headerlink" href="#qmmm-link_atoms" title="Permanent link">&para;</a></h3>
+<pre><code>link_atoms &lt;(hydrogen||halogen) default halogen&gt;
+</code></pre>
+<p>This directive controls the treatment of bonds crossing the boundary
+between quantum and classical regions. The use of hydrogen keyword will
+trigger truncation of such bonds with hydrogen link atoms. The position
+of the hydrogen atom will be calculated from the coordinates of the
+quantum and classical atom of the truncated bond using the following
+expression</p>
+<p>
+<script type="math/tex; mode=display">\mathbf{R}_{hlink} = (1-g)\mathbf{R}_{quant} + g*\mathbf{R}_{class}</script>
+</p>
+<p>where <em>g</em> is the scale factor set at 0.709</p>
+<p>Setting <code>link_atoms</code> to <code>halogen</code> will result in the modification of the
+quantum atom of the truncated bond to the fluoride atom. This
+fluoride atom will typically carry an effective core potential (ECP)
+basis set as specified in <a href="#qmmm-link_ecp"><code>link_ecp</code></a> directive.</p>
+<h3 id="qmmm-link_ecp">QM/MM link_ecp<a class="headerlink" href="#qmmm-link_ecp" title="Permanent link">&para;</a></h3>
+<pre><code>link_ecp &lt;(auto||user)default auto&gt; 
+</code></pre>
+<p>This directive specifies ECP basis set on fluoride link atoms. If set to
+auto the ECP basis set given by Zhang, Lee, Yang for 6-31G<em> basis
+will be used. Strictly speaking, this implies the use of 6-31G</em>
+spherical basis as the main basis set. If other choices are desired then
+keyword user should be used and ECP basis set should be entered
+separatelly following the format given in section dealing with <a href="ECP.html">ECPs</a> .
+The name tag for fluoride link atoms is <code>F_L</code>.</p>
+<h3 id="qmmm-region">QM/MM region<a class="headerlink" href="#qmmm-region" title="Permanent link">&para;</a></h3>
+<pre><code>region  &lt; [region1]  [region2]  [region3] &gt;
+</code></pre>
+<p>This directive specifies active region(s) for optimization, dynamics,
+frequency, and free energy calculations. Up to three regions can be
+specified, those are limited to</p>
+<ul>
+<li><code>qm</code> - all quantum atoms </li>
+<li><code>qmlink</code> - quantum and link atoms <span id="qmlink"></span></li>
+<li><code>mm_solute</code> - all classical solute atoms excluding link atoms</li>
+<li><code>solute</code> - all solute atoms including quantum</li>
+<li><code>solvent</code> all solvent atoms</li>
+<li><code>mm</code> all classical solute and solvent atoms, excluding link atoms</li>
+<li><code>all</code> all atoms</li>
+</ul>
+<p>Only the first region will be used in dynamics, frequency, and free
+energy calculations. In the geometry optimizations, all three regions
+will be optimized using the following optimization methods</p>
+<pre><code>    if (region.eq.&quot;qm&quot;) then  
+       method = &quot;bfgs&quot;  
+     else if (region.eq.&quot;qmlink&quot;) then  
+       method = &quot;bfgs&quot;  
+     else if (region.eq.&quot;mm_solute&quot;) then  
+       method = &quot;lbfgs&quot;  
+     else if (region.eq.&quot;mm&quot;) then  
+       method = &quot;sd&quot;  
+     else if (region.eq.&quot;solute&quot;) then  
+       method = &quot;sd&quot;  
+     else if (region.eq.&quot;solvent&quot;) then  
+       method = &quot;sd&quot;  
+     else if (region.eq.&quot;all&quot;) then  
+       method = &quot;sd&quot;  
+     end if
+</code></pre>
+<p>where &ldquo;bfgs&rdquo; stands for Broyden–Fletcher–Goldfarb–Shanno (BFGS)
+optimization method, &ldquo;lbfgs&rdquo; limited memory version of quasi-newton, and
+&ldquo;sd&rdquo; simple steepest descent algorithm. These assignments can be
+potentially altered using <a href="qmmm_method.html">method</a> directive.</p>
+<h3 id="qmmm-method">QM/MM method<a class="headerlink" href="#qmmm-method" title="Permanent link">&para;</a></h3>
+<pre><code>  method   [method1]  [method2]  [method3]
+</code></pre>
+<p>This directive controls which optimization algorithm will be used for the regions as defined by [[qmmm_region|Qmmm_region]] directive.
+The allowed values are <code>bfgs</code> aka <a href="Geometry-Optimization.html#geometry-optimization-with-driver">DRIVER</a>,
+<code>lbfgs</code> limited memory version of quasi-newton,
+and <code>sd</code> simple steepest descent algorithm.
+The use of this directive is not recommended in all but special cases. In particular, 
+<code>bfgs</code> should be used for QM region if there are any constraints,
+<code>sd</code> method should always be used for classical solute and solvent atoms with shake constraints.</p>
+<h3 id="qmmm-maxiter">QM/MM maxiter<a class="headerlink" href="#qmmm-maxiter" title="Permanent link">&para;</a></h3>
+<pre><code> maxiter  [maxiter1] [maxiter2] [maxiter3]
+</code></pre>
+<p>This directive controls maximum number of iterations for the optimizations of regions as defined by by regions directive. User is strongly encouraged to set this directive explicitly as the default value shown below may not be appropriate in all the cases:</p>
+<pre><code>      if(region.eq.&quot;qm&quot;) then
+        maxiter = 20
+      else if (region.eq.&quot;qmlink&quot;) then
+        maxiter = 20
+      else if (region.eq.&quot;mm&quot;) then
+        maxiter = 100
+      else if (region.eq.&quot;solvent&quot;) then
+        maxiter = 100
+      else
+        maxiter = 50
+      end if
+</code></pre>
+<h3 id="qmmm-ncycles">QM/MM ncycles<a class="headerlink" href="#qmmm-ncycles" title="Permanent link">&para;</a></h3>
+<pre><code> ncycles  &lt; [number] default 1 &gt;
+</code></pre>
+<p>This directive controls the number of optimization cycles where the defined regions will be optimized in succession, or number of sampling cycles in free energy calculations.</p>
+<h3 id="qmmm-density">QM/MM density<a class="headerlink" href="#qmmm-density" title="Permanent link">&para;</a></h3>
+<pre><code>density  [espfit] [static] [dynamical] default dynamical
+</code></pre>
+<p>This directive controls the electrostatic representation of <em>fixed</em> QM
+region during optimization/dynamics of classical regions. It has no
+effect when position of QM atoms are changing.</p>
+<ul>
+<li>
+<p><strong>dynamical</strong> is an option where QM region is treated the standard
+    way, through the recalculation of the wavefunction calculated and
+    the resulting electron density is used to compute electrostatic
+    interactions with classical atoms. This option is the most expensive
+    one and becomes impractical for large scale optimizations.</p>
+</li>
+<li>
+<p><strong>static</strong> option will not recalculate QM wavefunction but will
+    still use full electron density in the computations of electrostatic
+    interactions.</p>
+</li>
+<li>
+<p><strong>espfit</strong> option will not recalculate QM wavefunction nor it will
+    use full electron density. Instead, a set of ESP charges for QM
+    region will be calculated and used to compute electrostatic
+    interactions with the MM regions. This option is the most efficient
+    and is strongly recommended for large systems.</p>
+</li>
+</ul>
+<p>Note that both &ldquo;static&rdquo; and &ldquo;espfit&rdquo; options do require the presence of
+the movecs file. It is typically available as part as part of
+calculation process. Otherwise it can be generated by running qmmm
+energy calculation.</p>
+<p>In most calculations default value for <strong>density</strong> would <strong>dynamical</strong>,
+with the exception of free energy calculations where default setting
+<strong>espfit</strong> will be used.</p>
+<h3 id="qmmm-rename">QM/MM rename<a class="headerlink" href="#qmmm-rename" title="Permanent link">&para;</a></h3>
+<p>This directive is allows to rename atoms in the QM region, based on the
+external file which specifies desired name( (1st column) and its PDB
+index (2nd column). The file is assumed to be located in the current run
+directory.</p>
+<p>For example, if we need to rename atoms CB and OG that are part of our
+QM region</p>
+<pre><code> ...  
+ ATOM     13  N   SER     2       0.211   0.284  -1.377        0.00     N  
+ ATOM     14  H   SER     2       0.886   1.158  -1.257        0.00     H  
+ ATOM     15  CA  SER     2      -0.320  -0.351  -0.166        0.00     C  
+ ATOM     16  HA  SER     2      -1.405  -0.183  -0.132        0.00     H  
+ ATOM     17  CB  SER     2      -0.001  -1.879  -0.106        0.00     C  
+ ATOM     18 2HB  SER     2       1.092  -2.012  -0.038        0.00     H  
+ ATOM     19 3HB  SER     2      -0.469  -2.317   0.784        0.00     H  
+ ATOM     20  OG  SER     2      -0.452  -2.678  -1.192        0.00     O  
+ ATOM     21  HG  SER     2      -1.351  -2.421  -1.392        0.00     H  
+ ATOM     22  C   SER     2       0.252   0.338   1.076        0.00     C  
+ ...
+</code></pre>
+<p>the following qmmm block can be used</p>
+<pre><code> ...  
+ qmmm  
+  ...  
+  rename name.dat  
+  ...  
+ end  
+
+ task qmmm dft energy
+</code></pre>
+<p>where name.dat file</p>
+<pre><code>C1 17
+OX 20
+</code></pre>
+<p>Here atoms are identified by the corresponding PDB atom index and
+renamed from default element based naming to C1 and OX.</p>
+<h3 id="qmmm-convergence">QM/MM convergence<a class="headerlink" href="#qmmm-convergence" title="Permanent link">&para;</a></h3>
+<pre><code>convergence  &lt; double precision etol default 1.0d-4&gt;
+</code></pre>
+<p>This directive controls convergence of geometry optimization. The
+optimization is deemed converged if absolute difference in total
+energies between consecutive optimization cycles becomes less than
+<em>etol</em>.</p>
+<h3 id="qmmm-nsamples">QM/MM nsamples<a class="headerlink" href="#qmmm-nsamples" title="Permanent link">&para;</a></h3>
+<pre><code>nsamples
+</code></pre>
+<p>This directive is required for <a href="QMMM_Free_Energy.html#nsamples">free energy
+calculations</a> and defines number
+of samples for averaging during single cycle.</p>
 
 
 
