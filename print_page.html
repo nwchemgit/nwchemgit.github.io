@@ -33602,7 +33602,8 @@ setting the environment variable <code>USE_LIBXC=1</code>. </p>
 <p>This procedure requires an internet connection to dowload the Libxc source. <br />
 Instead, if you wish to use an existing libxc library, the following environment variables must be set, after having unset <code>USE_LIBXC</code>:   </p>
 <ul>
-<li><code>LIBXC_INCLUDE</code>   location of the libxc header   files</li>
+<li><code>LIBXC_INCLUDE</code>   location of the libxc C header files</li>
+<li><code>LIBXC_MODDIR</code>   location of the libxc fortran90 module files</li>
 <li><code>LIBXC_LIB</code>     location of the libxc libraries files</li>
 </ul>
 <p>For example, for Debian/Ubuntu systems, the following is needed after having installed the <code>libxc-dev</code> package</p>
@@ -33613,7 +33614,8 @@ Instead, if you wish to use an existing libxc library, the following environment
 <p>For example, for Fedora systems, the following is needed after having installed the <code>libxc-devel</code> package</p>
 <pre><code>    unset USE_LIBXC
     export LIBXC_LIB=/usr/lib64
-    export LIBXC_INCLUDE=&quot;/usr/include -I/usr/lib64/gfortran/modules&quot;
+    export LIBXC_INCLUDE=/usr/include 
+    export LIBXC_MODDIR=/usr/lib64/gfortran/modules
 </code></pre>
 <h2 id="interfaces-with-external-software-xtb">XTB<a class="headerlink" href="#interfaces-with-external-software-xtb" title="Permanent link">&para;</a></h2>
 <p>Building NWChem with the Light-weight tight-binding framework <a href="https://tblite.readthedocs.io">tblite</a>
