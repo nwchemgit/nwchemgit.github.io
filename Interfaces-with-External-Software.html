@@ -2415,29 +2415,41 @@ you need to define the following environment variables at compile time:  </p>
 <pre><code>BUILD_OPENBLAS=1
 BLAS_SIZE=8
 </code></pre>
+<p>This procedure requires an internet connection to dowload the OpenBLAS source.  <br />
+Instead, to use a pre-compiled OpenBLAS library, the <code>BLASOPT</code>, <code>LAPACK_LIB</code> and <code>BLAS_SIZE</code> environment variable need to be set.</p>
 <h2 id="scalapack">ScaLAPACK<a class="headerlink" href="#scalapack" title="Permanent link">&para;</a></h2>
 <p>To build NWChem with the <a href="https://github.com/Reference-ScaLAPACK/scalapack">ScaLAPACK</a> library,
 you need to define the following environment variables at compile time:  </p>
 <pre><code>BUILD_SCALAPACK=1
 SCALAPACK_SIZE=8
 </code></pre>
+<p>This procedure requires an internet connection to dowload the OpenBLAS source.  <br />
+Instead, to use a pre-compiled ScaLAPACK library, the <code>SCALAPACK_LIB</code>  and <code>SCALAPACK_SIZE</code> environment variable need to be set.</p>
 <h2 id="elpa">ELPA<a class="headerlink" href="#elpa" title="Permanent link">&para;</a></h2>
 <p>To build NWChem with the <a href="https://gitlab.mpcdf.mpg.de/elpa/elpa">ELPA</a> eigensolver library,
 you need first to set the ScaLAPACK settings as described in the previous <a href="#ScaLAPACK">section</a> and
 then you need to define the following environment variables at compile time:  </p>
 <pre><code>BUILD_ELPA=1
 </code></pre>
+<p>This procedure requires an internet connection to dowload the OpenBLAS source. <br />
+Instead, to use a pre-compiled ELPA library, the <code>ELPA</code>  and <code>ELPA_SIZE</code> environment variable need to be set.</p>
 <h2 id="plumed">Plumed<a class="headerlink" href="#plumed" title="Permanent link">&para;</a></h2>
 <p>The <code>BUILD_PLUMED</code> environment variable installs <a href="https://www.plumed.org/">Plumed</a> and
 interfaces it with the <a href="Gaussian-Basis-AIMD.html">qmd</a> module.</p>
 <h2 id="libxc">Libxc<a class="headerlink" href="#libxc" title="Permanent link">&para;</a></h2>
 <p>Building NWChem with the <a href="https://www.tddft.org/programs/libxc/">libxc</a> DFT library requires
-setting the environment variable <code>USE_LIBXC=1</code></p>
-<p>If you wish to use an existing libxc library, the following environment variables must be set:   </p>
+setting the environment variable <code>USE_LIBXC=1</code>. </p>
+<p>This procedure requires an internet connection to dowload the Libxc source. <br />
+Instead, if you wish to use an existing libxc library, the following environment variables must be set, after having unset <code>USE_LIBXC</code>:   </p>
 <ul>
 <li><code>LIBXC_INCLUDE</code>   </li>
 <li><code>LIBXC_LIB</code>     </li>
 </ul>
+<p>For example, for Debian/Ubuntu systems, the following is needed</p>
+<pre><code>    unset USE_LIBXC
+    export LIBXC_LIB=/usr/lib/x86_64-linux-gnu
+    export LIBXC_INCLUDE=/usr/include
+</code></pre>
 <h2 id="xtb">XTB<a class="headerlink" href="#xtb" title="Permanent link">&para;</a></h2>
 <p>Building NWChem with the Light-weight tight-binding framework <a href="https://tblite.readthedocs.io">tblite</a>
 requires  </p>
