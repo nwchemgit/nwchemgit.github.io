@@ -7513,6 +7513,23 @@ input</a>.</p>
 <p>Many alternative exchange and correlation functionals are available to
 the user as listed in the table below. The following sections describe
 how to use these options.</p>
+<h3 id="density-functional-theory-for-molecules-libxc-interface-new-in-nwchem-720">Libxc interface <strong><em>New in NWChem 7.2.0</em></strong>:<a class="headerlink" href="#density-functional-theory-for-molecules-libxc-interface-new-in-nwchem-720" title="Permanent link">&para;</a></h3>
+<p>If NWChem is compiled by linking it with the <a href="https://www.tddft.org/programs/libxc/">libxc</a> DFT library
+(as described in the <a href="#interfaces-with-external-software-libxc">Interfaces with External Software</a> section),
+the user will be able to use most of the XC functionals available in libxc.<br />
+The input syntax requires to use the <a href="#density-functional-theory-for-molecules-xc-and-decomp-exchange-correlation-potentials">xc</a> keyword followed by
+the functionals name from 
+<a href="https://tddft.org/programs/libxc/functionals/">list available in Libxc</a></p>
+<p>For example, the following input for the NWChem libxc interface</p>
+<pre><code>dft
+ xc gga_x_pbe 1.0 gga_x_pbe 1.0
+end
+</code></pre>
+<p>while trigger use of the same PBE96 functionals as in the NWChem built-in interface</p>
+<pre><code>dft
+ xc xpbe96 1.0 cpbe96 1.0
+end
+</code></pre>
 <h3 id="density-functional-theory-for-molecules-exchange-correlation-functionals">Exchange-Correlation Functionals<a class="headerlink" href="#density-functional-theory-for-molecules-exchange-correlation-functionals" title="Permanent link">&para;</a></h3>
 <p>There are several Exchange and Correlation functionals in addition to
 the default <code>slater</code> and <code>vwn_5</code> functionals. These are either local or
