@@ -33483,7 +33483,14 @@ If you need to use spherical functions, the beginning of the basis input field n
 <h2 id="faq-starting-nwchem-with-mpirun-np-1-crashes">Starting NWChem with <code>mpirun -np 1</code> crashes<a class="headerlink" href="#faq-starting-nwchem-with-mpirun-np-1-crashes" title="Permanent link">&para;</a></h2>
 <p>This is most likely due to the fact that NWChem was compiled with the setting <code>ARMCI_NETWORK=MPI-PR</code>.<br />
 This is the expected behavior, since <code>ARMCI_NETWORK=MPI-PR</code> requires asking for  for n+1 processes. In other words, a serial run (with a single computing process) is triggered by executing <code>mpirun -np 2</code>.<br />
-If you would prefer  <code>mpirun -np 1</code> to work, other choice of <code>ARMCI_NETWORK</code> are possible as described in the <a href="#armci">ARMCI documentation</a>.</p></section><section class="print-page" id="tutorials"><h1 id="tutorials-tutorials">Tutorials<a class="headerlink" href="#tutorials-tutorials" title="Permanent link">&para;</a></h1>
+If you would prefer  <code>mpirun -np 1</code> to work, other choice of <code>ARMCI_NETWORK</code> are possible as described in the <a href="#armci">ARMCI documentation</a>.</p>
+<h2 id="faq-nb_wait_for_handle-error">nb_wait_for_handle Error<a class="headerlink" href="#faq-nb_wait_for_handle-error" title="Permanent link">&para;</a></h2>
+<p>If you get the following error </p>
+<pre><code>{1} nb_wait_for_handle Error: all user-level nonblocking handles have been exhaustedapplication called MPI_Abort(comm=0x84000002, -1)
+</code></pre>
+<p>you can fix it by executing the following command</p>
+<pre><code>export COMEX_MAX_NB_OUTSTANDING=16
+</code></pre></section><section class="print-page" id="tutorials"><h1 id="tutorials-tutorials">Tutorials<a class="headerlink" href="#tutorials-tutorials" title="Permanent link">&para;</a></h1>
 <h2 id="tutorials-links-to-material-of-past-nwchem-tutorials">Links to material of past NWChem Tutorials<a class="headerlink" href="#tutorials-links-to-material-of-past-nwchem-tutorials" title="Permanent link">&para;</a></h2>
 <ul>
 <li>

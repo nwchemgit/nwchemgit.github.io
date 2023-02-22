@@ -2128,6 +2128,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#nb_wait_for_handle-error" class="md-nav__link">
+    nb_wait_for_handle Error
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2454,6 +2461,13 @@
         <li class="md-nav__item">
   <a href="#starting-nwchem-with-mpirun-np-1-crashes" class="md-nav__link">
     Starting NWChem with mpirun -np 1 crashes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nb_wait_for_handle-error" class="md-nav__link">
+    nb_wait_for_handle Error
   </a>
   
 </li>
@@ -2846,6 +2860,13 @@ If you need to use spherical functions, the beginning of the basis input field n
 <p>This is most likely due to the fact that NWChem was compiled with the setting <code>ARMCI_NETWORK=MPI-PR</code>.<br />
 This is the expected behavior, since <code>ARMCI_NETWORK=MPI-PR</code> requires asking for  for n+1 processes. In other words, a serial run (with a single computing process) is triggered by executing <code>mpirun -np 2</code>.<br />
 If you would prefer  <code>mpirun -np 1</code> to work, other choice of <code>ARMCI_NETWORK</code> are possible as described in the <a href="ARMCI.html">ARMCI documentation</a>.</p>
+<h2 id="nb_wait_for_handle-error">nb_wait_for_handle Error<a class="headerlink" href="#nb_wait_for_handle-error" title="Permanent link">&para;</a></h2>
+<p>If you get the following error </p>
+<pre><code>{1} nb_wait_for_handle Error: all user-level nonblocking handles have been exhaustedapplication called MPI_Abort(comm=0x84000002, -1)
+</code></pre>
+<p>you can fix it by executing the following command</p>
+<pre><code>export COMEX_MAX_NB_OUTSTANDING=16
+</code></pre>
 
 
 
