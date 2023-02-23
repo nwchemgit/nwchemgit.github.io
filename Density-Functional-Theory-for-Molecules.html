@@ -3355,7 +3355,11 @@ computed as</p>
 <p>where  </p>
 <p>a<sub>0</sub> = 0.20, a<sub>X</sub> = 0.72, a<sub>C</sub> = 0.81  </p>
 <h2 id="xc-functionals-summary">XC Functionals Summary<a class="headerlink" href="#xc-functionals-summary" title="Permanent link">&para;</a></h2>
-<table>
+<table id="_table-1">
+<caption style="caption-side:bottom"><span>Table&nbsp;1:</span> Available Exchange (X) and Correlation (C) functionals. GGA is
+the Generalized Gradient Approximation, and Meta refers to Meta-GGAs.
+The column 2nd refers to second derivatives of the energy with respect
+to nuclear position.  </caption>
 <thead>
 <tr>
 <th>Keyword</th>
@@ -4559,12 +4563,18 @@ computed as</p>
 <td>Y</td>
 <td><sup id="fnref_footnote_102"><a class="footnote-ref" href="#fn_footnote_102">103</a></sup></td>
 </tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<p>Table of available Exchange (X) and Correlation (C) functionals. GGA is
-the Generalized Gradient Approximation, and Meta refers to Meta-GGAs.
-The column 2nd refers to second derivatives of the energy with respect
-to nuclear position.  </p>
 <h3 id="meta-gga-functionals">Meta-GGA Functionals<a class="headerlink" href="#meta-gga-functionals" title="Permanent link">&para;</a></h3>
 <p>One way to calculate meta-GGA energies is to use orbitals and densities
 from fully self-consistent GGA or LDA calculations and run them in one
@@ -5122,7 +5132,6 @@ level of accuracy with the keywords; <code>xcoarse</code>, <code>coarse</code>, 
 <p>Our intent is to have a numerical integration scheme which would give us
 approximately the accuracy defined below regardless of molecular
 composition.</p>
-<p><center></p>
 <table>
 <thead>
 <tr>
@@ -5157,7 +5166,6 @@ composition.</p>
 </tr>
 </tbody>
 </table>
-<p></center></p>
 <p>In order to determine the level of radial and angular quadrature needed
 to give us the target accuracy, we computed total DFT energies at the LDA
 level of theory for many homonuclear atomic, diatomic and triatomic
@@ -5177,7 +5185,6 @@ depending on the row it is in (in the periodic table) and the desired
 accuracy. Note, differing atom types in a given molecular system will
 most likely have differing associated numerical grids. The intent is to
 generate the desired energy accuracy (at the expense of speed of the calculation).</p>
-<p><center></p>
 <table>
 <thead>
 <tr>
@@ -5214,11 +5221,9 @@ generate the desired energy accuracy (at the expense of speed of the calculation
 </tr>
 </tbody>
 </table>
-<p></center></p>
 <p>Program default number of radial and angular shells empirically
 determined for Row 1 atoms (Li &rarr; F) to reach the desired
 accuracies.</p>
-<p><center></p>
 <table>
 <thead>
 <tr>
@@ -5260,11 +5265,9 @@ accuracies.</p>
 </tr>
 </tbody>
 </table>
-<p></center></p>
 <p>Program default number of radial and angular shells empirically
 determined for Row 2 atoms (Na &rarr; Cl) to reach the desired
 accuracies.</p>
-<p><center></p>
 <table>
 <thead>
 <tr>
@@ -5306,11 +5309,9 @@ accuracies.</p>
 </tr>
 </tbody>
 </table>
-<p></center></p>
 <p>Program default number of radial and angular shells empirically
 determined for Row 3 atoms (K &rarr; Br) to reach the desired
 accuracies.</p>
-<p><center></p>
 <table>
 <thead>
 <tr>
@@ -5352,7 +5353,6 @@ accuracies.</p>
 </tr>
 </tbody>
 </table>
-<p></center></p>
 <p>Program default number of radial and angular shells empirically
 determined for Row 4 atoms (Rb &rarr; I) to reach the desired
 accuracies.</p>
@@ -5379,8 +5379,8 @@ The input for this type of grid takes the form,</p>
 </code></pre>
 <p>In this context the variable <code>iangquad</code> specifies a certain number of
 angular points as indicated by the table below:</p>
-<p><center></p>
-<table>
+<table id="_table-2">
+<caption style="caption-side:bottom"><span>Table&nbsp;2:</span> List of Lebedev quadratures</caption>
 <thead>
 <tr>
 <th>IANGQUAD</th>
@@ -5534,10 +5534,13 @@ angular points as indicated by the table below:</p>
 <td>5810</td>
 <td>131</td>
 </tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </tbody>
 </table>
-<p>List of Lebedev quadratures</p>
-<p></center></p>
 <p>Therefore the user can specify any number of radial points along with
 the level of angular quadrature (1-29).</p>
 <p>The user can also specify grid parameters specific for a given atom
@@ -5871,7 +5874,6 @@ and the website <a href="http://schooner.chem.dal.ca/wiki/XDM">http://schooner.c
 Please see some examples using this directive in <a href="#sample-input-file">Sample input
 file</a>. Known controllable print options
 are:</p>
-<p><center></p>
 <table>
 <thead>
 <tr>
@@ -6019,7 +6021,6 @@ are:</p>
 </tbody>
 </table>
 <p>DFT Print Control Specifications</p>
-<p></center></p>
 <h1 id="spin-orbit-density-functional-theory-sodft">Spin-Orbit Density Functional Theory (SODFT)<a class="headerlink" href="#spin-orbit-density-functional-theory-sodft" title="Permanent link">&para;</a></h1>
 <p>The spin-orbit DFT module (SODFT) in the NWChem code allows for the variational
 treatment of the one-electron spin-orbit operator within the DFT framework. Calculations
