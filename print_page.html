@@ -26691,6 +26691,37 @@ NMR parameters of an open-shell system. All calculations are compatible
 with the ZORA model potential approach.</p>
 <p>For theoretical and computational details, please refer to 
 references<sup id="properties-fnref_footnote_1"><a class="footnote-ref" href="#properties-fn_footnote_1">1</a></sup><sup id="fnref_footnote_2"><a class="footnote-ref" href="#properties-fn_footnote_2">2</a></sup><sup id="fnref_footnote_3"><a class="footnote-ref" href="#properties-fn_footnote_3">3</a></sup>.</p>
+<h4 id="properties-nmr-input-example">NMR: Input Example<a class="headerlink" href="#properties-nmr-input-example" title="Permanent link">&para;</a></h4>
+<pre><code>geometry  nocenter
+  C    0.00000000    0.00000000    0.00000000
+  O    1.18337200    0.00000000    0.00000000
+  H    -.63151821    0.94387462    0.00000000
+end
+
+basis
+ &quot;*&quot; library 6-311G**
+end
+property
+ efieldgradz4 1 3
+ shielding 2 1 2
+ hyperfine 2 1 3
+ gshift
+end
+
+relativistic
+  zora on
+  zora:cutoff_NMR 1d-8
+  zora:cutoff 1d-30
+end
+
+dft
+mult 2
+xc becke88 perdew86
+end
+
+task dft property
+</code></pre>
+<h3 id="properties-center-center-of-expansion-for-multipole-calculations">CENTER: Center of expansion for multipole calculations<a class="headerlink" href="#properties-center-center-of-expansion-for-multipole-calculations" title="Permanent link">&para;</a></h3>
 <p>The user also has the option to choose the center of expansion for the
 dipole, quadrupole, and octupole calculations.</p>
 <pre><code>   [CENTER ((com || coc || origin || arb &lt;real x y z&gt;) default coc)]
