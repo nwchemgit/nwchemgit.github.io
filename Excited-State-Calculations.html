@@ -745,6 +745,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#simpleso-simplified-spin-orbit-coupling" class="md-nav__link">
+    SIMPLESO: simplified Spin-Orbit coupling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#algorithm-algorithms-for-tensor-contractions" class="md-nav__link">
     ALGORITHM: algorithms for tensor contractions
   </a>
@@ -2571,6 +2578,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#simpleso-simplified-spin-orbit-coupling" class="md-nav__link">
+    SIMPLESO: simplified Spin-Orbit coupling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#algorithm-algorithms-for-tensor-contractions" class="md-nav__link">
     ALGORITHM: algorithms for tensor contractions
   </a>
@@ -2794,7 +2808,8 @@ block. The syntax is:</p>
    [GRAD, END]  
    [CDSPECTRUM]  
    [GIAO]
-   [VELOCITY]  
+   [VELOCITY]
+   [SIMPLESO]
    [ALGORITHM &lt;integer algorithm default 0&gt;]  
    [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \  
             [virtual &lt;integer nfzv default 0&gt;]]  
@@ -2956,6 +2971,41 @@ gradients</p>
 We recommend to use the <code>GIAO</code> keyword</p>
 <h3 id="velocity-velocity-gauge">VELOCITY: velocity gauge<a class="headerlink" href="#velocity-velocity-gauge" title="Permanent link">&para;</a></h3>
 <p>Perform CD spectrum calculations with the velocity gauge.</p>
+<h3 id="simpleso-simplified-spin-orbit-coupling">SIMPLESO: simplified Spin-Orbit coupling<a class="headerlink" href="#simpleso-simplified-spin-orbit-coupling" title="Permanent link">&para;</a></h3>
+<p>Perform excited states calculations with a simplied Spin-Orbit coupling that uses
+eigenvalues from a <a href="Density-Functional-Theory-for-Molecules.html#spin-orbit-density-functional-theory-sodft">spin-orbit calculation</a>,
+instead of a standard dft calculation.<br />
+Here is a snippet of an input example (please notice the use of molecular orbitals).</p>
+<pre><code>start au2
+ geometry
+ au 0 0 1
+ au 0 0 -1
+ symmetry d2h
+end
+#basis sets, ecp and so-ecp skipped  for simplicity
+...
+dft
+ odft
+ vectors output au2_noso.mos
+end
+task dft
+dft
+ vectors input au2_noso.mos output au2_so.mos
+end
+task sodft
+dft
+ odft
+ vectors input u2_noso.mos
+end
+
+tddft
+  simpleso au2.evals
+  nroots 1
+  notriplet
+end
+
+task tddft
+</code></pre>
 <h3 id="algorithm-algorithms-for-tensor-contractions">ALGORITHM: algorithms for tensor contractions<a class="headerlink" href="#algorithm-algorithms-for-tensor-contractions" title="Permanent link">&para;</a></h3>
 <p>There are four distinct algorithms to choose from, and the default value
 of 0 (optimal) means that the program makes an optimal choice from the
