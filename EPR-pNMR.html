@@ -2235,7 +2235,8 @@
   <h1>EPR pNMR</h1>
 
 <h3 id="epr-and-paramagnetic-nmr-nwchem-tutorial">EPR and Paramagnetic NMR NWChem Tutorial<a class="headerlink" href="#epr-and-paramagnetic-nmr-nwchem-tutorial" title="Permanent link">&para;</a></h3>
-<p>This tutorial involves tensor/matrix operations, which can be readily done with Octave,
+<p>This tutorial involves tensor/matrix operations,
+which can be readily done with <a href="https://octave.org/">Octave</a>,
 a GNU license MATLAB-like program,
 freely available in any Linux or Cygwin (Windows) distribution.
 Octave will be
@@ -2284,7 +2285,7 @@ it is calculated from the measured gyromagnetic ratio
 <pre><code>&gt;gammaC = 67.262;
 &gt;gnC = gammaC*(h/(2*pi))/BN*(10^6);
 </code></pre>
-<p>Note that the example system CH3 ground state is a doublet.</p>
+<p>Note that the example system CH<sub>3</sub> ground state is a doublet.</p>
 <pre><code>&gt;S = 0.5;
 </code></pre>
 <p>Since paramagnetic NMR is temperature-dependent, specify a temperature in Kelvin:</p>
@@ -2310,162 +2311,121 @@ ans =
 2.0031
 2.0031
 </code></pre>
-<p>To obtain g<sub>iso</sub> , take the trace of g and divide by 3:
-````</p>
-<blockquote>
-<p>trace(GTens)/3
-2.0028</p>
-</blockquote>
-<pre><code>Reconciling the A-tensor from NWChem calculation:
-Enter the total A tensor (for convenience use the tensor that is in MHz) for the first carbon atom listed:
+<p>To obtain g<sub>iso</sub> , take the trace of g and divide by 3:</p>
+<pre><code>&gt;trace(GTens)/3
+2.0028
 </code></pre>
-<blockquote>
-<p>ATensC = [428.6293 -58.2145 69.3689;-58.2145 293.3841 -25.7459; 69.3689 -
-25.7459 302.4571];</p>
-</blockquote>
-<pre><code>Correct this matrix by rotating it into the reference frame of the g-tensor (obtained in the last section):
+<p>Reconciling the A-tensor from NWChem calculation:
+Enter the total A tensor (for convenience use the tensor that is in MHz) for the first carbon atom listed:</p>
+<pre><code>&gt;ATensC = [428.6293 -58.2145 69.3689;-58.2145 293.3841 -25.7459; 69.3689 -
+25.7459 302.4571];
 </code></pre>
-<blockquote>
-<p>ATensC_Corr = (ATensC/ge)*GTens
+<p>Correct this matrix by rotating it into the reference frame of the g-tensor (obtained in the last section):</p>
+<pre><code>&gt;ATensC_Corr = (ATensC/ge)*GTens
 428.651 -58.184 69.332
 -58.184 293.477 -25.732
-69.332 -25.732 302.546</p>
-</blockquote>
-<pre><code>To find Axx, Ayy, Azz, find the eigenvalues of AAT and take the square root of the eigenvalues:
+69.332 -25.732 302.546
 </code></pre>
-<blockquote>
-<p>sqrt(eig(ATensC_Corr*transpose(ATensC_Corr)))
+<p>To find Axx, Ayy, Azz, find the eigenvalues of AAT and take the square root of the eigenvalues:</p>
+<pre><code>&gt; sqrt(eig(ATensC_Corr*transpose(ATensC_Corr)))
 ans =
 271.88
 271.88
-480.91</p>
-</blockquote>
-<pre><code>To calculate Aiso , take the trace of the corrected A tensor and divide by 3:
+480.91
 </code></pre>
-<blockquote>
-<p>trace(ATensC_Corr)/3
-341.56</p>
-</blockquote>
-<pre><code>Reconciling the pNMR parameters from NWChem calculation:
-Calculate the dipolar form of the corrected A tensor for the carbon atom:
+<p>To calculate A<sub>iso</sub> , take the trace of the corrected A tensor and divide by 3:</p>
+<pre><code>&gt;trace(ATensC_Corr)/3
+341.56
 </code></pre>
-<blockquote>
-<p>ATensC_Corr_Dip = ATensC_Corr – (trace(ATensC_Corr)/3)*eye(3)
+<p>Reconciling the pNMR parameters from NWChem calculation:
+Calculate the dipolar form of the corrected A tensor for the carbon atom:</p>
+<pre><code>&gt;ATensC_Corr_Dip = ATensC_Corr – (trace(ATensC_Corr)/3)*eye(3)
 87.093 -58.184 69.332
 -58.184 -48.081 -25.732
-69.332 -25.732 -39.012</p>
-</blockquote>
-<pre><code>For convenience, convert the hyperfine tensors units from MHz to J:
+69.332 -25.732 -39.012
 </code></pre>
-<blockquote>
-<p>ATensC_Energy = (10^6)<em>h</em>ATensC
+<p>For convenience, convert the hyperfine tensors units from MHz to J:</p>
+<pre><code>&gt;ATensC_Energy = (10^6)*h*ATensC
 2.8401e-25 -3.8573e-26 4.5964e-26
 -3.8573e-26 1.9440e-25 -1.7059e-26
 4.5964e-26 -1.7059e-26 2.0041e-25
-ATensC_Corr_Energy = (10^6)<em>h</em>ATensC_Corr
+&gt;ATensC_Corr_Energy = (10^6)*h*ATensC_Corr
 2.8403e-25 -3.8553e-26 4.5940e-26
 -3.8553e-26 1.9446e-25 -1.7050e-26
 4.5940e-26 -1.7050e-26 2.0047e-25
-ATensC_Corr_Dip_Energy =(10^6)<em>h</em>ATensC_Corr_Dip
+&gt;ATensC_Corr_Dip_Energy =(10^6)*h*ATensC_Corr_Dip
 5.7708e-26 -3.8553e-26 4.5940e-26
 -3.8553e-26 -3.1859e-26 -1.7050e-26
-4.5940e-26 -1.7050e-26 -2.5850e-26</p>
-</blockquote>
-<pre><code>To calculate the Fermi contact shift:
+4.5940e-26 -1.7050e-26 -2.5850e-26
 </code></pre>
-<blockquote>
-<p>FCShiftC =
-(10^6)<em>trace(GTens)/3</em>Be/(gnC<em>BN)</em>(S<em>(S+1))/(3</em>k<em>T)</em>trace(ATensC_Energy)/3
-FCShiftC = 3.5159e+04</p>
-</blockquote>
-<pre><code>To calculate the pseudocontact shift (in ppm):
+<p>To calculate the Fermi contact shift:</p>
+<pre><code>&gt;FCShiftC =
+(10^6)*trace(GTens)/3*Be/(gnC*BN)*(S*(S+1))/(3*k*T)*trace(ATensC_Energy)/3
+FCShiftC = 3.5159e+04
 </code></pre>
-<blockquote>
-<p>PCShiftC =
-(10^6)<em>(S</em>(S+1))/(9<em>k</em>T)<em>Be/(gnC</em>BN)<em>trace(ATensC_Corr_Dip_Energy</em>GTens)
-PCShiftC = -1.9008</p>
-</blockquote>
-<pre><code>From the shielding calculation in NWChem,
+<p>To calculate the pseudocontact shift (in ppm):</p>
+<pre><code>&gt;PCShiftC =
+(10^6)*(S*(S+1))/(9*k*T)*Be/(gnC*BN)*trace(ATensC_Corr_Dip_Energy*GTens)
+PCShiftC = -1.9008
 </code></pre>
-<blockquote>
-<p>OrbShldC = 83.7136</p>
-</blockquote>
-<pre><code>Putting it all together, the total chemical shielding in ppm is:
+<p>From the shielding calculation in NWChem,</p>
+<pre><code>&gt;OrbShldC = 83.7136
 </code></pre>
-<blockquote>
-<p>TotShldC = OrbShldC – FCShiftC – PCShiftC
-TotShldC = -3.5074e+04</p>
-</blockquote>
-<pre><code>Subtract this value from the appropriate reference to obtain the chemical shift.
-We can repeat these steps for the hydrogen atom. The proton nuclear g-factor is:
+<p>Putting it all together, the total chemical shielding in ppm is:</p>
+<pre><code>&gt;TotShldC = OrbShldC – FCShiftC – PCShiftC
+TotShldC = -3.5074e+04
 </code></pre>
-<blockquote>
-<p>gnH = 5.5856947</p>
-</blockquote>
-<pre><code>The hyperfine A tensor for the hydrogen atom from the NWChem output is:
+<p>Subtract this value from the appropriate reference to obtain the chemical shift.
+We can repeat these steps for the hydrogen atom. The proton nuclear g-factor is:</p>
+<pre><code>&gt;gnH = 5.5856947
 </code></pre>
-<blockquote>
-<p>ATensH = [-39.8498 -17.0675 5.2453; -17.0675 0.9102 23.3706; 5.2453
-23.3706 -46.3284];</p>
-</blockquote>
-<pre><code>Correct this tensor by transforming it into the reference frame of the g-tensor:
+<p>The hyperfine A tensor for the hydrogen atom from the NWChem output is:</p>
+<pre><code>&gt;ATensH = [-39.8498 -17.0675 5.2453; -17.0675 0.9102 23.3706; 5.2453
+23.3706 -46.3284];
 </code></pre>
-<blockquote>
-<p>ATensH_Corr = (ATensH/ge)*GTens
+<p>Correct this tensor by transforming it into the reference frame of the g-tensor:</p>
+<pre><code>&gt;ATensH_Corr = (ATensH/ge)*GTens
 -39.85584 -17.07752 5.25143
 -17.07196 0.90977 23.38053
-5.25445 23.37695 -46.34308</p>
-</blockquote>
-<pre><code>Calculate the dipolar form of the corrected A tensor for the H atom:
+5.25445 23.37695 -46.34308
 </code></pre>
-<blockquote>
-<p>ATensH_Corr_Dip = ATensH_Corr - (trace(ATensH_Corr))/3*eye(3)
+<p>Calculate the dipolar form of the corrected A tensor for the H atom:</p>
+<pre><code>&gt;ATensH_Corr_Dip = ATensH_Corr - (trace(ATensH_Corr))/3*eye(3)
 -11.4261 -17.0775 5.2514
 -17.0720 29.3395 23.3805
-5.2545 23.3770 -17.9134</p>
-</blockquote>
-<pre><code>Convert the hyperfine tensors units from MHz to J:
+5.2545 23.3770 -17.9134
 </code></pre>
-<blockquote>
-<p>ATensH_Energy = (10^6)<em>h</em>ATensH
+<p>Convert the hyperfine tensors units from MHz to J:</p>
+<pre><code>&gt;ATensH_Energy = (10^6)*h*ATensH
 -2.6405e-26 -1.1309e-26 3.4756e-27
 -1.1309e-26 6.0310e-28 1.5486e-26
 3.4756e-27 1.5486e-26 -3.0698e-26
-ATensH_Corr_Energy = (10^6)<em>h</em>ATensH_Corr
+&gt;ATensH_Corr_Energy = (10^6)*h*ATensH_Corr
 -2.6409e-26 -1.1316e-26 3.4796e-27
 -1.1312e-26 6.0282e-28 1.5492e-26
 3.4816e-27 1.5490e-26 -3.0707e-26
-ATensH_Corr_Dip_Energy =(10^6)<em>h</em>ATensH_Corr_Dip
+&gt;ATensH_Corr_Dip_Energy =(10^6)*h*ATensH_Corr_Dip
 -7.5710e-27 -1.1316e-26 3.4796e-27
 -1.1312e-26 1.9441e-26 1.5492e-26
-3.4816e-27 1.5490e-26 -1.1870e-26</p>
-</blockquote>
-<pre><code>Calculate the Fermi Contact Shift:
+3.4816e-27 1.5490e-26 -1.1870e-26
 </code></pre>
-<blockquote>
-<p>FCShiftH =
-(10^6)<em>trace(GTens)/3</em>Be/(gnH<em>BN)</em>(S<em>(S+1))/(3</em>k<em>T)</em>trace(ATensH_Energy)/3
-FCShiftH = -735.76</p>
-</blockquote>
-<pre><code>Calculate the pseudocontact shift:
+<p>Calculate the Fermi Contact Shift:</p>
+<pre><code>&gt;FCShiftH =
+(10^6)*trace(GTens)/3*Be/(gnH*BN)*(S*(S+1))/(3*k*T)*trace(ATensH_Energy)/3
+FCShiftH = -735.76
 </code></pre>
-<blockquote>
-<p>PCShiftH =
-(10^6)<em>(S</em>(S+1))/(9<em>k</em>T)<em>Be/(gnH</em>BN)<em>trace(ATensH_Corr_Dip_Energy</em>GTens)
-PCShiftH = 0.0032218</p>
-</blockquote>
-<pre><code>From the NWChem output, the orbital shielding is:
+<p>Calculate the pseudocontact shift:</p>
+<pre><code>&gt;PCShiftH =
+(10^6)*(S*(S+1))/(9*k*T)*Be/(gnH*BN)*trace(ATensH_Corr_Dip_Energy*GTens)
+PCShiftH = 0.0032218
 </code></pre>
-<blockquote>
-<p>OrbShldH = 28.1923</p>
-</blockquote>
-<pre><code>Putting it all together, the total chemical shielding in ppm is:
+<p>From the NWChem output, the orbital shielding is:</p>
+<pre><code>&gt;OrbShldH = 28.1923
 </code></pre>
-<blockquote>
-<p>TotShldH = OrbShldH - FCShiftH – PCShiftH
+<p>Putting it all together, the total chemical shielding in ppm is:</p>
+<pre><code>&gt;TotShldH = OrbShldH - FCShiftH – PCShiftH
 TotShldH = 763.95
-```</p>
-</blockquote>
+</code></pre>
 
 
 
