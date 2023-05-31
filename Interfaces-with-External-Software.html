@@ -2426,12 +2426,19 @@ then you need to define the following environment variables at compile time:  </
 Instead, to use a pre-compiled ELPA library, the <code>ELPA</code>  and <code>ELPA_SIZE</code> environment variable need to be set.</p>
 <h2 id="plumed">Plumed<a class="headerlink" href="#plumed" title="Permanent link">&para;</a></h2>
 <p>The <code>BUILD_PLUMED</code> environment variable installs <a href="https://www.plumed.org/">Plumed</a> and
-interfaces it with the <a href="Gaussian-Basis-AIMD.html">qmd</a> module.</p>
+interfaces it with the <a href="Gaussian-Basis-AIMD.html">qmd</a> module.
+This procedure requires an internet connection to dowload the Plumed source.</p>
+<p>Instead, if you wish to use an existing Plumed install, the following environment variables must be set (after having unset <code>BUILD_PLUMED</code>: </p>
+<pre><code>USE_PLUMED=1
+</code></pre>
+<p>Requirements:
+* The environment variable <code>PATH</code> should to point to the location of the <code>plumed</code> command  and <code>LD_LIBRARY_PATH</code> should point to the location of the plumed libraries.
+* <code>BLAS_SIZE</code> and <code>SCALAPACK_SIZE</code> must be equal to 4 (this is not a requirement when using <code>BUILD_PLUMED</code>)</p>
 <h2 id="libxc">Libxc<a class="headerlink" href="#libxc" title="Permanent link">&para;</a></h2>
 <p>Building NWChem with the <a href="https://www.tddft.org/programs/libxc/">libxc</a> DFT library requires
 setting the environment variable <code>USE_LIBXC=1</code>. </p>
-<p>This procedure requires an internet connection to dowload the Libxc source. <br />
-Instead, if you wish to use an existing libxc library, the following environment variables must be set, after having unset <code>USE_LIBXC</code>:   </p>
+<p>This procedure requires an internet connection to dowload the Libxc source.</p>
+<p>Instead, if you wish to use an existing libxc library, the following environment variables must be set, after having unset <code>USE_LIBXC</code>:   </p>
 <ul>
 <li><code>LIBXC_INCLUDE</code>   location of the libxc C header files</li>
 <li><code>LIBXC_MODDIR</code>   location of the libxc fortran90 module files</li>
