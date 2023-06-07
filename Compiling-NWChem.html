@@ -454,19 +454,6 @@
     Building the NWChem binary
   </a>
   
-    <nav class="md-nav" aria-label="Building the NWChem binary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setting-the-default-memory-values" class="md-nav__link">
-    Setting the default memory values
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -2714,19 +2701,6 @@
     Building the NWChem binary
   </a>
   
-    <nav class="md-nav" aria-label="Building the NWChem binary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setting-the-default-memory-values" class="md-nav__link">
-    Setting the default memory values
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -3287,14 +3261,22 @@ strongly recommended on large clusters or supercomputers or any computer
 lacking any fast and large local filesystem.</p>
 <pre><code>export USE_NOIO=TRUE
 </code></pre>
-<p>~~<strong>LIB_DEFINES</strong> can be set to pass additional defines to the C
+<p><strong>LIB_DEFINES</strong> can be set to pass additional defines to the C
 preprocessor (for both Fortran and C), e.g.</p>
 <pre><code>export LIB_DEFINES=-DDFLT_TOT_MEM=16777216
 </code></pre>
 <p>Note: <code>-DDFLT_TOT_MEM</code> sets the default dynamic memory available for
-NWChem to run, where the units are in doubles.~~ <br />
-However, it is recommended that, instead of manually
-defining this environment variable, the <a href="https://github.com/nwchemgit/nwchem/blob/master/contrib/getmem.nwchem">getmem.nwchem</a> script to be executed as described in the related <a href="#setting-the-default-memory-values">section</a></p>
+NWChem to run, where the units are in doubles. Instead of manually
+defining this environment variable, one can use the <a href="https://github.com/nwchemgit/nwchem/blob/master/contrib/getmem.nwchem">getmem.nwchem</a> script in the
+<code>$NWCHEM_TOP/contrib</code> directory. This script should be run after an
+initial build of the binary has been completed. The script will choose the default memory settings based on the available physical memory, recompile the appropriate files and relink. Here is an example of its usage:  </p>
+<pre><code>cd $NWCHEM_TOP/src
+../contrib/getmem.nwchem
+</code></pre>
+<p>If non default compiler are used, the <code>getmem.nwchem</code> script must be called, using bash shell, by first specifying the compiler environment variable. The example below  uses ifort as Fortran compiler</p>
+<pre><code>cd $NWCHEM_TOP/src
+FC=ifort ../contrib/getmem.nwchem
+</code></pre>
 <p><strong>MRCC_METHODS</strong> can be set to request the multireference coupled
 cluster capability to be included in the code, e.g.</p>
 <pre><code>export MRCC_METHODS=TRUE
@@ -3498,16 +3480,6 @@ COPTIMIZE variables. The reason is that the default values for FOPTIMIZE
 and COPTIMIZE have been tested by the NWChem developers (using the
 internal QA suites, among others), while any modification might produce
 incorrect results.</p>
-<h3 id="setting-the-default-memory-values">Setting the default memory values<a class="headerlink" href="#setting-the-default-memory-values" title="Permanent link">&para;</a></h3>
-<p>It is strongly recommended to use, after a successful compilation, the <a href="https://github.com/nwchemgit/nwchem/blob/master/contrib/getmem.nwchem">getmem.nwchem</a> script in the
-<code>$NWCHEM_TOP/contrib</code> directory.  The script will choose the default memory settings based on the available physical memory, recompile the appropriate files and relink. Here is an example of its usage:  </p>
-<pre><code>cd $NWCHEM_TOP/src
-../contrib/getmem.nwchem
-</code></pre>
-<p>If non default compiler are used, the <code>getmem.nwchem</code> script must be called, using bash shell, by first specifying the compiler environment variable. The example below  uses ifort as Fortran compiler</p>
-<pre><code>cd $NWCHEM_TOP/src
-FC=ifort ../contrib/getmem.nwchem
-</code></pre>
 <h2 id="how-to-linux-platforms">How-to: Linux platforms<a class="headerlink" href="#how-to-linux-platforms" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Common environmental variables for building in serial or in
