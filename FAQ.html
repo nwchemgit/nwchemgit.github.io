@@ -2127,6 +2127,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#memory-errors" class="md-nav__link">
+    Memory errors
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2460,6 +2467,13 @@
         <li class="md-nav__item">
   <a href="#nb_wait_for_handle-error" class="md-nav__link">
     nb_wait_for_handle Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-errors" class="md-nav__link">
+    Memory errors
   </a>
   
 </li>
@@ -2854,11 +2868,20 @@ This is the expected behavior, since <code>ARMCI_NETWORK=MPI-PR</code> requires 
 If you would prefer  <code>mpirun -np 1</code> to work, other choice of <code>ARMCI_NETWORK</code> are possible as described in the <a href="ARMCI.html">ARMCI documentation</a>.</p>
 <h2 id="nb_wait_for_handle-error">nb_wait_for_handle Error<a class="headerlink" href="#nb_wait_for_handle-error" title="Permanent link">&para;</a></h2>
 <p>If you get the following error </p>
-<pre><code>{1} nb_wait_for_handle Error: all user-level nonblocking handles have been exhaustedapplication called MPI_Abort(comm=0x84000002, -1)
+<pre><code>{1} nb_wait_for_handle Error: all user-level nonblocking handles have been exhausted
+application called MPI_Abort(comm=0x84000002, -1)
 </code></pre>
 <p>you can fix it by executing the following command</p>
 <pre><code>export COMEX_MAX_NB_OUTSTANDING=16
 </code></pre>
+<h2 id="memory-errors">Memory errors<a class="headerlink" href="#memory-errors" title="Permanent link">&para;</a></h2>
+<p>If you get the following error</p>
+<pre><code>[0] Received an Error in Communication: (-1) 0: ptsalloc: increase memory in input line:
+</code></pre>
+<p>you can fix it by either<br />
+<em> increasing the memory line in the input file using the syntax described in the <a href="Memory.html">Memory section</a>, or by<br />
+</em> recompiling the NWChem binary with the <code>getmem.nwchem</code> script as described in the section avaible at this 
+<a href="Compiling-NWChem.html#setting-the-default-memory-values">link</a>  </p>
 
 
 
