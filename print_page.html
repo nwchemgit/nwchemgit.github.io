@@ -21058,7 +21058,7 @@ half-maximum of the peaks in the resulting spectra.</p>
 here.</p>
 <p><img alt="pic1" src="SiCl4IR.png" />
 <img alt="pic2" src="SiCl4VDOS.png" /></p>
-<h3 id="gaussian-basis-aimd-namd-non-adiabatic-excited-stated-molecular-dynamics">NAMD: Non-adiabatic Excited Stated Molecular Dynamics<a class="headerlink" href="#gaussian-basis-aimd-namd-non-adiabatic-excited-stated-molecular-dynamics" title="Permanent link">&para;</a></h3>
+<h2 id="gaussian-basis-aimd-namd-non-adiabatic-excited-stated-molecular-dynamics">NAMD: Non-adiabatic Excited Stated Molecular Dynamics<a class="headerlink" href="#gaussian-basis-aimd-namd-non-adiabatic-excited-stated-molecular-dynamics" title="Permanent link">&para;</a></h2>
 <p>For  details of the NAMD implementation, please
 refer to the 2020 paper by Song<sup id="gaussian-basis-aimd-fnref_footnote_4"><a class="footnote-ref" href="#gaussian-basis-aimd-fn_footnote_4">4</a></sup>.    </p>
 <pre><code>[namd]
@@ -21074,21 +21074,21 @@ refer to the 2020 paper by Song<sup id="gaussian-basis-aimd-fnref_footnote_4"><a
 <li>The number of roots requested in the tddft block must be at least nstates-1.</li>
 <li>The nuclear time step (dt_nucl) must be an integer multiple of the electronic time step (<code>mod(dt_nucl,dt_elec)=0</code>).</li>
 </ul>
-<h4 id="gaussian-basis-aimd-deco-decoherence-flag">DECO: Decoherence flag<a class="headerlink" href="#gaussian-basis-aimd-deco-decoherence-flag" title="Permanent link">&para;</a></h4>
+<h3 id="gaussian-basis-aimd-deco-decoherence-flag">DECO: Decoherence flag<a class="headerlink" href="#gaussian-basis-aimd-deco-decoherence-flag" title="Permanent link">&para;</a></h3>
 <p>The <code>deco</code> flag applies the EDC electronic decoherence correction described in the papey bt Granucci and Persico<sup id="fnref_footnote_5"><a class="footnote-ref" href="#gaussian-basis-aimd-fn_footnote_5">5</a></sup>.<br />
 The default value is <code>.false.</code>, i.e. no decoherence correction is applied.</p>
-<h4 id="gaussian-basis-aimd-dt_elec-electronic-dynamics-time-step">DT_ELEC: Electronic dynamics time step<a class="headerlink" href="#gaussian-basis-aimd-dt_elec-electronic-dynamics-time-step" title="Permanent link">&para;</a></h4>
+<h3 id="gaussian-basis-aimd-dt_elec-electronic-dynamics-time-step">DT_ELEC: Electronic dynamics time step<a class="headerlink" href="#gaussian-basis-aimd-dt_elec-electronic-dynamics-time-step" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>dt_elec</code> sets the electronic time step in atomic units.</p>
-<h4 id="gaussian-basis-aimd-n_states-number-of-states">N_STATES: Number of states<a class="headerlink" href="#gaussian-basis-aimd-n_states-number-of-states" title="Permanent link">&para;</a></h4>
+<h3 id="gaussian-basis-aimd-n_states-number-of-states">N_STATES: Number of states<a class="headerlink" href="#gaussian-basis-aimd-n_states-number-of-states" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>nstates</code> sets the number of electronic states to include in the calculation, i.e.
 the number of states for use with Eq. 5 of the 2020 Song paper.</p>
-<h4 id="gaussian-basis-aimd-init_state-initial-state">INIT_STATE: Initial state<a class="headerlink" href="#gaussian-basis-aimd-init_state-initial-state" title="Permanent link">&para;</a></h4>
+<h3 id="gaussian-basis-aimd-init_state-initial-state">INIT_STATE: Initial state<a class="headerlink" href="#gaussian-basis-aimd-init_state-initial-state" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>init_state</code> sets the initial electronic state to be occupied;
 the numbering for this keyword and the output that reports the currently
 occupied state runs from 0 (ground state) to <code>nstates-1</code>.
 So if you want to start a calculation in the first excited state, you would set
 <code>init_state</code> to 1.</p>
-<h4 id="gaussian-basis-aimd-tdks-time-dependent-kohn-sham">TDKS: Time-Dependent Kohn-Sham<a class="headerlink" href="#gaussian-basis-aimd-tdks-time-dependent-kohn-sham" title="Permanent link">&para;</a></h4>
+<h3 id="gaussian-basis-aimd-tdks-time-dependent-kohn-sham">TDKS: Time-Dependent Kohn-Sham<a class="headerlink" href="#gaussian-basis-aimd-tdks-time-dependent-kohn-sham" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>tdks</code> will use Time-Dependent Kohn-Sham instead of the default <a href="#excited-state-calculations-cis-and-rpa-the-tamm-dancoff-approximation">Tamm-Dancoff</a> approximation.<br />
 The keyword requires the keyword <a href="#density-functional-theory-for-molecules-odft-and-mult-open-shell-systems"><code>odft</code></a>
 in the <code>dft</code> input block to work.<br />
@@ -21097,7 +21097,7 @@ It can have two values:</p>
 <li><code>1</code> (default) selects the alpha spin channel</li>
 <li><code>2</code>  selects the beta spin channel</li>
 </ul>
-<h4 id="gaussian-basis-aimd-namd-input-example">NAMD Input Example<a class="headerlink" href="#gaussian-basis-aimd-namd-input-example" title="Permanent link">&para;</a></h4>
+<h3 id="gaussian-basis-aimd-namd-input-example">NAMD Input Example<a class="headerlink" href="#gaussian-basis-aimd-namd-input-example" title="Permanent link">&para;</a></h3>
 <p>Example input for  fewest-switches surface-hopping (FSSH) approach.</p>
 <pre><code>geometry noautosym nocenter
 O 0.0000  0.0000  0.1197
