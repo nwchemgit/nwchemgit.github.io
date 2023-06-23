@@ -2712,30 +2712,30 @@ the nuclei. Possible options are:</p>
 <p>Nosé–Hoover thermostat (only available in release 7.2.0 and later). 
   The optional input parameter defines the number of oscillators.</p>
 <h3 id="rand_seed-seed-for-the-random-number-generator">RAND_SEED: Seed for the random number generator<a class="headerlink" href="#rand_seed-seed-for-the-random-number-generator" title="Permanent link">&para;</a></h3>
-<p>This specifies the seed for initializing the random number generator. If
+<p><code>rand_seed</code> specifies the seed for initializing the random number generator. If
 not given, a unique random seed will be generated. Even without a
 thermostat, this will influence the initial
 velocities.</p>
 <h3 id="com_step-how-often-center-of-mass-translations-and-rotations-are-removed">COM_STEP: How often center-of-mass translations and rotations are removed<a class="headerlink" href="#com_step-how-often-center-of-mass-translations-and-rotations-are-removed" title="Permanent link">&para;</a></h3>
-<p>This specifies that center-of-mass translations and rotations will be
+<p><code>com_step</code> specifies that center-of-mass translations and rotations will be
 removed every <code>com_step</code> steps. Default 10 COM translations and rotations
 are removed on startup (either randomized initial velocities or those
 read from the restart file).</p>
 <h3 id="print_xyz-how-often-to-print-trajectory-information-to-xyz-file">PRINT_XYZ: How often to print trajectory information to xyz file<a class="headerlink" href="#print_xyz-how-often-to-print-trajectory-information-to-xyz-file" title="Permanent link">&para;</a></h3>
-<p>This specifies how often the trajectory information (coordinates, velocities,
+<p><code>print_xyz</code> specifies how often the trajectory information (coordinates, velocities,
 total energy, step number, dipole (if available)) is written to the xyz file. The
 units for the coordinates and velocities in the xyz file are Angstrom
 and Angstrom/fs, respectively.<br />
 For example, <code>print_xyz 5</code> will write the xyz trajectory file every 5 steps.<br />
 Default: 1 </p>
 <h3 id="linear-flag-for-linear-molecules">LINEAR: Flag for linear molecules<a class="headerlink" href="#linear-flag-for-linear-molecules" title="Permanent link">&para;</a></h3>
-<p>If present, the code assumes the molecule is linear.</p>
+<p>If the <code>linear</code> keyword is present, the code assumes the molecule is linear.</p>
 <h3 id="property-how-often-to-calculate-molecular-properties-as-part-of-the-md-simulation">PROPERTY: How often to calculate molecular properties as part of the MD simulation<a class="headerlink" href="#property-how-often-to-calculate-molecular-properties-as-part-of-the-md-simulation" title="Permanent link">&para;</a></h3>
-<p>If present, the code will look for the property block and calculate the requested properties.<br />
+<p>If the <code>property</code> keyword present, the code will look for the property block and calculate the requested properties.<br />
 For example, <code>property 5</code> will calculate properties on the current geometry every 5 steps.<br />
 Default: 0 (e.g properties are not computed)  </p>
 <h3 id="tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation">TDDFT: How often to peform TDDFT calculation as part of the MD simulation<a class="headerlink" href="#tddft-how-often-to-peform-tddft-calculation-as-part-of-the-md-simulation" title="Permanent link">&para;</a></h3>
-<p>If present, the code will look for the tddft block and calculate the absorption spectrum.<br />
+<p>If the <code>tddft</code> keyword is present, the code will look for the tddft block and calculate the absorption spectrum.<br />
 For example, <code>tddft 5</code> will perform tddft calculations on the current geometry every 5 steps.<br />
 Default: 0 (e.g tddft is not run)</p>
 <h2 id="sample-input-files">Sample input files<a class="headerlink" href="#sample-input-files" title="Permanent link">&para;</a></h2>
