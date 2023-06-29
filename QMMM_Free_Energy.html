@@ -2308,16 +2308,12 @@ approach the free energy difference between the two configurations of
 the QM region (e.g. A and
 B):</p>
 <p><center></p>
-<p>
-<script type="math/tex">\Delta W_{A\to B}=-1/\beta \ln \langle (e^{-\beta (E_B-E_A)})  \rangle_{A}</script>
-</p>
+<p><span class="arithmatex">\(\Delta W_{A\to B}=-1/\beta \ln \langle (e^{-\beta (E_B-E_A)})  \rangle_{A}\)</span></p>
 <p></center></p>
 <p>is approximated as a sum of internal QM contribution and
 solvation:</p>
 <p><center></p>
-<p>
-<script type="math/tex">\Delta W_{A\to B}\approx\Delta W_{A\to B}^{int}+\Delta W_{A\to B}^{solv}</script>
-</p>
+<p><span class="arithmatex">\(\Delta W_{A\to B}\approx\Delta W_{A\to B}^{int}+\Delta W_{A\to B}^{solv}\)</span></p>
 <p></center></p>
 <p>It is presumed that structures of A and B configurations are available
 as restart files sharing <strong>common</strong> topology file.</p>
@@ -2325,9 +2321,7 @@ as restart files sharing <strong>common</strong> topology file.</p>
 <p>The internal QM contribution is given by the differences in the internal
 QM energies evaluated at the <strong>optimized</strong> MM environment:</p>
 <p><center></p>
-<p>
-<script type="math/tex">\Delta W_{A\to B}^{int}=E_{B}^{int}-E_{A}^{int}</script>
-</p>
+<p><span class="arithmatex">\(\Delta W_{A\to B}^{int}=E_{B}^{int}-E_{A}^{int}\)</span></p>
 <p></center></p>
 <p>The internal QM energy is nothing more but a gas phase expression total
 energy but evaluated with the wavefunction obtained in the presence of
@@ -2346,59 +2340,45 @@ between A and B configurations of the QM system represented by a set of
 ESP
 charges.</p>
 <p><center></p>
-<p>
-<script type="math/tex">\Delta W_{A\to B}^{solv}=-1/\beta \ln \langle (e^{-\beta (E_B^{ESP}-E_A^{ESP})})  \rangle_{A}</script>
-</p>
+<p><span class="arithmatex">\(\Delta W_{A\to B}^{solv}=-1/\beta \ln \langle (e^{-\beta (E_B^{ESP}-E_A^{ESP})})  \rangle_{A}\)</span></p>
 <p></center></p>
-<p>where <script type="math/tex">E_A^{ESP}</script> is the total energy of the system where QM region is
+<p>where <span class="arithmatex">\(E_A^{ESP}\)</span> is the total energy of the system where QM region is
 replaced by a set of fixed point ESP charges.</p>
 <p>In majority of cases the A and B configuration are &ldquo;too far apart&rdquo; and
 one step free energy calculation as shown above will not lead to
 meaningful results. One solution is to introduce intermediate points
 that bridge A and B configurations by linear interpolation</p>
 <p><center></p>
-<p>
-<script type="math/tex">R_{\lambda_i} = (1-\lambda_i)R_A + \lambda_i R_B</script>
-</p>
+<p><span class="arithmatex">\(R_{\lambda_i} = (1-\lambda_i)R_A + \lambda_i R_B\)</span></p>
 <p></center></p>
 <p><center></p>
-<p>
-<script type="math/tex">Q_{\lambda_i} = (1-\lambda_i)Q_A + \lambda_i Q_B</script>
-</p>
+<p><span class="arithmatex">\(Q_{\lambda_i} = (1-\lambda_i)Q_A + \lambda_i Q_B\)</span></p>
 <p></center></p>
 <p>where</p>
 <p><center></p>
-<p>
-<script type="math/tex">\lambda_i = \frac {i}{n}, \quad i=0,..,n
-\,\!</script>
-</p>
+<p><span class="arithmatex">\(\lambda_i = \frac {i}{n}, \quad i=0,..,n
+\,\!\)</span></p>
 <p></center></p>
 <p>The solvation free energy difference can be then written as sum of
-differences for the subintervals <script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>  :</p>
+differences for the subintervals <span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>  :</p>
 <p><center></p>
-<p>
-<script type="math/tex">
+<p><span class="arithmatex">\(
  \Delta W_{A\to B}^{\rm esp} = \sum_{i=0}^{n}\Delta W_{\lambda_i\to\lambda_{i+1}}^{\rm esp}
-</script>
-</p>
+\)</span></p>
 <p></center></p>
 <p>To expedite the calculation it is convenient to use a double wide
 sampling strategy where the free energy differences for the intervals
-<script type="math/tex">\,\! [\lambda_{i-1}\to\lambda_{i}]</script>  and
-<script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>  are calculated simultaneously by
-sampling around <script type="math/tex">\,\!\lambda_{i}</script>   point. In the simplest case where we
+<span class="arithmatex">\(\,\! [\lambda_{i-1}\to\lambda_{i}]\)</span>  and
+<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>  are calculated simultaneously by
+sampling around <span class="arithmatex">\(\,\!\lambda_{i}\)</span>   point. In the simplest case where we
 use two subintervals
 (n=2)</p>
 <p><center></p>
-<p>
-<script type="math/tex">\Delta W_{A\to B}^{solv} \equiv \Delta W_{0\to 1}= \Delta W_{0\to 0.5}^{solv}+\Delta W_{0.5\to 1}^{solv}</script>
-</p>
+<p><span class="arithmatex">\(\Delta W_{A\to B}^{solv} \equiv \Delta W_{0\to 1}= \Delta W_{0\to 0.5}^{solv}+\Delta W_{0.5\to 1}^{solv}\)</span></p>
 <p></center></p>
 <p>or</p>
 <p><center></p>
-<p>
-<script type="math/tex">\Delta W_{A\to B}^{\rm solv} = -\Delta W_{0.5\to 0}^{\rm solv}+\Delta W_{0.5 \to 1}^{\rm solv}</script>
-</p>
+<p><span class="arithmatex">\(\Delta W_{A\to B}^{\rm solv} = -\Delta W_{0.5\to 0}^{\rm solv}+\Delta W_{0.5 \to 1}^{\rm solv}\)</span></p>
 <p></center></p>
 <p>The following items are necessary:</p>
 <ol>
@@ -2431,8 +2411,7 @@ input blocks)</p>
 <pre><code>set qmmm:fep_geom xxx_A.xyzi xxx_B.xyzi
 set qmmm:fep_esp  xxx_A.esp xxx_B.esp
 </code></pre>
-<p>The current interpolation interval <script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>
-<br />
+<p>The current interpolation interval <span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span><br />
 for which free energy difference is calculated is defined as</p>
 <pre><code>set qmmm:fep_lambda lambda_i lambda_i+1
 </code></pre>
@@ -2440,17 +2419,15 @@ for which free energy difference is calculated is defined as</p>
 <pre><code>set qmmm:fep_deriv .true.
 </code></pre>
 <p>If set, the above directive will perform both
-<script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>  and
-<script type="math/tex">\,\! [\lambda_i\to\lambda_{i-1}]</script>  calculations, where</p>
+<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>  and
+<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i-1}]\)</span>  calculations, where</p>
 <p><center></p>
-<p>
-<script type="math/tex">\,\!
- \lambda_{i-1}=\lambda_i - (\lambda_{i+1}-\lambda_i)</script>
-</p>
+<p><span class="arithmatex">\(\,\!
+ \lambda_{i-1}=\lambda_i - (\lambda_{i+1}-\lambda_i)\)</span></p>
 <p></center></p>
 <p>The calculation proceeds in cycles, each cycle consisting of two phases.
 First phase is generation of classical MD trajectory around
-<script type="math/tex">\,\! \lambda_i</script> point. Second phase is processing of the generated
+<span class="arithmatex">\(\,\! \lambda_i\)</span> point. Second phase is processing of the generated
 trajectory to calculate averages of relevant energy differences. The
 number of MD steps in the first phase is controlled by the QM/MM
 directive <span id="nsamples"></span></p>
@@ -2488,9 +2465,9 @@ the following task directive</p>
 though</p>
 <pre><code>grep free &lt;name of the output file&gt;
 </code></pre>
-<p>The first number is a forward (<script type="math/tex">\,\! [\lambda_i\to\lambda_{i+1}]</script>)
+<p>The first number is a forward (<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>)
 free energy difference and second number is backward
-(<script type="math/tex">\,\! [\lambda_i\to\lambda_{i-1}]</script>) free energy difference, both in
+(<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i-1}]\)</span>) free energy difference, both in
 kcal/mol. The same numbers can also be found in the 4th and 6th columns
 of <system>.thm file but this time in <strong>atomic units</strong>.</p>
 <p>The same <system>.thm file can also be used to continue from the prior
@@ -2590,7 +2567,15 @@ calculation</a>.</p>
         
       
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+          <script src="css/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
         
       
     

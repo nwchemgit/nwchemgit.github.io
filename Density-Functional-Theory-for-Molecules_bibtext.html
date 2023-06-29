@@ -4178,18 +4178,12 @@ these functionals with the accompanying local PW91LDA. The user cannot
  set the local part of these metaGGA functionals.</p>
 <h3 id="range-separated-functionals">Range-Separated Functionals<a class="headerlink" href="#range-separated-functionals" title="Permanent link">&para;</a></h3>
 <p>Using the Ewald decomposition</p>
-<p>
-<script type="math/tex; mode=display">\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}</script>
-</p>
+<div class="arithmatex">\[\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}\]</div>
 <p>we can split the the Exchange interaction as</p>
-<p>
-<script type="math/tex; mode=display">E_{X} = E_X^{LR} + E_X^{SR}</script>
-</p>
+<div class="arithmatex">\[E_{X} = E_X^{LR} + E_X^{SR}\]</div>
 <p>Therefore, the long-range HF Exchange energy
 becomes</p>
-<p>
-<script type="math/tex; mode=display">E_X^{LR} = \alpha E_X^{HF} - \frac{\beta}{2} \sum_i \sum_j \int \int \phi_i(r_1)\phi_j(r_1)\frac{\texttt{erf}(\mu r_{12})}{r_{12}} \phi_i(r_2)\phi_j(r_2)</script>
-</p>
+<div class="arithmatex">\[E_X^{LR} = \alpha E_X^{HF} - \frac{\beta}{2} \sum_i \sum_j \int \int \phi_i(r_1)\phi_j(r_1)\frac{\texttt{erf}(\mu r_{12})}{r_{12}} \phi_i(r_2)\phi_j(r_2)\]</div>
 <pre><code> cam &lt;real cam&gt; cam_alpha &lt;real cam_alpha&gt; cam_beta &lt;cam_beta&gt;
 </code></pre>
 <p><code>cam</code> represents the attenuation parameter &mu;, <code>cam_alpha</code> and
@@ -4329,7 +4323,7 @@ end
 <h3 id="lb94-and-cs00-asymptotic-correction">LB94 and CS00: Asymptotic correction<a class="headerlink" href="#lb94-and-cs00-asymptotic-correction" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>LB94</code> will correct the asymptotic region of the XC definition
 of exchange-correlation potential by the van-Leeuwen-Baerends
-exchange-correlation potential that has the correct <script type="math/tex">-1/r</script> asymptotic
+exchange-correlation potential that has the correct <span class="arithmatex">\(-1/r\)</span> asymptotic
 behavior. The total energy will be computed by the XC definition of
 exchange-correlation functional. This scheme is known to tend to
 overcorrect the deficiency of most uncorrected exchange-correlation
@@ -5137,9 +5131,7 @@ molecule</p>
 <li>erf2 : modified ssf</li>
 </ul>
 <p>Erf<em>n</em> partitioning functions</p>
-<p>
-<script type="math/tex; mode=display">\begin{array}{lcl}  w_A(r) & = & \prod_{B\neq A}\frac{1}{2} \left[1 \ - \ erf(\mu^\prime_{AB})\right] \\  \mu^\prime_{AB} & = & \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\  \mu_{AB} & = & \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|} \end{array}</script>
-</p>
+<div class="arithmatex">\[\begin{array}{lcl}  w_A(r) &amp; = &amp; \prod_{B\neq A}\frac{1}{2} \left[1 \ - \ erf(\mu^\prime_{AB})\right] \\  \mu^\prime_{AB} &amp; = &amp; \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\  \mu_{AB} &amp; = &amp; \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|} \end{array}\]</div>
 <h3 id="radial-grids">Radial grids<a class="headerlink" href="#radial-grids" title="Permanent link">&para;</a></h3>
 <pre><code> GRID [[euler||mura||treutler]  default mura]
 </code></pre>
@@ -5332,9 +5324,7 @@ not just <code>bq</code>.</p>
 computed, the dispersion term may be added empirically through
 long-range contribution DFT-D, i.e. <em>E<sub>DFT-D</sub>=E<sub>DFT-KS</sub>+E<sub>disp</sub></em>, 
 where:</p>
-<p>
-<script type="math/tex; mode=display">E_{disp}=-s_6\sum_{i=1}^{N_{atom}-1}\sum_{j=i+1}^{N_{atom}} \frac{C_{6}^{ij}}{R_{ij}^{6}} \biggl\\{ 1+e^{-\alpha (\frac{R_{ij}}{R_{vdw}} -1)} \biggr\\}^{-1}</script>
-</p>
+<div class="arithmatex">\[E_{disp}=-s_6\sum_{i=1}^{N_{atom}-1}\sum_{j=i+1}^{N_{atom}} \frac{C_{6}^{ij}}{R_{ij}^{6}} \biggl\\{ 1+e^{-\alpha (\frac{R_{ij}}{R_{vdw}} -1)} \biggr\\}^{-1}\]</div>
 <p>In this equation, the  <em>s<sub>6</sub></em> term depends in the functional and basis
   set used, <em>C<sub>6</sub><sup>ij</sup></em> is the dispersion coefficient between pairs of
   atoms.  <em>R<sub>vdw</sub></em> and  <em>R<sub>ij</sub></em> are related with van der Waals atom
@@ -5343,16 +5333,13 @@ contributes to control the corrections at intermediate distances.</p>
 <p>There are available three ways to compute   <em>C<sup>6</sup><sub>ij</sub></em>:</p>
 <ol>
 <li>
-<p>
-<script type="math/tex; mode=display">C_6^{ij}= \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}</script>  where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from references <sup id="fnref_footnote_96"><a class="footnote-ref" href="#fn_footnote_96">94</a></sup> and <sup id="fnref_footnote_97"><a class="footnote-ref" href="#fn_footnote_97">95</a></sup> (Use <code>vdw 0</code>)  </p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(C_6^{ij}= \frac{2(C_6^{i}C_6^{j})^{2/3}(N_{eff i}N_{eff j})^{1/3}} {C_6^{i}(N_{eff i}^2)^{1/3}+(C_6^{i}N_{eff j}^2)^{1/3}}\)</span>\)</span>  where <em>N<sub>eff</sub></em> and <em>C<sub>6</sub></em> are obtained from references <sup id="fnref_footnote_96"><a class="footnote-ref" href="#fn_footnote_96">94</a></sup> and <sup id="fnref_footnote_97"><a class="footnote-ref" href="#fn_footnote_97">95</a></sup> (Use <code>vdw 0</code>)  </p>
 </li>
 <li>
-<p>
-<script type="math/tex; mode=display">C_6^{ij}=2\ \frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}</script> See details in reference<sup id="fnref_footnote_98"><a class="footnote-ref" href="#fn_footnote_98">96</a></sup>. (Use <code>vdw 1)</code>  </p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(C_6^{ij}=2\ \frac{C_6^{i}C_6^{j}}{C_6^{i}+C_6^{j}}\)</span>\)</span> See details in reference<sup id="fnref_footnote_98"><a class="footnote-ref" href="#fn_footnote_98">96</a></sup>. (Use <code>vdw 1)</code>  </p>
 </li>
 <li>
-<p>
-<script type="math/tex; mode=display">C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}</script> See details in reference<sup id="fnref2_footnote_81"><a class="footnote-ref" href="#fn_footnote_81">79</a></sup>. (Use <code>vdw 2</code>)  </p>
+<p><span class="arithmatex">\(<span class="arithmatex">\(C_6^{ij}=\sqrt{C_6^{i}C_6^{j}}\)</span>\)</span> See details in reference<sup id="fnref2_footnote_81"><a class="footnote-ref" href="#fn_footnote_81">79</a></sup>. (Use <code>vdw 2</code>)  </p>
 </li>
 </ol>
 <p>Note that in each option there is a certain set of <em>C<sub>6</sub></em> and <em>R<sub>vdw</sub></em>.
@@ -5370,9 +5357,7 @@ some functionals and triple-zeta plus double polarization basis set
 </ul>
 <p>Grimme&rsquo;s DFT-D3 is also available. Here the dispersion term has the
 following form:</p>
-<p>
-<script type="math/tex; mode=display"> E_{disp} = \sum_{i,j} \sum_{n=6,8} s_n \ \frac{C^{ij}_n}{r_{ij}} \biggl\lbrace 1 + 6 \bigl[\frac{r_{ij}}{s_{r,n} \ R_0^{ij}} \bigr]^{-\alpha n} \biggr\rbrace^{-1}</script>
-</p>
+<div class="arithmatex">\[ E_{disp} = \sum_{i,j} \sum_{n=6,8} s_n \ \frac{C^{ij}_n}{r_{ij}} \biggl\lbrace 1 + 6 \bigl[\frac{r_{ij}}{s_{r,n} \ R_0^{ij}} \bigr]^{-\alpha n} \biggr\rbrace^{-1}\]</div>
 <p>This new dispersion correction covers elements through Z=94.
   <em>C<sup>ij</sup><sub>n</sub> (n=6,8)</em> are coordination and geometry dependent. Details
 about the functional form can be found in reference <sup id="fnref_footnote_99"><a class="footnote-ref" href="#fn_footnote_99">97</a></sup>.</p>
@@ -6014,7 +5999,15 @@ Therefore please use the following links for <a href="Hartree-Fock-Theory-for-Mo
         
       
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+          <script src="css/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
         
       
     

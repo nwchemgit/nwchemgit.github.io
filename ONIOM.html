@@ -2595,9 +2595,9 @@ are specified, then so must the other.</p>
 <h2 id="real-model-and-intermediate-geometries">Real, model and intermediate geometries<a class="headerlink" href="#real-model-and-intermediate-geometries" title="Permanent link">&para;</a></h2>
 <p>The geometry and total charge of the full or real system should be
 specified as normal using the <a href="Geometry.html">geometry</a> directive.
-If <script type="math/tex">N_{model}</script> of the atoms are to be included in the model system,
+If <span class="arithmatex">\(N_{model}\)</span> of the atoms are to be included in the model system,
 then these should be specified first in the geometry. Similarly, in a
-three-layer calculation, if there are <script type="math/tex">N_{inter}</script> atoms to be included
+three-layer calculation, if there are <span class="arithmatex">\(N_{inter}\)</span> atoms to be included
 in the intermediate system, then these should also be arranged together
 at the beginning of the geometry. The implict assumption is that the
 model system is a subset of the intermediate system which is a subset of
@@ -2606,7 +2606,7 @@ intemediate systems are specified using the MODEL and INTER directives.
 Optionally, the total charge of the model and intermediate systems may
 be adjusted. The default is that all three systems have the same total
 charge.</p>
-<p>Example 1. A two-layer calculation on <script type="math/tex">K^{+}(H_{2}O)</script> taking the
+<p>Example 1. A two-layer calculation on <span class="arithmatex">\(K^{+}(H_{2}O)\)</span> taking the
 potassium ion as the model system. Note that no bonds are broken so no
 link atoms are introduced. The real geometry would be specified with
 potassium (the model) first.</p>
@@ -2633,9 +2633,7 @@ and basis sets, etc. For each broken bond specify the numbers of the two
 atoms (i and j), the scale factor (g) and optionally the tag of the link
 atom. Link atoms are placed along the vector connecting the the first to
 the second atom of the bond according to the equation</p>
-<p>
-<script type="math/tex; mode=display">\underline{R}_{link} = (1-g)\underline{R}_{1} + g*\underline{R}_{2}</script>
-</p>
+<div class="arithmatex">\[\underline{R}_{link} = (1-g)\underline{R}_{1} + g*\underline{R}_{2}\]</div>
 <p>where <em>g</em> is the scale factor. If the scale factor is one, then the link
 atom is placed where the second atom was. More usually, the scale factor
 is less than one, in which case the link atom is placed between the
@@ -2770,7 +2768,7 @@ workstation. It will print these geometries before starting any
 calculations which you can then terminate.</p>
 <p>E.g., in a calculation on Fe(III) surrounded by some ligands, it is hard
 to converge the full (real) system from the atomic guess so as to obtain
-a <script type="math/tex">d^5</script> configuration for the iron atom since the <em>d</em> orbitals are
+a <span class="arithmatex">\(d^5\)</span> configuration for the iron atom since the <em>d</em> orbitals are
 often nominally lower in energy than some of the ligand orbitals. The
 most effective mechanism is to converge the isolated Fe(III) and then to
 use the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-fragment-superposition-of-fragment-molecular-orbitals">fragment
@@ -2796,8 +2794,8 @@ possible.</p>
 <p>A simple two-layer model changing just the wavefunction with one link
 atom.</p>
 <p>This reproduces the two-layer ONIOM (MP2:HF) result from Dapprich et al.
-for the reaction <script type="math/tex">R-CH_{3} = R-CH_{2} + H</script> with <script type="math/tex">R=CH_3</script> using
-<script type="math/tex">CH_4</script> as the model. The geometries of <script type="math/tex">R-CH_3</script> and <script type="math/tex">R-CH_2</script> are
+for the reaction <span class="arithmatex">\(R-CH_{3} = R-CH_{2} + H\)</span> with <span class="arithmatex">\(R=CH_3\)</span> using
+<span class="arithmatex">\(CH_4\)</span> as the model. The geometries of <span class="arithmatex">\(R-CH_3\)</span> and <span class="arithmatex">\(R-CH_2\)</span> are
 optimized at the DFT-B3LYP/6-311++G** level of theory, and then ONIOM
 is used to compute the binding energy using UMP2 for the model system
 and HF for the real system. The results, including MP2 calculations on
@@ -2861,11 +2859,11 @@ below.</p>
 <p>Energies for ONIOM example 1, hydrocarbon bond energy using MP2:HF
 two-layer model.</p>
 <p></center></p>
-<p>The following input first performs a calculation on <script type="math/tex">CH_{3}-CH_2</script>, and
-then on <script type="math/tex">CH_{3}-CH_3</script>. Note that in the second calculation we cannot
+<p>The following input first performs a calculation on <span class="arithmatex">\(CH_{3}-CH_2\)</span>, and
+then on <span class="arithmatex">\(CH_{3}-CH_3\)</span>. Note that in the second calculation we cannot
 use the full symmetry since we are breaking the C-C bond in forming the
 model system (the non-equivalence of the methyl groups is perhaps more
-apparent if we write <script type="math/tex">R-CH_3</script>).</p>
+apparent if we write <span class="arithmatex">\(R-CH_3\)</span>).</p>
 <pre><code>   start  
 
    basis spherical  
@@ -3205,7 +3203,15 @@ charge fitting.</p>
         
       
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+          <script src="css/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
         
       
     

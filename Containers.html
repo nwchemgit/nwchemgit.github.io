@@ -2362,8 +2362,10 @@ srun -N $SLURM_NNODES -n $SLURM_NNODES cp ./nwchems_`id -u`.img $SCRATCH/nwchems
 export SINGULARITYENV_NWCHEM_BASIS_LIBRARY=/cluster/apps/nwchem/nwchem/src/basis/libraries/
 # use /big_scratch as scratch_dir
 export SINGULARITYENV_SCRATCH_DIR=$SCRATCH
+# bind local file system
+MYFS=$(findmnt -r -T . | tail -1 |cut -d ' ' -f 1)
 # run
-srun --mpi=pmi2 -N $SLURM_NNODES -n $SLURM_NPROCS singularity exec --bind $SCRATCH $SCRATCH/nwchems.img nwchem  &quot;file name&quot;
+srun --mpi=pmi2 -N $SLURM_NNODES -n $SLURM_NPROCS singularity exec --bind $SCRATCH,$MYFS $SCRATCH/nwchems.img nwchem  &quot;file name&quot;
 </code></pre>
 <h2 id="podman">Podman<a class="headerlink" href="#podman" title="Permanent link">&para;</a></h2>
 <p>Docker images could be run using podman commands</p>
@@ -2444,7 +2446,15 @@ srun --mpi=pmi2 -N $SLURM_NNODES -n $SLURM_NPROCS singularity exec --bind $SCRAT
         
       
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+          <script src="css/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
         
       
     

@@ -1439,7 +1439,7 @@
       
         <li class="md-nav__item">
   <a href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o" class="md-nav__link">
-    NWPW Tutorial 4: AIMD/MM simulation of CCl_4 + 64 H_2O
+    NWPW Tutorial 4: AIMD/MM simulation of CCl\(_4\) + 64 H\(_2\)O
   </a>
   
 </li>
@@ -3706,7 +3706,7 @@
       
         <li class="md-nav__item">
   <a href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o" class="md-nav__link">
-    NWPW Tutorial 4: AIMD/MM simulation of CCl_4 + 64 H_2O
+    NWPW Tutorial 4: AIMD/MM simulation of CCl\(_4\) + 64 H\(_2\)O
   </a>
   
 </li>
@@ -3998,7 +3998,7 @@
 </ul>
 </li>
 <li><a href="#nwpw-tutorial-3-using-isodesmic-reaction-energies-to-estimate-gas-phase-thermodynamics">NWPW Tutorial 3: using isodesmic reaction energies to estimate gas-phase thermodynamics</a></li>
-<li><a href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o">NWPW Tutorial 4: AIMD/MM simulation of CCl_4 + 64 H_2O</a></li>
+<li><a href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o">NWPW Tutorial 4: AIMD/MM simulation of CCl\(_4\) + 64 H\(_2\)O</a></li>
 <li><a href="#nwpw-tutorial-5-optimizing-the-unit-cell-and-geometry-of-diamond">NWPW Tutorial 5: Optimizing the Unit Cell and Geometry of Diamond</a><ul>
 <li><a href="#optimizing-the-unit-cell-and-geometry-for-an-8-atom-supercell-of-diamond-with-pspw">Optimizing the Unit Cell and Geometry for an 8 Atom Supercell of Diamond with PSPW</a></li>
 <li><a href="#optimizing-the-unit-cell-for-an-8-atom-supercell-of-diamond-with-band">Optimizing the Unit Cell for an 8 Atom Supercell of Diamond with BAND</a></li>
@@ -4208,10 +4208,10 @@ block.</p>
     orbitals</li>
 <li><code>output_wavefunctions</code> - name of the file that will contain the
     one-electron orbitals at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass <script type="math/tex">\mu</script>
+<li><code>fake_mass</code> - value for the electronic fake mass <span class="arithmatex">\(\mu\)</span>
     This parameter is not presently used in a conjugate gradient
     simulation.</li>
-<li><code>time_step</code> - value for the time step <script type="math/tex">\Delta t</script>. This parameter
+<li><code>time_step</code> - value for the time step <span class="arithmatex">\(\Delta t\)</span>. This parameter
     is not presently used in a conjugate gradient simulation.</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies and tolerances</li>
@@ -4235,7 +4235,7 @@ block.</p>
     Note Ewald summation is only used if the simulation_cell is
     periodic.</li>
 </ul>
-<p>Default set to be <script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>.</p>
+<p>Default set to be <span class="arithmatex">\(\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3\)</span>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE || &hellip;) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
@@ -4325,187 +4325,108 @@ set nwpw:lstress_numerical .true.
 high-frequency components of the wavefunction in the atomic sphere
 region. Effectively this splits the original wavefunction into two
 parts:</p>
-<p>
-<script type="math/tex; mode=display">\psi_n(\mathbf{r}) = \tilde{\psi}_n(\mathbf{r}) + \sum_I \psi_n^I(\mathbf{r})</script>
-</p>
-<p>The first part <script type="math/tex">\tilde{\psi}_n(\mathbf{r})</script> is smooth and can be
+<div class="arithmatex">\[\psi_n(\mathbf{r}) = \tilde{\psi}_n(\mathbf{r}) + \sum_I \psi_n^I(\mathbf{r})\]</div>
+<p>The first part <span class="arithmatex">\(\tilde{\psi}_n(\mathbf{r})\)</span> is smooth and can be
 represented using a plane wave basis set of practical size. The second
 term is localized with the atomic spheres and is represented on radial
 grids centered on the atoms
 as</p>
-<p>
-<script type="math/tex; mode=display">\psi_n^I(\mathbf{r}) = \sum_{\alpha} (\varphi_{\alpha}^I(\mathbf{r})-\tilde{\varphi}_{\alpha}^I(\mathbf{r}))c_{n\alpha}^I</script>
-</p>
-<p>where the coefficients <script type="math/tex">c_{n\alpha}^I</script> are given by</p>
-<p>
-<script type="math/tex; mode=display"> c_{n\alpha}^I = <\tilde{p}_{\alpha}^I | \tilde{\psi}_n></script>
-</p>
+<div class="arithmatex">\[\psi_n^I(\mathbf{r}) = \sum_{\alpha} (\varphi_{\alpha}^I(\mathbf{r})-\tilde{\varphi}_{\alpha}^I(\mathbf{r}))c_{n\alpha}^I\]</div>
+<p>where the coefficients <span class="arithmatex">\(c_{n\alpha}^I\)</span> are given by</p>
+<div class="arithmatex">\[ c_{n\alpha}^I = &lt;\tilde{p}_{\alpha}^I | \tilde{\psi}_n&gt;\]</div>
 <p>This decomposition can be expressed using an invertible linear
-transformation, <script type="math/tex">T</script>, is defined which relates the stiff one-electron
-wavefunctions <script type="math/tex">\psi_n</script> to a set of smooth one-electron wavefunctions
-<script type="math/tex">\tilde{\psi}_n</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\tilde{\psi}_n = T \psi_n</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\psi_n = T^{-1} \tilde{\psi}_n</script>
-</p>
+transformation, <span class="arithmatex">\(T\)</span>, is defined which relates the stiff one-electron
+wavefunctions <span class="arithmatex">\(\psi_n\)</span> to a set of smooth one-electron wavefunctions
+<span class="arithmatex">\(\tilde{\psi}_n\)</span>   </p>
+<div class="arithmatex">\[\tilde{\psi}_n = T \psi_n\]</div>
+<div class="arithmatex">\[\psi_n = T^{-1} \tilde{\psi}_n\]</div>
 <p>which can be represented by fairly small plane-wave basis. The
-transformation <script type="math/tex">T</script> is defined using a local PAW basis, which consists
-of atomic orbitals, <script type="math/tex">\varphi{\alpha}^I(\mathbf{r})</script>, 
+transformation <span class="arithmatex">\(T\)</span> is defined using a local PAW basis, which consists
+of atomic orbitals, <span class="arithmatex">\(\varphi{\alpha}^I(\mathbf{r})\)</span>, 
 smooth atomic
-orbitals, <script type="math/tex">\tilde{\varphi}</script><sub>&alpha;</sub><sup>I</sup>(<strong>r</strong>)  which coincide with
+orbitals, <span class="arithmatex">\(\tilde{\varphi}\)</span><sub>&alpha;</sub><sup>I</sup>(<strong>r</strong>)  which coincide with
 the atomic orbitals outside a defined atomic sphere, and projector
-functions, <script type="math/tex">p_{\alpha}^I(\mathbf{r})</script>. Where I is the atomic index and
+functions, <span class="arithmatex">\(p_{\alpha}^I(\mathbf{r})\)</span>. Where I is the atomic index and
 α is the orbital index. The projector functions are constructed such
 that they are localized within the defined atomic sphere and in addition
 are orthonormal to the atomic orbitals. Blöchl defined the invertible linear transformations by  </p>
-<p>
-<script type="math/tex; mode=display">T = 1 + \sum_I \sum_\alpha (|\tilde{\varphi}_\alpha^I> - |\varphi_\alpha^I > ) < p_\alpha^I|</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\tilde{T} = 1 + \sum_I \sum_{\alpha} (|\varphi_{\alpha}^I> - |\tilde{\varphi}_{\alpha}^I >)<\tilde{\varphi}_{\alpha}^I|</script>
-</p>
-<p>
-<script type="math/tex; mode=display">|\tilde{p}_{\alpha}^I> = \sum_{\beta} [<\tilde{p}^I | \varphi^I >]_{\alpha\beta}^{-1} | p_{\beta}^I></script>
-</p>
+<div class="arithmatex">\[T = 1 + \sum_I \sum_\alpha (|\tilde{\varphi}_\alpha^I&gt; - |\varphi_\alpha^I &gt; ) &lt; p_\alpha^I|\]</div>
+<div class="arithmatex">\[\tilde{T} = 1 + \sum_I \sum_{\alpha} (|\varphi_{\alpha}^I&gt; - |\tilde{\varphi}_{\alpha}^I &gt;)&lt;\tilde{\varphi}_{\alpha}^I|\]</div>
+<div class="arithmatex">\[|\tilde{p}_{\alpha}^I&gt; = \sum_{\beta} [&lt;\tilde{p}^I | \varphi^I &gt;]_{\alpha\beta}^{-1} | p_{\beta}^I&gt;\]</div>
 <p>The main effect of the PAW transformation is that the fast variations of
 the valence wave function in the atomic sphere region are projected out
 using local basis set, thereby producing a smoothly varying wavefunction
 that may be expanded in a plane wave basis set of a manageable size.</p>
 <p>The expression for the total energy in PAW method can be separated into
 the following 15 terms.</p>
-<p>
-<script type="math/tex; mode=display">E_{PAW} = \tilde{E}_{kinetic-pw} + \tilde{E}_{vlocal-pw} + \tilde{E}_{Coulomb-pw} + \tilde{E}_{xc-pw} + E_{ion-ion}</script>
-<script type="math/tex; mode=display">      + E_{cmp-cmp} + E_{cmp-pw} + E_{valence-core} + E_{kinetic-core} + E_{ion-core}</script>
-</p>
+<div class="arithmatex">\[E_{PAW} = \tilde{E}_{kinetic-pw} + \tilde{E}_{vlocal-pw} + \tilde{E}_{Coulomb-pw} + \tilde{E}_{xc-pw} + E_{ion-ion}\]</div>
+<div class="arithmatex">\[      + E_{cmp-cmp} + E_{cmp-pw} + E_{valence-core} + E_{kinetic-core} + E_{ion-core}\]</div>
 <p>The first five terms are essentially the same as for a standard
 pseudopotential plane-wave program, minus the non-local pseudopotential,
 where</p>
-<p>
-<script type="math/tex; mode=display">\tilde{E}_{kinetic-pw} = \sum_i \sum_{\mathbf{G}} \frac{|\mathbf{G}|^2}{2} \tilde{\psi}_i^{*}(\mathbf{G}) \tilde{\psi}_i(\mathbf{G})</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\tilde{E}_{vlocal-pw} = \sum_{\mathbf{G}} \tilde{\rho}(\mathbf{G}) V_{local}(\mathbf{G})</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\tilde{E}_{Coulomb-pw} = \frac{\Omega}{2} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|} \tilde{\rho}^{*}(\mathbf{G}) \tilde{\rho}(\mathbf{G})</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\tilde{E}_{xc-pw} = \frac{\Omega}{N_1 N_2 N_3} \sum_{\mathbf{r}} \tilde{\rho}(\mathbf{r}) \epsilon_{xc}(\tilde{\rho}(\mathbf{r}))</script>
-</p>
-<p>
-<script type="math/tex; mode=display">E_{ion-ion} = \frac{1}{2\Omega} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|^2} \exp(\frac{|\mathbf{G}|^2}{4\epsilon}) \sum_{I,J} Z_I \exp (-i \mathbf{G} \cdot \mathbf{R}_I) Z_J \exp ( -i  \mathbf{G} \cdot \mathbf{R}_J) + </script>
-</p>
-<p>
-<script type="math/tex; mode=display">\frac{1}{2}\sum_{\mathbf{a}} \sum_{I,J \in |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} Z_I Z_J \frac{erf(\epsilon |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|)}{|\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} - \frac{\epsilon}{\pi}\sum_I Z_I^2 +  </script>
-</p>
-<p>
-<script type="math/tex; mode=display"> - \frac{\pi}{2\epsilon^2\Omega} \left( \sum_{I} Z_{I} \right)^2 </script>
-</p>
-<p>The local potential in the <script type="math/tex">\tilde{E}_{vlocal-pw}</script> term is the Fourier
+<div class="arithmatex">\[\tilde{E}_{kinetic-pw} = \sum_i \sum_{\mathbf{G}} \frac{|\mathbf{G}|^2}{2} \tilde{\psi}_i^{*}(\mathbf{G}) \tilde{\psi}_i(\mathbf{G})\]</div>
+<div class="arithmatex">\[\tilde{E}_{vlocal-pw} = \sum_{\mathbf{G}} \tilde{\rho}(\mathbf{G}) V_{local}(\mathbf{G})\]</div>
+<div class="arithmatex">\[\tilde{E}_{Coulomb-pw} = \frac{\Omega}{2} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|} \tilde{\rho}^{*}(\mathbf{G}) \tilde{\rho}(\mathbf{G})\]</div>
+<div class="arithmatex">\[\tilde{E}_{xc-pw} = \frac{\Omega}{N_1 N_2 N_3} \sum_{\mathbf{r}} \tilde{\rho}(\mathbf{r}) \epsilon_{xc}(\tilde{\rho}(\mathbf{r}))\]</div>
+<div class="arithmatex">\[E_{ion-ion} = \frac{1}{2\Omega} \sum_{\mathbf{G}} \frac{4\pi}{|\mathbf{G}|^2} \exp(\frac{|\mathbf{G}|^2}{4\epsilon}) \sum_{I,J} Z_I \exp (-i \mathbf{G} \cdot \mathbf{R}_I) Z_J \exp ( -i  \mathbf{G} \cdot \mathbf{R}_J) + \]</div>
+<div class="arithmatex">\[\frac{1}{2}\sum_{\mathbf{a}} \sum_{I,J \in |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} Z_I Z_J \frac{erf(\epsilon |\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|)}{|\mathbf{R}_I-\mathbf{R}_J+\mathbf{a}|} - \frac{\epsilon}{\pi}\sum_I Z_I^2 +  \]</div>
+<div class="arithmatex">\[ - \frac{\pi}{2\epsilon^2\Omega} \left( \sum_{I} Z_{I} \right)^2 \]</div>
+<p>The local potential in the <span class="arithmatex">\(\tilde{E}_{vlocal-pw}\)</span> term is the Fourier
 transform of</p>
-<p>
-<script type="math/tex; mode=display">V_{local}(\mathbf{r}) = -\sum_I Z_I \frac{\frac{|\mathbf{r}-\mathbf{R}_I|}{\sigma_I}}{|\mathbf{r}-\mathbf{R}_I|} + v_{ps}^I(|\mathbf{|\mathbf{r}-\mathbf{R}_I|})</script>
-</p>
-<p>It turns out that for many atoms <script type="math/tex">\sigma_I</script> needs to be fairly small.
-This results in <script type="math/tex">V_{local} (\mathbf{r})</script> being stiff. However, since
+<div class="arithmatex">\[V_{local}(\mathbf{r}) = -\sum_I Z_I \frac{\frac{|\mathbf{r}-\mathbf{R}_I|}{\sigma_I}}{|\mathbf{r}-\mathbf{R}_I|} + v_{ps}^I(|\mathbf{|\mathbf{r}-\mathbf{R}_I|})\]</div>
+<p>It turns out that for many atoms <span class="arithmatex">\(\sigma_I\)</span> needs to be fairly small.
+This results in <span class="arithmatex">\(V_{local} (\mathbf{r})\)</span> being stiff. However, since
 in the integral above this function is multiplied by a smooth density
-<script type="math/tex">\tilde{\rho}(\mathbf{G})</script> the expansion of <em>V<sub>local</sub>(<strong>G</strong>)</em>
+<span class="arithmatex">\(\tilde{\rho}(\mathbf{G})\)</span> the expansion of <em>V<sub>local</sub>(<strong>G</strong>)</em>
 only needs to be the same as the smooth density. The auxiliary
-pseudoptential <script type="math/tex">v_{ps}^I (|\mathbf{r}-\mathbf{R}_I |)</script> is defined to
+pseudoptential <span class="arithmatex">\(v_{ps}^I (|\mathbf{r}-\mathbf{R}_I |)\)</span> is defined to
 be localized within the atomic sphere and is introduced to remove ghost
 states due to local basis set incompleteness.</p>
 <p>The next four terms are atomic based and they essentially take into
 account the difference between the true valence wavefunctions and the
 pseudowavefunctions.</p>
-<p>
-<script type="math/tex; mode=display"> E_{kinetic-atom}= \sum_I \sum_i \sum_{\alpha\beta} <\tilde{\psi}_i|\tilde{p}_{\alpha}^I < (t_{atom}^I)_{\alpha\beta} <\tilde{p}_{\beta}^I|\tilde{\psi}_i </script>
-</p>
-<p>
-<script type="math/tex; mode=display"> E_{local-atom}=\sum_I \sum_i \sum_{\alpha\beta} <\tilde{\psi}_i|\tilde{p}_{\alpha}^I> (u_{atom}^I)_{\alpha\beta} <\tilde{p}_{\beta}^I|\tilde{\psi}_i></script>
-</p>
-<p>
-<script type="math/tex; mode=display"> E_{xc-atom}=\sum_I \sum_{\theta\phi} w_{\theta\phi} \int_0^{r_{cut}^I} r^2 (\rho^I(r,\theta,\phi) \epsilon_{xc}(\rho^I(r,\theta,\phi)) -\tilde{\rho}^I(r,\theta,\phi) \epsilon_{xc}(\tilde{\rho}^I(r,\theta,\phi))) dr </script>
-</p>
-<p>
-<script type="math/tex; mode=display"> E_{hartree-atom}= \sum_I W_{atom}^I =\frac{1}{2} \sum_I \sum_i \sum_{\alpha\beta} <\tilde{\psi}_i|\tilde{p}_{\alpha}>  <\tilde{p}_{\beta}^I|\tilde{\psi}_i> </script>
-<script type="math/tex; mode=display"> \sum_j \sum_{\mu\nu} <\tilde{\psi}_j|\tilde{p}_{\mu}^I>  <\tilde{p}_{\nu}^I|\tilde{\psi}_j> \sum_{lm} \tau_{l_\alpha m_\alpha, l_\beta m_\beta}^{lm} \tau_{l_\mu m_\mu, l_\nu m_\nu}^{lm} (V_{Heff}^I)_{\alpha\beta\mu\nu}^{l} </script>
-</p>
+<div class="arithmatex">\[ E_{kinetic-atom}= \sum_I \sum_i \sum_{\alpha\beta} &lt;\tilde{\psi}_i|\tilde{p}_{\alpha}^I &lt; (t_{atom}^I)_{\alpha\beta} &lt;\tilde{p}_{\beta}^I|\tilde{\psi}_i \]</div>
+<div class="arithmatex">\[ E_{local-atom}=\sum_I \sum_i \sum_{\alpha\beta} &lt;\tilde{\psi}_i|\tilde{p}_{\alpha}^I&gt; (u_{atom}^I)_{\alpha\beta} &lt;\tilde{p}_{\beta}^I|\tilde{\psi}_i&gt;\]</div>
+<div class="arithmatex">\[ E_{xc-atom}=\sum_I \sum_{\theta\phi} w_{\theta\phi} \int_0^{r_{cut}^I} r^2 (\rho^I(r,\theta,\phi) \epsilon_{xc}(\rho^I(r,\theta,\phi)) -\tilde{\rho}^I(r,\theta,\phi) \epsilon_{xc}(\tilde{\rho}^I(r,\theta,\phi))) dr \]</div>
+<div class="arithmatex">\[ E_{hartree-atom}= \sum_I W_{atom}^I =\frac{1}{2} \sum_I \sum_i \sum_{\alpha\beta} &lt;\tilde{\psi}_i|\tilde{p}_{\alpha}&gt;  &lt;\tilde{p}_{\beta}^I|\tilde{\psi}_i&gt; \]</div>
+<div class="arithmatex">\[ \sum_j \sum_{\mu\nu} &lt;\tilde{\psi}_j|\tilde{p}_{\mu}^I&gt;  &lt;\tilde{p}_{\nu}^I|\tilde{\psi}_j&gt; \sum_{lm} \tau_{l_\alpha m_\alpha, l_\beta m_\beta}^{lm} \tau_{l_\mu m_\mu, l_\nu m_\nu}^{lm} (V_{Heff}^I)_{\alpha\beta\mu\nu}^{l} \]</div>
 <p>The next three terms are the terms containing the compensation charge
 densities.</p>
-<p>
-<script type="math/tex; mode=display">E_{cmp-vloc}= \sum_{\mathbf{G}} [\rho_{cmp} (\mathbf{G}) \tilde{V}_{local}(\mathbf{G})+\tilde{\rho}_{cmp}(\mathbf{G})(V_{local}(\mathbf{G})-\tilde{V}_{local}(\mathbf{G}))] + \\
-\int (\rho_{cmp}(\mathbf{r})-\tilde{\rho}_{cmp}(\mathbf{r}))(V_{local}(r)-\tilde{V}_{local}(\mathbf{r}))d\mathbf{r}</script>
-</p>
-<p>
-<script type="math/tex; mode=display">E_{cmp-cmp}= \Omega \sum_{\mathbf{G} \neq 0} \frac{4\pi}{|\mathbf{G}|^2} [ \rho_{cmp}(\mathbf{G}) \tilde{\rho}_{cmp}(\mathbf{G})- \frac{1}{2} \tilde{\rho}_{cmp}(\mathbf{G})\tilde{\rho}_{cmp}(\mathbf{G})] + \\
- \frac{1}{2} \iint \frac{(\rho_{cmp}(\mathbf{r})-\tilde{\rho}_{cmp}(\mathbf{r}))(\rho_{cmp}(\mathbf{r}')-\tilde{\rho}_{cmp}(\mathbf{r}'))} {|\mathbf{r}-\mathbf{r}'|}  d\mathbf{r} d\mathbf{r}'</script>
-</p>
-<p>
-<script type="math/tex; mode=display">E_{cmp-pw}= \Omega \sum_{\mathbf{G} \neq 0} \frac{4\pi}{|\mathbf{G}|^2} \rho_{cmp}(\mathbf{G}) \tilde{\rho}(\mathbf{G})</script>
-</p>
+<div class="arithmatex">\[E_{cmp-vloc}= \sum_{\mathbf{G}} [\rho_{cmp} (\mathbf{G}) \tilde{V}_{local}(\mathbf{G})+\tilde{\rho}_{cmp}(\mathbf{G})(V_{local}(\mathbf{G})-\tilde{V}_{local}(\mathbf{G}))] + \\
+\int (\rho_{cmp}(\mathbf{r})-\tilde{\rho}_{cmp}(\mathbf{r}))(V_{local}(r)-\tilde{V}_{local}(\mathbf{r}))d\mathbf{r}\]</div>
+<div class="arithmatex">\[E_{cmp-cmp}= \Omega \sum_{\mathbf{G} \neq 0} \frac{4\pi}{|\mathbf{G}|^2} [ \rho_{cmp}(\mathbf{G}) \tilde{\rho}_{cmp}(\mathbf{G})- \frac{1}{2} \tilde{\rho}_{cmp}(\mathbf{G})\tilde{\rho}_{cmp}(\mathbf{G})] + \\
+ \frac{1}{2} \iint \frac{(\rho_{cmp}(\mathbf{r})-\tilde{\rho}_{cmp}(\mathbf{r}))(\rho_{cmp}(\mathbf{r}')-\tilde{\rho}_{cmp}(\mathbf{r}'))} {|\mathbf{r}-\mathbf{r}'|}  d\mathbf{r} d\mathbf{r}'\]</div>
+<div class="arithmatex">\[E_{cmp-pw}= \Omega \sum_{\mathbf{G} \neq 0} \frac{4\pi}{|\mathbf{G}|^2} \rho_{cmp}(\mathbf{G}) \tilde{\rho}(\mathbf{G})\]</div>
 <p>In the first two formulas the first terms are computed using plane-waves
 and the second terms are computed using Gaussian two center integrals.
-The smooth local potential in the <script type="math/tex">E_{cmp-vloc}</script> term is the Fourier
+The smooth local potential in the <span class="arithmatex">\(E_{cmp-vloc}\)</span> term is the Fourier
 transform
 of</p>
-<p>
-<script type="math/tex; mode=display">\tilde{V}_{local}(\mathbf{r})=- \sum_I Z_I    \frac{ erf( \frac{ |\mathbf{r}-\mathbf{R}_I | }{\tilde{\sigma}_I })} {|r-R_I |}</script>
-</p>
+<div class="arithmatex">\[\tilde{V}_{local}(\mathbf{r})=- \sum_I Z_I    \frac{ erf( \frac{ |\mathbf{r}-\mathbf{R}_I | }{\tilde{\sigma}_I })} {|r-R_I |}\]</div>
 <p>The stiff and smooth compensation charge densities in the above formula
 are</p>
-<p>
-<script type="math/tex; mode=display">\rho_{cmp}(r)=\sum_I\sum_{lm} Q_{lm}^I g_{lm}^(\sigma_I ) (r-R_I )</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\tilde{\rho}_{cmp}(r)=\sum_I \sum_{lm} Q_{lm}^I g_{lm}^(\tilde{\sigma}_I ) (r-R_I )</script>
-</p>
+<div class="arithmatex">\[\rho_{cmp}(r)=\sum_I\sum_{lm} Q_{lm}^I g_{lm}^(\sigma_I ) (r-R_I )\]</div>
+<div class="arithmatex">\[\tilde{\rho}_{cmp}(r)=\sum_I \sum_{lm} Q_{lm}^I g_{lm}^(\tilde{\sigma}_I ) (r-R_I )\]</div>
 <p>where</p>
-<p>
-<script type="math/tex; mode=display">Q_{lm}^I = \sum_i \sum_{\alpha\beta} <\tilde{\psi}_i|\tilde{p}_\alpha^I > <\tilde{p}_\beta^I|\tilde{\psi}_i >  \tau_{l_\alpha m_\alpha, l_\beta m_\beta}^{lm} (q_{comp}^I )_{\alpha\beta}^l</script>
-</p>
-<p>The decay parameter <script type="math/tex">\sigma_I</script> is defined the same as above, and
-<script type="math/tex">\tilde{\sigma}</script><sub>I</sub> is defined to be smooth enough in order that ρ̃<sub>cmp</sub>(r) and <script type="math/tex">\tilde{V}</script><sub>local</sub>(r) can readily be expanded in
+<div class="arithmatex">\[Q_{lm}^I = \sum_i \sum_{\alpha\beta} &lt;\tilde{\psi}_i|\tilde{p}_\alpha^I &gt; &lt;\tilde{p}_\beta^I|\tilde{\psi}_i &gt;  \tau_{l_\alpha m_\alpha, l_\beta m_\beta}^{lm} (q_{comp}^I )_{\alpha\beta}^l\]</div>
+<p>The decay parameter <span class="arithmatex">\(\sigma_I\)</span> is defined the same as above, and
+<span class="arithmatex">\(\tilde{\sigma}\)</span><sub>I</sub> is defined to be smooth enough in order that ρ̃<sub>cmp</sub>(r) and <span class="arithmatex">\(\tilde{V}\)</span><sub>local</sub>(r) can readily be expanded in
 terms of plane-waves.</p>
 <p>The final three terms are the energies that contain the core
 densities</p>
-<p>
-<script type="math/tex; mode=display">E_{valence-core}=\sum_{i}\sum_{I}\sum_{\alpha \beta}<\tilde{\psi}_{i} | \tilde{p}_{\alpha}^{I} >  (V_{valence-core})_{\alpha \beta}^{I} <\tilde{p}_\beta^{I} | \tilde{\psi}_{i} ></script>
-</p>
-<p>
-<script type="math/tex; mode=display">E_{kinetic-core}=\sum_c \int_0^\infty \left[ (\varphi_{n_c l_c}^I (r))^{'} (\varphi_{n_c l_c}^{I} (r))^{'} + l_c (l_c+1)  \frac{\varphi_{n_c l_c}^{I} (r) \varphi_{n_c l_c}^{I} (r)}{r^{2}} \right]  dr</script>
-</p>
-<p>
-<script type="math/tex; mode=display">E_{ion-core}= \sum_I \frac{1}{2} \iint \frac{\rho_c^{I} (r) \rho_c^{I} (r')}{|r-r'|}  drdr^{'} - \int  \frac{\rho_c^{I} (r)}{|r|}  (Z_I+Z_I^{core} ) dr</script>
-</p>
+<div class="arithmatex">\[E_{valence-core}=\sum_{i}\sum_{I}\sum_{\alpha \beta}&lt;\tilde{\psi}_{i} | \tilde{p}_{\alpha}^{I} &gt;  (V_{valence-core})_{\alpha \beta}^{I} &lt;\tilde{p}_\beta^{I} | \tilde{\psi}_{i} &gt;\]</div>
+<div class="arithmatex">\[E_{kinetic-core}=\sum_c \int_0^\infty \left[ (\varphi_{n_c l_c}^I (r))^{'} (\varphi_{n_c l_c}^{I} (r))^{'} + l_c (l_c+1)  \frac{\varphi_{n_c l_c}^{I} (r) \varphi_{n_c l_c}^{I} (r)}{r^{2}} \right]  dr\]</div>
+<div class="arithmatex">\[E_{ion-core}= \sum_I \frac{1}{2} \iint \frac{\rho_c^{I} (r) \rho_c^{I} (r')}{|r-r'|}  drdr^{'} - \int  \frac{\rho_c^{I} (r)}{|r|}  (Z_I+Z_I^{core} ) dr\]</div>
 <p>The matrix elements contained in the above formula are</p>
-<p>
-<script type="math/tex; mode=display">(t_{atom}^{I} )_{\alpha \beta}= {\delta_{m_\alpha m_\beta} \delta_{l_\alpha l_\beta }}2  \int_0^{r_{cut}^I}  \left[
-  (\varphi_{n_\alpha l_\alpha}^{I} (r))' (\varphi_{n_\beta l_\beta}^{I} (r))' - (\tilde{\varphi}_{n_\alpha l_\alpha}^{I} (r))' (\tilde{\varphi}_{n_\beta l_\beta}^{I} (r))' + l_\alpha (l_\alpha+1)  \frac{ \varphi_{n_\alpha l_\alpha}^{I}(r) \varphi_{n_\beta l_\beta}^{I}(r) - \tilde{\varphi}_{n_\alpha l_\alpha}^{I}(r) \tilde{\varphi}_{n_\beta l_\beta}^I }{r^2 } \right]  dr</script>
-</p>
-<p>
-<script type="math/tex; mode=display">(u_{atom}^I )_{\alpha \beta} =\frac{Z_I}{4\pi} (V_{comp}^I )_{\alpha \beta}^{l=0} + \frac{2Z_I}{(\sqrt{2\pi} \sigma_I } (q_comp^I )_{\alpha \beta}^(l=0) +\delta_{m_\alpha m_\beta } \delta_{l_\alpha l_\beta } \int_0^{r_{cut}^I} [ \varphi_{n_\alpha l_\alpha}^I (r) \varphi_(n_\beta l_\beta)^I (r) \frac{-Z_I}{r} + \tilde{\varphi}_{n_\alpha l_\alpha}^I (r) \tilde{\varphi}_{n_\beta l_\beta}^I (r) (-v_{ps}^I (r)) ] dr</script>
-</p>
-<p>
-<script type="math/tex; mode=display">(V_{Heff}^I )_{\alpha \beta \mu \nu}^l = (V_H^I )_{\alpha\beta\mu\nu}^l - 2(V_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l -(v_g^I )^l (q_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l</script>
-</p>
-<p>
-<script type="math/tex; mode=display">(V_H^I )_{\alpha\beta\mu\nu}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \left( \frac{r_{<}^l}{r_{>}^{l+1} } \right)( \varphi_{n_\alpha l_\alpha } (r) \varphi_{n_\beta l_\beta } (r) \varphi_{n_\mu l_\mu } (r) \varphi_{n_\nu l_\nu } (r) - \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_(n_\beta l_\beta ) (r) \tilde{\varphi}_{n_\mu l_\mu } (r) \tilde{\varphi}_{n_\nu l_\nu } (r) )  drdr'</script>
-</p>
-<p>
-<script type="math/tex; mode=display">(V_{comp}^I )_{\alpha\beta}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_{n_\beta l_\beta } (r) \left( \frac{r_{<}^l}{r_{>}^{l+1} } \right) g_l^I (r')  r'^2  drdr'</script>
-</p>
-<p>
-<script type="math/tex; mode=display">(q_{comp}^I )_{\alpha\beta}^l = \int_0^\infty r^l \left( \varphi_{n_\alpha l_\alpha } (r) \varphi_{n_\beta l_\beta } (r)- \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_{n_\beta l_\beta } (r) \right) dr</script>
-</p>
-<p>
-<script type="math/tex; mode=display">(v_g^I )^l =\frac{4\sqrt{2\pi}}{ (2l+1)(2l+1)!! \sigma_I^{2l+1} }</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\tau_{l_\alpha m_\alpha,l_\beta m_\beta}^{lm}= \int_0^{2\pi} \int_0^{\pi} T_{lm} (\theta,\phi) T_{l_\alpha m_\alpha } (\theta,\phi) T_{l_\beta m_\beta } (\theta,\phi)  \sin(\theta) d\theta d\phi</script>
-</p>
+<div class="arithmatex">\[(t_{atom}^{I} )_{\alpha \beta}= {\delta_{m_\alpha m_\beta} \delta_{l_\alpha l_\beta }}2  \int_0^{r_{cut}^I}  \left[
+  (\varphi_{n_\alpha l_\alpha}^{I} (r))' (\varphi_{n_\beta l_\beta}^{I} (r))' - (\tilde{\varphi}_{n_\alpha l_\alpha}^{I} (r))' (\tilde{\varphi}_{n_\beta l_\beta}^{I} (r))' + l_\alpha (l_\alpha+1)  \frac{ \varphi_{n_\alpha l_\alpha}^{I}(r) \varphi_{n_\beta l_\beta}^{I}(r) - \tilde{\varphi}_{n_\alpha l_\alpha}^{I}(r) \tilde{\varphi}_{n_\beta l_\beta}^I }{r^2 } \right]  dr\]</div>
+<div class="arithmatex">\[(u_{atom}^I )_{\alpha \beta} =\frac{Z_I}{4\pi} (V_{comp}^I )_{\alpha \beta}^{l=0} + \frac{2Z_I}{(\sqrt{2\pi} \sigma_I } (q_comp^I )_{\alpha \beta}^(l=0) +\delta_{m_\alpha m_\beta } \delta_{l_\alpha l_\beta } \int_0^{r_{cut}^I} [ \varphi_{n_\alpha l_\alpha}^I (r) \varphi_(n_\beta l_\beta)^I (r) \frac{-Z_I}{r} + \tilde{\varphi}_{n_\alpha l_\alpha}^I (r) \tilde{\varphi}_{n_\beta l_\beta}^I (r) (-v_{ps}^I (r)) ] dr\]</div>
+<div class="arithmatex">\[(V_{Heff}^I )_{\alpha \beta \mu \nu}^l = (V_H^I )_{\alpha\beta\mu\nu}^l - 2(V_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l -(v_g^I )^l (q_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l\]</div>
+<div class="arithmatex">\[(V_H^I )_{\alpha\beta\mu\nu}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \left( \frac{r_{&lt;}^l}{r_{&gt;}^{l+1} } \right)( \varphi_{n_\alpha l_\alpha } (r) \varphi_{n_\beta l_\beta } (r) \varphi_{n_\mu l_\mu } (r) \varphi_{n_\nu l_\nu } (r) - \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_(n_\beta l_\beta ) (r) \tilde{\varphi}_{n_\mu l_\mu } (r) \tilde{\varphi}_{n_\nu l_\nu } (r) )  drdr'\]</div>
+<div class="arithmatex">\[(V_{comp}^I )_{\alpha\beta}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_{n_\beta l_\beta } (r) \left( \frac{r_{&lt;}^l}{r_{&gt;}^{l+1} } \right) g_l^I (r')  r'^2  drdr'\]</div>
+<div class="arithmatex">\[(q_{comp}^I )_{\alpha\beta}^l = \int_0^\infty r^l \left( \varphi_{n_\alpha l_\alpha } (r) \varphi_{n_\beta l_\beta } (r)- \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_{n_\beta l_\beta } (r) \right) dr\]</div>
+<div class="arithmatex">\[(v_g^I )^l =\frac{4\sqrt{2\pi}}{ (2l+1)(2l+1)!! \sigma_I^{2l+1} }\]</div>
+<div class="arithmatex">\[\tau_{l_\alpha m_\alpha,l_\beta m_\beta}^{lm}= \int_0^{2\pi} \int_0^{\pi} T_{lm} (\theta,\phi) T_{l_\alpha m_\alpha } (\theta,\phi) T_{l_\beta m_\beta } (\theta,\phi)  \sin(\theta) d\theta d\phi\]</div>
 <h3 id="exchange-correlation-potentials">Exchange-Correlation Potentials<a class="headerlink" href="#exchange-correlation-potentials" title="Permanent link">&para;</a></h3>
 <h4 id="dft-u-corrections">DFT + U Corrections<a class="headerlink" href="#dft-u-corrections" title="Permanent link">&para;</a></h4>
 <p>TO DO</p>
@@ -4514,11 +4435,8 @@ densities</p>
 end
 </code></pre>
 <h4 id="langreth-style-vdw-and-vdw-van-der-wall-functionals">Langreth style vdw and vdw van der Wall functionals<a class="headerlink" href="#langreth-style-vdw-and-vdw-van-der-wall-functionals" title="Permanent link">&para;</a></h4>
-<p>These potenials that are used to augment standard exchange-correlation potentials area calculated from a double integral over a nonlocal interaction kernel, <script type="math/tex">\phi(\mathbf{r},\mathbf{r}^{'})</script>
-</p>
-<p>
-<script type="math/tex; mode=display">E_{vdw} = \int \rho(\mathbf{r}) \phi(\mathbf{r},\mathbf{r}^{'}) \rho(\mathbf{r}^{'}) d\mathbf{r} d\mathbf{r}^{'} </script>
-</p>
+<p>These potenials that are used to augment standard exchange-correlation potentials area calculated from a double integral over a nonlocal interaction kernel, <span class="arithmatex">\(\phi(\mathbf{r},\mathbf{r}^{'})\)</span></p>
+<div class="arithmatex">\[E_{vdw} = \int \rho(\mathbf{r}) \phi(\mathbf{r},\mathbf{r}^{'}) \rho(\mathbf{r}^{'}) d\mathbf{r} d\mathbf{r}^{'} \]</div>
 <p>that is evaluated using the fast Fourier transformation method of Roman-Perez and Soler.</p>
 <p>G. Roman-Perez and J. M. Soler, Phys. Rev. Lett. 103, 096102 (2009).</p>
 <p>Langreth vdw and vdw2 van der Wall functionals are currently available for the BEEF, PBE96,
@@ -4991,9 +4909,9 @@ END
     orbitals</li>
 <li><code>output_wavefunctions</code> - name that will point to file containing the
     one-electron orbitals at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass <script type="math/tex">\mu</script>. This
+<li><code>fake_mass</code> - value for the electronic fake mass <span class="arithmatex">\(\mu\)</span>. This
     parameter is not presently used in a conjugate gradient simulation</li>
-<li><code>time_step</code> - value for the time step <script type="math/tex">\Delta t</script>. This parameter
+<li><code>time_step</code> - value for the time step <span class="arithmatex">\(\Delta t\)</span>. This parameter
     is not presently used in a conjugate gradient simulation.</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies and tolerances</li>
@@ -5017,7 +4935,7 @@ END
     Note Ewald summation is only used if the simulation_cell is
     periodic.</li>
 </ul>
-<p>Default set to be <script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>.</p>
+<p>Default set to be <span class="arithmatex">\(\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3\)</span>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
@@ -5358,9 +5276,9 @@ END
     orbital velocities.</li>
 <li><code>output_v_wavefunctions</code> - name of the file that will contain the
     one-electron orbital velocities at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass (<script type="math/tex">\mu</script> ).</li>
+<li><code>fake_mass</code> - value for the electronic fake mass (<span class="arithmatex">\(\mu\)</span> ).</li>
 <li><code>time_step</code> - value for the Verlet integration time step
-    (<script type="math/tex">Delta t</script>).</li>
+    (<span class="arithmatex">\(Delta t\)</span>).</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies.</li>
 <li><code>outer_iteration</code> - number of outer iterations</li>
@@ -5381,7 +5299,7 @@ END
     Note Ewald summation is only used if the simulation_cell is
     periodic.</li>
 </ul>
-<p>Default set to be <script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>.</p>
+<p>Default set to be <span class="arithmatex">\(\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3\)</span>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE || &hellip;) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
@@ -5392,13 +5310,13 @@ END
     dynamics. See section -sec:pspw_nose- for a description of the
     parameters. Note that the Temperature subblock is just a reordering
     of the Nose-Hoover subblock.<ul>
-<li><code>Period_electron</code> <script type="math/tex">\equiv P_{electron}</script> - estimated period for
+<li><code>Period_electron</code> <span class="arithmatex">\(\equiv P_{electron}\)</span> - estimated period for
     fictitious electron thermostat.</li>
-<li><code>Temperature_electron</code> <script type="math/tex">\equiv T_{electron}</script> - temperature for
+<li><code>Temperature_electron</code> <span class="arithmatex">\(\equiv T_{electron}\)</span> - temperature for
     fictitious electron motion</li>
-<li><code>Period_ion</code> <script type="math/tex">\equiv P_{ion}</script> - estimated period for ionic
+<li><code>Period_ion</code> <span class="arithmatex">\(\equiv P_{ion}\)</span> - estimated period for ionic
     thermostat</li>
-<li><code>Temperature_ion</code> <script type="math/tex">\equiv T_{ion}</script> - temperature for ion
+<li><code>Temperature_ion</code> <span class="arithmatex">\(\equiv T_{ion}\)</span> - temperature for ion
     motion</li>
 <li><code>Chainlength_electron</code> - number of electron thermostat chains</li>
 <li><code>Chainlength_ion</code> - number of ion thermostat chains</li>
@@ -5409,9 +5327,9 @@ END
     annealing to work the Nose-Hoover subblock needs to be specified.
     The initial temperature are taken from the Nose-Hoover subblock. See
     section -sec:pspw_nose- for a description of the parameters.<ul>
-<li><code>sa_scale_c</code> <script type="math/tex">\equiv \tau_{electron}</script> - decay rate in atomic
+<li><code>sa_scale_c</code> <span class="arithmatex">\(\equiv \tau_{electron}\)</span> - decay rate in atomic
     units for electronic temperature.</li>
-<li><code>sa_scale_r</code> <script type="math/tex">\equiv \tau_{ionic}</script> - decay rate in atomic
+<li><code>sa_scale_r</code> <span class="arithmatex">\(\equiv \tau_{ionic}\)</span> - decay rate in atomic
     units for the ionic temperature.  </li>
 </ul>
 </li>
@@ -5585,62 +5503,58 @@ is a powerful, non-equilibrium molecular dynamics method which
 accelerates the sampling of the multidimensional free energy surfaces of
 chemical reactions. This is achieved by adding an external
 time-dependent bias potential that is a function of user defined
-collective variables, <script type="math/tex">\mathbf{s}</script>. The bias potential discourages the
-system from sampling previously visited values of <script type="math/tex">\mathbf{s}</script> (i.e.,
-encourages the system to explore new values of <script type="math/tex">\mathbf{s}</script>. During the
+collective variables, <span class="arithmatex">\(\mathbf{s}\)</span>. The bias potential discourages the
+system from sampling previously visited values of <span class="arithmatex">\(\mathbf{s}\)</span> (i.e.,
+encourages the system to explore new values of <span class="arithmatex">\(\mathbf{s}\)</span>. During the
 simulation the bias potential accumulates in low energy wells which then
 allows the system to cross energy barriers much more quickly than would
-occur in standard dynamics. The collective variable <script type="math/tex">\mathbf{s}</script> is a
-generic function of the system coordinates, <script type="math/tex">\mathbf{R}</script> (e.g. bond
+occur in standard dynamics. The collective variable <span class="arithmatex">\(\mathbf{s}\)</span> is a
+generic function of the system coordinates, <span class="arithmatex">\(\mathbf{R}\)</span> (e.g. bond
 distance, bond angle, coordination numbers, etc.) that is capable of
 describing the chemical reaction of interest.
-<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> can be regarded as a reaction
+<span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)\)</span> can be regarded as a reaction
 coordinate if it can distinguish between the reactant, transition, and
 products states, and also capture the kinetics of the reaction.</p>
 <p>The biasing is achieved by “flooding” the energy landscape with
 repulsive Gaussian “hills” centered on the current location of
-<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at a constant time interval
-<script type="math/tex">\Delta t</script>. If the height of the Gaussians is constant in time then we
+<span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)\)</span> at a constant time interval
+<span class="arithmatex">\(\Delta t\)</span>. If the height of the Gaussians is constant in time then we
 have standard metadynamics; if the heights vary (slowly decreased) over
 time then we have well-tempered metadynamics. In between the addition of
 Gaussians, the system is propagated by normal (but out of equilibrium)
-dynamics. Suppose that the dimension of the collective space is <script type="math/tex">d</script>,
+dynamics. Suppose that the dimension of the collective space is <span class="arithmatex">\(d\)</span>,
 i.e.
-<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)=\bigl[s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\bigr]</script>
-and that prior to any time <script type="math/tex">t</script> during the simulation, <script type="math/tex">N +1</script>
+<span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)=\bigl[s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\bigr]\)</span>
+and that prior to any time <span class="arithmatex">\(t\)</span> during the simulation, <span class="arithmatex">\(N +1\)</span>
 Gaussians centered on 
-<script type="math/tex">\mathbf{S}^{t_g}</script>
+<span class="arithmatex">\(\mathbf{S}^{t_g}\)</span>
 are deposited along the
-trajectory of <script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at times
-<script type="math/tex">t_g = 0, \Delta t, 2\Delta t, \ldots ,N\Delta t</script>. Then, the value of
-the bias potential, <script type="math/tex">V</script>, at an arbitrary point,
-<script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)=\bigl[s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\bigr]</script>,
-along the trajectory of <script type="math/tex">\mathbf{s}\left(\mathbf{R}\right)</script> at time <script type="math/tex">t</script>
+trajectory of <span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)\)</span> at times
+<span class="arithmatex">\(t_g = 0, \Delta t, 2\Delta t, \ldots ,N\Delta t\)</span>. Then, the value of
+the bias potential, <span class="arithmatex">\(V\)</span>, at an arbitrary point,
+<span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)=\bigl[s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\bigr]\)</span>,
+along the trajectory of <span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)\)</span> at time <span class="arithmatex">\(t\)</span>
 is given
 by</p>
-<p>
-<script type="math/tex; mode=display">V_{meta}\left(\pmb{s},t\right) = \sum_{t_g=0}^{t_g<} W(t) \exp\left(-\sum_{i=1}^{d}\frac{({s_i}-{s_i}^{t_g})^2}{2\sigma_i^2}\right)</script>
-</p>
+<div class="arithmatex">\[V_{meta}\left(\pmb{s},t\right) = \sum_{t_g=0}^{t_g&lt;} W(t) \exp\left(-\sum_{i=1}^{d}\frac{({s_i}-{s_i}^{t_g})^2}{2\sigma_i^2}\right)\]</div>
 <p>where
-<script type="math/tex">W(t)=W_0 \exp\left(-\frac{V_{meta}\left(\mathbf{s},t-\Delta t\right)}{k_B T_{tempered}}\right)</script>
-is the time-dependent Gaussian height. <script type="math/tex">\sigma_i \,(i=1,2,\ldots,d)</script>
-and <script type="math/tex">W_0</script> are width and initial height respectively of Gaussians, and
-<script type="math/tex">T_{tempered}</script>
+<span class="arithmatex">\(W(t)=W_0 \exp\left(-\frac{V_{meta}\left(\mathbf{s},t-\Delta t\right)}{k_B T_{tempered}}\right)\)</span>
+is the time-dependent Gaussian height. <span class="arithmatex">\(\sigma_i \,(i=1,2,\ldots,d)\)</span>
+and <span class="arithmatex">\(W_0\)</span> are width and initial height respectively of Gaussians, and
+<span class="arithmatex">\(T_{tempered}\)</span>
 is the tempered metadynamics temperature.
-<script type="math/tex">T_{tempered}=0</script>
+<span class="arithmatex">\(T_{tempered}=0\)</span>
 corresponds to standard molecular dynamics because
-<script type="math/tex">W(t)=0</script>
-and therfore there is no bias. <script type="math/tex">T_{tempered}=\infty</script>
+<span class="arithmatex">\(W(t)=0\)</span>
+and therfore there is no bias. <span class="arithmatex">\(T_{tempered}=\infty\)</span>
 corresponds to standard metadynamics since in this case
-<script type="math/tex">W(t)=W_0</script>=constant. A positive, finite value of <script type="math/tex">T_{tempered}</script> (eg.
-<script type="math/tex">T_{tempered}</script> &gt;=1500 K) corresponds to <em>well-tempered</em> metadynamics in which  <script type="math/tex">0 < W(t)<= W_0</script>.</p>
-<p>For sufficiently large <script type="math/tex">t</script>, the history potential
-<script type="math/tex">V_{meta}\left(\mathbf{s},t\right)</script> will nearly flatten the free energy
-surface, <script type="math/tex">F(\mathbf{s})</script>, along <script type="math/tex">\mathbf{S}</script> and an unbiased estimator
+<span class="arithmatex">\(W(t)=W_0\)</span>=constant. A positive, finite value of <span class="arithmatex">\(T_{tempered}\)</span> (eg.
+<span class="arithmatex">\(T_{tempered}\)</span> &gt;=1500 K) corresponds to <em>well-tempered</em> metadynamics in which  <span class="arithmatex">\(0 &lt; W(t)&lt;= W_0\)</span>.</p>
+<p>For sufficiently large <span class="arithmatex">\(t\)</span>, the history potential
+<span class="arithmatex">\(V_{meta}\left(\mathbf{s},t\right)\)</span> will nearly flatten the free energy
+surface, <span class="arithmatex">\(F(\mathbf{s})\)</span>, along <span class="arithmatex">\(\mathbf{S}\)</span> and an unbiased estimator
 of F(s) is given by</p>
-<p>
-<script type="math/tex; mode=display">F(\mathbf{s}) = -\left(1+\frac{T}{T_{tempered}}\right)\lim_{t \to \infty} V_{meta}(\mathbf{s},t)</script>
-</p>
+<div class="arithmatex">\[F(\mathbf{s}) = -\left(1+\frac{T}{T_{tempered}}\right)\lim_{t \to \infty} V_{meta}(\mathbf{s},t)\]</div>
 <h4 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h4>
 <p>Input to a metadynamics simulation is contained within the METADYNAMICS
 sub-block. Listed below is the the format of a METADYNAMICS
@@ -5701,79 +5615,65 @@ END
 <h4 id="input_1">Input<a class="headerlink" href="#input_1" title="Permanent link">&para;</a></h4>
 <h3 id="collective-variables">Collective Variables<a class="headerlink" href="#collective-variables" title="Permanent link">&para;</a></h3>
 <h4 id="bond-distance-collective-variable">Bond Distance Collective Variable<a class="headerlink" href="#bond-distance-collective-variable" title="Permanent link">&para;</a></h4>
-<p>This describes the bond distance between any pair of atoms <script type="math/tex">i</script> and
-<script type="math/tex">j</script>:</p>
-<p>
-<script type="math/tex; mode=display">s\left(r_{ij}\right) = \left \vert \mathbf{r}_{i}-\mathbf{r}_j\right\vert = r_{ij}</script>
-</p>
+<p>This describes the bond distance between any pair of atoms <span class="arithmatex">\(i\)</span> and
+<span class="arithmatex">\(j\)</span>:</p>
+<div class="arithmatex">\[s\left(r_{ij}\right) = \left \vert \mathbf{r}_{i}-\mathbf{r}_j\right\vert = r_{ij}\]</div>
 <h4 id="angle-collective-variable">Angle Collective Variable<a class="headerlink" href="#angle-collective-variable" title="Permanent link">&para;</a></h4>
-<p>This describes the bond angle formed at <script type="math/tex">i</script> by the triplet <script type="math/tex"><ijk></script>
-</p>
-<p>
-<script type="math/tex; mode=display">s\left(r_{ij},r_{ik}\right) = \frac{\pmb{r}_{ij}\cdot\pmb{r}_{ik}}{r_{ij}r_{ik}}</script>
-</p>
+<p>This describes the bond angle formed at <span class="arithmatex">\(i\)</span> by the triplet <span class="arithmatex">\(&lt;ijk&gt;\)</span></p>
+<div class="arithmatex">\[s\left(r_{ij},r_{ik}\right) = \frac{\pmb{r}_{ij}\cdot\pmb{r}_{ik}}{r_{ij}r_{ik}}\]</div>
 <h4 id="coordination-collective-variable">Coordination Collective Variable<a class="headerlink" href="#coordination-collective-variable" title="Permanent link">&para;</a></h4>
 <p>The coordination number collective variable is defined as</p>
-<p>
-<script type="math/tex; mode=display">s\left(r_{ij},r_{0}\right) =\sum_{i,j}\xi_{ij}</script>
-</p>
-<p>where the summation over <script type="math/tex">i</script> and <script type="math/tex">j</script> runs over two types of atoms,
-<script type="math/tex">\xi_{ij}</script> is the <em>weighting function</em>, and <script type="math/tex">r_{0}</script> is the cut-off
+<div class="arithmatex">\[s\left(r_{ij},r_{0}\right) =\sum_{i,j}\xi_{ij}\]</div>
+<p>where the summation over <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span> runs over two types of atoms,
+<span class="arithmatex">\(\xi_{ij}\)</span> is the <em>weighting function</em>, and <span class="arithmatex">\(r_{0}\)</span> is the cut-off
 distance.
 In the standard procedure for computing the coordination
-number, <script type="math/tex">\xi_{ij}</script> =1 if <script type="math/tex">r_{ij} < r_0</script>, otherwise 
-<script type="math/tex">\xi_{ij}</script> =0,
-implying that <script type="math/tex">\xi_{ij}</script> is not continuous when 
-<script type="math/tex">r_{ij}=r_{0}</script>. To
+number, <span class="arithmatex">\(\xi_{ij}\)</span> =1 if <span class="arithmatex">\(r_{ij} &lt; r_0\)</span>, otherwise 
+<span class="arithmatex">\(\xi_{ij}\)</span> =0,
+implying that <span class="arithmatex">\(\xi_{ij}\)</span> is not continuous when 
+<span class="arithmatex">\(r_{ij}=r_{0}\)</span>. To
 ensure a smooth and continuous definition of the coordination number, we
 adopt two variants of the weighting function. The first variant
 is</p>
-<p>
-<script type="math/tex; mode=display">\xi_{ij} = \frac{1-\left(r_{ij}/r_{0}\right)^n}{1-\left(r_{ij}/r_{0}\right)^m}</script>
-</p>
-<p>where <script type="math/tex">n</script> and <script type="math/tex">m</script> are integers (m &gt; n) chosen such that
-<script type="math/tex">\xi_{ij}\approx 1</script> when <script type="math/tex">r_{ij} < r_0</script>  and
-<script type="math/tex">\xi_{ij}\rightarrow 0</script> when <script type="math/tex">r_{ij}</script> is much larger than <script type="math/tex">r_{0}</script>.
+<div class="arithmatex">\[\xi_{ij} = \frac{1-\left(r_{ij}/r_{0}\right)^n}{1-\left(r_{ij}/r_{0}\right)^m}\]</div>
+<p>where <span class="arithmatex">\(n\)</span> and <span class="arithmatex">\(m\)</span> are integers (m &gt; n) chosen such that
+<span class="arithmatex">\(\xi_{ij}\approx 1\)</span> when <span class="arithmatex">\(r_{ij} &lt; r_0\)</span>  and
+<span class="arithmatex">\(\xi_{ij}\rightarrow 0\)</span> when <span class="arithmatex">\(r_{ij}\)</span> is much larger than <span class="arithmatex">\(r_{0}\)</span>.
 For example, the parameters of the O-H coordination in water is well
-described by <script type="math/tex">r_{0}</script> =1.6 Å, 
-<script type="math/tex">n=6</script>
-and <script type="math/tex">m=18</script>. 
-In practice, <script type="math/tex">n</script>
-and <script type="math/tex">m</script> must tuned for a given <script type="math/tex">r_{0}</script> to ensure that <script type="math/tex">\xi_{ij}</script>
+described by <span class="arithmatex">\(r_{0}\)</span> =1.6 Å, 
+<span class="arithmatex">\(n=6\)</span>
+and <span class="arithmatex">\(m=18\)</span>. 
+In practice, <span class="arithmatex">\(n\)</span>
+and <span class="arithmatex">\(m\)</span> must tuned for a given <span class="arithmatex">\(r_{0}\)</span> to ensure that <span class="arithmatex">\(\xi_{ij}\)</span>
 is smooth and satisfies the above mentioned properties, particularly the
-large <script type="math/tex">r_{ij}</script>
-</p>
+large <span class="arithmatex">\(r_{ij}\)</span></p>
 <p>The second form of the weighting function, which is due to Sprik, is</p>
-<p>
-<script type="math/tex; mode=display">\xi_{ij}=\frac{1}{1 + \exp\left[n\left(r_{ij}-r_{0}\right)\right]}</script>
-</p>
-<p>In this definition <script type="math/tex">\xi_{ij}</script> is analogous to the Fermi function and
-its width is controlled by the parameter <script type="math/tex">\frac{1}{n}</script>. Large and
-small values of <script type="math/tex">n</script> respectively correspond to sharp and soft
-transitions at <script type="math/tex">r_{ij} = r_{0}</script>. 
-Furthermore <script type="math/tex">\xi_{ij}</script> should
-approach 1 and 0 when <script type="math/tex">r_{ij} < 0</script>
+<div class="arithmatex">\[\xi_{ij}=\frac{1}{1 + \exp\left[n\left(r_{ij}-r_{0}\right)\right]}\]</div>
+<p>In this definition <span class="arithmatex">\(\xi_{ij}\)</span> is analogous to the Fermi function and
+its width is controlled by the parameter <span class="arithmatex">\(\frac{1}{n}\)</span>. Large and
+small values of <span class="arithmatex">\(n\)</span> respectively correspond to sharp and soft
+transitions at <span class="arithmatex">\(r_{ij} = r_{0}\)</span>. 
+Furthermore <span class="arithmatex">\(\xi_{ij}\)</span> should
+approach 1 and 0 when <span class="arithmatex">\(r_{ij} &lt; 0\)</span>
 and <script type="math/tex">r_{ij} < r_0 </script>
-respectively. In practice <script type="math/tex">n</script> =6-10 Å <script type="math/tex">^{-1}</script>. 
+respectively. In practice <span class="arithmatex">\(n\)</span> =6-10 Å <span class="arithmatex">\(^{-1}\)</span>. 
 For example, a good set
-of parameters of the O-H coordination in water is <script type="math/tex">r_{0}</script> =1.4 Å and
-<script type="math/tex">n</script> =10 Å <script type="math/tex">^{-1}</script>.</p>
+of parameters of the O-H coordination in water is <span class="arithmatex">\(r_{0}\)</span> =1.4 Å and
+<span class="arithmatex">\(n\)</span> =10 Å <span class="arithmatex">\(^{-1}\)</span>.</p>
 <h4 id="n-plane-collective-variable">N-Plane Collective Variable<a class="headerlink" href="#n-plane-collective-variable" title="Permanent link">&para;</a></h4>
 <p>The N-Plane collective variable is useful for probing the adsorption of
 adatom/admolecules to a surface. It is defined as the <em>average distance</em>
 of the adatom/admolecule from a given layer in the slab along the
 surface normal:</p>
-<p>
-<script type="math/tex; mode=display">s = Z_{ads}-\frac{1}{N_{plane}}\sum_{i=1}^{N_{plane}}Z_i</script>
-</p>
-<p>where <script type="math/tex">Z_{ads}</script> denotes the position of the adatom/admolecule/impurity
+<div class="arithmatex">\[s = Z_{ads}-\frac{1}{N_{plane}}\sum_{i=1}^{N_{plane}}Z_i\]</div>
+<p>where <span class="arithmatex">\(Z_{ads}\)</span> denotes the position of the adatom/admolecule/impurity
 along the surface normal (here, we assume the surface normal to be the
 z-axis) and the summation over 
-<script type="math/tex">i</script> 
+<span class="arithmatex">\(i\)</span> 
 runs over 
-<script type="math/tex">N_{plane}</script> 
+<span class="arithmatex">\(N_{plane}\)</span> 
 atoms at
-<script type="math/tex">Z_i</script> which form the layer. The layer could be on the face or in the
+<span class="arithmatex">\(Z_i\)</span> which form the layer. The layer could be on the face or in the
 interior of the
 slab.</p>
 <h4 id="user-defined-collective-variable">User defined Collective Variable<a class="headerlink" href="#user-defined-collective-variable" title="Permanent link">&para;</a></h4>
@@ -5841,9 +5741,8 @@ sub-block.</p>
     orbitals</li>
 <li><code>output_wavefunctions</code> - name of the file tha will contain the
     one-electron orbitals at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass <script type="math/tex">\mu</script>
-</li>
-<li><code>time_step</code> - value for the time step <script type="math/tex">Delta t</script>.</li>
+<li><code>fake_mass</code> - value for the electronic fake mass <span class="arithmatex">\(\mu\)</span></li>
+<li><code>time_step</code> - value for the time step <span class="arithmatex">\(Delta t\)</span>.</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies and tolerances</li>
 <li><code>outer_iteration</code> - number of outer iterations</li>
@@ -5863,7 +5762,7 @@ sub-block.</p>
     Note Ewald summation is only used if the simulation_cell is
     periodic.</li>
 </ul>
-<p>Default set to be <script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>.</p>
+<p>Default set to be <span class="arithmatex">\(\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3\)</span>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE || &hellip;) - Choose between Vosko et al&rsquo;s LDA
     parameterization or the orginal and revised Perdew, Burke, and
@@ -5910,9 +5809,9 @@ input in detail.</p>
 </ul>
 <p>Alternatively, instead of explicitly entering lattice vectors, users can
 enter the unit cell using the standard cell parameters, a, b, c,
-<script type="math/tex">alpha</script>,
-<script type="math/tex">\beta</script>, 
-and <script type="math/tex">\gamma</script>, by using the LATTICE block. The
+<span class="arithmatex">\(alpha\)</span>,
+<span class="arithmatex">\(\beta\)</span>, 
+and <span class="arithmatex">\(\gamma\)</span>, by using the LATTICE block. The
 format for input is as follows:</p>
 <pre><code>NWPW 
 ... 
@@ -6000,14 +5899,10 @@ to the non-local psp for up/down spins on atoms and angular momentum
 that you specify.</p>
 <p>Basically, the pseudopotential
 energy</p>
-<p>
-<script type="math/tex; mode=display">E_{psp}= \sum_{\sigma=\uparrow,\downarrow} \sum_{i=1}^{n_{elc}^\sigma} \sum_{I=1}^{n_{ions}} \left( <\psi_i^\sigma|V_{local}^{I}|\psi_i^\sigma>  + \sum_{l=0}^{l_{max}^I} \sum_{m=-l}^{l} \sum_{n=1}^{n_{max}^I} \sum_{n'=1}^{n_{max}^I} <\psi_i^\sigma|P_{nlm}^I> h_{l,n,n'}^I <P_{n'lm}^{I}|\psi_i^\sigma> \right)</script>
-</p>
+<div class="arithmatex">\[E_{psp}= \sum_{\sigma=\uparrow,\downarrow} \sum_{i=1}^{n_{elc}^\sigma} \sum_{I=1}^{n_{ions}} \left( &lt;\psi_i^\sigma|V_{local}^{I}|\psi_i^\sigma&gt;  + \sum_{l=0}^{l_{max}^I} \sum_{m=-l}^{l} \sum_{n=1}^{n_{max}^I} \sum_{n'=1}^{n_{max}^I} &lt;\psi_i^\sigma|P_{nlm}^I&gt; h_{l,n,n'}^I &lt;P_{n'lm}^{I}|\psi_i^\sigma&gt; \right)\]</div>
 <p>was modified
 to</p>
-<p>
-<script type="math/tex; mode=display">E_{psp}= \sum_{\sigma=\uparrow,\downarrow} \sum_{i=1}^{n_{elc}^\sigma} \sum_{I=1}^{n_{ions}} \left( <\psi_i^\sigma|V_{local}^{I}|\psi_i^\sigma>  + \sum_{l=0}^{l_{max}^I} \sum_{m=-l}^{l} \sum_{n=1}^{n_{max}^I} \sum_{n'=1}^{n_{max}^I}  \left(1-\delta_{l,l^\sigma} \delta_{I,ionlist^\sigma}(\xi^\sigma-1)\right) <\psi_i^\sigma|P_{nlm}^I> h_{l,n,n'}^I <P_{n'lm}^{I}|\psi_i^\sigma> \right)</script>
-</p>
+<div class="arithmatex">\[E_{psp}= \sum_{\sigma=\uparrow,\downarrow} \sum_{i=1}^{n_{elc}^\sigma} \sum_{I=1}^{n_{ions}} \left( &lt;\psi_i^\sigma|V_{local}^{I}|\psi_i^\sigma&gt;  + \sum_{l=0}^{l_{max}^I} \sum_{m=-l}^{l} \sum_{n=1}^{n_{max}^I} \sum_{n'=1}^{n_{max}^I}  \left(1-\delta_{l,l^\sigma} \delta_{I,ionlist^\sigma}(\xi^\sigma-1)\right) &lt;\psi_i^\sigma|P_{nlm}^I&gt; h_{l,n,n'}^I &lt;P_{n'lm}^{I}|\psi_i^\sigma&gt; \right)\]</div>
 <p>An example input is as follows:</p>
 <pre><code>title &quot;hematite 10 atoms&quot;
 
@@ -6121,9 +6016,7 @@ END
 contained in the geometry blocks. The following local pseudopotential
 suggested by Laio, VandeVondele and Rothlisberger can be automatically
 generated.</p>
-<p>
-<script type="math/tex; mode=display">\begin{matrix}V(\vec{r}) = -Z_{ion}\frac{{r_c}^{n_{\sigma}} - r^{n_{\sigma}}}{-sign(Z_{ion})*{r_c}^{n_{\sigma}+1}-r^{n_{\sigma}+1}}\end{matrix}</script>
-</p>
+<div class="arithmatex">\[\begin{matrix}V(\vec{r}) = -Z_{ion}\frac{{r_c}^{n_{\sigma}} - r^{n_{\sigma}}}{-sign(Z_{ion})*{r_c}^{n_{\sigma}+1}-r^{n_{\sigma}+1}}\end{matrix}\]</div>
 <p>The following input To define this pseudopo the O^ MM atom using the
 following input</p>
 <pre><code>NWPW   
@@ -6133,8 +6026,8 @@ following input</p>
 END
 </code></pre>
 <p>defines the local pseudopotential for the O^ MM atom , where
-<script type="math/tex">Z_{ion}=-0.8476</script>, 
-<script type="math/tex">n_{\sigma}=4</script>, and <script type="math/tex">r_c=0.7</script>. The following
+<span class="arithmatex">\(Z_{ion}=-0.8476\)</span>, 
+<span class="arithmatex">\(n_{\sigma}=4\)</span>, and <span class="arithmatex">\(r_c=0.7\)</span>. The following
 input can be used to define the local pseudopotentials for all the MM
 atoms in the geometry block defined above</p>
 <pre><code>NWPW   
@@ -6271,17 +6164,17 @@ to define the pseudopotential. After the ATOMIC_FILLING: <ncore>
 <nvalence> line, the core states are listed (one per line), and then the
 valence states are listed (one per line). Each state contains two
 integer and a value. The first integer specifies the radial quantum
-number, <script type="math/tex">n</script>, the second integer specifies the angular momentum quantum
-number, <script type="math/tex">l</script>, and the third value specifies the occupation of the
+number, <span class="arithmatex">\(n\)</span>, the second integer specifies the angular momentum quantum
+number, <span class="arithmatex">\(l\)</span>, and the third value specifies the occupation of the
 state.</p>
 <p>For example to define a pseudopotential for the Neon atom in the
-<script type="math/tex">1s^2 2s^2 2p^6</script> state could have the block</p>
+<span class="arithmatex">\(1s^2 2s^2 2p^6\)</span> state could have the block</p>
 <pre><code>ATOMIC_FILLING: 1 2   
  1 s 2.0 #core state - 1s^2   
  2 s 2.0 #valence state - 2s^2   
  2 p 6.0 #valence state - 2p^6
 </code></pre>
-<p>for a pseudopotential with a <script type="math/tex">2s</script> and <script type="math/tex">2p</script> valence electrons or the
+<p>for a pseudopotential with a <span class="arithmatex">\(2s\)</span> and <span class="arithmatex">\(2p\)</span> valence electrons or the
 block</p>
 <pre><code>ATOMIC_FILLING: 3 0   
  1 s 2.0 #core state   
@@ -6292,9 +6185,9 @@ block</p>
 <h3 id="cutoff">CUTOFF<a class="headerlink" href="#cutoff" title="Permanent link">&para;</a></h3>
 <p>This optional block specifies the cutoff distances used to match the
 all-electron atom to the pseudopotential atom. For Hamann
-pseudopotentials <script type="math/tex">r_{cut}(l)</script> defines the distance where the
+pseudopotentials <span class="arithmatex">\(r_{cut}(l)\)</span> defines the distance where the
 all-electron potential is matched to the pseudopotential, and for
-Troullier-Martins pseudopotentials <script type="math/tex">r_{cut}(l)</script> defines the distance
+Troullier-Martins pseudopotentials <span class="arithmatex">\(r_{cut}(l)\)</span> defines the distance
 where the all-electron orbital is matched to the pseudowavefunctions.
 Thus the definition of the radii depends on the type of pseudopotential.
 The cutoff radii used in Hamann pseudopotentials will be smaller than
@@ -6328,11 +6221,9 @@ Cohen, Phys. Rev. B, <strong>26</strong>(, 1738, (1982)). This approximation is 
 to dramatically improve results for systems containing alkali and
 transition metal atoms.</p>
 <p>The implementation in the PSPW module defines the semi-core density,
-<script type="math/tex">\rho_{semicore}</script>, by
+<span class="arithmatex">\(\rho_{semicore}\)</span>, by
 using the sixth-order polynomial</p>
-<p>
-<script type="math/tex; mode=display">\rho_{semicore}(r) = \begin{cases} \rho_{core}  \mbox{if } r \ge r_{semicore} \\ c_0 + c_3 r^3 + c_4 r^4 + c_5 r^5 + c_6 r^6  \mbox{if } r < r_{semicore} \end{cases}</script>
-</p>
+<div class="arithmatex">\[\rho_{semicore}(r) = \begin{cases} \rho_{core}  \mbox{if } r \ge r_{semicore} \\ c_0 + c_3 r^3 + c_4 r^4 + c_5 r^5 + c_6 r^6  \mbox{if } r &lt; r_{semicore} \end{cases}\]</div>
 <p>This expansion was suggested by Fuchs and Scheffler (M. Fuchs, and M.
 Scheffler, Comp. Phys. Comm.,<strong>119</strong>,67 (1999)), and is better behaved
 for taking derivatives (i.e. calculating ionic forces) than the
@@ -6403,9 +6294,9 @@ END
     orbitals</li>
 <li><code>output_wavefunctions</code> - name of the file that will contain the
     one-electron orbitals at the end of the run.</li>
-<li><code>fake_mass</code> - value for the electronic fake mass <script type="math/tex">\mu</script>. This
+<li><code>fake_mass</code> - value for the electronic fake mass <span class="arithmatex">\(\mu\)</span>. This
     parameter is not presently used in a conjugate gradient simulation</li>
-<li><code>time_step</code> - value for the time step (<script type="math/tex">\Delta t</script>). This parameter
+<li><code>time_step</code> - value for the time step (<span class="arithmatex">\(\Delta t\)</span>). This parameter
     is not presently used in a conjugate gradient simulation.</li>
 <li><code>inner_iteration</code> - number of iterations between the printing out of
     energies and tolerances</li>
@@ -6428,7 +6319,7 @@ END
 <li><code>rcut</code> - value for the cutoff radius used in the smooth compensation
     summation.</li>
 </ul>
-<p>Default set to be <script type="math/tex">\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3</script>.</p>
+<p>Default set to be <span class="arithmatex">\(\frac{MIN(\left| \vec{a_i} \right|)}{\pi}, i=1,2,3\)</span>.</p>
 <ul>
 <li>(Vosko || PBE96 || revPBE) - Choose between Vosko et al&rsquo;s LDA
     parametrization or the original and revised Perdew, Burke, and
@@ -6622,29 +6513,21 @@ theory (R. Car and M. Parrinello, Phys. Rev. Lett. <strong>55</strong>, 2471, (1
 heart of this method they introduced a fictitious kinetic energy
 functional for the Kohn-Sham
 orbitals.</p>
-<p>
-<script type="math/tex; mode=display">\begin{align}KE \left ( \bigl[ \psi_{i,\sigma}(\vec{r}) \bigr] \right ) = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2\end{align}</script>
-</p>
+<div class="arithmatex">\[\begin{align}KE \left ( \bigl[ \psi_{i,\sigma}(\vec{r}) \bigr] \right ) = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2\end{align}\]</div>
 <p>Given this kinetic energy the constrained equations of motion are found
 by taking the first variation of the auxiliary Lagrangian.</p>
-<p>
-<script type="math/tex; mode=display"> L = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2;     + \frac{1}{2} \sum_{I} M_I \left | \dot{\vec{R}}_{I} \right | ^2 - E \left [  \bigl[ \psi_{i,\sigma}(\vec{r})  \bigr] , \bigl[ \vec{R}_I  \bigr] \right ] \\ + \sum_{ij,\sigma} \Lambda_{ij,\sigma} \left ( \int d\vec{r}\ \psi_{i,\sigma}^{*}(\vec{r}) \psi_{j,\sigma}(\vec{r}) - \delta_{ij\sigma} \right )</script>
-</p>
+<div class="arithmatex">\[ L = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2;     + \frac{1}{2} \sum_{I} M_I \left | \dot{\vec{R}}_{I} \right | ^2 - E \left [  \bigl[ \psi_{i,\sigma}(\vec{r})  \bigr] , \bigl[ \vec{R}_I  \bigr] \right ] \\ + \sum_{ij,\sigma} \Lambda_{ij,\sigma} \left ( \int d\vec{r}\ \psi_{i,\sigma}^{*}(\vec{r}) \psi_{j,\sigma}(\vec{r}) - \delta_{ij\sigma} \right )\]</div>
 <p>Which generates a dynamics for the wavefunctions
-<script type="math/tex">\psi_{i,\sigma}(\vec{r})</script> and atoms positions <script type="math/tex">\vec{R}_I</script> through
+<span class="arithmatex">\(\psi_{i,\sigma}(\vec{r})\)</span> and atoms positions <span class="arithmatex">\(\vec{R}_I\)</span> through
 the constrained equations of motion:</p>
-<p>
-<script type="math/tex; mode=display">\begin{matrix}\mu \ddot{\psi}_{i,\sigma}(\vec{r},t) = -\frac{\delta E}{\delta \psi_{i,\sigma }^{*} \left( \vec{r},t \right) } + \sum\limits_j \Lambda_{ij,\sigma} \psi_{j,\sigma} \left( \vec{r},t \right) \end{matrix}</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\begin{matrix}M_I \ddot{\vec{R}}_I = -\frac{\partial E}{\partial \vec{R}_I} \end{matrix}</script>
-</p>
-<p>where <script type="math/tex">\mu</script> is the fictitious mass for the electronic degrees of
-freedom and <script type="math/tex">M_I</script> are the ionic masses. The adjustable parameter
-<script type="math/tex">\mu</script> is used to describe the relative rate at which the wavefunctions
-change with time. <script type="math/tex">\Lambda_{ij,\sigma}</script> are the Lagrangian multipliers
+<div class="arithmatex">\[\begin{matrix}\mu \ddot{\psi}_{i,\sigma}(\vec{r},t) = -\frac{\delta E}{\delta \psi_{i,\sigma }^{*} \left( \vec{r},t \right) } + \sum\limits_j \Lambda_{ij,\sigma} \psi_{j,\sigma} \left( \vec{r},t \right) \end{matrix}\]</div>
+<div class="arithmatex">\[\begin{matrix}M_I \ddot{\vec{R}}_I = -\frac{\partial E}{\partial \vec{R}_I} \end{matrix}\]</div>
+<p>where <span class="arithmatex">\(\mu\)</span> is the fictitious mass for the electronic degrees of
+freedom and <span class="arithmatex">\(M_I\)</span> are the ionic masses. The adjustable parameter
+<span class="arithmatex">\(\mu\)</span> is used to describe the relative rate at which the wavefunctions
+change with time. <span class="arithmatex">\(\Lambda_{ij,\sigma}\)</span> are the Lagrangian multipliers
 for the orthonormalization of the single-particle orbitals
-<script type="math/tex">\psi_{i,\sigma}(\vec{r})</script>. They are defined by the orthonormalization
+<span class="arithmatex">\(\psi_{i,\sigma}(\vec{r})\)</span>. They are defined by the orthonormalization
 constraint conditions and can be rigorously found. However, the
 equations of motion for the Lagrange multipliers depend on the specific
 algorithm used to integrate the Eqns. above.</p>
@@ -6666,76 +6549,56 @@ energy that accounts for low-lying excited electronic states.</p>
 <h3 id="verlet-algorithm-for-integration">Verlet Algorithm for Integration<a class="headerlink" href="#verlet-algorithm-for-integration" title="Permanent link">&para;</a></h3>
 <p>Integrating the Eqns. above using the Verlet algorithm results
 in</p>
-<p>
-<script type="math/tex; mode=display">\begin{matrix}\psi_{i,\sigma}^{t+ \Delta t} \leftarrow 2 \psi_{i,\sigma}^{t} - \psi_{i,\sigma}^{t-\Delta t} + \frac{(\Delta t)^2}{\mu} \left[ \frac{\delta E}{\delta \psi_{i,\sigma}^{*}} + \sum_{j} \psi_{j,\sigma} \Lambda_{ji,\sigma} \right]_{t} \end{matrix}</script>
-</p>
-<p>
-<script type="math/tex; mode=display">\begin{matrix}\vec{R}_I^{t+\Delta t} \leftarrow 2 \vec{R}_I^{t} - \vec{R}_I^{t-\Delta t} + \frac{(\Delta t)^2}{M_I} \frac{\partial E}{\partial \vec{R}_I}\end{matrix}</script>
-</p>
+<div class="arithmatex">\[\begin{matrix}\psi_{i,\sigma}^{t+ \Delta t} \leftarrow 2 \psi_{i,\sigma}^{t} - \psi_{i,\sigma}^{t-\Delta t} + \frac{(\Delta t)^2}{\mu} \left[ \frac{\delta E}{\delta \psi_{i,\sigma}^{*}} + \sum_{j} \psi_{j,\sigma} \Lambda_{ji,\sigma} \right]_{t} \end{matrix}\]</div>
+<div class="arithmatex">\[\begin{matrix}\vec{R}_I^{t+\Delta t} \leftarrow 2 \vec{R}_I^{t} - \vec{R}_I^{t-\Delta t} + \frac{(\Delta t)^2}{M_I} \frac{\partial E}{\partial \vec{R}_I}\end{matrix}\]</div>
 <p>In this molecular dynamic procedure we have to know variational
 derivative  </p>
-<p>
-<script type="math/tex; mode=display">\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}</script>
-</p>
-<p>and the matrix <script type="math/tex">\Lambda_{ij,\sigma}</script>.<br />
+<div class="arithmatex">\[\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}\]</div>
+<p>and the matrix <span class="arithmatex">\(\Lambda_{ij,\sigma}\)</span>.<br />
 The variational derivative</p>
-<p>
-<script type="math/tex; mode=display">\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}</script>
-</p>
+<div class="arithmatex">\[\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}\]</div>
 <p>can be analytically found and is  </p>
-<p>
-<script type="math/tex; mode=display">\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}  = -\frac{1}{2} \nabla^2 \psi_{i,\sigma}(\vec{r}) \\  + \int d\vec{r^{\prime}} W_{ext}(\vec{r},\vec{r^{\prime}}) \psi_{i,\sigma}(\vec{r^{\prime}}) \\  + \int d\vec{r^{\prime}} \frac{n(\vec{r^{\prime}})}{|\vec{r}-\vec{r^{\prime}}|} \psi_{i,\sigma}(\vec{r})\\  + \mu_{xc}^{\sigma}(\vec{r}) \psi_{i,\sigma}(\vec{r}) \\  \equiv \hat{H} \psi_{i,\sigma} \end{align}</script>
-</p>
-<p>To find the matrix <script type="math/tex">\Lambda_{ij,\sigma}</script> impose the orthonormality
-constraint on <script type="math/tex">\psi_{i,\sigma}^{t+\Delta t}</script> obtain a matrix
+<div class="arithmatex">\[\begin{align}\frac{\delta E}{\delta \psi_{i,\sigma}^{*}}  = -\frac{1}{2} \nabla^2 \psi_{i,\sigma}(\vec{r}) \\  + \int d\vec{r^{\prime}} W_{ext}(\vec{r},\vec{r^{\prime}}) \psi_{i,\sigma}(\vec{r^{\prime}}) \\  + \int d\vec{r^{\prime}} \frac{n(\vec{r^{\prime}})}{|\vec{r}-\vec{r^{\prime}}|} \psi_{i,\sigma}(\vec{r})\\  + \mu_{xc}^{\sigma}(\vec{r}) \psi_{i,\sigma}(\vec{r}) \\  \equiv \hat{H} \psi_{i,\sigma} \end{align}\]</div>
+<p>To find the matrix <span class="arithmatex">\(\Lambda_{ij,\sigma}\)</span> impose the orthonormality
+constraint on <span class="arithmatex">\(\psi_{i,\sigma}^{t+\Delta t}\)</span> obtain a matrix
 Riccatti equation, and then Riccatti equation is solved by an iterative
 solution.</p>
 <h3 id="constant-temperature-simulations-nose-hoover-thermostats">Constant Temperature Simulations: Nose-Hoover Thermostats<a class="headerlink" href="#constant-temperature-simulations-nose-hoover-thermostats" title="Permanent link">&para;</a></h3>
 <p>Nose-Hoover Thermostats for the electrons and ions can also be added to
 the Car-Parrinello simulation. In this type of simulation thermostats
-variables <script type="math/tex">x_e</script> and <script type="math/tex">x_R</script> are added to the simulation by adding the
+variables <span class="arithmatex">\(x_e\)</span> and <span class="arithmatex">\(x_R\)</span> are added to the simulation by adding the
 auxiliary energy functionals to the total
 energy.</p>
-<p>
-<script type="math/tex; mode=display"> ION_{THERMOSTAT}(x_R)  = \frac{1}{2} Q_R \dot{x_R} + E_{R0}x_R</script>
-<script type="math/tex; mode=display">ELECTRON_{THERMOSTAT}(x_e)  = \frac{1}{2} Q_e \dot{x_e} + E_{e0}x_e </script>
-</p>
+<div class="arithmatex">\[ ION_{THERMOSTAT}(x_R)  = \frac{1}{2} Q_R \dot{x_R} + E_{R0}x_R\]</div>
+<div class="arithmatex">\[ELECTRON_{THERMOSTAT}(x_e)  = \frac{1}{2} Q_e \dot{x_e} + E_{e0}x_e \]</div>
 <p>In these equations, the average kinetic energy for the ions is</p>
-<p>
-<script type="math/tex; mode=display">\begin{matrix}E_{R0} = \frac{1}{2} f k_B T \end{matrix}</script>
-</p>
-<p>where <script type="math/tex">f</script> is the number of atomic degrees of freedom, <script type="math/tex">k_B</script>&rdquo;  is
-Boltzmann&rsquo;s constant, and T is the desired t emperature. Defining the
+<div class="arithmatex">\[\begin{matrix}E_{R0} = \frac{1}{2} f k_B T \end{matrix}\]</div>
+<p>where <span class="arithmatex">\(f\)</span> is the number of atomic degrees of freedom, <span class="arithmatex">\(k_B\)</span>  is
+Boltzmann&rsquo;s constant, and T is the desired temperature. Defining the
 average fictitious kinetic energy of the electrons is not as
 straightforward. Blöchl and Parrinello (P.E. Blöchl and M. Parrinello,
 Phys. Rev. B, <strong>45</strong>, 9413, (1992)) have suggested the following formula
 for determining the average fictitious kinetic
 energy</p>
-<p>
-<script type="math/tex; mode=display">\begin{matrix}E_{e0} = 4 k_B T \frac{\mu}{M} \sum_{i} <\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}> \end{matrix}</script>
-</p>
-<p>where <script type="math/tex">\mu</script> is the fictitious electronic mass, <script type="math/tex">M</script> is average mass
+<div class="arithmatex">\[\begin{matrix}E_{e0} = 4 k_B T \frac{\mu}{M} \sum_{i} &lt;\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}&gt; \end{matrix}\]</div>
+<p>where <span class="arithmatex">\(\mu\)</span> is the fictitious electronic mass, <span class="arithmatex">\(M\)</span> is average mass
 of one atom, and
-<script type="math/tex; mode=display">\begin{matrix}\sum_{i} <\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}> \end{matrix}</script>
+<span class="arithmatex">\(\sum_{i} &lt;\psi_i|-\frac{1}{2} \nabla^2 |\psi_{i}&gt;\)</span>
 is the kinetic energy of the electrons.</p>
 <p>Blöchl and Parrinello suggested that the choice of mass parameters,
-<script type="math/tex">Q_e</script>, and <script type="math/tex">Q_R</script> should be made such that the period of oscillating
+<span class="arithmatex">\(Q_e\)</span>, and <span class="arithmatex">\(Q_R\)</span> should be made such that the period of oscillating
 thermostats should be chosen larger than the typical time scale for the
 dynamical events of interest but shorter than the simulation time.</p>
-<p>
-<script type="math/tex; mode=display">P_{ion}  = 2\pi \sqrt{\frac{Q_R}{4E_{R0}}}</script>
-<script type="math/tex; mode=display">P_{electron}  = 2\pi \sqrt{\frac{Q_e}{4E_{e0}}}</script>
-</p>
-<p>where <script type="math/tex">P_{ion}</script> and <script type="math/tex">P_{electron}</script> are the periods of oscillation
+<div class="arithmatex">\[P_{ion}  = 2\pi \sqrt{\frac{Q_R}{4E_{R0}}}\]</div>
+<div class="arithmatex">\[P_{electron}  = 2\pi \sqrt{\frac{Q_e}{4E_{e0}}}\]</div>
+<p>where <span class="arithmatex">\(P_{ion}\)</span> and <span class="arithmatex">\(P_{electron}\)</span> are the periods of oscillation
 for the ionic and fictitious electronic thermostats.</p>
 <p>In simulated annealing simulations the electronic and ionic Temperatures
 are scaled according to an exponential cooling schedule,</p>
-<p>
-<script type="math/tex; mode=display">T_e(t)  = T_e^0 \exp^{-\frac{t}{\tau_e}}</script>
-<script type="math/tex; mode=display">T_{ionic}(t)  = T_{ionic}^0 \exp^{-\frac{t}{\tau_{ionic}}}</script>
-</p>
-<p>where <script type="math/tex">T_e^0</script> and <script type="math/tex">T_{ionic}^0</script> are the initial temperatures, and
-<script type="math/tex">\tau_e</script> and <script type="math/tex">\tau_{ionic}</script> are the cooling rates in atomic units.</p>
+<div class="arithmatex">\[T_e(t)  = T_e^0 \exp^{-\frac{t}{\tau_e}}\]</div>
+<div class="arithmatex">\[T_{ionic}(t)  = T_{ionic}^0 \exp^{-\frac{t}{\tau_{ionic}}}\]</div>
+<p>where <span class="arithmatex">\(T_e^0\)</span> and <span class="arithmatex">\(T_{ionic}^0\)</span> are the initial temperatures, and
+<span class="arithmatex">\(\tau_e\)</span> and <span class="arithmatex">\(\tau_{ionic}\)</span> are the cooling rates in atomic units.</p>
 <h2 id="nwpw-tutorial-1-s2-dimer-examples-with-pspw">NWPW Tutorial 1: S<sub>2</sub> dimer examples with PSPW<a class="headerlink" href="#nwpw-tutorial-1-s2-dimer-examples-with-pspw" title="Permanent link">&para;</a></h2>
 <p>A description of all the examples in NWPW Tutorial 1 can be found in the
 attached pdf <a href="nwpwexample1.pdf">nwpwexample1.pdf</a></p>
@@ -6995,7 +6858,7 @@ i.e.,</p>
  gnuplot&gt; plot &quot;s2-md.emotion&quot;,&quot;s2-md.emotion&quot; using 1:3  
  gnuplot&gt; 
 </code></pre>
-<p>The following plot shows the Car-Parrinello <script type="math/tex">^3\Sigma_g^-</script> S<script type="math/tex">_2</script>
+<p>The following plot shows the Car-Parrinello <span class="arithmatex">\(^3\Sigma_g^-\)</span> S<span class="arithmatex">\(_2\)</span>
 energy surface generated from the
 simulation.</p>
 <p><img alt="s2-md" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/s2-md.png" align=middle with="600pt" height="450pt"/>  </p>
@@ -7036,7 +6899,7 @@ nwpw
 end 
 task pspw born-oppenheimer
 </code></pre>
-<p>The following plot shows the <script type="math/tex">^3\Sigma_g^{-}_{2}</script> energy surface
+<p>The following plot shows the <span class="arithmatex">\(^3\Sigma_g^{-}_{2}\)</span> energy surface
 generated from the
 simulation.</p>
 <p><img alt="s2-bomd" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/s2-bomd.png" align=middle with="600pt" height="450pt"/>  </p>
@@ -7147,9 +7010,7 @@ output:<a href="b12-example2b.nwout">Media:b12-example2b.nwout</a>
 <p>The simulated annealing calculation in this example uses a constant
 temperature Car-Parrinello simulation with an exponential cooling
 schedule,</p>
-<p>
-<script type="math/tex; mode=display">T(t)=T_0e^{-t/\tau}</script>
-</p>
+<div class="arithmatex">\[T(t)=T_0e^{-t/\tau}\]</div>
 <p>where T0 and τ are an initial temperature and a time scale of cooling,
 respectively. In the present calculations T0=3500K and τ=4.134e+4 au
 (1.0 ps) were used and the thermostat masses were kept fixed to the
@@ -7184,10 +7045,10 @@ effects, are included will the heat of formation from ab initio
 electronic structure methods be accurate to within one kcal/mol.
 Although one can now accurately calculate the heats of formation of
 molecules with up to 6 first row atoms, such high-level calculations are
-extremely demanding and scale computationally as <script type="math/tex">N^7</script> for <script type="math/tex">N</script> basis
+extremely demanding and scale computationally as <span class="arithmatex">\(N^7\)</span> for <span class="arithmatex">\(N\)</span> basis
 functions.</p>
 <p>Examples of these types of large errors are shown in the following
-Table, where the enthalpies of formation of CCl<script type="math/tex">_3</script>SH are calculated
+Table, where the enthalpies of formation of CCl<span class="arithmatex">\(_3\)</span>SH are calculated
 by using atomization energies from different levels of ab initio
 theory.</p>
 <table>
@@ -7211,8 +7072,7 @@ theory.</p>
 <td>G2 Theory</td>
 </tr>
 <tr>
-<td>ΔH <script type="math/tex">_f^o</script>
-</td>
+<td>ΔH <span class="arithmatex">\(_f^o\)</span></td>
 <td>+4.9</td>
 <td>-80.0</td>
 <td>-2.6</td>
@@ -7229,8 +7089,8 @@ theory.</p>
 </tr>
 </tbody>
 </table>
-<p>Table 1: Standard enthalpy of formation (ΔH<script type="math/tex">_f^o</script>(298K) for
-CCl<script type="math/tex">_3</script>SH in kcal/mol from atomization energies with various
+<p>Table 1: Standard enthalpy of formation (ΔH<span class="arithmatex">\(_f^o\)</span>(298K) for
+CCl<span class="arithmatex">\(_3\)</span>SH in kcal/mol from atomization energies with various
 electronic structure methods. Results taken from reference [2].</p>
 <p>Differences of up to 106.5 kcal/mol are found between different levels
 of theory. This example demonstrates that care must be taken in choosing
@@ -7251,34 +7111,32 @@ electron pair correlation, whereas ab initio methods are expected to be
 more accurate for estimating neighboring interactions and long-range
 through-bond effects.</p>
 <p>The following isodesmic reaction can be used determine the enthalpy of
-formation for CCl<script type="math/tex">_3</script>SH that is significantly more accurate than the
+formation for CCl<span class="arithmatex">\(_3\)</span>SH that is significantly more accurate than the
 estimates based on atomization energies.</p>
-<p>CCl<script type="math/tex">_3</script>SH + CH<script type="math/tex">_4</script>
-<script type="math/tex">\rightarrow</script> CH<script type="math/tex">_3</script>SH + CCl<script type="math/tex">_3</script>H,
-ΔH<script type="math/tex">_r</script>(calc).</p>
+<p>CCl<span class="arithmatex">\(_3\)</span>SH + CH<span class="arithmatex">\(_4\)</span> <span class="arithmatex">\(\rightarrow\)</span> CH<span class="arithmatex">\(_3\)</span>SH + CCl<span class="arithmatex">\(_3\)</span>H,
+ΔH<span class="arithmatex">\(_r\)</span>(calc).</p>
 <p>The first step is to calculate the reaction enthalpy of this reaction
 from electronic, thermal and vibrational energy differences at 298.15K
 at a consistent level of theory. The defining property of an isodesmic
 reaction that there are an equal number of like bonds on the left-hand
 and right-hand sides of the reaction helps to minimize the error in the
 calculation of the reaction energy. The enthalpy of formation of
-CCl<script type="math/tex">_3</script>SH can then be calculated by using Hess’s law with the
+CCl<span class="arithmatex">\(_3\)</span>SH can then be calculated by using Hess’s law with the
 calculated enthalpy change and the experimentally known heats of
 formation of the other 3 species (see Table 3).</p>
-<p>ΔH<script type="math/tex">_f</script>(CCl<script type="math/tex">_3</script>SH) = ΔH<script type="math/tex">_f</script>(CH<script type="math/tex">_3</script>SH)(exp) +
-ΔH<script type="math/tex">_f</script>(CCl<script type="math/tex">_3</script>H)(exp) - ΔH<script type="math/tex">_f</script>(CH<script type="math/tex">_4</script>)(exp)- ΔH<script type="math/tex">_r</script>(calc).</p>
+<p>ΔH<span class="arithmatex">\(_f\)</span>(CCl<span class="arithmatex">\(_3\)</span>SH) = ΔH<span class="arithmatex">\(_f\)</span>(CH<span class="arithmatex">\(_3\)</span>SH)(exp) +
+ΔH<span class="arithmatex">\(_f\)</span>(CCl<span class="arithmatex">\(_3\)</span>H)(exp) - ΔH<span class="arithmatex">\(_f\)</span>(CH<span class="arithmatex">\(_4\)</span>)(exp)- ΔH<span class="arithmatex">\(_r\)</span>(calc).</p>
 <p>In this example, try to design and run NWPW simulations that can be used
-to estimate the enthalpy of formation for CCl<script type="math/tex">_3</script>SH using its
+to estimate the enthalpy of formation for CCl<span class="arithmatex">\(_3\)</span>SH using its
 atomization energy and using the reaction enthalpy of the isodesmic
 reaction and compare your results to Table 2. Be careful to make sure
 that you use the same cutoff energy for all the simulations (.e.g.
 cutoff 35.0). You might also try to estimate enthalpies of formation for
-CHCl<script type="math/tex">_2</script>SH and CH<script type="math/tex">_2</script>ClSH. Also try designing simulations that use
+CHCl<span class="arithmatex">\(_2\)</span>SH and CH<span class="arithmatex">\(_2\)</span>ClSH. Also try designing simulations that use
 the SCF, DFT, MP2, and TCE modules.</p>
-<p>CCl<script type="math/tex">_3</script>SH + CH<script type="math/tex">_4</script>
-<script type="math/tex">\rightarrow</script> CH<script type="math/tex">_3</script>SH + CCl<script type="math/tex">_3</script>H</p>
-<p>Un-optimized geometries for CCl<script type="math/tex">_3</script>SH, CH<script type="math/tex">_3</script>SH, CCl<script type="math/tex">_3</script>H and
-CH<script type="math/tex">_4</script> which are needed to design your simulations are contained in
+<p>CCl<span class="arithmatex">\(_3\)</span>SH + CH<span class="arithmatex">\(_4\)</span> <span class="arithmatex">\(\rightarrow\)</span> CH<span class="arithmatex">\(_3\)</span>SH + CCl<span class="arithmatex">\(_3\)</span>H</p>
+<p>Un-optimized geometries for CCl<span class="arithmatex">\(_3\)</span>SH, CH<span class="arithmatex">\(_3\)</span>SH, CCl<span class="arithmatex">\(_3\)</span>H and
+CH<span class="arithmatex">\(_4\)</span> which are needed to design your simulations are contained in
 the file
 <a href="thermodynamics.xyz">Media:thermodynamics.xyz</a>. You
 will also need to calculate the energies for the H, C, S, and Cl atoms
@@ -7288,8 +7146,7 @@ the enthalpy of a molecule. The enthalpy of a molecule at 298.15K is sum
 of the total energy and a thermal correction to the enthalpy. A good
 estimate for the thermal correction to the enthalpy can be obtained from
 a frequency calculation, i.e.</p>
-<p>H = E + H<script type="math/tex">_{correction}</script>
-</p>
+<p>H = E + H<span class="arithmatex">\(_{correction}\)</span></p>
 <p>Thermodynamic output from a frequency
 calculation:</p>
 <pre><code>Temperature                      =   298.15K  
@@ -7299,8 +7156,7 @@ Zero-Point correction to Energy  =   27.528 kcal/mol  (  0.043869 au)
 Thermal correction to Energy     =   29.329 kcal/mol  (  0.046739 au)
 </code></pre>
 <p>The following line contains the value for
-H<script type="math/tex">_{correction}</script>
-</p>
+H<span class="arithmatex">\(_{correction}\)</span></p>
 <pre><code>Thermal correction to Enthalpy   =   29.922 kcal/mol  (  0.047683 au)
 
 Total Entropy                    =   44.401 cal/mol-K  
@@ -7354,7 +7210,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 <td></td>
 </tr>
 <tr>
-<td>CHCl<script type="math/tex">_2</script>SH</td>
+<td>CHCl<span class="arithmatex">\(_2\)</span>SH</td>
 <td>-11.48</td>
 <td>-11.07</td>
 <td>-8.66</td>
@@ -7363,7 +7219,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 <td></td>
 </tr>
 <tr>
-<td>CH<script type="math/tex">_2</script>ClSH</td>
+<td>CH<span class="arithmatex">\(_2\)</span>ClSH</td>
 <td>-7.01</td>
 <td>-6.66</td>
 <td>-5.44</td>
@@ -7372,7 +7228,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 <td></td>
 </tr>
 <tr>
-<td>CH<script type="math/tex">_3</script>SH</td>
+<td>CH<span class="arithmatex">\(_3\)</span>SH</td>
 <td></td>
 <td></td>
 <td></td>
@@ -7391,7 +7247,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 </tr>
 </tbody>
 </table>
-<p>Table 2: Gas-phase standard enthalpies of formation ( ΔH<script type="math/tex">_f^o</script>(298K))
+<p>Table 2: Gas-phase standard enthalpies of formation ( ΔH<span class="arithmatex">\(_f^o\)</span>(298K))
 in kcal/mol from isodesmic reactions and G2 Theory calculations taken
 from [3].</p>
 <table>
@@ -7404,7 +7260,7 @@ from [3].</p>
 <tbody>
 <tr>
 <td>Compounds</td>
-<td>ΔH<script type="math/tex">_f^o</script>(298K)</td>
+<td>ΔH<span class="arithmatex">\(_f^o\)</span>(298K)</td>
 </tr>
 <tr>
 <td>H</td>
@@ -7423,31 +7279,27 @@ from [3].</p>
 <td>29.082</td>
 </tr>
 <tr>
-<td>CCl<script type="math/tex">_4</script>
-</td>
+<td>CCl<span class="arithmatex">\(_4\)</span></td>
 <td>-24.59</td>
 </tr>
 <tr>
-<td>CCl<script type="math/tex">_3</script>H</td>
+<td>CCl<span class="arithmatex">\(_3\)</span>H</td>
 <td>-24.65</td>
 </tr>
 <tr>
-<td>CCl<script type="math/tex">_2</script>H<script type="math/tex">_2</script>
-</td>
+<td>CCl<span class="arithmatex">\(_2\)</span>H<span class="arithmatex">\(_2\)</span></td>
 <td>-22.10</td>
 </tr>
 <tr>
-<td>CClH<script type="math/tex">_3</script>
-</td>
+<td>CClH<span class="arithmatex">\(_3\)</span></td>
 <td>-19.32</td>
 </tr>
 <tr>
-<td>CH<script type="math/tex">_4</script>
-</td>
+<td>CH<span class="arithmatex">\(_4\)</span></td>
 <td>-17.88</td>
 </tr>
 <tr>
-<td>CH<script type="math/tex">_3</script>SH</td>
+<td>CH<span class="arithmatex">\(_3\)</span>SH</td>
 <td>-5.34</td>
 </tr>
 <tr>
@@ -7468,12 +7320,12 @@ from [3].</p>
 <li>Chase, M. W., Jr. Phys. Chem. Ref. Data, Monograph No. 9 1998, 9,
     1-1951.</li>
 </ol>
-<h2 id="nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o">NWPW Tutorial 4: AIMD/MM simulation of CCl<script type="math/tex">_4</script> + 64 H<script type="math/tex">_2</script>O<a class="headerlink" href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o" title="Permanent link">&para;</a></h2>
+<h2 id="nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o">NWPW Tutorial 4: AIMD/MM simulation of CCl<span class="arithmatex">\(_4\)</span> + 64 H<span class="arithmatex">\(_2\)</span>O<a class="headerlink" href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o" title="Permanent link">&para;</a></h2>
 <p>(input:<a href="ccl4-64water.nw">Media:ccl4-64water.nw</a>,
 output:<a href="ccl4-64water.nwout">Media:ccl4-64water.nwout</a>)</p>
 <p>In this section we show how use the PSPW module to perform a
-Car-Parrinello AIMD/MM simulation for a CCl<script type="math/tex">_4</script> molecule in a box of
-64 H<script type="math/tex">_2</script>O. Before running a PSPW Car-Parrinello simulation the system
+Car-Parrinello AIMD/MM simulation for a CCl<span class="arithmatex">\(_4\)</span> molecule in a box of
+64 H<span class="arithmatex">\(_2\)</span>O. Before running a PSPW Car-Parrinello simulation the system
 should be on the Born-Oppenheimer surface, i.e. the one-electron
 orbitals should be minimized with respect to the total energy (i.e. task
 pspw energy). In this example, default pseudopotentials from the
@@ -7640,10 +7492,8 @@ quantity that can be calculated from this simulation is the cohesive
 energy.The cohesive energy of a crystal is the energy needed to separate
 the atoms of the solid into isolated atoms,
 i.e.</p>
-<p>
-<script type="math/tex; mode=display"> E_{coh}= -\left( E_{solid} - \sum_{a} E_{atom}^a  \right)  </script>
-</p>
-<p>where <script type="math/tex">E_{solid}</script> is the energy of the solid and <script type="math/tex">E_{atom}^a</script> are
+<div class="arithmatex">\[ E_{coh}= -\left( E_{solid} - \sum_{a} E_{atom}^a  \right)  \]</div>
+<p>where <span class="arithmatex">\(E_{solid}\)</span> is the energy of the solid and <span class="arithmatex">\(E_{atom}^a\)</span> are
 the energies of the isolated atoms. In order to calculate the cohesive
 energy the energy of an isolated carbon atom at the same level of theory
 and cutoff energy will need to be calculated. The following input can be
@@ -7677,11 +7527,9 @@ task pspw energy
 <p><code>Total PSPW energy   :  -0.5421213534E+01</code></p>
 <p>Using this energy and energy of diamond the cohesive energy per atom is
 calculated to be</p>
-<p>
-<script type="math/tex; mode=display">\begin{align} E_{coh}= -\left( -45.07688304au/8 - (-5.421213534au)  \right)= 0.2133968 au = 5.8 eV \end{align}</script>
-</p>
+<div class="arithmatex">\[\begin{align} E_{coh}= -\left( -45.07688304au/8 - (-5.421213534au)  \right)= 0.2133968 au = 5.8 eV \end{align}\]</div>
 <p>This value is substantially lower than the experimental value of
-<script type="math/tex">7.37eV</script>! It turns out this error is a result of the unit cell being
+<span class="arithmatex">\(7.37eV\)</span>! It turns out this error is a result of the unit cell being
 too small for the diamond calculation (or too small of a Brillioun zone
 sampling). In the next section, we show how increasing the Brillouin
 zone sampling reduces the error in the calculated cohesive
@@ -8629,7 +8477,7 @@ Hausdorff distribution parameters:
 <img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/diamond-v-histogram.png" align=middle with="640pt" height="480pt"/>  </p>
 <h2 id="nwpw-tutorial-9-free-energy-simulations">NWPW Tutorial 9: Free Energy Simulations<a class="headerlink" href="#nwpw-tutorial-9-free-energy-simulations" title="Permanent link">&para;</a></h2>
 <p>A description of using the WHAM method for generating free energy of the
-gas-phase dissociation reaction CH<script type="math/tex">_3</script>Cl <script type="math/tex">\rightarrow</script> CH<script type="math/tex">_3</script>+Cl
+gas-phase dissociation reaction CH<span class="arithmatex">\(_3\)</span>Cl <span class="arithmatex">\(\rightarrow\)</span> CH<span class="arithmatex">\(_3\)</span>+Cl
 can be found in the attached pdf
 (<a href="nwchem-new-pmf.pdf">nwchem-new-pmf.pdf</a>)</p>
 <h2 id="paw-tutorial">PAW Tutorial<a class="headerlink" href="#paw-tutorial" title="Permanent link">&para;</a></h2>
@@ -8853,7 +8701,15 @@ Eric.Bylaska@pnl.gov</p>
         
       
         
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+          <script src="css/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
         
       
     
