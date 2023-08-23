@@ -2210,6 +2210,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#uhf-number-of-unpaired-electrons" class="md-nav__link">
+    UHF: number of unpaired electrons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nspin" class="md-nav__link">
+    NSPIN:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#references" class="md-nav__link">
     References
   </a>
@@ -2251,20 +2265,26 @@
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <pre><code> XTB
    [ACC &lt;real acc default 1.0&gt;] 
-   [UHF]
+   [UHF &lt;integer uhf default 0&gt;]
    [METHOD gfn1 || gfn2 default gfn2]
-   [ETEMP]
    [GUESS]
    [VERBOSITY]
    [PRINT]  
    [NOPRINT]
    [NSPIN &lt;integer nspin default 1&gt;]
-   [BROYDEN]
+   [BROYDEN &lt;real broyden default 0.4&gt;]
  END
 </code></pre>
 <h2 id="acc-accuracy">ACC: Accuracy<a class="headerlink" href="#acc-accuracy" title="Permanent link">&para;</a></h2>
-<p>For example, if the user want to increase the accuracy:</p>
+<p>For example, if the user wants to increase the accuracy:</p>
 <pre><code> acc 1d-4
+</code></pre>
+<h2 id="uhf-number-of-unpaired-electrons">UHF: number of unpaired electrons<a class="headerlink" href="#uhf-number-of-unpaired-electrons" title="Permanent link">&para;</a></h2>
+<pre><code> uhf 3
+</code></pre>
+<h2 id="nspin">NSPIN:<a class="headerlink" href="#nspin" title="Permanent link">&para;</a></h2>
+<p>A value of <code>nspin</code> equal to due triggers an open-shell calculation.</p>
+<pre><code> nspin 2
 </code></pre>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <p>///Footnotes Go Here///</p>
