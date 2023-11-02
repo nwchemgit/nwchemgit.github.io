@@ -2362,8 +2362,23 @@ list describes all options and their defaults.</p>
 <li><code>angstroms</code> or <code>an</code>: Angstrøms , the default (converts to A.U. using the Angstrøm to A.U. conversion factor)  </li>
 <li><code>au</code> or <code>atomic</code> or <code>bohr</code>: Atomic units (A.U.)  </li>
 <li><code>nm</code> or <code>nanometers</code>: nanometers (converts to A.U. using a conversion factor computed as 10.0 times the Angstrøm to A.U. conversion factor)   </li>
-<li><code>pm</code> or <code>picometers</code>: <code>picometers</code> (converts to A.U. using a conversion factor computed as 0.01 times the Angstrøm to A.U. conversion factor)     </li>
+<li><code>pm</code> or <code>picometers</code>: <code>picometers</code> (converts to A.U. using a conversion factor computed as 0.01 times the Angstrøm to A.U. conversion factor)</li>
 </ul>
+<p>The following examples illustrate some of the various options that the
+user can specify on the first input line of the GEOMETRY directive,
+using the keywords and input options described above.</p>
+<p>The following directives all specify the same geometry for  H<sub>2</sub> (a
+bond length of 0.732556 Å):</p>
+<pre><code> geometry                           geometry units nm     
+   h 0 0 0                            h 0 0 0             
+   h 0 0 0.732556                     h 0 0 0.0732556     
+ end                                end                  
+
+ geometry units pm                  geometry units atomic  
+   h 0 0 0                            h 0 0 0               
+   h 0 0 73.2556                      h 0 0 1.3843305       
+ end                                end
+</code></pre>
 <h3 id="angstrom_to_au">ANGSTROM_TO_AU<a class="headerlink" href="#angstrom_to_au" title="Permanent link">&para;</a></h3>
 <p>The  <code>angstrom_to_au</code> option may also be specified as <code>ang2au</code>. This enables the
     user to modify the conversion factors used to convert between
@@ -2436,21 +2451,6 @@ The RMS radius of the Gaussian is determined from the nuclear mass number A by t
 <p>NOTE: If you specify a finite nuclear size, you should ensure that the
 <a href="Basis.html">basis set</a> you use is contracted for a finite nuclear
 size.</p>
-<p>The following examples illustrate some of the various options that the
-user can specify on the first input line of the GEOMETRY directive,
-using the keywords and input options described above.</p>
-<p>The following directives all specify the same geometry for  H<sub>2</sub> (a
-bond length of 0.732556 Å):</p>
-<pre><code> geometry                           geometry units nm     
-   h 0 0 0                            h 0 0 0             
-   h 0 0 0.732556                     h 0 0 0.0732556     
- end                                end                  
-
- geometry units pm                  geometry units atomic  
-   h 0 0 0                            h 0 0 0               
-   h 0 0 73.2556                      h 0 0 1.3843305       
- end                                end
-</code></pre>
 
 
 
