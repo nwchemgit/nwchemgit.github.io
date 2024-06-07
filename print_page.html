@@ -13422,7 +13422,7 @@ most systems. There are sub-directives which allow for customized
 application; those currently provided as options for the PSPW module
 are:</p>
 <pre><code>NWPW   
-  SIMULATION_CELL            ... (see section [Simulation Cell](#Simulation_Cell)) END
+  SIMULATION_CELL            ... (see section [Simulation Cell](#simulation-cell)) END
   CELL_NAME &lt;string cell_name default 'cell_default'&gt;
   VECTORS [[input (&lt;string input_wavefunctions default file_prefix.movecs&gt;) || 
            [output(&lt;string output_wavefunctions default file_prefix.movecs&gt;)]] 
@@ -13472,7 +13472,7 @@ are:</p>
 
   MAPPING &lt;integer mapping default 1&gt;  
   NP_DIMENSIONS &lt;integer npi npj default -1 -1&gt;  
-  CAR-PARRINELLO             ... (see section [Car-Parrinello](#Car-Parrinello)) END 
+  CAR-PARRINELLO             ... (see section [Car-Parrinello](#car-parrinello-scheme-for-ab-initio-molecular-dynamics)) END 
   STEEPEST_DESCENT           ... (see section [Steepest Descent](#STEEPEST_DESCENT)) END
   DPLOT                      ... (see section [DPLOT](#DPLOT)) END 
   WANNIER                    ... (see section [Wannier](#Wannier)) END 
@@ -13784,7 +13784,7 @@ all the functionality in NWChem. We are planning to have a debug release
 in winter 2016 to take fix this problem. This capability is still
 included by default in NWChem 6.5</em></span>)</p>
 <p>The user has the option of using many of the exchange-correlation
-potentials available in DFT Module (see Section <a href="#density-functional-theory-for-molecules..md-xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash;
+potentials available in DFT Module (see Section <a href="#density-functional-theory-for-molecules-xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash;
 Exchange-Correlation
 Potentials</a>).</p>
 <pre><code>  XC [[acm] [b3lyp] [beckehandh] [pbe0] [bhlyp]\
@@ -13822,7 +13822,7 @@ task pspw energy
 <p>Using this input the user has ability to include only the local or
 nonlocal contributions of a given functional. The user can also specify
 a multiplicative prefactor (the variable <code>prefactor</code> in the input) for
-the local/nonlocal component or total (for more details see Section <a href="#density-functional-theory-for-molecules-XC_and_DECOMP_--_Exchange-Correlation_Potentials">XC
+the local/nonlocal component or total (for more details see Section <a href="#density-functional-theory-for-molecules-xc-and-decomp-exchange-correlation-potentials">XC
 and DECOMP &ndash; Exchange-Correlation
 Potentials</a>).
 An example of this might be,</p>
@@ -14190,7 +14190,7 @@ END
 <p>The following list describes these keywords.</p>
 <ul>
 <li><code>cell_name</code> - name of the simulation_cell named <code>cell_name</code>. See
-    <a href="#plane-wave-density-functional-theory-simulation-Cell">Simulation Cell</a>.</li>
+    <a href="#plane-wave-density-functional-theory-simulation-cell">Simulation Cell</a>.</li>
 <li><code>input_wavefunctions</code> - name of the file containing one-electron
     orbitals</li>
 <li><code>output_wavefunctions</code> - name that will point to file containing the
@@ -14491,7 +14491,7 @@ initio molecular dynamics scheme the motion of the ion cores is coupled
 to a fictitious motion for the Kohn-Sham orbitals of density functional
 theory. Constant energy or constant temperature simulations can be
 performed. A detailed description of this method is described in section
-<a href="#plane-wave-density-functional-theory-Car-Parrinello_Scheme_for_Ab_Initio_Molecular_Dynamics">Car-Parrinello Scheme for Ab Initio Molecular
+<a href="#plane-wave-density-functional-theory-car-parrinello-scheme-for-ab-initio-molecular-dynamics">Car-Parrinello Scheme for Ab Initio Molecular
 Dynamics</a>.</p>
 <p>Input to the Car-Parrinello simulation is contained within the
 Car-Parrinello sub-block.</p>
@@ -15614,7 +15614,7 @@ END
 <li>INTEGRATE_MULT_L - optional keyword which if specified allows the
     user to define the angular XC integration of the augmented region</li>
 <li>SIMULATION_CELL (see <a href="#plane-wave-density-functional-theory-simulation-cell">Simulation Cell</a> )</li>
-<li>CAR-PARRINELLO (see <a href="#plane-wave-density-functional-theory-car-parrinello">Car-Parrinello</a> )</li>
+<li>CAR-PARRINELLO (see <a href="#plane-wave-density-functional-theory-car-parrinello-scheme-for-ab-initio-molecular-dynamics">Car-Parrinello</a>)</li>
 <li><code>mapping</code> - for a value of 1 slab FFT is used, for a value of 2 a
     2d-Hilbert FFT is used.</li>
 </ul>
@@ -16112,7 +16112,7 @@ Car-Parrinello method can be found in
 </code></pre>
 <p>A plotting program (e.g. gnuplot, xmgrace) can be used to look at the
 total, potential, kinetic energies, contained in the s2-md.emotion file
-(see section <a href="#plane-wave-density-functional-theory-EMOTION_motion_file">EMOTION motion file</a> for
+(see section <a href="#plane-wave-density-functional-theory-emotion-motion-file">EMOTION motion file</a> for
 datafile format)
 i.e.,</p>
 <pre><code> seattle-1604% gnuplot  
@@ -21661,7 +21661,7 @@ most systems. There are sub-directives which allow for customized
 application; those currently provided as options for the PSPW module
 are:</p>
 <pre><code>NWPW   
-  SIMULATION_CELL            ... (see section [Simulation Cell](#Simulation_Cell)) END
+  SIMULATION_CELL            ... (see section [Simulation Cell](#simulation-cell)) END
   CELL_NAME &lt;string cell_name default 'cell_default'&gt;
   VECTORS [[input (&lt;string input_wavefunctions default file_prefix.movecs&gt;) || 
            [output(&lt;string output_wavefunctions default file_prefix.movecs&gt;)]] 
@@ -21711,7 +21711,7 @@ are:</p>
 
   MAPPING &lt;integer mapping default 1&gt;  
   NP_DIMENSIONS &lt;integer npi npj default -1 -1&gt;  
-  CAR-PARRINELLO             ... (see section [Car-Parrinello](#Car-Parrinello)) END 
+  CAR-PARRINELLO             ... (see section [Car-Parrinello](#car-parrinello-scheme-for-ab-initio-molecular-dynamics)) END 
   STEEPEST_DESCENT           ... (see section [Steepest Descent](#STEEPEST_DESCENT)) END
   DPLOT                      ... (see section [DPLOT](#DPLOT)) END 
   WANNIER                    ... (see section [Wannier](#Wannier)) END 
@@ -22023,7 +22023,7 @@ all the functionality in NWChem. We are planning to have a debug release
 in winter 2016 to take fix this problem. This capability is still
 included by default in NWChem 6.5</em></span>)</p>
 <p>The user has the option of using many of the exchange-correlation
-potentials available in DFT Module (see Section <a href="#density-functional-theory-for-molecules..md-xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash;
+potentials available in DFT Module (see Section <a href="#density-functional-theory-for-molecules-xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash;
 Exchange-Correlation
 Potentials</a>).</p>
 <pre><code>  XC [[acm] [b3lyp] [beckehandh] [pbe0] [bhlyp]\
@@ -22061,7 +22061,7 @@ task pspw energy
 <p>Using this input the user has ability to include only the local or
 nonlocal contributions of a given functional. The user can also specify
 a multiplicative prefactor (the variable <code>prefactor</code> in the input) for
-the local/nonlocal component or total (for more details see Section <a href="#density-functional-theory-for-molecules-XC_and_DECOMP_--_Exchange-Correlation_Potentials">XC
+the local/nonlocal component or total (for more details see Section <a href="#density-functional-theory-for-molecules-xc-and-decomp-exchange-correlation-potentials">XC
 and DECOMP &ndash; Exchange-Correlation
 Potentials</a>).
 An example of this might be,</p>
@@ -22429,7 +22429,7 @@ END
 <p>The following list describes these keywords.</p>
 <ul>
 <li><code>cell_name</code> - name of the simulation_cell named <code>cell_name</code>. See
-    <a href="#plane-wave-density-functional-theory-simulation-Cell">Simulation Cell</a>.</li>
+    <a href="#plane-wave-density-functional-theory-simulation-cell">Simulation Cell</a>.</li>
 <li><code>input_wavefunctions</code> - name of the file containing one-electron
     orbitals</li>
 <li><code>output_wavefunctions</code> - name that will point to file containing the
@@ -22730,7 +22730,7 @@ initio molecular dynamics scheme the motion of the ion cores is coupled
 to a fictitious motion for the Kohn-Sham orbitals of density functional
 theory. Constant energy or constant temperature simulations can be
 performed. A detailed description of this method is described in section
-<a href="#plane-wave-density-functional-theory-Car-Parrinello_Scheme_for_Ab_Initio_Molecular_Dynamics">Car-Parrinello Scheme for Ab Initio Molecular
+<a href="#plane-wave-density-functional-theory-car-parrinello-scheme-for-ab-initio-molecular-dynamics">Car-Parrinello Scheme for Ab Initio Molecular
 Dynamics</a>.</p>
 <p>Input to the Car-Parrinello simulation is contained within the
 Car-Parrinello sub-block.</p>
@@ -23853,7 +23853,7 @@ END
 <li>INTEGRATE_MULT_L - optional keyword which if specified allows the
     user to define the angular XC integration of the augmented region</li>
 <li>SIMULATION_CELL (see <a href="#plane-wave-density-functional-theory-simulation-cell">Simulation Cell</a> )</li>
-<li>CAR-PARRINELLO (see <a href="#plane-wave-density-functional-theory-car-parrinello">Car-Parrinello</a> )</li>
+<li>CAR-PARRINELLO (see <a href="#plane-wave-density-functional-theory-car-parrinello-scheme-for-ab-initio-molecular-dynamics">Car-Parrinello</a>)</li>
 <li><code>mapping</code> - for a value of 1 slab FFT is used, for a value of 2 a
     2d-Hilbert FFT is used.</li>
 </ul>
@@ -24351,7 +24351,7 @@ Car-Parrinello method can be found in
 </code></pre>
 <p>A plotting program (e.g. gnuplot, xmgrace) can be used to look at the
 total, potential, kinetic energies, contained in the s2-md.emotion file
-(see section <a href="#plane-wave-density-functional-theory-EMOTION_motion_file">EMOTION motion file</a> for
+(see section <a href="#plane-wave-density-functional-theory-emotion-motion-file">EMOTION motion file</a> for
 datafile format)
 i.e.,</p>
 <pre><code> seattle-1604% gnuplot  
