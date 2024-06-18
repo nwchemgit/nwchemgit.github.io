@@ -2971,6 +2971,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#changing-the-suffix-of-the-animation-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changing the Suffix of the Animation Files
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3137,7 +3146,7 @@ setting the temperatures in a previous &ldquo;VIB&rdquo; command, i.e.</p>
 <p>The &ldquo;VIB&rdquo; module also can generate mode animation input files in the
 standard xyz file format for graphics packages like RasMol or XMol There
 are scripts to automate this for RasMol in
-$NWCHEM_TOP/contrib/rasmolmovie. Each mode will have 20 xyz files
+<code>$NWCHEM_TOP/contrib/rasmolmovie</code>. Each mode will have 20 xyz files
 generated that cycle from the equilibrium geometry to 5 steps in the
 positive direction of the mode vector, back to 5 steps in the negative
 direction of the mode vector, and finally back to the equilibrium
@@ -3153,6 +3162,14 @@ animations for most systems. This can be changed via the input directive</p>
 </code></pre>
 <p>where <step_size> is the real number that is the magnitude of each step
 along the eigenvector of each nuclear hessian mode in atomic units.</p>
+<h4 id="changing-the-suffix-of-the-animation-files">Changing the Suffix of the Animation Files<a class="headerlink" href="#changing-the-suffix-of-the-animation-files" title="Permanent link">&para;</a></h4>
+<p>The <code>filename</code> option sets a new name for the animated natural modes so you
+can have more than one vibrational analysis in a run (e.g. find minimum,
+calculate frequencies, follow mode to TS, calculate frequencies again).
+The optional keyword <code>overwrite</code> allows old animated modes to be overwritten
+if they exist.  </p>
+<pre><code>filename &lt;filename&gt; [overwrite]
+</code></pre>
 <h3 id="an-example-input-deck">An Example Input Deck<a class="headerlink" href="#an-example-input-deck" title="Permanent link">&para;</a></h3>
 <p>This example input deck will optimize the geometry for the given basis
 set, compute the frequencies for H<sub>2</sub>O, H<sub>2</sub>O at different
