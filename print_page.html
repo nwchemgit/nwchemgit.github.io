@@ -30446,10 +30446,10 @@ has rendered the current set of coordinates invalid or non-optimal.</p>
 <pre><code>   INHESS &lt;integer inhess default 0&gt;
 </code></pre>
 <ul>
-<li>0 = Default &hellip; use restart data if available, otherwise use
+<li><code>0</code> = Default &hellip; use restart data if available, otherwise use
     diagonal guess.</li>
-<li>1 = Use diagonal initial guess.</li>
-<li>2 = Use restart data if available, otherwise transform Cartesian
+<li><code>1</code> = Use diagonal initial guess.</li>
+<li><code>2</code> = Use restart data if available, otherwise transform Cartesian
     Hessian from previous frequency calculation.</li>
 </ul>
 <p>In addition, the diagonal elements of the initial Hessian for internal
@@ -30535,8 +30535,10 @@ software packages that support communication via the i-PI socket
 protocol. For more information, see the
 <a href="https://ipi-code.org/i-pi/user-guide.html#communication-protocol">i-PI documentation</a>.</p>
 <h3 id="geometry-optimization-print-options">Print options<a class="headerlink" href="#geometry-optimization-print-options" title="Permanent link">&para;</a></h3>
-<p>The UNIX command <code>grep '^@' \&lt; output</code> will extract a pretty table
-summarizing the optimization.</p>
+<p>The UNIX command   </p>
+<pre><code>grep '^@' \&lt; output
+</code></pre>
+<p>will extract a pretty table summarizing the optimization.  </p>
 <p>If you specify the NWChem input</p>
 <pre><code>     scf; print none; end  
      driver; print low; end  
@@ -30546,24 +30548,23 @@ summarizing the optimization.</p>
 <p>For more control, these options for the standard print directive are
 recognized</p>
 <ul>
-<li>debug - prints a large amount of data. Don&rsquo;t use in parallel.</li>
-<li>high - print the search direction in internals</li>
-<li>default - prints geometry for each major step (not during the line
+<li><code>debug</code> - prints a large amount of data. Don&rsquo;t use in parallel.</li>
+<li><code>high</code> - print the search direction in internals</li>
+<li><code>default</code> - prints geometry for each major step (not during the line
     search), gradient in internals (before and after application of
     constraints)</li>
-<li>low - prints convergence and energy information. At convergence
+<li><code>low</code> - prints convergence and energy information. At convergence
     prints final geometry, change in internals from initial geometry</li>
 </ul>
 <p>and these specific print options</p>
 <ul>
-<li>finish (low) - print geometry data at end of calculation</li>
-<li>bonds (default) - print bonds at end of calculation</li>
-<li>angles (default) - print angles at end of calculation</li>
-<li>hvecs (never) - print eigen-values/vectors of the Hessian</li>
-<li>searchdir (high) - print the search direction in internals</li>
-<li>&ldquo;internal gradient&rdquo; (default) - print the gradient in internals</li>
-<li>sadmode (default) - print the mode being followed to the saddle
-    point</li>
+<li><code>finish</code> (low) - print geometry data at end of calculation</li>
+<li><code>bonds</code> (default) - print bonds at end of calculation</li>
+<li><code>angles</code> (default) - print angles at end of calculation</li>
+<li><code>hvecs</code> (never) - print eigen-values/vectors of the Hessian</li>
+<li><code>searchdir</code> (high) - print the search direction in internals</li>
+<li><code>"internal gradient"</code> (default) - print the gradient in internals</li>
+<li><code>sadmode</code> (default) - print the mode being followed to the saddle point</li>
 </ul>
 <h2 id="geometry-optimization-geometry-optimization-with-stepper">Geometry Optimization with STEPPER<a class="headerlink" href="#geometry-optimization-geometry-optimization-with-stepper" title="Permanent link">&para;</a></h2>
 <p>The STEPPER module performs a search for critical points on the
@@ -30610,7 +30611,7 @@ selected by specifying the directive</p>
 </code></pre>
 <p>in the STEPPER input.</p>
 <h3 id="geometry-optimization-track-mode-selection">TRACK: Mode selection<a class="headerlink" href="#geometry-optimization-track-mode-selection" title="Permanent link">&para;</a></h3>
-<p><code>STEPPER</code> has the ability to ``track&rsquo;&rsquo; a specific mode during an
+<p><code>STEPPER</code> has the ability to <em>track</em> a specific mode during an
 optimization for a transition state search, the user can also have the
 module track the eigenvector corresponding to a specific mode. This is
 done by specifying the directive</p>
