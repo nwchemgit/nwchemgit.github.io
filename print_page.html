@@ -31940,6 +31940,7 @@ functions. The properties that are available are:</p>
 <li>Gshift</li>
 <li>Response to electric and magnetic fields (static and dynamic)</li>
 <li>Raman</li>
+<li>Localization of molecular orbitals</li>
 </ul>
 <p>The properties module is started when the task directive TASK <theory>
 property is defined in the user input file. The input format has the
@@ -31977,7 +31978,8 @@ keywords:</p>
  SPINSPIN [&lt;integer&gt; number_of_pairs &lt;integer&gt; pair_list]  
  RESPONSE [&lt;integer&gt; response_order &lt;real&gt; frequency]  
  AIMFILE  
- MOLDENFILE  
+ MOLDENFILE
+ LOCALIZATION  
  ALL
 </code></pre>
 <p>The <code>ALL</code> keyword generates all currently available properties.</p>
@@ -32332,16 +32334,41 @@ be named <code>h2o.molden</code></p>
 <pre><code>java -jar janpa.jar h2o.molden &gt; h2o.janpa.txt
 </code></pre>
 <h2 id="properties-localization">Localization<a class="headerlink" href="#properties-localization" title="Permanent link">&para;</a></h2>
-<p>Localized molecular orbitals can be computed with the <code>localization</code> keyword.  </p>
-<p><code>property  
-   localization (( pm || boys || ibo) default pm)  
-end</code></p>
+<p>Localized molecular orbitals (LMOs) can be computed with the <code>localization</code> keyword.  </p>
+<pre><code> property  
+  localization (( pm || boys || ibo) default pm) ((0 || 1 || 2) default 0)
+ end  
+</code></pre>
 <p>The following methods are available:</p>
 <ul>
 <li>Pipek-Mezey<sup id="fnref_footnote_14"><a class="footnote-ref" href="#properties-fn_footnote_14">14</a></sup>, <code>pm</code> keyword (default) </li>
 <li>Foster-Boys<sup id="fnref_footnote_15"><a class="footnote-ref" href="#properties-fn_footnote_15">15</a></sup>, <code>boys</code> keyword </li>
-<li>IAO/IBO<sup id="fnref_footnote_16"><a class="footnote-ref" href="#properties-fn_footnote_16">16</a></sup><sup id="fnref_footnote_17"><a class="footnote-ref" href="#properties-fn_footnote_17">17</a></sup>, <code>ibo</code> keyword </li>
+<li>IAO/IBO<sup id="fnref2_footnote_16"><a class="footnote-ref" href="#properties-fn_footnote_16">16</a></sup><sup id="fnref_footnote_17"><a class="footnote-ref" href="#properties-fn_footnote_17">17</a></sup>, <code>ibo</code> keyword </li>
 </ul>
+<p>An optional integer switch may be supplied after the localization method specification. The default <code>0</code> means only occupied orbitals are localized.  Use <code>1</code> to localize virtual orbitals instead, or <code>2</code> to separately localize occupied and virtual orbitals in the same run. Localization of virtual orbitals is not implemented for the Boys localization. If only the keyword <code>localization</code> is given, this defaults to a Pipek-Mezey localization of the occupied molecular orbitals.</p>
+<p>In spin-unrestricted calculations, alpha and beta spin orbitals are localized separately. Fractional-occupation DFT and restricted open-shell Hartree-Fock or Kohn-Sham are not yet supported; attempting to use localization with fractional orbital occupations may run but will likely produce unwanted and wrong results.</p>
+<p>A localization run prints a characterizations of the LMOs. Specifically, the PM and IBO localizations print an energy-sorted list of LMOs indicating the density weight of each LMO on the various atoms for weights exceeding a 1% threshold; the atoms are listed in terms of their input number. A Boys localization prints the LMO centroid and the expectation value of <em>r</em>^2 per LMO.</p>
+<p>Typically, however, the user will want to visualize the LMOs. The localization run saves the LMO coefficients in a file <code>locorb.movecs</code>, which can be used as the MO vector file in an NWChem <a href="https://nwchemgit.github.io/DPLOT.html">DPLOT task</a> to generate corresponding volume data maps, for example, in the `cube&rsquo; format commonly used in computational chemistry. The latter can be visualized with a considerable number of open source, free, or proprietary software packages.</p>
+<p>NWChem test jobs that use the orbital localization functionality (under <code>$NWCHEM_TOP/QA/tests/</code>) are <code>localize-ibo-allyl</code>, <code>localize-pm-allyl</code>, and <code>localize-ibo-aa</code>. The latter is based on the acrylic acid example from the original IBO publication.<sup id="fnref_footnote_16"><a class="footnote-ref" href="#properties-fn_footnote_16">16</a></sup> IBO number 19 represents the delocalized C-C pi bond LMO of the system. After running the test job, the corresponding cube file for LMO 19 can be generated, for example, with</p>
+<pre><code> dplot
+ vectors locorb.movecs
+ limitxyz
+ -4.3334997 4.9318898 50
+ -3.3065879000000002 3.718637 50
+ -2.0 2.0 50
+ gaussian
+ spin alpha
+ orbitals view;1;19
+ output localize-ibo-aa-00019.cube
+ end
+ task dplot
+</code></pre>
+<p>The resulting plot with &#177;0.03 isosurfaces may look like the following</p>
+<p><img alt="Acrylic Acid IBO number 19" src="acrylic-acid-ibo.png" /></p>
+<p>A <a href="https://github.com/jautschbach/nwchem-dplot-utility">Python script</a> is available to facilitate the creation of volume data files for visualizing multiple MOs or LMOs of a given molecule. For the acrylic acid example, after running NWChem with the <code>localize-ibo-aa.nw</code> input, the following command will create an input file with <code>dplot</code> tasks to generate cubes for the 19 occupied and 10 virtual IBOs of the molecule on a 50x50x50 grid:</p>
+<pre><code> dplot.py -i localize-ibo-aa.nw -m locorb.movecs -g 50 -l 1-29
+</code></pre>
+<p>The <code>dplot</code> task shown above is included in the resulting NWChem input file <code>dplot.nw</code>.</p>
 <h2 id="properties-references">References<a class="headerlink" href="#properties-references" title="Permanent link">&para;</a></h2>
 <div class="footnote">
 <hr />
@@ -32392,7 +32419,7 @@ end</code></p>
 <p>Foster, J. M.; Boys, S. F. Canonical Configurational Interaction Procedure. <em>Reviews of Modern Physics</em> <strong>1960</strong>, <em>32</em> (2), 300–302. <a href="https://doi.org/10.1103/revmodphys.32.300">https://doi.org/10.1103/revmodphys.32.300</a>.&#160;<a class="footnote-backref" href="#properties-fnref_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
 </li>
 <li id="properties-fn_footnote_16">
-<p>Knizia, G. Intrinsic Atomic Orbitals: An Unbiased Bridge Between Quantum Theory and Chemical Concepts. <em>Journal of Chemical Theory and Computation</em> <strong>2013</strong>, <em>9</em> (11), 4834–4843. <a href="https://doi.org/10.1021/ct400687b">https://doi.org/10.1021/ct400687b</a>.&#160;<a class="footnote-backref" href="#properties-fnref_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+<p>Knizia, G. Intrinsic Atomic Orbitals: An Unbiased Bridge Between Quantum Theory and Chemical Concepts. <em>Journal of Chemical Theory and Computation</em> <strong>2013</strong>, <em>9</em> (11), 4834–4843. <a href="https://doi.org/10.1021/ct400687b">https://doi.org/10.1021/ct400687b</a>.&#160;<a class="footnote-backref" href="#properties-fnref_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a><a class="footnote-backref" href="#properties-fnref2_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
 </li>
 <li id="properties-fn_footnote_17">
 <p>Knizia, G.; Klein, J. E. M. N. Electron Flow in Reaction Mechanisms-Revealed from First Principles. <em>Angewandte Chemie International Edition</em> <strong>2015</strong>, <em>54</em> (18), 5518–5522. <a href="https://doi.org/10.1002/anie.201410637">https://doi.org/10.1002/anie.201410637</a>.&#160;<a class="footnote-backref" href="#properties-fnref_footnote_17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
