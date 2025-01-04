@@ -2904,13 +2904,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#singularity" class="md-nav__link">
+  <a href="#singularityapptainer" class="md-nav__link">
     <span class="md-ellipsis">
-      Singularity
+      Singularity/Apptainer
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Singularity">
+    <nav class="md-nav" aria-label="Singularity/Apptainer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2922,8 +2922,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#instruction-for-running-on-olcf-frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instruction for running on OLCF Frontier
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shifter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shifter
+    </span>
+  </a>
   
 </li>
       
@@ -3000,13 +3018,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#singularity" class="md-nav__link">
+  <a href="#singularityapptainer" class="md-nav__link">
     <span class="md-ellipsis">
-      Singularity
+      Singularity/Apptainer
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Singularity">
+    <nav class="md-nav" aria-label="Singularity/Apptainer">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3018,8 +3036,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#instruction-for-running-on-olcf-frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instruction for running on OLCF Frontier
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shifter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shifter
+    </span>
+  </a>
   
 </li>
       
@@ -3079,15 +3115,15 @@
 <p>This example uses the input file <code>xvdw.nw</code> available on the host directory <code>/tmp</code></p>
 <p>The associated Dockerfile is available at<br />
 <a href="https://github.com/nwchemgit/nwchem-dockerfiles/blob/master/nwchem-dev/Dockerfile">https://github.com/nwchemgit/nwchem-dockerfiles/blob/master/nwchem-dev/Dockerfile</a> </p>
-<h2 id="singularity">Singularity<a class="headerlink" href="#singularity" title="Permanent link">&para;</a></h2>
-<p>Singularity recipes for NWChem are available at.<br />
+<h2 id="singularityapptainer">Singularity/Apptainer<a class="headerlink" href="#singularityapptainer" title="Permanent link">&para;</a></h2>
+<p>Singularity/Apptainer recipes for NWChem are available at.<br />
 <a href="https://github.com/edoapra/nwchem-singularity">https://github.com/edoapra/nwchem-singularity</a></p>
-<p>Singularity images are available at<br />
-<a href="https://cloud.sylabs.io/library/edoapra">https://cloud.sylabs.io/library/edoapra</a>
-or at
-<a href="https://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x">ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x</a></p>
+<p>Singularity images are available at 
+<a href="https://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x">ghcr.io/edoapra/nwchem-singularity/nwchem-dev.ompi41x</a><br />
+and 
+<a href="https://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.mpich3.4.2">ghcr.io/edoapra/nwchem-singularity/nwchem-dev.mpich3.4.2</a></p>
 <h3 id="instruction-for-running-on-emsl-tahoma">Instruction for running on EMSL Tahoma<a class="headerlink" href="#instruction-for-running-on-emsl-tahoma" title="Permanent link">&para;</a></h3>
-<p>Instructions for running NWChem Singularity images on <a href="https://www.emsl.pnnl.gov/MSC/UserGuide/tahoma/tahoma_overview.html">EMSL tahoma</a></p>
+<p>Slurm script for running NWChem Singularity/Apptainer images on <a href="https://www.emsl.pnnl.gov/MSC/UserGuide/tahoma/tahoma_overview.html">EMSL tahoma</a></p>
 <pre><code>#!/bin/bash
 #SBATCH -N 2
 #SBATCH -t 00:29:00
@@ -3116,6 +3152,37 @@ MYFS=$(findmnt -r -T . | tail -1 |cut -d ' ' -f 1)
 # run
 srun --mpi=pmi2 -N $SLURM_NNODES -n $SLURM_NPROCS singularity exec --bind $SCRATCH,$MYFS $SCRATCH/nwchems.img nwchem  &quot;file name&quot;
 </code></pre>
+<h3 id="instruction-for-running-on-olcf-frontier">Instruction for running on OLCF Frontier<a class="headerlink" href="#instruction-for-running-on-olcf-frontier" title="Permanent link">&para;</a></h3>
+<p>Slurm script for running NWChem Singularity/Apptainer images on <a href="https://docs.olcf.ornl.gov/systems/frontier_user_guide.html">OLCF Frontier</a></p>
+<pre><code>#!/bin/bash
+#SBATCH -t 00:29:00
+#SBATCH -A ABCXYZ123
+#SBATCH -N 4
+#SBATCH  --tasks-per-node 56
+#SBATCH  --cpus-per-task 1
+#SBATCH -J siosi6
+#SBATCH -o siosi6.err.%j
+module swap libfabric libfabric/1.15.2.0
+module  load cray-mpich-abi
+export APPTAINERENV_LD_LIBRARY_PATH=&quot;$CRAY_MPICH_DIR/lib-abi-mpich:$CRAY_MPICH_ROOTDIR/gtl/lib:/opt/rocm/lib:/opt/rocm/lib64:$CRAY_LD_LIBRARY_PATH:$LD_LIBRARY_PATH:/opt/cray/pe/lib64:$HIP_LIB_PATH:/opt/cray/pe/gcc/11.2.0/snos/lib64:/opt/cray/xpmem/default/lib64&quot;
+export APPTAINER_CONTAINLIBS=&quot;/usr/lib64/libcxi.so.1,/usr/lib64/libjson-c.so.3,/lib64/libtinfo.so.6,/usr/lib64/libnl-3.so.200,/usr/lib64/libgfortran.so.5,/usr/lib64/libjansson.so.4&quot;
+MYFS=$(findmnt -r -T . | tail -1 |cut -d ' ' -f 1)
+export http_proxy=http://proxy.ccs.ornl.gov:3128/
+export https_proxy=http://proxy.ccs.ornl.gov:3128/
+export no_proxy='localhost,127.0.0.0/8,*.ccs.ornl.gov'
+export PERMANENT_DIR=$MEMBERWORK/$SLURM_JOB_ACCOUNT
+export BINDS=/usr/share/libdrm,/var/spool/slurmd,/opt/cray,${MYFS},${PERMANENT_DIR}
+export FI_CXI_RX_MATCH_MODE=hybrid
+export COMEX_EAGER_THRESHOLD=32768
+export MPICH_SMP_SINGLE_COPY_MODE=NONE
+export OMP_NUM_THREADS=1
+MYIMG=oras://ghcr.io/edoapra/nwchem-singularity/nwchem-dev.mpich3.4.2:
+export APPTAINER_CACHEDIR=$MEMBERWORK/$SLURM_JOB_ACCOUNT/cache
+mkdir -p $APPTAINER_CACHEDIR
+srun  -N $SLURM_NNODES  -l  apptainer exec --bind $BINDS --workdir `pwd` $MYIMG   nwchem siosi6.nw &gt;&amp; siosi6.out.$SLURM_JOBID
+</code></pre>
+<h2 id="shifter">Shifter<a class="headerlink" href="#shifter" title="Permanent link">&para;</a></h2>
+<p>Instructions for running the NWChem <a href="https://docs.nersc.gov/applications/nwchem/">Shifter images</a> are available at https://docs.nersc.gov/applications/nwchem</p>
 <h2 id="podman">Podman<a class="headerlink" href="#podman" title="Permanent link">&para;</a></h2>
 <p>Docker images could be run using podman commands</p>
 <pre><code>podman run --rm --shm-size 256m --volume /tmp:/data -i -t ghcr.io/nwchemgit/nwchem-dev/amd64 xvdw.nw
