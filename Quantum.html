@@ -3077,7 +3077,7 @@
 <p>The quantum features are routines for printing out one- and
 two-electron integrals that can be utilized in quantum algorithms. The
 outputs can be interpreted and formatted in
-<a href="https://en.wikipedia.org/wiki/YAML">YAML</a> files that include the
+(https://en.wikipedia.org/wiki/YAML) files that include the
 integrals and basic information including initial wavefunction guesses
 for quantum algorithms. There are currently two options for integrals:</p>
 <h2 id="bare-hamiltonian">Bare Hamiltonian<a class="headerlink" href="#bare-hamiltonian" title="Permanent link">&para;</a></h2>
@@ -3141,7 +3141,7 @@ release</a>.  </p>
 </code></pre>
 <p><em>Notes:</em></p>
 <ul>
-<li>Six models for the truncation of the similarity transformed are implemented and numbered 1-6. They correspond to approximations A(2)-A(7), respectively, that are detailed in <a href="https://arxiv.org/abs/2110.12077">arXiv:2110.12077</a>. Model 3 corresponds to the earliest implementation described in <a href="https://doi.org/10.1063/1.5094643">J. Chem. Phys. 151, 014107 (2019)</a> and <a href="https://doi.org/10.1063/1.5128103">J. Chem. Phys. 151, 234114 (2019)</a>. In contrast to these early publications, the full form of the two-electron integral is printed. Model 2 is an aggressive truncation and is not recommended for use. </li>
+<li>Six models for the truncation of the similarity transformed are implemented and numbered 1-6. They correspond to approximations A(2)-A(7), respectively, that are detailed in (https://arxiv.org/abs/2110.12077). Model 3 corresponds to the earliest implementation described in (https://doi.org/10.1063/1.5094643) and ( https://doi.org/10.1063/1.5128103). In contrast to these early publications, the full form of the two-electron integral is printed. Model 2 is an aggressive truncation and is not recommended for use. </li>
 <li>The entire two-electron integral is printed out since the DUCC Hamiltonian does not have the same symmetry as the bare Hamiltonian. Instead of the 8-fold symmetry, it has dual 4-fold symmetries    </li>
 </ul>
 <pre><code>        (IJ|KL) = (JI|LK) = (KL|IJ) = (LK|JI)  
@@ -3149,7 +3149,7 @@ release</a>.  </p>
         But (IJ|KL) /= (IJ|LK)    
 </code></pre>
 <ul>
-<li>When utilizing the <a href="#yaml-interpreter">YAML interpreter</a>, the full two-electron integral will be printed in the YAML file, despite it being labeled as &lsquo;sparse&rsquo; in the YAML file.   </li>
+<li>When utilizing the (#yaml-interpreter), the full two-electron integral will be printed in the YAML file, despite it being labeled as &lsquo;sparse&rsquo; in the YAML file.   </li>
 <li>Frozen core calculations should not be performed. There is nothing preventing such calculation from being executed, but the integrals will be incorrect.   </li>
 <li>Since the all-orbital coupled-cluster calculation must be performed, then there is a chance that a leading excitation outside of the active-space will be printed and therefore included in the initial wave function description in the YAML file. The user ought to be aware of this risk and make changes to the YAML file to exclude these excitations, which would include renormalizing the remaining amplitudes of the initial guess.  </li>
 </ul>

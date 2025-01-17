@@ -3117,7 +3117,7 @@ Default values will be used for atoms not specified.</p>
 <ul>
 <li>Schwarz screening is applied using</li>
 </ul>
-<pre><code>      screen [&lt;real scrtol default 1.0D-5&gt;]
+<pre><code>      screen 
 </code></pre>
 <h2 id="constraints">Constraints<a class="headerlink" href="#constraints" title="Permanent link">&para;</a></h2>
 <p>Additional constraints to the partial atomic charges can be imposed
@@ -3135,7 +3135,7 @@ used to specify that the partial charge of that atom is substracted in the sum f
 </ul>
 <pre><code>       constrain &lt;real charge&gt; &lt;integer iatom&gt; through &lt;integer jatom&gt; 
 </code></pre>
-<p>where charge is the net charge of the set of atoms <code>{[iatom:jatom]}</code>.</p>
+<p>where charge is the net charge of the set of atoms <code>{}</code>.</p>
 <ul>
 <li>A group of atoms can be constrained to have the same charge with</li>
 </ul>
@@ -3162,9 +3162,9 @@ fitting procedure.</p>
 <ul>
 <li>The directive for charge restraining is</li>
 </ul>
-<pre><code>      restrain [hfree] (harmonic [&lt;real scale&gt;] | \ 
-      hyperbolic [&lt;real scale&gt; [&lt;real tight&gt;]]  \  
-       [maxiter &lt;integer maxit&gt;]  [tolerance &lt;real toler&gt;])
+<pre><code>      restrain  (harmonic  | \ 
+      hyperbolic ]  \  
+         )
 </code></pre>
 <p>Here <code>hfree</code> can be specified to exclude hydrogen atoms from the
 restraining procedure. Variable <code>scale</code> is the strength of the restraint

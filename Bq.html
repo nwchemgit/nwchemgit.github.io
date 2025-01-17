@@ -3006,10 +3006,10 @@
 <p>The Bq module provides a way to perform QM calculations in the presence of point charges or Bq&rsquo;s,  (as typically referred to in quantum chemistry community). 
 Using Bq module versus  geometry block is a recommended way to include point charges in your calculations, in particular if number of charges are big.</p>
 <p>The format for including external point charges using the Bq module is shown below, supporting both explicit charge definition in the body of the block and/or loading from external files.</p>
-<pre><code> bq [units au|nm|pm|ang...] [namespace]  
-   [clear] 
-   [force|noforce]  
-   [load &lt;file&gt; [charges &lt;chargefile&gt;] [format ix iy iz iq] [units au|nm|pm|ang|...] [ scale &lt;factor&gt; ]]  
+<pre><code> bq    
+
+
+      ]  
    x  y  z  q
    ...  
 end  
@@ -3044,7 +3044,7 @@ end
  ...
 </code></pre>
 <ul>
-<li><strong>load</strong> <file> [charges <chargefile> ] [format ix iy iz iq] [units au|nm|pm|<strong>ang</strong>|&hellip;] [ scale <factor> ] - this directive allows to load point charges from external file(s). You can load charges and their coordinates from a single file, or from separate files. The files do not have to follow any specific format, but blank lines and comments (starting with #) will be ignored. The actual specification of how the coordinates/charges are laid out in in the file is given by format keyword. Multiple load directives are a supported.<br />
+<li><strong>load</strong> <file>     - this directive allows to load point charges from external file(s). You can load charges and their coordinates from a single file, or from separate files. The files do not have to follow any specific format, but blank lines and comments (starting with #) will be ignored. The actual specification of how the coordinates/charges are laid out in in the file is given by format keyword. Multiple load directives are a supported.<br />
 <strong> <file> - the name of the file where Bq coordinates and charges are stored. <br />
 </strong> charges <chargefile> - this optional keyword allows to load charges (NOT the coordinates) from a separate <chargefile>. In this case, only coordinates would be loaded from <file>  </li>
 </ul>

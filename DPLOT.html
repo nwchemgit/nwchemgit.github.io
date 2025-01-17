@@ -3329,7 +3329,7 @@
 densities (or orbitals) of the molecule. The electron density is
 calculated on a specified set of grid points using the molecular
 orbitals from SCF or DFT calculation. The output file is either in MSI
-Insight II contour format (default) or in the <a href="http://paulbourke.net/dataformats/cube/">Gaussian Cube format</a>.
+Insight II contour format (default) or in the (http://paulbourke.net/dataformats/cube/).
 DPLOT is not executed until the <code>task dplot</code> directive is given.
 Different sub-directives are described below.</p>
 <p>The implementation of the dplot functionality uses mostly local memory.
@@ -3352,7 +3352,7 @@ gcube2plt), Molden or Molekel.</p>
 <p>This sub-directive specifies a title line for the generated input to the
 Insight program or for the Gaussian cube file. Only one line is allowed.</p>
 <h2 id="limitxyz-plot-limits">LIMITXYZ: Plot limits<a class="headerlink" href="#limitxyz-plot-limits" title="Permanent link">&para;</a></h2>
-<pre><code> LIMITXYZ [units &lt;string Units default angstroms&gt;]  
+<pre><code> LIMITXYZ   
   &lt;real X_From&gt; &lt;real X_To&gt; &lt;integer No_Of_Spacings_X&gt;  
    &lt;real Y_From&gt; &lt;real Y_To&gt; &lt;integer No_Of_Spacings_Y&gt;  
    &lt;real Z_From&gt; &lt;real Z_To&gt; &lt;integer No_Of_Spacings_Z&gt;
@@ -3373,7 +3373,7 @@ being computed as the difference between α and β electron densities.</p>
 Insight program or the generated Gaussian cube file. The name <code>OUTPUT</code> is
 reserved for the standard NWChem output.</p>
 <h2 id="vectors-mo-vector-file-name">VECTORS: MO vector file name<a class="headerlink" href="#vectors-mo-vector-file-name" title="Permanent link">&para;</a></h2>
-<pre><code> VECTORS &lt;string File_Name default movecs&gt; [&lt;string File_Name2&gt;]
+<pre><code> VECTORS &lt;string File_Name default movecs&gt; 
 </code></pre>
 <p>This sub-directive specifies the name of the molecular orbital file. If
 the second file is optionally given the density is computed as the
@@ -3389,7 +3389,7 @@ performed on the set of a grid points specified by the sub-directive
 generated), <code>nuclei</code> (the density is computed at the position of the
 nuclei and written to the NWChem output) and <code>g+n</code> (both).</p>
 <h2 id="orbital-orbital-sub-space">ORBITAL: Orbital sub-space<a class="headerlink" href="#orbital-orbital-sub-space" title="Permanent link">&para;</a></h2>
-<pre><code> ORBITALS [&lt;string Option default density&gt;]
+<pre><code> ORBITALS 
  &lt;integer No_Of_Orbitals&gt;  
  &lt;integer Orb_No_1 Orb_No_2 ...&gt;
 </code></pre>
@@ -3403,10 +3403,10 @@ and sub-directive <code>where</code> is automatically set to <code>grid</code>. 
 of two orbital files conflicts with the view option. alpha orbitals are
 always plotted unless <code>spin</code> is set to <code>beta</code>.</p>
 <h2 id="civecs-ci-vectors">CIVECS: CI vectors<a class="headerlink" href="#civecs-ci-vectors" title="Permanent link">&para;</a></h2>
-<pre><code>CIVECS [&lt;string Name of civecs file&gt;]
+<pre><code>CIVECS 
 </code></pre>
 <h2 id="densmat-density-matrix">DENSMAT: Density matrix<a class="headerlink" href="#densmat-density-matrix" title="Permanent link">&para;</a></h2>
-<pre><code>DENSMAT [&lt;string Name of density matrix file&gt;]
+<pre><code>DENSMAT 
 </code></pre>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="charge-density">Charge Density<a class="headerlink" href="#charge-density" title="Permanent link">&para;</a></h3>

@@ -3224,15 +3224,15 @@ of NWChem. Alternatively, the user can specify particular functions
 explicitly in the input, to define a particular basis set.</p>
 <h2 id="basis-directive">BASIS directive<a class="headerlink" href="#basis-directive" title="Permanent link">&para;</a></h2>
 <p>The general form of the BASIS directive is as follows:</p>
-<pre><code> BASIS [&lt;string name default &quot;ao basis&quot;&gt;] \  
-       [(spherical || cartesian) default cartesian] \  
-       [(print || noprint) default print]  \
-       [rel] [bse] 
-    &lt;string tag&gt; library [&lt;string tag_in_lib&gt;] \  
-                 &lt;string standard_set&gt; [file &lt;filename&gt;] \  
-                 [except &lt;string tag list&gt;] [rel]  
+<pre><code> BASIS  \  
+        \  
+         \
+
+    &lt;string tag&gt; library  \  
+                 &lt;string standard_set&gt;  \  
+
        ...  
-    &lt;string tag&gt; &lt;string shell_type&gt; [rel]  
+    &lt;string tag&gt; &lt;string shell_type&gt;   
        &lt;real exponent&gt; &lt;real list_of_coefficients&gt;  
        ...  
  END
@@ -3244,12 +3244,12 @@ explicitly in the input, to define a particular basis set.</p>
     &ldquo;ao basis&rdquo;. Another name may be specified in the BASIS directive,
     thus, multiple basis sets may be stored simultaneously in the
     database. Also, the
-    <a href="Density-Functional-Theory-for-Molecules.html">DFT</a>
-    and <a href="MP2.html">RI-MP2</a> modules and the
-    <a href="Relativistic-All-electron-Approximations.html#dyalls-modified-dirac-hamitonian-approximation">Dyall-modified-Dirac</a>
+    (Density-Functional-Theory-for-Molecules.md)
+    and (MP2.md) modules and the
+    (Relativistic-All-electron-Approximations.md#dyalls-modified-dirac-hamitonian-approximation)
     relativistic method require multiple basis sets with specific names.
     The user can associate the &ldquo;ao basis&rdquo; with another named basis using
-    the SET directive (see <a href="SET.html">SET</a>).</p>
+    the SET directive (see (SET.md)).</p>
 <h3 id="spherical-or-cartesian">SPHERICAL or CARTESIAN<a class="headerlink" href="#spherical-or-cartesian" title="Permanent link">&para;</a></h3>
 <p><code>SPHERICAL</code> || <code>CARTESIAN</code> : <br />
     The keywords <code>spherical</code> and <code>cartesian</code> offer the option of using
@@ -3391,14 +3391,14 @@ explicitly in the input, to define a particular basis set.</p>
     for more details.</p>
 <h3 id="bse-keyword">BSE keyword<a class="headerlink" href="#bse-keyword" title="Permanent link">&para;</a></h3>
 <p><code>BSE</code> <strong><em>New in NWChem 7.2.0</em></strong>:<br />
-    This keyword loads the basis set <a href="#basis-set-library">library</a> using data in <code>$NWCHEM_TOP/src/basis/libraries.bse</code>
-    from <a href="#how-to-use-basis-files-from-httpswwwbasissetexchangeorg-new-in-2019">basisetexchanger.org</a>.
+    This keyword loads the basis set (#basis-set-library) using data in <code>$NWCHEM_TOP/src/basis/libraries.bse</code>
+    from (#how-to-use-basis-files-from-httpswwwbasissetexchangeorg-new-in-2019).
     CAVEAT: use of this keyword will also use the
-    <a href="#spherical-or-cartesian">spherical/cartesian</a>
+    (#spherical-or-cartesian)
     keywords from the basis library files.</p>
 <h2 id="basis-sets-tags">Basis sets tags<a class="headerlink" href="#basis-sets-tags" title="Permanent link">&para;</a></h2>
 <p>Basis sets are associated with centers by using the tag of a center in a
-<a href="Geometry.html">geometry</a> that has either been input by
+(Geometry.md) that has either been input by
 the user or is available elsewhere. Each atom or center with the same
 tag will have the same basis set. All atoms must have basis functions
 assigned to them &ndash; only dummy centers (<code>X</code> or <code>Bq</code>) may have no basis
@@ -3414,7 +3414,7 @@ the matching mechanism fails then NWChem stops with an appropriate error
 message.</p>
 <p>A special set of tags, &ldquo;<code>*</code>&rdquo; and tags ending with a &ldquo;<code>*</code>&rdquo; (E.g. &ldquo;<code>H*</code>&rdquo;) can
 be used in combination with the keyword
-<a href="#basis-set-library">library</a>. These tags facilitate the
+(#basis-set-library). These tags facilitate the
 definition of a certain type of basis set of all atoms, or a group of
 atoms, in a geometry using only a single or very few basis set entries.
 The &ldquo;<code>*</code>&rdquo; tag will not place basis sets on dummy atoms, <code>Bq*</code> can be used
@@ -3434,9 +3434,9 @@ Exchange</a> for naming conventions and
 their specifications.</p>
 <p>The general form of the input line requesting basis sets from the NWChem
 basis set library is:</p>
-<pre><code>    &lt;string tag&gt; library [&lt;string tag_in_lib&gt;] \  
+<pre><code>    &lt;string tag&gt; library  \  
                  &lt;string standard set&gt; [file &lt; filename&gt; \  
-                 [except &lt;string tag list&gt;] [rel] 
+
        ...
 </code></pre>
 <p>For example, the NWChem basis set library contains the Dunning cc-pvdz
@@ -3487,7 +3487,7 @@ tags in the geometry that start with &ldquo;<code>oxy</code>&rdquo;.</p>
 <p>If standard basis sets are to be placed upon a dummy center, the
 variable <code>&lt;tag_in_lib&gt;</code> must also be entered on this line, to identify the
 correct atom type to use from the basis function library (see the ghost
-atom example in <a href="SET.html">SET</a> and below).
+atom example in (SET.md) and below).
 For example: To specify the cc-pvdz basis for a calculation on the water
 monomer in the dimer basis, where the dummy oxygen and dummy hydrogen
 centers have been identified as <code>bqo</code> and <code>bqh</code> respectively, the <code>BASIS</code>
@@ -3515,16 +3515,16 @@ distinguished by the suffix <code>_pt</code> and <code>_fi</code>. It is the use
 responsibility to ensure that the contraction matches the nuclear type
 specified in the geometry object. The specification of a finite nucleus
 basis set does NOT automatically set the nuclear type for that atom to
-be finite. See <a href="Geometry.html">Geometries</a> for
+be finite. See (Geometry.md) for
 information.</p>
 <h2 id="how-to-use-basis-files-from-httpswwwbasissetexchangeorg-new-in-2019">How to use basis files from https://www.basissetexchange.org (NEW in 2019)<a class="headerlink" href="#how-to-use-basis-files-from-httpswwwbasissetexchangeorg-new-in-2019" title="Permanent link">&para;</a></h2>
 <p>In order to ensure compatibility with the existing basis libraries available in NWChem, we suggest the user  to 
 select the &ldquo;Advanced Options&rdquo; menu and tick the boxes &ldquo;Optimize General Contractions&rdquo; and &ldquo;Uncontract General&rdquo;,
 as in the image below,
-when downloading basis files from <a href="https://www.basissetexchange.org">www.basissetexchange.org</a><br />
-<img alt="How to download" src="BSE_NWChem_selection.png" /></p>
+when downloading basis files from (https://www.basissetexchange.org)<br />
+!(BSE_NWChem_selection.png)</p>
 <p>As an alternative,  basis set files downloaded from the basissetexchange.org website are available in
-the NWChem source code (after release 7.0.0). In order to switch from the default basis libraries to the library formed by files downloaded from <a href="https://www.basissetexchange.org">www.basissetexchange.org</a>,
+the NWChem source code (after release 7.0.0). In order to switch from the default basis libraries to the library formed by files downloaded from (https://www.basissetexchange.org),
 the following environment variable setting is required</p>
 <pre><code>NWCHEM_BASIS_LIBRARY=$NWCHEM_TOP/src/basis/libraries.bse/
 </code></pre>
@@ -3533,7 +3533,7 @@ the following environment variable setting is required</p>
 are not suitable for a given calculation, the basis set may be
 explicitly defined. A generally contracted Gaussian basis function is
 associated with a center using an input line of the following form:</p>
-<pre><code>    &lt;string tag&gt; &lt;string shell_type&gt; [rel]  
+<pre><code>    &lt;string tag&gt; &lt;string shell_type&gt;   
        &lt;real exponent&gt; &lt;real list_of_coefficients&gt;  
        ...
 </code></pre>

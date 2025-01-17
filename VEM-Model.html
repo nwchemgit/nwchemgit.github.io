@@ -3125,23 +3125,23 @@
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The VEM is a model for calculating the vertical excitation (absorption)
 or vertical emission (fluorescence) energy in solution according to a
-two-time-scale model of solvent polarization. The model is described in reference<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>.  </p>
+two-time-scale model of solvent polarization. The model is described in reference<sup id="fnref_footnote_marenich2011"><a class="footnote-ref" href="#fn_footnote_marenich2011">1</a></sup>.  </p>
 <p>The current implementation is based on the VEM(d,RD) algorithm as
-described in the above paper. The method is available only at the <a href="Excited-State-Calculations.html">TDDFT</a>
+described in the above paper. The method is available only at the (Excited-State-Calculations.md)
 level of theory, including both full-linear response TDDFT (sometimes
 called LR-TDDFT or regular TDDFT) and the Tamm–Dancoff approximation,
-<a href="Excited-State-Calculations.html#cis-and-rpa-the-tamm-dancoff-approximation">TDDFT-TDA</a>
+(Excited-State-Calculations.md#cis-and-rpa-the-tamm-dancoff-approximation)
 (sometimes just called TDA). The configuration interaction
 singles (CIS) wave function method can also be used along with VEM by
 considering CIS to be a special case of TDDFT-TDA.</p>
 <p>The abbreviation VEM originally referred to the vertical excitation
-model of reference<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup>,
+model of reference<sup id="fnref_footnote_li2000"><a class="footnote-ref" href="#fn_footnote_li2000">2</a></sup>,
 but the current implementation of VEM extends to both excitation and
 emission calculations in solution, and the E in VEM now stands for
 excitation/emission. Furthermore, the current version of VEM (based on
-the Marenich et al. paper<sup id="fnref2_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>) does
+the Marenich et al. paper<sup id="fnref2_footnote_marenich2011"><a class="footnote-ref" href="#fn_footnote_marenich2011">1</a></sup>) does
 not reduce to the original VEM of Li et al., but is improved as
-described in reference<sup id="fnref3_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>.</p>
+described in reference<sup id="fnref3_footnote_marenich2011"><a class="footnote-ref" href="#fn_footnote_marenich2011">1</a></sup>.</p>
 <p>The VEM model is based on a nonequilibrium dielectric-continuum approach
 in terms of two-time-scale solvent response. The solvent&rsquo;s
 bulk-electrostatic polarization is described by using the reaction field
@@ -3174,7 +3174,7 @@ supersolute that involves a solute–solvent molecular cluster with one or
 a few solvent molecules added explicitly to a bare solute. The
 solute–solvent dispersion contribution to the solvatochromic shift, if
 desired, can be estimated by the solvation model with state-specific
-polarizability (SMSSP) described in reference<sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">3</a></sup>.  </p>
+polarizability (SMSSP) described in reference<sup id="fnref_footnote_marenich2013"><a class="footnote-ref" href="#fn_footnote_marenich2013">3</a></sup>.  </p>
 <p>In this case, the user needs to provide values of ground- and
 excited-state spherically averaged molecular polarizabilities of the
 solvent.</p>
@@ -3193,7 +3193,7 @@ a nonequilibrium emission energy calculation;<br />
 <code>task tddft gradient</code> line should be present)    </p>
 <h3 id="vem-solvent">VEM Solvent<a class="headerlink" href="#vem-solvent" title="Permanent link">&para;</a></h3>
 <p>The VEM solvent (which is water by default) can be specified by using
-the solvent keyword described in the <a href="SMD-Model.html#smd-solvent-keyword">SMD section of this manual</a> or by
+the solvent keyword described in the (SMD-Model.md#smd-solvent-keyword) or by
 specifying the VEM solvent descriptors such as</p>
 <p><code>dielec (real input)</code><br />
 <code>static dielectric constant</code>  </p>
@@ -3203,7 +3203,7 @@ optical dielectric constant which is set (by default) to the squared value of th
 that if the solvent is specified with the solvent keyword,<br />
  the refractive index is set by the program without needing the user to supply it.)   </p>
 <p>Solvent descriptors set by the program are based on the Minnesota
-Solvent Descriptor Database<sup id="fnref_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">4</a></sup>:</p>
+Solvent Descriptor Database<sup id="fnref_footnote_winget1999"><a class="footnote-ref" href="#fn_footnote_winget1999">4</a></sup>:</p>
 <p>If the option <code>do_cosmo_vem 1</code> or <code>do_cosmo_vem 2</code> is specified the
 program will run VEM ground- and excited-state bulk-electrostatic
 calculations using the COSMO algorithm with the SMD Coulomb radii by
@@ -3261,17 +3261,17 @@ task tddft gradient
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn_footnote_1">
-<p>Marenich, A. V.; Cramer, C. J.; Truhlar, D. G.; Guido, C. A.; Mennucci, B.; Scalmani, G.; Frisch, M. J. Practical Computation of Electronic Excitation in Solution: Vertical Excitation Model. <em>Chemical Science</em> <strong>2011</strong>, <em>2</em> (11), 2143. <a href="https://doi.org/10.1039/c1sc00313e">https://doi.org/10.1039/c1sc00313e</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn_footnote_marenich2011">
+<p>Marenich, A. V.; Cramer, C. J.; Truhlar, D. G.; Guido, C. A.; Mennucci, B.; Scalmani, G.; Frisch, M. J. Practical Computation of Electronic Excitation in Solution: Vertical Excitation Model. <em>Chemical Science</em> <strong>2011</strong>, <em>2</em> (11), 2143. <a href="https://doi.org/10.1039/c1sc00313e">https://doi.org/10.1039/c1sc00313e</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_marenich2011" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_marenich2011" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_marenich2011" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_2">
-<p>Li, J.; Cramer, C. J.; Truhlar, D. G. Two-Response-Time Model Based on CM2/INDO/S2 Electrostatic Potentials for the Dielectric Polarization Component of Solvatochromic Shifts on Vertical Excitation Energies. <em>International Journal of Quantum Chemistry</em> <strong>2000</strong>, <em>77</em> (1), 264–280. <a href="https://doi.org/10.1002/(sici)1097-461x(2000)77:1&lt;264::aid-qua24&gt;3.0.co;2-j">https://doi.org/10.1002/(sici)1097-461x(2000)77:1&lt;264::aid-qua24&gt;3.0.co;2-j</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn_footnote_li2000">
+<p>Li, J.; Cramer, C. J.; Truhlar, D. G. Two-Response-Time Model Based on CM2/INDO/S2 Electrostatic Potentials for the Dielectric Polarization Component of Solvatochromic Shifts on Vertical Excitation Energies. <em>International Journal of Quantum Chemistry</em> <strong>2000</strong>, <em>77</em> (1), 264&ndash;280. <a href="https://doi.org/10.1002/(sici)1097-461x(2000)77:1&lt;264::aid-qua24&gt;3.0.co;2-j">https://doi.org/10.1002/(sici)1097-461x(2000)77:1\&lt;264::aid-qua24&gt;3.0.co;2-j</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_li2000" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_3">
-<p>Marenich, A. V.; Cramer, C. J.; Truhlar, D. G. Uniform Treatment of Solute-Solvent Dispersion in the Ground and Excited Electronic States of the Solute Based on a Solvation Model with State-Specific Polarizability. <em>Journal of Chemical Theory and Computation</em> <strong>2013</strong>, <em>9</em> (8), 3649–3659. <a href="https://doi.org/10.1021/ct400329u">https://doi.org/10.1021/ct400329u</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn_footnote_marenich2013">
+<p>Marenich, A. V.; Cramer, C. J.; Truhlar, D. G. Uniform Treatment of Solute-Solvent Dispersion in the Ground and Excited Electronic States of the Solute Based on a Solvation Model with State-Specific Polarizability. <em>Journal of Chemical Theory and Computation</em> <strong>2013</strong>, <em>9</em> (8), 3649&ndash;3659. <a href="https://doi.org/10.1021/ct400329u">https://doi.org/10.1021/ct400329u</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_marenich2013" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_4">
-<p>Winget, P.; Dolney, D. M.; Giesen, D. J.; Cramer, C. J.; Truhlar, D. G. Minnesota Solvent Descriptor Database. <em>Minneapolis, MN: Department of Chemistry and Supercomputer Institute</em> <strong>1999</strong>.&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<li id="fn_footnote_winget1999">
+<p>Winget, P.; Dolney, D. M.; Giesen, D. J.; Cramer, C. J.; Truhlar, D. G. Minnesota Solvent Descriptor Database. <em>Minneapolis, MN: Department of Chemistry and Supercomputer Institute</em> <strong>1999</strong>.&#160;<a class="footnote-backref" href="#fnref_footnote_winget1999" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

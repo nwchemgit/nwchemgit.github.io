@@ -3105,7 +3105,7 @@ that bridge A and B configurations by linear interpolation</p>
 \,\!\)</span></p>
 <p></center></p>
 <p>The solvation free energy difference can be then written as sum of
-differences for the subintervals <span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>  :</p>
+differences for the subintervals <span class="arithmatex">\(\,\! \)</span>  :</p>
 <p><center></p>
 <p><span class="arithmatex">\(
  \Delta W_{A\to B}^{\rm esp} = \sum_{i=0}^{n}\Delta W_{\lambda_i\to\lambda_{i+1}}^{\rm esp}
@@ -3113,8 +3113,8 @@ differences for the subintervals <span class="arithmatex">\(\,\! [\lambda_i\to\l
 <p></center></p>
 <p>To expedite the calculation it is convenient to use a double wide
 sampling strategy where the free energy differences for the intervals
-<span class="arithmatex">\(\,\! [\lambda_{i-1}\to\lambda_{i}]\)</span>  and
-<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>  are calculated simultaneously by
+<span class="arithmatex">\(\,\! \)</span>  and
+<span class="arithmatex">\(\,\! \)</span>  are calculated simultaneously by
 sampling around <span class="arithmatex">\(\,\!\lambda_{i}\)</span>   point. In the simplest case where we
 use two subintervals
 (n=2)</p>
@@ -3156,7 +3156,7 @@ input blocks)</p>
 <pre><code>set qmmm:fep_geom xxx_A.xyzi xxx_B.xyzi
 set qmmm:fep_esp  xxx_A.esp xxx_B.esp
 </code></pre>
-<p>The current interpolation interval <span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span><br />
+<p>The current interpolation interval <span class="arithmatex">\(\,\! \)</span><br />
 for which free energy difference is calculated is defined as</p>
 <pre><code>set qmmm:fep_lambda lambda_i lambda_i+1
 </code></pre>
@@ -3164,8 +3164,8 @@ for which free energy difference is calculated is defined as</p>
 <pre><code>set qmmm:fep_deriv .true.
 </code></pre>
 <p>If set, the above directive will perform both
-<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>  and
-<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i-1}]\)</span>  calculations, where</p>
+<span class="arithmatex">\(\,\! \)</span>  and
+<span class="arithmatex">\(\,\! \)</span>  calculations, where</p>
 <p><center></p>
 <p><span class="arithmatex">\(\,\!
  \lambda_{i-1}=\lambda_i - (\lambda_{i+1}-\lambda_i)\)</span></p>
@@ -3177,21 +3177,21 @@ trajectory to calculate averages of relevant energy differences. The
 number of MD steps in the first phase is controlled by the QM/MM
 directive <span id="nsamples"></span></p>
 <ul>
-<li><strong><a href="Qmmm_nsamples.html">nsamples</a></strong>
+<li><strong>(Qmmm_nsamples.md)</strong>
     <integer number of MD steps for sampling></li>
 </ul>
 <p>This is a <strong>required</strong> directive for QM/MM free energy calculations.</p>
 <p>Number of overall cycles is defined by the QM/MM directive</p>
 <ul>
-<li><strong><a href="Qmmm_ncycles.html">ncycles</a></strong> <integer number
+<li><strong>(Qmmm_ncycles.md)</strong> <integer number
     of cycles default 1></li>
 </ul>
 <p>In most cases explicit definition of QM/MM
-<strong><a href="Qmmm_density.html">density</a></strong> and
-<strong><a href="Qmmm_region.html">region</a></strong> should not be required.
-The QM/MM <strong><a href="Qmmm_density.html">density</a></strong> will
+<strong>(Qmmm_density.md)</strong> and
+<strong>(Qmmm_region.md)</strong> should not be required.
+The QM/MM <strong>(Qmmm_density.md)</strong> will
 automatically default to <strong>espfit</strong> and
-<strong><a href="Qmmm_region.html">region</a></strong> to <strong>mm</strong>.</p>
+<strong>(Qmmm_region.md)</strong> to <strong>mm</strong>.</p>
 <p>Prior to data collection for free energy calculations user may want to
 prequilibrate the system, which can be achieved by <strong>equil</strong> keyword in
 the MD block:</p>
@@ -3210,9 +3210,9 @@ the following task directive</p>
 though</p>
 <pre><code>grep free &lt;name of the output file&gt;
 </code></pre>
-<p>The first number is a forward (<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>)
+<p>The first number is a forward (<span class="arithmatex">\(\,\! \)</span>)
 free energy difference and second number is backward
-(<span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i-1}]\)</span>) free energy difference, both in
+(<span class="arithmatex">\(\,\! \)</span>) free energy difference, both in
 kcal/mol. The same numbers can also be found in the 4th and 6th columns
 of <system>.thm file but this time in <strong>atomic units</strong>.</p>
 <p>The same <system>.thm file can also be used to continue from the prior

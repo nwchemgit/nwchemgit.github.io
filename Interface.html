@@ -3297,7 +3297,7 @@ citation:</p>
 <h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
 <p>By using DIRDYVTST, a user can carry out electronic structure
 calculations with NWChem and use the resulting energies, gradients, and
-Hessians for direct dynamics calculations with <a href="https://comp.chem.umn.edu/polyrate/">POLYRATE</a>. 
+Hessians for direct dynamics calculations with (https://comp.chem.umn.edu/polyrate/). 
 This program
 prepares the file30 input for POLYRATE from NWChem electronic structure
 calculations of energies, gradients and Hessians at the reactant,
@@ -3306,7 +3306,7 @@ Cartesian geometries for the reactants, products, and saddle points need
 to be input to this program; optimization of geometries is not performed
 in this program. Note that DIRDYVTST is based on the DIRDYGAUSS program
 and is similar to two other programs: DDUTILITIES and GAUSSRATE. Users
-of this module are encouraged to read the <a href="https://comp.chem.umn.edu/polyrate/190727_Polyrate_17-C_manuall.pdf">POLYRATE manual</a> since they
+of this module are encouraged to read the (https://comp.chem.umn.edu/polyrate/190727_Polyrate_17-C_manuall.pdf) since they
 will need to create the file fu5 input to run calculations with
 POLYRATE.</p>
 <p>Notes about the code:</p>
@@ -3340,18 +3340,18 @@ wavefunction).</p>
 POLYRATE input. The first set of inputs are for NWChem with the general
 input block of the
 form:</p>
-<pre><code> DIRDYVTST [autosym [real tol default 1d-2] | noautosym]  
-   [THEORY &lt;string theory&gt; [basis &lt;string basis default &quot;ao basis&quot;&gt;] \  
-                        [ecp &lt;string ecp&gt;] [input &lt;string input&gt;]]  
-   [SPTHEORY &lt;string theory&gt; [basis &lt;string basis default &quot;ao basis&quot;&gt;]   
-                        [ecp &lt;string ecp&gt;] [input &lt;string input&gt;`]]  
+<pre><code> DIRDYVTST  | noautosym]  
+    \  
+                         ]  
+
+                         ]  
    ...
  END
 </code></pre>
 <h4 id="use-of-symmetry">Use of symmetry<a class="headerlink" href="#use-of-symmetry" title="Permanent link">&para;</a></h4>
 <p>The use of symmetry in the calculation is controlled by the keyword
 <code>autosym | noautosym</code> which is used as described in the
-<a href="Geometry.html">geometry</a> directive. <code>Autosym</code> is on by
+(Geometry.md) directive. <code>Autosym</code> is on by
 default. A couple words of warning here. The tolerance related to
 <code>autosym</code> can cause problems when taking the initial step off of the
 transition state. If the tolerance is too large and the initial step
@@ -3367,11 +3367,11 @@ molecule between NWChem and POLYRATE, this is taken care of internally
 in the DIRDYVTST module.</p>
 <h4 id="basis-specification">Basis specification<a class="headerlink" href="#basis-specification" title="Permanent link">&para;</a></h4>
 <p>The basis name on the theory or sptheory directive is that specified on
-a <a href="Basis.html">basis set directive</a> and not the name of
+a (Basis.md) and not the name of
 a standard basis in the library. If not specified, the basis set for the
 sptheory defaults to the theory basis which defaults to &ldquo;ao basis&rdquo;.</p>
 <h4 id="effective-core-potentials">Effective core potentials<a class="headerlink" href="#effective-core-potentials" title="Permanent link">&para;</a></h4>
-<p>If an <a href="ECP.html">effective core potential</a> is specified
+<p>If an (ECP.md) is specified
 in the usual fashion outside of the DIRDYVTST input then this will be
 used in all calculations. If an alternative ECP name (the name specified
 on the ECP directive in the same manner as done for basis sets) is
@@ -3411,12 +3411,12 @@ sections.</p>
 <p>The GENERAL section has the following format:</p>
 <pre><code>  * GENERAL
 
- [TITLE &lt;string title&gt;]  
+
  ATOMS  
-   &lt;integer num&gt; &lt;string tag&gt; [&lt;real mass&gt;]  
+   &lt;integer num&gt; &lt;string tag&gt;   
    ...  
  END  
- [SINGLEPOINT]  
+
  [SAVEFILE (vecs || hess || spc)
 </code></pre>
 <p>Descriptions</p>
@@ -3476,15 +3476,15 @@ transition state), and NONLINTS (nonlinear transition state).</p>
 <h5 id="path-section">PATH section<a class="headerlink" href="#path-section" title="Permanent link">&para;</a></h5>
 <p>The Path section has the format:</p>
 <pre><code>*PATH  
- [SCALEMASS &lt;real scalemass default 1.0&gt;]  
- [SSTEP &lt;real sstep default 0.01&gt;]  
- [SSAVE &lt;real ssave default 0.1&gt;]  
- [SHESS &lt;real shess default SSAVE&gt;]  
- [SLP &lt;real slp default 1.0&gt;]  
- [SLM &lt;real slm default -1.0&gt;]  
- [SIGN (REACTANT || PRODUCT default REACTANT)]  
- [INTEGRA (EULER || LQA || CLQA || CUBE default EULER)] 
- [PRINTFREQ (on || off default off)]
+
+
+
+
+
+
+
+
+
 </code></pre>
 <p>Descriptions</p>
 <p>SCALEMASS is a variable keyword that indicates the arbitrary mass (in
@@ -3523,7 +3523,7 @@ to follow the reaction path. Options are: EULER, LQA, CLQA, and CUBE.</p>
 frequencies and eigenvectors will be printed along the MEP.</p>
 <h4 id="restart">Restart<a class="headerlink" href="#restart" title="Permanent link">&para;</a></h4>
 <p>DIRDYVTST calculations should be
-<a href="Start_Restart.html">restarted</a>
+(Start_Restart.md)
 through the normal NWChem mechanism. The user needs to change the start
 directive to a restart directive and get rid of any information that
 will overwrite important information in the RTDB. The file.db and

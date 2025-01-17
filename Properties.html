@@ -3386,8 +3386,8 @@ functions. The properties that are available are:</p>
 property is defined in the user input file. The input format has the
 form:</p>
 <pre><code> PROPERTY 
-   [property keyword]  
-   [CENTER ((com || coc || origin || arb &lt;real x y z&gt;) default coc)] 
+
+
  END
 </code></pre>
 <p>Most of the properties can be computed for Hartree-Fock (closed-shell
@@ -3395,7 +3395,7 @@ RHF, open-shell ROHF, and open-shell UHF), and DFT (closed-shell and
 open-shell spin unrestricted) wavefunctions. The NMR hyperfine and
 indirect spin-spin coupling require a UHF or ODFT wave function.</p>
 <h2 id="vectors-keyword">Vectors keyword<a class="headerlink" href="#vectors-keyword" title="Permanent link">&para;</a></h2>
-<pre><code> VECTORS [ (&lt;string input_movecs &gt;)]
+<pre><code> VECTORS 
 </code></pre>
 <p>The VECTORS directive allows the user to specify the input molecular
 orbital vectors for the property calculation</p>
@@ -3413,10 +3413,10 @@ keywords:</p>
  EFIELDGRADZ4  
  GSHIFT  
  ELECTRONDENSITY  
- HYPERFINE [&lt;integer&gt; number_of_atoms &lt;integer&gt; atom_list]  
- SHIELDING [&lt;integer&gt; number_of_atoms &lt;integer&gt; atom_list]  
- SPINSPIN [&lt;integer&gt; number_of_pairs &lt;integer&gt; pair_list]  
- RESPONSE [&lt;integer&gt; response_order &lt;real&gt; frequency]  
+ HYPERFINE   
+ SHIELDING   
+ SPINSPIN   
+ RESPONSE   
  AIMFILE  
  MOLDENFILE
  LOCALIZATION  
@@ -3436,12 +3436,12 @@ the highest abundance and has spin, will be chosen for each atom under
 consideration.</p>
 <h4 id="calculating-epr-and-paramagnetic-nmr-parameters">Calculating EPR and paramagnetic NMR parameters<a class="headerlink" href="#calculating-epr-and-paramagnetic-nmr-parameters" title="Permanent link">&para;</a></h4>
 <p>The following
-<a href="EPR-pNMR.html">tutorial</a> illustrates how to combine the
+(EPR-pNMR.md) illustrates how to combine the
 hyperfine, gshift and shielding to calculate the EPR and paramagnetic
 NMR parameters of an open-shell system. All calculations are compatible 
 with the ZORA model potential approach.</p>
 <p>For theoretical and computational details, please refer to 
-references<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup><sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup><sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">3</a></sup>.</p>
+references<sup id="fnref_footnote_autschbach2011"><a class="footnote-ref" href="#fn_footnote_autschbach2011">1</a></sup><sup id="fnref_footnote_aquino2012"><a class="footnote-ref" href="#fn_footnote_aquino2012">2</a></sup><sup id="fnref_footnote_aquino2011"><a class="footnote-ref" href="#fn_footnote_aquino2011">3</a></sup>.</p>
 <h4 id="nmr-input-example">NMR: Input Example<a class="headerlink" href="#nmr-input-example" title="Permanent link">&para;</a></h4>
 <pre><code>geometry  nocenter
   C    0.00000000    0.00000000    0.00000000
@@ -3475,23 +3475,23 @@ task dft property
 <h3 id="center-center-of-expansion-for-multipole-calculations">CENTER: Center of expansion for multipole calculations<a class="headerlink" href="#center-center-of-expansion-for-multipole-calculations" title="Permanent link">&para;</a></h3>
 <p>The user also has the option to choose the center of expansion for the
 dipole, quadrupole, and octupole calculations.</p>
-<pre><code>   [CENTER ((com || coc || origin || arb &lt;real x y z&gt;) default coc)]
+<pre><code>
 </code></pre>
 <p>com is the center of mass, coc is the center of charge, origin is (0.0,
 0.0, 0.0) and arb is any arbitrary point which must be accompanied by
 the coordinated to be used. Currently the x, y, and z coordinates must
-be given in the same units as UNITS in <a href="Geometry.html">GEOMETRY</a>.</p>
+be given in the same units as UNITS in (Geometry.md).</p>
 <h3 id="response-calculations">Response Calculations<a class="headerlink" href="#response-calculations" title="Permanent link">&para;</a></h3>
 <p>Response calculations can be calculated as
 follows:</p>
 <pre><code>property
  response  1 7.73178E-2   # response order and frequency in Hartree energy units  
  velocity                 # use modified velocity gauge for electric dipole  
- orbeta                   # calculate optical rotation 'beta' directly [^4]  
- giao                     # GIAO optical rotation [^5][^6][^7], forces orbeta  
- bdtensor                 # calculates B-tilde of Refs. [^5][^7] 
- analysis                 # analyze response in terms of MOs [^7]  
- damping 0.007            # complex response functions with damping, Ref [^8] 
+ orbeta                   # calculate optical rotation 'beta' directly [^autschbach2007]  
+ giao                     # GIAO optical rotation [^autschbach2011_2][^krykunov2005][^moore2012], forces orbeta  
+ bdtensor                 # calculates B-tilde of Refs. [^autschbach2011_2][^moore2012] 
+ analysis                 # analyze response in terms of MOs [^moore2012]  
+ damping 0.007            # complex response functions with damping, Ref [^krykunov2006] 
  convergence 1e-4         # set CPKS convergence criterion (default 1e-4)  
 end
 </code></pre>
@@ -3511,9 +3511,9 @@ If the <code>velocity</code> or <code>giao</code> keywords are absent, the
 dipole-length form will be used for the dipole integrals. This is a bit
 faster. <br />
 The isotropic optical rotation is origin independent when using
-the velocity gauge (by means of <code>velocity</code> keyword) or with GIAOs <sup id="fnref_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup> (by means of the <code>giao</code> keyword). <br />
+the velocity gauge (by means of <code>velocity</code> keyword) or with GIAOs <sup id="fnref_footnote_autschbach2011_2"><a class="footnote-ref" href="#fn_footnote_autschbach2011_2">5</a></sup> (by means of the <code>giao</code> keyword). <br />
 With the keyword <code>bdtensor</code>, a
-fully origin-invariant optical rotation tensor is calculated <sup id="fnref2_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup><sup id="fnref_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">7</a></sup>.<br />
+fully origin-invariant optical rotation tensor is calculated <sup id="fnref2_footnote_autschbach2011_2"><a class="footnote-ref" href="#fn_footnote_autschbach2011_2">5</a></sup>.<br />
 Note that <code>velocity</code> and <code>orbeta</code> are incompatible. <br />
 The input line</p>
 <pre><code>set prop:newaoresp 0
@@ -3528,24 +3528,24 @@ response tensors in terms of molecular orbitals.<br />
 If the property input block also contains the keyword <code>pmlocalization</code>, then the analysis is
 performed in terms of Pipek-Mezey localized MOs, otherwise the canonical
 set is used (this feature may currently not work, please check the sum
-of the analysis carefully). See Ref. [6] for an example. Works with HF
+of the analysis carefully). See Ref.  for an example. Works with HF
 and density functionals for which linear response kernels are
 implemented in NWChem.</p>
-<p>Please refer to papers<sup id="fnref3_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup><sup id="fnref_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">4</a></sup><sup id="fnref_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">6</a></sup><sup id="fnref_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">9</a></sup><sup id="fnref_footnote_8"><a class="footnote-ref" href="#fn_footnote_8">8</a></sup><sup id="fnref2_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">7</a></sup> for further details:</p>
+<p>Please refer to papers<sup id="fnref3_footnote_autschbach2011_2"><a class="footnote-ref" href="#fn_footnote_autschbach2011_2">5</a></sup><sup id="fnref_footnote_autschbach2007"><a class="footnote-ref" href="#fn_footnote_autschbach2007">4</a></sup><sup id="fnref_footnote_krykunov2005"><a class="footnote-ref" href="#fn_footnote_krykunov2005">6</a></sup><sup id="fnref_footnote_hammond2009"><a class="footnote-ref" href="#fn_footnote_hammond2009">9</a></sup><sup id="fnref_footnote_krykunov2006"><a class="footnote-ref" href="#fn_footnote_krykunov2006">8</a></sup><sup id="fnref_footnote_moore2012"><a class="footnote-ref" href="#fn_footnote_moore2012">7</a></sup> for further details:</p>
 <h3 id="raman">Raman<a class="headerlink" href="#raman" title="Permanent link">&para;</a></h3>
 <p>Raman calculations can be performed by specifying the Raman block. These
 calculations are performed in conjunction with polarizability
 calculations. Detailed description of input parameters at
-<a href="https://pubs.acs.org/doi/10.1021/jp411039m#notes-1">https://pubs.acs.org/doi/10.1021/jp411039m#notes-1</a></p>
+(https://pubs.acs.org/doi/10.1021/jp411039m#notes-1)</p>
 <pre><code>RAMAN 
- [ (NORMAL | | RESONANCE) default NORMAL ]  
- [ (LORENTZIAN | | GAUSSIAN) default LORENTZIAN ]  
- [ LOW &lt;double low default 0.0&gt; ]  
- [ HIGH &lt;double high default highest normal mode&gt; ]  
- [ FIRST &lt;integer first default 7&gt; ]  
- [ LAST &lt; integer last default number of normal modes &gt; ]  
- [ WIDTH &lt;double width default 20.0&gt; ]  
- [ DQ &lt;double dq default 0.01&gt; ]  
+
+
+
+
+
+
+
+
 END  
 task dft raman
 </code></pre>
@@ -3582,12 +3582,12 @@ end
 </ul>
 <h4 id="raman-output">Raman Output<a class="headerlink" href="#raman-output" title="Permanent link">&para;</a></h4>
 <p>Raman spectrum in stick format and smoothed using Lorentzians or
-Gaussians stored in a filename with format <code>[fname].normal</code>.<br />
-The number of points is 1000 by default. This value can be changed by adding the following <a href="SET.html">SET</a> directive to the input file</p>
+Gaussians stored in a filename with format <code>.normal</code>.<br />
+The number of points is 1000 by default. This value can be changed by adding the following (SET.md) directive to the input file</p>
 <pre><code>set raman:numpts &lt;integer&gt;
 </code></pre>
 <h4 id="raman-references">Raman References<a class="headerlink" href="#raman-references" title="Permanent link">&para;</a></h4>
-<p>Please refer to papers<sup id="fnref_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">10</a></sup><sup id="fnref_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">11</a></sup> for further details:</p>
+<p>Please refer to papers<sup id="fnref_footnote_mullin2012"><a class="footnote-ref" href="#fn_footnote_mullin2012">10</a></sup><sup id="fnref_footnote_aquino2014"><a class="footnote-ref" href="#fn_footnote_aquino2014">11</a></sup> for further details:</p>
 <h3 id="polarizability-computed-with-the-sum-over-orbitals-method">Polarizability computed with the Sum over Orbitals method<a class="headerlink" href="#polarizability-computed-with-the-sum-over-orbitals-method" title="Permanent link">&para;</a></h3>
 <p>As an alternative to the <a href="#response-calculations">linear response
 method</a>, the Sum over Orbitals (SOO) method is
@@ -3595,8 +3595,8 @@ available to compute polarizabilities. Results of these method are
 much less accurate than linear response calculations, with values off
 by a factor of 2-4x. However, the qualitative nature of this results
 can be used to compute Raman frequencies when coupled with
-<a href="Gaussian-Basis-AIMD.html#property-calculation-in-a-molecular-dynamics-simulation">QMD</a>,
-as described in references <sup id="fnref_footnote_12"><a class="footnote-ref" href="#fn_footnote_12">12</a></sup><sup id="fnref_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">13</a></sup>.</p>
+(Gaussian-Basis-AIMD.md#property-calculation-in-a-molecular-dynamics-simulation),
+as described in references <sup id="fnref_footnote_fischer2015"><a class="footnote-ref" href="#fn_footnote_fischer2015">12</a></sup><sup id="fnref_footnote_apra2020"><a class="footnote-ref" href="#fn_footnote_apra2020">13</a></sup>.</p>
 <p>Sample input computing polarizability both with the SOO method and the linear response method:</p>
 <pre><code>property
  polfromsos
@@ -3629,12 +3629,12 @@ electric field (keyword <code>efield</code>) on the grid can be generated in the
 form of the Gaussian Cube File. This behavior is triggered by the
 inclusion of grid keyword as shown
 below</p>
-<pre><code> grid [pad dx [dy dz]] [rmax x y z] [rmin x y z] [ngrid nx [ny nz]] [output filename]
+<pre><code> grid ]   ] 
 </code></pre>
 <p>where</p>
 <ul>
 <li>
-<p><code>pad dx [dy dz]</code> - specifies amount of padding (in angstroms) in
+<p><code>pad dx</code> - specifies amount of padding (in angstroms) in
     x,y, and z dimensions that will be applied in the automatic
     construction of the rectangular grid volume based on the geometry of
     the system. If only one number is provided then the same amount of
@@ -3652,7 +3652,7 @@ below</p>
     padding in this direction.</p>
 </li>
 <li>
-<p><code>ngrid nx [ny nz]</code> - specifies number of grid points along each
+<p><code>ngrid nx</code> - specifies number of grid points along each
     dimension. If only one number is provided then the same number of
     grid points are assumed all dimensions. In the absence of this
     directive the number of grid points would be computed such that grid
@@ -3720,12 +3720,12 @@ below</p>
 wavefunction file (.wfn/.wfx) can be post-processed with a variety of
 codes, e.g.</p>
 <ul>
-<li><a href="http://www.quimica.urv.es/XAIM/">XAIM</a></li>
-<li><a href="https://github.com/aoterodelaroza/nciplot">NCIPLOT</a></li>
-<li><a href="http://sobereva.com/multiwfn/">Multiwfn</a></li>
-<li><a href="https://github.com/aoterodelaroza/postg">Postg</a></li>
+<li>(http://www.quimica.urv.es/XAIM/)</li>
+<li>(https://github.com/aoterodelaroza/nciplot)</li>
+<li>(http://sobereva.com/multiwfn/)</li>
+<li>(https://github.com/aoterodelaroza/postg)</li>
 </ul>
-<p><strong>WARNING:</strong> Since we have discovered issues in generating .WFN files with this module (e.g. systems with ECPs), the recommended method for generating .WFN file is to first generate a Molden file with the <a href="Properties.html#moldenfile">Moldenfile</a> option, then convert the Molden file into a WFN file by using the <a href="https://github.com/zorkzou/Molden2AIM">Molden2AIM</a> program.</p>
+<p><strong>WARNING:</strong> Since we have discovered issues in generating .WFN files with this module (e.g. systems with ECPs), the recommended method for generating .WFN file is to first generate a Molden file with the (Properties.md#moldenfile) option, then convert the Molden file into a WFN file by using the (https://github.com/zorkzou/Molden2AIM) program.</p>
 <h2 id="moldenfile">Moldenfile<a class="headerlink" href="#moldenfile" title="Permanent link">&para;</a></h2>
 <pre><code>MOLDENFILE
 MOLDEN_NORM (JANPA | | NWCHEM || NONE)
@@ -3735,23 +3735,23 @@ format</a>. The resulting
 Molden file (.molden) should compatible with a variety of codes that can
 input Molden files, e.g.</p>
 <ul>
-<li><a href="https://www.theochem.ru.nl/molden/">Molden</a></li>
-<li><a href="https://janpa.sf.net">JANPA</a> (the nwchem2molden step is no longer
+<li>(https://www.theochem.ru.nl/molden/)</li>
+<li>(https://janpa.sf.net) (the nwchem2molden step is no longer
     required when using .molden files and the <code>MOLDEN_NORM JANPA</code>
     keyword)</li>
-<li><a href="http://orbkit.github.io/">orbkit</a></li>
-<li><a href="http://github.com/Konjkov/molden2qmc">Molden2qmc</a></li>
-<li><a href="https://github.com/zorkzou/Molden2AIM">Molden2AIM</a></li>
-<li><a href="http://sobereva.com/multiwfn/">Multiwfn</a></li>
+<li>(http://orbkit.github.io/)</li>
+<li>(http://github.com/Konjkov/molden2qmc)</li>
+<li>(https://github.com/zorkzou/Molden2AIM)</li>
+<li>(http://sobereva.com/multiwfn/)</li>
 </ul>
 <p>the <code>MOLDEN_NORM</code> option allows the renormalization of the basis set
 coefficients. By default, the coefficient values from input are not
 modified. Using the <code>JANPA</code> value coefficients are normalized following
-<a href="https://janpa.sourceforge.net/">JANPA</a>&rsquo;s
+(https://janpa.sourceforge.net/)&rsquo;s
 convention (where basis coefficients are normalized to unity), while the <code>NWCHEM</code> will produce coefficients normalized
 according to NWChem&rsquo;s convention. Using <code>MOLDEN_NORM</code> equal <code>NONE</code> will
 leave the input coefficients unmodified.<br />
-It is strongly recommended to use <strong>spherical</strong> <a href="Basis.html">basis set</a> when using the NWChem Molden output for JANPA analysis</p>
+It is strongly recommended to use <strong>spherical</strong> (Basis.md) when using the NWChem Molden output for JANPA analysis</p>
 <p>Example input file for a scf calculation. The resulting Molden file will
 be named <code>h2o.molden</code></p>
 <pre><code> start heat
@@ -3770,7 +3770,7 @@ be named <code>h2o.molden</code></p>
 
  task scf property
 </code></pre>
-<p>Then, the resulting <code>h2o.molden</code> file can be post processed by <a href="https://janpa.sourceforge.net/">Janpa</a> with the following command</p>
+<p>Then, the resulting <code>h2o.molden</code> file can be post processed by (https://janpa.sourceforge.net/) with the following command</p>
 <pre><code>java -jar janpa.jar h2o.molden &gt; h2o.janpa.txt
 </code></pre>
 <h2 id="localization">Localization<a class="headerlink" href="#localization" title="Permanent link">&para;</a></h2>
@@ -3781,15 +3781,15 @@ be named <code>h2o.molden</code></p>
 </code></pre>
 <p>The following methods are available:</p>
 <ul>
-<li>Pipek-Mezey<sup id="fnref_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup>, <code>pm</code> keyword (default) </li>
-<li>Foster-Boys<sup id="fnref_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">15</a></sup>, <code>boys</code> keyword </li>
-<li>IAO/IBO<sup id="fnref2_footnote_16"><a class="footnote-ref" href="#fn_footnote_16">16</a></sup><sup id="fnref_footnote_17"><a class="footnote-ref" href="#fn_footnote_17">17</a></sup>, <code>ibo</code> keyword </li>
+<li>Pipek-Mezey<sup id="fnref_footnote_pipek1989"><a class="footnote-ref" href="#fn_footnote_pipek1989">14</a></sup>, <code>pm</code> keyword (default) </li>
+<li>Foster-Boys<sup id="fnref_footnote_foster1960"><a class="footnote-ref" href="#fn_footnote_foster1960">15</a></sup>, <code>boys</code> keyword </li>
+<li>IAO/IBO<sup id="fnref2_footnote_knizia2013"><a class="footnote-ref" href="#fn_footnote_knizia2013">16</a></sup><sup id="fnref_footnote_knizia2015"><a class="footnote-ref" href="#fn_footnote_knizia2015">17</a></sup>, <code>ibo</code> keyword </li>
 </ul>
 <p>An optional integer switch may be supplied after the localization method specification. The default <code>0</code> means only occupied orbitals are localized.  Use <code>1</code> to localize virtual orbitals instead, or <code>2</code> to separately localize occupied and virtual orbitals in the same run. Localization of virtual orbitals is not implemented for the Boys localization. If only the keyword <code>localization</code> is given, this defaults to a Pipek-Mezey localization of the occupied molecular orbitals.</p>
 <p>In spin-unrestricted calculations, alpha and beta spin orbitals are localized separately. Fractional-occupation DFT and restricted open-shell Hartree-Fock or Kohn-Sham are not yet supported; attempting to use localization with fractional orbital occupations may run but will likely produce unwanted and wrong results.</p>
 <p>A localization run prints a characterizations of the LMOs. Specifically, the PM and IBO localizations print an energy-sorted list of LMOs indicating the density weight of each LMO on the various atoms for weights exceeding a 1% threshold; the atoms are listed in terms of their input number. A Boys localization prints the LMO centroid and the expectation value of <em>r</em>^2 per LMO.</p>
-<p>Typically, however, the user will want to visualize the LMOs. The localization run saves the LMO coefficients in a file <code>locorb.movecs</code>, which can be used as the MO vector file in an NWChem <a href="https://nwchemgit.github.io/DPLOT.html">DPLOT task</a> to generate corresponding volume data maps, for example, in the `cube&rsquo; format commonly used in computational chemistry. The latter can be visualized with a considerable number of open source, free, or proprietary software packages.</p>
-<p>NWChem test jobs that use the orbital localization functionality (under <code>$NWCHEM_TOP/QA/tests/</code>) are <code>localize-ibo-allyl</code>, <code>localize-pm-allyl</code>, and <code>localize-ibo-aa</code>. The latter is based on the acrylic acid example from the original IBO publication.<sup id="fnref_footnote_16"><a class="footnote-ref" href="#fn_footnote_16">16</a></sup> IBO number 19 represents the delocalized C-C pi bond LMO of the system. After running the test job, the corresponding cube file for LMO 19 can be generated, for example, with</p>
+<p>Typically, however, the user will want to visualize the LMOs. The localization run saves the LMO coefficients in a file <code>locorb.movecs</code>, which can be used as the MO vector file in an NWChem (https://nwchemgit.github.io/DPLOT.html) to generate corresponding volume data maps, for example, in the `cube&rsquo; format commonly used in computational chemistry. The latter can be visualized with a considerable number of open source, free, or proprietary software packages.</p>
+<p>NWChem test jobs that use the orbital localization functionality (under <code>$NWCHEM_TOP/QA/tests/</code>) are <code>localize-ibo-allyl</code>, <code>localize-pm-allyl</code>, and <code>localize-ibo-aa</code>. The latter is based on the acrylic acid example from the original IBO publication.<sup id="fnref_footnote_knizia2013"><a class="footnote-ref" href="#fn_footnote_knizia2013">16</a></sup> IBO number 19 represents the delocalized C-C pi bond LMO of the system. After running the test job, the corresponding cube file for LMO 19 can be generated, for example, with</p>
 <pre><code> dplot
  vectors locorb.movecs
  limitxyz
@@ -3804,8 +3804,8 @@ be named <code>h2o.molden</code></p>
  task dplot
 </code></pre>
 <p>The resulting plot with &#177;0.03 isosurfaces may look like the following</p>
-<p><img alt="Acrylic Acid IBO number 19" src="acrylic-acid-ibo.png" /></p>
-<p>A <a href="https://github.com/jautschbach/nwchem-dplot-utility">Python script</a> is available to facilitate the creation of volume data files for visualizing multiple MOs or LMOs of a given molecule. For the acrylic acid example, after running NWChem with the <code>localize-ibo-aa.nw</code> input, the following command will create an input file with <code>dplot</code> tasks to generate cubes for the 19 occupied and 10 virtual IBOs of the molecule on a 50x50x50 grid:</p>
+<p>!(acrylic-acid-ibo.png)</p>
+<p>A (https://github.com/jautschbach/nwchem-dplot-utility) is available to facilitate the creation of volume data files for visualizing multiple MOs or LMOs of a given molecule. For the acrylic acid example, after running NWChem with the <code>localize-ibo-aa.nw</code> input, the following command will create an input file with <code>dplot</code> tasks to generate cubes for the 19 occupied and 10 virtual IBOs of the molecule on a 50x50x50 grid:</p>
 <pre><code> dplot.py -i localize-ibo-aa.nw -m locorb.movecs -g 50 -l 1-29
 </code></pre>
 <p>The <code>dplot</code> task shown above is included in the resulting NWChem input file <code>dplot.nw</code>.</p>
@@ -3813,56 +3813,56 @@ be named <code>h2o.molden</code></p>
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn_footnote_1">
-<p>Autschbach, J.; Patchkovskii, S.; Pritchard, B. Calculation of Hyperfine Tensors and Paramagnetic NMR Shifts Using the Relativistic Zeroth-Order Regular Approximation and Density Functional Theory. <em>Journal of Chemical Theory and Computation</em> <strong>2011</strong>, <em>7</em> (7), 2175–2188. <a href="https://doi.org/10.1021/ct200143w">https://doi.org/10.1021/ct200143w</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn_footnote_autschbach2011">
+<p>Autschbach, J.; Patchkovskii, S.; Pritchard, B. Calculation of Hyperfine Tensors and Paramagnetic NMR Shifts Using the Relativistic Zeroth-Order Regular Approximation and Density Functional Theory. <em>Journal of Chemical Theory and Computation</em> <strong>2011</strong>, <em>7</em> (7), 2175&ndash;2188. <a href="https://doi.org/10.1021/ct200143w">https://doi.org/10.1021/ct200143w</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_autschbach2011" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_2">
-<p>Aquino, F.; Pritchard, B.; Autschbach, J. Scalar Relativistic Computations and Localized Orbital Analyses of Nuclear Hyperfine Coupling and Paramagnetic NMR Chemical Shifts. <em>Journal of Chemical Theory and Computation</em> <strong>2012</strong>, <em>8</em> (2), 598–609. <a href="https://doi.org/10.1021/ct2008507">https://doi.org/10.1021/ct2008507</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn_footnote_aquino2012">
+<p>Aquino, F.; Pritchard, B.; Autschbach, J. Scalar Relativistic Computations and Localized Orbital Analyses of Nuclear Hyperfine Coupling and Paramagnetic NMR Chemical Shifts. <em>Journal of Chemical Theory and Computation</em> <strong>2012</strong>, <em>8</em> (2), 598&ndash;609. <a href="https://doi.org/10.1021/ct2008507">https://doi.org/10.1021/ct2008507</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_aquino2012" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_3">
-<p>Aquino, F.; Govind, N.; Autschbach, J. Scalar Relativistic Computations of Nuclear Magnetic Shielding and &lt;i&gt;g&lt;/i&gt;-Shifts with the Zeroth-Order Regular Approximation and Range-Separated Hybrid Density Functionals. <em>Journal of Chemical Theory and Computation</em> <strong>2011</strong>, <em>7</em> (10), 3278–3292. <a href="https://doi.org/10.1021/ct200408j">https://doi.org/10.1021/ct200408j</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn_footnote_aquino2011">
+<p>Aquino, F.; Govind, N.; Autschbach, J. Scalar Relativistic Computations of Nuclear Magnetic Shielding and <span class="arithmatex">\(\less\)</span>i<span class="arithmatex">\(\greater\)</span>g<span class="arithmatex">\(\less\)</span>/i<span class="arithmatex">\(\greater\)</span>-Shifts with the Zeroth-Order Regular Approximation and Range-Separated Hybrid Density Functionals. <em>Journal of Chemical Theory and Computation</em> <strong>2011</strong>, <em>7</em> (10), 3278&ndash;3292. <a href="https://doi.org/10.1021/ct200408j">https://doi.org/10.1021/ct200408j</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_aquino2011" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_4">
-<p>Autschbach. Computation of Optical Rotation Using Timedependent Density Functional Theory. <em>Computing Letters</em> <strong>2007</strong>, <em>3</em> (2), 131–150. <a href="https://doi.org/10.1163/157404007782913327">https://doi.org/10.1163/157404007782913327</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<li id="fn_footnote_autschbach2007">
+<p>Autschbach. Computation of Optical Rotation Using Time<code>\textendash</code>dependent Density Functional Theory. <em>Computing Letters</em> <strong>2007</strong>, <em>3</em> (2), 131&ndash;150. <a href="https://doi.org/10.1163/157404007782913327">https://doi.org/10.1163/157404007782913327</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_autschbach2007" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_5">
-<p>Autschbach, J. Time-Dependent Density Functional Theory for Calculating Origin-Independent Optical Rotation and Rotatory Strength Tensors. <em>ChemPhysChem</em> <strong>2011</strong>, <em>12</em> (17), 3224–3235. <a href="https://doi.org/10.1002/cphc.201100225">https://doi.org/10.1002/cphc.201100225</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<li id="fn_footnote_autschbach2011_2">
+<p>Autschbach, J. Time-Dependent Density Functional Theory for Calculating Origin-Independent Optical Rotation and Rotatory Strength Tensors. <em>ChemPhysChem</em> <strong>2011</strong>, <em>12</em> (17), 3224&ndash;3235. <a href="https://doi.org/10.1002/cphc.201100225">https://doi.org/10.1002/cphc.201100225</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_autschbach2011_2" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_autschbach2011_2" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_autschbach2011_2" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_6">
-<p>Krykunov, M.; Autschbach, J. Calculation of Optical Rotation with Time-Periodic Magnetic-Field-Dependent Basis Functions in Approximate Time-Dependent Density-Functional Theory. <em>The Journal of Chemical Physics</em> <strong>2005</strong>, <em>123</em> (11), 114103. <a href="https://doi.org/10.1063/1.2032428">https://doi.org/10.1063/1.2032428</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<li id="fn_footnote_krykunov2005">
+<p>Krykunov, M.; Autschbach, J. Calculation of Optical Rotation with Time-Periodic Magnetic-Field-Dependent Basis Functions in Approximate Time-Dependent Density-Functional Theory. <em>The Journal of Chemical Physics</em> <strong>2005</strong>, <em>123</em> (11), 114103. <a href="https://doi.org/10.1063/1.2032428">https://doi.org/10.1063/1.2032428</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_krykunov2005" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_7">
-<p>Moore, B.; Srebro, M.; Autschbach, J. Analysis of Optical Activity in Terms of Bonds and Lone-Pairs: The Exceptionally Large Optical Rotation of Norbornenone. <em>Journal of Chemical Theory and Computation</em> <strong>2012</strong>, <em>8</em> (11), 4336–4346. <a href="https://doi.org/10.1021/ct300839y">https://doi.org/10.1021/ct300839y</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<li id="fn_footnote_moore2012">
+<p>Moore, B.; Srebro, M.; Autschbach, J. Analysis of Optical Activity in Terms of Bonds and Lone-Pairs: The Exceptionally Large Optical Rotation of Norbornenone. <em>Journal of Chemical Theory and Computation</em> <strong>2012</strong>, <em>8</em> (11), 4336&ndash;4346. <a href="https://doi.org/10.1021/ct300839y">https://doi.org/10.1021/ct300839y</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_moore2012" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_8">
-<p>Krykunov, M.; Kundrat, M. D.; Autschbach, J. Calculation of Circular Dichroism Spectra from Optical Rotatory Dispersion, and Vice Versa, as Complementary Tools for Theoretical Studies of Optical Activity Using Time-Dependent Density Functional Theory. <em>The Journal of Chemical Physics</em> <strong>2006</strong>, <em>125</em> (19), 194110. <a href="https://doi.org/10.1063/1.2363372">https://doi.org/10.1063/1.2363372</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<li id="fn_footnote_krykunov2006">
+<p>Krykunov, M.; Kundrat, M. D.; Autschbach, J. Calculation of Circular Dichroism Spectra from Optical Rotatory Dispersion, and Vice Versa, as Complementary Tools for Theoretical Studies of Optical Activity Using Time-Dependent Density Functional Theory. <em>The Journal of Chemical Physics</em> <strong>2006</strong>, <em>125</em> (19), 194110. <a href="https://doi.org/10.1063/1.2363372">https://doi.org/10.1063/1.2363372</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_krykunov2006" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_9">
-<p>Hammond, J. R.; Govind, N.; Kowalski, K.; Autschbach, J.; Xantheas, S. S. Accurate Dipole Polarizabilities for Water Clusters n=212 at the Coupled-Cluster Level of Theory and Benchmarking of Various Density Functionals. <em>The Journal of Chemical Physics</em> <strong>2009</strong>, <em>131</em> (21), 214103. <a href="https://doi.org/10.1063/1.3263604">https://doi.org/10.1063/1.3263604</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+<li id="fn_footnote_hammond2009">
+<p>Hammond, J. R.; Govind, N.; Kowalski, K.; Autschbach, J.; Xantheas, S. S. Accurate Dipole Polarizabilities for Water Clusters n=2<code>\textendash</code>12 at the Coupled-Cluster Level of Theory and Benchmarking of Various Density Functionals. <em>The Journal of Chemical Physics</em> <strong>2009</strong>, <em>131</em> (21), 214103. <a href="https://doi.org/10.1063/1.3263604">https://doi.org/10.1063/1.3263604</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_hammond2009" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_10">
-<p>Mullin, J. M.; Autschbach, J.; Schatz, G. C. Time-Dependent Density Functional Methods for Surface Enhanced Raman Scattering (SERS) Studies. <em>Computational and Theoretical Chemistry</em> <strong>2012</strong>, <em>987</em>, 32–41. <a href="https://doi.org/10.1016/j.comptc.2011.08.027">https://doi.org/10.1016/j.comptc.2011.08.027</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+<li id="fn_footnote_mullin2012">
+<p>Mullin, J. M.; Autschbach, J.; Schatz, G. C. Time-Dependent Density Functional Methods for Surface Enhanced Raman Scattering (SERS) Studies. <em>Computational and Theoretical Chemistry</em> <strong>2012</strong>, <em>987</em>, 32&ndash;41. <a href="https://doi.org/10.1016/j.comptc.2011.08.027">https://doi.org/10.1016/j.comptc.2011.08.027</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_mullin2012" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_11">
-<p>Aquino, F. W.; Schatz, G. C. Time-Dependent Density Functional Methods for Raman Spectra in Open-Shell Systems. <em>The Journal of Physical Chemistry A</em> <strong>2014</strong>, <em>118</em> (2), 517–525. <a href="https://doi.org/10.1021/jp411039m">https://doi.org/10.1021/jp411039m</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+<li id="fn_footnote_aquino2014">
+<p>Aquino, F. W.; Schatz, G. C. Time-Dependent Density Functional Methods for Raman Spectra in Open-Shell Systems. <em>The Journal of Physical Chemistry A</em> <strong>2014</strong>, <em>118</em> (2), 517&ndash;525. <a href="https://doi.org/10.1021/jp411039m">https://doi.org/10.1021/jp411039m</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_aquino2014" title="Jump back to footnote 11 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_12">
-<p>Fischer, S. A.; Ueltschi, T. W.; El-Khoury, P. Z.; Mifflin, A. L.; Hess, W. P.; Wang, H.-F.; Cramer, C. J.; Govind, N. Infrared and Raman Spectroscopy from Ab Initio Molecular Dynamics and Static Normal Mode Analysis: The C-H Region of DMSO as a Case Study. <em>The Journal of Physical Chemistry B</em> <strong>2015</strong>, <em>120</em> (8), 1429–1436. <a href="https://doi.org/10.1021/acs.jpcb.5b03323">https://doi.org/10.1021/acs.jpcb.5b03323</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+<li id="fn_footnote_fischer2015">
+<p>Fischer, S. A.; Ueltschi, T. W.; El-Khoury, P. Z.; Mifflin, A. L.; Hess, W. P.; Wang, H.-F.; Cramer, C. J.; Govind, N. Infrared and Raman Spectroscopy from Ab Initio Molecular Dynamics and Static Normal Mode Analysis: The C-H Region of DMSO as a Case Study. <em>The Journal of Physical Chemistry B</em> <strong>2015</strong>, <em>120</em> (8), 1429&ndash;1436. <a href="https://doi.org/10.1021/acs.jpcb.5b03323">https://doi.org/10.1021/acs.jpcb.5b03323</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_fischer2015" title="Jump back to footnote 12 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_13">
-<p>Aprà, E.; Bhattarai, A.; Baxter, E.; Wang, S.; Johnson, G. E.; Govind, N.; El-Khoury, P. Z. Simplified Ab Initio Molecular Dynamics-Based Raman Spectral Simulations. <em>Applied Spectroscopy</em> <strong>2020</strong>, <em>74</em> (11), 1350–1357. <a href="https://doi.org/10.1177/0003702820923392">https://doi.org/10.1177/0003702820923392</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+<li id="fn_footnote_apra2020">
+<p>Aprà, E.; Bhattarai, A.; Baxter, E.; Wang, S.; Johnson, G. E.; Govind, N.; El-Khoury, P. Z. Simplified Ab Initio Molecular Dynamics-Based Raman Spectral Simulations. <em>Applied Spectroscopy</em> <strong>2020</strong>, <em>74</em> (11), 1350&ndash;1357. <a href="https://doi.org/10.1177/0003702820923392">https://doi.org/10.1177/0003702820923392</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_apra2020" title="Jump back to footnote 13 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_14">
-<p>Pipek, J.; Mezey, P. G. A Fast Intrinsic Localization Procedure Applicable for Ab Initio and Semiempirical Linear Combination of Atomic Orbital Wave Functions. <em>The Journal of Chemical Physics</em> <strong>1989</strong>, <em>90</em> (9), 4916–4926. <a href="https://doi.org/10.1063/1.456588">https://doi.org/10.1063/1.456588</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+<li id="fn_footnote_pipek1989">
+<p>Pipek, J.; Mezey, P. G. A Fast Intrinsic Localization Procedure Applicable for Ab Initio and Semiempirical Linear Combination of Atomic Orbital Wave Functions. <em>The Journal of Chemical Physics</em> <strong>1989</strong>, <em>90</em> (9), 4916&ndash;4926. <a href="https://doi.org/10.1063/1.456588">https://doi.org/10.1063/1.456588</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_pipek1989" title="Jump back to footnote 14 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_15">
-<p>Foster, J. M.; Boys, S. F. Canonical Configurational Interaction Procedure. <em>Reviews of Modern Physics</em> <strong>1960</strong>, <em>32</em> (2), 300–302. <a href="https://doi.org/10.1103/revmodphys.32.300">https://doi.org/10.1103/revmodphys.32.300</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+<li id="fn_footnote_foster1960">
+<p>Foster, J. M.; Boys, S. F. Canonical Configurational Interaction Procedure. <em>Reviews of Modern Physics</em> <strong>1960</strong>, <em>32</em> (2), 300&ndash;302. <a href="https://doi.org/10.1103/revmodphys.32.300">https://doi.org/10.1103/revmodphys.32.300</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_foster1960" title="Jump back to footnote 15 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_16">
-<p>Knizia, G. Intrinsic Atomic Orbitals: An Unbiased Bridge Between Quantum Theory and Chemical Concepts. <em>Journal of Chemical Theory and Computation</em> <strong>2013</strong>, <em>9</em> (11), 4834–4843. <a href="https://doi.org/10.1021/ct400687b">https://doi.org/10.1021/ct400687b</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+<li id="fn_footnote_knizia2013">
+<p>Knizia, G. Intrinsic Atomic Orbitals: An Unbiased Bridge Between Quantum Theory and Chemical Concepts. <em>Journal of Chemical Theory and Computation</em> <strong>2013</strong>, <em>9</em> (11), 4834&ndash;4843. <a href="https://doi.org/10.1021/ct400687b">https://doi.org/10.1021/ct400687b</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_knizia2013" title="Jump back to footnote 16 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_knizia2013" title="Jump back to footnote 16 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_17">
-<p>Knizia, G.; Klein, J. E. M. N. Electron Flow in Reaction Mechanisms-Revealed from First Principles. <em>Angewandte Chemie International Edition</em> <strong>2015</strong>, <em>54</em> (18), 5518–5522. <a href="https://doi.org/10.1002/anie.201410637">https://doi.org/10.1002/anie.201410637</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+<li id="fn_footnote_knizia2015">
+<p>Knizia, G.; Klein, J. E. M. N. Electron Flow in Reaction Mechanisms-Revealed from First Principles. <em>Angewandte Chemie International Edition</em> <strong>2015</strong>, <em>54</em> (18), 5518&ndash;5522. <a href="https://doi.org/10.1002/anie.201410637">https://doi.org/10.1002/anie.201410637</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_knizia2015" title="Jump back to footnote 17 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

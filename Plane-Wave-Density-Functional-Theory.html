@@ -6075,154 +6075,10 @@
 
 
 <h1 id="pseudopotential-plane-wave-density-functional-theory-nwpw">Pseudopotential plane-wave density functional theory (NWPW)<a class="headerlink" href="#pseudopotential-plane-wave-density-functional-theory-nwpw" title="Permanent link">&para;</a></h1>
-<div class="toc">
-<ul>
-<li><a href="#pseudopotential-plane-wave-density-functional-theory-nwpw">Pseudopotential plane-wave density functional theory (NWPW)</a><ul>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#pspw-tasks-gamma-point-calculations">PSPW Tasks: Gamma Point Calculations</a><ul>
-<li><a href="#paw-potentials">PAW Potentials</a><ul>
-<li><a href="#paw-implementation-notes">PAW Implementation Notes</a></li>
-</ul>
-</li>
-<li><a href="#exchange-correlation-potentials">Exchange-Correlation Potentials</a><ul>
-<li><a href="#dft-u-corrections">DFT + U Corrections</a></li>
-<li><a href="#langreth-style-vdw-and-vdw-van-der-wall-functionals">Langreth style vdw and vdw van der Wall functionals</a></li>
-<li><a href="#grimme-dispersion-corrections">Grimme Dispersion Corrections</a></li>
-<li><a href="#using-exchange-correlation-potentials-available-in-the-dft-module">Using Exchange-Correlation Potentials Available in the DFT Module</a></li>
-<li><a href="#exact-exchange">Exact Exchange</a></li>
-<li><a href="#self-interaction-corrections">Self-Interaction Corrections</a></li>
-</ul>
-</li>
-<li><a href="#wannier">Wannier</a></li>
-<li><a href="#mulliken-analysis">Mulliken Analysis</a></li>
-<li><a href="#density-of-states">Density of States</a></li>
-<li><a href="#projected-density-of-states">Projected Density of States</a></li>
-<li><a href="#point-charge-analysis">Point Charge Analysis</a></li>
-<li><a href="#pspw_dplot-generate-gaussian-cube-files">PSPW_DPLOT: Generate Gaussian Cube Files</a></li>
-</ul>
-</li>
-<li><a href="#band-tasks-multiple-k-point-calculations">Band Tasks: Multiple k-point Calculations</a><ul>
-<li><a href="#brillouin-zone">Brillouin Zone</a><ul>
-<li><a href="#band-structure-paths">Band Structure Paths</a></li>
-<li><a href="#special-points-of-different-space-groups-conventional-cells">Special Points of Different Space Groups (Conventional Cells)</a></li>
-</ul>
-</li>
-<li><a href="#screened-exchange">Screened Exchange</a></li>
-<li><a href="#density-of-states-and-projected-density-of-states">Density of States and Projected Density of States</a></li>
-<li><a href="#two-component-wavefunctions-spin-orbit-zora">Two-Component Wavefunctions (Spin-Orbit ZORA)</a></li>
-<li><a href="#band_dplot-generate-gaussian-cube-files">BAND_DPLOT: Generate Gaussian Cube Files</a></li>
-</ul>
-</li>
-<li><a href="#car-parrinello">Car-Parrinello</a><ul>
-<li><a href="#adding-geometry-constraints-to-a-car-parrinello-simulation">Adding Geometry Constraints to a Car-Parrinello Simulation</a></li>
-<li><a href="#car-parrinello-output-datafiles">Car-Parrinello Output Datafiles</a><ul>
-<li><a href="#xyz-motion-file">XYZ motion file</a></li>
-<li><a href="#ion_motion-motion-file">ION_MOTION motion file</a></li>
-<li><a href="#emotion-motion-file">EMOTION motion file</a></li>
-<li><a href="#hmotion-motion-file">HMOTION motion file</a></li>
-<li><a href="#eigmotion-motion-file">EIGMOTION motion file</a></li>
-<li><a href="#omotion-motion-file">OMOTION motion file</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#born-oppenheimer-molecular-dynamics">Born-Oppenheimer Molecular Dynamics</a></li>
-<li><a href="#i-pi-socket-communication">i-PI Socket Communication</a></li>
-<li><a href="#metropolis-monte-carlo">Metropolis Monte-Carlo</a></li>
-<li><a href="#free-energy-simulations">Free Energy Simulations</a><ul>
-<li><a href="#metadynamics">MetaDynamics</a><ul>
-<li><a href="#input">Input</a></li>
-</ul>
-</li>
-<li><a href="#tamd-temperature-accelerated-molecular-dynamics">TAMD - Temperature Accelerated Molecular Dynamics</a><ul>
-<li><a href="#input_1">Input</a></li>
-</ul>
-</li>
-<li><a href="#collective-variables">Collective Variables</a><ul>
-<li><a href="#bond-distance-collective-variable">Bond Distance Collective Variable</a></li>
-<li><a href="#angle-collective-variable">Angle Collective Variable</a></li>
-<li><a href="#coordination-collective-variable">Coordination Collective Variable</a></li>
-<li><a href="#n-plane-collective-variable">N-Plane Collective Variable</a></li>
-<li><a href="#user-defined-collective-variable">User defined Collective Variable</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#extended-x-ray-absorption-fine-structure-exafs-integration-with-feff6l">Extended X-Ray Absorption Fine Structure (EXAFS) - Integration with FEFF6L</a></li>
-<li><a href="#frozen-phonon-calculations">Frozen Phonon Calculations</a></li>
-<li><a href="#steepest-descent">Steepest Descent</a></li>
-<li><a href="#simulation-cell">Simulation Cell</a></li>
-<li><a href="#unit-cell-optimization">Unit Cell Optimization</a></li>
-<li><a href="#smear-fractional-occupation-of-the-molecular-orbitals">SMEAR - Fractional Occupation of the Molecular Orbitals</a></li>
-<li><a href="#spin-penalty-functions">Spin Penalty Functions</a></li>
-<li><a href="#aimdmm-qmmm">AIMD/MM (QM/MM)</a></li>
-<li><a href="#psp_generator">PSP_GENERATOR</a><ul>
-<li><a href="#atomic_filling-block">ATOMIC_FILLING Block</a></li>
-<li><a href="#cutoff">CUTOFF</a></li>
-<li><a href="#semicore_radius">SEMICORE_RADIUS</a></li>
-</ul>
-</li>
-<li><a href="#paw-tasks-legacy-implementation">PAW Tasks: Legacy Implementation</a></li>
-<li><a href="#pseudopotential-and-paw-basis-libraries">Pseudopotential and PAW basis Libraries</a></li>
-<li><a href="#nwpw-rtdb-entries-and-miscellaneous-datafiles">NWPW RTDB Entries and Miscellaneous DataFiles</a><ul>
-<li><a href="#ion-positions">Ion Positions</a></li>
-<li><a href="#ion-velocities">Ion Velocities</a></li>
-<li><a href="#wavefunction-datafile">Wavefunction Datafile</a></li>
-<li><a href="#velocity-wavefunction-datafile">Velocity Wavefunction Datafile</a></li>
-<li><a href="#formatted-pseudopotential-datafile">Formatted Pseudopotential Datafile</a></li>
-<li><a href="#one-dimensional-pseudopotential-datafile">One-Dimensional Pseudopotential Datafile</a></li>
-</ul>
-</li>
-<li><a href="#car-parrinello-scheme-for-ab-initio-molecular-dynamics">Car-Parrinello Scheme for Ab Initio Molecular Dynamics</a><ul>
-<li><a href="#verlet-algorithm-for-integration">Verlet Algorithm for Integration</a></li>
-<li><a href="#constant-temperature-simulations-nose-hoover-thermostats">Constant Temperature Simulations: Nose-Hoover Thermostats</a></li>
-</ul>
-</li>
-<li><a href="#nwpw-tutorial-1-s2-dimer-examples-with-pspw">NWPW Tutorial 1: S2 dimer examples with PSPW</a><ul>
-<li><a href="#total-energy-of-s2-dimer-with-lda-approximation">Total energy of S2 dimer with LDA approximation</a></li>
-<li><a href="#structural-optimization-of-s2-dimer-with-lda-approximation">Structural optimization of S2 dimer with LDA approximation</a></li>
-<li><a href="#frequency-calculation-of-s2-dimer-with-lda-approximation">Frequency calculation of S2 dimer with LDA approximation</a></li>
-<li><a href="#ab-initio-molecular-dynamics-simulation-car-parrinello-of-s2-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Car-Parrinello) of S2 dimer using the LDA approximation</a></li>
-<li><a href="#ab-initio-molecular-dynamics-simulation-born-oppenheimer-of-ssub2-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Born-Oppenheimer) of S&lt;sub2 dimer using the LDA approximation</a></li>
-</ul>
-</li>
-<li><a href="#nwpw-tutorial-2-using-pspw-car-parrinello-simulated-annealing-simulations-to-optimize-structures">NWPW Tutorial 2: Using PSPW Car-Parrinello Simulated Annealing Simulations to Optimize Structures</a><ul>
-<li><a href="#simulated-annealing-using-constant-energy-simulation">Simulated Annealing Using Constant Energy Simulation</a></li>
-<li><a href="#simulated-annealing-using-constant-temperature-simulation">Simulated Annealing Using Constant Temperature Simulation</a></li>
-</ul>
-</li>
-<li><a href="#nwpw-tutorial-3-using-isodesmic-reaction-energies-to-estimate-gas-phase-thermodynamics">NWPW Tutorial 3: using isodesmic reaction energies to estimate gas-phase thermodynamics</a></li>
-<li><a href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o">NWPW Tutorial 4: AIMD/MM simulation of CCl\(_4\) + 64 H\(_2\)O</a></li>
-<li><a href="#nwpw-tutorial-5-optimizing-the-unit-cell-and-geometry-of-diamond">NWPW Tutorial 5: Optimizing the Unit Cell and Geometry of Diamond</a><ul>
-<li><a href="#optimizing-the-unit-cell-and-geometry-for-an-8-atom-supercell-of-diamond-with-pspw">Optimizing the Unit Cell and Geometry for an 8 Atom Supercell of Diamond with PSPW</a></li>
-<li><a href="#optimizing-the-unit-cell-for-an-8-atom-supercell-of-diamond-with-band">Optimizing the Unit Cell for an 8 Atom Supercell of Diamond with BAND</a></li>
-<li><a href="#using-band-to-optimize-the-unit-cell-for-a-2-atom-primitive-cell-of-diamond">Using BAND to Optimize the Unit Cell for a 2 Atom Primitive Cell of Diamond</a></li>
-<li><a href="#using-band-to-calculate-the-band-structures-of-diamond">Using BAND to Calculate the Band Structures of Diamond</a></li>
-<li><a href="#using-band-to-calculate-the-density-of-states-of-diamond">Using BAND to Calculate the Density of States of Diamond</a></li>
-<li><a href="#calculate-the-phonon-spectrum-of-diamond">Calculate the Phonon Spectrum of Diamond</a></li>
-</ul>
-</li>
-<li><a href="#nwpw-tutorial-6-optimizing-the-unit-cell-of-nickel-with-fractional-occupation">NWPW Tutorial 6: optimizing the unit cell of nickel with fractional occupation</a></li>
-<li><a href="#nwpw-tutorial-7-optimizing-the-unit-cells-with-symmetry-diamond-with-fd-3m-symmetry-and-brucite-with-p-3m1-symmetry">NWPW Tutorial 7: Optimizing the unit cells with symmetry: Diamond with Fd-3m symmetry and Brucite with P-3m1 symmetry</a></li>
-<li><a href="#nwpw-tutorial-8-nvt-metropolis-monte-carlo-simulations">NWPW Tutorial 8: NVT Metropolis Monte-Carlo Simulations</a></li>
-<li><a href="#nwpw-tutorial-9-npt-metropolis-monte-carlo-simulations">NWPW Tutorial 9: NPT Metropolis Monte-Carlo Simulations</a></li>
-<li><a href="#nwpw-tutorial-9-free-energy-simulations">NWPW Tutorial 9: Free Energy Simulations</a></li>
-<li><a href="#paw-tutorial">PAW Tutorial</a><ul>
-<li><a href="#optimizing-a-water-molecule">Optimizing a water molecule</a></li>
-<li><a href="#optimizing-a-unit-cell-and-geometry-for-silicon-carbide">Optimizing a unit cell and geometry for Silicon-Carbide</a></li>
-<li><a href="#running-a-car-parrinello-simulation">Running a Car-Parrinello Simulation</a></li>
-</ul>
-</li>
-<li><a href="#nwpw-capabilities-and-limitations">NWPW Capabilities and Limitations</a></li>
-<li><a href="#questions-and-difficulties">Questions and Difficulties</a></li>
-</ul>
-</li>
-</ul>
-</div>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The NWChem plane-wave (NWPW) module uses pseudopotentials and plane-wave
 basis sets to perform Density Functional Theory calculations (simple
-introduction <a href="pw-lecture.pdf">pw-lecture.pdf</a>).
+introduction (pw-lecture.pdf)).
 This module complements the capabilities of the more traditional
 Gaussian function based approaches by having an accuracy at least as
 good for many applications, yet is still fast enough to treat systems
@@ -6251,10 +6107,10 @@ modes that cannot be described within the harmonic approximation.</p>
 optimize the geometry. Both the PSPW and Band modules can also be used
 to find saddle points, and compute numerical second derivatives. In
 addition the PSPW module can also be used to perform Car-Parrinello
-molecular dynamics. Section <a href="#pspw-tasks-gamma-point-calculations">PSPW Tasks</a>
+molecular dynamics. Section (#pspw-tasks-gamma-point-calculations)
 describes the tasks contained within the PSPW module, section <a href="#band-tasks-multiple-k-point-calculations">Band
 Tasks</a> describes the tasks contained within the
-Band module, section <a href="#paw-tasks-legacy-implementation">PAW Tasks</a> describes the
+Band module, section (#paw-tasks-legacy-implementation) describes the
 tasks contained within the PAW module, and section <a href="#pseudopotential-and-paw-basis-libraries">Pseudopotential and
 PAW basis
 Libraries</a>
@@ -6287,10 +6143,10 @@ skip the next five sections and proceed directly to the tutorials.</p>
 END
 </code></pre>
 <p>To perform an actual calculation a TASK PSPW directive is used (Section
-<a href="TASK.html">Task</a>).</p>
+(TASK.md)).</p>
 <p><code>TASK PSPW</code></p>
 <p>In addition to the directives listed in
-<a href="TASK.html">Task</a>, i.e. </p>
+(TASK.md), i.e. </p>
 <pre><code>TASK PSPW energy 
 TASK PSPW gradient 
 TASK PSPW optimize 
@@ -6330,10 +6186,10 @@ most systems. There are sub-directives which allow for customized
 application; those currently provided as options for the PSPW module
 are:</p>
 <pre><code>NWPW   
-  SIMULATION_CELL            ... (see section [Simulation Cell](#simulation-cell)) END
+  SIMULATION_CELL            ... (see section (#simulation-cell)) END
   CELL_NAME &lt;string cell_name default 'cell_default'&gt;
   VECTORS [[input (&lt;string input_wavefunctions default file_prefix.movecs&gt;) || 
-           [output(&lt;string output_wavefunctions default file_prefix.movecs&gt;)]] 
+           ] 
   XC (Vosko      || LDA          || PBE96         || revPBE       || PBEsol          ||   
       LDA-SIC    || LDA-SIC/2    || LDA-0.4SIC    || LDA-SIC/4    || LDA-0.2SIC    || 
       PBE96-SIC  || PBE96-SIC/2  || PBE96-0.4SIC  || PBE96-SIC/4  || PBE96-0.2SIC  || 
@@ -6343,18 +6199,18 @@ are:</p>
       PBE0-Grimme2    || PBE0-Grimme3    || PBE0-Grimme4   || B3LYP-Grimme2  || B3LYP-Grimme3  || B3LYP-Grimme4 ||
       revPBE0-Grimme2 || revPBE0-Grimme3 || revPBE0-Grimme4 ||
       PBE0       || revPBE0      || HSE  || HF || default Vosko) 
-  XC new ...(see section [Using Exchange-Correlation Potentials Available in the DFT Module](#Using_Exchange-Correlation_Potentials_Available_in_the_DFT_Module))
+  XC new ...(see section (#Using_Exchange-Correlation_Potentials_Available_in_the_DFT_Module))
   DFT||ODFT||RESTRICTED||UNRESTRICTED 
   MULT &lt;integer mult default 1&gt;   
   CG 
   LMBFGS   
-  SCF [Anderson|| simple || Broyden]  
-      [CG || RMM-DIIS] 
-      [density || potential]
-      [ALPHA real alpha default 0.25]
-      [Kerker real ekerk nodefault] 
-      [ITERATIONS integer inner_iterations default 5]  
-      [OUTER_ITERATIONS integer outer_iterations default 0]
+  SCF   
+
+
+
+
+
+
   LOOP &lt;integer inner_iteration outer_iteration default 10 100&gt;  
   TOLERANCES &lt;real tole tolc default 1.0e-7 1.0e-7&gt; 
   FAKE_MASS &lt;real fake_mass default 400000.0&gt; 
@@ -6367,28 +6223,28 @@ are:</p>
   ALLOW_TRANSLATION 
   TRANSLATION (ON || OFF)
   ROTATION (ON || OFF) 
-  MULLIKEN [OFF]
+  MULLIKEN 
   EFIELD   
 
   BO_STEPS &lt;integer bo_inner_iteration bo_outer_iteration default 10 100&gt; 
   MC_STEPS &lt;integer mc_inner_iteration mc_outer_iteration default 10 100&gt;
   BO_TIME_STEP  &lt;real bo_time_step default 5.0&gt; 
-  BO_ALGORITHM [verlet|| velocity-verlet || leap-frog]
+  BO_ALGORITHM 
   BO_FAKE_MASS &lt;real bo_fake_mass default 500.0&gt; 
 
   SOCKET (UNIX || IPI_CLIENT) &lt;string socketname default (see input description)&gt;  
 
   MAPPING &lt;integer mapping default 1&gt;  
   NP_DIMENSIONS &lt;integer npi npj default -1 -1&gt;  
-  CAR-PARRINELLO             ... (see section [Car-Parrinello](#car-parrinello-scheme-for-ab-initio-molecular-dynamics)) END 
-  STEEPEST_DESCENT           ... (see section [Steepest Descent](#STEEPEST_DESCENT)) END
-  DPLOT                      ... (see section [DPLOT](#DPLOT)) END 
-  WANNIER                    ... (see section [Wannier](#Wannier)) END 
-  PSP_GENERATOR              ... (see section [PSP Generator](#PSP_GENERATOR))) END   
+  CAR-PARRINELLO             ... (see section (#car-parrinello-scheme-for-ab-initio-molecular-dynamics)) END 
+  STEEPEST_DESCENT           ... (see section (#STEEPEST_DESCENT)) END
+  DPLOT                      ... (see section (#DPLOT)) END 
+  WANNIER                    ... (see section (#Wannier)) END 
+  PSP_GENERATOR              ... (see section (#PSP_GENERATOR))) END   
 
-  WAVEFUNCTION_INITIALIZER   ... (see section [Wavefunction Initializer](NWPW_RETIRED.md#WAVEFUNCTION_INITIALIZER) - retired) END  
+  WAVEFUNCTION_INITIALIZER   ... (see section (NWPW_RETIRED.md#WAVEFUNCTION_INITIALIZER) - retired) END  
   V_WAVEFUNCTION_INITIATIZER ... (see section [Wavefunction Velocity Initializer (NWPW_RETIRED#V_WAVEFUNCTION_INITIALIZER) - retired) END  
-  WAVEFUNCTION_EXPANDER      ... (see section [Wavefunction Expander](NWPW_RETIRED.md#WAVEFUNCTION_EXPANDER) - retired) END  
+  WAVEFUNCTION_EXPANDER      ... (see section (NWPW_RETIRED.md#WAVEFUNCTION_EXPANDER) - retired) END  
   INPUT_WAVEFUNCTION_FILENAME &lt;string input_wavefunctions default file_prefix.movecs&gt;   
  OUTPUT_WAVEFUNCTION_FILENAME &lt;string output_wavefunctions default file_prefix.movecs&gt;   
 END
@@ -6397,7 +6253,7 @@ END
 block.</p>
 <ul>
 <li><code>cell_name</code> - name of the simulation_cell named <code>cell_name</code>. See
-    section <a href="#simulation-cell">Simulation Cell</a>.</li>
+    section (#simulation-cell).</li>
 <li><code>input_wavefunctions</code> - name of the file containing one-electron
     orbitals</li>
 <li><code>output_wavefunctions</code> - name of the file that will contain the
@@ -6546,7 +6402,7 @@ that they are localized within the defined atomic sphere and in addition
 are orthonormal to the atomic orbitals. Blöchl defined the invertible linear transformations by  </p>
 <div class="arithmatex">\[T = 1 + \sum_I \sum_\alpha (|\tilde{\varphi}_\alpha^I&gt; - |\varphi_\alpha^I &gt; ) &lt; p_\alpha^I|\]</div>
 <div class="arithmatex">\[\tilde{T} = 1 + \sum_I \sum_{\alpha} (|\varphi_{\alpha}^I&gt; - |\tilde{\varphi}_{\alpha}^I &gt;)&lt;\tilde{\varphi}_{\alpha}^I|\]</div>
-<div class="arithmatex">\[|\tilde{p}_{\alpha}^I&gt; = \sum_{\beta} [&lt;\tilde{p}^I | \varphi^I &gt;]_{\alpha\beta}^{-1} | p_{\beta}^I&gt;\]</div>
+<div class="arithmatex">\[|\tilde{p}_{\alpha}^I&gt; = \sum_{\beta} _{\alpha\beta}^{-1} | p_{\beta}^I&gt;\]</div>
 <p>The main effect of the PAW transformation is that the fast variations of
 the valence wave function in the atomic sphere region are projected out
 using local basis set, thereby producing a smoothly varying wavefunction
@@ -6586,9 +6442,9 @@ pseudowavefunctions.</p>
 <div class="arithmatex">\[ \sum_j \sum_{\mu\nu} &lt;\tilde{\psi}_j|\tilde{p}_{\mu}^I&gt;  &lt;\tilde{p}_{\nu}^I|\tilde{\psi}_j&gt; \sum_{lm} \tau_{l_\alpha m_\alpha, l_\beta m_\beta}^{lm} \tau_{l_\mu m_\mu, l_\nu m_\nu}^{lm} (V_{Heff}^I)_{\alpha\beta\mu\nu}^{l} \]</div>
 <p>The next three terms are the terms containing the compensation charge
 densities.</p>
-<div class="arithmatex">\[E_{cmp-vloc}= \sum_{\mathbf{G}} [\rho_{cmp} (\mathbf{G}) \tilde{V}_{local}(\mathbf{G})+\tilde{\rho}_{cmp}(\mathbf{G})(V_{local}(\mathbf{G})-\tilde{V}_{local}(\mathbf{G}))] + \\
+<div class="arithmatex">\[E_{cmp-vloc}= \sum_{\mathbf{G}}  + \\
 \int (\rho_{cmp}(\mathbf{r})-\tilde{\rho}_{cmp}(\mathbf{r}))(V_{local}(r)-\tilde{V}_{local}(\mathbf{r}))d\mathbf{r}\]</div>
-<div class="arithmatex">\[E_{cmp-cmp}= \Omega \sum_{\mathbf{G} \neq 0} \frac{4\pi}{|\mathbf{G}|^2} [ \rho_{cmp}(\mathbf{G}) \tilde{\rho}_{cmp}(\mathbf{G})- \frac{1}{2} \tilde{\rho}_{cmp}(\mathbf{G})\tilde{\rho}_{cmp}(\mathbf{G})] + \\
+<div class="arithmatex">\[E_{cmp-cmp}= \Omega \sum_{\mathbf{G} \neq 0} \frac{4\pi}{|\mathbf{G}|^2}  + \\
  \frac{1}{2} \iint \frac{(\rho_{cmp}(\mathbf{r})-\tilde{\rho}_{cmp}(\mathbf{r}))(\rho_{cmp}(\mathbf{r}')-\tilde{\rho}_{cmp}(\mathbf{r}'))} {|\mathbf{r}-\mathbf{r}'|}  d\mathbf{r} d\mathbf{r}'\]</div>
 <div class="arithmatex">\[E_{cmp-pw}= \Omega \sum_{\mathbf{G} \neq 0} \frac{4\pi}{|\mathbf{G}|^2} \rho_{cmp}(\mathbf{G}) \tilde{\rho}(\mathbf{G})\]</div>
 <p>In the first two formulas the first terms are computed using plane-waves
@@ -6609,12 +6465,12 @@ terms of plane-waves.</p>
 <p>The final three terms are the energies that contain the core
 densities</p>
 <div class="arithmatex">\[E_{valence-core}=\sum_{i}\sum_{I}\sum_{\alpha \beta}&lt;\tilde{\psi}_{i} | \tilde{p}_{\alpha}^{I} &gt;  (V_{valence-core})_{\alpha \beta}^{I} &lt;\tilde{p}_\beta^{I} | \tilde{\psi}_{i} &gt;\]</div>
-<div class="arithmatex">\[E_{kinetic-core}=\sum_c \int_0^\infty \left[ (\varphi_{n_c l_c}^I (r))^{'} (\varphi_{n_c l_c}^{I} (r))^{'} + l_c (l_c+1)  \frac{\varphi_{n_c l_c}^{I} (r) \varphi_{n_c l_c}^{I} (r)}{r^{2}} \right]  dr\]</div>
+<div class="arithmatex">\[E_{kinetic-core}=\sum_c \int_0^\infty \left  dr\]</div>
 <div class="arithmatex">\[E_{ion-core}= \sum_I \frac{1}{2} \iint \frac{\rho_c^{I} (r) \rho_c^{I} (r')}{|r-r'|}  drdr^{'} - \int  \frac{\rho_c^{I} (r)}{|r|}  (Z_I+Z_I^{core} ) dr\]</div>
 <p>The matrix elements contained in the above formula are</p>
 <div class="arithmatex">\[(t_{atom}^{I} )_{\alpha \beta}= {\delta_{m_\alpha m_\beta} \delta_{l_\alpha l_\beta }}2  \int_0^{r_{cut}^I}  \left[
   (\varphi_{n_\alpha l_\alpha}^{I} (r))' (\varphi_{n_\beta l_\beta}^{I} (r))' - (\tilde{\varphi}_{n_\alpha l_\alpha}^{I} (r))' (\tilde{\varphi}_{n_\beta l_\beta}^{I} (r))' + l_\alpha (l_\alpha+1)  \frac{ \varphi_{n_\alpha l_\alpha}^{I}(r) \varphi_{n_\beta l_\beta}^{I}(r) - \tilde{\varphi}_{n_\alpha l_\alpha}^{I}(r) \tilde{\varphi}_{n_\beta l_\beta}^I }{r^2 } \right]  dr\]</div>
-<div class="arithmatex">\[(u_{atom}^I )_{\alpha \beta} =\frac{Z_I}{4\pi} (V_{comp}^I )_{\alpha \beta}^{l=0} + \frac{2Z_I}{(\sqrt{2\pi} \sigma_I } (q_comp^I )_{\alpha \beta}^(l=0) +\delta_{m_\alpha m_\beta } \delta_{l_\alpha l_\beta } \int_0^{r_{cut}^I} [ \varphi_{n_\alpha l_\alpha}^I (r) \varphi_(n_\beta l_\beta)^I (r) \frac{-Z_I}{r} + \tilde{\varphi}_{n_\alpha l_\alpha}^I (r) \tilde{\varphi}_{n_\beta l_\beta}^I (r) (-v_{ps}^I (r)) ] dr\]</div>
+<div class="arithmatex">\[(u_{atom}^I )_{\alpha \beta} =\frac{Z_I}{4\pi} (V_{comp}^I )_{\alpha \beta}^{l=0} + \frac{2Z_I}{(\sqrt{2\pi} \sigma_I } (q_comp^I )_{\alpha \beta}^(l=0) +\delta_{m_\alpha m_\beta } \delta_{l_\alpha l_\beta } \int_0^{r_{cut}^I}  dr\]</div>
 <div class="arithmatex">\[(V_{Heff}^I )_{\alpha \beta \mu \nu}^l = (V_H^I )_{\alpha\beta\mu\nu}^l - 2(V_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l -(v_g^I )^l (q_{comp}^I )_{\alpha\beta}^l (q_{comp}^I )_{\mu\nu}^l\]</div>
 <div class="arithmatex">\[(V_H^I )_{\alpha\beta\mu\nu}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \left( \frac{r_{&lt;}^l}{r_{&gt;}^{l+1} } \right)( \varphi_{n_\alpha l_\alpha } (r) \varphi_{n_\beta l_\beta } (r) \varphi_{n_\mu l_\mu } (r) \varphi_{n_\nu l_\nu } (r) - \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_(n_\beta l_\beta ) (r) \tilde{\varphi}_{n_\mu l_\mu } (r) \tilde{\varphi}_{n_\nu l_\nu } (r) )  drdr'\]</div>
 <div class="arithmatex">\[(V_{comp}^I )_{\alpha\beta}^l = \frac{4\pi}{2l+1} \int_0^{r_{cut}^I} \int_0^{r_{cut}^I} \tilde{\varphi}_{n_\alpha l_\alpha } (r) \tilde{\varphi}_{n_\beta l_\beta } (r) \left( \frac{r_{&lt;}^l}{r_{&gt;}^{l+1} } \right) g_l^I (r')  r'^2  drdr'\]</div>
@@ -6695,28 +6551,28 @@ included by default in NWChem 6.5</em></span>)</p>
 potentials available in DFT Module (see Section <a href="Density-Functional-Theory-for-Molecules.html#xc-and-decomp-exchange-correlation-potentials">XC and DECOMP &ndash;
 Exchange-Correlation
 Potentials</a>).</p>
-<pre><code>  XC [[acm] [b3lyp] [beckehandh] [pbe0] [bhlyp]\
-      [becke97]  [becke97-1] [becke97-2] [becke97-3] [becke98] [hcth] [hcth120] [hcth147] \ 
-      [hcth407] [becke97gga1] [hcth407p] \
-      [optx] [hcthp14] [mpw91] [mpw1k] [xft97] [cft97] [ft97] [op] [bop] [pbeop]\
-      [HFexch &lt;real prefactor default 1.0&gt;] \
-      [becke88 [nonlocal] &lt;real prefactor default 1.0&gt;] \
-      [xperdew91 [nonlocal] &lt;real prefactor default 1.0&gt;] \
-      [xpbe96 [nonlocal] &lt;real prefactor default 1.0&gt;] \
-      [gill96 [nonlocal] &lt;real prefactor default 1.0&gt;] \
-      [lyp &lt;real prefactor default 1.0&gt;] \
-      [perdew81 &lt;real prefactor default 1.0&gt;] \
-      [perdew86 [nonlocal] &lt;real prefactor default 1.0&gt;] \
-      [perdew91 [nonlocal] &lt;real prefactor default 1.0&gt;] \
-      [cpbe96 [nonlocal] &lt;real prefactor default 1.0&gt;] \
-      [pw91lda &lt;real prefactor default 1.0&gt;] \
-      [slater &lt;real prefactor default 1.0&gt;] \
-      [vwn_1 &lt;real prefactor default 1.0&gt;] \
-      [vwn_2 &lt;real prefactor default 1.0&gt;] \
-      [vwn_3 &lt;real prefactor default 1.0&gt;] \
-      [vwn_4 &lt;real prefactor default 1.0&gt;] \
-      [vwn_5 &lt;real prefactor default 1.0&gt;] \
-      [vwn_1_rpa &lt;real prefactor default 1.0&gt;]]
+<pre><code>  XC     \
+               \ 
+         \
+               \
+       \
+       &lt;real prefactor default 1.0&gt;] \
+       &lt;real prefactor default 1.0&gt;] \
+       &lt;real prefactor default 1.0&gt;] \
+       &lt;real prefactor default 1.0&gt;] \
+       \
+       \
+       &lt;real prefactor default 1.0&gt;] \
+       &lt;real prefactor default 1.0&gt;] \
+       &lt;real prefactor default 1.0&gt;] \
+       \
+       \
+       \
+       \
+       \
+       \
+       \
+      ]
 </code></pre>
 <p>These functional can be invoked by prepending the &ldquo;new&rdquo; directive before
 the exchange correlation potetntials in the input directive, XC new
@@ -6824,7 +6680,7 @@ end
 </code></pre>
 <p>The parameters are</p>
 <pre><code>nwpw  
- dos  [&lt;alpha&gt; &lt;npoints&gt; &lt;emin&gt; &lt;emax&gt;] 
+ dos   
 end
 </code></pre>
 <p>where</p>
@@ -6988,11 +6844,11 @@ sub-block.</p>
 ...   
  DPLOT  
    VECTORS &lt;string input_wavefunctions default input_movecs&gt;  
-   DENSITY [total||diff||alpha||beta||laplacian||potential default total]   
+   DENSITY    
            &lt;string density_name no default&gt;  
-   ELF [restricted|alpha|beta] &lt;string elf_name no default&gt;
+   ELF  &lt;string elf_name no default&gt;
    ORBITAL &lt;integer orbital_number no default&gt; &lt;string orbital_name no default&gt;  
-   [LIMITXYZ [units &lt;string Units default au&gt;]   
+
    &lt;real X_From&gt; &lt;real X_To&gt; &lt;integer No_Of_Spacings_X&gt;   
    &lt;real Y_From&gt; &lt;real Y_To&gt; &lt;integer No_Of_Spacings_Y&gt;  
    &lt;real Z_From&gt; &lt;real Z_To&gt; &lt;integer No_Of_Spacings_Z&gt;]  
@@ -7010,13 +6866,13 @@ the second file is optionally given the density is computed as the
 difference between the corresponding electron densities. The vector
 files have to
 match.</p>
-<pre><code>DENSITY [total||difference||alpha||beta||laplacian||potential default total] 
+<pre><code>DENSITY  
         &lt;string density_name no default&gt;
 </code></pre>
 <p>This sub-directive specifies, what kind of density is to be plotted. The
 known names for total, difference, alpha, beta, laplacian, and
 potential.</p>
-<pre><code>ELF [restricted|alpha|beta] &lt;string elf_name no default&gt;
+<pre><code>ELF  &lt;string elf_name no default&gt;
 </code></pre>
 <p>This sub-directive specifies that an electron localization function
 (ELF) is to be
@@ -7025,7 +6881,7 @@ plotted.</p>
 </code></pre>
 <p>This sub-directive specifies the molecular orbital number that is to be
 plotted.</p>
-<pre><code>LIMITXYZ [units &lt;string Units default angstroms&gt;]  
+<pre><code>LIMITXYZ   
 &lt;real X_From&gt; &lt;real X_To&gt; &lt;integer No_Of_Spacings_X&gt;  
 &lt;real Y_From&gt; &lt;real Y_To&gt; &lt;integer No_Of_Spacings_Y&gt;  
 &lt;real Z_From&gt; &lt;real Z_To&gt; &lt;integer No_Of_Spacings_Z&gt;
@@ -7042,7 +6898,7 @@ for Units are angstroms, au and bohr.</p>
 END
 </code></pre>
 <p>To perform an actual calculation a Task Band directive is used (Section
-<a href="TASK.html">Task</a>).</p>
+(TASK.md)).</p>
 <p><code>Task Band</code></p>
 <p>Once a user has specified a geometry, the Band module can be invoked
 with no input directives (defaults invoked throughout). There are
@@ -7072,13 +6928,13 @@ are:</p>
  MULT &lt;integer mult default 1&gt;   
  CG  
  LMBFGS  
- SCF [Anderson|| simple || Broyden]  
- [CG || RMM-DIIS] [density || potential]  
- [ALPHA real alpha default 0.25]  
- [ITERATIONS integer inner_iterations default 5]  
- [OUTER_ITERATIONS integer outer_iterations default 0]
+ SCF   
 
- SIMULATION_CELL  [units &lt;string units default bohrs&gt;]
+
+
+
+
+ SIMULATION_CELL  
    ... (see input description)   
  END 
  BRILLOUIN_ZONE 
@@ -7090,15 +6946,15 @@ are:</p>
  END  
  MAPPING &lt;integer mapping default 1&gt;  
  SMEAR &lt;sigma default 0.001&gt; 
- [TEMPERATURE &lt;temperature&gt;] 
- [FERMI || GAUSSIAN || MARZARI-VANDERBILT default FERMI] 
- [ORBITALS &lt;integer orbitals default 4&gt;] 
+
+
+
 END 
 </code></pre>
 <p>The following list describes these keywords.</p>
 <ul>
 <li><code>cell_name</code> - name of the simulation_cell named <code>cell_name</code>. See
-    <a href="#simulation-cell">Simulation Cell</a>.</li>
+    (#simulation-cell).</li>
 <li><code>input_wavefunctions</code> - name of the file containing one-electron
     orbitals</li>
 <li><code>output_wavefunctions</code> - name that will point to file containing the
@@ -7201,7 +7057,7 @@ end
 </code></pre>
 <p>The parameters are</p>
 <pre><code>nwpw 
- dos  [&lt;alpha&gt; &lt;npoints&gt; &lt;emin&gt; &lt;emax&gt;]
+ dos  
 end
 </code></pre>
 <p>where</p>
@@ -7347,13 +7203,13 @@ sub-block.</p>
 ... 
  BAND_DPLOT 
    VECTORS &lt;string input_wavefunctions default input_movecs&gt;
-   DENSITY [total||difference||alpha||beta||laplacian||potential default total] &lt;string density_name no default&gt;
-   ELF [restricted|alpha|beta] &lt;string elf_name no default&gt;  
+   DENSITY  &lt;string density_name no default&gt;
+   ELF  &lt;string elf_name no default&gt;  
    ORBITAL (density || real || complex default density)  
            &lt;integer orbital_number no default&gt; 
            &lt;integer brillion_number default 1&gt; 
            &lt;string orbital_name no default&gt;  
-   [LIMITXYZ [units &lt;string Units default angstroms&gt;]   
+   [LIMITXYZ    
     &lt;real X_From&gt; &lt;real X_To&gt; &lt;integer No_Of_Spacings_X&gt;  
     &lt;real Y_From&gt; &lt;real Y_To&gt; &lt;integer No_Of_Spacings_Y&gt;  
     &lt;real Z_From&gt; &lt;real Z_To&gt; &lt;integer No_Of_Spacings_Z&gt;] 
@@ -7368,12 +7224,12 @@ the second file is optionally given the density is computed as the
 difference between the corresponding electron densities. The vector
 files have to
 match.</p>
-<pre><code>DENSITY [total||difference||alpha||beta||laplacian||potential default total] &lt;string density_name no default&gt;
+<pre><code>DENSITY  &lt;string density_name no default&gt;
 </code></pre>
 <p>This sub-directive specifies, what kind of density is to be plotted. The
 known names for total, difference, alpha, beta, laplacian, and
 potential.</p>
-<pre><code>ELF [restricted|alpha|beta] &lt;string elf_name no default&gt;
+<pre><code>ELF  &lt;string elf_name no default&gt;
 </code></pre>
 <p>This sub-directive specifies that an electron localization function
 (ELF) is to be
@@ -7382,7 +7238,7 @@ plotted.</p>
 </code></pre>
 <p>This sub-directive specifies the molecular orbital number that is to be
 plotted.</p>
-<pre><code>LIMITXYZ [units &lt;string Units default angstroms&gt;] 
+<pre><code>LIMITXYZ  
 &lt;real X_From&gt; &lt;real X_To&gt; &lt;integer No_Of_Spacings_X&gt;  
 &lt;real Y_From&gt; &lt;real Y_To&gt; &lt;integer No_Of_Spacings_Y&gt;  
 &lt;real Z_From&gt; &lt;real Z_To&gt; &lt;integer No_Of_Spacings_Z&gt;
@@ -7447,7 +7303,7 @@ sub-block.</p>
    [TEMPERATURE &lt;real Temperature_ion      real Period_ion 
                  real Temperature_electron real Period_electron  
                  integer Chainlength_ion integer Chainlength_electron default 298.15 1200 298.15 1200.0 1 1&gt;]   
-   [SA_decay &lt;real sa_scale_c sa_scale_r default 1.0 1.0&gt;] 
+
    XYZ_FILENAME &lt;string xyz_filename default file_prefix.xyz&gt; 
    ION_MOTION_FILENAME &lt;string ion_motion_filename default file_prefix.ion_motion
    EMOTION_FILENAME &lt;string emotion_filename default file_prefix.emotion&gt; 
@@ -7461,7 +7317,7 @@ END
 <p>The following list describes the input for the Car-Parrinello sub-block.</p>
 <ul>
 <li><code>cell_name</code> - name of the the simulation_cell named <code>cell_name</code>.
-    See section <a href="#simulation-cell">Simulation Cell</a>.</li>
+    See section (#simulation-cell).</li>
 <li><code>input_wavefunctions</code> - name of the file containing one-electron
     orbitals</li>
 <li><code>output_wavefunctions</code> - name of the file that will contain the
@@ -7529,21 +7385,21 @@ END
 </li>
 <li><code>xyz_filename</code> - name of the XYZ motion file generated</li>
 <li><code>emotion_filename</code> - name of the emotion motion file. See section
-    <a href="#emotion-motion-file">EMOTION motion file</a> for a
+    (#emotion-motion-file) for a
     description of the datafile.</li>
 <li><code>hmotion_filenameh</code> - name of the hmotion motion file. See section
-    <a href="#hmotion-motion-file">HMOTION motion file</a> for a
+    (#hmotion-motion-file) for a
     description of the datafile.</li>
 <li><code>eigmotion_filename</code> - name of the eigmotion motion file. See
-    section <a href="#eigmotion-motion-file">EIGMOTION motion file</a>
+    section (#eigmotion-motion-file)
     for a description of the datafile.</li>
 <li><code>ion_motion_filename</code> - name of the ion_motion motion file. See
-    section <a href="#ion_motion-motion-file">ION_MOTION motion file</a>- for a description of the
+    section (#ion_motion-motion-file)- for a description of the
     datafile.</li>
 <li>MULLIKEN - optional keyword which if specified causes an omotion
     motion file to be created.</li>
 <li><code>omotion_filename</code> - name of the omotion motion file. See section
-    <a href="#omotion-motion-file">OMOTION motion file</a> for a description of
+    (#omotion-motion-file) for a description of
     the datafile.</li>
 </ul>
 <p>When a DPLOT sub-block is specified the following SET directive can be
@@ -7578,7 +7434,7 @@ starting coordinates during a Car-Parrinello simulation.</p>
 default behavior in the code is to treat all atoms as active. To revert
 to this default behavior after the option to define frozen atoms has
 been invoked, the +UNSET+ directive must be used (since the database is
-persistent, see Section <a href="NWChem-Architecture.html">NWChem Architecture</a>).
+persistent, see Section (NWChem-Architecture.md)).
 The form of the +UNSET+ directive is as follows:</p>
 <p><code>unset geometry:actlist</code></p>
 <p>In addition, the Car-Parrinello module allows users to freeze bond
@@ -7595,35 +7451,35 @@ mass shifting. This can be done by the following +SET+ directive.</p>
 <p>Data file that stores ion positions and velocities as a function of time
 in XYZ
 format.</p>
-<pre><code>[line 1: ] n_ion
-[line 2: ] do ii=1,n_ion
-[line 2+ii: ] atom_name(ii), x(ii),y(ii),z(ii),vx(ii),vy(ii),vz(ii)
-end do 
-[line n_ion+3 ] n_nion 
+<pre><code> n_ion
  do ii=1,n_ion
-[line n_ion+3+ii: ] atom_name(ii), x(ii),y(ii),z(ii), vx(ii),vy(ii),vz(ii) 
+ atom_name(ii), x(ii),y(ii),z(ii),vx(ii),vy(ii),vz(ii)
+end do 
+ n_nion 
+ do ii=1,n_ion
+ atom_name(ii), x(ii),y(ii),z(ii), vx(ii),vy(ii),vz(ii) 
 end do
-[line 2*n_ion+4: ] ....
+ ....
 </code></pre>
 <h4 id="ion_motion-motion-file">ION_MOTION motion file<a class="headerlink" href="#ion_motion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that stores ion positions and velocities as a function of
 time</p>
-<pre><code>[line 1: ] it_out, n_ion, omega, a1.x,a1.y,a1.z, a2.x,a2,y,a2.z, a3.x,a3.y,a3.z 
-[line 2: ] time 
+<pre><code> it_out, n_ion, omega, a1.x,a1.y,a1.z, a2.x,a2,y,a2.z, a3.x,a3.y,a3.z 
+ time 
 do ii=1,n_ion
-[line 2+ii: ] ii, atom_symbol(ii),atom_name(ii), x(ii),y(ii),z(ii), vx(ii),vy(ii),vz(ii)  
+ ii, atom_symbol(ii),atom_name(ii), x(ii),y(ii),z(ii), vx(ii),vy(ii),vz(ii)  
 end do
-[line n_ion+3 ] time 
+ time 
 do do ii=1,n_ion  
-[line n_ion+3+ii: ] ii, atom_symbol(ii),atom_name(ii), x(ii),y(ii),z(ii), vx(ii),vy(ii),vz(ii) 
+ ii, atom_symbol(ii),atom_name(ii), x(ii),y(ii),z(ii), vx(ii),vy(ii),vz(ii) 
 end do 
-[line 2*n_ion+4: ] ....
+ ....
 </code></pre>
 <h4 id="emotion-motion-file">EMOTION motion file<a class="headerlink" href="#emotion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that store energies as a function of
 time.</p>
-<pre><code>[line 1: ] time, E1,E2,E3,E4,E5,E6,E7,E8,(E9,E10, if Nose-Hoover),eave,evar,have,hvar,ion_Temp 
-[line 2: ] ...
+<pre><code> time, E1,E2,E3,E4,E5,E6,E7,E8,(E9,E10, if Nose-Hoover),eave,evar,have,hvar,ion_Temp 
+ ...
 </code></pre>
 <p>where</p>
 <pre><code>E1 = total energy
@@ -7642,19 +7498,19 @@ ion_Temp = temperature
 </code></pre>
 <h4 id="hmotion-motion-file">HMOTION motion file<a class="headerlink" href="#hmotion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that stores the rotation matrix as a function of time.</p>
-<pre><code>[line 1: ] time
-[line 2: ] ms,ne(ms),ne(ms)
+<pre><code> time
+ ms,ne(ms),ne(ms)
 do i=1,ne(ms)
-[line 2+i: ] (hml(i,j), j=1,ne(ms)
+ (hml(i,j), j=1,ne(ms)
 end do
-[line 3+ne(ms): ] time
-[line 4+ne(ms): ] ....
+ time
+ ....
 </code></pre>
 <h4 id="eigmotion-motion-file">EIGMOTION motion file<a class="headerlink" href="#eigmotion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that stores the eigenvalues for the one-electron orbitals as a
 function of time.</p>
-<pre><code>[line 1: ] time, (eig(i), i=1,number_orbitals) 
-[line 2: ] ...
+<pre><code> time, (eig(i), i=1,number_orbitals) 
+ ...
 </code></pre>
 <h4 id="omotion-motion-file">OMOTION motion file<a class="headerlink" href="#omotion-motion-file" title="Permanent link">&para;</a></h4>
 <p>Datafile that stores a reduced representation of the one-electron
@@ -7665,7 +7521,7 @@ to NWChem in the near future.</p>
 ...
   BO_STEPS &lt;integer bo_inner_iteration bo_outer_iteration default 10 100&gt; 
   BO_TIME_STEP  &lt;real bo_time_step default 5.0&gt; 
-  BO_ALGORITHM [verlet|| velocity-verlet || leap-frog]
+  BO_ALGORITHM 
   BO_FAKE_MASS &lt;real bo_fake_mass default 500.0&gt; 
 END
 </code></pre>
@@ -7676,7 +7532,7 @@ END
 </code></pre>
 <p>The <code>NWPW</code> module provides native communication via the i-PI socket protocol.
 The behavior is identical to the
-<a href="Geometry-Optimization.html#i-pi-socket-communication">i-PI socket communication</a>
+(Geometry-Optimization.md#i-pi-socket-communication)
 provided by the <code>DRIVER</code> module.
 The <code>NWPW</code> implementation of the <code>SOCKET</code> directive is better optimized for
 plane-wave calculations.</p>
@@ -7690,8 +7546,9 @@ END
 </code></pre>
 <h2 id="free-energy-simulations">Free Energy Simulations<a class="headerlink" href="#free-energy-simulations" title="Permanent link">&para;</a></h2>
 <h3 id="metadynamics">MetaDynamics<a class="headerlink" href="#metadynamics" title="Permanent link">&para;</a></h3>
-<p><img alt="Metadynamics bias potential. Courtesy of Raymond Atta-Fynn" src="ray2.gif" title="Metadynamics bias potential. Courtesy of Raymond Atta-Fynn&quot;.md) ![Metadynamics simulation of the first hydrolysis of U(IV) from 1.  Courtesy of Raymond Atta-Fynn](ray.gif &quot;Metadynamics simulation of the first hydrolysis of U(IV.md) from 1. Courtesy of Raymond Atta-Fynn" />
-Metadynamics<a href="http://en.wikipedia.org/wiki/Metadynamics">2</a><a href="http://iopscience.iop.org/0034-4885/71/12/126601">3</a><a href="http://people.sissa.it/~laio/Research/Res_metadynamics.php">4</a>
+<p>!(ray2.gif &ldquo;Metadynamics bias potential. Courtesy of Raymond Atta-Fynn&rdquo;.md)
+!(http://pubs.acs.org/doi/abs/10.1021/ic202338z?mi=yfiw1s&amp;af=R&amp;pageSize=20&amp;searchText=toxic).  Courtesy of Raymond Atta-Fynn](ray.gif &ldquo;Metadynamics simulation of the first hydrolysis of U(IV.md) from 1. Courtesy of Raymond Atta-Fynn&rdquo;)
+Metadynamics(http://en.wikipedia.org/wiki/Metadynamics)(http://iopscience.iop.org/0034-4885/71/12/126601)(http://people.sissa.it/~laio/Research/Res_metadynamics.php)
 is a powerful, non-equilibrium molecular dynamics method which
 accelerates the sampling of the multidimensional free energy surfaces of
 chemical reactions. This is achieved by adding an external
@@ -7717,7 +7574,7 @@ time then we have well-tempered metadynamics. In between the addition of
 Gaussians, the system is propagated by normal (but out of equilibrium)
 dynamics. Suppose that the dimension of the collective space is <span class="arithmatex">\(d\)</span>,
 i.e.
-<span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)=\bigl[s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\bigr]\)</span>
+<span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)=\bigl\)</span>
 and that prior to any time <span class="arithmatex">\(t\)</span> during the simulation, <span class="arithmatex">\(N +1\)</span>
 Gaussians centered on 
 <span class="arithmatex">\(\mathbf{S}^{t_g}\)</span>
@@ -7725,7 +7582,7 @@ are deposited along the
 trajectory of <span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)\)</span> at times
 <span class="arithmatex">\(t_g = 0, \Delta t, 2\Delta t, \ldots ,N\Delta t\)</span>. Then, the value of
 the bias potential, <span class="arithmatex">\(V\)</span>, at an arbitrary point,
-<span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)=\bigl[s_1\left(\mathbf{R}\right),s_2\left(\mathbf{R}\right),\ldots,s_d\left(\mathbf{R}\right)\bigr]\)</span>,
+<span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)=\bigl\)</span>,
 along the trajectory of <span class="arithmatex">\(\mathbf{s}\left(\mathbf{R}\right)\)</span> at time <span class="arithmatex">\(t\)</span>
 is given
 by</p>
@@ -7756,42 +7613,42 @@ sub-block,</p>
  METADYNAMICS
     [
     BOND &lt;integer atom1_index no default&gt; &lt;integer atom2_index no default&gt; 
-         [W &lt;real w default 0.00005&gt;]  
-         [SIGMA &lt;real sigma default 0.1&gt;] 
-         [RANGE &lt;real a b default (see input description)&gt;]  
-         [NRANGE &lt;integer nrange default 501&gt;] 
+
+
+
+
     ...]  
     [
     ANGLE &lt;integer atom1_index no default&gt; &lt;integer atom2_index no default&gt; &lt;integer atom3_index no default&gt;  
-         [W &lt;real w default 0.00005&gt;] 
-         [SIGMA &lt;real sigma default 0.1&gt;]
-         [RANGE &lt;real a b default 0]
-         [NRANGE &lt;integer nrange default 501&gt;]  
+
+
+
+
     ...]
     [
-    COORD_NUMBER [INDEX1 &lt;integer_list atom1_indexes no default&gt;][INDEX2 &lt;integer_list atom2_indexes no default&gt;]  
-         [SPRIK] 
-         [N &lt;real n default 6.0&gt;]
-         [M &lt;real m default 12.0&gt;]
-         [R0 &lt;real r0 default 3.0&gt;]  
+    COORD_NUMBER   
 
-         [W &lt;real w default 0.00005&gt;] 
-         [SIGMA &lt;real sigma default 0.1&gt;] 
-         [RANGE &lt;real a b no default&gt;]  
-         [NRANGE &lt;integer nrange default 501&gt;] 
+
+
+
+
+
+
+
+
     ...] 
     [  
     N-PLANE  &lt;integer atom1_index no default&gt; &lt;integer_list atom_indexes no default&gt;  
-         [W &lt;real w default 0.00005&gt;]   
-         [SIGMA &lt;real sigma default 0.1&gt;]  
-         [RANGE &lt;real a b no default&gt;] 
-         [NRANGE &lt;integer nrange default 501&gt;]  
-         [NVECTOR &lt;real(3) nx ny nz&gt;] 
+
+
+
+
+
     ...] 
-    [UPDATE &lt;integer meta_update default 1&gt;]  
-    [PRINT_SHIFT &lt;integer print_shift default 0&gt;]
-    [TEMPERED &lt;real tempered_temperature no default&gt;]  
-    [BOUNDARY &lt;real w_boundary sigma_boundary no default&gt;]
+
+
+
+
   END
 END
 </code></pre>
@@ -7841,7 +7698,7 @@ and <span class="arithmatex">\(m\)</span> must tuned for a given <span class="ar
 is smooth and satisfies the above mentioned properties, particularly the
 large <span class="arithmatex">\(r_{ij}\)</span></p>
 <p>The second form of the weighting function, which is due to Sprik, is</p>
-<div class="arithmatex">\[\xi_{ij}=\frac{1}{1 + \exp\left[n\left(r_{ij}-r_{0}\right)\right]}\]</div>
+<div class="arithmatex">\[\xi_{ij}=\frac{1}{1 + \exp\left}\]</div>
 <p>In this definition <span class="arithmatex">\(\xi_{ij}\)</span> is analogous to the Fermi function and
 its width is controlled by the parameter <span class="arithmatex">\(\frac{1}{n}\)</span>. Large and
 small values of <span class="arithmatex">\(n\)</span> respectively correspond to sharp and soft
@@ -7902,7 +7759,7 @@ sub-block.</p>
 ...   
  STEEPEST_DESCENT   
    CELL_NAME &lt;string cell_name&gt;   
-   [GEOMETRY_OPTIMIZE]   
+
    INPUT_WAVEFUNCTION_FILENAME &lt;string input_wavefunctions default file_prefix.movecs&gt;   
    OUTPUT_WAVEFUNCTION_FILENAME &lt;string output_wavefunctions default file_prefix.movecs&gt;   
    FAKE_MASS &lt;real fake_mass default 400000.0&gt;   
@@ -7918,7 +7775,7 @@ sub-block.</p>
        PBE96-SIC  || PBE96-SIC/2  || PBE96-0.4SIC  || PBE96-SIC/4  || PBE96-0.2SIC  ||   
        revPBE-SIC || revPBE-SIC/2 || revPBE-0.4SIC || revPBE-SIC/4 || revPBE-0.2SIC ||   
        PBE0       || revPBE0      || default Vosko)   
-   [MULLIKEN]  
+
  END  
 ...  
 END
@@ -7927,7 +7784,7 @@ END
 sub-block.</p>
 <ul>
 <li><code>cell_name</code> - name of the simulation_cell named <code>cell_name</code>. See
-    <a href="#simulation-cell">Simulation Cell</a>.</li>
+    (#simulation-cell).</li>
 <li>GEOMETRY_OPTIMIZE - optional keyword which if specified turns on
     geometry optimization.</li>
 <li><code>input_wavefunctions</code> - name of the file containing one-electron
@@ -7970,7 +7827,7 @@ simulation_cell sub-block within the PSPW block. Listed below is the
 format of a simulation_cell sub-block.</p>
 <pre><code>NWPW 
 ...   
- SIMULATION_CELL  [units &lt;string units default bohrs&gt;]
+ SIMULATION_CELL  
     CELL_NAME &lt;string name default 'cell_default'&gt;  
     BOUNDARY_CONDITIONS (periodic || aperiodic default periodic) 
     LATTICE_VECTORS   
@@ -8008,15 +7865,15 @@ and <span class="arithmatex">\(\gamma\)</span>, by using the LATTICE block. The
 format for input is as follows:</p>
 <pre><code>NWPW 
 ... 
- SIMULATION_CELL [units &lt;string units default bohrs&gt;]  
+ SIMULATION_CELL   
    ...   
    LATTICE   
-     [lat_a &lt;real a default 20.0&gt;]  
-     [lat_b &lt;real b default 20.0&gt;]  
-     [lat_c &lt;real c default 20.0&gt;] 
-     [alpha &lt;real alpha default 90.0&gt;]  
-     [beta &lt;real beta default 90.0&gt;] 
-     [gamma &lt;real gamma default 90.0&gt;]  
+
+
+
+
+
+
    END 
    ...   
  END
@@ -8029,7 +7886,7 @@ body-centered cubic respectively. Listed below is an example of the
 format of this type of input.</p>
 <pre><code>NWPW 
 ... 
- SIMULATION_CELL [units &lt;string units default bohrs&gt;]
+ SIMULATION_CELL 
    SC 20.0 
    .... 
  END
@@ -8075,9 +7932,9 @@ crystal unit cell in addition to the geometry.</p>
 <p>The smear keyword to turn on fractional occupation of the molecular
 orbitals in PSPW and BAND
 calculations</p>
-<pre><code>SMEAR &lt;sigma default 0.001&gt; [TEMPERATURE &lt;temperature&gt;]
-                            [FERMI || GAUSSIAN || MARZARI-VANDERBILT default FERMI]
-                            [ORBITALS &lt;integer orbitals default 4&gt;]
+<pre><code>SMEAR &lt;sigma default 0.001&gt; 
+
+
 </code></pre>
 <p>Fermi-Dirac (FERMI), Gaussian, and Marzari-Vanderbilt broadening functions are
 available. The ORBITALS keyword is used to change the number of virtual
@@ -8326,13 +8183,13 @@ sub-block.</p>
    MASS_NUMBER: &lt;real mass_number&gt;   
    ATOMIC_FILLING: &lt;integer ncore nvalence&gt; ( (1||2||...) (s||p||d||f||...) &lt;real filling&gt;  ...)
 
-   [CUTOFF: &lt;integer lmax&gt; ( (s||p||d||f||g) &lt;real rcut&gt; ...) ] 
+
 
    PSEUDOPOTENTIAL_TYPE: (TROULLIER-MARTINS || HAMANN default HAMANN)   
    SOLVER_TYPE: (PAULI || SCHRODINGER default PAULI)   
    EXCHANGE_TYPE: (dirac || PBE96 default DIRAC)   
    CORRELATION_TYPE: (VOSKO || PBE96 default VOSKO)   
-   [SEMICORE_RADIUS: &lt;real rcore&gt;]
+
 
  END  
 ...   
@@ -8431,9 +8288,9 @@ is recommended that this module only be used for testing purposes.</em>
 END
 </code></pre>
 <p>To perform an actual calculation a TASK PAW directive is used
-(<a href="TASK.html">Task</a>).</p>
+((TASK.md)).</p>
 <p><code>TASK PAW</code></p>
-<p>In addition to the directives listed in <a href="TASK.html">Task</a>, i.e.</p>
+<p>In addition to the directives listed in (TASK.md), i.e.</p>
 <pre><code>TASK paw energy   
 TASK paw gradient   
 TASK paw optimize   
@@ -8443,7 +8300,7 @@ TASK paw vib
 </code></pre>
 <p>there are additional directives that are specific to the PSPW module,
 which are:</p>
-<p><code>TASK PAW [Car-Parrinello || steepest_descent ]</code></p>
+<p><code>TASK PAW</code></p>
 <p>Once a user has specified a geometry, the PAW module can be invoked with
 no input directives (defaults invoked throughout). There are
 sub-directives which allow for customized application; those currently
@@ -8451,7 +8308,7 @@ provided as options for the PAW module
 are:</p>
 <pre><code>NWPW   
  CELL_NAME &lt;string cell_name default 'cell_default'&gt;   
- [GEOMETRY_OPTIMIZE]   
+
  INPUT_WAVEFUNCTION_FILENAME &lt;string input_wavefunctions default input_movecs&gt;   
  OUTPUT_WAVEFUNCTION_FILENAME &lt;string output_wavefunctions default input_movecs&gt;   
  FAKE_MASS &lt;real fake_mass default 400000.0&gt;   
@@ -8480,7 +8337,7 @@ END
 <ul>
 <li><code>cell_name</code> - name of the the simulation_cell named <code>cell_name</code>.
     The current version of PAW only accepts periodic unit cells. See
-    <a href="#simulation-cell">Simulation Cell</a>.</li>
+    (#simulation-cell).</li>
 <li>GEOMETRY_OPTIMIZE - optional keyword which if specified turns on
     geometry optimization.</li>
 <li><code>input_wavefunctions</code> - name of the file containing one-electron
@@ -8521,8 +8378,8 @@ END
     the spin multiplicity of the system</li>
 <li>INTEGRATE_MULT_L - optional keyword which if specified allows the
     user to define the angular XC integration of the augmented region</li>
-<li>SIMULATION_CELL (see <a href="#simulation-cell">Simulation Cell</a> )</li>
-<li>CAR-PARRINELLO (see <a href="#car-parrinello-scheme-for-ab-initio-molecular-dynamics">Car-Parrinello</a>)</li>
+<li>SIMULATION_CELL (see (#simulation-cell) )</li>
+<li>CAR-PARRINELLO (see (#car-parrinello-scheme-for-ab-initio-molecular-dynamics))</li>
 <li><code>mapping</code> - for a value of 1 slab FFT is used, for a value of 2 a
     2d-Hilbert FFT is used.</li>
 </ul>
@@ -8681,19 +8538,19 @@ real r_semicore :: semicore radius
 real rho_semicore(nr) :: semicore density  
 </code></pre>
 <p>and the format of it is:</p>
-<pre><code>[line 1: ] element [line 2: ] charge mass lmax  
-[line 3: ] (rcut(l), l=1,lmax)  
-[line 4: ] nr dr  
-[line 5: ] r(1) (Vpsp(1,l), l=1,lmax)  
-[line 6: ] ....  
-[line nr+4: ] r(nr) (Vpsp(nr,l), l=1,lmax)  
-[line nr+5: ] r(1) (psi(1,l), l=1,lmax) [line nr+6: ] ....  
-[line 2*nr+4:] r(nr) (psi(nr,l), l=1,lmax)  
-[line 2*nr+5:] r_semicore  
+<pre><code> element  charge mass lmax  
+ (rcut(l), l=1,lmax)  
+ nr dr  
+ r(1) (Vpsp(1,l), l=1,lmax)  
+ ....  
+ r(nr) (Vpsp(nr,l), l=1,lmax)  
+ r(1) (psi(1,l), l=1,lmax)  ....  
+ r(nr) (psi(nr,l), l=1,lmax)  
+ r_semicore  
 if (r_semicore read) then  
- [line 2*nr+6:] r(1) rho_semicore(1)  
- [line 2*nr+7:] ....  
- [line 3*nr+5:] r(nr) rho_semicore(nr)  
+  r(1) rho_semicore(1)  
+  ....  
+  r(nr) rho_semicore(nr)  
 end if
 </code></pre>
 <h2 id="car-parrinello-scheme-for-ab-initio-molecular-dynamics">Car-Parrinello Scheme for Ab Initio Molecular Dynamics<a class="headerlink" href="#car-parrinello-scheme-for-ab-initio-molecular-dynamics" title="Permanent link">&para;</a></h2>
@@ -8702,14 +8559,14 @@ molecular dynamics by combining the motion of the ion cores and a
 fictitious motion for the Kohn-Sham orbitals of density-functional
 theory (R. Car and M. Parrinello, Phys. Rev. Lett. <strong>55</strong>, 2471, (1985)
 - simple introduction
-<a href="cpmd-lecture.pdf">cpmd-lecture.pdf</a>). At the
+(cpmd-lecture.pdf)). At the
 heart of this method they introduced a fictitious kinetic energy
 functional for the Kohn-Sham
 orbitals.</p>
-<div class="arithmatex">\[\begin{align}KE \left ( \bigl[ \psi_{i,\sigma}(\vec{r}) \bigr] \right ) = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2\end{align}\]</div>
+<div class="arithmatex">\[\begin{align}KE \left ( \bigl \right ) = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2\end{align}\]</div>
 <p>Given this kinetic energy the constrained equations of motion are found
 by taking the first variation of the auxiliary Lagrangian.</p>
-<div class="arithmatex">\[ L = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2;     + \frac{1}{2} \sum_{I} M_I \left | \dot{\vec{R}}_{I} \right | ^2 - E \left [  \bigl[ \psi_{i,\sigma}(\vec{r})  \bigr] , \bigl[ \vec{R}_I  \bigr] \right ] \\ + \sum_{ij,\sigma} \Lambda_{ij,\sigma} \left ( \int d\vec{r}\ \psi_{i,\sigma}^{*}(\vec{r}) \psi_{j,\sigma}(\vec{r}) - \delta_{ij\sigma} \right )\]</div>
+<div class="arithmatex">\[ L = \sum_{i,\sigma}^{occ} \int d\vec{r}\ \mu \left | \dot{\psi}_{i,\sigma}(\vec{r}) \right | ^2;     + \frac{1}{2} \sum_{I} M_I \left | \dot{\vec{R}}_{I} \right | ^2 - E \left  , \bigl \right ] \\ + \sum_{ij,\sigma} \Lambda_{ij,\sigma} \left ( \int d\vec{r}\ \psi_{i,\sigma}^{*}(\vec{r}) \psi_{j,\sigma}(\vec{r}) - \delta_{ij\sigma} \right )\]</div>
 <p>Which generates a dynamics for the wavefunctions
 <span class="arithmatex">\(\psi_{i,\sigma}(\vec{r})\)</span> and atoms positions <span class="arithmatex">\(\vec{R}_I\)</span> through
 the constrained equations of motion:</p>
@@ -8742,7 +8599,7 @@ energy that accounts for low-lying excited electronic states.</p>
 <h3 id="verlet-algorithm-for-integration">Verlet Algorithm for Integration<a class="headerlink" href="#verlet-algorithm-for-integration" title="Permanent link">&para;</a></h3>
 <p>Integrating the Eqns. above using the Verlet algorithm results
 in</p>
-<div class="arithmatex">\[\begin{matrix}\psi_{i,\sigma}^{t+ \Delta t} \leftarrow 2 \psi_{i,\sigma}^{t} - \psi_{i,\sigma}^{t-\Delta t} + \frac{(\Delta t)^2}{\mu} \left[ \frac{\delta E}{\delta \psi_{i,\sigma}^{*}} + \sum_{j} \psi_{j,\sigma} \Lambda_{ji,\sigma} \right]_{t} \end{matrix}\]</div>
+<div class="arithmatex">\[\begin{matrix}\psi_{i,\sigma}^{t+ \Delta t} \leftarrow 2 \psi_{i,\sigma}^{t} - \psi_{i,\sigma}^{t-\Delta t} + \frac{(\Delta t)^2}{\mu} \left_{t} \end{matrix}\]</div>
 <div class="arithmatex">\[\begin{matrix}\vec{R}_I^{t+\Delta t} \leftarrow 2 \vec{R}_I^{t} - \vec{R}_I^{t-\Delta t} + \frac{(\Delta t)^2}{M_I} \frac{\partial E}{\partial \vec{R}_I}\end{matrix}\]</div>
 <p>In this molecular dynamic procedure we have to know variational
 derivative  </p>
@@ -8794,10 +8651,10 @@ are scaled according to an exponential cooling schedule,</p>
 <span class="arithmatex">\(\tau_e\)</span> and <span class="arithmatex">\(\tau_{ionic}\)</span> are the cooling rates in atomic units.</p>
 <h2 id="nwpw-tutorial-1-s2-dimer-examples-with-pspw">NWPW Tutorial 1: S<sub>2</sub> dimer examples with PSPW<a class="headerlink" href="#nwpw-tutorial-1-s2-dimer-examples-with-pspw" title="Permanent link">&para;</a></h2>
 <p>A description of all the examples in NWPW Tutorial 1 can be found in the
-attached pdf <a href="nwpwexample1.pdf">nwpwexample1.pdf</a></p>
+attached pdf (nwpwexample1.pdf)</p>
 <h3 id="total-energy-of-s2-dimer-with-lda-approximation">Total energy of S<sub>2</sub> dimer with LDA approximation<a class="headerlink" href="#total-energy-of-s2-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="s2-example1.nw">Media:s2-example1.nw</a>,
-output:<a href="s2-example1.nwout">Media:s2-example1.nwout</a>)</p>
+<p>(input:(s2-example1.nw),
+output:(s2-example1.nwout))</p>
 <p>In this example, the total energy of the S<sub>2</sub> dimer using LDA
 approximation for the exchange-correlation functional is calculated.</p>
 <pre><code> echo  
@@ -8853,8 +8710,8 @@ be</p>
  ...
 </code></pre>
 <h3 id="structural-optimization-of-s2-dimer-with-lda-approximation">Structural optimization of S<sub>2</sub> dimer with LDA approximation<a class="headerlink" href="#structural-optimization-of-s2-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="s2-example2.nw">Media:s2-example2.nw</a>,
-output:<a href="s2-example2.nwout">Media:s2-example2.nwout</a>)</p>
+<p>(input:(s2-example2.nw),
+output:(s2-example2.nwout))</p>
 <p>In this example, the structure of the S<sub>2</sub> dimer using results
 generated from prior energy calculation is calculated. Since most of the
 parameters are already stored in the run-time database the input is very
@@ -8930,8 +8787,8 @@ be</p>
  ...
 </code></pre>
 <h3 id="frequency-calculation-of-s2-dimer-with-lda-approximation">Frequency calculation of S<sub>2</sub> dimer with LDA approximation<a class="headerlink" href="#frequency-calculation-of-s2-dimer-with-lda-approximation" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="s2-example3.nw">Media:s2-example3.nw</a>,
-output:<a href="s2-example3.nwout">Media:s2-example3.nwout</a>)</p>
+<p>(input:(s2-example3.nw),
+output:(s2-example3.nwout))</p>
 <p>In this example, the vibrational frequency of the S<sub>2</sub> dimer using
 results generated from prior geometry optimization is calculated. Since
 most of the parameters are already stored in the run-time database the
@@ -8971,7 +8828,7 @@ generated</p>
  ...  
   ----------------------------------------------------------------------------  
   Normal Eigenvalue ||           Projected Infra Red Intensities  
-   Mode   [cm**-1]  || [atomic units] [(debye/angs)**2] [(KM/mol)] [arbitrary]  
+   Mode     ||      
   ------ ---------- || -------------- ----------------- ---------- -----------  
      1        0.000 ||    0.000030           0.001         0.029       0.000  
      2        0.000 ||    2.466908          56.914      2404.864      15.000  
@@ -8983,14 +8840,14 @@ generated</p>
  ...
 </code></pre>
 <h3 id="ab-initio-molecular-dynamics-simulation-car-parrinello-of-s2-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Car-Parrinello) of S<sub>2</sub> dimer using the LDA approximation<a class="headerlink" href="#ab-initio-molecular-dynamics-simulation-car-parrinello-of-s2-dimer-using-the-lda-approximation" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="s2-example4.nw">Media:s2-example4.nw</a>,
-output:<a href="s2-example4.nwout">Media:s2-example4.nwout</a>
-<a href="s2-md.xyz">Media:s2-md.xyz</a>
-<a href="s2-md.emotion.dat">Media:s2-md.emotion.dat</a> )</p>
+<p>(input:(s2-example4.nw),
+output:(s2-example4.nwout)
+(s2-md.xyz)
+(s2-md.emotion.dat) )</p>
 <p>In this example, a constant energy Car-Parrinello simulation of S<sub>2</sub>
 dimer using LDA approximation is calculated. A brief introduction to the
 Car-Parrinello method can be found in
-<a href="cpmd-lecture.pdf">cpmd-lecture.pdf</a></p>
+(cpmd-lecture.pdf)</p>
 <pre><code> echo  
  title &quot;AIMD simulation of s2-dimer&quot;  
  scratch_dir   ./scratch  
@@ -9020,7 +8877,7 @@ Car-Parrinello method can be found in
 </code></pre>
 <p>A plotting program (e.g. gnuplot, xmgrace) can be used to look at the
 total, potential, kinetic energies, contained in the s2-md.emotion file
-(see section <a href="#emotion-motion-file">EMOTION motion file</a> for
+(see section (#emotion-motion-file) for
 datafile format)
 i.e.,</p>
 <pre><code> seattle-1604% gnuplot  
@@ -9056,10 +8913,10 @@ energy surface generated from the
 simulation.</p>
 <p><img alt="s2-md" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/s2-md.png" align=middle with="600pt" height="450pt"/>  </p>
 <h3 id="ab-initio-molecular-dynamics-simulation-born-oppenheimer-of-ssub2-dimer-using-the-lda-approximation">Ab initio molecular dynamics simulation (Born-Oppenheimer) of S&lt;sub2</sub> dimer using the LDA approximation<a class="headerlink" href="#ab-initio-molecular-dynamics-simulation-born-oppenheimer-of-ssub2-dimer-using-the-lda-approximation" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="s2-example5.nw">Media:s2-example5.nw</a>,
-output:<a href="s2-example5.nwout">Media:s2-example5.nwout</a>
-<a href="s2-bomd.xyz">Media:s2-bomd.xyz</a>
-<a href="s2-bomd.emotion.dat">Media:s2-bomd.emotion.dat</a> ) In
+<p>(input:(s2-example5.nw),
+output:(s2-example5.nwout)
+(s2-bomd.xyz)
+(s2-bomd.emotion.dat) ) In
 this example, a constant energy Born-Oppenheimer simulation of S2 dimer
 using LDA approximation is calculated.</p>
 <pre><code>title &quot;AIMD simulation of s2-dimer&quot; 
@@ -9128,12 +8985,12 @@ prevalence, ab initio calculations performed by several researchers have
 will have a more open geometry.</p>
 <p><img alt="boron" src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/boron.png" align=middle with="600pt" height="246pt"/>  </p>
 <h3 id="simulated-annealing-using-constant-energy-simulation">Simulated Annealing Using Constant Energy Simulation<a class="headerlink" href="#simulated-annealing-using-constant-energy-simulation" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="b12-example2a.nw">Media:b12-example2a.nw</a>,
-output:<a href="b12-example2a.nwout">Media:b12-example2a.nwout</a>
-<a href="b12.00.xyz">Media:b12.00.xyz</a>
-<a href="b12.00.emotion.dat">Media:b12.00.emotion.dat</a>
-<a href="b12.01.xyz">Media:b12.01.xyz</a>
-<a href="b12.01.emotion.dat">Media:b12.01.emotion.dat</a>)</p>
+<p>(input:(b12-example2a.nw),
+output:(b12-example2a.nwout)
+(b12.00.xyz)
+(b12.00.emotion.dat)
+(b12.01.xyz)
+(b12.01.emotion.dat))</p>
 <p>This example uses a series of constant energy Car-Parrinello simulations
 with velocity scaling to do simulated annealing. The initial four
 Car-Parrinello simulations are used to heat up the system to several
@@ -9192,14 +9049,14 @@ off this feature set the following</p>
 <pre><code> set nwpw:com_shift .false.
 </code></pre>
 <h3 id="simulated-annealing-using-constant-temperature-simulation">Simulated Annealing Using Constant Temperature Simulation<a class="headerlink" href="#simulated-annealing-using-constant-temperature-simulation" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="b12-example2b.nw">Media:b12-example2b.nw</a>,
-output:<a href="b12-example2b.nwout">Media:b12-example2b.nwout</a>
-<a href="b12.10.xyz">Media:b12.10.xyz</a>
-<a href="b12.10.emotion.dat">Media:b12.10.emotion.dat</a>
-<a href="b12.11.xyz.gz">Media:b12.11.xyz.gz</a>
-<a href="b12.11.emotion.dat">Media:b12.11.emotion.dat</a>)</p>
+<p>(input:(b12-example2b.nw),
+output:(b12-example2b.nwout)
+(b12.10.xyz)
+(b12.10.emotion.dat)
+(b12.11.xyz.gz)
+(b12.11.emotion.dat))</p>
 <p>(mpeg movie of simulation:
-<a href="boron.mpg">Media:boron.mpg</a>)</p>
+(boron.mpg))</p>
 <p>The simulated annealing calculation in this example uses a constant
 temperature Car-Parrinello simulation with an exponential cooling
 schedule,</p>
@@ -9222,8 +9079,8 @@ Input</p>
  ….
 </code></pre>
 <h2 id="nwpw-tutorial-3-using-isodesmic-reaction-energies-to-estimate-gas-phase-thermodynamics">NWPW Tutorial 3: using isodesmic reaction energies to estimate gas-phase thermodynamics<a class="headerlink" href="#nwpw-tutorial-3-using-isodesmic-reaction-energies-to-estimate-gas-phase-thermodynamics" title="Permanent link">&para;</a></h2>
-<p>(<a href="isodesmic.pdf">isodesmic.pdf</a>
-<a href="isodesmic.tgz">isodesmic.tgz</a>)</p>
+<p>((isodesmic.pdf)
+(isodesmic.tgz))</p>
 <p>The development of a computational scheme that can accurately predict
 reaction energies requires some care. As shown in Table 1 energy errors
 associated with ab initio calculations can be quite high. Even though ab
@@ -9284,14 +9141,14 @@ theory.</p>
 </table>
 <p>Table 1: Standard enthalpy of formation (ΔH<span class="arithmatex">\(_f^o\)</span>(298K) for
 CCl<span class="arithmatex">\(_3\)</span>SH in kcal/mol from atomization energies with various
-electronic structure methods. Results taken from reference [2].</p>
+electronic structure methods. Results taken from reference .</p>
 <p>Differences of up to 106.5 kcal/mol are found between different levels
 of theory. This example demonstrates that care must be taken in choosing
 the appropriate method for calculating the heats of formation from total
 atomization energies.</p>
 <p>The difficulties associated with calculating absolute heats of formation
 from atomization energies can be avoided by using a set of isodesmic
-reactions[1]. The defining property of an isodesmic reaction - that
+reactions. The defining property of an isodesmic reaction - that
 there are an equal number of like bonds on the left-hand and right-hand
 sides of the reaction - helps to minimize the error in the reaction
 energy. These reactions are designed to separate out the interactions
@@ -9331,7 +9188,7 @@ the SCF, DFT, MP2, and TCE modules.</p>
 <p>Un-optimized geometries for CCl<span class="arithmatex">\(_3\)</span>SH, CH<span class="arithmatex">\(_3\)</span>SH, CCl<span class="arithmatex">\(_3\)</span>H and
 CH<span class="arithmatex">\(_4\)</span> which are needed to design your simulations are contained in
 the file
-<a href="thermodynamics.xyz">Media:thermodynamics.xyz</a>. You
+(thermodynamics.xyz). You
 will also need to calculate the energies for the H, C, S, and Cl atoms
 to calculate the atomization energies. The multiplicities for these
 atoms are 2, 3, 3 and 2 respectively. You will also need to calculate
@@ -9442,7 +9299,7 @@ Cv (constant volume heat capacity) =    6.503 cal/mol-K
 </table>
 <p>Table 2: Gas-phase standard enthalpies of formation ( ΔH<span class="arithmatex">\(_f^o\)</span>(298K))
 in kcal/mol from isodesmic reactions and G2 Theory calculations taken
-from [3].</p>
+from .</p>
 <table>
 <thead>
 <tr>
@@ -9502,7 +9359,7 @@ from [3].</p>
 </tbody>
 </table>
 <p>Table 3: Miscellaneous experimental gas-phase enthalpies of formation
-(kcal/mol) taken from [3].</p>
+(kcal/mol) taken from .</p>
 <ol>
 <li>Hehre, W. J., L. Radom, P.v.R. Schleyer, and J.A. Pople Ab Initio
     Molecular Orbital Theory; John Wiley &amp; Sons: New York, 1986).</li>
@@ -9514,8 +9371,8 @@ from [3].</p>
     1-1951.</li>
 </ol>
 <h2 id="nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o">NWPW Tutorial 4: AIMD/MM simulation of CCl<span class="arithmatex">\(_4\)</span> + 64 H<span class="arithmatex">\(_2\)</span>O<a class="headerlink" href="#nwpw-tutorial-4-aimdmm-simulation-of-ccl_4-64-h_2o" title="Permanent link">&para;</a></h2>
-<p>(input:<a href="ccl4-64water.nw">Media:ccl4-64water.nw</a>,
-output:<a href="ccl4-64water.nwout">Media:ccl4-64water.nwout</a>)</p>
+<p>(input:(ccl4-64water.nw),
+output:(ccl4-64water.nwout))</p>
 <p>In this section we show how use the PSPW module to perform a
 Car-Parrinello AIMD/MM simulation for a CCl<span class="arithmatex">\(_4\)</span> molecule in a box of
 64 H<span class="arithmatex">\(_2\)</span>O. Before running a PSPW Car-Parrinello simulation the system
@@ -9534,11 +9391,11 @@ of crystalline systems. It can also be used to generate band structure
 and density of state
 plots.</p>
 <h3 id="optimizing-the-unit-cell-and-geometry-for-an-8-atom-supercell-of-diamond-with-pspw">Optimizing the Unit Cell and Geometry for an 8 Atom Supercell of Diamond with PSPW<a class="headerlink" href="#optimizing-the-unit-cell-and-geometry-for-an-8-atom-supercell-of-diamond-with-pspw" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="diamond-pspw.nw">Media:diamond-pspw.nw</a>,
-output:<a href="diamond-pspw.nwout">Media:diamond-pspw.nwout</a>,
-<a href="diamond.opt.cif">Media:diamond.opt.cif</a>)</p>
-<p>(input:<a href="catom-pspw.nw">Media:catom-pspw.nw</a>,
-output:<a href="catom-pspw.nwout">Media:catom-pspw.nwout</a>)</p>
+<p>(input:(diamond-pspw.nw),
+output:(diamond-pspw.nwout),
+(diamond.opt.cif))</p>
+<p>(input:(catom-pspw.nw),
+output:(catom-pspw.nwout))</p>
 <p>The following example uses the PSPW module to optimize the unit cell and
 geometry for a diamond crystal. The fractional coordinates and the unit
 cell are defined in the geometry block. The simulation_cell block is
@@ -9691,8 +9548,8 @@ the energies of the isolated atoms. In order to calculate the cohesive
 energy the energy of an isolated carbon atom at the same level of theory
 and cutoff energy will need to be calculated. The following input can be
 used to the energy of an isolated carbon atom.</p>
-<p>(input:<a href="catom-pspw.nw">file:catom-pspw.nw</a>,
-output:<a href="catom-pspw.nwout">file:catom-pspw.nwout</a>)</p>
+<p>(input:(catom-pspw.nw),
+output:(catom-pspw.nwout))</p>
 <pre><code>title &quot;triplet carbon atom at pbe96 level using a large unit cell&quot;  
 start c1-pspw  
 memory 1400 mb  
@@ -9728,8 +9585,8 @@ sampling). In the next section, we show how increasing the Brillouin
 zone sampling reduces the error in the calculated cohesive
 energy.</p>
 <h3 id="optimizing-the-unit-cell-for-an-8-atom-supercell-of-diamond-with-band">Optimizing the Unit Cell for an 8 Atom Supercell of Diamond with BAND<a class="headerlink" href="#optimizing-the-unit-cell-for-an-8-atom-supercell-of-diamond-with-band" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="diamond-band.nw">Media:diamond-band.nw</a>,
-output:<a href="diamond-band.nwout">Media:diamond-band.nwout</a>)</p>
+<p>(input:(diamond-band.nw),
+output:(diamond-band.nwout))</p>
 <p>In this example the BAND module is used to optimize the unit cell and
 geometry for a diamond crystal at different Brillouin zone
 samplings.</p>
@@ -9815,8 +9672,8 @@ distance agree very well with the experimental values of 7.37 eV
 Angs.</p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/ecohdist.png" align=middle with="792pt" height="612pt"/>  </p>
 <h3 id="using-band-to-optimize-the-unit-cell-for-a-2-atom-primitive-cell-of-diamond">Using BAND to Optimize the Unit Cell for a 2 Atom Primitive Cell of Diamond<a class="headerlink" href="#using-band-to-optimize-the-unit-cell-for-a-2-atom-primitive-cell-of-diamond" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="diamond-fcc.nw">Media:diamond-fcc.nw</a>,
-output:<a href="diamond-fcc.nwout.gz">Media:diamond-fcc.nwout.gz</a>)</p>
+<p>(input:(diamond-fcc.nw),
+output:(diamond-fcc.nwout.gz))</p>
 <p>In this example the BAND module is used to optimize a 2 atom unit cell
 for a diamond crystal at different Brillouin zone samplings. The
 optimized energy and geometry will be (Monkhorst-Pack sampling of
@@ -9882,9 +9739,9 @@ and the 2 atom FCC unit
 cell.</p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/band-fcc.png" align=middle with="792pt" height="612pt"/>  </p>
 <h3 id="using-band-to-calculate-the-band-structures-of-diamond">Using BAND to Calculate the Band Structures of Diamond<a class="headerlink" href="#using-band-to-calculate-the-band-structures-of-diamond" title="Permanent link">&para;</a></h3>
-<p>(input:<a href="diamond-structure.nw">Media:diamond-structure.nw</a>,
-output:<a href="diamond-structure.nwout">Media:diamond-structure.nwout</a>,
-<a href="diamondfcc.restricted_band.dat">file:diamondfcc.restricted_band.dat</a>)</p>
+<p>(input:(diamond-structure.nw),
+output:(diamond-structure.nwout),
+(diamondfcc.restricted_band.dat))</p>
 <p>The following example uses the BAND module to calculate the band
 structure for the FCC cell of the a diamond crystal. The fractional
 coordinates and the unit cell are defined in the geometry block. The
@@ -9938,19 +9795,19 @@ end
 task band structure
 </code></pre>
 <p>This calculation outputs the
-<a href="diamondfcc.restricted_band.dat">file:diamondfcc.restricted_band.dat</a>)
+(diamondfcc.restricted_band.dat))
 data file in the permanent_directory. A plotting (e.g. gnuplot or
 xmgrace) can be used to display the band structure.</p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/band-structure.png" align=middle with="792pt" height="612pt"/>  </p>
 <h3 id="using-band-to-calculate-the-density-of-states-of-diamond">Using BAND to Calculate the Density of States of Diamond<a class="headerlink" href="#using-band-to-calculate-the-density-of-states-of-diamond" title="Permanent link">&para;</a></h3>
 <p>(2 atom cell -
-input:<a href="diamond-dos.nw">diamond-dos.nw</a>
-output:<a href="diamond-dos.nwout">diamond-dos.nwout</a>,
-<a href="diamond-dos.dos.dat">diamond-dos.dos.dat</a> (8
+input:(diamond-dos.nw)
+output:(diamond-dos.nwout),
+(diamond-dos.dos.dat) (8
 atom cell -
-input:<a href="diamond-dos8.nw">diamond-dos8.nw</a> output:
-<a href="diamond-dos8.nwout.gz">diamond-dos8.nwout.gz</a>,
-<a href="diamond-dos8.dos.dat">diamond-dos8.dos.dat</a></p>
+input:(diamond-dos8.nw) output:
+(diamond-dos8.nwout.gz),
+(diamond-dos8.dos.dat)</p>
 <p>There are two possible ways to use the BAND module to calculate the density and projected density of states.  The first approach just uses the eigenvalues generated from an energy calculation to generate a density of states.  The following example uses this strategy to calculate the density of states and projected density of states of diamond.</p>
 <pre><code>title &quot;Diamond 2 atom fcc cell Brillouin sampling=9x9x9 M-P - density of states plot&quot;  
 echo  
@@ -10035,7 +9892,7 @@ nwpw
 end  
 task band dos
 </code></pre>
-<p>This calculation outputs the <img alt="diamond-dos.dos.dat" src="diamond-dos.dos.dat" /> data file in the permanent_directory. A plotting
+<p>This calculation outputs the !(diamond-dos.dos.dat) data file in the permanent_directory. A plotting
 (e.g. gnuplot or xmgrace) can be used to display the density of
 states.</p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/band-dos.png" align=middle with="792pt" height="612pt"/>  </p>
@@ -10078,8 +9935,8 @@ task band freq
 
 </code></pre>
 <h2 id="nwpw-tutorial-6-optimizing-the-unit-cell-of-nickel-with-fractional-occupation">NWPW Tutorial 6: optimizing the unit cell of nickel with fractional occupation<a class="headerlink" href="#nwpw-tutorial-6-optimizing-the-unit-cell-of-nickel-with-fractional-occupation" title="Permanent link">&para;</a></h2>
-<p>(input:<a href="Ni-band.nw">Media:Ni-band.nw</a>
-output:<a href="Ni-band.nwout">Media:Ni-band.nwout</a>) The
+<p>(input:(Ni-band.nw)
+output:(Ni-band.nwout)) The
 following example demonstrates how to uses the BAND module to optimize
 the unit cell and geometry for FCC cell of Nickel
 metal</p>
@@ -10173,11 +10030,11 @@ Angs.</p>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/niecohdist.png" align=middle with="792pt" height="612pt"/>  </p>
 <h2 id="nwpw-tutorial-7-optimizing-the-unit-cells-with-symmetry-diamond-with-fd-3m-symmetry-and-brucite-with-p-3m1-symmetry">NWPW Tutorial 7: Optimizing the unit cells with symmetry: Diamond with Fd-3m symmetry and Brucite with P-3m1 symmetry<a class="headerlink" href="#nwpw-tutorial-7-optimizing-the-unit-cells-with-symmetry-diamond-with-fd-3m-symmetry-and-brucite-with-p-3m1-symmetry" title="Permanent link">&para;</a></h2>
 <p>(Diamond example,
-input:<a href="diamond-symmetry.nw">Media:diamond-symmetry.nw</a>,
-output:<a href="diamond-symmetry.nwout">Media:diamond-symmetry.nwout</a>)</p>
+input:(diamond-symmetry.nw),
+output:(diamond-symmetry.nwout))</p>
 <p>(Brucite example,
-input:<a href="brucite-symmetry.nw">Media:brucite-symmetry.nw</a>,
-output:<a href="brucite-symmetry.nwout">Media:brucite-symmetry.nwout</a>)</p>
+input:(brucite-symmetry.nw),
+output:(brucite-symmetry.nwout))</p>
 <p>The following example uses the BAND module to optimize the unit cell and
 geometry for a Diamond crystal with Fd-3m symmetry. The fractional
 coordinates, unit cell, and symmetry are defined in the geometry
@@ -10331,10 +10188,10 @@ Setting number            1
 ==============================================================================
 </code></pre>
 <p>The following example uses the BAND module to optimize the unit cell and
-geometry for a <a href="http://en.wikipedia.org/wiki/Brucite">Brucite</a> crystal
+geometry for a (http://en.wikipedia.org/wiki/Brucite) crystal
 (Mg(OH)<sub>2</sub> with P-3m1
 symmetry.</p>
-<p><img alt="400px" src="Brucite-small.jpg" /></p>
+<p>!(./Brucite-small.jpg)</p>
 <pre><code>title &quot;brucite testing - using P-3m1 symmetry&quot;  
 echo  
 
@@ -10401,8 +10258,8 @@ steps,</p>
 </code></pre>
 <p>whereas, without symmetry the optimization may not be converged even at
 100 geometry steps
-(input:<a href="brucite-nosymmetry.nw">Media:brucite-nosymmetry.nw</a>,
-output:<a href="brucite-nosymmetry.nwout">Media:brucite-nosymmetry.nwout</a>).</p>
+(input:(brucite-nosymmetry.nw),
+output:(brucite-nosymmetry.nwout)).</p>
 <pre><code>@ Step       Energy      Delta E   Gmax     Grms     Xrms     Xmax   Walltime  
 @ ---- ---------------- -------- -------- -------- -------- -------- --------  
 @    0     -34.39207476  0.0D+00  0.24673  0.10250  0.00000  0.00000     18.4  
@@ -10419,12 +10276,12 @@ output:<a href="brucite-nosymmetry.nwout">Media:brucite-nosymmetry.nwout</a>).</
 <h2 id="nwpw-tutorial-8-nvt-metropolis-monte-carlo-simulations">NWPW Tutorial 8: NVT Metropolis Monte-Carlo Simulations<a class="headerlink" href="#nwpw-tutorial-8-nvt-metropolis-monte-carlo-simulations" title="Permanent link">&para;</a></h2>
 <p>In this example the PSPW module is used to run an NVT simulation for a
 diamond crystal using the a Metropolis Monte-Carlo algorithm.</p>
-<!-- (input:[Media:diamond-nvt.nw](diamond-nvt.nw.md),
-output:[Media:diamond-nvt.nwout.gz](diamond-nvt.nwout.gz.md),
-datafiles:[Media:diamond-nvt.emotion.gz](diamond-nvt.emotion.gz.md),
-[Media:diamond-nvt.ion_motion.gz](diamond-nvt.ion_motion.gz.md),
-[Media:diamond-nvt.xyz.gz](diamond-nvt.xyz.gz.md),
-[Media:diamond_nvt_234.cif.gz](diamond_nvt_234.cif.gz.md)) -->
+<!-- (input:(diamond-nvt.nw.md),
+output:(diamond-nvt.nwout.gz.md),
+datafiles:(diamond-nvt.emotion.gz.md),
+(diamond-nvt.ion_motion.gz.md),
+(diamond-nvt.xyz.gz.md),
+(diamond_nvt_234.cif.gz.md)) -->
 
 <p><img alt="NVT Metropolis Monte-Carlo Trajectory (Markov Chain) for diamond,
 T=300K." src="diamond-nvt.gif" title="NVT Metropolis Monte-Carlo Trajectory (Markov Chain.md) for diamond, T=300K." /></p>
@@ -10498,12 +10355,12 @@ task pspw Metropolis
 <p>In this example the PSPW module is used to run an NPT simulation for a
 diamond crystal using the a Metropolis Monte-Carlo
 algorithm.</p>
-<p>(input:<a href="diamond-metropolis.nw">Media:diamond-metropolis.nw</a>,
-output:<a href="diamond-metropolis.nwout.gz">Media:diamond-metropolis.nwout.gz</a>,
-datafiles:<a href="diamond-metropolis.emotion.gz">Media:diamond-metropolis.emotion.gz</a>,
-<a href="diamond-metropolis.ion_motion.gz">Media:diamond-metropolis.ion_motion.gz</a>,
-<a href="diamond-metropolis.xyz.gz">Media:diamond-metropolis.xyz.gz</a>,
-<a href="diamond_metropolis_1234.cif.gz">Media:diamond_metropolis_1234.cif.gz</a>)</p>
+<p>(input:(diamond-metropolis.nw),
+output:(diamond-metropolis.nwout.gz),
+datafiles:(diamond-metropolis.emotion.gz),
+(diamond-metropolis.ion_motion.gz),
+(diamond-metropolis.xyz.gz),
+(diamond_metropolis_1234.cif.gz))</p>
 <pre><code>title &quot;Metropolis NPT simulation of diamond - this input is used to put the system in equilibrium&quot;  
 echo  
 
@@ -10564,10 +10421,10 @@ end
 task pspw Metropolis
 </code></pre>
 <p><img alt=" " src="https://raw.githubusercontent.com/wiki/nwchemgit/nwchem/diamond-metropolis.png" align=middle with="640pt" height="480pt"/>  </p>
-<p>(inputs:<a href="diamond-metropolis-sampling.nw.tgz">Media:diamond-metropolis-sampling.nw.tgz</a>)</p>
+<p>(inputs:(diamond-metropolis-sampling.nw.tgz))</p>
 <p>(python analysis
-program:<a href="makehistogram.gz">Media:makehistogram.gz</a>)</p>
-<pre><code>[WE27972:~/Projects/NWChem/Metropolis] bylaska% makehistogram -t 300 -c 2 1235/diamond-metropolis-1235.emotion 1236/diamond-metropolis-1236.emotion   
+program:(makehistogram.gz))</p>
+<pre><code> bylaska% makehistogram -t 300 -c 2 1235/diamond-metropolis-1235.emotion 1236/diamond-metropolis-1236.emotion   
 1237/diamond-metropolis-1237.emotion 1238/diamond-metropolis-1238.emotion 1239/diamond-metropolis-1239.emotion 1240/diamond-metropolis-1240.emotion   
 1241/diamond-metropolis-1241.emotion 1242/diamond-metropolis-1242.emotion 1243/diamond-metropolis-1243.emotion 1244/diamond-metropolis-1244.emotion   
 1245/diamond-metropolis-1245.emotion 1246/diamond-metropolis-1246.emotion 1248/diamond-metropolis-1248.emotion 1249/diamond-metropolis-1249.emotion   
@@ -10578,7 +10435,7 @@ unitconversion  = 1.0
 temperature (K) = 300  
 RT (au)         = 0.000949482834326  ( 0.5958  kcal/mol)  
 
-data columns -1 = [1]  
+data columns -1 =   
 data rows (n)   = 52000  
 
 delta (au)       = 0.01  
@@ -10672,7 +10529,7 @@ Hausdorff distribution parameters:
 <p>A description of using the WHAM method for generating free energy of the
 gas-phase dissociation reaction CH<span class="arithmatex">\(_3\)</span>Cl <span class="arithmatex">\(\rightarrow\)</span> CH<span class="arithmatex">\(_3\)</span>+Cl
 can be found in the attached pdf
-(<a href="nwchem-new-pmf.pdf">nwchem-new-pmf.pdf</a>)</p>
+((nwchem-new-pmf.pdf))</p>
 <h2 id="paw-tutorial">PAW Tutorial<a class="headerlink" href="#paw-tutorial" title="Permanent link">&para;</a></h2>
 <h3 id="optimizing-a-water-molecule">Optimizing a water molecule<a class="headerlink" href="#optimizing-a-water-molecule" title="Permanent link">&para;</a></h3>
 <p>The following input deck performs for a water molecule a PSPW energy

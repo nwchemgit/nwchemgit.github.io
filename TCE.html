@@ -3986,7 +3986,7 @@ through the SciDAC program.</p>
 <li>Unrestricted iterative many-body perturbation theory [MBPT(2),
     MBPT(3), MBPT(4)] in its tensor formulation,</li>
 <li>Unrestricted coupled-cluster singles and doubles with perturbative
-    connected triples {CCSD(T), CCSD[T]},</li>
+    connected triples {CCSD(T), CCSD},</li>
 <li>Unrestricted equation-of-motion coupled-cluster theory (EOM-CCSD,
     EOM-CCSDT, EOM-CCSDTQ) for excitation energies, transition moments
     and oscillator strengths, and excited-state dipole moments,</li>
@@ -4174,37 +4174,37 @@ To perform a single-point energy calculation, include</p>
 <p>in the input file, which may be preceded by the TCE input block that
 details the calculations:</p>
 <pre><code> TCE
-   [(DFT||HF||SCF) default HF=SCF]
-   [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
-            [virtual &lt;integer nfzv default 0&gt;]]
+
+    (atomic || &lt;integer nfzc default 0&gt;)] \
+            ]
    [(LCCD||CCD||CCSD||CC2||LR-CCSD||LCCSD||CCSDT||CCSDTA||CCSDTQ|| \
-     CCSD(T)||CCSD[T]||CCSD(2)_T||CCSD(2)||CCSDT(2)_Q|| \
-     CR-CCSD[T]||CR-CCSD(T)|| \
+     CCSD(T)||CCSD||CCSD(2)_T||CCSD(2)||CCSDT(2)_Q|| \
+     CR-CCSD||CR-CCSD(T)|| \
      LR-CCSD(T)||LR-CCSD(TQ)-1||CREOMSD(T)|| \
      QCISD||CISD||CISDT||CISDTQ|| \
      MBPT2||MBPT3||MBPT4||MP2||MP3||MP4) default CCSD]
-   [THRESH &lt;double thresh default 1e-6&gt;]
-   [MAXITER &lt;integer maxiter default 100&gt;]
+
+
    [PRINT (none||low||medium||high||debug)
      &lt;string list_of_names ...&gt;]
-   [IO (fortran||eaf||ga||sf||replicated||dra||ga_eaf) default ga]
-   [DIIS &lt;integer diis default 5&gt;]
-   [LSHIFT &lt;double lshift default is 0.0d0&gt;]
-   [NROOTS &lt;integer nroots default 0&gt;]
-   [TARGET &lt;integer target default 1&gt;]
-   [TARGETSYM &lt;character targetsym default 'none'&gt;]
-   [SYMMETRY]
-   [2EORB]
-   [2EMET &lt;integer fast2e default 1&gt;]
-   [T3A_LVL] 
-   [ACTIVE_OA]
-   [ACTIVE_OB]
-   [ACTIVE_VA]
-   [ACTIVE_VB]
-   [DIPOLE]
-   [TILESIZE &lt;no default (automatically adjusted)&gt;]
-   [(NO)FOCK &lt;logical recompf default .true.&gt;]
-   [FRAGMENT &lt;default -1 (off)&gt;]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  END
 </code></pre>
 <p>Also supported are energy gradient calculation, geometry optimization,
@@ -4348,8 +4348,8 @@ LDA.</p>
 <li>CCSDTQ: coupled-cluster singles, doubles, triples, &amp; quadruples
     (also EOM-CCSDTQ),</li>
 <li>CCSD(T): CCSD and perturbative connected triples,</li>
-<li>CCSD[T]: CCSD and perturbative connected triples,</li>
-<li>CR-CCSD[T]: completely renormalized CCSD[T] method,</li>
+<li>CCSD: CCSD and perturbative connected triples,</li>
+<li>CR-CCSD: completely renormalized CCSD method,</li>
 <li>CR-CCSD(T): completely renormalized CCSD(T) method,</li>
 <li>CCSD(2)_T: CCSD and perturbative CCSD(T)_T correction,</li>
 <li>CCSD(2)_TQ: CCSD and perturbative CCSD(2) correction,</li>
@@ -5152,7 +5152,7 @@ DK or other relativistic reference, <code>NOFOCK</code> must be set and orbital
 energies must be used for the Fock matrix.</p>
 <h3 id="densmat">DENSMAT<a class="headerlink" href="#densmat" title="Permanent link">&para;</a></h3>
 <p>Generate Density Matrix that can be used in the DPLOT module as described in
-the <a href="DPLOT.html#example-of-ccsd-charge-density-plot-with-gaussian-cube-output">Example section</a>. </p>
+the (DPLOT.md#example-of-ccsd-charge-density-plot-with-gaussian-cube-output). </p>
 <h3 id="print-the-verbosity">PRINT: the verbosity<a class="headerlink" href="#print-the-verbosity" title="Permanent link">&para;</a></h3>
 <p>This keyword changes the level of output verbosity. One may also request
 some particular items in the table
@@ -5516,7 +5516,7 @@ task tce energy
 </code></pre>
 <p>The active-space in the active-space CR-EOMCCSD(T) calculations can be
 alternatively specified by defining the energy <code>window</code>
-[emin_act,emax_act]. All orbitals with orbital energies falling into
+. All orbitals with orbital energies falling into
 this widnow will considered as active (the active space in the following
 example is different from the one used in the previous example).</p>
 <pre><code>title &quot;uracil-6-31-Gs-act&quot;
@@ -5680,7 +5680,7 @@ of quadruples amplitudes, limited scalability and poor convergence in
 the CCSDTQ equations in general.</p>
 <h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
 <p>The input commands for TCE response properties exclusively use set
-directives (see <a href="SET.html">SET</a>) instead of TCE input
+directives (see (SET.md)) instead of TCE input
 block keywords. There are currently only three commands available:</p>
 <pre><code>set tce:lineresp &lt;logical lineresp default: F&gt;
 set tce:afreq &lt;double precision afreq(9) default: 0.0&gt; 

@@ -3482,19 +3482,19 @@ at the specified temperature, unless a restart file (<code>.qmdrst</code>) is
 present. If a restart file is present, the trajectory information will
 be read from that file and the trajectory will resume from that point.</p>
 <p>For computational details and a case study using the module, please
-refer to the 2016 paper by Fischer<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>.  </p>
+refer to the 2016 paper by Fischer<sup id="fnref_footnote_fischer2015"><a class="footnote-ref" href="#fn_footnote_fischer2015">1</a></sup>.  </p>
 <pre><code>QMD
-  [dt_nucl &lt;double default 10.0&gt;]  
-  [nstep_nucl &lt;integer default 1000&gt;]  
-  [targ_temp &lt;double default 298.15&gt;]  
-  [thermostat &lt;string default none&gt; &lt;thermostat parameters&gt;]  
-  [rand_seed &lt;integer default new one generated for each run&gt;]  
-  [com_step &lt;integer default 100&gt;]  
-  [print_xyz &lt;integer default 1&gt;]  
-  [linear]   
-  [property &lt;integer default 1&gt;] 
-  [tddft &lt;integer default 1&gt;]
-  [namd ]
+
+
+
+
+
+
+
+
+
+
+
 END
 </code></pre>
 <p>The module is called as:</p>
@@ -3524,12 +3524,12 @@ the nuclei. Possible options are:</p>
 <ul>
 <li><strong><code>svr</code></strong> <code>&lt;double default 1000.0&gt;</code></li>
 </ul>
-<p>Stochastic velocity rescaling thermostat of Bussi, Donadio, and Parrinello<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup>.<br />
+<p>Stochastic velocity rescaling thermostat of Bussi, Donadio, and Parrinello<sup id="fnref_footnote_bussi2007"><a class="footnote-ref" href="#fn_footnote_bussi2007">2</a></sup>.<br />
    Number sets the relaxation parameter of the thermostat  </p>
 <ul>
 <li><strong><code>langevin</code></strong> <code>&lt;double default 0.1&gt;</code></li>
 </ul>
-<p>Langevin dynamics, implementation according to Bussi and Parrinello<sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">3</a></sup>.<br />
+<p>Langevin dynamics, implementation according to Bussi and Parrinello<sup id="fnref_footnote_bussiparrinello2007"><a class="footnote-ref" href="#fn_footnote_bussiparrinello2007">3</a></sup>.<br />
    The optional input parameter sets the value of the friction  </p>
 <ul>
 <li><strong><code>berendsen</code></strong> <code>&lt;double default 1000.0&gt;</code>  </li>
@@ -3644,7 +3644,7 @@ task tddft qmd
 <h3 id="property-calculation-in-a-molecular-dynamics-simulation">Property calculation in a Molecular Dynamics simulation<a class="headerlink" href="#property-calculation-in-a-molecular-dynamics-simulation" title="Permanent link">&para;</a></h3>
 <p>Thefollowing is a sample input for an MD simulation that compute
 polarizability by means of the
-<a href="Properties.html#polarizability-computed-with-the-sum-over-orbitals-method">SOS method</a>
+(Properties.md#polarizability-computed-with-the-sum-over-orbitals-method)
 at each time step.</p>
 <pre><code>start qmd_prop_h2o_svr  
 echo  
@@ -3676,12 +3676,12 @@ end
 task tddft qmd
 </code></pre>
 <p>Additional sample inputs can be found in $NWCHEM_TOP/QA/tests/qmd_*
-(e.g. <a href="https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props">https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props</a>)</p>
+(e.g. (https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props))</p>
 <h2 id="processing-the-output-of-a-qmd-run">Processing the output of a QMD run<a class="headerlink" href="#processing-the-output-of-a-qmd-run" title="Permanent link">&para;</a></h2>
 <p>The xyz file produced by the QMD module contains the velocities (given
 in Angstrom/fs), in addition to the coordinates (given in Angstrom). The
 comment lines also contain the time step, total energy (atomic units),
-and dipole moment (atomic units). In the directory <a href="https://github.com/nwchemgit/nwchem/tree/master/contrib/qmd_tools">$NWCHEM_TOP/contrib/qmd_tools</a>, the code <a href="https://github.com/nwchemgit/nwchem/blob/master/contrib/qmd_tools/qmd_analysis.f90">qmd_analysis.f90</a> will used the xyz trajectory as input to calculate the IR spectrum and
+and dipole moment (atomic units). In the directory (https://github.com/nwchemgit/nwchem/tree/master/contrib/qmd_tools), the code (https://github.com/nwchemgit/nwchem/blob/master/contrib/qmd_tools/qmd_analysis.f90) will used the xyz trajectory as input to calculate the IR spectrum and
 vibrational density of states from Fourier transforms of the dipole and
 atomic momenta autocorrelation functions, respectively. The code needs
 to be linked to a LAPACK library when compiled; the Makefile in the
@@ -3717,7 +3717,7 @@ end
 task dft qmd
 </code></pre>
 <p>The IR spectrum and vibrational density of states were generated from
-the <a href="qmd_tools.tar.gz">qmd_analysis code</a> with the following
+the (qmd_tools.tar.gz) with the following
 command.</p>
 <pre><code>./qmd_analysis -xyz SiCl4.xyz -steps 15000 -skip 5000 -ts 10.0 -temp 20.0 -smax 800 -width 10.0
 </code></pre>
@@ -3732,18 +3732,18 @@ output to 800 wave numbers. The width option sets the full-width at
 half-maximum of the peaks in the resulting spectra.</p>
 <p>The computed IR spectrum and vibrational density of states are shown
 here.</p>
-<p><img alt="pic1" src="SiCl4IR.png" />
-<img alt="pic2" src="SiCl4VDOS.png" /></p>
+<p>!(SiCl4IR.png)
+!(SiCl4VDOS.png)</p>
 <h2 id="namd-non-adiabatic-excited-stated-molecular-dynamics">NAMD: Non-adiabatic Excited Stated Molecular Dynamics<a class="headerlink" href="#namd-non-adiabatic-excited-stated-molecular-dynamics" title="Permanent link">&para;</a></h2>
 <p>For  details of the NAMD implementation, please
-refer to the 2020 paper by Song<sup id="fnref_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">4</a></sup>.    </p>
-<pre><code>[namd]
-  [init_state &lt;integer default 2&gt;]
-  [nstates &lt;integer default 2&gt;]
-  [dt_elec &lt;double default 0.01&gt;]
-  [deco &lt;logical default .false.]
-  [tdks &lt;integer default 1&gt;]
-[end]  
+refer to the 2020 paper by Song<sup id="fnref_footnote_song2020"><a class="footnote-ref" href="#fn_footnote_song2020">4</a></sup>.    </p>
+<pre><code>
+
+
+
+
+
+
 </code></pre>
 <p>In the <code>namd</code> sub-block within the <code>qmd</code> block, please note:</p>
 <ul>
@@ -3751,7 +3751,7 @@ refer to the 2020 paper by Song<sup id="fnref_footnote_4"><a class="footnote-ref
 <li>The nuclear time step (dt_nucl) must be an integer multiple of the electronic time step (<code>mod(dt_nucl,dt_elec)=0</code>).</li>
 </ul>
 <h3 id="deco-decoherence-flag">DECO: Decoherence flag<a class="headerlink" href="#deco-decoherence-flag" title="Permanent link">&para;</a></h3>
-<p>The <code>deco</code> flag applies the EDC electronic decoherence correction described in the papey bt Granucci and Persico<sup id="fnref_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup>.<br />
+<p>The <code>deco</code> flag applies the EDC electronic decoherence correction described in the papey bt Granucci and Persico<sup id="fnref_footnote_granucci2007"><a class="footnote-ref" href="#fn_footnote_granucci2007">5</a></sup>.<br />
 The default value is <code>.false.</code>, i.e. no decoherence correction is applied.</p>
 <h3 id="dt_elec-electronic-dynamics-time-step">DT_ELEC: Electronic dynamics time step<a class="headerlink" href="#dt_elec-electronic-dynamics-time-step" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>dt_elec</code> sets the electronic time step in atomic units.</p>
@@ -3765,8 +3765,8 @@ occupied state runs from 0 (ground state) to <code>nstates-1</code>.
 So if you want to start a calculation in the first excited state, you would set
 <code>init_state</code> to 1.</p>
 <h3 id="tdks-time-dependent-kohn-sham">TDKS: Time-Dependent Kohn-Sham<a class="headerlink" href="#tdks-time-dependent-kohn-sham" title="Permanent link">&para;</a></h3>
-<p>The keyword <code>tdks</code> will use Time-Dependent Kohn-Sham instead of the default <a href="Excited-State-Calculations.html#cis-and-rpa-the-tamm-dancoff-approximation">Tamm-Dancoff</a> approximation.<br />
-The keyword requires the keyword <a href="Density-Functional-Theory-for-Molecules.html#odft-and-mult-open-shell-systems"><code>odft</code></a>
+<p>The keyword <code>tdks</code> will use Time-Dependent Kohn-Sham instead of the default (Excited-State-Calculations.md#cis-and-rpa-the-tamm-dancoff-approximation) approximation.<br />
+The keyword requires the keyword (Density-Functional-Theory-for-Molecules.md#odft-and-mult-open-shell-systems)
 in the <code>dft</code> input block to work.<br />
 It can have two values:</p>
 <ul>
@@ -3816,20 +3816,20 @@ task tddft qmd
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn_footnote_1">
-<p>Fischer, S. A.; Ueltschi, T. W.; El-Khoury, P. Z.; Mifflin, A. L.; Hess, W. P.; Wang, H.-F.; Cramer, C. J.; Govind, N. Infrared and Raman Spectroscopy from Ab Initio Molecular Dynamics and Static Normal Mode Analysis: The C-H Region of DMSO as a Case Study. <em>The Journal of Physical Chemistry B</em> <strong>2015</strong>, <em>120</em> (8), 1429–1436. <a href="https://doi.org/10.1021/acs.jpcb.5b03323">https://doi.org/10.1021/acs.jpcb.5b03323</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn_footnote_fischer2015">
+<p>Fischer, S. A.; Ueltschi, T. W.; El-Khoury, P. Z.; Mifflin, A. L.; Hess, W. P.; Wang, H.-F.; Cramer, C. J.; Govind, N. Infrared and Raman Spectroscopy from Ab Initio Molecular Dynamics and Static Normal Mode Analysis: The C-H Region of DMSO as a Case Study. <em>The Journal of Physical Chemistry B</em> <strong>2015</strong>, <em>120</em> (8), 1429&ndash;1436. <a href="https://doi.org/10.1021/acs.jpcb.5b03323">https://doi.org/10.1021/acs.jpcb.5b03323</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_fischer2015" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_2">
-<p>Bussi, G.; Donadio, D.; Parrinello, M. Canonical Sampling Through Velocity Rescaling. <em>The Journal of Chemical Physics</em> <strong>2007</strong>, <em>126</em> (1), 014101. <a href="https://doi.org/10.1063/1.2408420">https://doi.org/10.1063/1.2408420</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn_footnote_bussi2007">
+<p>Bussi, G.; Donadio, D.; Parrinello, M. Canonical Sampling Through Velocity Rescaling. <em>The Journal of Chemical Physics</em> <strong>2007</strong>, <em>126</em> (1), 014101. <a href="https://doi.org/10.1063/1.2408420">https://doi.org/10.1063/1.2408420</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_bussi2007" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_3">
-<p>Bussi, G.; Parrinello, M. Accurate Sampling Using Langevin Dynamics. <em>Physical Review E</em> <strong>2007</strong>, <em>75</em> (5), 056707. <a href="https://doi.org/10.1103/PhysRevE.75.056707">https://doi.org/10.1103/PhysRevE.75.056707</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn_footnote_bussiparrinello2007">
+<p>Bussi, G.; Parrinello, M. Accurate Sampling Using Langevin Dynamics. <em>Physical Review E</em> <strong>2007</strong>, <em>75</em> (5), 056707. <a href="https://doi.org/10.1103/PhysRevE.75.056707">https://doi.org/10.1103/PhysRevE.75.056707</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_bussiparrinello2007" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_4">
-<p>Song, H.; Fischer, S. A.; Zhang, Y.; Cramer, C. J.; Mukamel, S.; Govind, N.; Tretiak, S. First Principles Nonadiabatic Excited-State Molecular Dynamics in NWChem. <em>Journal of Chemical Theory and Computation</em> <strong>2020</strong>, <em>16</em> (10), 6418–6427. <a href="https://doi.org/10.1021/acs.jctc.0c00295">https://doi.org/10.1021/acs.jctc.0c00295</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<li id="fn_footnote_song2020">
+<p>Song, H.; Fischer, S. A.; Zhang, Y.; Cramer, C. J.; Mukamel, S.; Govind, N.; Tretiak, S. First Principles Nonadiabatic Excited-State Molecular Dynamics in NWChem. <em>Journal of Chemical Theory and Computation</em> <strong>2020</strong>, <em>16</em> (10), 6418&ndash;6427. <a href="https://doi.org/10.1021/acs.jctc.0c00295">https://doi.org/10.1021/acs.jctc.0c00295</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_song2020" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_5">
-<p>Granucci, G.; Persico, M. Critical Appraisal of the Fewest Switches Algorithm for Surface Hopping. <em>The Journal of Chemical Physics</em> <strong>2007</strong>, <em>126</em> (13), 134114. <a href="https://doi.org/10.1063/1.2715585">https://doi.org/10.1063/1.2715585</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<li id="fn_footnote_granucci2007">
+<p>Granucci, G.; Persico, M. Critical Appraisal of the Fewest Switches Algorithm for Surface Hopping. <em>The Journal of Chemical Physics</em> <strong>2007</strong>, <em>126</em> (13), 134114. <a href="https://doi.org/10.1063/1.2715585">https://doi.org/10.1063/1.2715585</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_granucci2007" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

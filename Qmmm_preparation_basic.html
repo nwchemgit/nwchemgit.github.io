@@ -2967,9 +2967,9 @@ generate QM/MM restart and topology files for the ethanol molecule:</p>
 <pre><code>title &quot;Prepare QM/MM calculation of ethanol&quot;  
 start etl  
 
-[prepare](Prepare)  
+(Prepare)  
 #--*name of the pdbfile*  
-   source [etl0.pdb](etl0.pdb)                      
+   source (etl0.pdb)                      
 #--*generate new topology and sequence file*  
    new_top new_seq                      
 #--*generate new restart file*  
@@ -2984,13 +2984,13 @@ start etl
 #--*save restart file*     
    write etl_ref.rst  
 #--*generate pdb file*  
-   write [etl_ref.pdb](etl_ref.pdb)  
+   write (etl_ref.pdb)  
 end   
 task prepare
 </code></pre>
 <p>Running the input shown above will produce (among other things) the
 topology file (etl.top), the restart file (etl_ref.rst), and the pdb
-file <a href="etl_ref.pdb">etl_ref.pdb</a>. The prefix for the topology file follows after the
+file (etl_ref.pdb). The prefix for the topology file follows after the
 rtdb name specified in the start directive in the input (i.e. &ldquo;start
 etl&rdquo;), while the names for the restart and pdb files were specified
 explicitly in the input file. In the absence of the explicit write

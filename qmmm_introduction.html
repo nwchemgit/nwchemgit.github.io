@@ -2967,28 +2967,28 @@ In a typical setting this <a href="QMMM_Restart_and_Topology_Files.html">prepara
 run</a> will be done separately from the main QM/MM simulations resulting in the generation of topology and restart files. The topology file contains a list of all relevant force field interactions encountered in the system but has no information about the actual atom positions. Typically the topology file will be generated once and reused throughout the entire simulation. The actual structural information about the system is contained in the restart file, which will be changing as the system coordinates are updated during the course of the simulation.</p>
 <p>Once restart and topology files are generated, the QM/MM simulation can
 be initiated by defining the specifics of the
-<a href="QM_Parameters.html">QM</a> and <a href="MM_Parameters.html">MM</a>
-descriptions, and if necessary <a href="QMMM_Parameters.html">QM/MM</a>
+(QM_Parameters.md) and (MM_Parameters.md)
+descriptions, and if necessary (QMMM_Parameters.md)
 interface parameters.</p>
 <p>The actual QM/MM calculation is invoked with the following task
 directive.</p>
-<pre><code> task qmmm &lt;string qmtheory&gt; &lt;string operation&gt; [numerical] [ignore]
+<pre><code> task qmmm &lt;string qmtheory&gt; &lt;string operation&gt;  
 </code></pre>
 <p>where qmtheory specifies quantum method for the calculation of the
 quantum region. It is expected that most of QM/MM simulations will be
-performed with with HF, DFT. or <a href="TCE.html">CC</a> theories, but any
+performed with with HF, DFT. or (TCE.md) theories, but any
 other QM theory supported by NWChem should also work. NWChem supports
 wide range of QM/MM tasks including</p>
 <ul>
 <li><a href="qmmm_sp_energy.html">single point energy/gradient
     calculations</a></li>
-<li><a href="qmmm_sp_property.html">properties</a></li>
-<li><a href="QMMM_ESP.html">ESP charge analysis</a></li>
-<li><a href="Qmmm_optimization.html">optimization and transition states</a></li>
-<li><a href="Qmmm_freq.html">hessians and frequency</a></li>
-<li><a href="Qmmm_NEB_Calculations.html">reaction pathway calculations</a></li>
-<li><a href="QMMM_Dynamics.html">dynamics</a></li>
-<li><a href="QMMM_Free_Energy.html">free energy calculations</a></li>
+<li>(qmmm_sp_property.md)</li>
+<li>(QMMM_ESP.md)</li>
+<li>(Qmmm_optimization.md)</li>
+<li>(Qmmm_freq.md)</li>
+<li>(Qmmm_NEB_Calculations.md)</li>
+<li>(QMMM_Dynamics.md)</li>
+<li>(QMMM_Free_Energy.md)</li>
 </ul>
 
 

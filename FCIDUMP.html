@@ -3076,7 +3076,7 @@
 <h1 id="fcidump">FCIDUMP<a class="headerlink" href="#fcidump" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The FCIDUMP module writes the 1-electron and 2-electron integrals to disk folllowing the format
-specified in the paper  <sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup></p>
+specified in the paper  <sup id="fnref_footnote_knowles1989"><a class="footnote-ref" href="#fn_footnote_knowles1989">1</a></sup></p>
 <p>The  module is used when following NWChem task directive is specified</p>
 <pre><code>task dft fcidump
 </code></pre>
@@ -3087,7 +3087,7 @@ END
 </code></pre>
 <p>The resulting file will be named <code>file_prefix.fcidump</code></p>
 <h2 id="orbitals-orbitals-specifications">ORBITALS - Orbitals specifications<a class="headerlink" href="#orbitals-orbitals-specifications" title="Permanent link">&para;</a></h2>
-<pre><code>ORBITALS [(molecular || atomic) default molecular]
+<pre><code>ORBITALS 
 </code></pre>
 <p>The <code>ORBITALS</code> keyword can have the value <code>molecular</code>  (default) or <code>atomic</code>.
 When the default keyword <code>molecular</code> is used, the integrals are transformed using the
@@ -3096,7 +3096,7 @@ When the  keyword <code>atomic</code> is specified, the integrals are evaluated 
 (<em>option not implemented yet</em>)</p>
 <h2 id="freeze-freezing-orbitals">FREEZE - Freezing orbitals<a class="headerlink" href="#freeze-freezing-orbitals" title="Permanent link">&para;</a></h2>
 <p>When using molecular orbitals, orbitals can be frozen as described in the
-<a href="MP2.html#freeze-freezing-orbitals">MP2</a> section</p>
+(MP2.md#freeze-freezing-orbitals) section</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <pre><code>...
 dft
@@ -3116,8 +3116,8 @@ task dft fcidump
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn_footnote_1">
-<p>Knowles, P. J.; Handy, N. C. A Determinant Based Full Configuration Interaction Program. <em>Computer Physics Communications</em> <strong>1989</strong>, <em>54</em>, 75–83. <a href="https://doi.org/10.1016/0010-4655(89)90033-7">https://doi.org/10.1016/0010-4655(89)90033-7</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn_footnote_knowles1989">
+<p>Knowles, P. J.; Handy, N. C. A Determinant Based Full Configuration Interaction Program. <em>Computer Physics Communications</em> <strong>1989</strong>, <em>54</em>, 75&ndash;83. <a href="https://doi.org/10.1016/0010-4655(89)90033-7">https://doi.org/10.1016/0010-4655(89)90033-7</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_knowles1989" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

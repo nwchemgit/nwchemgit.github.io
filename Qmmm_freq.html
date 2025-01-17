@@ -3066,10 +3066,10 @@ following task directives</p>
 used even in the absence of &ldquo;numerical&rdquo; keyword. Other than standard
 QM/MM directives no additional QM/MM input is required for default
 hessian/frequency for all the QM atoms. Using
-<a href="Qmmm_region.html">region</a> keyword(first region only),
+(Qmmm_region.md) keyword(first region only),
 hessian/frequency calculations can also be performed for classical
 solute atoms. If only classical atoms are involved
-<a href="Qmmm_density.html">density</a> keyword can be utilized to enable
+(Qmmm_density.md) keyword can be utilized to enable
 frozen density or ESP charge representation for fixed QM region.
 Hessian/frequency calculations for solvent are not possible.</p>
 <h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
@@ -3088,9 +3088,9 @@ as a result of energy calculation.</p>
  permanent_dir ./perm  
  scratch_dir ./data  
 
- #this will generate topology file ([asa.top](asa.top)), restart ([asa_ref.rst](asa_ref.rst)), and pdb ([asa_ref.pdb](asa_ref.pdb)) files.  
+ #this will generate topology file ((asa.top)), restart ((asa_ref.rst)), and pdb ((asa_ref.pdb)) files.  
  prepare  
-   source [asa.pdb](asa.pdb)  
+   source (asa.pdb)  
    new_top new_seq  
    new_rst  
    modify atom 2:_CB quantum  
@@ -3103,8 +3103,8 @@ as a result of energy calculation.</p>
    solvate  
    update lists  
    ignore  
-   write [asa_ref.rst](asa_ref.rst)  
-   write [asa_ref.pdb](asa_ref.pdb)   # Write out PDB file to check structure  
+   write (asa_ref.rst)  
+   write (asa_ref.pdb)   # Write out PDB file to check structure  
  end  
  task prepare
 

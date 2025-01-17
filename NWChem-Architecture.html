@@ -3020,7 +3020,7 @@
 
 
 <h1 id="nwchem-architecture">NWChem Architecture<a class="headerlink" href="#nwchem-architecture" title="Permanent link">&para;</a></h1>
-<p>As described in the <a href="Getting-Started.html">Getting Started</a> section, NWChem consists of independent modules that perform the
+<p>As described in the (Getting-Started.md) section, NWChem consists of independent modules that perform the
 various functions of the code. Examples include the input parser,
 self-consistent field (SCF) energy, SCF analytic gradient, and density
 functional theory (DFT) energy modules. The independent NWChem modules
@@ -3029,7 +3029,7 @@ to the GAMESS-UK dumpfile or the Gaussian checkpoint file. This allows
 the modules to share data, or to share access to files containing data.</p>
 <p>It is not necessary for the user to be intimately familiar with the
 contents of the
-<a href="#database-structure">database</a> in order
+(#database-structure) in order
 to run NWChem. However, a nodding acquaintance with the design of the
 code will help in clarifying the logic behind the input requirements,
 especially when restarting jobs or performing multiple tasks within one
@@ -3073,8 +3073,8 @@ some NWChem input options, can be freely modified.</p>
 entries, using an internally consistent naming convention. This data is
 managed exclusively by the subroutines (or methods) that are associated
 with the object. Currently, the code has two main objects: basis sets
-and geometries. <a href="Geometry.html">GEOMETRY</a> and
-<a href="Basis.html">BASIS</a> present a complete discussion of the input to
+and geometries. (Geometry.md) and
+(Basis.md) present a complete discussion of the input to
 describe these objects.</p>
 <p>As an illustration of what comprises a geometry object, the following
 table contains a partial listing of the database contents for a water
@@ -3082,13 +3082,13 @@ molecule geometry named &ldquo;test geom&rdquo;. Each entry contains the field t
 geom, which is the unique name of the object.</p>
 <pre><code>Contents of RTDB h2o.db  
 -----------------------  
-Entry                                   Type[nelem]  
+Entry                                   Type  
 ---------------------------  ----------------------  
-geometry:test geom:efield             double[3]      
-geometry:test geom:coords             double[9]      
-geometry:test geom:ncenter               int[1]      
-geometry:test geom:charges            double[3]      
-geometry:test geom:tags                 char[6] 
+geometry:test geom:efield             double      
+geometry:test geom:coords             double      
+geometry:test geom:ncenter               int      
+geometry:test geom:charges            double      
+geometry:test geom:tags                 char 
 ...
 </code></pre>
 <p>Using this convention, multiple instances of objects may be stored with
@@ -3105,7 +3105,7 @@ generated from the user-specified input directive,</p>
    H     0.00000000   -1.43042809   -1.10715266  
  end
 </code></pre>
-<p>The <a href="Geometry.html">GEOMETRY</a> directive allows the user to specify
+<p>The (Geometry.md) directive allows the user to specify
 the coordinates of the atoms (or centers), and identify the geometry
 with a unique name.</p>
 <p>Unless a specific name is defined for the geometry, (such as the name
@@ -3132,7 +3132,7 @@ job.</p>
 <p>Sometimes, however, this persistence is undesirable, and it is necessary
 to return an NWChem module to its default behavior by restoring the
 database to its input-free state. In such a case, the
-<a href="UNSET.html">UNSET</a> directive can be used to delete all database
+(UNSET.md) directive can be used to delete all database
 entries associated with a given module (including both inputs and
 outputs).</p>
 
