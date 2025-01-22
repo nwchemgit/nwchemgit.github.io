@@ -3053,26 +3053,26 @@ accessible (set through the Permanent_Dir directive) to all processes.</p>
 <h2 id="input-syntax">Input Syntax<a class="headerlink" href="#input-syntax" title="Permanent link">&para;</a></h2>
 <p>The input block has the following form:</p>
 <pre><code> DNTMC  
+    [nspecies &lt;integer number&gt;]  
+    [species  &lt;list of strings name[nspecies]]  
+    [nmol     &lt;list of integers number[nspecies]&gt;]  
 
-    ]  
-    &gt;]  
+    [temp     &lt;real temperature&gt;]  
+    [rmin     &lt;real rmin&gt;]  
+    [rmax     &lt;real rmax&gt;]  
+    [nob      &lt;integer nob&gt;]  
+    [mcsteps  &lt;integer number&gt;]  
+    [tdisp    &lt;real disp&gt;]  
+    [rdisp    &lt;real rot&gt;]  
+    [rsim || rconfig]  
+    [mprnt    &lt;integer number&gt;]  
+    [convergence &lt;real limit&gt;]  
+    [norestart]  
+    [dntmc_dir &lt;string directory&gt;]  
 
+    [print &amp;&amp;|| noprint]  
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    [procrestart &lt;integer number&gt;]  
  END
 </code></pre>
 <h2 id="definition-of-monomers">Definition of Monomers<a class="headerlink" href="#definition-of-monomers" title="Permanent link">&para;</a></h2>
@@ -3083,12 +3083,12 @@ nocenter options are suggested for use with the DNTMC module to prevent
 NWChem from changing the input geometries. Symmetry should also not be
 used since cluster configurations will seldom exhibit any symmetry;
 although monomers themselves may exhibit symmetry.</p>
-<pre><code> GEOMETRY  noautosym nocenter ...  
+<pre><code> GEOMETRY [&lt;string name species_1&gt;] noautosym nocenter ...  
      ...  
  symmetry c1  
  END  
 
- GEOMETRY  noautosym nocenter ...  
+ GEOMETRY [&lt;string name species_2&gt;] noautosym nocenter ...  
      ...  
  symmetry c1  
  END  
@@ -3100,24 +3100,24 @@ although monomers themselves may exhibit symmetry.</p>
 space delimited list (species). Also required are the number of each
 unique monomer in the molecular cluster given as a space delimited list
 (nmol). These keywords are required and thus have no default values.</p>
-<pre><code>
-    ]  
-    &gt;]
+<pre><code>    [nspecies &lt;integer number&gt;]  
+    [species  &lt;list of strings name[nspecies]]  
+    [nmol     &lt;list of integers number[nspecies]&gt;]
 </code></pre>
-<p>An (#example) is shown for a 10 monomer cluster
+<p>An <a href="#example">example</a> is shown for a 10 monomer cluster
 consisting of a 50/50 mixture of water and ammonia.</p>
 <h2 id="dntmc-runtime-options">DNTMC runtime options<a class="headerlink" href="#dntmc-runtime-options" title="Permanent link">&para;</a></h2>
 <p>Several options control the behavior of the DNTMC module. Some required
 options such as simulation temperature (temp), cluster radius (rmin and
 rmax), and maximum number of MC steps (mcsteps) are used to control the
 MC simulation.</p>
-<pre><code>
+<pre><code>    [temp     &lt;real temperature&gt;]
 </code></pre>
 <p>This required option gives the simulation temperature in which the MC
 simulation is run. Temperature is given in kelvin.</p>
-<pre><code>
-
-
+<pre><code>    [rmin     &lt;real rmin&gt;]  
+    [rmax     &lt;real rmax&gt;]  
+    [nob    &lt;integer nob&gt;]
 </code></pre>
 <p>These required options define the minimum and maximum extent of the
 projected reaction coordinate (The radius of a sphere centered at the
@@ -3130,10 +3130,10 @@ coordinate has a minimum value of Rmin and a maximum value of Rmax. The
 distributions are created by chopping this range into a number of
 smaller sized bins. The number of bins (nob) is controlled by the option
 of the same name.</p>
-<pre><code>
-
-
-
+<pre><code>    [mcsteps  &lt;integer number&gt;]  
+    [tdisp    &lt;real disp default 0.04&gt;]  
+    [rdisp    &lt;real rot default 0.06&gt;]  
+    [convergence &lt;real limit default 0.00&gt;]
 </code></pre>
 <p>These options define some characteristics of the MC simulations. The
 maximum number of MC steps (mcsteps) to take in the course of the
@@ -3145,7 +3145,7 @@ rotational step size (rdisp) are optional inputs with defaults set at
 allows the convergence threshold to be set. The default is 0.00 which
 effectively turns off this checking. Once the measure of convergence
 goes below this threshold the calculation will end.</p>
-<p><code></code></p>
+<p><code>[rsim || rconfig]</code></p>
 <p>These optional keywords allow the selection of two different MC sampling
 methods. rsim selects a Metropolis MC methodology which samples
 configurations according to a Canonical ensemble. The rconfig keyword
@@ -3153,9 +3153,9 @@ selects a MC methodology which samples configurations according to a
 derivative of the Canonical ensemble with respect to the projected
 reaction coordinate. These keywords are optional with the default method
 being rconfig.</p>
-<pre><code>
-
-
+<pre><code>    [mprnt    &lt;integer number default 10&gt;]  
+    [dntmc_dir &lt;string directory default ./&gt;]  
+    [norestart]
 </code></pre>
 <p>These three options define some of the output and data analysis
 behavior. mprnt is an option which controls how often data analysis
@@ -3240,12 +3240,12 @@ distribution. The error is the RMS deviation of the average at each
 point. Each entry is as follows:</p>
 </li>
 </ol>
-<pre><code>     # Total Configurations 
-     Species number # 
-    (R coordinate in Angstroms) (Probability) (Error) 
-
-
-     *** separator.  
+<pre><code>    [1] # Total Configurations 
+    [2] Species number # 
+    [3](R coordinate in Angstroms) (Probability) (Error) 
+    [Repeats nob times] 
+    [2 and 3 Repeats for each species]
+    [4] *** separator.  
 </code></pre>
 <ol>
 <li>
@@ -3258,13 +3258,13 @@ calculations. Rsim is either the radial extent of the cluster
 follows:  </p>
 </li>
 </ol>
-<pre><code>     (Atomic label) (X Coord.) (Y Coord.) (Z Coord.) 
+<pre><code>    [1] (Atomic label) (X Coord.) (Y Coord.) (Z Coord.) 
     [1 Repeats for each atom in the cluster configuration, units are in
     angstroms] 
-     Ucalc = # hartree 
-     Dipole = (X) (Y) (Z) au
-     Rsim = # Angstrom 
-
+    [2] Ucalc = # hartree 
+    [3] Dipole = (X) (Y) (Z) au
+    [4] Rsim = # Angstrom 
+    [1 through 4 repeats for each accepted configuration]  
 </code></pre>
 <ol>
 <li>
@@ -3296,7 +3296,7 @@ in short here.</p>
     Sum of the squared potential energy
     Squared potential energy Dipole moment in au (x) (Y) (Z)
     Rmin and Rmax Rsim (Radius corresponds to r-config or r-sim methods)
-    Array of nspecies length, value indicates the number of  each type of monomer which lies at radius Rsim from the center of mass 
+    Array of nspecies length, value indicates the number of  each type of monomer which lies at radius Rsim from the center of mass [r-simulation sets these to zero]
     Sum of Rsim Average of Rsim
     Number of accepted translantional moves
     Number of accepted rotational moves Number of accepted volume moves
@@ -3304,15 +3304,15 @@ in short here.</p>
     Number of accepted moves (Zero)
     Number of accepted moves (Zero)
     Number of MC steps completed
-     (Atom label) (X Coord.) (Y Coord.) (Z Coord.)
-
-     Array of nspecies length, number of configurations in bin
-     Array of nspecies length, normalized number of configurations in each bin
-     (Value of bin in Angstroms) (Array of nspecies length, normalized probability of bin)
-
+    [1] (Atom label) (X Coord.) (Y Coord.) (Z Coord.)
+    [1 repeats for each atom in cluster configurations, units are in angstroms]
+    [2] Array of nspecies length, number of configurations in bin
+    [3] Array of nspecies length, normalized number of configurations in each bin
+    [4] (Value of bin in Angstroms) (Array of nspecies length, normalized probability of bin)
+    [2 through 4 repeats nob  times]
 </code></pre>
 <h2 id="dntmc-restart">DNTMC Restart<a class="headerlink" href="#dntmc-restart" title="Permanent link">&para;</a></h2>
-<pre><code>
+<pre><code>[procrestart &lt;integer number&gt;]
 </code></pre>
 <p>Flag to indicate restart postprocessing. It is suggested that this
 postprocessing run is done utilizing only one processor.</p>

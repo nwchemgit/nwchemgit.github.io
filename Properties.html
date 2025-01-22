@@ -3386,8 +3386,8 @@ functions. The properties that are available are:</p>
 property is defined in the user input file. The input format has the
 form:</p>
 <pre><code> PROPERTY 
-
-
+   [property keyword]  
+   [CENTER ((com || coc || origin || arb &lt;real x y z&gt;) default coc)] 
  END
 </code></pre>
 <p>Most of the properties can be computed for Hartree-Fock (closed-shell
@@ -3395,7 +3395,7 @@ RHF, open-shell ROHF, and open-shell UHF), and DFT (closed-shell and
 open-shell spin unrestricted) wavefunctions. The NMR hyperfine and
 indirect spin-spin coupling require a UHF or ODFT wave function.</p>
 <h2 id="vectors-keyword">Vectors keyword<a class="headerlink" href="#vectors-keyword" title="Permanent link">&para;</a></h2>
-<pre><code> VECTORS 
+<pre><code> VECTORS [ (&lt;string input_movecs &gt;)]
 </code></pre>
 <p>The VECTORS directive allows the user to specify the input molecular
 orbital vectors for the property calculation</p>
@@ -3413,10 +3413,10 @@ keywords:</p>
  EFIELDGRADZ4  
  GSHIFT  
  ELECTRONDENSITY  
- HYPERFINE   
- SHIELDING   
- SPINSPIN   
- RESPONSE   
+ HYPERFINE [&lt;integer&gt; number_of_atoms &lt;integer&gt; atom_list]  
+ SHIELDING [&lt;integer&gt; number_of_atoms &lt;integer&gt; atom_list]  
+ SPINSPIN [&lt;integer&gt; number_of_pairs &lt;integer&gt; pair_list]  
+ RESPONSE [&lt;integer&gt; response_order &lt;real&gt; frequency]  
  AIMFILE  
  MOLDENFILE
  LOCALIZATION  
@@ -3436,7 +3436,7 @@ the highest abundance and has spin, will be chosen for each atom under
 consideration.</p>
 <h4 id="calculating-epr-and-paramagnetic-nmr-parameters">Calculating EPR and paramagnetic NMR parameters<a class="headerlink" href="#calculating-epr-and-paramagnetic-nmr-parameters" title="Permanent link">&para;</a></h4>
 <p>The following
-(EPR-pNMR.md) illustrates how to combine the
+<a href="EPR-pNMR.html">tutorial</a> illustrates how to combine the
 hyperfine, gshift and shielding to calculate the EPR and paramagnetic
 NMR parameters of an open-shell system. All calculations are compatible 
 with the ZORA model potential approach.</p>
@@ -3475,12 +3475,12 @@ task dft property
 <h3 id="center-center-of-expansion-for-multipole-calculations">CENTER: Center of expansion for multipole calculations<a class="headerlink" href="#center-center-of-expansion-for-multipole-calculations" title="Permanent link">&para;</a></h3>
 <p>The user also has the option to choose the center of expansion for the
 dipole, quadrupole, and octupole calculations.</p>
-<pre><code>
+<pre><code>   [CENTER ((com || coc || origin || arb &lt;real x y z&gt;) default coc)]
 </code></pre>
 <p>com is the center of mass, coc is the center of charge, origin is (0.0,
 0.0, 0.0) and arb is any arbitrary point which must be accompanied by
 the coordinated to be used. Currently the x, y, and z coordinates must
-be given in the same units as UNITS in (Geometry.md).</p>
+be given in the same units as UNITS in <a href="Geometry.html">GEOMETRY</a>.</p>
 <h3 id="response-calculations">Response Calculations<a class="headerlink" href="#response-calculations" title="Permanent link">&para;</a></h3>
 <p>Response calculations can be calculated as
 follows:</p>
@@ -3528,7 +3528,7 @@ response tensors in terms of molecular orbitals.<br />
 If the property input block also contains the keyword <code>pmlocalization</code>, then the analysis is
 performed in terms of Pipek-Mezey localized MOs, otherwise the canonical
 set is used (this feature may currently not work, please check the sum
-of the analysis carefully). See Ref.  for an example. Works with HF
+of the analysis carefully). See Ref. [6] for an example. Works with HF
 and density functionals for which linear response kernels are
 implemented in NWChem.</p>
 <p>Please refer to papers<sup id="fnref3_footnote_autschbach2011_2"><a class="footnote-ref" href="#fn_footnote_autschbach2011_2">5</a></sup><sup id="fnref_footnote_autschbach2007"><a class="footnote-ref" href="#fn_footnote_autschbach2007">4</a></sup><sup id="fnref_footnote_krykunov2005"><a class="footnote-ref" href="#fn_footnote_krykunov2005">6</a></sup><sup id="fnref_footnote_hammond2009"><a class="footnote-ref" href="#fn_footnote_hammond2009">9</a></sup><sup id="fnref_footnote_krykunov2006"><a class="footnote-ref" href="#fn_footnote_krykunov2006">8</a></sup><sup id="fnref_footnote_moore2012"><a class="footnote-ref" href="#fn_footnote_moore2012">7</a></sup> for further details:</p>
@@ -3536,16 +3536,16 @@ implemented in NWChem.</p>
 <p>Raman calculations can be performed by specifying the Raman block. These
 calculations are performed in conjunction with polarizability
 calculations. Detailed description of input parameters at
-(https://pubs.acs.org/doi/10.1021/jp411039m#notes-1)</p>
+<a href="https://pubs.acs.org/doi/10.1021/jp411039m#notes-1">https://pubs.acs.org/doi/10.1021/jp411039m#notes-1</a></p>
 <pre><code>RAMAN 
-
-
-
-
-
-
-
-
+ [ (NORMAL | | RESONANCE) default NORMAL ]  
+ [ (LORENTZIAN | | GAUSSIAN) default LORENTZIAN ]  
+ [ LOW &lt;double low default 0.0&gt; ]  
+ [ HIGH &lt;double high default highest normal mode&gt; ]  
+ [ FIRST &lt;integer first default 7&gt; ]  
+ [ LAST &lt; integer last default number of normal modes &gt; ]  
+ [ WIDTH &lt;double width default 20.0&gt; ]  
+ [ DQ &lt;double dq default 0.01&gt; ]  
 END  
 task dft raman
 </code></pre>
@@ -3582,8 +3582,8 @@ end
 </ul>
 <h4 id="raman-output">Raman Output<a class="headerlink" href="#raman-output" title="Permanent link">&para;</a></h4>
 <p>Raman spectrum in stick format and smoothed using Lorentzians or
-Gaussians stored in a filename with format <code>.normal</code>.<br />
-The number of points is 1000 by default. This value can be changed by adding the following (SET.md) directive to the input file</p>
+Gaussians stored in a filename with format <code>[fname].normal</code>.<br />
+The number of points is 1000 by default. This value can be changed by adding the following <a href="SET.html">SET</a> directive to the input file</p>
 <pre><code>set raman:numpts &lt;integer&gt;
 </code></pre>
 <h4 id="raman-references">Raman References<a class="headerlink" href="#raman-references" title="Permanent link">&para;</a></h4>
@@ -3595,7 +3595,7 @@ available to compute polarizabilities. Results of these method are
 much less accurate than linear response calculations, with values off
 by a factor of 2-4x. However, the qualitative nature of this results
 can be used to compute Raman frequencies when coupled with
-(Gaussian-Basis-AIMD.md#property-calculation-in-a-molecular-dynamics-simulation),
+<a href="Gaussian-Basis-AIMD.html#property-calculation-in-a-molecular-dynamics-simulation">QMD</a>,
 as described in references <sup id="fnref_footnote_fischer2015"><a class="footnote-ref" href="#fn_footnote_fischer2015">12</a></sup><sup id="fnref_footnote_apra2020"><a class="footnote-ref" href="#fn_footnote_apra2020">13</a></sup>.</p>
 <p>Sample input computing polarizability both with the SOO method and the linear response method:</p>
 <pre><code>property
@@ -3629,12 +3629,12 @@ electric field (keyword <code>efield</code>) on the grid can be generated in the
 form of the Gaussian Cube File. This behavior is triggered by the
 inclusion of grid keyword as shown
 below</p>
-<pre><code> grid ]   ] 
+<pre><code> grid [pad dx [dy dz]] [rmax x y z] [rmin x y z] [ngrid nx [ny nz]] [output filename]
 </code></pre>
 <p>where</p>
 <ul>
 <li>
-<p><code>pad dx</code> - specifies amount of padding (in angstroms) in
+<p><code>pad dx [dy dz]</code> - specifies amount of padding (in angstroms) in
     x,y, and z dimensions that will be applied in the automatic
     construction of the rectangular grid volume based on the geometry of
     the system. If only one number is provided then the same amount of
@@ -3652,7 +3652,7 @@ below</p>
     padding in this direction.</p>
 </li>
 <li>
-<p><code>ngrid nx</code> - specifies number of grid points along each
+<p><code>ngrid nx [ny nz]</code> - specifies number of grid points along each
     dimension. If only one number is provided then the same number of
     grid points are assumed all dimensions. In the absence of this
     directive the number of grid points would be computed such that grid
@@ -3720,12 +3720,12 @@ below</p>
 wavefunction file (.wfn/.wfx) can be post-processed with a variety of
 codes, e.g.</p>
 <ul>
-<li>(http://www.quimica.urv.es/XAIM/)</li>
-<li>(https://github.com/aoterodelaroza/nciplot)</li>
-<li>(http://sobereva.com/multiwfn/)</li>
-<li>(https://github.com/aoterodelaroza/postg)</li>
+<li><a href="http://www.quimica.urv.es/XAIM/">XAIM</a></li>
+<li><a href="https://github.com/aoterodelaroza/nciplot">NCIPLOT</a></li>
+<li><a href="http://sobereva.com/multiwfn/">Multiwfn</a></li>
+<li><a href="https://github.com/aoterodelaroza/postg">Postg</a></li>
 </ul>
-<p><strong>WARNING:</strong> Since we have discovered issues in generating .WFN files with this module (e.g. systems with ECPs), the recommended method for generating .WFN file is to first generate a Molden file with the (Properties.md#moldenfile) option, then convert the Molden file into a WFN file by using the (https://github.com/zorkzou/Molden2AIM) program.</p>
+<p><strong>WARNING:</strong> Since we have discovered issues in generating .WFN files with this module (e.g. systems with ECPs), the recommended method for generating .WFN file is to first generate a Molden file with the <a href="Properties.html#moldenfile">Moldenfile</a> option, then convert the Molden file into a WFN file by using the <a href="https://github.com/zorkzou/Molden2AIM">Molden2AIM</a> program.</p>
 <h2 id="moldenfile">Moldenfile<a class="headerlink" href="#moldenfile" title="Permanent link">&para;</a></h2>
 <pre><code>MOLDENFILE
 MOLDEN_NORM (JANPA | | NWCHEM || NONE)
@@ -3735,23 +3735,23 @@ format</a>. The resulting
 Molden file (.molden) should compatible with a variety of codes that can
 input Molden files, e.g.</p>
 <ul>
-<li>(https://www.theochem.ru.nl/molden/)</li>
-<li>(https://janpa.sf.net) (the nwchem2molden step is no longer
+<li><a href="https://www.theochem.ru.nl/molden/">Molden</a></li>
+<li><a href="https://janpa.sf.net">JANPA</a> (the nwchem2molden step is no longer
     required when using .molden files and the <code>MOLDEN_NORM JANPA</code>
     keyword)</li>
-<li>(http://orbkit.github.io/)</li>
-<li>(http://github.com/Konjkov/molden2qmc)</li>
-<li>(https://github.com/zorkzou/Molden2AIM)</li>
-<li>(http://sobereva.com/multiwfn/)</li>
+<li><a href="http://orbkit.github.io/">orbkit</a></li>
+<li><a href="http://github.com/Konjkov/molden2qmc">Molden2qmc</a></li>
+<li><a href="https://github.com/zorkzou/Molden2AIM">Molden2AIM</a></li>
+<li><a href="http://sobereva.com/multiwfn/">Multiwfn</a></li>
 </ul>
 <p>the <code>MOLDEN_NORM</code> option allows the renormalization of the basis set
 coefficients. By default, the coefficient values from input are not
 modified. Using the <code>JANPA</code> value coefficients are normalized following
-(https://janpa.sourceforge.net/)&rsquo;s
+<a href="https://janpa.sourceforge.net/">JANPA</a>&rsquo;s
 convention (where basis coefficients are normalized to unity), while the <code>NWCHEM</code> will produce coefficients normalized
 according to NWChem&rsquo;s convention. Using <code>MOLDEN_NORM</code> equal <code>NONE</code> will
 leave the input coefficients unmodified.<br />
-It is strongly recommended to use <strong>spherical</strong> (Basis.md) when using the NWChem Molden output for JANPA analysis</p>
+It is strongly recommended to use <strong>spherical</strong> <a href="Basis.html">basis set</a> when using the NWChem Molden output for JANPA analysis</p>
 <p>Example input file for a scf calculation. The resulting Molden file will
 be named <code>h2o.molden</code></p>
 <pre><code> start heat
@@ -3770,7 +3770,7 @@ be named <code>h2o.molden</code></p>
 
  task scf property
 </code></pre>
-<p>Then, the resulting <code>h2o.molden</code> file can be post processed by (https://janpa.sourceforge.net/) with the following command</p>
+<p>Then, the resulting <code>h2o.molden</code> file can be post processed by <a href="https://janpa.sourceforge.net/">Janpa</a> with the following command</p>
 <pre><code>java -jar janpa.jar h2o.molden &gt; h2o.janpa.txt
 </code></pre>
 <h2 id="localization">Localization<a class="headerlink" href="#localization" title="Permanent link">&para;</a></h2>
@@ -3788,7 +3788,7 @@ be named <code>h2o.molden</code></p>
 <p>An optional integer switch may be supplied after the localization method specification. The default <code>0</code> means only occupied orbitals are localized.  Use <code>1</code> to localize virtual orbitals instead, or <code>2</code> to separately localize occupied and virtual orbitals in the same run. Localization of virtual orbitals is not implemented for the Boys localization. If only the keyword <code>localization</code> is given, this defaults to a Pipek-Mezey localization of the occupied molecular orbitals.</p>
 <p>In spin-unrestricted calculations, alpha and beta spin orbitals are localized separately. Fractional-occupation DFT and restricted open-shell Hartree-Fock or Kohn-Sham are not yet supported; attempting to use localization with fractional orbital occupations may run but will likely produce unwanted and wrong results.</p>
 <p>A localization run prints a characterizations of the LMOs. Specifically, the PM and IBO localizations print an energy-sorted list of LMOs indicating the density weight of each LMO on the various atoms for weights exceeding a 1% threshold; the atoms are listed in terms of their input number. A Boys localization prints the LMO centroid and the expectation value of <em>r</em>^2 per LMO.</p>
-<p>Typically, however, the user will want to visualize the LMOs. The localization run saves the LMO coefficients in a file <code>locorb.movecs</code>, which can be used as the MO vector file in an NWChem (https://nwchemgit.github.io/DPLOT.html) to generate corresponding volume data maps, for example, in the `cube&rsquo; format commonly used in computational chemistry. The latter can be visualized with a considerable number of open source, free, or proprietary software packages.</p>
+<p>Typically, however, the user will want to visualize the LMOs. The localization run saves the LMO coefficients in a file <code>locorb.movecs</code>, which can be used as the MO vector file in an NWChem <a href="https://nwchemgit.github.io/DPLOT.html">DPLOT task</a> to generate corresponding volume data maps, for example, in the `cube&rsquo; format commonly used in computational chemistry. The latter can be visualized with a considerable number of open source, free, or proprietary software packages.</p>
 <p>NWChem test jobs that use the orbital localization functionality (under <code>$NWCHEM_TOP/QA/tests/</code>) are <code>localize-ibo-allyl</code>, <code>localize-pm-allyl</code>, and <code>localize-ibo-aa</code>. The latter is based on the acrylic acid example from the original IBO publication.<sup id="fnref_footnote_knizia2013"><a class="footnote-ref" href="#fn_footnote_knizia2013">16</a></sup> IBO number 19 represents the delocalized C-C pi bond LMO of the system. After running the test job, the corresponding cube file for LMO 19 can be generated, for example, with</p>
 <pre><code> dplot
  vectors locorb.movecs
@@ -3804,8 +3804,8 @@ be named <code>h2o.molden</code></p>
  task dplot
 </code></pre>
 <p>The resulting plot with &#177;0.03 isosurfaces may look like the following</p>
-<p>!(acrylic-acid-ibo.png)</p>
-<p>A (https://github.com/jautschbach/nwchem-dplot-utility) is available to facilitate the creation of volume data files for visualizing multiple MOs or LMOs of a given molecule. For the acrylic acid example, after running NWChem with the <code>localize-ibo-aa.nw</code> input, the following command will create an input file with <code>dplot</code> tasks to generate cubes for the 19 occupied and 10 virtual IBOs of the molecule on a 50x50x50 grid:</p>
+<p><img alt="Acrylic Acid IBO number 19" src="acrylic-acid-ibo.png" /></p>
+<p>A <a href="https://github.com/jautschbach/nwchem-dplot-utility">Python script</a> is available to facilitate the creation of volume data files for visualizing multiple MOs or LMOs of a given molecule. For the acrylic acid example, after running NWChem with the <code>localize-ibo-aa.nw</code> input, the following command will create an input file with <code>dplot</code> tasks to generate cubes for the 19 occupied and 10 virtual IBOs of the molecule on a 50x50x50 grid:</p>
 <pre><code> dplot.py -i localize-ibo-aa.nw -m locorb.movecs -g 50 -l 1-29
 </code></pre>
 <p>The <code>dplot</code> task shown above is included in the resulting NWChem input file <code>dplot.nw</code>.</p>

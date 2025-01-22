@@ -3503,9 +3503,9 @@
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>NWChem supports a spectrum of single excitation theories for vertical
 excitation energy calculations, namely, configuration interaction
-singles (CIS), time-dependent Hartree-Fock (TDHF or also known as
+singles (CIS)<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>, time-dependent Hartree-Fock (TDHF or also known as
 random-phase approximation RPA), time-dependent density functional
-theory (TDDFT), and Tamm-Dancoff approximation to TDDFT. These
+theory (TDDFT)<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup>, and Tamm-Dancoff approximation<sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">3</a></sup> to TDDFT. These
 methods are implemented in a single framework that invokes Davidson&rsquo;s
 trial vector algorithm (or its modification for a non-Hermitian
 eigenvalue problem). The capabilities of the module are summarized as
@@ -3530,9 +3530,9 @@ follows:</p>
 <li>Multiple and single trial-vector processing algorithms,</li>
 <li>Frozen core and virtual approximation,</li>
 <li>Asymptotically correct exchange-correlation potential by van Leeuwen
-    and Baerends,</li>
-<li>Asymptotic correction by Casida and Salahub,</li>
-<li>Asymptotic correction by Hirata, Zhan, Aprà, Windus, and Dixon.</li>
+    and Baerends<sup id="fnref_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">4</a></sup>,</li>
+<li>Asymptotic correction by Casida and Salahub<sup id="fnref2_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup>,</li>
+<li>Asymptotic correction by Hirata, Zhan, Aprà, Windus, and Dixon<sup id="fnref2_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">6</a></sup>.</li>
 </ul>
 <p>These are very effective way to rectify the shortcomings of TDDFT when
 applied to Rydberg excited states (see below).</p>
@@ -3574,8 +3574,8 @@ transition. The computational cost per state of TDDFT calculations
 scales as the same as the ground state DFT calculations, although the
 prefactor of the scaling may be much greater in the former.</p>
 <p>A very simple and effecive way to rectify the TDDFT&rsquo;s failure for
-Rydberg excited states has been proposed by Tozer and Handy and by Casida and
-Salahub. They proposed to splice a <em>-1/r</em>
+Rydberg excited states has been proposed by Tozer and Handy<sup id="fnref_footnote_8"><a class="footnote-ref" href="#fn_footnote_8">7</a></sup> and by Casida and
+Salahub<sup id="fnref_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup>. They proposed to splice a <em>-1/r</em>
 asymptotic tail to an exchange-correlation potential that does not have
 the correct asymptotic behavior. Because the approximate
 exchange-correlation potentials are too shallow everywhere, a negative
@@ -3588,7 +3588,7 @@ or from a ΔSCF calculation. Recently, we proposed a new, expedient, and
 self-contained asymptotic correction that does not require an ionization
 potential (or shift) as an external parameter from a separate
 calculation. In this scheme, the shift is computed by a semi-empirical
-formula proposed by Zhan, Nichols, and Dixon. Both Casida-Salahub
+formula proposed by Zhan, Nichols, and Dixon<sup id="fnref_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">6</a></sup>. Both Casida-Salahub
 scheme and this new asymptotic correction scheme give considerably
 improved (Koopmans type) ionization potentials and Rydberg excitation
 energies. The latter, however, supply the shift by itself unlike to
@@ -3616,33 +3616,33 @@ second argument of the task directive is given, a single-point
 excitation energy calculation will be assumed. For geometry
 optimizations, it is usually necessary to specify the target excited
 state and its irreducible representation it belongs to. See the
-subsections (#target-and-targetsym-the-target-root-and-its-symmetry) for more detail.</p>
+subsections <a href="#target-and-targetsym-the-target-root-and-its-symmetry"><code>TARGET</code> and <code>TARGETSYM</code></a> for more detail.</p>
 <p>Individual parameters and keywords may be supplied in the <code>TDDFT</code> input
 block. The syntax is:</p>
 <pre><code> TDDFT
-
-
-
-
-
-
-
-
-
-
-    &lt;-cutoff energy&gt;  
-    &lt;-lower cutoff energy&gt;  &lt;-higher cutoff energy&gt;  
-    &lt;integer lower orbital&gt;  &lt;integer upper orbital&gt;  
-    &lt;integer lower orbital&gt;  &lt;integer upper orbital&gt;  
-
-
-
-
-
-
-
-    (atomic || &lt;integer nfzc default 0&gt;)] \  
-            ]  
+   [(CIS||RPA) default RPA]  
+   [NROOTS &lt;integer nroots default 1&gt;]  
+   [MAXVECS &lt;integer maxvecs default 1000&gt;] 
+   [(SINGLET||NOSINGLET) default SINGLET]  
+   [(TRIPLET||NOTRIPLET) default TRIPLET]  
+   [THRESH &lt;double thresh default 1e-4&gt;]  
+   [MAXITER &lt;integer maxiter default 100&gt;]  
+   [TARGET &lt;integer target default 1&gt;]  
+   [TARGETSYM &lt;character targetsym default 'none'&gt;]  
+   [SYMMETRY]  
+   [ECUT] &lt;-cutoff energy&gt;  
+   [EWIN] &lt;-lower cutoff energy&gt;  &lt;-higher cutoff energy&gt;  
+   [ALPHA] &lt;integer lower orbital&gt;  &lt;integer upper orbital&gt;  
+   [BETA] &lt;integer lower orbital&gt;  &lt;integer upper orbital&gt;  
+   [CIVECS]  
+   [GRAD, END]  
+   [CDSPECTRUM]  
+   [GIAO]
+   [VELOCITY]
+   [SIMPLESO]
+   [ALGORITHM &lt;integer algorithm default 0&gt;]  
+   [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \  
+            [virtual &lt;integer nfzv default 0&gt;]]  
    [PRINT (none||low||medium||high||debug)  
      &lt;string list_of_names ...&gt;]
  END
@@ -3662,7 +3662,7 @@ section of Sample input and output for more details.</p>
 <p>Note that the keyword for the asymptotic correction must be given in the
 DFT input block, since all the effects of the correction (and also
 changes in the computer program) occur in the SCF calculation stage. See
-(Density-Functional-Theory-for-Molecules.md#lb94-and-cs00-asymptotic-correction) (keywords <code>CS00</code> and <code>LB94</code>) for details.</p>
+<a href="Density-Functional-Theory-for-Molecules.html#lb94-and-cs00-asymptotic-correction">DFT</a> (keywords <code>CS00</code> and <code>LB94</code>) for details.</p>
 <h2 id="keywords-of-tddft-input-block">Keywords of TDDFT input block<a class="headerlink" href="#keywords-of-tddft-input-block" title="Permanent link">&para;</a></h2>
 <h3 id="cis-and-rpa-the-tamm-dancoff-approximation">CIS and RPA: the Tamm-Dancoff approximation<a class="headerlink" href="#cis-and-rpa-the-tamm-dancoff-approximation" title="Permanent link">&para;</a></h3>
 <p>These keywords toggle the Tamm-Dancoff approximation. <code>CIS</code> means that the
@@ -3743,7 +3743,7 @@ optimization of an excited state root with a particular irreducible
 representation. By default, this option is not set. <code>TARGETSYM</code> must be
 specified when <code>SYMMETRY</code> is invoked.</p>
 <h3 id="ecut-energy-cutoff">ECUT: energy cutoff<a class="headerlink" href="#ecut-energy-cutoff" title="Permanent link">&para;</a></h3>
-<p>The <code>ECUT</code> keyword enables restricted excitation window TDDFT (REW-TDDFT).
+<p>The <code>ECUT</code> keyword enables restricted excitation window TDDFT (REW-TDDFT)<sup id="fnref_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">8</a></sup>.
 This is an approach best suited for core excitations. By specifying this
 keyword only excitations from occupied states below the energy cutoff
 will be considered.</p>
@@ -3803,7 +3803,7 @@ We recommend to use the <code>GIAO</code> keyword</p>
 <p>Perform CD spectrum calculations with the velocity gauge.</p>
 <h3 id="simpleso-simplified-spin-orbit-coupling">SIMPLESO: simplified Spin-Orbit coupling<a class="headerlink" href="#simpleso-simplified-spin-orbit-coupling" title="Permanent link">&para;</a></h3>
 <p>Perform excited states calculations with a simplied Spin-Orbit coupling that uses
-eigenvalues from a (Density-Functional-Theory-for-Molecules.md#spin-orbit-density-functional-theory-sodft),
+eigenvalues from a <a href="Density-Functional-Theory-for-Molecules.html#spin-orbit-density-functional-theory-sodft">spin-orbit calculation</a>,
 instead of a standard dft calculation.<br />
 Here is a snippet of an input example (please notice the use of molecular orbitals).</p>
 <pre><code>start au2
@@ -3848,7 +3848,7 @@ decreasing memory requirement, the four algorithms are:</p>
 <li>ALGORITHM 4 : Disk-based, single tensor contraction.</li>
 </ul>
 <p>The incore algorithm stores all the trial and product vectors in memory
-across different nodes with the GA, and often decreases the (#maxiter-the-maximum-number-of-davidson-iteration)
+across different nodes with the GA, and often decreases the <a href="#maxiter-the-maximum-number-of-davidson-iteration"><code>MAXITER</code></a>
 value to accommodate them. The disk-based algorithm stores the vectors
 on disks across different nodes with the DRA, and retrieves each vector
 one at a time when it is needed. The multiple and single tensor
@@ -4088,7 +4088,7 @@ END
 TASK TDDFT ENERGY
 </code></pre>
 <p>TDDFT for core states. The following example illustrates the usage of an
-energy cutoff and energy and orbital windows.</p>
+energy cutoff and energy and orbital windows.<sup id="fnref2_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">8</a></sup></p>
 <pre><code>echo  
 start h2o_core  
 memory 1000 mb  
@@ -4138,7 +4138,7 @@ tddft
 end  
 task tddft
 </code></pre>
-<p>TDDFT optimization with LDA of Pyridine with the 6-31G basis</p>
+<p>TDDFT optimization with LDA of Pyridine with the 6-31G basis<sup id="fnref_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">9</a></sup></p>
 <pre><code>echo  
 start tddftgrad_pyridine_opt  
 title &quot;TDDFT/LDA geometry optimization of Pyridine with 6-31G&quot;  
@@ -4223,7 +4223,7 @@ dplot
 end  
 task dplot
 </code></pre>
-<p>TDDFT protocol for calculating the valence-to-core (1s) X-ray emission spectrum </p>
+<p>TDDFT protocol for calculating the valence-to-core (1s) X-ray emission spectrum <sup id="fnref_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">10</a></sup></p>
 <ol>
 <li>Calculate the neutral ground state.   </li>
 <li>Calculate a full core hole (FCH) ionized state self-consistently, where the<br />
@@ -4234,8 +4234,8 @@ state as reference. </li>
 <li>Final spectra is produced by taking the absolute value of the negative eigenvalues.</li>
 </ol>
 <h2 id="spectrum-parser">Spectrum parser<a class="headerlink" href="#spectrum-parser" title="Permanent link">&para;</a></h2>
-<p>A Python script is available for parsing NWChem output for TDDFT/vspec excitation energies, and optionally Lorentzian broadenening the spectra . The  nw_spectrum.py file can be found at (https://raw.githubusercontent.com/nwchemgit/nwchem/master/contrib/parsers/nw_spectrum.py)</p>
-<pre><code>Usage: nw_spectrum.py 
+<p>A Python script is available for parsing NWChem output for TDDFT/vspec excitation energies, and optionally Lorentzian broadenening the spectra . The  nw_spectrum.py file can be found at <a href="https://raw.githubusercontent.com/nwchemgit/nwchem/master/contrib/parsers/nw_spectrum.py">https://raw.githubusercontent.com/nwchemgit/nwchem/master/contrib/parsers/nw_spectrum.py</a></p>
+<pre><code>Usage: nw_spectrum.py [options]
 
 Reads NWChem output from stdin, parses for the linear response TDDFT or DFT
 vspec excitations, and prints the absorption spectrum to stdout.  It will
@@ -4267,39 +4267,41 @@ Options:
   -v, --verbose         echo warnings and progress to stderr
 </code></pre>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<dl>
-<dt>///Footnotes Go Here///</dt>
-<dd>
-<p>J. B. Foreman, M. Head-Gordon, J. A. Pople, and M. J. Frisch, <em>J. Phys. Chem.</em> <strong>96</strong>, 135 (1992), DOI:(https://dx.doi.org/10.1021/j100180a030)    </p>
-</dd>
-<dd>
-<p>C. Jamorski, M. E. Casida, and D. R. Salahub, <em>J. Chem. Phys.</em> <strong>104</strong>, 5134 (1996), DOI:(https://dx.doi.org/10.1063/1.471140); R. Bauernschmitt and R. Ahlrichs, <em>Chem. Phys. Lett.</em> <strong>256</strong>, 454 (1996), DOI:(https://dx.doi.org/10.1016/0009-2614(96)00440-X); R. Bauernschmitt, M. Häser, O. Treutler, and R. Ahlrichs, <em>Chem. Phys. Lett.</em> <strong>264</strong>, 573 (1997), DOI:(https://dx.doi.org/10.1016/S0009-2614(96)01343-7).  </p>
-</dd>
-<dd>
-<p>S. Hirata and M. Head-Gordon, <em>Chem. Phys. Lett.</em> <strong>314</strong>, 291 (1999).  DOI:(https://dx.doi.org/10.1016/S0009-2614(99)01149-5)     </p>
-</dd>
-<dd>
-<p>R. van Leeuwen and E. J. Baerends, <em>Phys. Rev. A</em> <strong>49</strong>,  2421 (1994), DOI:(https://dx.doi.org/10.1103/PhysRevA.49.2421)  </p>
-</dd>
-<dd>
-<p>M. E. Casida, C. Jamorski, K. C. Casida, and D. R. Salahub, <em>J. Chem. Phys.</em> <strong>108</strong>, 4439 (1998), DOI:(https://dx.doi.org/10.1063/1.475855)</p>
-</dd>
-<dd>
-<p>S. Hirata, C.-G. Zhan, E. Aprà, T. L. Windus, and D. A. Dixon, <em>J. Phys. Chem. A</em> <strong>107</strong>, 10154 (2003).  DOI:(https://dx.doi.org/10.1021/jp035667x)  </p>
-</dd>
-<dd>
-<p>D. J. Tozer and N. C. Handy, <em>J. Chem. Phys.</em> <strong>109</strong>, 10180 (1998), DOI:(https://dx.doi.org/10.1063/1.477711)  </p>
-</dd>
-<dd>
-<p>K. Lopata, B. E. Van Kuiken, M. Khalil, N. Govind, &ldquo;Linear-Response and Real-Time Time-Dependent Density Functional Theory Studies of Core-Level Near-Edge X-Ray Absorption&rdquo;, <em>J. Chem. Theory Comput.</em>, 2012, <strong>8</strong> (9), pp 3284–3292, DOI:(https://dx.doi.org/10.1021/ct3005613)  </p>
-</dd>
-<dd>
-<p>D. W. Silverstein, N. Govind,  H. J. J. van Dam, L. Jensen, &ldquo;Simulating One-Photon Absorption and Resonance Raman Scattering Spectra Using Analytical Excited State Energy Gradients within Time-Dependent Density Functional Theory&rdquo; <em>J. Chem. Theory Comput.</em>, 2013, <strong>9</strong> (12), pp 5490–5503, DOI:(https://dx.doi.org/10.1021/ct4007772)  </p>
-</dd>
-<dd>
-<p>Y. Zhang, S. Mukamel, M. Khalil, N. Govind, &ldquo;Simulating Valence-to-Core X-ray Emission Spectroscopy of Transition Metal&rdquo;, <em>J. Chem. Theory Comput</em>., 2015, <strong>11</strong> (12), pp 5804–5809, DOI:(https://dx.doi.org/10.1021/acs.jctc.5b00763)  </p>
-</dd>
-</dl>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn_footnote_1">
+<p>J. B. Foreman, M. Head-Gordon, J. A. Pople, and M. J. Frisch, <em>J. Phys. Chem.</em> <strong>96</strong>, 135 (1992), DOI:<a href="https://dx.doi.org/10.1021/j100180a030">10.1021/j100180a030</a>&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_2">
+<p>C. Jamorski, M. E. Casida, and D. R. Salahub, <em>J. Chem. Phys.</em> <strong>104</strong>, 5134 (1996), DOI:<a href="https://dx.doi.org/10.1063/1.471140">10.1063/1.471140</a>; R. Bauernschmitt and R. Ahlrichs, <em>Chem. Phys. Lett.</em> <strong>256</strong>, 454 (1996), DOI:<a href="https://dx.doi.org/10.1016/0009-2614(96)00440-X">10.1016/0009-2614(96)00440-X</a>; R. Bauernschmitt, M. Häser, O. Treutler, and R. Ahlrichs, <em>Chem. Phys. Lett.</em> <strong>264</strong>, 573 (1997), DOI:<a href="https://dx.doi.org/10.1016/S0009-2614(96)01343-7">10.1016/S0009-2614(96)01343-7</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_3">
+<p>S. Hirata and M. Head-Gordon, <em>Chem. Phys. Lett.</em> <strong>314</strong>, 291 (1999).  DOI:<a href="https://dx.doi.org/10.1016/S0009-2614(99)01149-5">10.1016/S0009-2614(99)01149-5</a>&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_4">
+<p>R. van Leeuwen and E. J. Baerends, <em>Phys. Rev. A</em> <strong>49</strong>,  2421 (1994), DOI:<a href="https://dx.doi.org/10.1103/PhysRevA.49.2421">10.1103/PhysRevA.49.2421</a>&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_5">
+<p>M. E. Casida, C. Jamorski, K. C. Casida, and D. R. Salahub, <em>J. Chem. Phys.</em> <strong>108</strong>, 4439 (1998), DOI:<a href="https://dx.doi.org/10.1063/1.475855">10.1063/1.475855</a>&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_6">
+<p>S. Hirata, C.-G. Zhan, E. Aprà, T. L. Windus, and D. A. Dixon, <em>J. Phys. Chem. A</em> <strong>107</strong>, 10154 (2003).  DOI:<a href="https://dx.doi.org/10.1021/jp035667x">10.1021/jp035667x</a>&#160;<a class="footnote-backref" href="#fnref_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_8">
+<p>D. J. Tozer and N. C. Handy, <em>J. Chem. Phys.</em> <strong>109</strong>, 10180 (1998), DOI:<a href="https://dx.doi.org/10.1063/1.477711">10.1063/1.477711</a>&#160;<a class="footnote-backref" href="#fnref_footnote_8" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_9">
+<p>K. Lopata, B. E. Van Kuiken, M. Khalil, N. Govind, &ldquo;Linear-Response and Real-Time Time-Dependent Density Functional Theory Studies of Core-Level Near-Edge X-Ray Absorption&rdquo;, <em>J. Chem. Theory Comput.</em>, 2012, <strong>8</strong> (9), pp 3284–3292, DOI:<a href="https://dx.doi.org/10.1021/ct3005613">10.1021/ct3005613</a>&#160;<a class="footnote-backref" href="#fnref_footnote_9" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_9" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_10">
+<p>D. W. Silverstein, N. Govind,  H. J. J. van Dam, L. Jensen, &ldquo;Simulating One-Photon Absorption and Resonance Raman Scattering Spectra Using Analytical Excited State Energy Gradients within Time-Dependent Density Functional Theory&rdquo; <em>J. Chem. Theory Comput.</em>, 2013, <strong>9</strong> (12), pp 5490–5503, DOI:<a href="https://dx.doi.org/10.1021/ct4007772">10.1021/ct4007772</a>&#160;<a class="footnote-backref" href="#fnref_footnote_10" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_11">
+<p>Y. Zhang, S. Mukamel, M. Khalil, N. Govind, &ldquo;Simulating Valence-to-Core X-ray Emission Spectroscopy of Transition Metal&rdquo;, <em>J. Chem. Theory Comput</em>., 2015, <strong>11</strong> (12), pp 5804–5809, DOI:<a href="https://dx.doi.org/10.1021/acs.jctc.5b00763">10.1021/acs.jctc.5b00763</a>&#160;<a class="footnote-backref" href="#fnref_footnote_11" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

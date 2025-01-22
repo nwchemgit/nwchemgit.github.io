@@ -3278,7 +3278,7 @@
 
 <h1 id="solvation-models">Solvation Models<a class="headerlink" href="#solvation-models" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Two solvation models are available in NWChem: (#cosmo) and (#smd).
+<p>Two solvation models are available in NWChem: <a href="#cosmo">COSMO</a> and <a href="#smd">SMD</a>.
 Since some of the COSMO parameters are used for SMD, we suggest to read the COSMO section before the SMD one.</p>
 <h2 id="cosmo">COSMO<a class="headerlink" href="#cosmo" title="Permanent link">&para;</a></h2>
 <h3 id="overview_1">Overview<a class="headerlink" href="#overview_1" title="Permanent link">&para;</a></h3>
@@ -3320,7 +3320,7 @@ electrostatic contribution to the solvation free energy. At the present
 gradients are calculated analytically, but frequencies are calculated by
 finite difference of the gradients.   <br />
 The non-electrostatic
-contributions can be calculated by turning on the (#smd). It should
+contributions can be calculated by turning on the <a href="#smd">SMD model</a>. It should
 be noted that one must in general take into account the standard state
 correction besides the electrostatic and cavitation/dispersion
 contribution to the solvation free energy, when a comparison to
@@ -3329,24 +3329,24 @@ experimental data is made.</p>
 <p>Invoking the COSMO solvation model is done by specifying the input COSMO
 input block with the input options as:</p>
 <pre><code>cosmo  
-
-
-
+  [off]  
+  [dielec  &lt;real dielec default 78.4&gt;]  
+  [parameters &lt;filename&gt;]  
   [radius  &lt;real atom1&gt;  
            &lt;real atom2&gt;  
       . . .  
            &lt;real atomN&gt;]  
-
-
-
-
-
-
-
-
-
-
-
+  [iscren  &lt;integer iscren default 0&gt;]  
+  [minbem  &lt;integer minbem default 2&gt;]  
+  [ificos  &lt;integer ificos default 0&gt;]  
+  [lineq   &lt;integer lineq default 1&gt;]  
+  [zeta &lt;real zeta default 0.98&gt;]  
+  [gamma_s &lt;real gammas default 1.0&gt;]  
+  [sw_tol &lt;real swtol default 1.0e-4&gt;]  
+  [do_gasphase  &lt;logical do_gasphase default True&gt;] 
+  [do_cosmo_ks]
+  [do_cosmo_yk]
+  [do_cosmo_smd]
 end
 </code></pre>
 <p>followed by the task directive specifying the wavefunction and type of
@@ -3468,7 +3468,7 @@ distributions.</p>
 <p><code>do_cosmo_yk</code> is a flag to turn on the York-Karplus model (default)  </p>
 <h4 id="cosmo-do_cosmo_smd-keyword">COSMO: DO_COSMO_SMD keyword<a class="headerlink" href="#cosmo-do_cosmo_smd-keyword" title="Permanent link">&para;</a></h4>
 <p><code>do_cosmo_smd</code> is a flag to turn on the SMD model. More details can be found
-at the (#smd)  </p>
+at the <a href="#smd">SMD Model documentation</a>  </p>
 <p>The following example is for a water molecule in &lsquo;water&rsquo;, using the
 HF/6-31G** level of
 theory:</p>
@@ -3552,8 +3552,8 @@ into two components. The first component is the bulk-electrostatic
 contribution arising from a self-consistent reaction field (SCRF)
 treatment. The SCRF treatment involves an integration of the
 nonhomogeneous-dielectric Poisson equation for bulk electrostatics in
-terms of the (#cosmo)
-of Klamt and Schüürmann with the modified (#cosmo-input-parameters) 
+terms of the <a href="#cosmo">COSMO model</a>
+of Klamt and Schüürmann with the modified <a href="#cosmo-input-parameters">COSMO scaling factor</a> 
 suggested by Stefanovich and Truong and by using the SMD
 intrinsic atomic Coulomb radii. These radii have been optimized for H,
 C, N, O, F, Si, P, S, Cl, and Br. For any other atom the current
@@ -3571,17 +3571,17 @@ geometry-dependent proportionality constants called atomic surface
 tensions) to the solvent-accessible surface areas (SASAs) of the
 individual atoms of the solute.</p>
 <h3 id="smd-input-parameters">SMD Input Parameters<a class="headerlink" href="#smd-input-parameters" title="Permanent link">&para;</a></h3>
-<p>The SMD model requires additional parameters in the (#cosmo-input-parameters)</p>
+<p>The SMD model requires additional parameters in the <a href="#cosmo-input-parameters">COSMO input block</a></p>
 <pre><code>cosmo  
-
-
-
-
-
-
-
-
-
+  [do_cosmo_smd &lt;logical&gt;]
+  [solvent (keyword)]
+  [icds &lt;integer&gt;]
+  [sola &lt;real&gt;]
+  [solb &lt;real&gt;]
+  [solc &lt;real&gt;]
+  [solg &lt;real&gt;]
+  [solh &lt;real&gt;]
+  [soln &lt;real&gt;]
 end  
 </code></pre>
 <p>At the moment the SMD model is available in NWChem only with the DFT
@@ -3595,7 +3595,7 @@ when set to a <code>true</code> value.</p>
 <pre><code>solvent (keyword)
 </code></pre>
 <p>a <code>solvent</code> keyword from the short name entry in the
-(#solvents-list-solvent-keyword).</p>
+<a href="#solvents-list-solvent-keyword">list of available SMD solvent names</a>.</p>
 <p>When a solvent is specified by name, the descriptors for the solvent are
 based on the Minnesota Solvent Descriptor Database<sup id="fnref_footnote_winget1999"><a class="footnote-ref" href="#fn_footnote_winget1999">9</a></sup>.  </p>
 <p>The user can specify a solvent (by using a string using up to eight characters)
@@ -3638,14 +3638,14 @@ cal mol<sup>–1</sup> Å<sup>–2</sup><br />
 <p><code>icds</code> should have a value of 1 for water.
 <code>icds</code> should have a value of 2  for any nonaqueous solvent.<br />
 If <code>icds</code> is set equal to 2, then you need to provide the following solvent descriptors
-(see the (https://comp.chem.umn.edu/solvation/mnsddb.pdf) ):</p>
+(see the <a href="https://comp.chem.umn.edu/solvation/mnsddb.pdf">MN solvent descriptor database</a> ):</p>
 <ul>
-<li>(#smd-sola-keyword) </li>
-<li>(#smd-solb-keyword)</li>
-<li>(#smd-solc-keyword)</li>
-<li>(#smd-solg-keyword) </li>
-<li>(#smd-solh-keyword) </li>
-<li>(#smd-soln-keyword) </li>
+<li><a href="#smd-sola-keyword">sola</a> </li>
+<li><a href="#smd-solb-keyword">solb</a></li>
+<li><a href="#smd-solc-keyword">solc</a></li>
+<li><a href="#smd-solg-keyword">solg</a> </li>
+<li><a href="#smd-solh-keyword">solh</a> </li>
+<li><a href="#smd-soln-keyword">soln</a> </li>
 </ul>
 <h3 id="smd-examples">SMD Examples<a class="headerlink" href="#smd-examples" title="Permanent link">&para;</a></h3>
 <h3 id="smd-example-water-solvent">SMD Example: water solvent<a class="headerlink" href="#smd-example-water-solvent" title="Permanent link">&para;</a></h3>

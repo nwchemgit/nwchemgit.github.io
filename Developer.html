@@ -3090,9 +3090,9 @@ at the EMSL at PNNL. A <a href="Developer_Team.html">current list of developers 
 here</a>. This page provides important
 information for current and new developers.</p>
 <h2 id="downloading-from-and-committing-to-the-nwchem-source-tree">Downloading from and Committing to the NWChem source tree<a class="headerlink" href="#downloading-from-and-committing-to-the-nwchem-source-tree" title="Permanent link">&para;</a></h2>
-<p>The NWChem source is maintained with (https://git-scm.com/), an
+<p>The NWChem source is maintained with <a href="https://git-scm.com/">git</a>, an
 open-source version control system. To download NWChem you must have
-(https://git-scm.com/) installed on your development platform. For
+<a href="https://git-scm.com/">git</a> installed on your development platform. For
 an extensive description of the GIT functionality and commands, please
 check the git documentation.</p>
 <p>The NWChem GIT repository is hosted on Github at
@@ -3133,7 +3133,7 @@ Team.</p>
 <p>Before contributions from this new developer can be incorporated into
 NWChem, this person will have to provide written feedback that the
 contributions can be released within NWChem under a
-(http://opensource.org/licenses/ecl2.php).</p>
+<a href="http://opensource.org/licenses/ecl2.php">ECL 2.0 open-source license</a>.</p>
 <p>A (Trusted) Developer will receive the appropriate access to the
 nwchemgit github repository. If a Developer consistently incorporates
 code changes that negatively affect the development tree, access to the
@@ -3182,8 +3182,8 @@ data, only through a (most of the time) <a href="NWChem-Architecture.html">disk-
 database</a>, which is similar to the
 GAMESS-UK dumpfile or the Gaussian checkpoint file. The run time
 database contains all the information necessary to
-(Start_Restart.md) a task.</p>
-<p>The (Top-level.md)
+<a href="Start_Restart.html">restart</a> a task.</p>
+<p>The <a href="Top-level.html">structure and flow of the program and input</a>
 are such that it allows for performing multiple tasks within one job.
 Input is read and stored into the run time database until a <a href="TASK.html">TASK
 directive</a> is encountered. When a <a href="TASK.html">TASK
@@ -3233,7 +3233,7 @@ subsequent computations.</p>
 </ol>
 <h2 id="nwchem-mailing-list-archive">NWChem Mailing List Archive<a class="headerlink" href="#nwchem-mailing-list-archive" title="Permanent link">&para;</a></h2>
 <p>The archive of the NWChem Mailing list can be found
-(https://nwchemgit.github.io/Archived-Forum.html).</p>
+<a href="https://nwchemgit.github.io/Archived-Forum.html">here</a>.</p>
 <h2 id="nwchem-wiki-page-guidelines">NWChem Wiki Page Guidelines<a class="headerlink" href="#nwchem-wiki-page-guidelines" title="Permanent link">&para;</a></h2>
 <p>Follow the link to the <a href="Guidelines-for-Authors.html">NWChem Wiki Page
 Guidelines</a>.</p>
@@ -3303,44 +3303,44 @@ generated Fortran.</p>
 <h4 id="api-functions">API functions<a class="headerlink" href="#api-functions" title="Permanent link">&para;</a></h4>
 <p>API routines of the NWXC module are</p>
 <ul>
-<li><b>nwxc_input \</b> parse the functional input
+<li><b>nwxc_input <script type="math/tex; mode=display">nwxc\_nwchem.F</script></b> parse the functional input
     line</li>
-<li><b>nwxc_print \</b> print the current functional
+<li><b>nwxc_print <script type="math/tex; mode=display">nwxc\_nwchem.F</script></b> print the current functional
     definition</li>
-<li><b>nwxc_print_nwpw \</b> print the current
+<li><b>nwxc_print_nwpw <script type="math/tex; mode=display">nwxc\_nwchem.F</script></b> print the current
     functional formatted for the NWPW module</li>
-<li><b>nwxc_rtdb_store \</b> store the current
+<li><b>nwxc_rtdb_store <script type="math/tex; mode=display">nwxc\_nwchem.F</script></b> store the current
     functional definition</li>
-<li><b>nwxc_rtdb_load \</b> load the currentl
+<li><b>nwxc_rtdb_load <script type="math/tex; mode=display">nwxc\_nwchem.F</script></b> load the currentl
     functional definition</li>
-<li><b>nwxc_is_on \</b> is NWXC activated?</li>
-<li><b>nwxc_has_hfx \</b> does the functional have
+<li><b>nwxc_is_on <script type="math/tex; mode=display">nwxc\_query.F</script></b> is NWXC activated?</li>
+<li><b>nwxc_has_hfx <script type="math/tex; mode=display">nwxc\_query.F</script></b> does the functional have
     Hartree-Fock exchange?</li>
-<li><b>nwxc_has_mp2 \</b> does the functional have a
+<li><b>nwxc_has_mp2 <script type="math/tex; mode=display">nwxc\_query.F</script></b> does the functional have a
     fraction of MP2 correlation?</li>
-<li><b>nwxc_has_cam \</b> does the functional use
+<li><b>nwxc_has_cam <script type="math/tex; mode=display">nwxc\_query.F</script></b> does the functional use
     Coulomb operator attenuation?</li>
-<li><b>nwxc_has_disp \</b> does the functional have
+<li><b>nwxc_has_disp <script type="math/tex; mode=display">nwxc\_query.F</script></b> does the functional have
     dispersion correction terms?</li>
-<li><b>nwxc_get_cam \</b> get the Coulomb attenuation
+<li><b>nwxc_get_cam <script type="math/tex; mode=display">nwxc\_query.F</script></b> get the Coulomb attenuation
     parameters</li>
-<li><b>nwxc_get_disp \</b> get the dispersion
+<li><b>nwxc_get_disp <script type="math/tex; mode=display">nwxc\_query.F</script></b> get the dispersion
     correction parameters</li>
-<li><b>nwxc_wght_hfx \</b> get the Hartree-Fock
+<li><b>nwxc_wght_hfx <script type="math/tex; mode=display">nwxc\_query.F</script></b> get the Hartree-Fock
     exchange fraction</li>
-<li><b>nwxc_wght_mp2 \</b> get the MP2 correlation
+<li><b>nwxc_wght_mp2 <script type="math/tex; mode=display">nwxc\_query.F</script></b> get the MP2 correlation
     fraction</li>
-<li><b>nwxc_is_lda \</b> is the functional an LDA
+<li><b>nwxc_is_lda <script type="math/tex; mode=display">nwxc\_query.F</script></b> is the functional an LDA
     functional?</li>
-<li><b>nwxc_is_gga \</b> is the functional a GGA
+<li><b>nwxc_is_gga <script type="math/tex; mode=display">nwxc\_query.F</script></b> is the functional a GGA
     functional?</li>
-<li><b>nwxc_is_mgga \</b> is the functional a meta-GGA
+<li><b>nwxc_is_mgga <script type="math/tex; mode=display">nwxc\_query.F</script></b> is the functional a meta-GGA
     functional?</li>
-<li><b>nwxc_eval_df \</b> evaluate the functional and
+<li><b>nwxc_eval_df <script type="math/tex; mode=display">nwxc\_eval.F</script></b> evaluate the functional and
     its first order partial derivatives</li>
-<li><b>nwxc_eval_df2 \</b> evaluate the functional and
+<li><b>nwxc_eval_df2 <script type="math/tex; mode=display">nwxc\_eval.F</script></b> evaluate the functional and
     its first and second order partial derivatives</li>
-<li><b>nwxc_eval_df3 \</b> evaluate the functional and
+<li><b>nwxc_eval_df3 <script type="math/tex; mode=display">nwxc\_eval.F</script></b> evaluate the functional and
     its first, second, and third order partial derivatives</li>
 </ul>
 <h4 id="adding-new-functionals">Adding new functionals<a class="headerlink" href="#adding-new-functionals" title="Permanent link">&para;</a></h4>
@@ -3357,11 +3357,11 @@ used to print the functional in the output, and to store the functional
 on the runtime data base. The other list contains the specification of
 the functional as it is used to evaluate the expression. These lists as
 well as the Coulomb attenuation and dispersion correction parameters are
-controlled from <b>nwxc_add_df \</b>. The translation of
+controlled from <b>nwxc_add_df <script type="math/tex; mode=display">nwxc\_add.F</script></b>. The translation of
 an input string to the appropriate functional needs to be added here.</p>
 <p>In order to print the functional the code uses the name and reference
 for the functional (or functional terms). The function
-<b>nwxc_get_info \</b> returns the corresponding
+<b>nwxc_get_info <script type="math/tex; mode=display">nwxc\_query.F</script></b> returns the corresponding
 character string given the integer identifier of a functional. For a new
 functional this reference needs to be added.</p>
 <p>As the NWXC module currently supports both automatic differentiation as
@@ -3369,10 +3369,10 @@ well as symbolic algebra generated implementations of the functionals
 there are two parallel sets of routines that invoke the actual
 functional evaluation. The routines <b>nwxc_eval_df_doit</b>,
 <b>nwxc_eval_df2_doit</b>, and <b>nwxc_eval_df3_doit</b>
-<b>\</b> invoke the automatic differentiation
+<b><script type="math/tex; mode=display">nwxc\_eval.F</script></b> invoke the automatic differentiation
 implementations. The routines <b>nwxcm_eval_df</b>,
 <b>nwxcm_eval_df2</b>, and <b>nwxcm_eval_df3</b>
-<b>\</b> invoke the Maxima generated implementations.
+<b><script type="math/tex; mode=display">nwxcm\_eval.F</script></b> invoke the Maxima generated implementations.
 The appropriate subroutine calls need to be added in these places.</p>
 <p>Comments:</p>
 <ul>
@@ -3409,7 +3409,7 @@ The appropriate subroutine calls need to be added in these places.</p>
 <h4 id="generating-code-for-a-functional">Generating code for a functional<a class="headerlink" href="#generating-code-for-a-functional" title="Permanent link">&para;</a></h4>
 <p>One way to generate the code for a new functional to add is shown in
 workflow schematic
-(Code_generation_workflow.jpg)</p>
+<a href="Code_generation_workflow.jpg">NWXC code generation workflow</a></p>
 <p>The step involved can be summarized as:</p>
 <ul>
 <li>Create an automatic differentiation implementation<ul>
@@ -3427,7 +3427,7 @@ workflow schematic
 <li>Generate the Maxima expression<ul>
 <li>Add the functional printing version of the automatically
     differentiated code to <b>nwxc_eval_df_doit_print
-    \</b>.</li>
+    <script type="math/tex; mode=display">nwxc\_eval\_print.F</script></b>.</li>
 <li>Recompile <b>nwxc_fnc_print</b> (run &ldquo;make nwxc_fnc_print&rdquo;
     in the nwxc directory).</li>
 <li>Add an input file to <b>maxima/input</b> to print the

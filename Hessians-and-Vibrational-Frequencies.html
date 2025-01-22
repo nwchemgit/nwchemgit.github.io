@@ -3095,7 +3095,7 @@ all-electron methodologies or for charge fitting with DFT. The current
 algorithm is fully in-core and does not use symmetry.</p>
 <p>There is no required input for the Hessian module. This module only
 impacts the hessian calculation. For options for calculating the
-frequencies, please see the (Vibration.md) module.</p>
+frequencies, please see the <a href="Vibration.html">Vibrational</a> module.</p>
 <h2 id="hessian-module-input">Hessian Module Input<a class="headerlink" href="#hessian-module-input" title="Permanent link">&para;</a></h2>
 <p>All input for the Hessian Module is optional since the default
 definitions are usually correct for most purposes. The generic module
@@ -3109,9 +3109,9 @@ input begins with hessian and has the form:</p>
 <h3 id="defining-the-wavefunction-threshold">Defining the wavefunction threshold<a class="headerlink" href="#defining-the-wavefunction-threshold" title="Permanent link">&para;</a></h3>
 <p>You may modify the default threshold for the wavefunction. This keyword
 is identical to
-(Hartree-Fock-Theory-for-Molecules.md#thresh-convergence-threshold)
+<a href="Hartree-Fock-Theory-for-Molecules.html#thresh-convergence-threshold">THRESH</a>
 in the SCF, and the
-(Density-Functional-Theory-for-Molecules.md#convergence-scf-convergence-control)
+<a href="Density-Functional-Theory-for-Molecules.html#convergence-scf-convergence-control">CONVERGENCE</a>
 gradient in the DFT. The usual defaults for the convergence of the
 wavefunction for single point and gradient calculations is generally not
 tight enough for analytic hessians. Therefore, the hessian, by default,
@@ -3178,7 +3178,7 @@ below:</p>
 <p>The nuclear hessian which is used to compute the vibrational frequencies
 can be computed by finite difference for any ab initio wave-function
 that has analytic gradients or by analytic methods for SCF and DFT (see
-(#overview) for details). The appropriate nuclear
+<a href="#overview">Hessians</a> for details). The appropriate nuclear
 hessian generation algorithm is chosen based on the user input when TASK
 <theory> frequencies is the task directive.</p>
 <p>The vibrational package was integrated from the Utah Messkit and can use
@@ -3192,7 +3192,7 @@ Eckart projection algorithm. It also computes the zero point energy for
 the molecular system based on the frequencies obtained from the
 projected hessian.</p>
 <p>The default mass of each atom is used unless an alternative mass is
-provided via the (Geometry.md) input or
+provided via the <a href="Geometry.html">geometry</a> input or
 redefined using the vibrational module input. The default mass is the
 mass of the most abundant isotope of each element. If the abundance was
 roughly equal, the mass of the isotope with the longest half life was
@@ -3204,14 +3204,14 @@ temperature of 298.15 degrees.</p>
 definitions will compute the frequencies and IR intensities. The generic
 module input can begin with vib, freq, frequency and has the form:</p>
 <pre><code> {freq || vib || frequency}` 
-   ]  
-
-
+   [reuse [&lt;string hessian_filename&gt;]]  
+   [mass &lt;integer lexical_index&gt; &lt;real new_mass&gt;]  
+   [mass &lt;string tag_identifier&gt; &lt;real new_mass&gt;]  
    [{temp || temperature} &lt;integer number_of_temperatures&gt;\ 
          &lt;real temperature1 temperature2 ...&gt;] 
-   ]  
-   ]  
-   ]  
+   [animate [&lt;real step_size_for_animation&gt;]]  
+   [fd_delta [&lt;real step_size_for_fd_hessian&gt;]]  
+   [filename &lt;string file_set_name&gt; [overwrite]]  
  end
 </code></pre>
 <h3 id="hessian-file-reuse">Hessian File Reuse<a class="headerlink" href="#hessian-file-reuse" title="Permanent link">&para;</a></h3>
@@ -3307,10 +3307,10 @@ of the six possible views down a Cartesian axis.</p>
 <p>It uses the free utilities</p>
 <ul>
 <li>rasmol 
-   (http://www.umass.edu/microbio/rasmol/)
+   <a href="http://www.umass.edu/microbio/rasmol/">https://www.umass.edu/microbio/rasmol/</a>
    to manipulate the molecule and generate the individual frames</li>
 <li>convert from ImageMagick 
-   (https://www.imagemagick.org)
+   <a href="https://www.imagemagick.org">https://www.imagemagick.org</a>
    to combine the frames into an animated gif</li>
 </ul>
 <p>It should be easy to modify the script to other file formats or
@@ -3330,7 +3330,7 @@ along the eigenvector of each nuclear hessian mode in atomic units.</p>
 &ldquo;freq.m-<mode number>&ldquo;. This is inconvenient if more than vibrational
 analysis is run in a single input file. To specify different filename
 for a particular vibrational analysis use the directive</p>
-<pre><code>filename &lt;file_set_name&gt; 
+<pre><code>filename &lt;file_set_name&gt; [overwrite]
 </code></pre>
 <p>where <file_set_name> is the name that will be prepended to the usual
 filenames. In addition the code by default requires all files to be new

@@ -3500,8 +3500,8 @@ restricted Hartree-Fock (RHF) wavefunctions, restricted high-spin
 open-shell Hartree-Fock (ROHF) wavefunctions, and spin-unrestricted
 Hartree-Fock (UHF) wavefunctions. The Hartree-Fock equations are solved
 using a conjugate-gradient method with an orbital Hessian based
-preconditioner. The module supports both replicated data and
-distributed data Fock builders.</p>
+preconditioner<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>. The module supports both replicated data and
+distributed data Fock builders<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup>.</p>
 <p>The SCF directive provides input to the SCF module and is a compound
 directive that encloses additional directives specific to the SCF
 module:</p>
@@ -3514,7 +3514,7 @@ module:</p>
 An error results if the number of electrons is inconsistent with this
 assumption. The number of electrons is inferred from the total charge on
 the system and the sum of the effective nuclear charges of all centers
-(atoms and dummy atoms, see (Geometry.md)).
+(atoms and dummy atoms, see <a href="Geometry.html">GEOMETRY</a>).
 The total charge on the system is zero by default, unless specified at
 some value by input on the CHARGE directive <a href="Charge.html">Total system
 charge</a>.</p>
@@ -3546,7 +3546,7 @@ calculation will be a spin-restricted, high-spin, open-shell SCF
 calculation (keyword ROHF). The open-shell orbitals must be the highest
 occupied orbitals. If necessary, any starting vectors may be rearranged
 through the use of the SWAP keyword on the
-(#vectors-inputoutput-of-mo-vectors) directive
+<a href="#vectors-inputoutput-of-mo-vectors">VECTORS</a> directive
 to accomplish this.</p>
 <p>A spin-unrestricted solution can also be performed by specifying the
 keyword UHF. In UHF calculations, it is assumed that the number of
@@ -3563,8 +3563,8 @@ be obtained by specifying</p>
 symmetry adapted in NWChem. This may not be desirable for fully
 unrestricted wavefunctions. In such cases, the user has the option of
 defeating the defaults by specifying the keywords
-(#adapt-symmetry-adaptation-of-mos) OFF and
-(#sym-use-of-symmetry) OFF .</p>
+<a href="#adapt-symmetry-adaptation-of-mos">ADAPT</a> OFF and
+<a href="#sym-use-of-symmetry">SYM</a> OFF .</p>
 <p>The keywords RHF and ROHF are provided in the code for completeness. It
 may be necessary to specify these in order to modify the behavior of a
 previous calculation (see <a href="NWChem-Architecture.html">NWChem
@@ -3594,7 +3594,7 @@ construction is that the density is totally symmetric. If the orbitals
 are symmetry contaminated, this assumption may not be valid &ndash; which
 could result in incorrect energies and poor convergence of the
 calculation. It is thus advisable when specifying <code>ADAPT OFF</code> to also
-specify <code>SYM OFF</code> ((#sym-use-of-symmetry)).</p>
+specify <code>SYM OFF</code> (<a href="#sym-use-of-symmetry">Use of Symmetry</a>).</p>
 <h2 id="tol2e-integral-screening-threshold">TOL2E: integral screening threshold<a class="headerlink" href="#tol2e-integral-screening-threshold" title="Permanent link">&para;</a></h2>
 <pre><code> TOL2E &lt;real tol2e default min(10e-7 , 0.01*thresh)&gt;
 </code></pre>
@@ -3620,18 +3620,18 @@ be necessary to set this parameter. A value of 10<sup>-12</sup> is
 sufficient for nearly all such
 purposes.</p>
 <h2 id="vectors-inputoutput-of-mo-vectors">VECTORS: input/output of MO vectors<a class="headerlink" href="#vectors-inputoutput-of-mo-vectors" title="Permanent link">&para;</a></h2>
-<pre><code> VECTORS  (&lt;string input_movecs default atomic&gt;) || \  
+<pre><code> VECTORS [[input] (&lt;string input_movecs default atomic&gt;) || \  
                   (project &lt;string basisname&gt; &lt;string filename&gt;) || \  
-                  (fragment &lt;string file1&gt; )] \ 
-          &lt;integer vec1 vec2&gt; ...] \  
-          \  
-          \  
-
-
+                  (fragment &lt;string file1&gt; [&lt;string file2&gt; ...])] \ 
+         [swap [alpha||beta] &lt;integer vec1 vec2&gt; ...] \  
+         [reorder &lt;integer atom1 atom2&gt; ...] \  
+         [output &lt;string output_filename default input_movecs&gt;] \  
+         [lock]  
+         [rotate  &lt;string input_geometry&gt; &lt;string input_movecs&gt;]
 </code></pre>
 <p>The VECTORS directive allows the user to specify the source and
 destination of the molecular orbital vectors. In a startup calculation
-(see (Start_Restart.md)),
+(see <a href="Start_Restart.html">START</a>),
 the default source for guess vectors is a diagonalized Fock matrix
 constructed from a superposition of the atomic density matrices for the
 particular problem. This is usually a very good guess. For a restarted
@@ -3643,7 +3643,7 @@ input molecular orbital vectors as any of the following:</p>
     superposition of the atomic densities (the default guess). See
     <a href="#atomic-guess-orbitals-with-charged-atoms">Atomic
     guess</a> and
-    (#accuracy-of-initial-guess).</li>
+    <a href="#accuracy-of-initial-guess">Accuracy of initial guess</a>.</li>
 <li><code>HCORE</code> &ndash; eigenvectors of the bare-nucleus Hamiltonian or the
     one-electron Hamiltonian.</li>
 <li>filename &ndash; the name of a file containing the MO vectors from a
@@ -3795,7 +3795,7 @@ instances:</p>
     occupied orbitals with lower energy than some doubly occupied
     orbitals. The fragment initial guess avoids this problem.</li>
 </ul>
-<pre><code> VECTORS  fragment &lt;string file1&gt; 
+<pre><code> VECTORS [input] fragment &lt;string file1&gt; [&lt;string file2&gt; ...]
 </code></pre>
 <p>The molecular orbitals are formed by superimposing the previously
 generated orbitals of fragments of the molecule being studied. These
@@ -3850,7 +3850,7 @@ task scf
 given names. Then, after the basis specification, calculations are
 performed on the fragments by setting the geometry to the appropriate
 fragment
-((SET.md))
+(<a href="SET.html">SET</a>)
 and redirecting the output molecular orbitals to an appropriately named
 file. Note also that use of the atomic initial guess is forced, since
 the default initial guess is to use any existing MOs which would not be
@@ -4077,10 +4077,10 @@ charged, this default guess may be improved upon by modifying the atomic
 densities. This is done by setting parameters that add fractional
 charges to the occupation of the valence atomic orbitals. Since the
 atomic SCF program does not have its own input block, the SET directive
-((SET.md)) must be used to set these
+(<a href="SET.html">SET</a>) must be used to set these
 parameters.</p>
 <p>The input specifies a list of tags (i.e., names of atoms in a geometry,
-see (Geometry.md)) and the charges to be
+see <a href="Geometry.html">GEOMETRY</a>) and the charges to be
 added to those centers. Two parameters must be set as follows:</p>
 <pre><code> set atomscf:tags_z &lt;string list_of_tags&gt;  
  set atomscf:z      &lt;real list_of_charges&gt;
@@ -4106,7 +4106,7 @@ persistence</a>)
 and that the modified settings will be used in subsequent atomic guess
 calculations unless the data is deleted from the database with the UNSET
 directive
-((UNSET.md)).</p>
+(<a href="UNSET.html">UNSET</a>).</p>
 <h2 id="accuracy-of-initial-guess">Accuracy of initial guess<a class="headerlink" href="#accuracy-of-initial-guess" title="Permanent link">&para;</a></h2>
 <p>For SCF, the initial Fock-matrix construction from the atomic guess is
 performed to a default precision of 1e-7. However, other wavefunctions,
@@ -4225,9 +4225,9 @@ iteration) is forced by specifying the directive</p>
 <p>Alternatively, the SEMIDIRECT directive can be used to control the
 default semidirect calculation by defining the amount of disk space and
 the cache memory size. The form of this directive is as follows:</p>
-<pre><code>  SEMIDIRECT    
-
-
+<pre><code>  SEMIDIRECT [filesize &lt;integer filesize default disksize&gt;]   
+             [memsize  &lt;integer memsize default available&gt;]  
+             [filename &lt;string filename default $file_prefix.aoints$]
 </code></pre>
 <p>The keyword FILESIZE allows the user to specify the amount of disk space
 to be used per process for storing the integrals in 64-bit words.
@@ -4356,7 +4356,7 @@ that is unconditionally convergent. Basically, a search direction is
 generated by multiplying the orbital gradient (the derivative of the
 energy with respect to the orbital rotations) by an approximation to the
 inverse of the level-shifted orbital Hessian. In the initial iterations
-(see (#nr-controlling-the-newton-raphson)),
+(see <a href="#nr-controlling-the-newton-raphson">Controlling the Newton-Raphson</a>),
 an inexpensive one-electron approximation to the inverse orbital Hessian is
 used. Closer to convergence, the full orbital Hessian is used, which
 should provide quadratic convergence. For both the full or one-electron
@@ -4393,12 +4393,12 @@ actions are</p>
     carry substantial charges (<a href="#atomic-guess-orbitals-with-charged-atoms">Atomic
     guess</a>)</li>
 <li>Examining an analysis of the initial orbitals
-    ((#printing-information-from-the-scf-module))
+    (<a href="#printing-information-from-the-scf-module">Printing</a>)
     and then swapping them to attain the desired occupation
-    ((#vectors-inputoutput-of-mo-vectors)).</li>
+    (<a href="#vectors-inputoutput-of-mo-vectors">VECTORS</a>).</li>
 <li>Converging the calculation in a minimal basis set, which is usually
     easier, and then projecting into a larger basis set
-    ((#vectors-inputoutput-of-mo-vectors)).</li>
+    (<a href="#vectors-inputoutput-of-mo-vectors">VECTORS</a>).</li>
 <li>Using the fragment orbital initial guess (<a href="#vectors-fragment-superposition-of-fragment-molecular-orbitals">Fragment molecular
     orbitals</a>).</li>
 </ul>
@@ -4416,7 +4416,7 @@ Newton-Raphson can be disabled temporarily or permanently (see
 <a href="#nr-controlling-the-newton-raphson">Controlling the
 Newton-Raphson</a>), and
 level-shifting can be applied to the matrix (see
-(#level-level-shifting-the-orbital-hessian)).
+<a href="#level-level-shifting-the-orbital-hessian">Level-shifting</a>).
 In some cases, both options may be necessary to achieve final
 convergence.</p>
 <p>If there is reason to suspect a negative eigenvalue, the first course is
@@ -4459,9 +4459,9 @@ Newton-Raphson (NR) approach. It is also possible to change the
 level-shift automatically as the solution attains some specified
 accuracy. The form of the directive is as follows:</p>
 <pre><code>  LEVEL [pcg &lt;real initial default 20.0&gt; \
-          ] \
+          [&lt;real tol default 0.5&gt; &lt;real final default 0.0&gt;]] \
         [nr &lt;real initial default 0.0&gt; \
-          ]
+          [&lt;real tol default 0.0&gt; &lt;real final default 0.0&gt;]]
 </code></pre>
 <p>This directive contains only two keywords: one for the PCG method and
 the other for the exact Hessian (Newton Raphson, or NR). Use of PCG or
@@ -4514,7 +4514,7 @@ zero.</p>
 localization, including Foster-Boys and Pipek-Mezey which only works for
 closed-shell (RHF) wavefunctions. There is currently no input in the SCF
 block to control this so the SET directive
-((SET.md)) must be used.</p>
+(<a href="SET.html">SET</a>) must be used.</p>
 <p>The directive</p>
 <pre><code> set scf:localize t
 </code></pre>
@@ -4656,7 +4656,7 @@ one.</p>
 for the SCF, UHF, ROHF, MCSCF and MP2 gradients. The form of the
 directive is as follows:</p>
 <pre><code> GRADIENTS   
-    ...  
+   [print || noprint] ...  
  END
 </code></pre>
 <p>The complementary keyword pair print and noprint allows the user some
@@ -4701,15 +4701,17 @@ explicitly invoked via print control. These are as follows:</p>
 </table>
 <p>Table 3: Gradient Print Control Specifications  </p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<dl>
-<dt>///Footnotes Go Here///</dt>
-<dd>
-<p>Wong, A. T. and Harrison, R. J. (1995) &ldquo;Approaches to large-scale parallel self-consistent field calculation&rdquo;, <em>J. Comp. Chem.</em>  <strong>16</strong>, 1291-1300, DOI: (http://dx.doi.org/10.1002/jcc.540161010)  </p>
-</dd>
-<dd>
-<p>Foster, I. T.; Tilson, J. L.; Wagner, A. F.; Shepard, R. L.; Harrison, R. J.; Kendall, R. A. and Littlefield, R. J. (1996)   &ldquo;Toward high-performance computational chemistry: I. Scalable Fock matrix construction algorithms&rdquo;, <em>J. Comp. Chem.</em> <strong>17</strong>, 109-123,  DOI: (http://dx.doi.org/10.1002/(SICI)1096-987X(19960115)17:1&lt;109::AID-JCC9&gt;3.0.CO;2-V)   </p>
-</dd>
-</dl>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn_footnote_1">
+<p>Wong, A. T. and Harrison, R. J. (1995) &ldquo;Approaches to large-scale parallel self-consistent field calculation&rdquo;, <em>J. Comp. Chem.</em>  <strong>16</strong>, 1291-1300, DOI: <a href="http://dx.doi.org/10.1002/jcc.540161010">10.1002/jcc.540161010</a>&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_2">
+<p>Foster, I. T.; Tilson, J. L.; Wagner, A. F.; Shepard, R. L.; Harrison, R. J.; Kendall, R. A. and Littlefield, R. J. (1996)   &ldquo;Toward high-performance computational chemistry: I. Scalable Fock matrix construction algorithms&rdquo;, <em>J. Comp. Chem.</em> <strong>17</strong>, 109-123,  DOI: <a href="http://dx.doi.org/10.1002/(SICI)1096-987X(19960115)17:1&lt;109::AID-JCC9&gt;3.0.CO;2-V">10.1002/(SICI)1096-987X(19960115)17:1&lt;109::AID-JCC9&gt;3.0.CO;2-V</a>&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

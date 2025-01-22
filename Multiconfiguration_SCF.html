@@ -3174,16 +3174,16 @@ functions.</p>
    ACTIVE &lt;integer nactive&gt;  
    ACTELEC &lt;integer nactelec&gt;  
    MULTIPLICITY &lt;integer multiplicity&gt;  
-
-    &lt;string input_file default file_prefix.movecs&gt;]   
-           \  
-           \  
-
-
-
-
-
-
+   [SYMMETRY &lt;integer symmetry default 1&gt;]  
+   [VECTORS [[input] &lt;string input_file default file_prefix.movecs&gt;]   
+          [swap &lt;integer vec1 vec2&gt; ...] \  
+          [output &lt;string output_file default input_file&gt;] \  
+          [lock]  
+   [HESSIAN (exact||onel)]  
+   [MAXITER &lt;integer maxiter default 20&gt;]  
+   [THRESH  &lt;real thresh default 1.0e-4&gt;]  
+   [TOL2E &lt;real tol2e default 1.0e-9&gt;] 
+   [LEVEL &lt;real shift default 0.1d0&gt;]  
  END
 </code></pre>
 <p>Note that the <code>ACTIVE</code>, <code>ACTELEC</code>, and <code>MULTIPLICITY</code> directives are required.
@@ -3239,16 +3239,16 @@ symmetry. This would be accomplished with the input</p>
 </code></pre>
 <h2 id="vectors-inputoutput-of-mo-vectors">VECTORS: Input/output of MO vectors<a class="headerlink" href="#vectors-inputoutput-of-mo-vectors" title="Permanent link">&para;</a></h2>
 <p>Calculations are best started from RHF/ROHF molecular orbitals (see
-(Hartree-Fock-Theory-for-Molecules.md)), and by
+<a href="Hartree-Fock-Theory-for-Molecules.html">SCF</a>), and by
 default vectors are taken from the previous MCSCF or SCF calculation. To
 specify another input file use the <code>VECTORS</code> directive. Vectors are by
 default output to the input file, and may be redirected using the output
 keyword. The swap keyword of the
-(Hartree-Fock-Theory-for-Molecules.md#vectors-inputoutput-of-mo-vectors)
+<a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">VECTORS</a>
 directive may be used to reorder orbitals to obtain the correct active
 space.</p>
 <p>The
-(Hartree-Fock-Theory-for-Molecules.md#vectors-inputoutput-of-mo-vectors)
+<a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">LOCK</a>
 keyword allows the user to specify that the ordering of orbitals will be
 locked to that of the initial vectors, insofar as possible. The default
 is to order by ascending orbital energies within each orbital space. One
@@ -3280,7 +3280,7 @@ by specifying the appropriate keyword on the <code>HESSIAN</code> directive.</p>
 <pre><code> hessian onel
 </code></pre>
 <h2 id="level-level-shift-for-convergence">LEVEL: Level shift for convergence<a class="headerlink" href="#level-level-shift-for-convergence" title="Permanent link">&para;</a></h2>
-<p>The (Hessians-and-Vibrational-Frequencies.md)
+<p>The <a href="Hessians-and-Vibrational-Frequencies.html">Hessian</a>
 used in the MCSCF optimization is by default level shifted by 0.1 until
 the orbital gradient norm falls below 0.01, at which point the level
 shift is reduced to zero. The initial value of 0.1 may be changed using
@@ -3291,7 +3291,7 @@ more stable in some instances.</p>
 </code></pre>
 <h2 id="print-and-noprint">PRINT and NOPRINT<a class="headerlink" href="#print-and-noprint" title="Permanent link">&para;</a></h2>
 <p>Specific output items can be selectively enabled or disabled using the
-(Print_Noprint.md) with the
+<a href="Print_Noprint.html">print control mechanism</a> with the
 available print options listed in the table
 below.</p>
 <p><center></p>

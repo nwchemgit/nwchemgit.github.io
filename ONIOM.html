@@ -3341,13 +3341,13 @@ to as the &ldquo;model&rdquo; geometry) are treated using both the &ldquo;low&rd
 <p>The two-layer model requires a high and low level of theory and a real
 and model molecular geometry. The energy at the high-level of theory for
 the real geometry is estimated as</p>
-<pre><code>     E(High,Real) = E(Low,Real) + .
+<pre><code>     E(High,Real) = E(Low,Real) + [E(High,Model) - E(Low,Model)].
 </code></pre>
 <p>The three-layer model requires high, medium and low levels of theory,
 and real, intermediate and model geometries and the corresponding energy
 estimate is</p>
-<pre><code>     E(High,Real) = E(Low,Real) + 
-                    +  .
+<pre><code>     E(High,Real) = E(Low,Real) + [E(High,Model) - E(Medium,Model)]
+                    +  [E(Medium,Inter) - E(Low,Inter)].
 </code></pre>
 <p>When does ONIOM work well? The approximation for a two-layer model will
 be good if</p>
@@ -3368,21 +3368,21 @@ et al.</p>
 <p>The input options are as
 follows</p>
 <pre><code>ONIOM  
-  HIGH   &lt;string theory&gt;  \  
-
- [MEDIUM &lt;string theory&gt;  \  
-                          ]  
-  LOW    &lt;string theory&gt;  \  
-
-  MODEL &lt;integer natoms&gt;  \  
-                          ...]  
- [INTER &lt;integer natoms&gt;  \  
-                          ...]]  
-   \  
-           \  
-           ]  
-
-
+  HIGH   &lt;string theory&gt; [basis &lt;string basis default &quot;ao basis&quot;&gt;] \  
+                         [ecp &lt;string ecp&gt;] [input &lt;string input&gt;]  
+ [MEDIUM &lt;string theory&gt; [basis &lt;string basis default &quot;ao basis&quot;&gt;] \  
+                         [ecp &lt;string ecp&gt;] [input &lt;string input&gt;]]  
+  LOW    &lt;string theory&gt; [basis &lt;string basis default &quot;ao basis&quot;&gt;] \  
+                         [ecp &lt;string ecp&gt;] [input &lt;string input&gt;]  
+  MODEL &lt;integer natoms&gt; [charge &lt;double charge&gt;] \  
+                         [&lt;integer i1 j1&gt; &lt;real g1&gt; [&lt;string tag1&gt;] ...]  
+ [INTER &lt;integer natoms&gt; [charge &lt;double charge&gt;] \  
+                         [&lt;integer i1 j1&gt; &lt;real g1&gt; [&lt;string tag1&gt;] ...]]  
+ [VECTORS [low-real &lt;string mofile&gt;] [low-model &lt;string mofile&gt;] \  
+          [high-model &lt;string mofile&gt;] [medium-model &lt;string mofile]\  
+          [medium-inter &lt;string mofile&gt;] [low-inter &lt;string mofile&gt;]]  
+ [PRINT ...]  
+ [NOPRINT ...]  
 END
 </code></pre>
 <p>which are described in detail below.</p>
@@ -3391,7 +3391,7 @@ must always be specified. If the one of the <code>MEDIUM</code> or <code>INTER</
 are specified, then so must the other.</p>
 <h2 id="real-model-and-intermediate-geometries">Real, model and intermediate geometries<a class="headerlink" href="#real-model-and-intermediate-geometries" title="Permanent link">&para;</a></h2>
 <p>The geometry and total charge of the full or real system should be
-specified as normal using the (Geometry.md) directive.
+specified as normal using the <a href="Geometry.html">geometry</a> directive.
 If <span class="arithmatex">\(N_{model}\)</span> of the atoms are to be included in the model system,
 then these should be specified first in the geometry. Similarly, in a
 three-layer calculation, if there are <span class="arithmatex">\(N_{inter}\)</span> atoms to be included
@@ -3425,7 +3425,7 @@ from the bond information. The additional parameters on the <code>MODEL</code> a
 placement of the link atom and, optionally, the type of link atom. The
 type of link atom defaults to hydrogen, but any type may be specified
 (actually here you are specifying a geometry tag which is used to
-associate a (Geometry.md) with an atom type
+associate a <a href="Geometry.html">geometrical center</a> with an atom type
 and basis sets, etc. For each broken bond specify the numbers of the two
 atoms (i and j), the scale factor (g) and optionally the tag of the link
 atom. Link atoms are placed along the vector connecting the the first to
@@ -3467,7 +3467,7 @@ the directive</p>
 <p>Since the default link atom is hydrogen there is actually no need to
 specify the &ldquo;H&rdquo;.</p>
 <p>See also the
-(#a-three-layer-example)
+<a href="#a-three-layer-example">ONIOM three layer example</a>
 for a more complex example.</p>
 <h3 id="numbering-of-the-link-atoms">Numbering of the link atoms<a class="headerlink" href="#numbering-of-the-link-atoms" title="Permanent link">&para;</a></h3>
 <p>The link atoms are appended to the atoms of the model or intermediate
@@ -3489,13 +3489,13 @@ defaults to the medium-level basis. Other wavefunction parameters are
 obtained from the standard wavefunction input blocks. See <a href="#effective-core-potentials">Effective
 core potentials</a> for an example.</p>
 <h3 id="effective-core-potentials">Effective core potentials<a class="headerlink" href="#effective-core-potentials" title="Permanent link">&para;</a></h3>
-<p>If an (ECP.md) is specified in the
+<p>If an <a href="ECP.html">effective core potential</a> is specified in the
 usual fashion outside of the ONIOM input then this will be used in all
 calculations. If an alternative ECP name (the name specified on the ECP
 directive in the same manner as done for basis sets) is specified on one
 of the theory directives, then this ECP will be used in preference for
 that level of theory. See the
-(#a-three-layer-example)
+<a href="#a-three-layer-example">ONIOM three layer example</a>
 for sample input.</p>
 <h3 id="general-input-strings">General input strings<a class="headerlink" href="#general-input-strings" title="Permanent link">&para;</a></h3>
 <p>For many purposes, the ability to specify the theory, basis and
@@ -3551,7 +3551,7 @@ the following string</p>
 efficient during geometry optimizations and frequency calculations, and
 is also useful for the initial calculation. In the absence of existing
 MO vectors files, the default atomic guess is used (see
-(Hartree-Fock-Theory-for-Molecules.md#vectors-inputoutput-of-mo-vectors)).</p>
+<a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">|Input/output of MO vectors</a>).</p>
 <p>If special measures must be taken to converge the initial SCF, DFT or
 MCSCF calculation for one or more of the systems, then initial vectors
 may be saved in a file with the default name, or another name may be

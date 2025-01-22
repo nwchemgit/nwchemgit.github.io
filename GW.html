@@ -3218,7 +3218,7 @@ by many-body perturbation theory (MBPT) methods. In particular, the
 <em>GW</em> approximation (GWA) to the self-energy is a MBPT method that has 
 seen recent interest in its application to molecules due to a
 promising cost/accuracy ratio.</p>
-<p>The <em>GW</em> module implemented in NWChem takes a (Density-Functional-Theory-for-Molecules.md)
+<p>The <em>GW</em> module implemented in NWChem takes a <a href="Density-Functional-Theory-for-Molecules.html">DFT</a>
 mean-field approximation to the Green&rsquo;s function, <em>G<sub>0</sub></em>, in order to
 solve the quasiparticle equation at the one-shot <em>G<sub>0</sub>W<sub>0</sub></em> or
 at various <em>levels</em> of the eigenvalue self-consistent <em>GW</em> approach (ev<em>GW</em>).
@@ -3237,17 +3237,17 @@ NWChem, please refer to the paper by Mejia-Rodriguez et al<sup id="fnref_footnot
 END
 </code></pre>
 <p>The actual <em>GW</em> calculation will be performed when the 
-input module encounters the (TASK.md) directive.</p>
+input module encounters the <a href="TASK.html">TASK</a> directive.</p>
 <pre><code>TASK DFT GW
 </code></pre>
 <p>Note that <code>DFT</code> must be specified as the underlying <em>QM</em> theory before 
-<code>GW</code>. The (Charge.md), (Geometry.md), and 
-(Density-Functional-Theory-for-Molecules.md) options are all specified as
+<code>GW</code>. The <a href="Charge.html">charge</a>, <a href="Geometry.html">geometry</a>, and 
+<a href="Density-Functional-Theory-for-Molecules.html">DFT</a> options are all specified as
 normal. </p>
-<p>In addition to an atomic orbital (Basis.md), the <em>GW</em> module <strong>requires</strong> 
+<p>In addition to an atomic orbital <a href="Basis.html">basis set</a>, the <em>GW</em> module <strong>requires</strong> 
 an <em>auxiliary basis set</em> to be provided in order to fit the four-center 
 electron repulsion integrals. The auxliary basis set can have either the
- <code>cd basis</code> or <code>ri basis</code> names (see also (Density-Functional-Theory-for-Molecules.md#specification-of-basis-sets-for-the-dft-module)). Three combinations can be obtained:</p>
+ <code>cd basis</code> or <code>ri basis</code> names (see also <a href="Density-Functional-Theory-for-Molecules.html#specification-of-basis-sets-for-the-dft-module">DFT</a>). Three combinations can be obtained:</p>
 <ul>
 <li>If a <code>ri basis</code> is given without a <code>cd basis</code>,
     the ground-state DFT will be performed without density fitting,
@@ -3265,22 +3265,22 @@ The most general <em>GW</em> input block directive will look like:</p>
 <pre><code>GW
   RPA 
   CORE
-  EVGW 
-  EVGW0 
+  EVGW [&lt;integer eviter default 4&gt;]
+  EVGW0 [&lt;integer eviter default 4&gt;]
   FIRST &lt;integer first_orbital default 1&gt;
-  METHOD  ||  ]
+  METHOD [ [analytic] || [cdgw &lt;integer grid_points default 200&gt;] ]
   ETA &lt;real infinitesimal default 0.001&gt; 
-  SOLVER  ||  ]
-  STATES    ]
-  CONVERGENCE &lt;real threshold default 0.005&gt; 
+  SOLVER [ [newton &lt;integer maxiter default 10&gt; ] || [graph] ]
+  STATES [ [ alpha || beta ] [occ &lt;integer number default 1&gt;] [vir &lt;integer default 0&gt;] ]
+  CONVERGENCE &lt;real threshold default 0.005&gt; [&lt;string units default ev&gt;]
 END
 </code></pre>
 <p>The following sections describe these keywords.</p>
 <h3 id="rpa">RPA<a class="headerlink" href="#rpa" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>RPA</code> triggers the computation of the RPA correlation energy.
-This adds a little overhead to the (#method) approach.</p>
+This adds a little overhead to the <a href="#method"><em>CD-GW</em></a> approach.</p>
 <h3 id="core-and-first">CORE and FIRST<a class="headerlink" href="#core-and-first" title="Permanent link">&para;</a></h3>
-<p>The <code>CORE</code> keyword forces to start counting the (#states)
+<p>The <code>CORE</code> keyword forces to start counting the <a href="#states"><code>STATES</code></a>
 from the <code>FIRST</code> molecular orbital <strong>upwards</strong>. </p>
 <p>The <code>FIRST</code> keyword has no meaning without <code>CORE</code> specified.</p>
 <h3 id="evgw-and-evgw0">EVGW and EVGW0<a class="headerlink" href="#evgw-and-evgw0" title="Permanent link">&para;</a></h3>
@@ -3301,7 +3301,7 @@ matrix elements are implemented in NWChem. </p>
 in order to obtain the screened Coulomb matrix elements. The Casida RPA
 matrix grows very rapidly in size (<em>N<sub>occ</sub></em> &times; <em>N<sub>vir</sub></em>)
 and ultimately yields a <em>N<sup>6</sup></em> scaling due to the diagonalization step.
-It is therefore recommended to link the (https://elpa.mpcdf.mpg.de/)
+It is therefore recommended to link the <a href="https://elpa.mpcdf.mpg.de/">ELPA</a>
 and turn on its use by setting</p>
 <pre><code>SET dft:scaleig e
 </code></pre>
@@ -3328,7 +3328,7 @@ solution and switches to a golden section method whenever the Newton step goes
 beyond the bracketing values.</p>
 <p>The <code>graph</code> method uses a frequency grid in order to bracket the solution
 between two consecutive grid points. The number of grid points is controlled 
-heuristically depending on the (#method)
+heuristically depending on the <a href="#method"><code>METHOD</code></a>
 and on the presence, or not, of nearby states in a cluster
 of energy (see below).</p>
 <p>Regardless of the solver, the energies of the states are always
@@ -3348,7 +3348,7 @@ meaningless for restricted closed-shell DFT calculations
 (<code>MULT 1</code> without <code>ODFT</code> in the <code>DFT</code> input block).</p>
 <p>The number of occupied states will be counted starting from the 
 state closest to the Fermi level (HOMO) unless the keyword
-(#core-and-first) is present. The virtual states will <strong>always</strong>
+<a href="#core-and-first"><code>CORE</code></a> is present. The virtual states will <strong>always</strong>
 be counted from the state closest to the Fermi level upwards.</p>
 <p>A <strong>-1</strong> following either <code>occ</code> or <code>vir</code> stands for all
 states in the respective space.</p>
@@ -3360,7 +3360,7 @@ given either in <code>eV</code> or Hartree <code>au</code>.</p>
 <ul>
 <li>A <em>GW</em> calculation requesting the core-level binding 
 energies of all 1<em>s</em> states (6 Fluorines and 6 Carbons)
-using the (#method) method.</li>
+using the <a href="#method">CD-GW</a> method.</li>
 </ul>
 <pre><code>title &quot;CDGW C6F6 core&quot;
 start
@@ -3409,7 +3409,7 @@ task dft gw
 <ul>
 <li>A <em>valence</em> <em>GW</em> calculation to obtain the vertical ionization
 potential and the vertical electron affinity of the water
-molecule using the (#method) method.</li>
+molecule using the <a href="#method">analytic</a> method.</li>
 </ul>
 <pre><code>start
 
@@ -3444,7 +3444,7 @@ task dft gw
 </code></pre>
 <ul>
 <li>An ev<em>GW</em><sub>0</sub> calculation with 10 iterations
-using the (#method) method.
+using the <a href="#method">analytic</a> method.
 All occupied energies, but only 10 virtual ones, are
 updated using <em>GW</em>. The rest of the virtual states
 are shifted using the so-called scissor operator.</li>

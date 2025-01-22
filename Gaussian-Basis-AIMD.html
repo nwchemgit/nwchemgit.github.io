@@ -3484,17 +3484,17 @@ be read from that file and the trajectory will resume from that point.</p>
 <p>For computational details and a case study using the module, please
 refer to the 2016 paper by Fischer<sup id="fnref_footnote_fischer2015"><a class="footnote-ref" href="#fn_footnote_fischer2015">1</a></sup>.  </p>
 <pre><code>QMD
-
-
-
-
-
-
-
-
-
-
-
+  [dt_nucl &lt;double default 10.0&gt;]  
+  [nstep_nucl &lt;integer default 1000&gt;]  
+  [targ_temp &lt;double default 298.15&gt;]  
+  [thermostat &lt;string default none&gt; &lt;thermostat parameters&gt;]  
+  [rand_seed &lt;integer default new one generated for each run&gt;]  
+  [com_step &lt;integer default 100&gt;]  
+  [print_xyz &lt;integer default 1&gt;]  
+  [linear]   
+  [property &lt;integer default 1&gt;] 
+  [tddft &lt;integer default 1&gt;]
+  [namd ]
 END
 </code></pre>
 <p>The module is called as:</p>
@@ -3644,7 +3644,7 @@ task tddft qmd
 <h3 id="property-calculation-in-a-molecular-dynamics-simulation">Property calculation in a Molecular Dynamics simulation<a class="headerlink" href="#property-calculation-in-a-molecular-dynamics-simulation" title="Permanent link">&para;</a></h3>
 <p>Thefollowing is a sample input for an MD simulation that compute
 polarizability by means of the
-(Properties.md#polarizability-computed-with-the-sum-over-orbitals-method)
+<a href="Properties.html#polarizability-computed-with-the-sum-over-orbitals-method">SOS method</a>
 at each time step.</p>
 <pre><code>start qmd_prop_h2o_svr  
 echo  
@@ -3676,12 +3676,12 @@ end
 task tddft qmd
 </code></pre>
 <p>Additional sample inputs can be found in $NWCHEM_TOP/QA/tests/qmd_*
-(e.g. (https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props))</p>
+(e.g. <a href="https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props">https://github.com/nwchemgit/nwchem/tree/master/QA/tests/qmd_dft_h2o_berendsen_props</a>)</p>
 <h2 id="processing-the-output-of-a-qmd-run">Processing the output of a QMD run<a class="headerlink" href="#processing-the-output-of-a-qmd-run" title="Permanent link">&para;</a></h2>
 <p>The xyz file produced by the QMD module contains the velocities (given
 in Angstrom/fs), in addition to the coordinates (given in Angstrom). The
 comment lines also contain the time step, total energy (atomic units),
-and dipole moment (atomic units). In the directory (https://github.com/nwchemgit/nwchem/tree/master/contrib/qmd_tools), the code (https://github.com/nwchemgit/nwchem/blob/master/contrib/qmd_tools/qmd_analysis.f90) will used the xyz trajectory as input to calculate the IR spectrum and
+and dipole moment (atomic units). In the directory <a href="https://github.com/nwchemgit/nwchem/tree/master/contrib/qmd_tools">$NWCHEM_TOP/contrib/qmd_tools</a>, the code <a href="https://github.com/nwchemgit/nwchem/blob/master/contrib/qmd_tools/qmd_analysis.f90">qmd_analysis.f90</a> will used the xyz trajectory as input to calculate the IR spectrum and
 vibrational density of states from Fourier transforms of the dipole and
 atomic momenta autocorrelation functions, respectively. The code needs
 to be linked to a LAPACK library when compiled; the Makefile in the
@@ -3717,7 +3717,7 @@ end
 task dft qmd
 </code></pre>
 <p>The IR spectrum and vibrational density of states were generated from
-the (qmd_tools.tar.gz) with the following
+the <a href="qmd_tools.tar.gz">qmd_analysis code</a> with the following
 command.</p>
 <pre><code>./qmd_analysis -xyz SiCl4.xyz -steps 15000 -skip 5000 -ts 10.0 -temp 20.0 -smax 800 -width 10.0
 </code></pre>
@@ -3732,18 +3732,18 @@ output to 800 wave numbers. The width option sets the full-width at
 half-maximum of the peaks in the resulting spectra.</p>
 <p>The computed IR spectrum and vibrational density of states are shown
 here.</p>
-<p>!(SiCl4IR.png)
-!(SiCl4VDOS.png)</p>
+<p><img alt="pic1" src="SiCl4IR.png" />
+<img alt="pic2" src="SiCl4VDOS.png" /></p>
 <h2 id="namd-non-adiabatic-excited-stated-molecular-dynamics">NAMD: Non-adiabatic Excited Stated Molecular Dynamics<a class="headerlink" href="#namd-non-adiabatic-excited-stated-molecular-dynamics" title="Permanent link">&para;</a></h2>
 <p>For  details of the NAMD implementation, please
 refer to the 2020 paper by Song<sup id="fnref_footnote_song2020"><a class="footnote-ref" href="#fn_footnote_song2020">4</a></sup>.    </p>
-<pre><code>
-
-
-
-
-
-
+<pre><code>[namd]
+  [init_state &lt;integer default 2&gt;]
+  [nstates &lt;integer default 2&gt;]
+  [dt_elec &lt;double default 0.01&gt;]
+  [deco &lt;logical default .false.]
+  [tdks &lt;integer default 1&gt;]
+[end]  
 </code></pre>
 <p>In the <code>namd</code> sub-block within the <code>qmd</code> block, please note:</p>
 <ul>
@@ -3765,8 +3765,8 @@ occupied state runs from 0 (ground state) to <code>nstates-1</code>.
 So if you want to start a calculation in the first excited state, you would set
 <code>init_state</code> to 1.</p>
 <h3 id="tdks-time-dependent-kohn-sham">TDKS: Time-Dependent Kohn-Sham<a class="headerlink" href="#tdks-time-dependent-kohn-sham" title="Permanent link">&para;</a></h3>
-<p>The keyword <code>tdks</code> will use Time-Dependent Kohn-Sham instead of the default (Excited-State-Calculations.md#cis-and-rpa-the-tamm-dancoff-approximation) approximation.<br />
-The keyword requires the keyword (Density-Functional-Theory-for-Molecules.md#odft-and-mult-open-shell-systems)
+<p>The keyword <code>tdks</code> will use Time-Dependent Kohn-Sham instead of the default <a href="Excited-State-Calculations.html#cis-and-rpa-the-tamm-dancoff-approximation">Tamm-Dancoff</a> approximation.<br />
+The keyword requires the keyword <a href="Density-Functional-Theory-for-Molecules.html#odft-and-mult-open-shell-systems"><code>odft</code></a>
 in the <code>dft</code> input block to work.<br />
 It can have two values:</p>
 <ul>

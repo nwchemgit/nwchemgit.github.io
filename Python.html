@@ -3489,7 +3489,7 @@ lots of useful code and resources.</p>
 <h2 id="how-to-input-and-run-a-python-program-inside-nwchem">How to input and run a Python program inside NWChem<a class="headerlink" href="#how-to-input-and-run-a-python-program-inside-nwchem" title="Permanent link">&para;</a></h2>
 <p>A Python program is input into NWChem inside a Python compound
 directive.</p>
-<pre><code> python 
+<pre><code> python [print|noprint]
    ...
  end
 </code></pre>
@@ -3545,7 +3545,7 @@ there are some gotchas</p>
 <li>When writing to the database (<code>rtdb_put()</code>) it is the data from node
     zero that is written.</li>
 <li>NWChem overrides certain default signal handlers so care must be
-    taken when creating processes (see Section describing (#scaning-a-basis-exponent-yet-again-plotting-and-handling-child-processes)).</li>
+    taken when creating processes (see Section describing <a href="#scaning-a-basis-exponent-yet-again-plotting-and-handling-child-processes">a scanning example</a>).</li>
 </ul>
 <h2 id="nwchem-extensions">NWChem extensions<a class="headerlink" href="#nwchem-extensions" title="Permanent link">&para;</a></h2>
 <p>Since we have little experience using Python, the NWChem-Python
@@ -3561,7 +3561,7 @@ can be used with the existing optimizers or dynamics package?</p>
 automatically imported and contains the following NWChem-specific
 commands. They all handle NWChem-related errors by raising the exception
 &ldquo;NWChemError&rdquo;, which may be handled in the standard Python manner (see
-Section describing (#handling-exceptions-from-nwchem)).</p>
+Section describing <a href="#handling-exceptions-from-nwchem">handling exception</a>).</p>
 <ul>
 <li><code>input_parse(string)</code> &ndash; invokes the standard NWChem input parser
     with the data in string as input. Note that the usual behavior of
@@ -3590,7 +3590,7 @@ Section describing (#handling-exceptions-from-nwchem)).</p>
     with the given name.</li>
 </ul>
 <p>An
-(#accessing-geometry-information-a-temporary-hack)
+<a href="#accessing-geometry-information-a-temporary-hack">example</a>
 below explains, in lieu of a Python wrapper for the geometry object, how
 to obtain the Cartesian molecular coordinates directly from the
 database.</p>
@@ -3783,7 +3783,7 @@ python
          print (' %5.2f %5.2f %9.6f' % (y, z, energy)),
          i = 0
          while (i &lt; len(gradient)):
-             print ('%5.2f' % gradient),
+             print ('%5.2f' % gradient[i]),
              i = i + 1
          print ('')
          z = z + 0.1
@@ -3828,9 +3828,9 @@ python
     return task_energy('mp2')
 
   for basis in ('sto-3g', '6-31g', '6-31g*', 'cc-pvdz', 'cc-pvtz'):
-     energies =   2*energy(basis, ch4) \
+     energies[basis] =   2*energy(basis, ch4) \
                        - 2*energy(basis, h2) - energy(basis, c2h4)
-     if (ga_nodeid() == 0): print (basis, ' %8.6f' % energies)
+     if (ga_nodeid() == 0): print (basis, ' %8.6f' % energies[basis])
 end 
 
 task python
@@ -3844,10 +3844,10 @@ program.</p>
 <h3 id="using-the-database">Using the database<a class="headerlink" href="#using-the-database" title="Permanent link">&para;</a></h3>
 <pre><code> python  
    rtdb_put(&quot;test_int2&quot;, 22)  
-   rtdb_put(&quot;test_int&quot;, ,    INT)  
-   rtdb_put(&quot;test_dbl&quot;, ,  DBL)  
+   rtdb_put(&quot;test_int&quot;, [22, 10, 3],    INT)  
+   rtdb_put(&quot;test_dbl&quot;, [22.9, 12.4, 23.908],  DBL)  
    rtdb_put(&quot;test_str&quot;, &quot;hello&quot;, CHAR)  
-   rtdb_put(&quot;test_logic&quot;, , LOGICAL)  
+   rtdb_put(&quot;test_logic&quot;, [0,1,0,1,0,1], LOGICAL)  
    rtdb_put(&quot;test_logic2&quot;, 0, LOGICAL)  
 
    rtdb_print(1)  
@@ -3914,11 +3914,11 @@ is included in the NWChem contrib directory.</p>
      raise NWChemError,'unknown units'  
    i = 0  
    while (i &lt; len(coords)):  
-     coords = coords / factor  
+     coords[i] = coords[i] / factor  
      i = i + 1  
    return coords
 </code></pre>
-<p>A (Geometry.md) with name NAME has its coordinates (in
+<p>A <a href="Geometry.html">geometry</a> with name NAME has its coordinates (in
 atomic units) stored in the database entry <code>geometry:NAME:coords</code>. A minor
 wrinkle here is that indirection is possible (and used by the
 optimizers) so that we must first check if NAME actually points to
@@ -3970,12 +3970,12 @@ database.</p>
       ''' % (exponent))  
       return task_energy('scf')  
 
-   data =   
+   data = []  
    exponent = 0.5  
    while exponent &lt;= 0.6:  
       energy = energy_at_exponent(exponent)  
       print ' exponent = ', exponent, ' energy = ', energy  
-      data = data + (exponent,energy.md)  
+      data = data + [exponent,energy](exponent,energy.md)  
       exponent = exponent + 0.02  
 
    if (ga_nodeid() == 0):  

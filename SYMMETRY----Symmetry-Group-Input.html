@@ -2952,9 +2952,9 @@ directive to specify the point group for the molecular geometry or space
 group for the crystal structure. The general form of the directive, as
 described above within the general form of the GEOMETRY directive, is as
 follows:</p>
-<pre><code>    &lt;string group_name&gt;|&lt;integer group number&gt; \
-     \  
-          ]
+<pre><code>   [SYMMETRY [group] &lt;string group_name&gt;|&lt;integer group number&gt; \
+   [setting &lt;integer setting&gt;] [print] \  
+          [tol &lt;real tol default 1d-2&gt;]]
 </code></pre>
 <p>The keyword group is optional, and can be omitted without affecting how
 the input for this directive is processed. However, if the SYMMETRY
@@ -2972,7 +2972,7 @@ expected input for the variable group_name include such entries as:</p>
 <p>The SYMMETRY directive is optional. The default is no symmetry (i.e.,
 <em>C</em><sub>1</sub> point group). Automatic detection of point group
 symmetry is available through the use of autosym in the GEOMETRY
-directive main line (discussed in (Keywords-for-the-GEOMETRY-directive.md)).
+directive main line (discussed in <a href="Keywords-for-the-GEOMETRY-directive.html">Keywords for the GEOMETRY directive</a>).
 Note: if the SYMMETRY directive is present the autosym keyword is
 ignored.</p>
 <p>If only symmetry-unique atoms are specified, the others will be
@@ -2980,7 +2980,7 @@ generated through the action of the point group operators, but the user
 if free to specify all atoms. The user must know the symmetry of the
 molecule being modeled, and be able to specify the coordinates of the
 atoms in a suitable orientation relative to the rotation axes and planes
-of symmetry. The section (Geometry-examples.md) lists a number of examples of the <code>GEOMETRY</code>
+of symmetry. The section <a href="Geometry-examples.html">Geometry Examples</a> lists a number of examples of the <code>GEOMETRY</code>
 directive input for specific molecules having symmetry patterns
 recognized by NWChem. The exact point group symmetry will be forced upon
 the molecule, and atoms within 10<sup>−3</sup> A.U. of a symmetry

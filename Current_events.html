@@ -3074,8 +3074,8 @@ link.</a> For more information contact
 <a href="mailto:eric.bylaska@pnnl.gov?Subject=EMSL%20Arrows%20Question">Eric Bylaska
 (eric.bylaska@pnnl.gov).</a></p>
 <p><span style="background: #82BA57; border: solid 1px #a9a9a9; padding: 8px">
-(https://arrows.emsl.pnnl.gov/api/) </span></p>
-<p>(emslarrows.png) Besides using the
+<a href="https://arrows.emsl.pnnl.gov/api/"><em>&rsquo; EMSL Arrows API</em>&lsquo;</a> </span></p>
+<p><a href="emslarrows.png"></a> Besides using the
 Web API you can also use EMSL Arrows by just sending a simple email.
 <a href="mailto:arrows@emsl.pnnl.gov?Subject=EMSL%20Arrows%20Calculation%20for%20Wile(y)&amp;body=Just%20send%20this%20email%20to%20arrows@emsl.pnnl.gov%20and%20arrows%20will%20send%20an%20email%20back%20with%20the%20results.%0A%0AHydrolyzing%20Wile%20E%20Coyote's%20favorite%20molecule%0A%0AArrows::%20reaction:%20cid=8376%20+%20hydroxide%20--%3E%20O=N(=O)c1cc(O)c(c(c1)N(=O)=O)C%20+%20nitrite%20:reaction%20::Arrows" class="external text" rel="nofollow">Try it out by clicking here to send an email to arrows@emsl.pnnl.gov.</a></p>
 <p>EMSL arrows is a scientific service that uses NWChem and chemical
@@ -3100,7 +3100,7 @@ database and it is growing every day. If an EMSL Arrows request requires
 a calculation not already in the database, then it will automatically
 start the calculation on a small number of freely available computers
 and send back the results when finished. More information can be found
-at (EMSL_Arrows.md). We
+at <a href="EMSL_Arrows.html">Arrows</a>. We
 would like thank the DOD SERDP program and the DOE OS OBER EMSL project
 for their support.</p>
 <p><iframe width="560" height="315" src="//www.youtube.com/embed/6cIwx63qiQM" frameborder="0" allowfullscreen></iframe>
@@ -3116,14 +3116,14 @@ this release possible. This release includes several new capabilities
 and bug fixes. The key features of NWChem 6.6 include:</p>
 <ul>
 <li>New qmd module
-    (https://nwchemgit.github.io/Gaussian-Basis-AIMD.html)
+    <a href="https://nwchemgit.github.io/Gaussian-Basis-AIMD.html">AIMD</a>
     (NVT, NVE) for molecular and finite systems. It can be used with all
     Gaussian basis set ground and excited-state methods in NWChem that
     can provide an energy/gradient (analytic or numerical). It can also
     be combined with COSMO. A qmd_analysis standalone code is also
     provided to analyze the trajectory data.</li>
 <li>York-Karplus approach in
-    (https://nwchemgit.github.io/COSMO-Solvation-Model.html)
+    <a href="https://nwchemgit.github.io/COSMO-Solvation-Model.html">COSMO</a>
     (keywords to invoke the Klamt-Schuurmann approach is included in the
     documentation). With the extensive changes that were made in the
     COSMO module, the Klamt-Schuurman approach is not perfectly backward
@@ -3158,30 +3158,29 @@ and bug fixes. The key features of NWChem 6.6 include:</p>
 <li>Trajectories from the NWChem molecular dynamics module can be
     exported in the xyz format</li>
 <li>Intel Xeon Phi port for
-    (https://nwchemgit.github.io/TCE.html#ccsdt-and-mrccsdt-implementations-for-intel-mic-architectures)</li>
+    <a href="https://nwchemgit.github.io/TCE.html#ccsdt-and-mrccsdt-implementations-for-intel-mic-architectures">MR-CCSD(T)</a></li>
 <li>The supported version of the Global Arrays library is now
-    (http://hpc.pnl.gov/globalarrays/release_notes.shtml#5.4b)</li>
+    <a href="http://hpc.pnl.gov/globalarrays/release_notes.shtml#5.4b">5-4</a></li>
 <li>New ARMCI_NETWORK=MPI-PR (MPI progress ranks). It is the
     recommended option (performance-wise) when no other native ports are
     available.</li>
 <li>Streamlined installation (automated detection of MPI variables)</li>
 <li>Improved ScaLapack and ELPA integration. The current ELPA interface
     is compatible with the 2015.05 release.</li>
-<li>Improved parallelization in DFT (https://nwchemgit.github.io/Density-Functional-Theory-for-Molecules#specification-of-basis-sets-for-the-dft-module)
+<li>Improved parallelization in DFT <a href="https://nwchemgit.github.io/Density-Functional-Theory-for-Molecules#specification-of-basis-sets-for-the-dft-module">Charge-Density fitting</a>
     (removed semi-direct option)</li>
 <li>Improved parallel scalability of
-    (https://nwchemgit.github.io/MP2.html)</li>
+    <a href="https://nwchemgit.github.io/MP2.html">Semi-direct MP2</a></li>
 <li>Improved stability of in-core installation (e.g. <code>USE_NOIO=y</code>) of
-    (https://nwchemgit.github.io/MP2.html)</li>
-<li>
-<p>Improvements in Xeon Phi offloading for single reference</p>
-<p>(https://nwchemgit.github.io/TCE.html#ccsdt-and-mrccsdt-implementations-for-intel-mic-architectures)
-  - New LINUX64 architecture available: ppc64le
-  - Bug fix for CDFT
-  - Bug fix for anisotropic part of the DFT polarizabilities
-  - Bug fix in PSPW implementation of Electron Transfer calculation
-(i.e. periodic version of ET module)</p>
-</li>
+    <a href="https://nwchemgit.github.io/MP2.html">Semi-direct MP2</a></li>
+<li>Improvements in Xeon Phi offloading for single reference
+    [Intel Xeon Phi port for MR-CCSD(T)]
+    (https://nwchemgit.github.io/TCE.html#ccsdt-and-mrccsdt-implementations-for-intel-mic-architectures)</li>
+<li>New LINUX64 architecture available: ppc64le</li>
+<li>Bug fix for CDFT</li>
+<li>Bug fix for anisotropic part of the DFT polarizabilities</li>
+<li>Bug fix in PSPW implementation of Electron Transfer calculation
+    (i.e. periodic version of ET module)</li>
 </ul>
 <h3 id="nwchem-among-13-science-projects-selected-to-run-on-the-300-petaflops-summit">NWChem among 13 science projects selected to run on the 300-petaFLOPS Summit<a class="headerlink" href="#nwchem-among-13-science-projects-selected-to-run-on-the-300-petaflops-summit" title="Permanent link">&para;</a></h3>
 <p>In preparation for next-generation supercomputer Summit, the Oak Ridge
@@ -3220,7 +3219,7 @@ hormone-cofactor functionality in proteins, ionic liquids in cells,
 spectroscopies, new materials and large-scale reaction mechanisms.
 <a href="https://web.archive.org/web/20170502154826/http://www.emsl.pnl.gov/emslweb/news/emsl-named-intel%C2%AE-parallel-computing-center">https://web.archive.org/web/20170502154826/http://www.emsl.pnl.gov/emslweb/news/emsl-named-intel%C2%AE-parallel-computing-center</a></p>
 <h3 id="nwchem-sc2014-paper">NWChem SC2014 paper<a class="headerlink" href="#nwchem-sc2014-paper" title="Permanent link">&para;</a></h3>
-<p>!(Pic1_sc2014.webp) This paper
+<p><img alt="Pic1_sc2014.webp" src="Pic1_sc2014.webp" /> This paper
 presents the implementation and performance of the highly accurate
 CCSD(T) quantum chemistry method on the Intel Xeon Phi coprocessor
 within the context of the NWChem computational chemistry package. The
@@ -3346,7 +3345,7 @@ without hands-on training, please contact nwchemgit@gmail.com</p>
 <p>Past tutorial/training sessions:</p>
 <ul>
 <li>A three-day tutorial and hands-on training at
-    (http://www.acrc.a-star.edu.sg/135/workshops.html) in
+    <a href="http://www.acrc.a-star.edu.sg/135/workshops.html">A*STAR</a> in
     Singapore on October 23-25, 2012</li>
 <li>A three-day tutorial and hands-on training at the <a href="http://www.vlcc.cn/nwchem2012/">National
     Supercomputer Center</a> in Beijing on
@@ -3355,17 +3354,17 @@ without hands-on training, please contact nwchemgit@gmail.com</p>
     Institute</a> on the
     Louisiana State University (Baton Rouge, LA) campus June 8-9, 2012</li>
 <li>A two-day tutorial and hands-on training at
-    (http://www.epcc.ed.ac.uk/training-education/course-registration-form/)
+    <a href="http://www.epcc.ed.ac.uk/training-education/course-registration-form/">EPCC</a>
     in Edinburgh, UK on June 13-14, 2011</li>
 <li>A two-day tutorial and hands-on training at
-    (http://www.lrz.de/services/compute/courses/#TOC1.220) in
+    <a href="http://www.lrz.de/services/compute/courses/#TOC1.220">LRZ</a> in
     Garching, Germany on June 9-10, 2011</li>
 <li>A three-day tutorial and hands-on training at the <a href="http://english.cnic.cas.cn/ns/es/201012/t20101231_63852.html">National
     Supercomputer Center in
     Beijing</a>
     on December 11-13, 2010</li>
 <li>A two-day tutorial and hands-on training at
-    (http://www.ncsa.illinois.edu/Conferences/2010NWChem/) in
+    <a href="http://www.ncsa.illinois.edu/Conferences/2010NWChem/">NCSA</a> in
     Urbana on December 1-2, 2010</li>
 <li>A 2-hour tutorial at the Pacific Northwest AVS meeting held at PNNL
     on September 15, 2010</li>
@@ -3375,7 +3374,7 @@ without hands-on training, please contact nwchemgit@gmail.com</p>
 changes, added functionality, and bug fixes in this latest version can
 be found.</p>
 <h3 id="pccp-perspective-published">PCCP Perspective Published<a class="headerlink" href="#pccp-perspective-published" title="Permanent link">&para;</a></h3>
-<p>!(Pccp0120026_ifc_148.jpg)</p>
+<p><img alt="Pccp0120026_ifc_148.jpg" src="Pccp0120026_ifc_148.jpg" /></p>
 <p>Developers of NWChem at EMSL were the lead authors on a perspective
 article in the highly ranked PCCP journal on utilizing high performance
 computing for chemistry and parallel computational chemistry. The
@@ -3385,7 +3384,7 @@ article and cover were published in <a href="http://dx.doi.org/doi:10.1039/c0028
 <p>On September 30, 2010 NWChem version 6.0 was released. This version
 marks a transition of NWChem to an open-source software package. The
 software is being released under the
-(http://opensource.org/licenses/ecl2.php)
+<a href="http://opensource.org/licenses/ecl2.php">Educational Community License 2.0</a>
 (ECL 2.0). </p>
 <p>New functionality, improvements, and bug fixes include:</p>
 <ul>

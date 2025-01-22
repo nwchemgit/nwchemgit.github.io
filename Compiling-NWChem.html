@@ -3771,7 +3771,7 @@ platforms have been created. These how-to&rsquo;s will be updated with
 additional platforms and better environment variables over time.  </p>
 <p>Download of the NWChem source is a step needed before compilation. Details for downloading
 as well as instructions for installing pre-compiled version of NWChem are available at the
-(Download.md).</p>
+<a href="Download.html">Download page</a>.</p>
 <h2 id="setting-up-the-proper-environment-variables">Setting up the proper environment variables<a class="headerlink" href="#setting-up-the-proper-environment-variables" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>$NWCHEM_TOP</code> defines the top directory of the NWChem source tree,
@@ -3923,7 +3923,7 @@ Supported combination of ARMCI_NETWORK and NWCHEM_TARGET variables:  </p>
 </tbody>
 </table>
 <p><br></p>
-<p>Please see (ARMCI.md) for
+<p>Please see <a href="ARMCI.html">Choosing the ARMCI Library</a> for
 additional information on choosing the right network
 options.</p>
 <h3 id="mpi-variables">MPI variables<a class="headerlink" href="#mpi-variables" title="Permanent link">&para;</a></h3>
@@ -3971,7 +3971,7 @@ NWChem will figure out the values of <code>LIBMPI</code>, <code>MPI_LIB</code> a
 variable, instead. Therefore, the next section can be considered obsolete.</p>
 <h4 id="obsolete-how-to-set-the-mpi-variables">OBSOLETE: How to set the MPI variables<a class="headerlink" href="#obsolete-how-to-set-the-mpi-variables" title="Permanent link">&para;</a></h4>
 <p>The information of this section should not be used because of the automatic detection of MPI variables described in the previous 
-(#automatic-detection-of-mpi-variables-with-mpif90).  </p>
+<a href="#automatic-detection-of-mpi-variables-with-mpif90">section</a>.  </p>
 <p><del>The output of the command</del></p>
 <pre><code><del>mpif90 -show</del></code></pre>
 
@@ -4052,7 +4052,7 @@ preprocessor (for both Fortran and C), e.g.</del></p>
 <p><del>Note: <code>-DDFLT_TOT_MEM</code> sets the default dynamic memory available for
 NWChem to run, where the units are in doubles.</del> <br />
 However, it is recommended that, instead of manually
-defining this environment variable, the (https://github.com/nwchemgit/nwchem/blob/master/contrib/getmem.nwchem) script to be executed as described in the related (#setting-the-default-memory-values)</p>
+defining this environment variable, the <a href="https://github.com/nwchemgit/nwchem/blob/master/contrib/getmem.nwchem">getmem.nwchem</a> script to be executed as described in the related <a href="#setting-the-default-memory-values">section</a></p>
 <p><strong>MRCC_METHODS</strong> can be set to request the multireference coupled
 cluster capability to be included in the code, e.g.</p>
 <pre><code>export MRCC_METHODS=TRUE
@@ -4122,7 +4122,7 @@ hardware include:  </p>
 </tbody>
 </table>
 <p><br>  </p>
-<p><em><strong>New since release 7.0.0</strong></em> (after commit (https://github.com/nwchemgit/nwchem/commit/6b0a971207e776f43dec81974014e86caf8cee61#diff-1750a4dcc9a0a9b1773d275e96c46a1e )):  If <code>BLASOPT</code> is defined, the <code>LAPACK_LIB</code> environment variable must be set up, too.  <code>LAPACK_LIB</code> must provide the location of the library containing the LAPACK routines. For example, OpenBLAS provides the full suite of LAPACK routines, therefore, in this case, <code>LAPACK_LIB</code> can be set to the same value as BLASOPT  </p>
+<p><em><strong>New since release 7.0.0</strong></em> (after commit <a href="https://github.com/nwchemgit/nwchem/commit/6b0a971207e776f43dec81974014e86caf8cee61#diff-1750a4dcc9a0a9b1773d275e96c46a1e">6b0a971</a>):  If <code>BLASOPT</code> is defined, the <code>LAPACK_LIB</code> environment variable must be set up, too.  <code>LAPACK_LIB</code> must provide the location of the library containing the LAPACK routines. For example, OpenBLAS provides the full suite of LAPACK routines, therefore, in this case, <code>LAPACK_LIB</code> can be set to the same value as BLASOPT  </p>
 <pre><code>export BLASOPT=-lopenblas  
 export LAPACK_LIB=-lopenblas  
 </code></pre>
@@ -4257,8 +4257,8 @@ and COPTIMIZE have been tested by the NWChem developers (using the
 internal QA suites, among others), while any modification might produce
 incorrect results.</p>
 <h3 id="setting-the-default-memory-values">Setting the default memory values<a class="headerlink" href="#setting-the-default-memory-values" title="Permanent link">&para;</a></h3>
-<p>It is strongly recommended to use, after a successful compilation, the (https://github.com/nwchemgit/nwchem/blob/master/contrib/getmem.nwchem) script in the
-<code>$NWCHEM_TOP/contrib</code> directory.  The script will choose the default (Memory.md) settings based on the available physical memory, recompile the appropriate files and relink. Here is an example of its usage:  </p>
+<p>It is strongly recommended to use, after a successful compilation, the <a href="https://github.com/nwchemgit/nwchem/blob/master/contrib/getmem.nwchem">getmem.nwchem</a> script in the
+<code>$NWCHEM_TOP/contrib</code> directory.  The script will choose the default <a href="Memory.html">memory</a> settings based on the available physical memory, recompile the appropriate files and relink. Here is an example of its usage:  </p>
 <pre><code>cd $NWCHEM_TOP/src
 ../contrib/getmem.nwchem
 </code></pre>
@@ -4543,7 +4543,7 @@ CCSD(T) codes. Note that using Fortran heap allocations means the memory
 statistics generated by MA are no longer accurate, but we doubt that
 anyone has been relying on these anyways.</p>
 <p><code>USE_FASTMEM</code> requires the <em>memkind</em> library to be installed.
-An open source version of the memkind library can be downloaded from (https://github.com/memkind/memkind)</p>
+An open source version of the memkind library can be downloaded from <a href="https://github.com/memkind/memkind">Github</a></p>
 <p>Side note: With the exception of <code>USE_FASTMEM</code>, all of the options in
 the KNL section apply to Intel Xeon processors as well. OpenMP is
 certainly useful on multicore processors as a way to reduce the
@@ -4776,17 +4776,17 @@ Infiniband clusters are:</p>
 <p>More details on this topic discussed a  </p>
 <ul>
 <li>
-<p>(https://github.com/nwchemgit/nwchem/issues/284)</p>
+<p><a href="https://github.com/nwchemgit/nwchem/issues/284">https://github.com/nwchemgit/nwchem/issues/284</a></p>
 </li>
 <li>
-<p>(https://github.com/GlobalArrays/ga/issues/126)</p>
+<p><a href="https://github.com/GlobalArrays/ga/issues/126">https://github.com/GlobalArrays/ga/issues/126</a></p>
 </li>
 </ul>
 <h2 id="how-to-windows-platforms">How-to: Windows Platforms<a class="headerlink" href="#how-to-windows-platforms" title="Permanent link">&para;</a></h2>
 <h3 id="mingw">MingW<a class="headerlink" href="#mingw" title="Permanent link">&para;</a></h3>
 <p>The current recommended approach for building a NWChem binary for a
 Windows platform is to build with the
-(https://sourceforge.net/projects/mingw/files/) environment. MinGW can be
+<a href="https://sourceforge.net/projects/mingw/files/">MinGW/Mingw32</a> environment. MinGW can be
 installed using a semi-automatic tool mingw-get-setup.exe
 (http://sourceforge.net/projects/mingw/files/Installer/). A basic MinGW
 installation is required (Basic Setup), plus pthreads-32,
@@ -4847,9 +4847,9 @@ pacman -S msys/make
 </code></pre>
 <h3 id="wsl-on-windows-10">WSL on Windows 10<a class="headerlink" href="#wsl-on-windows-10" title="Permanent link">&para;</a></h3>
 <p>A good alternative only on Windows 10 is <strong>Windows Subsystem for Linux</strong> (WSL).
-This option gives the best performance on Windows when (https://docs.microsoft.com/en-us/windows/wsl/install-win10) is used.
+This option gives the best performance on Windows when <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">WLS 2</a> is used.
 <strong>WSL</strong> allows you to obtain a functional command line Linux 64-bit NWChem environment, either by compiling the NWChem code from scratch or by using the Ubuntu precompiled NWChem package. Here is a link to the install guide</p>
-<p>(https://learn.microsoft.com/en-us/windows/wsl/install)</p>
+<p><a href="https://learn.microsoft.com/en-us/windows/wsl/install">https://learn.microsoft.com/en-us/windows/wsl/install</a></p>
 <p>Once Ubuntu is installed, the quickest method to install NWChem is by fetching the Ubuntu NWChem package by typing</p>
 <pre><code>sudo apt install nwchem
 </code></pre>

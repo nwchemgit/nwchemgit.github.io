@@ -3035,7 +3035,7 @@
 <p>The nuclear hessian which is used to compute the vibrational frequencies
 can be computed by finite difference for any ab initio wave-function
 that has analytic gradients or by analytic methods for SCF and DFT (see
-(Hessians-and-Vibrational-Frequencies.md) for details). The appropriate nuclear
+<a href="Hessians-and-Vibrational-Frequencies.html">Hessians</a> for details). The appropriate nuclear
 hessian generation algorithm is chosen based on the user input when TASK
 <theory> frequencies is the task directive.</p>
 <p>The vibrational package was integrated from the Utah Messkit and can use
@@ -3049,7 +3049,7 @@ Eckart projection algorithm. It also computes the zero point energy for
 the molecular system based on the frequencies obtained from the
 projected hessian.</p>
 <p>The default mass of each atom is used unless an alternative mass is
-provided via the (Geometry.md) input or redefined
+provided via the <a href="Geometry.html">geometry</a> input or redefined
 using the vibrational module input. The default mass is the mass of the
 most abundant isotope of each element. If the abundance was roughly
 equal, the mass of the isotope with the longest half life was used.</p>
@@ -3060,12 +3060,12 @@ temperature of 298.15 degrees.</p>
 definitions will compute the frequencies and IR intensities. The generic
 module input can begin with vib, freq, frequency and has the form:</p>
 <pre><code> {freq || vib || frequency}  
-   ]  
-
-
+   [reuse [&lt;string hessian_filename&gt;]]  
+   [mass &lt;integer lexical_index&gt; &lt;real new_mass&gt;]  
+   [mass &lt;string tag_identifier&gt; &lt;real new_mass&gt;]  
    [{temp || temperature} &lt;integer number_of_temperatures&gt; \  
          &lt;real temperature1 temperature2 ...&gt;]  
-   ]  
+   [animate [&lt;real step_size_for_animation&gt;]]  
  end
 </code></pre>
 <h3 id="hessian-file-reuse">Hessian File Reuse<a class="headerlink" href="#hessian-file-reuse" title="Permanent link">&para;</a></h3>
@@ -3168,7 +3168,7 @@ can have more than one vibrational analysis in a run (e.g. find minimum,
 calculate frequencies, follow mode to TS, calculate frequencies again).
 The optional keyword <code>overwrite</code> allows old animated modes to be overwritten
 if they exist.  </p>
-<pre><code>filename &lt;filename&gt; 
+<pre><code>filename &lt;filename&gt; [overwrite]
 </code></pre>
 <h3 id="an-example-input-deck">An Example Input Deck<a class="headerlink" href="#an-example-input-deck" title="Permanent link">&para;</a></h3>
 <p>This example input deck will optimize the geometry for the given basis

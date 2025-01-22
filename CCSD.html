@@ -3316,8 +3316,8 @@
 <h1 id="coupled-cluster-calculations">Coupled Cluster Calculations<a class="headerlink" href="#coupled-cluster-calculations" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The NWChem coupled cluster energy module is primarily the work of
-Alistair Rendell and Rika Kobayashi, with contributions from
-Bert de Jong, David Bernholdt and Edoardo Aprà.</p>
+Alistair Rendell and Rika Kobayashi<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup><sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup>, with contributions from
+Bert de Jong, David Bernholdt and Edoardo Aprà<sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">3</a></sup>.</p>
 <p>The coupled cluster code can perform calculations with full iterative
 treatment of single and double excitations and non-iterative inclusion
 of triple excitation effects. It is presently limited to closed-shell
@@ -3330,16 +3330,16 @@ with other programs.</p>
 <p>The operation of the coupled cluster code is controlled by the input
 block</p>
 <pre><code>CCSD
-
-
-
-
-   (atomic || &lt;integer nfzc default 0&gt;)] \
-          ]
-
-
-
-
+  [MAXITER &lt;integer maxiter default 20&gt;]
+  [THRESH  &lt;real thresh default 1e-6&gt;]
+  [TOL2E &lt;real tol2e default min(1e-12 , 0.01**`thresh`*`)&gt;]
+  [DIISBAS  &lt;integer diisbas default 5&gt;]
+  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
+          [virtual &lt;integer nfzv default 0&gt;]]
+  [NODISK]
+  [IPRT  &lt;integer IPRT default 0&gt;]
+  [PRINT ...]
+  [NOPRINT ...]
 END
 </code></pre>
 <p>Note that the keyword CCSD is used for the input block regardless of the
@@ -3381,10 +3381,10 @@ considered, but have not yet been implemented.</p>
 <pre><code> DIISBAS  &lt;integer diisbas default 5&gt;
 </code></pre>
 <h2 id="freeze-freezing-orbitals">FREEZE &ndash; Freezing orbitals<a class="headerlink" href="#freeze-freezing-orbitals" title="Permanent link">&para;</a></h2>
-<pre><code>   (atomic || &lt;integer nfzc default 0&gt;)] \
-          ]
+<pre><code>  [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \
+          [virtual &lt;integer nfzv default 0&gt;]]
 </code></pre>
-<p>This directive is identical to that used in the (MP2.md)
+<p>This directive is identical to that used in the <a href="MP2.html">MP2</a>
 module.</p>
 <h2 id="nodisk-on-the-fly-computation-of-integrals">NODISK &ndash; On-the-fly computation of integrals<a class="headerlink" href="#nodisk-on-the-fly-computation-of-integrals" title="Permanent link">&para;</a></h2>
 <p>The CCSD modules by default computes once and stores on disk the
@@ -3530,28 +3530,30 @@ processes and threads is not available.</p>
 <pre><code> set ccsd:use_trpdrv_offload T
 </code></pre>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<dl>
-<dt>///Footnotes Go Here///</dt>
-<dd>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn_footnote_1">
 <p>Rendell, A.P., Lee, T.J., Komornicki, A., and Wilson, S. (1992)
 &ldquo;Evaluation of the contribution from triply excited intermediates to
 the fourth-order perturbation theory energy on Intel distributed
 memory supercomputers&rdquo;, <em>Theor. Chem. Acc.</em>, <strong>84</strong>, 271-287, doi:
-(http://dx.doi.org/10.1007/BF01113267)</p>
-</dd>
-<dd>
+<a href="http://dx.doi.org/10.1007/BF01113267">10.1007/BF01113267</a>&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_2">
 <p>Kobayashi, R. and Rendell, A.P. (1997) &ldquo;A direct coupled cluster
 algorithm for massively parallel computers&rdquo;, <em>Chem. Phys. Lett.</em>,
 <strong>265</strong>, 1-11, doi:
-(http://dx.doi.org/10.1016/S0009-2614<span class="arithmatex">\(96\)</span>01387-5)</p>
-</dd>
-<dd>
+<a href="http://dx.doi.org/10.1016/S0009-2614\(96\)01387-5">10.1016/S0009-2614(96)01387-5</a>&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_3">
 <p>Aprà, E., Harrison, R.J., de Jong, W.A., Rendell, A.P., Tipparaju,
 V. and Xantheas, S.S. (2009) &ldquo;Liquid Water: Obtaining the Right
 Answer for the Right Reasons&rdquo;, <em>Proc. SC&lsquo;09</em>, doi:
-(http://dx.doi.org/10.1145/1654059.1654127)</p>
-</dd>
-</dl>
+<a href="http://dx.doi.org/10.1145/1654059.1654127">10.1145/1654059.1654127</a>&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

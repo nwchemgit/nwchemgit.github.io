@@ -2995,7 +2995,7 @@ be in the range 0 &lt; <em>α</em> &lt; 180.</p>
 <pre><code>  tag1  
   tag2 i R  
   tag3 i R j alpha 
-  tag4 i R j alpha k beta   
+  tag4 i R j alpha k beta [orient]  
   ...
 </code></pre>
 <p>The structure of this input is described in more detail below. In the
@@ -3007,17 +3007,17 @@ same way as the <code>tag</code> entries for Cartesian coordinates described abo
 input</a>). Figures 1, 2 and 3
 display the relationships between the input data and the definitions of
 centers and angles.</p>
-<p>!(Zmat1.jpg)</p>
+<p><img alt="Zmat1.jpg" src="Zmat1.jpg" /></p>
 <p><center></p>
 <p>Figure 1: Relationships between the centers, bond angle and dihedral
 angle in Z-matrix input.</p>
 <p></center></p>
-<p>!(Zmat2.jpg)</p>
+<p><img alt="Zmat2.jpg" src="Zmat2.jpg" /></p>
 <p><center></p>
 <p>Figure 2: Relationships between the centers and two bond angles in
 Z-matrix input with optional parameter specified as +1.</p>
 <p></center></p>
-<p>!(Zmat3.jpg)</p>
+<p><img alt="Zmat3.jpg" src="Zmat3.jpg" /></p>
 <p><center></p>
 <p>Figure 3: Relationships between the centers and two bond angles in
 Z-matrix input with optional parameter specified as -1.</p>
@@ -3033,7 +3033,7 @@ Z-matrix input with optional parameter specified as -1.</p>
     The third center requires specification of its tag, its bond length
     distance (<em>R<sub>Ci</sub></em>) to one of the two previous centers (identified
     by the value of <em>i</em>), and the bond angle <em>&alpha; = &ang;C i j</em>.</li>
-<li><code>tag i R j alpha k beta</code><br />
+<li><code>tag i R j alpha k beta [&lt;integer orient default 0&gt;]</code><br />
     The fourth, and all subsequent centers, require the tag, a bond
    length (<em>R<sub>Ci</sub></em>) relative to center <em>i</em>, the bond angle with
     centers <em>i</em> and <em>j</em> (<em>&alpha; = &ang;C i j</em>), and either the
@@ -3063,7 +3063,7 @@ its value, for clarity in reading the input file.</p>
 <p>Following the <code>VARIABLES</code> directive, the <code>CONSTANTS</code> directive may be used
 to define any Z-matrix symbolic variables that remain unchanged during
 geometry optimizations. To freeze the Cartesian coordinates of an atom,
-refer to the section (ZCOORD-Forcing-internal-coordinates.md#applying-constraints-in-geometry-optimizations).
+refer to the section <a href="ZCOORD-Forcing-internal-coordinates.html#applying-constraints-in-geometry-optimizations">Applying constraints in geometry optimizations</a>.
 The general form of this directive is as follows:</p>
 <pre><code> CONSTANTS  
    &lt;string symbol&gt;  &lt;real value&gt;  

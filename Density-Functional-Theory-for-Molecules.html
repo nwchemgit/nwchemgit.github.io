@@ -4028,7 +4028,7 @@ fit the exchange-correlation (XC) potential.</p>
  END
 </code></pre>
 <p>The actual DFT calculation will be performed when the input module
-encounters the (TASK.md) directive.</p>
+encounters the <a href="TASK.html">TASK</a> directive.</p>
 <pre><code> TASK DFT
 </code></pre>
 <p>Once a user has specified a geometry and a Kohn-Sham orbital basis set
@@ -4036,92 +4036,92 @@ the DFT module can be invoked with no input directives (defaults invoked
 throughout). There are sub-directives which allow for customized
 application; those currently provided as options for the DFT module
 are:</p>
-<pre><code>VECTORS  (&lt;string input_movecs default atomic&gt;) || \  
+<pre><code>VECTORS [[input] (&lt;string input_movecs default atomic&gt;) || \  
                   (project &lt;string basisname&gt; &lt;string filename&gt;)] \ 
-           &lt;integer vec1 vec2&gt; ...] \ 
-           \  
- XC    \  
-           \  
-        \
-        \  
-            \  
-         \ 
-              \ 
-         \  
-      \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      \  
-      \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \ 
-      &lt;real prefactor default 1.0&gt;] \  
-      \ 
-      \  
-      \  
-      \  
-      \ 
-      \  
-      \  
-      \  
-      &lt;real prefactor default 1.0&gt;] \ 
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;]] \  
-      &lt;real prefactor default 1.0&gt;]] \  
-      &lt;real prefactor default 1.0&gt;]] \  
-      &lt;real prefactor default 1.0&gt;]] \ 
-      &lt;real prefactor default 1.0&gt;]] \  
-      &lt;real prefactor default 1.0&gt;]] \ 
-      &lt;real prefactor default 1.0&gt;]] \  
-      &lt;real prefactor default 1.0&gt;]] \  
-      &lt;real prefactor default 1.0&gt;]] \  
-      &lt;real prefactor default 1.0&gt;]] \  
-      &lt;real prefactor default 1.0&gt;]]   
- CONVERGENCE  \  
-               \  
-               \  
-               \  
-               \  
-               \  
-               \  
-               \  
-               \  
-               \  
-               \  
-               \  
-                \  
-              ] \  
-                \  
-               \  
-               \  
-              \
-               ]  
- GRID  \  
-       \  
-       \  
-       \ 
-       \  
-
- TOLERANCES   \  
-              \  
-             ]  
-
+          [swap [alpha||beta] &lt;integer vec1 vec2&gt; ...] \ 
+          [output &lt;string output_filename default input_movecs&gt;] \  
+ XC [[acm] [b3lyp] [beckehandh] [pbe0]\  
+    [becke97]  [becke97-1] [becke97-2] [becke97-3] [becke97-d] [becke98] \  
+     [hcth] [hcth120] [hcth147] \
+     [hcth407] [becke97gga1]  [hcth407p]\  
+     [mpw91] [mpw1k] [xft97] [cft97] [ft97] [op] [bop] [pbeop]\  
+     [xpkzb99] [cpkzb99] [xtpss03] [ctpss03] [xctpssh]\ 
+     [b1b95] [bb1k] [mpw1b95] [mpwb1k] [pw6b95] [pwb6k] [m05] [m05-2x] [vs98] \ 
+     [m06] [m06-hf] [m06-L] [m06-2x] \  
+     [HFexch &lt;real prefactor default 1.0&gt;] \  
+     [becke88 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [xperdew91 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [xpbe96 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [gill96 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [lyp &lt;real prefactor default 1.0&gt;] \  
+     [perdew81 &lt;real prefactor default 1.0&gt;] \  
+     [perdew86 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [perdew91 [nonlocal] &lt;real prefactor default 1.0&gt;] \ 
+     [cpbe96 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [pw91lda &lt;real prefactor default 1.0&gt;] \ 
+     [slater &lt;real prefactor default 1.0&gt;] \  
+     [vwn_1 &lt;real prefactor default 1.0&gt;] \  
+     [vwn_2 &lt;real prefactor default 1.0&gt;] \  
+     [vwn_3 &lt;real prefactor default 1.0&gt;] \ 
+     [vwn_4 &lt;real prefactor default 1.0&gt;] \  
+     [vwn_5 &lt;real prefactor default 1.0&gt;] \  
+     [vwn_1_rpa &lt;real prefactor default 1.0&gt;] \  
+     [xtpss03 [nonlocal] &lt;real prefactor default 1.0&gt;] \ 
+     [ctpss03 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [bc95 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [xpw6b95 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [xpwb6k [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [xm05 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [xm05-2x [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [cpw6b95 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [cpwb6k [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [cm05 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [cm05-2x [nonlocal] &lt;real prefactor default 1.0&gt;]] \  
+     [xvs98 [nonlocal] &lt;real prefactor default 1.0&gt;]] \  
+     [cvs98 [nonlocal] &lt;real prefactor default 1.0&gt;]] \  
+     [xm06-L [nonlocal] &lt;real prefactor default 1.0&gt;]] \ 
+     [xm06-hf [nonlocal] &lt;real prefactor default 1.0&gt;]] \  
+     [xm06 [nonlocal] &lt;real prefactor default 1.0&gt;]] \ 
+     [xm06-2x [nonlocal] &lt;real prefactor default 1.0&gt;]] \  
+     [cm06-L [nonlocal] &lt;real prefactor default 1.0&gt;]] \  
+     [cm06-hf [nonlocal] &lt;real prefactor default 1.0&gt;]] \  
+     [cm06 [nonlocal] &lt;real prefactor default 1.0&gt;]] \  
+     [cm06-2x [nonlocal] &lt;real prefactor default 1.0&gt;]]   
+ CONVERGENCE [[energy &lt;real energy default 1e-7&gt;] \  
+              [density &lt;real density default 1e-5&gt;] \  
+              [gradient &lt;real gradient default 5e-4&gt;] \  
+              [dampon &lt;real dampon default 0.0&gt;] \  
+              [dampoff &lt;real dampoff default 0.0&gt;] \  
+              [diison &lt;real diison default 0.0&gt;] \  
+              [diisoff &lt;real diisoff default 0.0&gt;] \  
+              [levlon &lt;real levlon default 0.0&gt;] \  
+              [levloff &lt;real levloff default 0.0&gt;] \  
+              [ncydp &lt;integer ncydp default 2&gt;] \  
+              [ncyds &lt;integer ncyds default 30&gt;] \  
+              [ncysh &lt;integer ncysh default 30&gt;] \  
+              [damp &lt;integer ndamp default 0&gt;] [nodamping] \  
+              [diis [nfock &lt;integer nfock default 10&gt;]] \  
+              [nodiis] [lshift &lt;real lshift default 0.5&gt;] \  
+              [nolevelshifting] \  
+              [hl_tol &lt;real hl_tol default 0.1&gt;] \  
+              [rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;]\
+              [fast] ]  
+ GRID [(xcoarse||coarse||medium||fine||xfine||huge) default medium] \  
+      [(gausleg||lebedev ) default lebedev ] \  
+      [(becke||erf1||erf2||ssf) default erf1] \  
+      [(euler||mura||treutler) default mura] \ 
+      [rm &lt;real rm default 2.0&gt;] \  
+      [nodisk] 
+ TOLERANCES [[tight] [tol_rho &lt;real tol_rho default 1e-10&gt;] \  
+             [accCoul &lt;integer accCoul default 8&gt;] \  
+             [radius &lt;real radius default 25.0&gt;]]  
+ [(LB94||CS00 &lt;real shift default none&gt;)]  
  DECOMP 
  ODFT 
  DIRECT  
- SEMIDIRECT  
-
-
+ SEMIDIRECT [filesize &lt;integer filesize default disksize&gt;] 
+            [memsize  &lt;integer memsize default available&gt;]  
+            [filename &lt;string filename default $file_prefix.aoints$&gt;]
  INCORE 
  ITERATIONS &lt;integer iterations default 30&gt; 
  MAX_OVL  
@@ -4129,7 +4129,7 @@ are:</p>
  RODFT  
  MULLIKEN  
  DISP  
- XDM      
+ XDM [ a1 &lt;real a1&gt; ]   [ a2 &lt;real a2&gt; ]  
  MULT &lt;integer mult default 1&gt;  
  NOIO  
  PRINT||NOPRINT
@@ -4142,14 +4142,14 @@ sub-directives that can be specified for a DFT calculation in NWChem.</p>
 <p>The DFT module requires at a minimum the basis set for the Kohn-Sham
 molecular orbitals. This basis set must be in the default basis set
 named &ldquo;ao basis&rdquo;, or it must be assigned to this default name using the
-(SET.md) directive.</p>
+<a href="SET.html">SET</a> directive.</p>
 <p>In addition to the basis set for the Kohn-Sham orbitals, the charge
 density fitting basis set can also be specified in the input directives
 for the DFT module. This basis set is used for the evaluation of the
 Coulomb potential in the Dunlap scheme<sup id="fnref_footnote_dunlap1979"><a class="footnote-ref" href="#fn_footnote_dunlap1979">1</a></sup>. The charge density fitting basis
 set must have the name <code>cd basis</code>. This can be the actual name of a
 basis set, or a basis set can be assigned this name using the
-(SET.md) directive. If this basis set is not
+<a href="SET.html">SET</a> directive. If this basis set is not
 defined by input, the O(N<sup>4</sup>) exact Coulomb contribution is computed.</p>
 <p>The user also has the option of specifying a third basis set for the
 evaluation of the exchange-correlation potential. This basis set must
@@ -4169,37 +4169,37 @@ given calculation can be summarized as follows:</p>
 </ul>
 <h2 id="adft-new-in-nwchem-720">ADFT <strong><em>New in NWChem 7.2.0</em></strong>:<a class="headerlink" href="#adft-new-in-nwchem-720" title="Permanent link">&para;</a></h2>
 <p>Use of the auxiliary density functional theory method (ADFT)<sup id="fnref_footnote_koester2004"><a class="footnote-ref" href="#fn_footnote_koester2004">2</a></sup> can be triggered by means of the <code>adft</code> keyword. This can result in a large speed-up when using &ldquo;pure&rdquo; GGA functionals (e.g. PBE96) and Laplacian-dependent mGGA functionals (e.g. SCAN-L). The speed-up comes from the use of the fitted density obtained with the charge density fitting technique to approximate both the Coulomb and Exchange-Correlation contributions.</p>
-<p>The ADFT method is similar in spirit to the exchange-correlation fitting technique triggered by specifying an (#specification-of-basis-sets-for-the-dft-module) without the <code>adft</code> keyword. It is important to note that, different to straight exchange-correlation fitting, <em>energy derivatives are well-defined</em> within the ADFT framework. As a consequence, geometry optimizations and harmonic vibrational frequencies are well-behaved.</p>
-<p>The ADFT method requires a charge density fitting basis set (see (#specification-of-basis-sets-for-the-dft-module)). If not <code>cd basis</code> set is provided, the <code>weigend coulomb fitting</code> basis set will be loaded.</p>
+<p>The ADFT method is similar in spirit to the exchange-correlation fitting technique triggered by specifying an <a href="#specification-of-basis-sets-for-the-dft-module">xc basis</a> without the <code>adft</code> keyword. It is important to note that, different to straight exchange-correlation fitting, <em>energy derivatives are well-defined</em> within the ADFT framework. As a consequence, geometry optimizations and harmonic vibrational frequencies are well-behaved.</p>
+<p>The ADFT method requires a charge density fitting basis set (see <a href="#specification-of-basis-sets-for-the-dft-module">DFT basis set section</a>). If not <code>cd basis</code> set is provided, the <code>weigend coulomb fitting</code> basis set will be loaded.</p>
 <h2 id="vectors-and-max_ovl-ks-mo-vectors">VECTORS and MAX_OVL: KS-MO Vectors<a class="headerlink" href="#vectors-and-max_ovl-ks-mo-vectors" title="Permanent link">&para;</a></h2>
-<p>The VECTORS directive is the same as that in the (Hartree-Fock-Theory-for-Molecules.md#vectors-inputoutput-of-mo-vectors) module. Currently, the (Hartree-Fock-Theory-for-Molecules.md#vectors-lock-keyword) keyword is not supported by the DFT module, however the directive</p>
+<p>The VECTORS directive is the same as that in the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-inputoutput-of-mo-vectors">SCF</a> module. Currently, the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-lock-keyword">LOCK</a> keyword is not supported by the DFT module, however the directive</p>
 <pre><code> MAX_OVL
 </code></pre>
 <p>has the same effect.</p>
 <h2 id="xc-and-decomp-exchange-correlation-potentials">XC and DECOMP: Exchange-Correlation Potentials<a class="headerlink" href="#xc-and-decomp-exchange-correlation-potentials" title="Permanent link">&para;</a></h2>
-<pre><code> XC     \  
-              \
-        \  
-              \  
-              \  
-      \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      \  
-      \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      &lt;real prefactor default 1.0&gt;] \  
-      \  
-      \  
-      \  
-      \  
-      \  
-      \  
-      \  
-     ]
+<pre><code> XC [[acm] [b3lyp] [beckehandh] [pbe0] [bhlyp]\  
+    [becke97]  [becke97-1] [becke97-2] [becke97-3] [becke98] [hcth] [hcth120] [hcth147]  \
+     [hcth407] [becke97gga1] [hcth407p] \  
+     [optx] [hcthp14] [mpw91] [mpw1k] [xft97] [cft97] [ft97] [op] [bop] [pbeop]\  
+     [m05] [m05-2x] [m06] [m06-l] [m06-2x] [m06-hf] [m08-hx] [m08-so] [m11] [m11-l]\  
+     [HFexch &lt;real prefactor default 1.0&gt;] \  
+     [becke88 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [xperdew91 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [xpbe96 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [gill96 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [lyp &lt;real prefactor default 1.0&gt;] \  
+     [perdew81 &lt;real prefactor default 1.0&gt;] \  
+     [perdew86 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [perdew91 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [cpbe96 [nonlocal] &lt;real prefactor default 1.0&gt;] \  
+     [pw91lda &lt;real prefactor default 1.0&gt;] \  
+     [slater &lt;real prefactor default 1.0&gt;] \  
+     [vwn_1 &lt;real prefactor default 1.0&gt;] \  
+     [vwn_2 &lt;real prefactor default 1.0&gt;] \  
+     [vwn_3 &lt;real prefactor default 1.0&gt;] \  
+     [vwn_4 &lt;real prefactor default 1.0&gt;] \  
+     [vwn_5 &lt;real prefactor default 1.0&gt;] \  
+     [vwn_1_rpa &lt;real prefactor default 1.0&gt;]]
 </code></pre>
 <p>The user has the option of specifying the exchange-correlation treatment
 in the DFT Module (see table below for full list of functionals). The
@@ -4232,12 +4232,12 @@ input</a>.</p>
 the user as listed in the table below. The following sections describe
 how to use these options.</p>
 <h3 id="libxc-interface-new-in-nwchem-720">Libxc interface <strong><em>New in NWChem 7.2.0</em></strong>:<a class="headerlink" href="#libxc-interface-new-in-nwchem-720" title="Permanent link">&para;</a></h3>
-<p>If NWChem is compiled by linking it with the (https://www.tddft.org/programs/libxc/) DFT library
-(as described in the (Interfaces-with-External-Software.md#libxc) section),
+<p>If NWChem is compiled by linking it with the <a href="https://www.tddft.org/programs/libxc/">libxc</a> DFT library
+(as described in the <a href="Interfaces-with-External-Software.html#libxc">Interfaces with External Software</a> section),
 the user will be able to use most of the XC functionals available in libxc.<br />
-The input syntax requires to use the (#xc-and-decomp-exchange-correlation-potentials) keyword followed by
+The input syntax requires to use the <a href="#xc-and-decomp-exchange-correlation-potentials">xc</a> keyword followed by
 the functionals name from 
-(https://tddft.org/programs/libxc/functionals/)</p>
+<a href="https://tddft.org/programs/libxc/functionals/">list available in Libxc</a></p>
 <p>For example, the following input for the NWChem libxc interface</p>
 <pre><code>dft
  xc gga_x_pbe 1.0 gga_x_pbe 1.0
@@ -5578,7 +5578,7 @@ these functionals with the accompanying local PW91LDA. The user cannot
  set the local part of these metaGGA functionals.</p>
 <h3 id="range-separated-functionals">Range-Separated Functionals<a class="headerlink" href="#range-separated-functionals" title="Permanent link">&para;</a></h3>
 <p>Using the Ewald decomposition</p>
-<div class="arithmatex">\[\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - }{r_{12}}\]</div>
+<div class="arithmatex">\[\frac{1}{r_{12}} = \frac{\alpha + \beta \texttt{erf}(\mu r_{12})}{r_{12}} + \frac{1 - [\alpha + \beta \texttt{erf}(\mu r_{12})]}{r_{12}}\]</div>
 <p>we can split the the Exchange interaction as</p>
 <div class="arithmatex">\[E_{X} = E_X^{LR} + E_X^{SR}\]</div>
 <p>Therefore, the long-range HF Exchange energy
@@ -5731,20 +5731,20 @@ potentials.</p>
 <p>The keyword <code>CS00</code>, when supplied with a real value of shift (in atomic
 units), will perform Casida-Salahub &lsquo;00 asymptotic correction. This is
 primarily intended for use with
-(Excited-State-Calculations.md). The shift is normally
+<a href="Excited-State-Calculations.html">TDDFT</a>. The shift is normally
 positive (which means that the original uncorrected exchange-correlation
 potential must be shifted down).</p>
 <p>When the keyword <code>CS00</code> is specified without the value of shift, the
 program will automatically supply it according to the semi-empirical
 formula of Zhan, Nichols, and Dixon (again, see
-(Excited-State-Calculations.md) for more details and
+<a href="Excited-State-Calculations.html">TDDFT</a> for more details and
 references). As the Zhan&rsquo;s formula is calibrated against B3LYP results,
 it is most meaningful to use this with the B3LYP
 functional, although the program does not prohibit (or even warn) the
 use of any other functional.</p>
 <p>Sample input files of asymptotically corrected TDDFT calculations can be
 found in the corresponding
-(Excited-State-Calculations.md#sample-input).</p>
+<a href="Excited-State-Calculations.html#sample-input">section</a>.</p>
 <h2 id="sample-input-file">Sample input file<a class="headerlink" href="#sample-input-file" title="Permanent link">&para;</a></h2>
 <p>A simple example calculates the geometry of water, using the metaGGA
 functionals <code>xtpss03</code> and <code>ctpss03</code>. This also highlights some of the print
@@ -5789,24 +5789,24 @@ iterations is reached or convergence is met. See an example that uses
 this directive in <a href="#sample-input-file">Sample input
 file</a>.</p>
 <h2 id="convergence-scf-convergence-control">CONVERGENCE: SCF Convergence Control<a class="headerlink" href="#convergence-scf-convergence-control" title="Permanent link">&para;</a></h2>
-<pre><code> CONVERGENCE  \  
-              \  
-              \  
-
-              \  
-              \  
-              \  
-              \  
-              \  
-               \  
-              \  
-              \  
-             ) || nodiis] \  
-              \  
-              \  
-              \  
-              \
-              ]
+<pre><code> CONVERGENCE [energy &lt;real energy default 1e-6&gt;] \  
+             [density &lt;real density default 1e-5&gt;] \  
+             [gradient &lt;real gradient default 5e-4&gt;] \  
+             [hl_tol &lt;real hl_tol default 0.1&gt;]  
+             [dampon &lt;real dampon default 0.0&gt;] \  
+             [dampoff &lt;real dampoff default 0.0&gt;] \  
+             [ncydp &lt;integer ncydp default 2&gt;] \  
+             [ncyds &lt;integer ncyds default 30&gt;] \  
+             [ncysh &lt;integer ncysh default 30&gt;] \  
+             [damp &lt;integer ndamp default 0&gt;] [nodamping] \  
+             [diison &lt;real diison default 0.0&gt;] \  
+             [diisoff &lt;real diisoff default 0.0&gt;] \  
+             [(diis [nfock &lt;integer nfock default 10&gt;]) || nodiis] \  
+             [levlon &lt;real levlon default 0.0&gt;] \  
+             [levloff &lt;real levloff default 0.0&gt;] \  
+             [(lshift &lt;real lshift default 0.5&gt;) || nolevelshifting] \  
+             [rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;] \
+             [fast] ]
 </code></pre>
 <p>Convergence is satisfied by meeting any or all of three criteria;</p>
 <ul>
@@ -5841,12 +5841,12 @@ variety of ways to customize this procedure to whatever is desired.</p>
 in total energy (between iterations <var>N</var> and <var>N-1</var>), when to turn damping,
 level-shifting, and/or DIIS on/off. Start and stop keywords for each of
 these is available as,</p>
-<pre><code> CONVERGENCE   \  
-               \  
-               \  
-               \  
-               \  
-
+<pre><code> CONVERGENCE  [dampon &lt;real dampon default 0.0&gt;] \  
+              [dampoff &lt;real dampoff default 0.0&gt;] \  
+              [diison &lt;real diison default 0.0&gt;] \  
+              [diisoff &lt;real diisoff default 0.0&gt;] \  
+              [levlon &lt;real levlon default 0.0&gt;] \  
+              [levloff &lt;real levloff default 0.0&gt;]
 </code></pre>
 <p>So, for example, damping, DIIS, and/or level-shifting can be turned
 on/off as desired.</p>
@@ -5854,17 +5854,17 @@ on/off as desired.</p>
 you wish each type of procedure to be used. The necessary keywords to
 control the number of damping cycles (<code>ncydp</code>), the number of DIIS cycles
 (<code>ncyds</code>), and the number of level-shifting cycles (<code>ncysh</code>) are input as,</p>
-<pre><code> CONVERGENCE   \  
-               \  
-
+<pre><code> CONVERGENCE  [ncydp &lt;integer ncydp default 2&gt;] \  
+              [ncyds &lt;integer ncyds default 30&gt;] \  
+              [ncysh &lt;integer ncysh default 0&gt;]
 </code></pre>
 <p>The amount of damping, level-shifting, time at which level-shifting is
 automatically imposed, and Fock matrices used in the DIIS extrapolation
 can be modified by the following keywords</p>
-<pre><code> CONVERGENCE   \  
-              ] \  
-               \  
-              ]
+<pre><code> CONVERGENCE  [damp &lt;integer ndamp default 0&gt;] \  
+              [diis [nfock &lt;integer nfock default 10&gt;]] \  
+              [lshift &lt;real lshift default 0.5&gt;] \  
+              [hl_tol &lt;real hl_tol default 0.1&gt;]]
 </code></pre>
 <h3 id="convergence-damp-keyword">CONVERGENCE DAMP Keyword<a class="headerlink" href="#convergence-damp-keyword" title="Permanent link">&para;</a></h3>
 <p>Damping is defined to be the percentage of the previous iterations
@@ -5900,13 +5900,13 @@ procedure to 3 would take the form,</p>
 </code></pre>
 <p>The user has the ability to simply turn off any optimization procedures
 deemed undesirable with the obvious keywords,</p>
-<pre><code> CONVERGENCE   
+<pre><code> CONVERGENCE [nodamping] [nodiis] [nolevelshifting]
 </code></pre>
 <p>For systems where the initial guess is very poor, the user can try using
 fractional occupation of the orbital levels during the initial cycles of
 the SCF convergence<sup id="fnref_footnote_rabuck1999"><a class="footnote-ref" href="#fn_footnote_rabuck1999">72</a></sup>.
 The input has the following form</p>
-<pre><code> CONVERGENCE rabuck ]
+<pre><code> CONVERGENCE rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;]]
 </code></pre>
 <p>where the optional value <code>n_rabuck</code> determines the number of SCF cycles
 during which the method will be active. For example, to set equal to 30
@@ -5927,8 +5927,8 @@ task dft
 </code></pre>
 <h2 id="cdft-constrained-dft">CDFT: Constrained DFT<a class="headerlink" href="#cdft-constrained-dft" title="Permanent link">&para;</a></h2>
 <p>This option enables the constrained DFT formalism by Wu and Van Voorhis<sup id="fnref_footnote_wu2005"><a class="footnote-ref" href="#fn_footnote_wu2005">73</a></sup>: </p>
-<pre><code> CDFT &lt;integer fatom1 latom1&gt;  (charge||spin &lt;real constaint_value&gt;) \ 
-
+<pre><code> CDFT &lt;integer fatom1 latom1&gt; [&lt;integer fatom2 latom2&gt;] (charge||spin &lt;real constaint_value&gt;) \ 
+      [pop (becke||mulliken||lowdin) default lowdin]
 </code></pre>
 <p>Variables <code>fatom1</code> and <code>latom1</code> define the first and last atom of the group
 of atoms to which the constraint will be applied. Therefore, the atoms in
@@ -6082,12 +6082,12 @@ end
 task dft
 </code></pre>
 <h2 id="grid-numerical-integration-of-the-xc-potential">GRID: Numerical Integration of the XC Potential<a class="headerlink" href="#grid-numerical-integration-of-the-xc-potential" title="Permanent link">&para;</a></h2>
-<pre><code> GRID  \  
-       \  
-       \  
-       \  
-       \  
-
+<pre><code> GRID [(xcoarse||coarse||medium||fine||xfine||huge) default medium] \  
+      [(gausleg||lebedev ) default lebedev ] \  
+      [(becke||erf1||erf2||ssf) default erf1] \  
+      [(euler||mura||treutler) default mura] \  
+      [rm &lt;real rm default 2.0&gt;] \  
+      [nodisk]
 </code></pre>
 <p>A numerical integration is necessary for the evaluation of the
 exchange-correlation contribution to the density functional. The default
@@ -6098,7 +6098,7 @@ this numerical integration procedure various levels of accuracy have
 been defined and are available to the user. The user can specify the
 level of accuracy with the keywords; <code>xcoarse</code>, <code>coarse</code>, <code>medium</code>, <code>fine</code>, <code>xfine</code> and
 <code>huge</code>. The default is <code>medium</code>.</p>
-<pre><code> GRID 
+<pre><code> GRID [xcoarse||coarse||medium||fine||xfine||huge]
 </code></pre>
 <p>Our intent is to have a numerical integration scheme which would give us
 approximately the accuracy defined below regardless of molecular
@@ -6521,7 +6521,7 @@ molecule</p>
 <pre><code>grid lebedev 80 11 H 70 8  O 90 11
 </code></pre>
 <h3 id="partitioning-functions">Partitioning functions<a class="headerlink" href="#partitioning-functions" title="Permanent link">&para;</a></h3>
-<pre><code>GRID 
+<pre><code>GRID [(becke||erf1||erf2||ssf) default erf1]
 </code></pre>
 <ul>
 <li>becke : see paper<sup id="fnref_footnote_becke1988_2"><a class="footnote-ref" href="#fn_footnote_becke1988_2">75</a></sup></li>
@@ -6530,9 +6530,9 @@ molecule</p>
 <li>erf2 : modified ssf</li>
 </ul>
 <p>Erf<em>n</em> partitioning functions</p>
-<div class="arithmatex">\[\begin{array}{lcl}  w_A(r) &amp; = &amp; \prod_{B\neq A}\frac{1}{2} \left \\  \mu^\prime_{AB} &amp; = &amp; \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\  \mu_{AB} &amp; = &amp; \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|} \end{array}\]</div>
+<div class="arithmatex">\[\begin{array}{lcl}  w_A(r) &amp; = &amp; \prod_{B\neq A}\frac{1}{2} \left[1 \ - \ erf(\mu^\prime_{AB})\right] \\  \mu^\prime_{AB} &amp; = &amp; \frac{1}{\alpha} \ \frac{\mu_{AB}}{(1-\mu_{AB}^2)^n} \\  \mu_{AB} &amp; = &amp; \frac{{\mathbf r}_A - {\mathbf r}_B} {\left|{\mathbf r}_A - {\mathbf r}_B \right|} \end{array}\]</div>
 <h3 id="radial-grids">Radial grids<a class="headerlink" href="#radial-grids" title="Permanent link">&para;</a></h3>
-<pre><code> GRID   default mura]
+<pre><code> GRID [[euler||mura||treutler]  default mura]
 </code></pre>
 <ul>
 <li>euler : Euler-McLaurin quadrature with the transformation devised by
@@ -6546,9 +6546,9 @@ molecule</p>
 </code></pre>
 <p>This keyword turns off storage of grid points and weights on disk.</p>
 <h2 id="tolerances-screening-tolerances">TOLERANCES: Screening tolerances<a class="headerlink" href="#tolerances-screening-tolerances" title="Permanent link">&para;</a></h2>
-<pre><code> TOLERANCES   \  
-              \  
-             ]
+<pre><code> TOLERANCES [[tight] [tol_rho &lt;real tol_rho default 1e-10&gt;] \  
+             [accCoul &lt;integer accCoul default 8&gt;] \  
+             [radius &lt;real radius default 25.0&gt;]]
 </code></pre>
 <p>The user has the option of controlling screening for the tolerances in
 the integral evaluations for the DFT module. In most applications, the
@@ -6583,9 +6583,9 @@ at the very first
 iteration.</p>
 <h2 id="direct-semidirect-and-noio-hardware-resource-control">DIRECT, SEMIDIRECT and NOIO: Hardware Resource Control<a class="headerlink" href="#direct-semidirect-and-noio-hardware-resource-control" title="Permanent link">&para;</a></h2>
 <pre><code> DIRECT||INCORE  
- SEMIDIRECT   
-
-
+ SEMIDIRECT [filesize &lt;integer filesize default disksize&gt;]  
+            [memsize  &lt;integer memsize default available&gt;]  
+            [filename &lt;string filename default $file_prefix.aoints$]  
  NOIO
 </code></pre>
 <p>The inverted charge-density and exchange-correlation matrices for a DFT
@@ -6601,7 +6601,7 @@ whenever needed.</p>
 with the option <code>DIRECT</code> in which case all integrals are computed
 &ldquo;on-the-fly&rdquo;.</p>
 <p>The <code>SEMIDIRECT</code> option controls caching of integrals. A full description
-of this option is described in the (Hartree-Fock-Theory-for-Molecules.md#direct-and-semidirect-recomputation-of-integrals) section. Some functionality
+of this option is described in the <a href="Hartree-Fock-Theory-for-Molecules.html#direct-and-semidirect-recomputation-of-integrals">Hartree-Fock</a> section. Some functionality
 which is only compatible with the <code>DIRECT</code> option will not, at present,
 work when using <code>SEMIDIRECT</code>.</p>
 <h2 id="odft-and-mult-open-shell-systems">ODFT and MULT: Open shell systems<a class="headerlink" href="#odft-and-mult-open-shell-systems" title="Permanent link">&para;</a></h2>
@@ -6632,7 +6632,7 @@ the <code>nocgmin</code> keyword.</p>
 <p>The <code>rodft</code> keyword will perform restricted open-shell calculations. This
 keyword can only be used with the <code>CGMIN</code> keyword.</p>
 <h2 id="sic-self-interaction-correction">SIC: Self-Interaction Correction<a class="headerlink" href="#sic-self-interaction-correction" title="Permanent link">&para;</a></h2>
-<pre><code>sic 
+<pre><code>sic [perturbative || oep || oep-loc ]
 &lt;default perturbative&gt;
 </code></pre>
 <p>The Perdew and Zunger<sup id="fnref_footnote_perdew1981"><a class="footnote-ref" href="#fn_footnote_perdew1981">9</a></sup> method to remove the self-interaction contained in many
@@ -6642,7 +6642,7 @@ Three variants of these methods are included in NWChem:</p>
 <ul>
 <li><code>sic perturbative</code> This is the default option for the sic directive.
     After a self-consistent calculation, the Kohn-Sham orbitals are
-    localized with the Foster-Boys algorithm (see section on (Hartree-Fock-Theory-for-Molecules.md#orbital-localization)) and the
+    localized with the Foster-Boys algorithm (see section on <a href="Hartree-Fock-Theory-for-Molecules.html#orbital-localization">orbital localization</a>) and the
     self-interaction energy is added to the total energy. All
     exchange-correlation functionals implemented in the NWChem can be
     used with this option.</li>
@@ -6654,7 +6654,7 @@ Three variants of these methods are included in NWChem:</p>
     addition of localization of the Kohn-Sham orbitals in each step of
     the self-consistent process.</li>
 </ul>
-<p>With <code>oep</code> and <code>oep-loc</code> options a <code>xfine grid</code> (see section about (#grid-numerical-integration-of-the-xc-potential) ) must be
+<p>With <code>oep</code> and <code>oep-loc</code> options a <code>xfine grid</code> (see section about <a href="#grid-numerical-integration-of-the-xc-potential">numerical integration</a> ) must be
 used in order to avoid numerical noise, furthermore the hybrid
 functionals can not be used with these options. More details of the
 implementation of this method can be found in the paper by Garza<sup id="fnref_footnote_garza2000"><a class="footnote-ref" href="#fn_footnote_garza2000">82</a></sup>. The components of the
@@ -6721,10 +6721,10 @@ end
 not just <code>bq</code>.</p>
 <h2 id="disp-empirical-long-range-contribution-vdw">DISP: Empirical Long-range Contribution (vdW)<a class="headerlink" href="#disp-empirical-long-range-contribution-vdw" title="Permanent link">&para;</a></h2>
 <pre><code> DISP \
-      ] \
-       \
-       \
-
+      [ vdw &lt;real vdw integer default 2]] \
+      [[s6 &lt;real s6 default depends on XC functional&gt;] \
+      [ alpha &lt;real alpha default 20.0d0] \
+      [ off ] 
 </code></pre>
 <p>When systems with high dependence on van der Waals interactions are
 computed, the dispersion term may be added empirically through
@@ -6763,7 +6763,7 @@ some functionals and triple-zeta plus double polarization basis set
 </ul>
 <p>Grimme&rsquo;s DFT-D3 is also available. Here the dispersion term has the
 following form:</p>
-<div class="arithmatex">\[ E_{disp} = \sum_{i,j} \sum_{n=6,8} s_n \ \frac{C^{ij}_n}{r_{ij}} \biggl\lbrace 1 + 6 \bigl^{-\alpha n} \biggr\rbrace^{-1}\]</div>
+<div class="arithmatex">\[ E_{disp} = \sum_{i,j} \sum_{n=6,8} s_n \ \frac{C^{ij}_n}{r_{ij}} \biggl\lbrace 1 + 6 \bigl[\frac{r_{ij}}{s_{r,n} \ R_0^{ij}} \bigr]^{-\alpha n} \biggr\rbrace^{-1}\]</div>
 <p>This new dispersion correction covers elements through Z=94.
   <em>C<sup>ij</sup><sub>n</sub> (n=6,8)</em> are coordination and geometry dependent. Details
 about the functional form can be found in reference <sup id="fnref_footnote_grimme2010"><a class="footnote-ref" href="#fn_footnote_grimme2010">88</a></sup>.</p>
@@ -6811,7 +6811,7 @@ end
 task dft energy
 </code></pre>
 <h2 id="xdm-exchange-hole-dipole-moment-dispersion-model">XDM: Exchange-hole dipole moment dispersion model<a class="headerlink" href="#xdm-exchange-hole-dipole-moment-dispersion-model" title="Permanent link">&para;</a></h2>
-<pre><code>XDM     
+<pre><code>XDM  [ a1 &lt;real a1&gt; ]   [ a2 &lt;real a2&gt; ]
 </code></pre>
 <p>See details (including list of a1 and a2 parameters) in  paper <sup id="fnref_footnote_delaroza2013"><a class="footnote-ref" href="#fn_footnote_delaroza2013">89</a></sup>
 and the website <a href="https://erin-r-johnson.github.io/software/">https://erin-r-johnson.github.io/software/</a></p>
@@ -6993,11 +6993,11 @@ are:</p>
 <h2 id="spin-orbit-density-functional-theory-sodft">Spin-Orbit Density Functional Theory (SODFT)<a class="headerlink" href="#spin-orbit-density-functional-theory-sodft" title="Permanent link">&para;</a></h2>
 <p>The spin-orbit DFT module (SODFT) in the NWChem code allows for the variational
 treatment of the one-electron spin-orbit operator within the DFT framework. Calculations
-can be performed either with an electron relativistic approach ((Relativistic-All-electron-Approximations.md#zeroth-order-regular-approximation-zora)) or with an
+can be performed either with an electron relativistic approach (<a href="Relativistic-All-electron-Approximations.html#zeroth-order-regular-approximation-zora">ZORA</a>) or with an
 effective core potential (ECP) and a matching spin-orbit potential (SO). The current
 implementation does NOT use symmetry.</p>
 <p>The actual SODFT calculation will be performed when the input module
-encounters the TASK directive ((TASK.md)).</p>
+encounters the TASK directive (<a href="TASK.html">TASK</a>).</p>
 <pre><code> TASK SODFT
 </code></pre>
 <p>Input parameters are the same as for the DFT. Some of the DFT options
@@ -7009,7 +7009,7 @@ can be found in <a href="ECP.html#spin-orbit-ecps">Effective Core
 Potentials</a>. At this time we have not
 included any spin-orbit potentials in the basis set library. However,
 one can get these from the Stuttgart/Köln web pages
-(http://www.tc.uni-koeln.de/PP/clickpse.en.html).</p>
+<a href="http://www.tc.uni-koeln.de/PP/clickpse.en.html">http://www.tc.uni-koeln.de/PP/clickpse.en.html</a>.</p>
 <p>Note: One should use a combination of ECP and SO potentials that were
 designed for the same size core, i.e., don&rsquo;t use a small core ECP
 potential with a large core SO potential (it will produce erroneous
@@ -7052,8 +7052,8 @@ task sodft
 </code></pre>
 <h2 id="sym-and-adapt">SYM and ADAPT<a class="headerlink" href="#sym-and-adapt" title="Permanent link">&para;</a></h2>
 <p>The options <code>SYM</code> and <code>ADAPT</code> works the same way as the analogous options for the SCF code.
-Therefore please use the following links for (Hartree-Fock-Theory-for-Molecules.md#sym-use-of-symmetry) and
-(Hartree-Fock-Theory-for-Molecules.md#adapt-symmetry-adaptation-of-mos), respectively.</p>
+Therefore please use the following links for <a href="Hartree-Fock-Theory-for-Molecules.html#sym-use-of-symmetry">SYM</a> and
+<a href="Hartree-Fock-Theory-for-Molecules.html#adapt-symmetry-adaptation-of-mos">ADAPT</a>, respectively.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <div class="footnote">
 <hr />

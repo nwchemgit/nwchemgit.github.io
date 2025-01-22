@@ -3154,13 +3154,13 @@ be achieved using a transformation of the Dirac Hamiltonian known in
 general as a Foldy-Wouthuysen (FW) transformation. Unfortunately this
 transformation cannot be represented in closed form for a general
 potential, and must be approximated. One popular approach is that
-originally formulated by Douglas and Kroll and developed by
-Hess. This approach decouples the positive and negative energy
+originally formulated by Douglas and Kroll<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup> and developed by
+Hess<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup><sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">3</a></sup>. This approach decouples the positive and negative energy
 parts to second order in the external potential (and also fourth order
 in the fine structure constant, α). Other approaches include the Zeroth
-Order Regular Approximation (ZORA) and modification
-of the Dirac equation by Dyall, and involves an exact FW
-transformation on the atomic basis set level.</p>
+Order Regular Approximation (ZORA)<sup id="fnref_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">4</a></sup><sup id="fnref_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup><sup id="fnref_footnote_6"><a class="footnote-ref" href="#fn_footnote_6">6</a></sup><sup id="fnref_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">7</a></sup> and modification
+of the Dirac equation by Dyall<sup id="fnref_footnote_8"><a class="footnote-ref" href="#fn_footnote_8">8</a></sup>, and involves an exact FW
+transformation on the atomic basis set level<sup id="fnref_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">9</a></sup><sup id="fnref_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">10</a></sup>.</p>
 <p>Since these approximations only modify the integrals, they can in
 principle be used at all levels of theory. At present the Douglas-Kroll
 and ZORA implementations can be used at all levels of theory whereas
@@ -3175,11 +3175,11 @@ approximations:</p>
 <pre><code>RELATIVISTIC
   [DOUGLAS-KROLL [&lt;string (ON||OFF) default ON&gt; \  
                 &lt;string (FPP||DKH||DKFULL||DK3||DK3FULL) default DKH&gt;]  || 
-   ZORA  ||   
-   DYALL-MOD-DIRAC   ||
-                  ]  ||
-   X2C 
-
+   ZORA [ (ON || OFF) default ON ] ||   
+   DYALL-MOD-DIRAC [ (ON || OFF) default ON ]  ||
+                 [ (NESC1E || NESC2E) default NESC1E ] ]  ||
+   X2C [ (ON || OFF) default ON ]
+  [CLIGHT &lt;real clight default 137.0359895&gt;]  
  END
 </code></pre>
 <p>Only one of the methods may be chosen at a time. If both methods are
@@ -3205,15 +3205,15 @@ the user will need to define a new <code>RELATIVISTIC</code> block and turn the
 approximation <code>OFF</code>. The user could also simply put a blank <code>RELATIVISTIC</code>
 block in the input file and all options will be turned off.</p>
 <p>The <code>FPP</code> is the approximation based on free-particle projection
-operators whereas the <code>DKH</code> and <code>DKFULL</code> approximations are based on
-external-field projection operators. The latter two are
+operators<sup id="fnref_footnote_11"><a class="footnote-ref" href="#fn_footnote_11">11</a></sup> whereas the <code>DKH</code> and <code>DKFULL</code> approximations are based on
+external-field projection operators<sup id="fnref_footnote_12"><a class="footnote-ref" href="#fn_footnote_12">12</a></sup>. The latter two are
 considerably better approximations than the former. <code>DKH</code> is the
 Douglas-Kroll-Hess approach and is the approach that is generally
 implemented in quantum chemistry codes. <code>DKFULL</code> includes certain
 cross-product integral terms ignored in the <code>DKH</code> approach (see for
-example Häberlen and Rösch). The third-order Douglas-Kroll
+example Häberlen and Rösch<sup id="fnref_footnote_13"><a class="footnote-ref" href="#fn_footnote_13">13</a></sup>). The third-order Douglas-Kroll
 approximation has been implemented by T. Nakajima and K.
-Hirao. This approximation can be called using <code>DK3</code> (DK3
+Hirao<sup id="fnref_footnote_14"><a class="footnote-ref" href="#fn_footnote_14">14</a></sup><sup id="fnref_footnote_15"><a class="footnote-ref" href="#fn_footnote_15">15</a></sup>. This approximation can be called using <code>DK3</code> (DK3
 without cross-product integral terms) or <code>DK3FULL</code> (DK3 with cross-product
 integral terms).</p>
 <p>The contracted basis sets used in the calculations should reflect the
@@ -3233,11 +3233,11 @@ that basis. This again is what is commonly implemented in quantum
 chemistry codes that include the Douglas-Kroll method. Additional
 flexibility is available to the user by explicitly specifying a
 Douglas-Kroll fitting basis set. This basis set must be named
-<code>D-K basis</code> (see (Basis.md)).</p>
+<code>D-K basis</code> (see <a href="Basis.html">Basis Sets</a>).</p>
 <h3 id="zeroth-order-regular-approximation-zora">Zeroth Order regular approximation (ZORA)<a class="headerlink" href="#zeroth-order-regular-approximation-zora" title="Permanent link">&para;</a></h3>
 <p>The spin-free and spin-orbit one-electron zeroth-order regular
 approximation (ZORA) have been implemented. ZORA can be accessed only 
-via the (Density-Functional-Theory-for-Molecules.md) and (Density-Functional-Theory-for-Molecules.md#spin-orbit-density-functional-theory-sodft) modules. The use of relativistic
+via the <a href="Density-Functional-Theory-for-Molecules.html">DFT</a> and <a href="Density-Functional-Theory-for-Molecules.html#spin-orbit-density-functional-theory-sodft">SO-DFT</a> modules. The use of relativistic
 effects with ZORA can be invoked by specifying:</p>
 <pre><code> ZORA [&lt;string (ON||OFF) &gt;
 </code></pre>
@@ -3255,7 +3255,7 @@ in the relativistic block</p>
      zora:cutoff 1d-30
  end
 </code></pre>
-<p>To invoke the relativistic ZORA model potential approach due to van Wullen (references  and ).</p>
+<p>To invoke the relativistic ZORA model potential approach due to van Wullen (references <sup id="fnref_footnote_16"><a class="footnote-ref" href="#fn_footnote_16">16</a></sup> and <sup id="fnref_footnote_17"><a class="footnote-ref" href="#fn_footnote_17">17</a></sup>).</p>
 <p>For model potentials constructed from 4-component densities:  </p>
 <pre><code> relativistic
      zora on
@@ -3302,8 +3302,8 @@ Douglas-Kroll(-Hess) approximation as it is usually applied.</p>
 <p>The use of these approximations can be invoked with the use of the
 <code>DYALL-MOD-DIRAC</code> directive in the <code>RELATIVISTIC</code> directive block. The
 syntax is as follows.</p>
-<pre><code> DYALL-MOD-DIRAC  
-
+<pre><code> DYALL-MOD-DIRAC [ (ON || OFF) default ON ] 
+                 [ (NESC1E || NESC2E) default NESC1E ]
 </code></pre>
 <p>The <code>ON</code>|<code>OFF</code> string is used to turn on or off the Dyall&rsquo;s modified Dirac
 approximation. By default, if the <code>DYALL-MOD-DIRAC</code> keyword is found, the
@@ -3318,8 +3318,8 @@ is the default. The two-electron approximation specified by <code>NESC2E</code> 
 some sub options which are placed on the same logical line as the
 <code>DYALL-MOD-DIRAC</code> directive, with the following
 syntax:</p>
-<pre><code> NESC2E [ (SS1CENT  || SSALL) default SSALL ]
-        [ (SSSS  || NOSSSS) default SSSS ]
+<pre><code> NESC2E [ (SS1CENT [ (ON || OFF) default ON ] || SSALL) default SSALL ]
+        [ (SSSS [ (ON || OFF) default ON ] || NOSSSS) default SSSS ]
 </code></pre>
 <p>The first sub-option gives the capability to limit the two-electron
 corrections to those in which the small components in any density must
@@ -3331,7 +3331,7 @@ integrals which are of order &alpha;<sup>4</sup>. For light atoms they may
 safely be neglected, but for heavy atoms they should be included.</p>
 <p>In addition to the selection of this keyword in the <code>RELATIVISTIC</code>
 directive block, it is necessary to supply basis sets in addition to the
-(Basis.md#basis-set-name). For the one-electron approximation, three basis sets are
+<a href="Basis.html#basis-set-name"><code>ao basis</code></a>. For the one-electron approximation, three basis sets are
 needed: the <em>atomic FW</em> basis set, the <em>large component</em> basis set and the
 <em>small</em> component basis set. The atomic FW basis set should be included in
 the <code>ao basis</code>. The large and small components should similarly be
@@ -3345,7 +3345,7 @@ not be run correctly without changing the <code>ao basis</code>, and it is up to
 user to ensure that the basis sets are correctly specified.</p>
 <p>There is one further requirement in the specification of the basis sets.
 In the ao basis, it is necessary to add the <code>rel</code> keyword either to the
-(Basis.md#rel-keyword) directive or the (Basis.md#basis-set-library) tag line (See (#examples-for-dyall-mod-dirac) for examples). The
+<a href="Basis.html#rel-keyword">basis</a> directive or the <a href="Basis.html#basis-set-library">library</a> tag line (See <a href="#examples-for-dyall-mod-dirac">below</a> for examples). The
 former marks the basis functions specified by the tag as relativistic,
 the latter marks the whole basis as relativistic. The marking is
 actually done at the unique shell level, so that it is possible not only
@@ -3428,7 +3428,7 @@ nonrelativistic.</p>
  task scf
 </code></pre>
 <h3 id="x2c-exact-two-component-relativistic-hamiltonian">X2C: exact two-component relativistic Hamiltonian<a class="headerlink" href="#x2c-exact-two-component-relativistic-hamiltonian" title="Permanent link">&para;</a></h3>
-<p>The exact two-component Hamiltonian has been implemented in NWChem.</p>
+<p>The exact two-component Hamiltonian<sup id="fnref_footnote_18"><a class="footnote-ref" href="#fn_footnote_18">18</a></sup><sup id="fnref_footnote_19"><a class="footnote-ref" href="#fn_footnote_19">19</a></sup> has been implemented in NWChem<sup id="fnref_footnote_20"><a class="footnote-ref" href="#fn_footnote_20">20</a></sup><sup id="fnref_footnote_21"><a class="footnote-ref" href="#fn_footnote_21">21</a></sup><sup id="fnref_footnote_22"><a class="footnote-ref" href="#fn_footnote_22">22</a></sup>.</p>
 <pre><code> X2C [&lt;string (ON||OFF) default ON&gt;
 </code></pre>
 <p>The <code>ON</code>|<code>OFF</code> string is used to turn on or off X2C. By default, if the
@@ -3446,75 +3446,77 @@ in the relativistic block</p>
  end
 </code></pre>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
-<dl>
-<dt>///Footnotes Go Here///</dt>
-<dd>
-<p>Douglas, M.; Kroll, N.M. (1974). &ldquo;Quantum electrodynamical corrections to the fine structure of helium&rdquo;. Annals of Physics 82: 89-155. (https://dx.doi.org/10.1016/0003-4916(74)90333-9).  </p>
-</dd>
-<dd>
-<p>Hess, B.A. (1985). &ldquo;Applicability of the no-pair equation with free-particle projection operators to atomic and molecular structure calculations&rdquo;. Physical Review A 32: 756-763. (https://dx.doi.org/10.1103/PhysRevA.32.756).  </p>
-</dd>
-<dd>
-<p>Hess, B.A. (1986). &ldquo;Relativistic electronic-structure calculations employing a two-component no-pair formalism with external-field projection operators&rdquo;. Physical Review A 33: 3742-3748. (https://dx.doi.org/10.1103/PhysRevA.33.3742).  </p>
-</dd>
-<dd>
-<p>Chang, C; Pelissier, M; Durand, M (1986). &ldquo;Regular Two-Component Pauli-Like Effective Hamiltonians in Dirac Theory&rdquo;. Physica Scripta 34: 394. (https://dx.doi.org/10.1088/0031-8949/34/5/007).  </p>
-</dd>
-<dd>
-<p>van Lenthe, E (1996). &ldquo;The ZORA Equation&rdquo; (in English).  </p>
-</dd>
-<dd>
-<p>Faas, S.; Snijders, J.G.; van Lenthe, J.H.; van Lenthe, E.; Baerends, E.J. (1995). &ldquo;The ZORA formalism applied to the Dirac-Fock equation&rdquo;. Chemical Physics Letters 246: 632-640. (https://dx.doi.org/10.1016/0009-2614(95)01156-0).  </p>
-</dd>
-<dd>
-<p>Nichols, P.; Govind, N.; Bylaska, E.J.; de Jong, W.A. (2009). &ldquo;Gaussian Basis Set and Planewave Relativistic Spin-Orbit Methods in NWChem&rdquo;. Journal of Chemical Theory and Computation 5: 491-499. (https://dx.doi.org/10.1021/ct8002892).  </p>
-</dd>
-<dd>
-<p>Dyall, K.G. (1994). &ldquo;An exact separation of the spin-free and spin-dependent terms of the Dirac&ndash;Coulomb&ndash;Breit Hamiltonian&rdquo;. The Journal of Chemical Physics 100: 2118-2127. (https://dx.doi.org/10.1063/1.466508).  </p>
-</dd>
-<dd>
-<p>Dyall, K.G. (1997). &ldquo;Interfacing relativistic and nonrelativistic methods. I. Normalized elimination of the small component in the modified Dirac equation&rdquo;. The Journal of Chemical Physics 106: 9618-9626. (https://dx.doi.org/10.1063/1.473860).  </p>
-</dd>
-<dd>
-<p>Dyall, K.G.; Enevoldsen, T. (1999). &ldquo;Interfacing relativistic and nonrelativistic methods. III. Atomic 4-spinor expansions and integral approximations&rdquo;. The Journal of Chemical Physics 111: 10000-10007. (https://dx.doi.org/10.1063/1.480353).  </p>
-</dd>
-<dd>
-<p>Hess, B.A. (1985). &ldquo;Applicability of the no-pair equation with free-particle projection operators to atomic and molecular structure calculations&rdquo;. Physical Review A 32: 756-763. (https://dx.doi.org/10.1103/PhysRevA.32.756).  </p>
-</dd>
-<dd>
-<p>Hess, B.A. (1986). &ldquo;Relativistic electronic-structure calculations employing a two-component no-pair formalism with external-field projection operators&rdquo;. Physical Review A 33: 3742-3748. (https://dx.doi.org/10.1103/PhysRevA.33.3742).  </p>
-</dd>
-<dd>
-<p>Haeberlen, O.D.; Roesch, N. (1992). &ldquo;A scalar-relativistic extension of the linear combination of Gaussian-type orbitals local density functional method: application to AuH, AuCl and Au2&rdquo;. Chemical Physics Letters 199: 491-496. (https://dx.doi.org/10.1016/0009-2614(92)87033-L).  </p>
-</dd>
-<dd>
-<p>Nakajima, T.; Hirao, K. (2000). &ldquo;Numerical illustration of third-order Douglas-Kroll method: atomic and molecular properties of superheavy element 112&rdquo;. Chemical Physics Letters 329: 511-516. (https://dx.doi.org/10.1016/S0009-2614(00)01035-6).  </p>
-</dd>
-<dd>
-<p>Nakajima, T.; Hirao, K. (2000). &ldquo;The higher-order Douglas&ndash;Kroll transformation&rdquo;. The Journal of Chemical Physics 113: 7786-7789. (https://dx.doi.org/10.1063/1.1316037).  </p>
-</dd>
-<dd>
-<p>van Wullen, C. (1998). &ldquo;Molecular density functional calculations in the regular relativistic approximation: Method, application to coinage metal diatomics, hydrides, fluorides and chlorides, and comparison with first-order relativistic calculations&rdquo;. The Journal of Chemical Physics 109: 392-399  (https://dx.doi.org/10.1063/1.476576)</p>
-</dd>
-<dd>
-<p>van Wullen, C.; Michauk, C. (2005). &ldquo;Accurate and efficient treatment of two-electron contributions in quasirelativistic high-order Douglas-Kroll density-functional calculations&rdquo;. The Journal of Chemical Physics 123, 204113 (https://dx.doi.org/10.1063/1.2133731)</p>
-</dd>
-<dd>
-<p>Liu, W.; Peng, D. (2009). J. Chem. Phys. 2009, 131, 031104 (https://dx.doi.org/10.1063/1.3159445)</p>
-</dd>
-<dd>
-<p>Saue, T. (2011). &ldquo;Relativistic Hamiltonians for Chemistry: A Primer&rdquo;. ChemPhysChem, 12, 3077–3094 (http://dx.doi.org/10.1002/cphc.201100682)</p>
-</dd>
-<dd>
-<p>Autschbach, J.; Peng, D; Reiher, M. (2012). J. Chem. Theory Comput. 2012, 8,  4239–4248 (https://dx.doi.org/10.1021/ct300623j)</p>
-</dd>
-<dd>
-<p>Peng, D.; Reiher, M. (2012). Theor. Chem. Acc. 131, 1081 (https://dx.doi.org/10.1007/s00214-011-1081-y)</p>
-</dd>
-<dd>
-<p>Autschbach, J. (2021). Quantum Theory for Chemical Applications:From Basic Concepts to Advanced Topics, Oxford, University Press, Chapter 24 (https://dx.doi.org/10.1093/oso/9780190920807.001.0001)</p>
-</dd>
-</dl>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn_footnote_1">
+<p>Douglas, M.; Kroll, N.M. (1974). &ldquo;Quantum electrodynamical corrections to the fine structure of helium&rdquo;. Annals of Physics 82: 89-155. <a href="https://dx.doi.org/10.1016/0003-4916(74)90333-9">DOI:10.1016/0003-4916(74)90333-9</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_2">
+<p>Hess, B.A. (1985). &ldquo;Applicability of the no-pair equation with free-particle projection operators to atomic and molecular structure calculations&rdquo;. Physical Review A 32: 756-763. <a href="https://dx.doi.org/10.1103/PhysRevA.32.756">DOI:10.1103/PhysRevA.32.756</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_3">
+<p>Hess, B.A. (1986). &ldquo;Relativistic electronic-structure calculations employing a two-component no-pair formalism with external-field projection operators&rdquo;. Physical Review A 33: 3742-3748. <a href="https://dx.doi.org/10.1103/PhysRevA.33.3742">DOI:10.1103/PhysRevA.33.3742</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_4">
+<p>Chang, C; Pelissier, M; Durand, M (1986). &ldquo;Regular Two-Component Pauli-Like Effective Hamiltonians in Dirac Theory&rdquo;. Physica Scripta 34: 394. <a href="https://dx.doi.org/10.1088/0031-8949/34/5/007">DOI:10.1088/0031-8949/34/5/007</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_5">
+<p>van Lenthe, E (1996). &ldquo;The ZORA Equation&rdquo; (in English).&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_6">
+<p>Faas, S.; Snijders, J.G.; van Lenthe, J.H.; van Lenthe, E.; Baerends, E.J. (1995). &ldquo;The ZORA formalism applied to the Dirac-Fock equation&rdquo;. Chemical Physics Letters 246: 632-640. <a href="https://dx.doi.org/10.1016/0009-2614(95)01156-0">DOI:10.1016/0009-2614(95)01156-0</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_7">
+<p>Nichols, P.; Govind, N.; Bylaska, E.J.; de Jong, W.A. (2009). &ldquo;Gaussian Basis Set and Planewave Relativistic Spin-Orbit Methods in NWChem&rdquo;. Journal of Chemical Theory and Computation 5: 491-499. <a href="https://dx.doi.org/10.1021/ct8002892">DOI:10.1021/ct8002892</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_8">
+<p>Dyall, K.G. (1994). &ldquo;An exact separation of the spin-free and spin-dependent terms of the Dirac&ndash;Coulomb&ndash;Breit Hamiltonian&rdquo;. The Journal of Chemical Physics 100: 2118-2127. <a href="https://dx.doi.org/10.1063/1.466508">DOI:10.1063/1.466508</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_9">
+<p>Dyall, K.G. (1997). &ldquo;Interfacing relativistic and nonrelativistic methods. I. Normalized elimination of the small component in the modified Dirac equation&rdquo;. The Journal of Chemical Physics 106: 9618-9626. <a href="https://dx.doi.org/10.1063/1.473860">DOI:10.1063/1.473860</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_10">
+<p>Dyall, K.G.; Enevoldsen, T. (1999). &ldquo;Interfacing relativistic and nonrelativistic methods. III. Atomic 4-spinor expansions and integral approximations&rdquo;. The Journal of Chemical Physics 111: 10000-10007. <a href="https://dx.doi.org/10.1063/1.480353">DOI:10.1063/1.480353</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_11">
+<p>Hess, B.A. (1985). &ldquo;Applicability of the no-pair equation with free-particle projection operators to atomic and molecular structure calculations&rdquo;. Physical Review A 32: 756-763. <a href="https://dx.doi.org/10.1103/PhysRevA.32.756">DOI:10.1103/PhysRevA.32.756</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_12">
+<p>Hess, B.A. (1986). &ldquo;Relativistic electronic-structure calculations employing a two-component no-pair formalism with external-field projection operators&rdquo;. Physical Review A 33: 3742-3748. <a href="https://dx.doi.org/10.1103/PhysRevA.33.3742">DOI:10.1103/PhysRevA.33.3742</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_13">
+<p>Haeberlen, O.D.; Roesch, N. (1992). &ldquo;A scalar-relativistic extension of the linear combination of Gaussian-type orbitals local density functional method: application to AuH, AuCl and Au2&rdquo;. Chemical Physics Letters 199: 491-496. <a href="https://dx.doi.org/10.1016/0009-2614(92)87033-L">DOI:10.1016/0009-2614(92)87033-L</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_14">
+<p>Nakajima, T.; Hirao, K. (2000). &ldquo;Numerical illustration of third-order Douglas-Kroll method: atomic and molecular properties of superheavy element 112&rdquo;. Chemical Physics Letters 329: 511-516. <a href="https://dx.doi.org/10.1016/S0009-2614(00)01035-6">DOI:10.1016/S0009-2614(00)01035-6</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_15">
+<p>Nakajima, T.; Hirao, K. (2000). &ldquo;The higher-order Douglas&ndash;Kroll transformation&rdquo;. The Journal of Chemical Physics 113: 7786-7789. <a href="https://dx.doi.org/10.1063/1.1316037">DOI:10.1063/1.1316037</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_16">
+<p>van Wullen, C. (1998). &ldquo;Molecular density functional calculations in the regular relativistic approximation: Method, application to coinage metal diatomics, hydrides, fluorides and chlorides, and comparison with first-order relativistic calculations&rdquo;. The Journal of Chemical Physics 109: 392-399  <a href="https://dx.doi.org/10.1063/1.476576">DOI:10.1063/1.476576</a>&#160;<a class="footnote-backref" href="#fnref_footnote_16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_17">
+<p>van Wullen, C.; Michauk, C. (2005). &ldquo;Accurate and efficient treatment of two-electron contributions in quasirelativistic high-order Douglas-Kroll density-functional calculations&rdquo;. The Journal of Chemical Physics 123, 204113 <a href="https://dx.doi.org/10.1063/1.2133731">DOI:10.1063/1.2133731</a>&#160;<a class="footnote-backref" href="#fnref_footnote_17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_18">
+<p>Liu, W.; Peng, D. (2009). J. Chem. Phys. 2009, 131, 031104 <a href="https://dx.doi.org/10.1063/1.3159445">DOI:10.1063/1.3159445</a>&#160;<a class="footnote-backref" href="#fnref_footnote_18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_19">
+<p>Saue, T. (2011). &ldquo;Relativistic Hamiltonians for Chemistry: A Primer&rdquo;. ChemPhysChem, 12, 3077–3094 <a href="http://dx.doi.org/10.1002/cphc.201100682">DOI:10.1002/cphc.201100682</a>&#160;<a class="footnote-backref" href="#fnref_footnote_19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_20">
+<p>Autschbach, J.; Peng, D; Reiher, M. (2012). J. Chem. Theory Comput. 2012, 8,  4239–4248 <a href="https://dx.doi.org/10.1021/ct300623j">DOI:10.1021/ct300623j</a>&#160;<a class="footnote-backref" href="#fnref_footnote_20" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_21">
+<p>Peng, D.; Reiher, M. (2012). Theor. Chem. Acc. 131, 1081 <a href="https://dx.doi.org/10.1007/s00214-011-1081-y">DOI:10.1007/s00214-011-1081-y</a>&#160;<a class="footnote-backref" href="#fnref_footnote_21" title="Jump back to footnote 21 in the text">&#8617;</a></p>
+</li>
+<li id="fn_footnote_22">
+<p>Autschbach, J. (2021). Quantum Theory for Chemical Applications:From Basic Concepts to Advanced Topics, Oxford, University Press, Chapter 24 <a href="https://dx.doi.org/10.1093/oso/9780190920807.001.0001">DOI:10.1093/oso/9780190920807.001.0001</a>&#160;<a class="footnote-backref" href="#fnref_footnote_22" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 

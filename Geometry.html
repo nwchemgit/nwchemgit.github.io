@@ -3009,31 +3009,31 @@ additional subordinate directives that the user can specify, if needed.
 The directive therefore appears to be rather long and complicated when
 presented in its general form, as
 follows:</p>
-<pre><code> GEOMETRY  \  
-           \  
+<pre><code> GEOMETRY [&lt;string name default geometry&gt;] \  
+          [units &lt;string units default angstroms&gt;] \  
           [(angstrom_to_au || ang2au) \  
                  &lt;real angstrom_to_au default 1.8897265&gt;] \  
-           || noprint] \  
-           \  
-           \  
-           || noautosym] \  
-           \  
-           \  
-
-    &lt;string group_name&gt;  \  
-          ]  
-       \  
-           \  
-                \  
-
-
-
+          [print [xyz] || noprint] \  
+          [center || nocenter] \  
+          [bqbq] \  
+          [autosym [real tol default 1d-2] || noautosym] \  
+          [autoz || noautoz] \  
+          [adjust] \  
+          [(nuc || nucl || nucleus) &lt;string nucmodel&gt;]  
+   [SYMMETRY [group] &lt;string group_name&gt; [print] \  
+          [tol &lt;real tol default 1d-2&gt;]]  
+   [ [LOAD] [format xyz||pdb]  [frame &lt;int frame&gt;] \  
+          [select [not] \  
+               [name &lt;string atomname&gt;] \  
+               [rname &lt;string residue-name&gt;]  
+               [id  &lt;int atom-id&gt;|&lt;int range atom-id1:atom-id2&gt; ... ]  
+               [resi &lt;int residue-id&gt;|&lt;int range residue-id1:residue-id2&gt; ... ]  
          ]  
    &lt;string filename&gt; ]  
 
-   &lt;string tag&gt; &lt;real x y z&gt;   \  
-           \  
-
+   &lt;string tag&gt; &lt;real x y z&gt; [vx vy vz] [charge &lt;real charge&gt;] \  
+          [mass &lt;real mass&gt;] \  
+          [(nuc || nucl || nucleus) &lt;string nucmodel&gt;]  
    ... ]  
    [ZMATRIX || ZMT || ZMAT  
         &lt;string tagn&gt; &lt;list_of_zmatrix_variables&gt;  
@@ -3048,11 +3048,11 @@ follows:</p>
     [ZCOORD  
          CVR_SCALING &lt;real value&gt;  
          BOND    &lt;integer i&gt; &lt;integer j&gt; \  
-
+                 [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
          ANGLE   &lt;integer i&gt; &lt;integer j&gt; \  
-
+                     [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
          TORSION &lt;integer i&gt; &lt;integer j&gt; &lt;integer k&gt; &lt;integer l&gt; \  
-
+                 [&lt;real value&gt;] [&lt;string name&gt;] [constant]  
      END]  
 
      [SYSTEM surface  &lt;molecule polymer surface crystal default molecule&gt;  
@@ -3076,28 +3076,28 @@ detail, describing the options available and the usages of the various
 keywords in each of the three main parts.</p>
 <ul>
 <li>
-<p>(Keywords-for-the-GEOMETRY-directive.md)</p>
+<p><a href="Keywords-for-the-GEOMETRY-directive.html">Keywords for the GEOMETRY directive</a></p>
 </li>
 <li>
-<p>(SYMMETRY----Symmetry-Group-Input.md)</p>
+<p><a href="SYMMETRY----Symmetry-Group-Input.html">SYMMETRY: Symmetry Group Input</a></p>
 </li>
 <li>
-<p>(Names-of-3-dimensional-space-groups.md)</p>
+<p><a href="Names-of-3-dimensional-space-groups.html">Names of 3-dimensional space groups</a></p>
 </li>
 <li>
-<p>(Cartesian-coordinate-input.md)</p>
+<p><a href="Cartesian-coordinate-input.html">Cartesian coordinate input</a></p>
 </li>
 <li>
-<p>(ZMATRIX.md)</p>
+<p><a href="ZMATRIX.html">ZMATRIX: Z-matrix input</a></p>
 </li>
 <li>
-<p>(ZCOORD-Forcing-internal-coordinates.md)</p>
+<p><a href="ZCOORD-Forcing-internal-coordinates.html">ZCOORD: Forcing internal coordinates</a></p>
 </li>
 <li>
-<p>(SYSTEM----Lattice-parameters-for-periodic-systems.md)</p>
+<p><a href="SYSTEM----Lattice-parameters-for-periodic-systems.html">SYSTEM: Lattice parameters for periodic systems</a></p>
 </li>
 <li>
-<p>(Geometry-load.md)</p>
+<p><a href="Geometry-load.html">LOAD: Load geometry from XYZ file</a></p>
 </li>
 </ul>
 <!-- end list -->

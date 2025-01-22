@@ -3085,14 +3085,14 @@ value, <span class="arithmatex">\(U^{\rm REP}_{lj}\)</span>
 which for example contains the Coulomb potential of the core electrons
 balanced by the part of the nuclear attraction which cancels the core
 electron charge. The residue is expressed in a semi-local form,</p>
-<div class="arithmatex">\[U^{REP} = U^{REP}_{LJ}(r) + \sum_{l=0}^{L-1}  \sum_{j=|l-1/2|}^{l+1/2} \left \right] \sum_{m=-j}^j \vert lj m \rangle \langle lj m \vert\]</div>
+<div class="arithmatex">\[U^{REP} = U^{REP}_{LJ}(r) + \sum_{l=0}^{L-1}  \sum_{j=|l-1/2|}^{l+1/2} \left[ U^{REP}_{lj}(r) - U^{REP}_{LJ}(r)] \right] \sum_{m=-j}^j \vert lj m \rangle \langle lj m \vert\]</div>
 <p>where <span class="arithmatex">\(L\)</span> is one larger than the maximum angular momentum in the atom.
 The scalar potential is obtained by averaging the REPs for each <span class="arithmatex">\(j\)</span> for
 a given <span class="arithmatex">\(l\)</span> to give an averaged relativistic effective potential, or
 AREP</p>
-<div class="arithmatex">\[U^{AREP}_l(r) = \frac{1}{2l+1} \left\]</div>
+<div class="arithmatex">\[U^{AREP}_l(r) = \frac{1}{2l+1} \left[ lU^{REP}_{l-1/2}(r) + (l+1) U^{\rm REP}_{l+1/2}(r) \right]\]</div>
 <p>These are summed into the full potential  </p>
-<div class="arithmatex">\[U^{AREP}(r) = U^{AREP}_L(r) + \sum_{l=0}^L \sum_{m=-l}^l \left \vert l m \rangle \langle l m \vert\]</div>
+<div class="arithmatex">\[U^{AREP}(r) = U^{AREP}_L(r) + \sum_{l=0}^L \sum_{m=-l}^l \left[ U^{AREP}_{l}(r) - U^{AREP}_{L}(r) \right] \vert l m \rangle \langle l m \vert\]</div>
 <p>The spin-orbit potential is obtained from the difference between the
 REPs for the two <span class="arithmatex">\(j\)</span> values for a given <span class="arithmatex">\(l\)</span>, and may be represented in
 terms of an effective spin-orbit operator,</p>
@@ -3122,12 +3122,12 @@ essential differences required for ECPs. Because of this, the ECP is
 treated internally as a basis set. The form of the input for the <code>ECP</code>
 directive is as
 follows:</p>
-<pre><code> ECP  \  
-
-    &lt;string tag&gt; library  \  
-                 &lt;string standard_set&gt;  \  
-
-    &lt;string tag&gt;  &lt;integer number_of_electrons_replaced&gt;  
+<pre><code> ECP [&lt;string name default &quot;ecp basis&quot;&gt;] \  
+       [print || noprint default print]  
+    &lt;string tag&gt; library [&lt;string tag_in_lib&gt;] \  
+                 &lt;string standard_set&gt; [file &lt;filename&gt;] \  
+                 [except&lt;string tag list&gt;]  
+    &lt;string tag&gt; [nelec] &lt;integer number_of_electrons_replaced&gt;  
        ...  
     &lt;string tag&gt; &lt;string shell_type&gt;  
     &lt;real r-exponent&gt; &lt;real Gaussian-exponent&gt; &lt;real list_of_coefficients&gt;  
@@ -3234,11 +3234,11 @@ ECPs except that the directive SO is used instead of ECP. Note that
 there currently are no spin-orbit ECPs defined in the standard NWChem
 library. The SO directive is as
 follows:</p>
-<pre><code> SO  \  
-
-    &lt;string tag&gt; library  \
-                 &lt;string standard_set&gt;   
-
+<pre><code> SO [&lt;string name default &quot;so basis&quot;&gt;] \  
+       [print || noprint default print]  
+    &lt;string tag&gt; library [&lt;string tag_in_lib&gt;] \
+                 &lt;string standard_set&gt; [file &lt;filename&gt;]  
+                 [except `&lt;string tag list&gt;]  
        ... 
     &lt;string tag&gt; &lt;string shell_type&gt;  
     &lt;real r-exponent&gt; &lt;real Gaussian-exponent&gt; &lt;real list_of_coefficients&gt;  
@@ -3252,7 +3252,7 @@ the spin-orbit potential defined in the input is of the form:
 <p>For example, in the literature (most of) the Stuttgart potentials are
 defined as <span class="arithmatex">\(\Delta U_{l}\)</span>  and, hence, have to be multiplied by <span class="arithmatex">\(2/(2l+1)\)</span>
  (Note: On the Stuttgart/Köln web pages<br />
- (https://www.tc.uni-koeln.de/PP/clickpse.en.html),<br />
+<a href="https://www.tc.uni-koeln.de/PP/clickpse.en.html">https://www.tc.uni-koeln.de/PP/clickpse.en.html</a>,<br />
  spin-orbit potentials have already been corrected by the appropriate scaling factor and can be used as is). On the other hand, the CRENBL
 potentials in the published papers are defined as 
 <span class="arithmatex">\(\,\!\frac{l}{2l+1} \Delta U_{l}\)</span>
@@ -3260,7 +3260,7 @@ have been corrected with the <span class="arithmatex">\(2/l\)</span> factor, so 
 appropriate scaling is applied).</p>
 <p>For example, to use the Stuttgart/Köln ECP and SO-ECP for Hg  (ECP60MDF) in NWChem.<br />
 The following URL will display bot the the ECP and SO parts.<br />
-(http://www.tc.uni-koeln.de/cgi-bin/pp.pl?language=en,format=molpro,element=Hg,job=getecp,ecp=ECP60MDF)<br />
+<a href="http://www.tc.uni-koeln.de/cgi-bin/pp.pl?language=en,format=molpro,element=Hg,job=getecp,ecp=ECP60MDF">http://www.tc.uni-koeln.de/cgi-bin/pp.pl?language=en,format=molpro,element=Hg,job=getecp,ecp=ECP60MDF</a><br />
 The highlighted section (last four lines) below is the SO part.<br />
 The un-highlighted part (first five lines) is the ECP.    </p>
 <pre><code>
@@ -3277,7 +3277,7 @@ ECP,Hg,60,5,4;
 2; 2,3.273106,-6.286001; 2,3.208321,6.247428;     
 2; 2,4.485296,3.169207; 2,4.513200,-3.239945;</b>
 ! References:  
-!  D. Figgen, G. Rauhut, M. Dolg, H. Stoll, Chem. Phys. 311, 227 (2005).  
+! [37] D. Figgen, G. Rauhut, M. Dolg, H. Stoll, Chem. Phys. 311, 227 (2005).  
 </code></pre>
 <p>The corresponding NWChem input is </p>
 <pre><code>ecp  
@@ -3326,9 +3326,9 @@ end
 </code></pre>
 <h3 id="websites-with-spin-orbits-ecps">Websites with Spin-Orbits ECPs<a class="headerlink" href="#websites-with-spin-orbits-ecps" title="Permanent link">&para;</a></h3>
 <ul>
-<li>(https://www.tc.uni-koeln.de/PP/clickpse.en.html)</li>
-<li>(https://people.clarkson.edu/~pchristi/reps.html)</li>
-<li>(http://www.qchem.pnpi.spb.ru/recp)</li>
+<li><a href="https://www.tc.uni-koeln.de/PP/clickpse.en.html">https://www.tc.uni-koeln.de/PP/clickpse.en.html</a></li>
+<li><a href="https://people.clarkson.edu/~pchristi/reps.html">https://people.clarkson.edu/~pchristi/reps.html</a></li>
+<li><a href="http://www.qchem.pnpi.spb.ru/recp">http://www.qchem.pnpi.spb.ru/recp</a></li>
 </ul>
 
 

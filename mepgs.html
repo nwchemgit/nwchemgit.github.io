@@ -3055,7 +3055,7 @@
 <p>The MEPGS module performs a search for the two critical points on the
 potential energy surface connected to a saddle point of the molecule
 defined by input using the <code>GEOMETRY</code> directive (see Section
-(Geometry.md) ).
+<a href="Geometry.html">geometry</a> ).
 The algorithm programmed in MEPGS is a <strong>constrained</strong> trust region
 quasi-newton optimization and approximate energy Hessian updates.</p>
 <p>Optional input for this module is specified within the compound
@@ -3087,7 +3087,7 @@ way:</p>
 </code></pre>
 <p>In performing a constrained trust region optimization the precision of
 the energy is coupled to the convergence criteria (see Section
-(tropt.md) ).
+<a href="tropt.html">TROPT</a> ).
 Note that the default EPREC for DFT calculations is 5e-6 instead of 1e-7.</p>
 <h3 id="controlling-the-step-length">Controlling the step length<a class="headerlink" href="#controlling-the-step-length" title="Permanent link">&para;</a></h3>
 <pre><code>        STRIDE &lt;real stride default 0.1&gt;
@@ -3127,7 +3127,7 @@ energy path to explore. By default both sides are explored for a MEPGS run.</p>
 the minimum energy path. Mass is not used as default, if mass is used
 then this formally becomes an intrinsic reaction coordinate.</p>
 <h3 id="minimum-energy-path-saved-xyz-file">Minimum energy path saved XYZ file<a class="headerlink" href="#minimum-energy-path-saved-xyz-file" title="Permanent link">&para;</a></h3>
-<pre><code>        XYZ 
+<pre><code>        XYZ [&lt;string xyz default $fileprefix&gt;]
         NOXYZ
 </code></pre>
 <p>The <code>XYZ</code> directive causes the geometry at each calculated structure on
@@ -3152,8 +3152,8 @@ saddle point, the information of the force constant matrix is reused
 (freq directive) in order to be able to follow the transition state
 mode.</p>
 <p>Example input and output files can be find at
-(https://github.com/nwchemgit/nwchem/blob/master/QA/tests/mep-test/mep-test.nw)
-(https://github.com/nwchemgit/nwchem/blob/master/QA/tests/mep-test/mep-test.out)</p>
+<a href="https://github.com/nwchemgit/nwchem/blob/master/QA/tests/mep-test/mep-test.nw">https://github.com/nwchemgit/nwchem/blob/master/QA/tests/mep-test/mep-test.nw</a>
+<a href="https://github.com/nwchemgit/nwchem/blob/master/QA/tests/mep-test/mep-test.out">https://github.com/nwchemgit/nwchem/blob/master/QA/tests/mep-test/mep-test.out</a></p>
 
 
 

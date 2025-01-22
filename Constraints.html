@@ -2952,12 +2952,12 @@ surface. Currently such constraints are limited to fixed atom positions
 and harmonic restraints (springs) on the distance between the two atoms.
 The general form of constraints block is presented
 below:</p>
-<pre><code>CONSTRAINTS  \  
-           \  
-           \  
-           \  
-
-
+<pre><code>CONSTRAINTS [string name ] \  
+          [clear] \  
+          [enable||disable] \  
+          [fix atom &lt;integer list&gt;] \  
+          [spring bond &lt;integer atom1&gt; &lt;integer atom2&gt; &lt;real k&gt; &lt;real r0&gt; ]  
+          [spring dihedral &lt;integer atom1&gt; &lt;integer atom2&gt; &lt;integer atom3&gt; &lt;integer atom4&gt; &lt;real k&gt; &lt;real phi0 in degrees&gt; ] 
           [spring bondings &lt;real K0&gt; &lt;real gamma0&gt; [&lt;real ca&gt; &lt;integer atom1a&gt; &lt;integer atom2a&gt; 
                                              &lt;real cb&gt; &lt;integer atom1b&gt; &lt;integer atom2b&gt;
                                              ...]]
@@ -2972,7 +2972,7 @@ below:</p>
     constraints. Any unnamed set of constraints will be given a name
     <em>default</em> and will be automatically loaded prior to a calculation.
     Any constraints with the name other than <em>default</em> will have to be
-    loaded manually using the (SET.md) directive. For example,</li>
+    loaded manually using the <a href="SET.html">SET</a> directive. For example,</li>
 </ul>
 <pre><code> CONSTRAINTS one  
    spring bond 1 3 5.0 1.3

@@ -3389,16 +3389,16 @@ approximations</p>
 </code></pre>
 <p>All three MP2 tasks share the same input block.</p>
 <pre><code> MP2  
-    (atomic || &lt;integer nfzc default 0&gt;)] \  
-           ]  
-
-
-
+   [FREEZE [[core] (atomic || &lt;integer nfzc default 0&gt;)] \  
+           [virtual &lt;integer nfzv default 0&gt;]]  
+   [TIGHT]  
+   [PRINT]  
+   [NOPRINT]  
    [VECTORS &lt;string filename default scf-output-vectors&gt; \  
-      &lt;integer pair-list&gt;] ]  
-
+     [swap [(alpha||beta)] &lt;integer pair-list&gt;] ]  
+   [RIAPPROX &lt;string riapprox default V&gt;]  
    [FILE3C &lt;string filename default $file_prefix$.mo3cint&gt;  
-
+   [SCRATCHDISK &lt;integer&gt;] 
  END
 </code></pre>
 <h2 id="freeze-freezing-orbitals">FREEZE: Freezing orbitals<a class="headerlink" href="#freeze-freezing-orbitals" title="Permanent link">&para;</a></h2>
@@ -3482,7 +3482,7 @@ Following the  Si(OH)<sub>2</sub> example, the user could specify</p>
 <pre><code>freeze atomic O 1 Si 3
 </code></pre>
 <p>In this case only the lowest four orbitals would be frozen. If the user
-does not specify the orbitals by atom, the rules default  to values reported in the (#number-of-orbitals-considered-core-in-the-freeze-by-atoms-algorithm).</p>
+does not specify the orbitals by atom, the rules default  to values reported in the <a href="#number-of-orbitals-considered-core-in-the-freeze-by-atoms-algorithm">Table above</a>.</p>
 <p>Caution: The system does not check for a valid number of orbitals per
 atom. If the user specifies to freeze more orbitals then are available
 for the atom, the system will not catch the error. The user must specify
@@ -3651,7 +3651,7 @@ to specify a different source using the VECTORS directive. For instance,
 to obtain vectors from the file /tmp/h2o.movecs, use the directive</p>
 <pre><code> vectors /tmp/h2o.movecs
 </code></pre>
-<p>As noted above ((#freeze-freezing-orbitals)) if
+<p>As noted above (<a href="#freeze-freezing-orbitals">FREEZE</a>) if
 the SCF orbitals are not in the correct order, it is necessary to
 permute the input orbitals using the swap keyword of the VECTORS
 directive. For instance, if it is desired to freeze a total six orbitals
@@ -3663,7 +3663,7 @@ orbital 7 into the 6th position. This is accomplished by</p>
 vectors</a>.</p>
 <h2 id="ri-mp2-fitting-basis">RI-MP2 fitting basis<a class="headerlink" href="#ri-mp2-fitting-basis" title="Permanent link">&para;</a></h2>
 <p>The RI-MP2 method requires a fitting basis, which must be specified with
-the name &ldquo;ri-mp2 basis&rdquo; (see (Basis.md)). For instance,</p>
+the name &ldquo;ri-mp2 basis&rdquo; (see <a href="Basis.html">Basis</a>). For instance,</p>
 <pre><code> basis &quot;ri-mp2 basis&quot;
    O s; 10000.0 1
    O s;  1000.0 1
@@ -3672,7 +3672,7 @@ the name &ldquo;ri-mp2 basis&rdquo; (see (Basis.md)). For instance,</p>
  end
 </code></pre>
 <p>Alternatively, using a standard capability of basis sets
-((Basis.md)) another named basis may be associated with
+(<a href="Basis.html">Basis</a>) another named basis may be associated with
 the fitting basis. For instance, the following input specifies a basis
 with the name &ldquo;small fitting basis&rdquo; and then defines this to be the
 &ldquo;ri-mp2 basis&rdquo;.</p>
@@ -3826,7 +3826,7 @@ external electric field and is not the expectation value of the operator
 over the wavefunction. It has been shown that evaluating the MP2 density
 through a derivative provides more accurate results, presumably because
 this matches the way experiments probe the electron density more
-closely<sup id="fnref_footnote_diercksen1981"><a class="footnote-ref" href="#fn_footnote_diercksen1981">5</a></sup><sup id="fnref_footnote_rice1985"><a class="footnote-ref" href="#fn_footnote_rice1985">6</a></sup><sup id="fnref_footnote_wiberg1992"><a class="footnote-ref" href="#fn_footnote_wiberg1992">7</a></sup>.</p>
+closely[raghavachari1981]<sup id="fnref_footnote_diercksen1981"><a class="footnote-ref" href="#fn_footnote_diercksen1981">5</a></sup><sup id="fnref_footnote_rice1985"><a class="footnote-ref" href="#fn_footnote_rice1985">6</a></sup><sup id="fnref_footnote_wiberg1992"><a class="footnote-ref" href="#fn_footnote_wiberg1992">7</a></sup>.</p>
 <p>Only dipole moments are printed by the MP2 gradient code, but natural
 orbitals are produced and stored in the permanent directory with a file
 extension of &ldquo;.mp2nos&rdquo;. These may be fed into the <a href="Properties.html">property
@@ -3864,7 +3864,7 @@ been argued to be a sign that the system might be near degenerate<sup id="fnref_
 energies as suggested by S.Grimme<sup id="fnref_footnote_grimme2003"><a class="footnote-ref" href="#fn_footnote_grimme2003">9</a></sup></p>
 <p>The SCS keyword is only required for gradients calculations:</p>
 <pre><code> MP2  
-
+   [SCS]  
  END
 </code></pre>
 <p>Scaling factors for the two components (parallel and opposite spin) can

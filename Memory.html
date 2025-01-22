@@ -2954,13 +2954,13 @@ installation-dependent defaults. The defaults should generally suffice
 for most calculations, since the defaults usually correspond to the
 total amount of memory available on the machine.</p>
 <p>The general form of the directive is as follows:</p>
-<pre><code>MEMORY  &lt;integer total_size&gt;]        \ 
-                 \  
-                   \ 
-               \   
-          \  
-                         \  
-        
+<pre><code>MEMORY [[total] &lt;integer total_size&gt;]        \ 
+        [stack &lt;integer stack_size&gt;]         \  
+        [heap &lt;integer heap_size&gt;]           \ 
+        [global &lt;integer global_size&gt;]       \   
+        [units &lt;string units default real&gt;]  \  
+        [(verify||noverify)]                 \  
+        [(nohardfail||hardfail)]
 </code></pre>
 <p>NWChem recognizes the following memory units:</p>
 <ul>

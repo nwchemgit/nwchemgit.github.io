@@ -2960,53 +2960,53 @@ algorithm is comprised of the following steps:</p>
 </ol>
 <p>The optimization process is controlled by the following keywords:</p>
 <ul>
-<li>(Qmmm_region.md) - <strong>required</strong>
+<li><a href="Qmmm_region.html"><strong>region</strong></a> - <strong>required</strong>
     keyword which specifies which regions will optimized and in which
     order.</li>
-<li>(Qmmm_maxiter.md) - number of
+<li><a href="Qmmm_maxiter.html"><strong>maxiter</strong></a> - number of
     optimizations steps for each region within single optimization pass</li>
-<li>(Qmmm_ncycles.md) - number of
+<li><a href="Qmmm_ncycles.html"><strong>ncycles</strong></a> - number of
     optimization cycles</li>
-<li>(Qmmm_density.md) - electrostatic
+<li><a href="Qmmm_density.html"><strong>density</strong></a> - electrostatic
     representation of the QM region during MM optimization</li>
-<li>(Qmmm_xyz.md) - output of xyz structure
+<li><a href="Qmmm_xyz.html"><strong>xyz</strong></a> - output of xyz structure
     files</li>
-<li>(Qmmm_convergence.md) -
+<li><a href="Qmmm_convergence.html"><strong>convergence</strong></a> -
     convergence criteria</li>
 </ul>
 <p>Here is an example QM/MM block that provides practical illustration of
 all these keywords for a generic optimization case where QM molecule(s)
 are embedded in the solvent</p>
 <pre><code>qmmm
-   qm   solvent
-   10   3000
-   5
-   espfit
-   foo
+  [region] qm   solvent
+  [maxiter] 10   3000
+  [ncycles] 5
+  [density] espfit
+  [xyz] foo
 end
 </code></pre>
 <p>We have two regions in the system &ldquo;qm&rdquo; and &ldquo;solvent&rdquo; and we would like
 to optimize them both, thus the line</p>
-<pre><code>  qm   solvent
+<pre><code> [region] qm   solvent
 </code></pre>
 <p>Our QM region is presumably small and the maximum number of iterations
 (within a single optimization pass) is set to 10. The solvent region is
 typically much larger (thousands of atoms) and the maximum number of
 iterations is set to a much large number 3000:</p>
-<pre><code> 10   3000
+<pre><code>[maxiter] 10   3000
 </code></pre>
 <p>We would like to perform a total of 5 optimization passes, giving us a
 total of 5*10=50 optimization steps for QM region and 5*3000=15000
 optimization steps for solvent region:</p>
-<pre><code>  5
+<pre><code> [ncycles] 5
 </code></pre>
 <p>We are requesting QM region to be represented by point ESP charges
 during the solvent optimization:</p>
-<pre><code> espfit
+<pre><code>[density] espfit
 </code></pre>
 <p>Finally we are requesting that the coordinates of the first region to be
 saved in the form of numbered xyz files:</p>
-<pre><code> foo
+<pre><code>[xyz] foo
 </code></pre>
 
 

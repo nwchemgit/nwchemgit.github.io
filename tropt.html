@@ -3053,12 +3053,12 @@
 
 <h2 id="tropt">TROPT<a class="headerlink" href="#tropt" title="Permanent link">&para;</a></h2>
 <p>The TROPT module is one of three drivers (see Section
-(Geometry-Optimization.md#geometry-optimization-with-stepper)
+<a href="Geometry-Optimization.html#geometry-optimization-with-stepper">Stepper</a>
 for documentation on STEPPER and Section
-(Geometry-Optimization.md#geometry-optimization-with-driver)
+<a href="Geometry-Optimization.html#geometry-optimization-with-driver">Driver module</a>
 for documentation on DRIVER) to perform a geometry optimization function
 on the molecule defined by input using the <code>GEOMETRY</code> directive (see
-Section (Geometry.md)).
+Section <a href="Geometry.html">Geometry</a>).
 Geometry optimization is either an energy minimization or a transition
 state optimization. The algorithm programmed in TROPT is a trust region
 quasi-newton optimization and approximate energy Hessian updates.</p>
@@ -3098,7 +3098,7 @@ directive,</p>
 
         PRINT ...
 
-        XYZ 
+        XYZ [&lt;string xyz default $file_prefix$&gt;]
         NOXYZ
 
       END
@@ -3252,7 +3252,7 @@ reaction direction). If <code>NOFIRSTNEG</code> is specified, the code will not
 take the first negative direction and will continue doing mode-following
 until that mode goes negative.</p>
 <h3 id="optimization-history-as-xyz-file">Optimization history as XYZ file<a class="headerlink" href="#optimization-history-as-xyz-file" title="Permanent link">&para;</a></h3>
-<pre><code>        XYZ 
+<pre><code>        XYZ [&lt;string xyz default $fileprefix&gt;]
         NOXYZ
 </code></pre>
 <p>The <code>XYZ</code> directive causes the geometry at each step to be output into

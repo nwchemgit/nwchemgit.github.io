@@ -3370,9 +3370,9 @@
 <h1 id="geometry-optimization">Geometry Optimization<a class="headerlink" href="#geometry-optimization" title="Permanent link">&para;</a></h1>
 <h2 id="geometry-optimization-with-driver">Geometry Optimization with DRIVER<a class="headerlink" href="#geometry-optimization-with-driver" title="Permanent link">&para;</a></h2>
 <p>The DRIVER module is one of two drivers (also see documentation on
-(#geometry-optimization-with-stepper))
+<a href="#geometry-optimization-with-stepper">STEPPER</a>)
 to perform a geometry optimization function on the molecule defined by
-input using the (Geometry.md) directive.
+input using the <a href="Geometry.html">GEOMETRY</a> directive.
 Geometry optimization is either an energy minimization or a transition
 state optimization. The algorithm programmed in DRIVER is a quasi-newton
 optimization with line searches and approximate energy Hessian updates.</p>
@@ -3566,7 +3566,7 @@ reaction direction). If <code>NOFIRSTNEG</code> is specified, the code will not 
 the first negative direction and will continue doing mode-following
 until that mode goes negative.</p>
 <h3 id="optimization-history-as-xyz-files">Optimization history as XYZ files<a class="headerlink" href="#optimization-history-as-xyz-files" title="Permanent link">&para;</a></h3>
-<pre><code>   XYZ  
+<pre><code>   XYZ [&lt;string xyz default $fileprefix&gt;] 
    NOXYZ
 </code></pre>
 <p>The XYZ directive causes the geometry at each step (but not intermediate
@@ -3584,8 +3584,8 @@ turn these into an animated GIF movie.</p>
 <pre><code>   SOCKET (UNIX || IPI_CLIENT) &lt;string socketname default (see input description)&gt;  
 </code></pre>
 <p>The SOCKET directive enables NWChem to communicate with other software
-packages &ndash; such as (http://ipi-code.org/) or
-(https://wiki.fysik.dtu.dk/ase/ase/calculators/socketio/socketio.html) &ndash; via the i-PI socket protocol.</p>
+packages &ndash; such as <a href="http://ipi-code.org/">i-PI</a> or
+<a href="https://wiki.fysik.dtu.dk/ase/ase/calculators/socketio/socketio.html">ASE</a> &ndash; via the i-PI socket protocol.</p>
 <p>Communication is done either over Unix sockets (<code>SOCKET UNIX</code>) or IP
 sockets (<code>SOCKET IPI_CLIENT</code>):</p>
 <ul>
@@ -3599,7 +3599,7 @@ sockets (<code>SOCKET IPI_CLIENT</code>):</p>
 <p>The <code>SOCKET</code> directive is only useful when used in conjunction with other
 software packages that support communication via the i-PI socket
 protocol. For more information, see the
-(https://ipi-code.org/i-pi/user-guide.html#communication-protocol).</p>
+<a href="https://ipi-code.org/i-pi/user-guide.html#communication-protocol">i-PI documentation</a>.</p>
 <h3 id="print-options">Print options<a class="headerlink" href="#print-options" title="Permanent link">&para;</a></h3>
 <p>The UNIX command   </p>
 <pre><code>grep '^@' \&lt; output
@@ -3635,10 +3635,10 @@ recognized</p>
 <h2 id="geometry-optimization-with-stepper">Geometry Optimization with STEPPER<a class="headerlink" href="#geometry-optimization-with-stepper" title="Permanent link">&para;</a></h2>
 <p>The STEPPER module performs a search for critical points on the
 potential energy surface of the molecule defined by input using the
-(Geometry.md) directive. Since STEPPER is
+<a href="Geometry.html">GEOMETRY</a> directive. Since STEPPER is
 not the primary geometry optimization module in NWChem the compound
 directive is required; the
-(#geometry-optimization-with-driver) module is the
+<a href="#geometry-optimization-with-driver">DRIVER</a> module is the
 default. Input for this module is specified within the compound
 directive,</p>
 <pre><code> STEPPER  
@@ -3681,7 +3681,7 @@ selected by specifying the directive</p>
 optimization for a transition state search, the user can also have the
 module track the eigenvector corresponding to a specific mode. This is
 done by specifying the directive</p>
-<pre><code> TRACK 
+<pre><code> TRACK [nmode &lt;integer nmode default 1&gt;]
 </code></pre>
 <p>The keyword <code>TRACK</code> tells <code>STEPPER</code> to track the eigenvector corresponding
 to the integer value of <nmode> during a transition state walk. (Note:
@@ -3751,9 +3751,9 @@ Once Stepper executes it generates a binary dump file
 by the name of <code>name.stpr41</code> which will be used on all subsequent stepper
 runs and modified with the current updated hessian. The default file
 prefix is the &ldquo;name&rdquo; that is used (see
-(Start_Restart.md)).
+<a href="Start_Restart.html">START</a>).
 It also stores the information for the last valid step in case the
-algorithm must take a (#backstepping-in-stepper).
+algorithm must take a <a href="#backstepping-in-stepper">&ldquo;backstep&rdquo;</a>.
 This file is the working data store for all stepper-based optimizations.
 This file is never deleted by default and is the first source of an
 initial hessian.<br />
