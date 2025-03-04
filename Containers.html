@@ -3106,11 +3106,11 @@
 <pre><code> docker run --shm-size 256m -u `id -u` --rm -v [host_system_dir]:/data ghcr.io/nwchemgit/nwchem-dev input.nw
 </code></pre>
 <p>For example, the following command can be used when starting from the <code>/tmp</code> directory:</p>
-<pre><code> docker run --shm-size 256m -u `id -u` --rm -v /tmp:/data ghcr.io/nwchemgit/nwchem-dev /data/input.nw
+<pre><code> docker run --shm-size 256m -u `id -u` --rm -v $(pwd):/data ghcr.io/nwchemgit/nwchem-dev /data/input.nw
 </code></pre>
 <p>where the input file <code>input.nw</code> is located in the <code>/tmp</code> directory.</p>
 <p>The following docker command will run NWChem in parallel using three processes </p>
-<pre><code>docker run --shm-size 256m  -u `id -u` --rm  --entrypoint='mpirun' -v /tmp:/data ghcr.io/nwchemgit/nwchem-dev  -np 2 nwchem /data/xvdw.nw
+<pre><code>docker run --shm-size 256m  -u `id -u` --rm  --entrypoint='mpirun' -v $(pwd):/data ghcr.io/nwchemgit/nwchem-dev  -np 2 nwchem /data/xvdw.nw
 </code></pre>
 <p>This example uses the input file <code>xvdw.nw</code> available on the host directory <code>/tmp</code></p>
 <p>The associated Dockerfile is available at<br />
