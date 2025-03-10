@@ -2981,6 +2981,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#cosmo-rsolv-keyword" class="md-nav__link">
+    <span class="md-ellipsis">
+      COSMO: RSOLV keyword
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#cosmo-iscreen-keyword" class="md-nav__link">
     <span class="md-ellipsis">
       COSMO: ISCREEN keyword
@@ -3335,7 +3344,8 @@ input block with the input options as:</p>
   [radius  &lt;real atom1&gt;  
            &lt;real atom2&gt;  
       . . .  
-           &lt;real atomN&gt;]  
+           &lt;real atomN&gt;]
+  [rsolv &lt;real rsolv default 0.5&gt;]  
   [iscren  &lt;integer iscren default 0&gt;]  
   [minbem  &lt;integer minbem default 2&gt;]  
   [ificos  &lt;integer ificos default 0&gt;]  
@@ -3400,7 +3410,9 @@ Waals radii by default:</p>
     7   2.223,2.223,2.223,2.223,2.223,2.223/
 </code></pre>
 <p>For examples see Stefanovich et al.<sup id="fnref_footnote_stefanovich1995"><a class="footnote-ref" href="#fn_footnote_stefanovich1995">5</a></sup> and Barone et al.<sup id="fnref_footnote_barone1997"><a class="footnote-ref" href="#fn_footnote_barone1997">6</a></sup></p>
-<p>&ldquo;Rsolv&rdquo; is no longer used.</p>
+<h4 id="cosmo-rsolv-keyword">COSMO: RSOLV keyword<a class="headerlink" href="#cosmo-rsolv-keyword" title="Permanent link">&para;</a></h4>
+<p><code>rsolv</code> is a parameter used to define the solvent accessible surface. See the original reference of Klamt and Schuurmann for a description. 
+The default value is 0.5 (in angstroms). It is not used in the York and Karplus (used by default in NWChem).</p>
 <h4 id="cosmo-iscreen-keyword">COSMO: ISCREEN keyword<a class="headerlink" href="#cosmo-iscreen-keyword" title="Permanent link">&para;</a></h4>
 <p><code>iscren</code> is a flag to define the dielectric charge scaling option.
 <code>iscren 1</code> implies the original scaling from Klamt and Schüürmann,
