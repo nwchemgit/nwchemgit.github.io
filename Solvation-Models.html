@@ -1161,9 +1161,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cosmo-iscreen-keyword" class="md-nav__link">
+  <a href="#cosmo-screen-keyword" class="md-nav__link">
     <span class="md-ellipsis">
-      COSMO: ISCREEN keyword
+      COSMO: SCREEN keyword
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmo-iscreen-keyword-deprecated-see-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      COSMO: ISCREEN keyword (deprecated, see SCREEN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmo-minbem-and-ificos-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      COSMO: MINBEM and IFICOS keywords
     </span>
   </a>
   
@@ -3384,9 +3402,27 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cosmo-iscreen-keyword" class="md-nav__link">
+  <a href="#cosmo-screen-keyword" class="md-nav__link">
     <span class="md-ellipsis">
-      COSMO: ISCREEN keyword
+      COSMO: SCREEN keyword
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmo-iscreen-keyword-deprecated-see-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      COSMO: ISCREEN keyword (deprecated, see SCREEN)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cosmo-minbem-and-ificos-keywords" class="md-nav__link">
+    <span class="md-ellipsis">
+      COSMO: MINBEM and IFICOS keywords
     </span>
   </a>
   
@@ -3740,7 +3776,8 @@ input block with the input options as:</p>
       . . .  
            &lt;real atomN&gt;]
   [rsolv &lt;real rsolv default 0.5&gt;]  
-  [iscren  &lt;integer iscren default 0&gt;]  
+  [screen  &lt;ideal||ks||st&gt;]
+  [iscren  &lt;integer iscren default 0, deprecated&gt;]  
   [minbem  &lt;integer minbem default 2&gt;]  
   [ificos  &lt;integer ificos default 0&gt;]  
   [lineq   &lt;integer lineq default 1&gt;]  
@@ -3762,8 +3799,9 @@ By default, once the COSMO solvation model has been defined it will be
 used in subsequent calculations. Add the keyword <code>off</code> if COSMO is not
 needed in subsequent calculations.</p>
 <h4 id="cosmo-dielec-keyword">COSMO: DIELEC keyword<a class="headerlink" href="#cosmo-dielec-keyword" title="Permanent link">&para;</a></h4>
-<p><code>dielec</code> is the value of the dielectric constant of the medium, with a
-default value of 78.4 (the dielectric constant for water).</p>
+<p><code>dielec</code> is the value of the dielectric constant <span class="arithmatex">\( \epsilon \)</span> of the medium, with a
+default value of 78.4 (the dielectric constant for water).
+This value is used to scale the dielectric screening energy, as detailed in the <a href="#cosmo-screen-keyword">SCREEN section</a>.</p>
 <h4 id="cosmo-parameters-keyword">COSMO: PARAMETERS keyword<a class="headerlink" href="#cosmo-parameters-keyword" title="Permanent link">&para;</a></h4>
 <p><code>parameters</code> specifies COSMO radii parameters file that stores custom
 setting for COSMO parameters. The format for such file consists of the
@@ -3807,7 +3845,16 @@ Waals radii by default:</p>
 <h4 id="cosmo-rsolv-keyword">COSMO: RSOLV keyword<a class="headerlink" href="#cosmo-rsolv-keyword" title="Permanent link">&para;</a></h4>
 <p><code>rsolv</code> is a parameter used to define the solvent accessible surface. See the original reference of Klamt and Schüürmann <sup id="fnref2_footnote_klamt1993"><a class="footnote-ref" href="#fn_footnote_klamt1993">1</a></sup> for a description. 
 The default value is 0.5 (in angstroms). It is not used in the York and Karplus model (used by default in NWChem).</p>
-<h4 id="cosmo-iscreen-keyword">COSMO: ISCREEN keyword<a class="headerlink" href="#cosmo-iscreen-keyword" title="Permanent link">&para;</a></h4>
+<h4 id="cosmo-screen-keyword">COSMO: SCREEN keyword<a class="headerlink" href="#cosmo-screen-keyword" title="Permanent link">&para;</a></h4>
+<p>The <code>screen</code> parameter defines the dielectric screening scaling.</p>
+<ul>
+<li><code>screen ideal</code> applies no scaling, meaning <span class="arithmatex">\( f(\epsilon) = 1 \)</span>. In this case,
+the <a href="cosmo-dielec-keyword.md">dielectric constant</a> <span class="arithmatex">\( \epsilon \)</span> is irrelevant, as the solvent is treated as a perfect conductor with <span class="arithmatex">\( \epsilon = \infty \)</span>.</li>
+<li><code>screen ks</code> uses the original scaling by Klamt and Schüürmann<sup id="fnref3_footnote_klamt1993"><a class="footnote-ref" href="#fn_footnote_klamt1993">1</a></sup>, given by <span class="arithmatex">\( f(\epsilon) = \frac{\epsilon - 1}{\epsilon + 1/2} \)</span>.</li>
+<li><code>screen st</code> applies the modified scaling proposed by Stefanovich and Truong<sup id="fnref3_footnote_stefanovich1995"><a class="footnote-ref" href="#fn_footnote_stefanovich1995">5</a></sup>, defined as <span class="arithmatex">\( f(\epsilon) = \frac{\epsilon - 1}{\epsilon} \)</span>.</li>
+</ul>
+<p>By default, the modified scaling is used. For high dielectric values, the differences between these scaling methods become negligible.</p>
+<h4 id="cosmo-iscreen-keyword-deprecated-see-screen">COSMO: ISCREEN keyword (deprecated, see <a href="#cosmo-screen-keyword">SCREEN</a>)<a class="headerlink" href="#cosmo-iscreen-keyword-deprecated-see-screen" title="Permanent link">&para;</a></h4>
 <p><code>iscren</code> is a flag to define the dielectric charge scaling option.
 <code>iscren 1</code> implies the original scaling from Klamt and Schüürmann,
 mainly &ldquo;(&epsilon;-1)/(&epsilon;+1/2)&rdquo;, where &epsilon; is the
@@ -3815,7 +3862,8 @@ dielectric constant. <code>iscren 0</code> implies the modified scaling suggeste
 by Stefanovich and Truong<sup id="fnref2_footnote_stefanovich1995"><a class="footnote-ref" href="#fn_footnote_stefanovich1995">5</a></sup>, mainly &ldquo;(&epsilon;-1)/&epsilon;&ldquo;.
 Default is to use the modified scaling. For high dielectric the
 difference between the scaling is not significant.</p>
-<p>The next two parameters define the tesselation of the unit sphere. The
+<h4 id="cosmo-minbem-and-ificos-keywords">COSMO: MINBEM and IFICOS keywords<a class="headerlink" href="#cosmo-minbem-and-ificos-keywords" title="Permanent link">&para;</a></h4>
+<p>The <code>minbem</code> and <code>ificos</code> parameters define the tesselation of the unit sphere. The
 approach still follows the original proposal by Klamt and Schüürmann to
 some degree. Basically a tesselation is generated from <code>minbem</code> refining
 passes starting from either an octahedron or an icosahedron. Each level
@@ -5041,7 +5089,7 @@ end
 <hr />
 <ol>
 <li id="fn_footnote_klamt1993">
-<p>Klamt, A.; Schüürmann, G. COSMO: A New Approach to Dielectric Screening in Solvents with Explicit Expressions for the Screening Energy and Its Gradient. <em>J. Chem. Soc., Perkin Trans. 2</em> <strong>1993</strong>, No. 5, 799&ndash;805. <a href="https://doi.org/10.1039/p29930000799">https://doi.org/10.1039/p29930000799</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_klamt1993" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_klamt1993" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Klamt, A.; Schüürmann, G. COSMO: A New Approach to Dielectric Screening in Solvents with Explicit Expressions for the Screening Energy and Its Gradient. <em>J. Chem. Soc., Perkin Trans. 2</em> <strong>1993</strong>, No. 5, 799&ndash;805. <a href="https://doi.org/10.1039/p29930000799">https://doi.org/10.1039/p29930000799</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_klamt1993" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_klamt1993" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_klamt1993" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_york1999">
 <p>York, D. M.; Karplus, M. A Smooth Solvation Potential Based on the Conductor-Like Screening Model. <em>The Journal of Physical Chemistry A</em> <strong>1999</strong>, <em>103</em> (50), 11060&ndash;11079. <a href="https://doi.org/10.1021/jp992097l">https://doi.org/10.1021/jp992097l</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_york1999" title="Jump back to footnote 2 in the text">&#8617;</a></p>
@@ -5053,7 +5101,7 @@ end
 <p>Klamt, A.; Jonas, V.; Bürger, T.; Lohrenz, J. C. W. Refinement and Parametrization of COSMO-RS. <em>The Journal of Physical Chemistry A</em> <strong>1998</strong>, <em>102</em> (26), 5074&ndash;5085. <a href="https://doi.org/10.1021/jp980017s">https://doi.org/10.1021/jp980017s</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_klamt1998" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_stefanovich1995">
-<p>Stefanovich, E. V.; Truong, T. N. Optimized Atomic Radii for Quantum Dielectric Continuum Solvation Models. <em>Chemical Physics Letters</em> <strong>1995</strong>, <em>244</em> (1-2), 65&ndash;74. <a href="https://doi.org/10.1016/0009-2614(95)00898-e">https://doi.org/10.1016/0009-2614(95)00898-e</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_stefanovich1995" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_stefanovich1995" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Stefanovich, E. V.; Truong, T. N. Optimized Atomic Radii for Quantum Dielectric Continuum Solvation Models. <em>Chemical Physics Letters</em> <strong>1995</strong>, <em>244</em> (1-2), 65&ndash;74. <a href="https://doi.org/10.1016/0009-2614(95)00898-e">https://doi.org/10.1016/0009-2614(95)00898-e</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_stefanovich1995" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_stefanovich1995" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3_footnote_stefanovich1995" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_barone1997">
 <p>Barone, V.; Cossi, M.; Tomasi, J. A New Definition of Cavities for the Computation of Solvation Free Energies by the Polarizable Continuum Model. <em>The Journal of Chemical Physics</em> <strong>1997</strong>, <em>107</em> (8), 3210&ndash;3221. <a href="https://doi.org/10.1063/1.474671">https://doi.org/10.1063/1.474671</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_barone1997" title="Jump back to footnote 6 in the text">&#8617;</a></p>
