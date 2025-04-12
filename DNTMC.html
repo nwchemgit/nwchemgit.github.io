@@ -3174,59 +3174,21 @@ files are produced every mprnt number of MC steps.</p>
 <p>The DNTMC module supports the use of PRINT and NOPRINT Keywords. The
 specific labels which DNTMC recognizes are included
 below.</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Name</strong></td>
-<td><strong>Print Level</strong></td>
-<td><strong>Description</strong></td>
-</tr>
-<tr>
-<td>&ldquo;debug&rdquo;</td>
-<td>debug</td>
-<td>Some debug information written in Output file.</td>
-</tr>
-<tr>
-<td>&ldquo;information&rdquo;</td>
-<td>none</td>
-<td>Some information such as energies and geometries.</td>
-</tr>
-<tr>
-<td>&ldquo;mcdata&rdquo;</td>
-<td>low</td>
-<td>Production of a set of files (<code>Prefix.MCdata.#num</code>). These files are a concatenated list of structures, Energies, and Dipole Moments for each accepted configuration sampled in the MC run.</td>
-</tr>
-<tr>
-<td>&ldquo;alldata&rdquo;</td>
-<td>low</td>
-<td>Production of a set of files (<code>Prefix.Alldata.#num</code>). These files include the same information as MCdata files. However, they include ALL configurations (accepted or rejected).</td>
-</tr>
-<tr>
-<td>&ldquo;mcout&rdquo;</td>
-<td>debug - low</td>
-<td>Production of a set of files (<code>Prefix.MCout.#num</code>). These files contain a set of informative and debug information. Also included is the set of information which mirrors the Alldata files.</td>
-</tr>
-<tr>
-<td>&ldquo;fdist&rdquo;</td>
-<td>low</td>
-<td>Production of a file (<code>Prefix.fdist</code>) which contains a concatenated list of distributions every <code>mprnt*100</code> MC steps.</td>
-</tr>
-<tr>
-<td>&ldquo;timers&rdquo;</td>
-<td>debug</td>
-<td>Enables some timers in the code. These timers return performance statistics in the output file every time data analysis is performed. Two timers are used. One for the mcloop itself and one for the communication step.</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
+<center>
+
+|               |                 |                                                                                                                                                                                                                          |
+| ------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Name**      | **Print Level** | **Description**                                                                                                                                                                                                          |
+| "debug"       | debug           | Some debug information written in Output file.                                                                                                                                                                           |
+| "information" | none            | Some information such as energies and geometries.                                                                                                                                                                        |
+| "mcdata"      | low             | Production of a set of files (`Prefix.MCdata.#num`). These files are a concatenated list of structures, Energies, and Dipole Moments for each accepted configuration sampled in the MC run.                             |
+| "alldata"     | low             | Production of a set of files (`Prefix.Alldata.#num`). These files include the same information as MCdata files. However, they include ALL configurations (accepted or rejected).                                          |
+| "mcout"       | debug - low     | Production of a set of files (`Prefix.MCout.#num`). These files contain a set of informative and debug information. Also included is the set of information which mirrors the Alldata files.                              |
+| "fdist"       | low             | Production of a file (`Prefix.fdist`) which contains a concatenated list of distributions every `mprnt*100` MC steps.                                                                                                       |
+| "timers"      | debug           | Enables some timers in the code. These timers return performance statistics in the output file every time data analysis is performed. Two timers are used. One for the mcloop itself and one for the communication step. |
+
+</center>
+
 <h2 id="selected-file-formats">Selected File Formats<a class="headerlink" href="#selected-file-formats" title="Permanent link">&para;</a></h2>
 <p>Several output files are available in the DNTMC module. This section
 defines the format for some of these files.</p>

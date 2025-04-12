@@ -3052,22 +3052,31 @@ following paper</a>. In this
 approach the free energy difference between the two configurations of
 the QM region (e.g. A and
 B):</p>
-<p><center></p>
-<p><span class="arithmatex">\(\Delta W_{A\to B}=-1/\beta \ln \langle (e^{-\beta (E_B-E_A)})  \rangle_{A}\)</span></p>
-<p></center></p>
+<center>
+
+\(\Delta W_{A\to B}=-1/\beta \ln \langle (e^{-\beta (E_B-E_A)})  \rangle_{A}\)
+
+</center>
+
 <p>is approximated as a sum of internal QM contribution and
 solvation:</p>
-<p><center></p>
-<p><span class="arithmatex">\(\Delta W_{A\to B}\approx\Delta W_{A\to B}^{int}+\Delta W_{A\to B}^{solv}\)</span></p>
-<p></center></p>
+<center>
+
+\(\Delta W_{A\to B}\approx\Delta W_{A\to B}^{int}+\Delta W_{A\to B}^{solv}\)
+
+</center>
+
 <p>It is presumed that structures of A and B configurations are available
 as restart files sharing <strong>common</strong> topology file.</p>
 <h2 id="internal-contribution">Internal contribution<a class="headerlink" href="#internal-contribution" title="Permanent link">&para;</a></h2>
 <p>The internal QM contribution is given by the differences in the internal
 QM energies evaluated at the <strong>optimized</strong> MM environment:</p>
-<p><center></p>
-<p><span class="arithmatex">\(\Delta W_{A\to B}^{int}=E_{B}^{int}-E_{A}^{int}\)</span></p>
-<p></center></p>
+<center>
+
+\(\Delta W_{A\to B}^{int}=E_{B}^{int}-E_{A}^{int}\)
+
+</center>
+
 <p>The internal QM energy is nothing more but a gas phase expression total
 energy but evaluated with the wavefunction obtained in the presence of
 the environment. To calculate internal QM contribution to free energy
@@ -3084,33 +3093,48 @@ difference one has to</p>
 between A and B configurations of the QM system represented by a set of
 ESP
 charges.</p>
-<p><center></p>
-<p><span class="arithmatex">\(\Delta W_{A\to B}^{solv}=-1/\beta \ln \langle (e^{-\beta (E_B^{ESP}-E_A^{ESP})})  \rangle_{A}\)</span></p>
-<p></center></p>
+<center>
+
+\(\Delta W_{A\to B}^{solv}=-1/\beta \ln \langle (e^{-\beta (E_B^{ESP}-E_A^{ESP})})  \rangle_{A}\)
+
+</center>
+
 <p>where <span class="arithmatex">\(E_A^{ESP}\)</span> is the total energy of the system where QM region is
 replaced by a set of fixed point ESP charges.</p>
 <p>In majority of cases the A and B configuration are &ldquo;too far apart&rdquo; and
 one step free energy calculation as shown above will not lead to
 meaningful results. One solution is to introduce intermediate points
 that bridge A and B configurations by linear interpolation</p>
-<p><center></p>
-<p><span class="arithmatex">\(R_{\lambda_i} = (1-\lambda_i)R_A + \lambda_i R_B\)</span></p>
-<p></center></p>
-<p><center></p>
-<p><span class="arithmatex">\(Q_{\lambda_i} = (1-\lambda_i)Q_A + \lambda_i Q_B\)</span></p>
-<p></center></p>
+<center>
+
+\(R_{\lambda_i} = (1-\lambda_i)R_A + \lambda_i R_B\)
+
+</center>
+
+<center>
+
+\(Q_{\lambda_i} = (1-\lambda_i)Q_A + \lambda_i Q_B\)
+
+</center>
+
 <p>where</p>
-<p><center></p>
-<p><span class="arithmatex">\(\lambda_i = \frac {i}{n}, \quad i=0,..,n
-\,\!\)</span></p>
-<p></center></p>
+<center>
+
+\(\lambda_i = \frac {i}{n}, \quad i=0,..,n
+\,\!\)
+
+</center>
+
 <p>The solvation free energy difference can be then written as sum of
 differences for the subintervals <span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>  :</p>
-<p><center></p>
-<p><span class="arithmatex">\(
+<center>
+
+\(
  \Delta W_{A\to B}^{\rm esp} = \sum_{i=0}^{n}\Delta W_{\lambda_i\to\lambda_{i+1}}^{\rm esp}
-\)</span></p>
-<p></center></p>
+\)
+
+</center>
+
 <p>To expedite the calculation it is convenient to use a double wide
 sampling strategy where the free energy differences for the intervals
 <span class="arithmatex">\(\,\! [\lambda_{i-1}\to\lambda_{i}]\)</span>  and
@@ -3118,13 +3142,19 @@ sampling strategy where the free energy differences for the intervals
 sampling around <span class="arithmatex">\(\,\!\lambda_{i}\)</span>   point. In the simplest case where we
 use two subintervals
 (n=2)</p>
-<p><center></p>
-<p><span class="arithmatex">\(\Delta W_{A\to B}^{solv} \equiv \Delta W_{0\to 1}= \Delta W_{0\to 0.5}^{solv}+\Delta W_{0.5\to 1}^{solv}\)</span></p>
-<p></center></p>
+<center>
+
+\(\Delta W_{A\to B}^{solv} \equiv \Delta W_{0\to 1}= \Delta W_{0\to 0.5}^{solv}+\Delta W_{0.5\to 1}^{solv}\)
+
+</center>
+
 <p>or</p>
-<p><center></p>
-<p><span class="arithmatex">\(\Delta W_{A\to B}^{\rm solv} = -\Delta W_{0.5\to 0}^{\rm solv}+\Delta W_{0.5 \to 1}^{\rm solv}\)</span></p>
-<p></center></p>
+<center>
+
+\(\Delta W_{A\to B}^{\rm solv} = -\Delta W_{0.5\to 0}^{\rm solv}+\Delta W_{0.5 \to 1}^{\rm solv}\)
+
+</center>
+
 <p>The following items are necessary:</p>
 <ol>
 <li>Restart file corresponding to either A or B configuration of the QM
@@ -3166,10 +3196,13 @@ for which free energy difference is calculated is defined as</p>
 <p>If set, the above directive will perform both
 <span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i+1}]\)</span>  and
 <span class="arithmatex">\(\,\! [\lambda_i\to\lambda_{i-1}]\)</span>  calculations, where</p>
-<p><center></p>
-<p><span class="arithmatex">\(\,\!
- \lambda_{i-1}=\lambda_i - (\lambda_{i+1}-\lambda_i)\)</span></p>
-<p></center></p>
+<center>
+
+\(\,\!
+ \lambda_{i-1}=\lambda_i - (\lambda_{i+1}-\lambda_i)\)
+
+</center>
+
 <p>The calculation proceeds in cycles, each cycle consisting of two phases.
 First phase is generation of classical MD trajectory around
 <span class="arithmatex">\(\,\! \lambda_i\)</span> point. Second phase is processing of the generated
