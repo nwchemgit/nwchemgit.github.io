@@ -3778,7 +3778,8 @@ input block with the input options as:</p>
   [rsolv &lt;real rsolv default 0.5&gt;]  
   [screen  &lt;ideal||ks||st&gt;]
   [iscren  &lt;integer iscren default 0, deprecated&gt;]  
-  [minbem  &lt;integer minbem default 2&gt;]  
+  [minbem  &lt;integer minbem default 2&gt;]
+  [maxbem  &lt;integer maxbem default 4, deprecated&gt;]
   [ificos  &lt;integer ificos default 0&gt;]  
   [lineq   &lt;integer lineq default 1&gt;]  
   [zeta &lt;real zeta default 0.98&gt;]  
@@ -3873,11 +3874,11 @@ granularity of the tesselation is reached. The induced point charges
 from the polarization of the medium are assigned to the centers of the
 tesselation. The default value is <code>minbem 2</code>. The flag <code>ificos</code> serves
 to select the original tesselation, <code>ificos 0</code> for an octahedron
-(default) and <code>ificos 1</code> for an icoshedron. Starting from an icosahedron
+(default) and <code>ificos 1</code> for an icosahedron. Starting from an icosahedron
 yields a somewhat finer tesselation that converges somewhat faster.
 Solvation energies are not really sensitive to this choice for
-sufficiently fine tesselations. The old &ldquo;maxbem&rdquo; directive is no longer
-used.</p>
+sufficiently fine tesselations. The old <code>maxbem</code> directive is no longer
+used for the York-Karplus model, while it was used in the <a href="#cosmo-do_cosmo_ks-keyword">Klamt-Schüürmann model</a> .</p>
 <h4 id="cosmo-lineq-keyword">COSMO: LINEQ keyword<a class="headerlink" href="#cosmo-lineq-keyword" title="Permanent link">&para;</a></h4>
 <p>The <code>lineq</code> parameter serves to select the numerical algorithm to solve
 the linear equations yielding the effective charges that represent the
