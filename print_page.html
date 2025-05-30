@@ -35403,225 +35403,860 @@ color green 34 45 _C??
 <pre><code>esp_points [&lt;string filpin&gt; [&lt;string filhol&gt; [&lt;string filpou&gt; [&lt;string filavg&gt;]]]]
 </code></pre></section><section class="print-page" id="format_of_md_files" heading-number="17.4"><h1 id="format_of_md_files-format-of-md-files">Format of MD files<a class="headerlink" href="#format_of_md_files-format-of-md-files" title="Permanent link">&para;</a></h1>
 <h2 id="format_of_md_files-format-of-fragment-file">Format of fragment file<a class="headerlink" href="#format_of_md_files-format-of-fragment-file" title="Permanent link">&para;</a></h2>
-<center>
-
-| Card                                                             | Format    | Description                          |
-| :--------------------------------------------------------------- | :---------| :----------------------------------- |
-| I-1-1                                                            | a1        | $ or \# comments to describe fragment           |
-| I-2-1                                                            | i5        | number of atoms in the fragment                 |
-| I-2-2                                                            | i5        | number of parameter sets                        |
-| I-2-3                                                            | i5        | default parameter set                           |
-| I-2-4                                                            | i5        | number of z-matrix definition                   |
-| **For each parameter** | ||
-| **set one card I-3**| ||
-| I-3-1                                                            | a         | residue name for parameter set                  |
-| **For each atom one deck II**                                    |
-| II-1-1                                                           | i5        | atom sequence number                            |
-| II-1-2                                                           | a6        | atom name                                       |
-| II-1-3                                                           | a5        | atom type                                       |
-| II-1-4                                                           | a1        | dynamics type                                   |
-|                                                                  |           | blank : normal                                  |
-|                                                                  |           | D : dummy atom                                  |
-|                                                                  |           | S: solute interactions only                     |
-|                                                                  |           | Q : quantum atom                                |
-|                                                                  |           | other : intramolecular solute interactions only |
-| II-1-5                                                           | i5        | link number                                     |
-|                                                                  |           | 0: no link                                      |
-|                                                                  |           | 1: first atom in chain                          |
-|                                                                  |           | 2: second atom in chain                         |
-|                                                                  |           | 3 and up: other links                           |
-| II-1-6                                                           | i5        | environment type                                |
-|                                                                  |           | 0: no special identifier                        |
-|                                                                  |           | 1: planar, using improper torsion               |
-|                                                                  |           | 2: tetrahedral, using improper torsion          |
-|                                                                  |           | 3: tetrahedral, using improper torsion          |
-|                                                                  |           | 4: atom in aromatic ring                        |
-| II-1-7                                                           | i5        |                                                 |
-| II-1-8                                                           | i5        | charge group                                    |
-| II-1-9                                                           | i5        | polarization group                              |
-| II-1-10                                                          | f12.6     | atomic partial charge                           |
-| II-1-11                                                          | f12.6     | atomic polarizability                           |
-| **For each additional**                   |||
-| **parameter set on card II-2**            |||
-| II-2-1                                                           | 11x,a6    | atom type                                       |
-| II-2-2                                                           | a1        | dynamics type                                   |
-|                                                                  |           | blank : normal                                  |
-|                                                                  |           | D : dummy atom                                  |
-|                                                                  |           | S : solute interactions only                    |
-|                                                                  |           | Q : quantum atom                                |
-|                                                                  |           | other : intramolecular solute interactions only |
-| II-2-7                                                           | 25x,f12.6 | atomic partial charge                           |
-| II-2-8                                                           | f12.6     | atomic polarizability                           |
-| **Any number of cards in deck III to**  |
-| **specify complete connectivity** |
-| III-1-1                                                          | 16i5      | connectivity, duplication allowed               |
-| **One blank card to signal**     |||
-| **the end of the connectivity list**       || |
-| **For each z-matrix definition one card IV**                         |
-| IV-1-1                                                           | i5        | atom i                                          |
-| IV-1-2                                                           | i5        | atom j                                          |
-| IV-1-3                                                           | i5        | atom k                                          |
-| IV-1-4                                                           | i5        | atom l                                          |
-| IV-1-5                                                           | f12.6     | bond length i-j                                 |
-| IV-1-6                                                           | f12.6     | angle i-j-k                                     |
-| IV-1-7                                                           | f12.6     | torson i-j-k-l                                  |
-
-
-
-
-## Format of segment file (1 of 7)  
-
-
-| Card                                | Format | Description                                 |
-| :---------------------------------- | :----- | :------------------------------------------ |
-| I-0-1                               |        | \# lines at top are comments                |
-| I-1-1                               | a1     | $ to identify the start of a segment        |
-| I-1-2                               | a10    | name of the segment, the tenth character    |
-|                                     |        | N: identifies beginning of a chain          |
-|                                     |        | C: identifies end of a chain                |
-|                                     |        | blank: identifies chain fragment            |
-|                                     |        | M: identifies an integral molecule          |
-| I-2-1                               | f12.6  | version number                              |
-| I-3-1                               | i5     | number of atoms in the segment              |
-| I-3-2                               | i5     | number of bonds in the segment              |
-| I-3-3                               | i5     | number of angles in the segment             |
-| I-3-4                               | i5     | number of proper dihedrals in the segment   |
-| I-3-5                               | i5     | number of improper dihedrals in the segment |
-| I-3-6                               | i5     | number of z-matrix definitions              |
-| I-3-7                               | i5     | number of parameter sets                    |
-| 1-3-8                               | i5     | default parameter set                       |
-| For each parameter set one card I-4 |
-| I-4-1                               | f12.6  | dipole correction energy                    |
-
-
-
-
-## Format of segment file (2 of 7)  
-
-
-| Card                                 | Format | Description                                            |
-| :----------------------------------- | :----- | :----------------------------------------------------- |
-| For each atom one deck II            |
-| II-1-1                               | i5     | atom sequence number                                   |
-| II-1-2                               | a6     | atom name                                              |
-| II-1-3                               | i5     | link number                                            |
-| II-1-4                               | i5     | environment type                                       |
-|                                      |        | 0: no special identifier                               |
-|                                      |        | 1: planar, using improper torsion                      |
-|                                      |        | 2: tetrahedral, using improper torsion                 |
-|                                      |        | 3: tetrahedral, using improper torsion                 |
-|                                      |        | 4: atom in aromatic ring                               |
-| II-1-5                               | i5     |                                                        |
-| II-1-6                               | i5     | charge group                                           |
-| II-1-7                               | i5     | polarization group                                     |
-| For each parameter set one card II-2 |
-| II-2-1                               | 5x,a5  | atom type                                              |
-| II-2-2                               | a1     | dynamics type                                          |
-|                                      |        | blank : normal                                         |
-|                                      |        | D : dummy atom                                         |
-|                                      |        | S : solute interactions only                           |
-|                                      |        | Q : quantum atom                                       |
-|                                      |        | other : intramolecular solute interactions only        |
-| II-2-3                               | f12.6  | atomic partial charge in e                             |
-| II-2-4                               | f12.6  | atomic polarizability (4 &pi; &epsilon;<sub>o</sub> in nm<sup>3</sup>) |
-
-
-
-## Format of segment file (3 of 7)  
-
-
-
-| Card                                  | Format | Description                                   |
-| :------------------------------------ | :----- | :-------------------------------------------- |
-| For each bond a deck III              |
-| III-1-1                               | i5     | bond sequence number                          |
-| III-1-2                               | i5     | bond atom i                                   |
-| III-1-3                               | i5     | bond atom j                                   |
-| III-1-4                               | i5     | bond type                                     |
-|                                       |        | 0: harmonic                                   |
-|                                       |        | 1: constrained bond                           |
-| III-1-5                               | i5     | bond parameter origin                         |
-|                                       |        | 0: from database, next card ignored           |
-|                                       |        | 1: from next card                             |
-| For each parameter set one card III-2 |
-| III-2-1                               | f12.6  | bond length in nm                             |
-| III-2-2                               | e12.5  | bond force constant in (kJ nm<sup>2</sup> mol<sup>-1</sup>) |
-
-
-
-
-## Format of segment file (4 of 7)  
-
-
-| Card                                 | Format | Description                             |
-| :----------------------------------- | :----- | :-------------------------------------- |
-| For each angle a deck IV             |
-| IV-1-1                               | i5     | angle sequence number                   |
-| IV-1-2                               | i5     | angle atom i                            |
-| IV-1-3                               | i5     | angle atom j                            |
-| IV-1-4                               | i5     | angle atom k                            |
-| IV-1-5                               | i5     | angle type                              |
-|                                      |        | 0: harmonic                             |
-| IV-1-6                               | i5     | angle parameter origin                  |
-|                                      |        | 0: from database, next card ignored     |
-|                                      |        | 1: from next card                       |
-| For each parameter set one card IV-2 |
-| IV-2-1                               | f10.6  | angle in radians                        |
-| IV-2-2                               | e12.5  | angle force constant in (kJ mol<sup>-1</sup>) |
-
-
-
-## Format of segment file (5 of 7)  
-
-
-| Card                                | Format | Description                                       |
-| :---------------------------------- | :----- | :------------------------------------------------ |
-| For each proper dihedral a deck V   |
-| V-1-1                               | i5     | proper dihedral sequence number                   |
-| V-1-2                               | i5     | proper dihedral atom i                            |
-| V-1-3                               | i5     | proper dihedral atom j                            |
-| V-1-4                               | i5     | proper dihedral atom k                            |
-| V-1-5                               | i5     | proper dihedral atom l                            |
-| V-1-6                               | i5     | proper dihedral type                              |
-|                                     |        | 0: (*C*cos(m&phi;-&delta;)                        |
-| V-1-7                               | i5     | proper dihedral parameter origin                  |
-|                                     |        | 0: from database, next card ignored               |
-|                                     |        | 1: from next card                                 |
-| For each parameter set one card V-2 |
-| V-2-1                               | i3     | multiplicity                                      |
-| V-2-2                               | f10.6  | proper dihedral in radians                        |
-| V-2-3                               | e12.5  | proper dihedral force constant in (kJ mol<sup>-1</sup>) |
-
-
-
-
-
-## Format of segment file (6 of 7)  
-
-
-
-| Card                                 | Format   | Description                                         |
-| :----------------------------------- | :------- | :-------------------------------------------------- |
-| For each improper dihedral a deck VI |
-| VI-1-1                               | i5       | improper dihedral sequence number                   |
-| VI-1-2                               | i5       | improper dihedral atom i                            |
-| VI-1-3                               | i5       | improper dihedral atom j                            |
-| VI-1-4                               | i5       | improper dihedral atom k                            |
-| VI-1-5                               | i5       | improper dihedral atom l                            |
-| VI-1-6                               | i5       | improper dihedral type                              |
-|                                      |          | 0: harmonic                                         |
-| VI-1-7                               | i5       | improper dihedral parameter origin                  |
-|                                      |          | 0: from database, next card ignored                 |
-|                                      |          | 1: from next card                                   |
-| For each parameter set one card VI-2 |
-| VI-2-1                               | 3x,f10.6 | improper dihedral in radians                        |
-| VI-2-2                               | e12.5    | improper dihedral force constant in (kJ mol<sup>-1</sup>) |
-
-
-
-
-## Format of segment file (7 of 7)  
-
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Card</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">I-1-1</td>
+<td style="text-align: left;">a1</td>
+<td style="text-align: left;">$ or # comments to describe fragment</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-2-1</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of atoms in the fragment</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-2-2</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of parameter sets</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-2-3</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">default parameter set</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-2-4</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of z-matrix definition</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>For each parameter</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>set one card I-3</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">I-3-1</td>
+<td style="text-align: left;">a</td>
+<td style="text-align: left;">residue name for parameter set</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>For each atom one deck II</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-1</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">atom sequence number</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-2</td>
+<td style="text-align: left;">a6</td>
+<td style="text-align: left;">atom name</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-3</td>
+<td style="text-align: left;">a5</td>
+<td style="text-align: left;">atom type</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-4</td>
+<td style="text-align: left;">a1</td>
+<td style="text-align: left;">dynamics type</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">blank : normal</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">D : dummy atom</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S: solute interactions only</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Q : quantum atom</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">other : intramolecular solute interactions only</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-5</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">link number</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: no link</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1: first atom in chain</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2: second atom in chain</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3 and up: other links</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-6</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">environment type</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: no special identifier</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1: planar, using improper torsion</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2: tetrahedral, using improper torsion</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3: tetrahedral, using improper torsion</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4: atom in aromatic ring</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-7</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-8</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">charge group</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-9</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">polarization group</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-10</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">atomic partial charge</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-11</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">atomic polarizability</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>For each additional</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>parameter set on card II-2</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">II-2-1</td>
+<td style="text-align: left;">11x,a6</td>
+<td style="text-align: left;">atom type</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-2-2</td>
+<td style="text-align: left;">a1</td>
+<td style="text-align: left;">dynamics type</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">blank : normal</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">D : dummy atom</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S : solute interactions only</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Q : quantum atom</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">other : intramolecular solute interactions only</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-2-7</td>
+<td style="text-align: left;">25x,f12.6</td>
+<td style="text-align: left;">atomic partial charge</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-2-8</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">atomic polarizability</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Any number of cards in deck III to</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>specify complete connectivity</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">III-1-1</td>
+<td style="text-align: left;">16i5</td>
+<td style="text-align: left;">connectivity, duplication allowed</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>One blank card to signal</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>the end of the connectivity list</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>For each z-matrix definition one card IV</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-1</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">atom i</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-2</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">atom j</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-3</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">atom k</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-4</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">atom l</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-5</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">bond length i-j</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-6</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">angle i-j-k</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-7</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">torson i-j-k-l</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-1-of-7">Format of segment file (1 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-1-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Card</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">I-0-1</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"># lines at top are comments</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-1-1</td>
+<td style="text-align: left;">a1</td>
+<td style="text-align: left;">$ to identify the start of a segment</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-1-2</td>
+<td style="text-align: left;">a10</td>
+<td style="text-align: left;">name of the segment, the tenth character</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">N: identifies beginning of a chain</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">C: identifies end of a chain</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">blank: identifies chain fragment</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">M: identifies an integral molecule</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-2-1</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">version number</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-3-1</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of atoms in the segment</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-3-2</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of bonds in the segment</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-3-3</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of angles in the segment</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-3-4</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of proper dihedrals in the segment</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-3-5</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of improper dihedrals in the segment</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-3-6</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of z-matrix definitions</td>
+</tr>
+<tr>
+<td style="text-align: left;">I-3-7</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">number of parameter sets</td>
+</tr>
+<tr>
+<td style="text-align: left;">1-3-8</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">default parameter set</td>
+</tr>
+<tr>
+<td style="text-align: left;">For each parameter set one card I-4</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">I-4-1</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">dipole correction energy</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-2-of-7">Format of segment file (2 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-2-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Card</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">For each atom one deck II</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-1</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">atom sequence number</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-2</td>
+<td style="text-align: left;">a6</td>
+<td style="text-align: left;">atom name</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-3</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">link number</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-4</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">environment type</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: no special identifier</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1: planar, using improper torsion</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">2: tetrahedral, using improper torsion</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">3: tetrahedral, using improper torsion</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">4: atom in aromatic ring</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-5</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-6</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">charge group</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-1-7</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">polarization group</td>
+</tr>
+<tr>
+<td style="text-align: left;">For each parameter set one card II-2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">II-2-1</td>
+<td style="text-align: left;">5x,a5</td>
+<td style="text-align: left;">atom type</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-2-2</td>
+<td style="text-align: left;">a1</td>
+<td style="text-align: left;">dynamics type</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">blank : normal</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">D : dummy atom</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">S : solute interactions only</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Q : quantum atom</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">other : intramolecular solute interactions only</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-2-3</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">atomic partial charge in e</td>
+</tr>
+<tr>
+<td style="text-align: left;">II-2-4</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">atomic polarizability (4 &pi; &epsilon;<sub>o</sub> in nm<sup>3</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-3-of-7">Format of segment file (3 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-3-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Card</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">For each bond a deck III</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">III-1-1</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">bond sequence number</td>
+</tr>
+<tr>
+<td style="text-align: left;">III-1-2</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">bond atom i</td>
+</tr>
+<tr>
+<td style="text-align: left;">III-1-3</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">bond atom j</td>
+</tr>
+<tr>
+<td style="text-align: left;">III-1-4</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">bond type</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: harmonic</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1: constrained bond</td>
+</tr>
+<tr>
+<td style="text-align: left;">III-1-5</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">bond parameter origin</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: from database, next card ignored</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1: from next card</td>
+</tr>
+<tr>
+<td style="text-align: left;">For each parameter set one card III-2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">III-2-1</td>
+<td style="text-align: left;">f12.6</td>
+<td style="text-align: left;">bond length in nm</td>
+</tr>
+<tr>
+<td style="text-align: left;">III-2-2</td>
+<td style="text-align: left;">e12.5</td>
+<td style="text-align: left;">bond force constant in (kJ nm<sup>2</sup> mol<sup>-1</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-4-of-7">Format of segment file (4 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-4-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Card</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">For each angle a deck IV</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-1</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">angle sequence number</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-2</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">angle atom i</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-3</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">angle atom j</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-4</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">angle atom k</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-5</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">angle type</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: harmonic</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-1-6</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">angle parameter origin</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: from database, next card ignored</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1: from next card</td>
+</tr>
+<tr>
+<td style="text-align: left;">For each parameter set one card IV-2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-2-1</td>
+<td style="text-align: left;">f10.6</td>
+<td style="text-align: left;">angle in radians</td>
+</tr>
+<tr>
+<td style="text-align: left;">IV-2-2</td>
+<td style="text-align: left;">e12.5</td>
+<td style="text-align: left;">angle force constant in (kJ mol<sup>-1</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-5-of-7">Format of segment file (5 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-5-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Card</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">For each proper dihedral a deck V</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">V-1-1</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">proper dihedral sequence number</td>
+</tr>
+<tr>
+<td style="text-align: left;">V-1-2</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">proper dihedral atom i</td>
+</tr>
+<tr>
+<td style="text-align: left;">V-1-3</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">proper dihedral atom j</td>
+</tr>
+<tr>
+<td style="text-align: left;">V-1-4</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">proper dihedral atom k</td>
+</tr>
+<tr>
+<td style="text-align: left;">V-1-5</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">proper dihedral atom l</td>
+</tr>
+<tr>
+<td style="text-align: left;">V-1-6</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">proper dihedral type</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: (<em>C</em>cos(m&phi;-&delta;)</td>
+</tr>
+<tr>
+<td style="text-align: left;">V-1-7</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">proper dihedral parameter origin</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: from database, next card ignored</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1: from next card</td>
+</tr>
+<tr>
+<td style="text-align: left;">For each parameter set one card V-2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">V-2-1</td>
+<td style="text-align: left;">i3</td>
+<td style="text-align: left;">multiplicity</td>
+</tr>
+<tr>
+<td style="text-align: left;">V-2-2</td>
+<td style="text-align: left;">f10.6</td>
+<td style="text-align: left;">proper dihedral in radians</td>
+</tr>
+<tr>
+<td style="text-align: left;">V-2-3</td>
+<td style="text-align: left;">e12.5</td>
+<td style="text-align: left;">proper dihedral force constant in (kJ mol<sup>-1</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-6-of-7">Format of segment file (6 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-6-of-7" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Card</th>
+<th style="text-align: left;">Format</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">For each improper dihedral a deck VI</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">VI-1-1</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">improper dihedral sequence number</td>
+</tr>
+<tr>
+<td style="text-align: left;">VI-1-2</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">improper dihedral atom i</td>
+</tr>
+<tr>
+<td style="text-align: left;">VI-1-3</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">improper dihedral atom j</td>
+</tr>
+<tr>
+<td style="text-align: left;">VI-1-4</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">improper dihedral atom k</td>
+</tr>
+<tr>
+<td style="text-align: left;">VI-1-5</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">improper dihedral atom l</td>
+</tr>
+<tr>
+<td style="text-align: left;">VI-1-6</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">improper dihedral type</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: harmonic</td>
+</tr>
+<tr>
+<td style="text-align: left;">VI-1-7</td>
+<td style="text-align: left;">i5</td>
+<td style="text-align: left;">improper dihedral parameter origin</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">0: from database, next card ignored</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1: from next card</td>
+</tr>
+<tr>
+<td style="text-align: left;">For each parameter set one card VI-2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">VI-2-1</td>
+<td style="text-align: left;">3x,f10.6</td>
+<td style="text-align: left;">improper dihedral in radians</td>
+</tr>
+<tr>
+<td style="text-align: left;">VI-2-2</td>
+<td style="text-align: left;">e12.5</td>
+<td style="text-align: left;">improper dihedral force constant in (kJ mol<sup>-1</sup>)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="format_of_md_files-format-of-segment-file-7-of-7">Format of segment file (7 of 7)<a class="headerlink" href="#format_of_md_files-format-of-segment-file-7-of-7" title="Permanent link">&para;</a></h2>
 <center>
 
 | Card                                      | Format | Description     |
