@@ -3482,7 +3482,7 @@ at the specified temperature, unless a restart file (<code>.qmdrst</code>) is
 present. If a restart file is present, the trajectory information will
 be read from that file and the trajectory will resume from that point.</p>
 <p>For computational details and a case study using the module, please
-refer to the 2016 paper by Fischer<sup id="fnref_footnote_fischer2015"><a class="footnote-ref" href="#fn_footnote_fischer2015">1</a></sup>.  </p>
+refer to the 2016 paper by Fischer<sup id="fnref_footnote_1"><a class="footnote-ref" href="#fn_footnote_1">1</a></sup>.  </p>
 <pre><code>QMD
   [dt_nucl &lt;double default 10.0&gt;]  
   [nstep_nucl &lt;integer default 1000&gt;]  
@@ -3524,12 +3524,12 @@ the nuclei. Possible options are:</p>
 <ul>
 <li><strong><code>svr</code></strong> <code>&lt;double default 1000.0&gt;</code></li>
 </ul>
-<p>Stochastic velocity rescaling thermostat of Bussi, Donadio, and Parrinello<sup id="fnref_footnote_bussi2007"><a class="footnote-ref" href="#fn_footnote_bussi2007">2</a></sup>.<br />
+<p>Stochastic velocity rescaling thermostat of Bussi, Donadio, and Parrinello<sup id="fnref_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup>.<br />
    Number sets the relaxation parameter of the thermostat  </p>
 <ul>
 <li><strong><code>langevin</code></strong> <code>&lt;double default 0.1&gt;</code></li>
 </ul>
-<p>Langevin dynamics, implementation according to Bussi and Parrinello<sup id="fnref_footnote_bussiparrinello2007"><a class="footnote-ref" href="#fn_footnote_bussiparrinello2007">3</a></sup>.<br />
+<p>Langevin dynamics, implementation according to Bussi and Parrinello<sup id="fnref_footnote_3"><a class="footnote-ref" href="#fn_footnote_3">3</a></sup>.<br />
    The optional input parameter sets the value of the friction  </p>
 <ul>
 <li><strong><code>berendsen</code></strong> <code>&lt;double default 1000.0&gt;</code>  </li>
@@ -3736,7 +3736,7 @@ here.</p>
 <img alt="pic2" src="SiCl4VDOS.png" /></p>
 <h2 id="namd-non-adiabatic-excited-stated-molecular-dynamics">NAMD: Non-adiabatic Excited Stated Molecular Dynamics<a class="headerlink" href="#namd-non-adiabatic-excited-stated-molecular-dynamics" title="Permanent link">&para;</a></h2>
 <p>For  details of the NAMD implementation, please
-refer to the 2020 paper by Song<sup id="fnref_footnote_song2020"><a class="footnote-ref" href="#fn_footnote_song2020">4</a></sup>.    </p>
+refer to the 2020 paper by Song<sup id="fnref_footnote_4"><a class="footnote-ref" href="#fn_footnote_4">4</a></sup>.    </p>
 <pre><code>[namd]
   [init_state &lt;integer default 2&gt;]
   [nstates &lt;integer default 2&gt;]
@@ -3751,7 +3751,7 @@ refer to the 2020 paper by Song<sup id="fnref_footnote_song2020"><a class="footn
 <li>The nuclear time step (dt_nucl) must be an integer multiple of the electronic time step (<code>mod(dt_nucl,dt_elec)=0</code>).</li>
 </ul>
 <h3 id="deco-decoherence-flag">DECO: Decoherence flag<a class="headerlink" href="#deco-decoherence-flag" title="Permanent link">&para;</a></h3>
-<p>The <code>deco</code> flag applies the EDC electronic decoherence correction described in the papey bt Granucci and Persico<sup id="fnref_footnote_granucci2007"><a class="footnote-ref" href="#fn_footnote_granucci2007">5</a></sup>.<br />
+<p>The <code>deco</code> flag applies the EDC electronic decoherence correction described in the papey bt Granucci and Persico<sup id="fnref_footnote_5"><a class="footnote-ref" href="#fn_footnote_5">5</a></sup>.<br />
 The default value is <code>.false.</code>, i.e. no decoherence correction is applied.</p>
 <h3 id="dt_elec-electronic-dynamics-time-step">DT_ELEC: Electronic dynamics time step<a class="headerlink" href="#dt_elec-electronic-dynamics-time-step" title="Permanent link">&para;</a></h3>
 <p>The keyword <code>dt_elec</code> sets the electronic time step in atomic units.</p>
@@ -3816,20 +3816,20 @@ task tddft qmd
 <div class="footnote">
 <hr />
 <ol>
-<li id="fn_footnote_fischer2015">
-<p>Fischer, S. A.; Ueltschi, T. W.; El-Khoury, P. Z.; Mifflin, A. L.; Hess, W. P.; Wang, H.-F.; Cramer, C. J.; Govind, N. Infrared and Raman Spectroscopy from Ab Initio Molecular Dynamics and Static Normal Mode Analysis: The C-H Region of DMSO as a Case Study. <em>The Journal of Physical Chemistry B</em> <strong>2015</strong>, <em>120</em> (8), 1429&ndash;1436. <a href="https://doi.org/10.1021/acs.jpcb.5b03323">https://doi.org/10.1021/acs.jpcb.5b03323</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_fischer2015" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<li id="fn_footnote_1">
+<p>Fischer, S. A.; Ueltschi, T. W.; El-Khoury, P. Z.; Mifflin, A. L.; Hess, W. P.; Wang, H.-F.; Cramer, C. J.; Govind, N. Infrared and Raman Spectroscopy from Ab Initio Molecular Dynamics and Static Normal Mode Analysis: The C-H Region of DMSO as a Case Study. <em>The Journal of Physical Chemistry B</em> <strong>2015</strong>, <em>120</em> (8), 1429–1436. <a href="https://doi.org/10.1021/acs.jpcb.5b03323">https://doi.org/10.1021/acs.jpcb.5b03323</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_bussi2007">
-<p>Bussi, G.; Donadio, D.; Parrinello, M. Canonical Sampling Through Velocity Rescaling. <em>The Journal of Chemical Physics</em> <strong>2007</strong>, <em>126</em> (1), 014101. <a href="https://doi.org/10.1063/1.2408420">https://doi.org/10.1063/1.2408420</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_bussi2007" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<li id="fn_footnote_2">
+<p>Bussi, G.; Donadio, D.; Parrinello, M. Canonical Sampling Through Velocity Rescaling. <em>The Journal of Chemical Physics</em> <strong>2007</strong>, <em>126</em> (1), 014101. <a href="https://doi.org/10.1063/1.2408420">https://doi.org/10.1063/1.2408420</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_bussiparrinello2007">
-<p>Bussi, G.; Parrinello, M. Accurate Sampling Using Langevin Dynamics. <em>Physical Review E</em> <strong>2007</strong>, <em>75</em> (5), 056707. <a href="https://doi.org/10.1103/PhysRevE.75.056707">https://doi.org/10.1103/PhysRevE.75.056707</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_bussiparrinello2007" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<li id="fn_footnote_3">
+<p>Bussi, G.; Parrinello, M. Accurate Sampling Using Langevin Dynamics. <em>Physical Review E</em> <strong>2007</strong>, <em>75</em> (5), 056707. <a href="https://doi.org/10.1103/PhysRevE.75.056707">https://doi.org/10.1103/PhysRevE.75.056707</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_song2020">
-<p>Song, H.; Fischer, S. A.; Zhang, Y.; Cramer, C. J.; Mukamel, S.; Govind, N.; Tretiak, S. First Principles Nonadiabatic Excited-State Molecular Dynamics in NWChem. <em>Journal of Chemical Theory and Computation</em> <strong>2020</strong>, <em>16</em> (10), 6418&ndash;6427. <a href="https://doi.org/10.1021/acs.jctc.0c00295">https://doi.org/10.1021/acs.jctc.0c00295</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_song2020" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<li id="fn_footnote_4">
+<p>Song, H.; Fischer, S. A.; Zhang, Y.; Cramer, C. J.; Mukamel, S.; Govind, N.; Tretiak, S. First Principles Nonadiabatic Excited-State Molecular Dynamics in NWChem. <em>Journal of Chemical Theory and Computation</em> <strong>2020</strong>, <em>16</em> (10), 6418–6427. <a href="https://doi.org/10.1021/acs.jctc.0c00295">https://doi.org/10.1021/acs.jctc.0c00295</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
-<li id="fn_footnote_granucci2007">
-<p>Granucci, G.; Persico, M. Critical Appraisal of the Fewest Switches Algorithm for Surface Hopping. <em>The Journal of Chemical Physics</em> <strong>2007</strong>, <em>126</em> (13), 134114. <a href="https://doi.org/10.1063/1.2715585">https://doi.org/10.1063/1.2715585</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_granucci2007" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<li id="fn_footnote_5">
+<p>Granucci, G.; Persico, M. Critical Appraisal of the Fewest Switches Algorithm for Surface Hopping. <em>The Journal of Chemical Physics</em> <strong>2007</strong>, <em>126</em> (13), 134114. <a href="https://doi.org/10.1063/1.2715585">https://doi.org/10.1063/1.2715585</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
