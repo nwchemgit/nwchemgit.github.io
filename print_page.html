@@ -30713,22 +30713,48 @@ particular section of the code took to complete. This is normally only
 useful for developers.</p>
 <h3 id="hessians-and-vibrational-frequencies-print-control">Print Control<a class="headerlink" href="#hessians-and-vibrational-frequencies-print-control" title="Permanent link">&para;</a></h3>
 <p>Known controllable print options are shown in the table
-below:</p>
-<center>
-
-| Name           | Print Level     | Description                                     |
-| -------------- | --------------- | ----------------------------------------------- |
-| "hess\_follow" | high            | more information about where the calculation is |
-| "cphf\_cont"   | debug           | detailed CPHF information                       |
-| "nucdd\_cont"  | debug           | detailed nuclear contribution information       |
-| "onedd\_cont"  | debug           | detailed one electron contribution information  |
-| "twodd\_cont"  | debug           | detailed two electron contribution information  |
-| "fock\_xc"     | debug           | detailed XC information during the fock builds  |
-
-Hessian Print Control Specifications
-
-</center>
-
+below:  </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Print Level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hess_follow</code></td>
+<td>high</td>
+<td>more information about where the calculation is</td>
+</tr>
+<tr>
+<td><code>cphf_cont</code></td>
+<td>debug</td>
+<td>detailed CPHF information</td>
+</tr>
+<tr>
+<td><code>nucdd_cont</code></td>
+<td>debug</td>
+<td>detailed nuclear contribution information</td>
+</tr>
+<tr>
+<td><code>onedd_cont</code></td>
+<td>debug</td>
+<td>detailed one electron contribution information</td>
+</tr>
+<tr>
+<td><code>twodd_cont</code></td>
+<td>debug</td>
+<td>detailed two electron contribution information</td>
+</tr>
+<tr>
+<td><code>fock_xc</code></td>
+<td>debug</td>
+<td>detailed XC information during the fock builds</td>
+</tr>
+</tbody>
+</table>
 <h1 id="hessians-and-vibrational-frequencies-vibrational-frequencies">Vibrational frequencies<a class="headerlink" href="#hessians-and-vibrational-frequencies-vibrational-frequencies" title="Permanent link">&para;</a></h1>
 <p>The nuclear hessian which is used to compute the vibrational frequencies
 can be computed by finite difference for any ab initio wave-function
@@ -31036,8 +31062,7 @@ below:</p>
        end
 </code></pre>
 <ul>
-<li>Third approach illustrates the use of multiple <code>fix atom</code>
-        directives:</li>
+<li>Third approach illustrates the use of multiple <code>fix atom</code> directives:</li>
 </ul>
 <pre><code>       constraints 
          fix atom 1 
@@ -31058,18 +31083,7 @@ to be accounted for when comparing total energies. The <code>spring bond</code>
 directive can be repeated within a given constraints block. If the
 spring between the same pair of atoms is defined more than once, it will
 be replaced by the latest specification in the order it appears in the
-input block.</p>
-<ul>
-<li>
-<p>spring dihedral places a spring with....</p>
-</li>
-<li>
-<p>spring bondings places a spring with....</p>
-</li>
-<li>
-<p>penalty pbondings places a penalty function with....</p>
-</li>
-</ul></section><section class="print-page" id="nudged-elastic-band-and-zero-temperature-string-methods" heading-number="14.4"><h1 id="nudged-elastic-band-and-zero-temperature-string-methods-nudged-elastic-band-and-zero-temperature-string-methods">Nudged Elastic Band and Zero Temperature String Methods</h1><h2 id="nudged-elastic-band-neb-method">Nudged Elastic Band (NEB) method<a class="headerlink" href="#nudged-elastic-band-and-zero-temperature-string-methods-nudged-elastic-band-neb-method" title="Permanent link">&para;</a></h2>
+input block.</p></section><section class="print-page" id="nudged-elastic-band-and-zero-temperature-string-methods" heading-number="14.4"><h1 id="nudged-elastic-band-and-zero-temperature-string-methods-nudged-elastic-band-and-zero-temperature-string-methods">Nudged Elastic Band and Zero Temperature String Methods</h1><h2 id="nudged-elastic-band-neb-method">Nudged Elastic Band (NEB) method<a class="headerlink" href="#nudged-elastic-band-and-zero-temperature-string-methods-nudged-elastic-band-neb-method" title="Permanent link">&para;</a></h2>
 <h3 id="nudged-elastic-band-and-zero-temperature-string-methods-overview">Overview<a class="headerlink" href="#nudged-elastic-band-and-zero-temperature-string-methods-overview" title="Permanent link">&para;</a></h3>
 <p>The NEB module is an implementation of the nudged elastic band (NEB)
 method of Jonsson et al., and it is one of two drivers in NWChem that
