@@ -3400,22 +3400,40 @@ be IPRT &gt; 5, 10, and 50.</p>
 <h2 id="print-and-noprint">PRINT and NOPRINT<a class="headerlink" href="#print-and-noprint" title="Permanent link">&para;</a></h2>
 <p>The coupled cluster module supports the standard NWChem print control
 keywords, although very little in the code is actually hooked into this
-mechanism
-yet.</p>
-<center>
-
-| Item                      | Print Level | Description                   |
-| ------------------------- | ----------- | ----------------------------- |
-| "reference"               | high        | Wavefunction information      |
-| "guess pair energies"     | debug       | MP2 pair energies             |
-| "byproduct energies"      | default     | Intermediate energies         |
-| "term debugging switches" | debug       | Switches for individual terms |
-
-</center>
-
+mechanism yet.  </p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Print Level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&ldquo;reference&rdquo;</td>
+<td>high</td>
+<td>Wavefunction information</td>
+</tr>
+<tr>
+<td>&ldquo;guess pair energies&rdquo;</td>
+<td>debug</td>
+<td>MP2 pair energies</td>
+</tr>
+<tr>
+<td>&ldquo;byproduct energies&rdquo;</td>
+<td>default</td>
+<td>Intermediate energies</td>
+</tr>
+<tr>
+<td>&ldquo;term debugging switches&rdquo;</td>
+<td>debug</td>
+<td>Switches for individual terms</td>
+</tr>
+</tbody>
+</table>
 <h2 id="methods-tasks-recognized">Methods (Tasks) Recognized<a class="headerlink" href="#methods-tasks-recognized" title="Permanent link">&para;</a></h2>
-<p>Currently available methods
-are</p>
+<p>Currently available methods are</p>
 <ul>
 <li>CCSD - Full iterative inclusion of single and double excitations</li>
 <li>CCSD+T(CCSD) - The fourth order triples contribution computed with converged
@@ -3423,8 +3441,7 @@ are</p>
 <li>CCSD(T) - The linearized triples approximation due to Raghavachari.</li>
 </ul>
 <p>The calculation is invoked using the TASK directive, so to perform a
-CCSD+T(CCSD) calculation, for example, the input file should include the
-directive</p>
+CCSD+T(CCSD) calculation, for example, the input file should include the directive</p>
 <pre><code> TASK CCSD+T(CCSD)
 </code></pre>
 <p>Lower-level results which come as by-products (such as MP3/MP4) of the
@@ -3435,8 +3452,8 @@ directive is considered the primary result.</p>
 <p>The information in this section is intended for use by experts (both
 with the methodology and with the code), primarily for debugging and
 development work. Messing with stuff in listed in this section will
-probably make your calculation quantitatively wrong! Consider yourself
-warned!</p>
+probably make your calculation quantitatively wrong! 
+Consider yourself warned!</p>
 <h3 id="switching-on-and-off-terms">Switching On and Off Terms<a class="headerlink" href="#switching-on-and-off-terms" title="Permanent link">&para;</a></h3>
 <p>The /DEBUG/ common block contains a number of arrays which control the
 calculation of particular terms in the program. These are 15-element
