@@ -677,18 +677,9 @@ additional platforms and better environment variables over time.">
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-nersc-edison" class="md-nav__link">
+  <a href="#example-hpe-cray" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: NERSC Edison
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-nersc-cori" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: NERSC Cori
+      Example: HPE Cray
     </span>
   </a>
   
@@ -3616,18 +3607,9 @@ additional platforms and better environment variables over time.">
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-nersc-edison" class="md-nav__link">
+  <a href="#example-hpe-cray" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: NERSC Edison
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-nersc-cori" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: NERSC Cori
+      Example: HPE Cray
     </span>
   </a>
   
@@ -4439,44 +4421,9 @@ BLASOPT=-lsci_pgi_mp
 <p>Set the environmental variables for compilation:</p>
 <pre><code>% export ARMCI_NETWORK=MPI-PR
 </code></pre>
-<h4 id="example-nersc-edison">Example: NERSC Edison<a class="headerlink" href="#example-nersc-edison" title="Permanent link">&para;</a></h4>
-<p>These are variables used for compilation on <a href="https://www.nersc.gov/assets/Uploads/Edison-Overview.pdf">NERSC Edison, a Cray
-XC30</a>, as of
-October 23rd 2015, when using Intel compilers (i.e. after issuing the
-commands <code>module swap PrgEnv-gnu PrgEnv-intel</code>). Very similar settings
-can be applied to other Cray XC30 computers, such as <a href="http://www.archer.ac.uk">the UK ARCHER
-computer</a></p>
-<pre><code>CRAY_CPU_TARGET=sandybridge 
-NWCHEM_TARGET=LINUX64  
-ARMCI_NETWORK=MPI-PR  
-USE_MPI=y
-SCALAPACK=&quot;-L$MKLROOT/lib/intel64 -lmkl_scalapack_ilp64 -lmkl_intel_ilp64 -lmkl_core -lmkl_sequential \\  
--lmkl_blacs_intelmpi_ilp64 -lpthread -lm&quot;  
-SCALAPACK_SIZE=8  
-BLAS_SIZE=8  
-BLASOPT=&quot;-L$MKLROOT/lib/intel64 -lmkl_intel_ilp64 -lmkl_core -lmkl_sequential -lpthread -lm&quot;  
-LD_LIBRARY_PATH=/opt/gcc/4.9.2/snos/lib64:$LD_LIBRARY_PATH 
-PATH=/opt/gcc/4.9.2/bin:$PATH  
-CRAYPE_LINK_TYPE=dynamic 
-</code></pre>
-<p>To compile</p>
-<pre><code>make nwchem_config 
-make FC=ftn
-</code></pre>
-<p>The following env. variables needs to added to the batch queue
-submission script   </p>
-<pre><code>MPICH_GNI_MAX_VSHORT_MSG_SIZE=8192
-MPICH_GNI_MAX_EAGER_MSG_SIZE=131027   
-MPICH_GNI_NUM_BUFS=300   
-MPICH_GNI_NDREG_MAXSIZE=16777216  
-MPICH_GNI_MBOX_PLACEMENT=nic    
-COMEX_MAX_NB_OUTSTANDING=6
-</code></pre>
-<h4 id="example-nersc-cori">Example: NERSC Cori<a class="headerlink" href="#example-nersc-cori" title="Permanent link">&para;</a></h4>
-<p>These are variables used for compilation on the Haswell partition of
-<a href="https://www.nersc.gov/systems/cori/">NERSC Edison, a Cray
-XC40</a>, as of
-November 6th 2016, when using Intel compilers (i.e. after issuing the
+<h4 id="example-hpe-cray">Example: HPE Cray<a class="headerlink" href="#example-hpe-cray" title="Permanent link">&para;</a></h4>
+<p>These are variables used for compilation a Cray HPE system
+ using Intel compilers (i.e. after issuing the
 commands <code>module swap PrgEnv-gnu
 PrgEnv-intel</code>).</p>
 <pre><code>export NWCHEM_TARGET=LINUX64  
@@ -4497,15 +4444,6 @@ export CRAYPE_LINK_TYPE=dynamic
 <p>To compile</p>
 <pre><code>make nwchem_config
 make FC=ftn
-</code></pre>
-<p>The following env. variables needs to added to the batch queue
-submission script</p>
-<pre><code>MPICH_GNI_MAX_VSHORT_MSG_SIZE=10000  
-MPICH_GNI_MAX_EAGER_MSG_SIZE=98304  
-MPICH_GNI_NUM_BUFS=300  
-MPICH_GNI_NDREG_MAXSIZE=16777216 
-MPICH_GNI_MBOX_PLACEMENT=nic
-COMEX_MAX_NB_OUTSTANDING=6
 </code></pre>
 <h2 id="how-to-intel-xeon-phi">How-to: Intel Xeon Phi<a class="headerlink" href="#how-to-intel-xeon-phi" title="Permanent link">&para;</a></h2>
 <p>This section describes both the newer KNL and older KNC hardware, in
@@ -4803,7 +4741,7 @@ forum discussions</p>
 <p>Another essential prerequisite step is to install Mpich, which can be
 found at the following
 URL</p>
-<p><a href="http://www.mpich.org/static/tarballs/1.4.1p1/mpich2-1.4.1p1-win-ia32.msi">http://www.mpich.org/static/tarballs/1.4.1p1/mpich2-1.4.1p1-win-ia32.msi</a></p>
+<p><a href="https://web.archive.org/web/20190105171104/http://www.mpich.org/static/tarballs/1.4.1p1/mpich2-1.4.1p1-win-ia32.msi">https://web.archive.org/web/20190105171104/http://www.mpich.org/static/tarballs/1.4.1p1/mpich2-1.4.1p1-win-ia32.msi</a></p>
 <p>Once Mpich is installed, you should copy the installation files to a
 different location to avoid the failure of the tools compilation. You
 can use the following command</p>
