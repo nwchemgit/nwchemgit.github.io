@@ -4356,10 +4356,6 @@ hardware include:  </p>
 <td><a href="https://github.com/xianyi/OpenBLAS">https://github.com/xianyi/OpenBLAS</a></td>
 </tr>
 <tr>
-<td>GotoBLAS</td>
-<td><a href="https://www.tacc.utexas.edu/research-development/tacc-software/gotoblas2">https://www.tacc.utexas.edu/research-development/tacc-software/gotoblas2</a></td>
-</tr>
-<tr>
 <td>Intel MKL</td>
 <td><a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html">https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html</a></td>
 </tr>
@@ -4422,9 +4418,9 @@ using the following procedure:</p>
 </code></pre>
 <p>Notes:</p>
 <ul>
-<li>GotoBLAS2 (or OpenBLAS) can be installed with 64bit integers. This
-    is accomplished by compiling the GotoBLAS2 library after having
-    edited the GotoBLAS2 Makefile.rule file and un-commenting the line
+<li>OpenBLAS can be installed with 64bit integers. This
+    is accomplished by compiling the OpenBLAS library after having
+    edited the OpenBLAS Makefile.rule file and un-commenting the line
     containing the INTERFACE64 definition. In other words, the line</li>
 </ul>
 <pre><code>          #INTERFACE64 = 1
@@ -4433,13 +4429,10 @@ using the following procedure:</p>
 <pre><code>          INTERFACE64 = 1
 </code></pre>
 <ul>
-<li>ACML and MKL can support 64-bit integers if the appropriate library
+<li>AOCL and MKL can support 64-bit integers if the appropriate library
     is chosen. For MKL, one can choose the ILP64 Version of Intel® MKL
     and the correct recipe can be extracted from the website
-    <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-link-line-advisor.html">https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-link-line-advisor.html</a>.
-    For ACML the int64 libraries should be chosen, e.g. in the case of
-    ACML 4.4.0 using a PGI compiler
-    /opt/acml/4.4.0/pgi64_int64/lib/libacml.a</li>
+    <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-link-line-advisor.html">https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-link-line-advisor.html</a>.</li>
 </ul>
 <h3 id="compiling-nwchem-automated-build-of-openblasscalapack"><span style="color:#FF0000">Automated build of OpenBLAS/ScaLAPACK</span><a class="headerlink" href="#compiling-nwchem-automated-build-of-openblasscalapack" title="Permanent link">&para;</a></h3>
 <p><strong><em><span style="color:#FF0000">New in NWChem 7.0.2</span></em></strong>:   </p>
@@ -38227,7 +38220,7 @@ Dam, E. Aprà, K. Kowalski, J. Chem. Theory Comput. 9, 1949 (2013))</p>
 <p><img alt="GPU_MRCCSD_T.png" src="GPU_MRCCSD_T.png" /></p>
 <h1 id="benchmarks-performance-tests-of-the-xeon-phi-implementation-of-non-iterative-part-of-the-ccsdt-approach">Performance tests of the Xeon Phi implementation of non-iterative part of the CCSD(T) approach<a class="headerlink" href="#benchmarks-performance-tests-of-the-xeon-phi-implementation-of-non-iterative-part-of-the-ccsdt-approach" title="Permanent link">&para;</a></h1>
 <p>Tests  of the Xeon Phi CCSD(T) implementation
-performed on the EMSL <a href="http://www.emsl.pnl.gov/emslweb/instruments/computing-cascade-atipa-1440-intel-xeon-phi-node-fdr-infiniband-linux-cluster">cascade</a>
+performed on the EMSL <a href="https://web.archive.org/web/20170731230327/http://www.emsl.pnl.gov/emslweb/instruments/computing-cascade-atipa-1440-intel-xeon-phi-node-fdr-infiniband-linux-cluster">cascade</a>
 system at PNNL </p>
 <p><img alt="Triplet_updated_feb2015.png" src="Triplet_updated_feb2015.png" /></p>
 <p>Aprà, E.; Klemm, M.; Kowalski, K., &ldquo;Efficient Implementation of
@@ -38388,7 +38381,7 @@ The input file is available at this <a href="benchmarks/siosi8.nw">link</a>.</p>
 <p><br>
 Hardware used:</p>
 <ul>
-<li>EMSL cascade <a href="https://www.emsl.pnnl.gov/MSC/UserGuide/cascade/cascade_overview.html#nodes">specifications</a>  </li>
+<li>EMSL cascade <a href="https://web.archive.org/web/20210331015028/https://www.emsl.pnnl.gov/MSC/UserGuide/cascade/cascade_overview.html#nodes">specifications</a>  </li>
 <li>EMSL tahoma <a href="https://www.emsl.pnnl.gov/MSC/UserGuide/tahoma/tahoma_overview.html#nodes">specifications</a></li>
 </ul>
 <p><img alt="benchmarks/siosi8.png" src="benchmarks/siosi8.png" /></p></section><section class="print-page" id="known-bugs" heading-number="21"><h1 id="known-bugs-known-bugs">Known Bugs<a class="headerlink" href="#known-bugs-known-bugs" title="Permanent link">&para;</a></h1>
@@ -40415,7 +40408,6 @@ srun  -N $SLURM_NNODES  -l  apptainer exec --bind $BINDS --workdir `pwd` $MYIMG 
         <script src="js/print-site.js"></script>
       
         <script src="css/mathjax.js"></script>
-      
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
       

@@ -4078,10 +4078,6 @@ hardware include:  </p>
 <td><a href="https://github.com/xianyi/OpenBLAS">https://github.com/xianyi/OpenBLAS</a></td>
 </tr>
 <tr>
-<td>GotoBLAS</td>
-<td><a href="https://www.tacc.utexas.edu/research-development/tacc-software/gotoblas2">https://www.tacc.utexas.edu/research-development/tacc-software/gotoblas2</a></td>
-</tr>
-<tr>
 <td>Intel MKL</td>
 <td><a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html">https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl.html</a></td>
 </tr>
@@ -4144,9 +4140,9 @@ using the following procedure:</p>
 </code></pre>
 <p>Notes:</p>
 <ul>
-<li>GotoBLAS2 (or OpenBLAS) can be installed with 64bit integers. This
-    is accomplished by compiling the GotoBLAS2 library after having
-    edited the GotoBLAS2 Makefile.rule file and un-commenting the line
+<li>OpenBLAS can be installed with 64bit integers. This
+    is accomplished by compiling the OpenBLAS library after having
+    edited the OpenBLAS Makefile.rule file and un-commenting the line
     containing the INTERFACE64 definition. In other words, the line</li>
 </ul>
 <pre><code>          #INTERFACE64 = 1
@@ -4155,13 +4151,10 @@ using the following procedure:</p>
 <pre><code>          INTERFACE64 = 1
 </code></pre>
 <ul>
-<li>ACML and MKL can support 64-bit integers if the appropriate library
+<li>AOCL and MKL can support 64-bit integers if the appropriate library
     is chosen. For MKL, one can choose the ILP64 Version of Intel® MKL
     and the correct recipe can be extracted from the website
-    <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-link-line-advisor.html">https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-link-line-advisor.html</a>.
-    For ACML the int64 libraries should be chosen, e.g. in the case of
-    ACML 4.4.0 using a PGI compiler
-    /opt/acml/4.4.0/pgi64_int64/lib/libacml.a</li>
+    <a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-link-line-advisor.html">https://www.intel.com/content/www/us/en/developer/tools/oneapi/onemkl-link-line-advisor.html</a>.</li>
 </ul>
 <h3 id="automated-build-of-openblasscalapack"><span style="color:#FF0000">Automated build of OpenBLAS/ScaLAPACK</span><a class="headerlink" href="#automated-build-of-openblasscalapack" title="Permanent link">&para;</a></h3>
 <p><strong><em><span style="color:#FF0000">New in NWChem 7.0.2</span></em></strong>:   </p>
@@ -4949,7 +4942,6 @@ will allow you to overwrite the value of <code>nwchem_basis_library</code> in yo
         <script src="js/print-site.js"></script>
       
         <script src="css/mathjax.js"></script>
-      
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
       
