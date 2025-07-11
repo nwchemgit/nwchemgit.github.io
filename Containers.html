@@ -3101,20 +3101,40 @@
 
 <h1 id="containers">Containers<a class="headerlink" href="#containers" title="Permanent link">&para;</a></h1>
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
-<p>Dockerfile recipes are available at the repository <a href="https://github.com/nwchemgit/nwchem-dockerfiles">https://github.com/nwchemgit/nwchem-dockerfiles</a></p>
-<p>Docker images of the 7.2.0 release are hosted at <a href="https://github.com/features/packages">https://ghcr.io</a> at the link <a href="https://github.com/nwchemgit/nwchem-dockerfiles/pkgs/container/nwchem-720">https://github.com/nwchemgit/nwchem-dockerfiles/pkgs/container/nwchem-720</a> and can be used with the following command  </p>
-<pre><code> docker run --shm-size 256m -u `id -u` --rm -v [host_system_dir]:/data ghcr.io/nwchemgit/nwchem-dev input.nw
+<p>Instruction for using the NWChem Docker container with the <a href="https://docs.docker.com/compose">docker compose</a> command</p>
+<ol>
+<li>
+<p>Install docker  as described in <a href="https://docs.docker.com/engine/install">https://docs.docker.com/engine/install</a></p>
+</li>
+<li>
+<p>Download the <a href="https://raw.githubusercontent.com/nwchemgit/nwchem-dockerfiles/refs/heads/master/nwchem-dev.mpipr/compose.yaml">compose.yaml</a> file</p>
+</li>
+</ol>
+<pre><code> wget https://raw.githubusercontent.com/nwchemgit/nwchem-dockerfiles/refs/heads/master/nwchem-dev.mpipr/compose.yaml
 </code></pre>
-<p>For example, the following command can be used when starting from the <code>/tmp</code> directory:</p>
-<pre><code> docker run --shm-size 256m -u `id -u` --rm -v $(pwd):/data ghcr.io/nwchemgit/nwchem-dev /data/input.nw
+<ol>
+<li>Create the nwchem service</li>
+</ol>
+<pre><code>docker compose up -d
 </code></pre>
-<p>where the input file <code>input.nw</code> is located in the <code>/tmp</code> directory.</p>
-<p>The following docker command will run NWChem in parallel using three processes </p>
-<pre><code>docker run --shm-size 256m  -u `id -u` --rm  --entrypoint='mpirun' -v $(pwd):/data ghcr.io/nwchemgit/nwchem-dev  -np 2 nwchem /data/xvdw.nw
+<p>In some installation, <code>docker compose</code> is available as the command <code>docker-compose</code>, therefore in those cases, this command becomes</p>
+<pre><code>docker-compose up -d
 </code></pre>
-<p>This example uses the input file <code>xvdw.nw</code> available on the host directory <code>/tmp</code></p>
-<p>The associated Dockerfile is available at<br />
-<a href="https://github.com/nwchemgit/nwchem-dockerfiles/blob/master/nwchem-dev/Dockerfile">https://github.com/nwchemgit/nwchem-dockerfiles/blob/master/nwchem-dev/Dockerfile</a> </p>
+<ol>
+<li>Run NWChem</li>
+</ol>
+<pre><code> docker compose run nwchem h2o.nw
+</code></pre>
+<p>In some installation, <code>docker compose</code> is available as the command <code>docker-compose</code>, therefore in those cases, this command becomes</p>
+<pre><code> docker-compose run nwchem h2o.nw
+</code></pre>
+<p>In the example above the input file name is <code>h2o.nw</code>. <br />
+The default setting will run NWChem using 2 processes.
+If you would like to use more processes,
+then you would have to set the environment variable <code>MYNPROC</code> to the number of processes plus one.
+For example, if you wish to use 4 processes, then you will execute the following (bash syntax)</p>
+<pre><code>export MYNPROC=5
+</code></pre>
 <h2 id="singularityapptainer">Singularity/Apptainer<a class="headerlink" href="#singularityapptainer" title="Permanent link">&para;</a></h2>
 <p>Singularity/Apptainer recipes for NWChem are available at.<br />
 <a href="https://github.com/edoapra/nwchem-singularity">https://github.com/edoapra/nwchem-singularity</a></p>
