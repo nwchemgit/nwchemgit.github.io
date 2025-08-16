@@ -5980,13 +5980,6 @@ Xeon CPU hosts</p>
 Xeon Phi card</p>
 <pre><code> % setenv MIC_USE_2MB_BUFFER 16K
 </code></pre>
-<p><span style="color:red"><strong>Very important</strong></span>: when running on
-clusters equipped with Xeon Phi and Infiniband network hardware
-(requiring <code>ARMCI_NETWORK=OPENIB</code>), the following env. variable is
-required, even <span style="color:red">in the case when the Xeon Phi
-hardware is not utilized</span>.</p>
-<pre><code> % setenv ARMCI_OPENIB_DEVICE mlx4_0
-</code></pre>
 <h3 id="ccsdt-method-with-cuda">CCSD(T) method with CUDA<a class="headerlink" href="#ccsdt-method-with-cuda" title="Permanent link">&para;</a></h3>
 <p>NWChem 6.3 offers a possibility of using GPU accelerators to perform the
 most computationally intensive part of the CCSD(T) calculations
