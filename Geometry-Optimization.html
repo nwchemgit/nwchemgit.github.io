@@ -3581,11 +3581,11 @@ permanent directory.</p>
 <p>The script rasmolmovie in the NWChem contrib directory can be used to
 turn these into an animated GIF movie.</p>
 <h3 id="i-pi-socket-communication">i-PI Socket communication<a class="headerlink" href="#i-pi-socket-communication" title="Permanent link">&para;</a></h3>
-<pre><code>   SOCKET (UNIX || IPI_CLIENT) &lt;string socketname default (see input description)&gt;  
+<pre><code>   SOCKET (UNIX | IPI_CLIENT) &lt;socketname&gt; [RETRIES &lt;integer&gt;] [DELAY &lt;float&gt;]
 </code></pre>
-<p>The SOCKET directive enables NWChem to communicate with other software
+<p>The <code>SOCKET</code> directive enables NWChem to communicate with other software
 packages &ndash; such as <a href="http://ipi-code.org/">i-PI</a> or
-<a href="https://wiki.fysik.dtu.dk/ase/ase/calculators/socketio/socketio.html">ASE</a> &ndash; via the i-PI socket protocol.</p>
+<a href="https://wiki.fysik.dtu.dk/ase/ase/calculators/socketio/socketio.html">ASE</a> or <a href="https://github.com/TheochemUI/eOn/pull/244">EON</a> &ndash; via the i-PI socket protocol.</p>
 <p>Communication is done either over Unix sockets (<code>SOCKET UNIX</code>) or IP
 sockets (<code>SOCKET IPI_CLIENT</code>):</p>
 <ul>
@@ -3595,6 +3595,15 @@ sockets (<code>SOCKET IPI_CLIENT</code>):</p>
 <li>IP sockets - NWChem will bind to the IP address and port
     specified by <code>&lt;socketname&gt;</code>. If not specified, <code>&lt;socketname&gt;</code>
     will default to <code>127.0.0.1:31415</code>.</li>
+</ul>
+<p>The behavior of the client when first attempting to connect to the server can be
+controlled with two optional keywords:</p>
+<ul>
+<li><code>RETRIES &lt;integer&gt;</code>: Specifies the maximum number of times the client will try
+  to connect to the server socket before exiting with an error. If not provided,
+  this defaults to 30 tries.</li>
+<li><code>DELAY &lt;integer&gt;</code>: Specifies the time in seconds to wait between failed
+  connection attempts. If not provided, this defaults to 2 seconds.</li>
 </ul>
 <p>The <code>SOCKET</code> directive is only useful when used in conjunction with other
 software packages that support communication via the i-PI socket
