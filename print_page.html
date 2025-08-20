@@ -26616,7 +26616,8 @@ input block with the input options as:</p>
   [lineq   &lt;integer lineq default 1&gt;]  
   [zeta &lt;real zeta default 0.98&gt;]  
   [gamma_s &lt;real gammas default 1.0&gt;]  
-  [sw_tol &lt;real swtol default 1.0e-4&gt;]  
+  [sw_tol &lt;real swtol default 1.0e-4&gt;]
+  [charge_correction &lt;no||scale||lagrangian default lagrangian&gt;]  
   [do_gasphase  &lt;logical do_gasphase default True&gt;] 
   [do_cosmo_ks]
   [do_cosmo_yk]
@@ -26737,6 +26738,12 @@ surface charge at a particular point is eliminated. The values of the
 switching function lie in the domain from 0 to 1. This value should not
 be set too small as that leads to instabilities in the linear system
 solvers. The default value is <code>sw_tol 1.0e-4</code>.</p>
+<h4 id="solvation-models-cosmo-charge_correction-keyword">COSMO: CHARGE_CORRECTION keyword<a class="headerlink" href="#solvation-models-cosmo-charge_correction-keyword" title="Permanent link">&para;</a></h4>
+<p>The <code>charge_correction</code> input option defines the surface charge correction to use.<br />
+With the input line <code>charge_correction no</code>, no surface charge corrections are used.<br />
+With the input line <code>charge_correction scale</code>, both the the electron surface charges and the nuclear surface charges are scaled.<br />
+With the default input line <code>charge_correction lagrangian</code>, a lagrangian constraint is used to variationally correct the charges.<br />
+The default is <code>charge_correction lagrangian</code>  unless the Klamt-Schuurmann COSMO model is used when the default becomes <code>charge_correction scale</code>.           </p>
 <h4 id="solvation-models-cosmo-do_gasphase-keyword">COSMO: DO_GASPHASE keyword<a class="headerlink" href="#solvation-models-cosmo-do_gasphase-keyword" title="Permanent link">&para;</a></h4>
 <p><code>do_gasphase</code> is a flag to control whether the calculation of the
 solvation energy is preceded by a gas phase calculation. The default is
