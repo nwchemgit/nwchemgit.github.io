@@ -4025,7 +4025,7 @@ at the <a href="#smd">SMD Model documentation</a>  </p>
 <p><strong>(New since August 31st 2025 in master branch)</strong><br />
 <code>cavity [vdw|ses]</code><br />
 The <code>vdw</code> dewfault option uses the York Karplus<sup id="fnref2_footnote_2"><a class="footnote-ref" href="#fn_footnote_2">2</a></sup> prescription for creating the cavity.<br />
-Instead, the <code>ses</code> cavity construction approach creates a solvent-excluding surface (SES), using the GEPOL93 algorithm[@pasculahuir1994].</p>
+Instead, the <code>ses</code> cavity construction approach creates a solvent-excluding surface (SES), using the GEPOL93 algorithm<sup id="fnref_footnote_7"><a class="footnote-ref" href="#fn_footnote_7">7</a></sup>.</p>
 <h4 id="cosmo-ndiv-keyword">COSMO: NDIV keyword<a class="headerlink" href="#cosmo-ndiv-keyword" title="Permanent link">&para;</a></h4>
 <p><strong>(New since August 31st 2025 in master branch)</strong> <br />
 <code>ndiv [coarse|fine|xfine|huge|xxl]</code><br />
@@ -4098,7 +4098,7 @@ run directory.  </p>
 <h2 id="smd">SMD<a class="headerlink" href="#smd" title="Permanent link">&para;</a></h2>
 <h3 id="overview_2">Overview<a class="headerlink" href="#overview_2" title="Permanent link">&para;</a></h3>
 <p>SMD denotes “solvation model based on density” and it is described in
-detail in the 2009 paper by Marenich, Cramer and Truhlar<sup id="fnref_footnote_8"><a class="footnote-ref" href="#fn_footnote_8">7</a></sup>.  </p>
+detail in the 2009 paper by Marenich, Cramer and Truhlar<sup id="fnref_footnote_8"><a class="footnote-ref" href="#fn_footnote_8">8</a></sup>.  </p>
 <p>The SMD model is a universal continuum solvation model where “universal”
 denotes its applicability to any charged or uncharged solute in any
 solvent or liquid medium for which a few key descriptors are known. The
@@ -4123,7 +4123,7 @@ suggested by Stefanovich and Truong and by using the SMD
 intrinsic atomic Coulomb radii. These radii have been optimized for H,
 C, N, O, F, Si, P, S, Cl, and Br. For any other atom the current
 implementation of the SMD model uses scaled values of the van der Waals
-radii of Mantina et al<sup id="fnref_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">8</a></sup>.</p>
+radii of Mantina et al<sup id="fnref_footnote_9"><a class="footnote-ref" href="#fn_footnote_9">9</a></sup>.</p>
 <p>The scaling factor equals 1.52 for group 17 elements heavier than Br
 (i.e., for I and At) and 1.18 for all other elements for which there are
 no optimized SMD radii.</p>
@@ -4162,7 +4162,7 @@ when set to a <code>true</code> value.</p>
 <p>a <code>solvent</code> keyword from the short name entry in the
 <a href="#solvents-list-solvent-keyword">list of available SMD solvent names</a>.</p>
 <p>When a solvent is specified by name, the descriptors for the solvent are
-based on the Minnesota Solvent Descriptor Database<sup id="fnref_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">9</a></sup>.  </p>
+based on the Minnesota Solvent Descriptor Database<sup id="fnref_footnote_10"><a class="footnote-ref" href="#fn_footnote_10">10</a></sup>.  </p>
 <p>The user can specify a solvent (by using a string using up to eight characters)
 that is not on the list by using a new
 solvent keyword and introducing user-provided values for the
@@ -5187,7 +5187,7 @@ end
 </tbody>
 </table>
 <h2 id="usage-tips">Usage Tips<a class="headerlink" href="#usage-tips" title="Permanent link">&para;</a></h2>
-<p>Authors of paper <sup id="fnref2_footnote_8"><a class="footnote-ref" href="#fn_footnote_8">7</a></sup> report that<br />
+<p>Authors of paper <sup id="fnref2_footnote_8"><a class="footnote-ref" href="#fn_footnote_8">8</a></sup> report that<br />
 &rdquo; &hellip; <em>the SMD/COSMO/NWChem calculations we employed finer grids (options minbem=3, maxbem=4, ificos=1) because the default NWChem tessellation parameters (options: minbem=2, maxbem=3, ificos=0) produced very large errors in solvation free energies</em>.&rdquo;<br />
 Since the <code>maxbem</code> keyword is no longer in use, this paper&rsquo;s recommended input translate into</p>
 <pre><code>cosmo
@@ -5217,14 +5217,17 @@ end
 <li id="fn_footnote_6">
 <p>Barone, V.; Cossi, M.; Tomasi, J. A New Definition of Cavities for the Computation of Solvation Free Energies by the Polarizable Continuum Model. <em>The Journal of Chemical Physics</em> <strong>1997</strong>, <em>107</em> (8), 3210–3221. <a href="https://doi.org/10.1063/1.474671">https://doi.org/10.1063/1.474671</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
+<li id="fn_footnote_7">
+<p>Pascual-ahuir, J. L.; Silla, E.; Tuñon, I. GEPOL: An Improved Description of Molecular Surfaces. III. A New Algorithm for the Computation of a Solvent-Excluding Surface. <em>Journal of Computational Chemistry</em> <strong>1994</strong>, <em>15</em> (10), 1127–1138. https://doi.org/<a href="https://doi.org/10.1002/jcc.540151009">https://doi.org/10.1002/jcc.540151009</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
 <li id="fn_footnote_8">
-<p>Marenich, A. V.; Cramer, C. J.; Truhlar, D. G. Universal Solvation Model Based on Solute Electron Density and on a Continuum Model of the Solvent Defined by the Bulk Dielectric Constant and Atomic Surface Tensions. <em>The Journal of Physical Chemistry B</em> <strong>2009</strong>, <em>113</em> (18), 6378–6396. <a href="https://doi.org/10.1021/jp810292n">https://doi.org/10.1021/jp810292n</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_8" title="Jump back to footnote 7 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_8" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p>Marenich, A. V.; Cramer, C. J.; Truhlar, D. G. Universal Solvation Model Based on Solute Electron Density and on a Continuum Model of the Solvent Defined by the Bulk Dielectric Constant and Atomic Surface Tensions. <em>The Journal of Physical Chemistry B</em> <strong>2009</strong>, <em>113</em> (18), 6378–6396. <a href="https://doi.org/10.1021/jp810292n">https://doi.org/10.1021/jp810292n</a>.&#160;<a class="footnote-backref" href="#fnref_footnote_8" title="Jump back to footnote 8 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2_footnote_8" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_9">
-<p>Haynes, W. M. CRC Handbook of Chemistry and Physics; Mantina, M., Valero, R., Cramer, C. J., Truhlar, D. G., Eds.; Taylor &amp; Francis Group, 2013; pp 9–49.&#160;<a class="footnote-backref" href="#fnref_footnote_9" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+<p>Haynes, W. M. CRC Handbook of Chemistry and Physics; Mantina, M., Valero, R., Cramer, C. J., Truhlar, D. G., Eds.; Taylor &amp; Francis Group, 2013; pp 9–49.&#160;<a class="footnote-backref" href="#fnref_footnote_9" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 <li id="fn_footnote_10">
-<p>Winget, P.; Dolney, D. M.; Giesen, D. J.; Cramer, C. J.; Truhlar, D. G. Minnesota Solvent Descriptor Database. <em>Minneapolis, MN: Department of Chemistry and Supercomputer Institute</em> <strong>1999</strong>.&#160;<a class="footnote-backref" href="#fnref_footnote_10" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+<p>Winget, P.; Dolney, D. M.; Giesen, D. J.; Cramer, C. J.; Truhlar, D. G. Minnesota Solvent Descriptor Database. <em>Minneapolis, MN: Department of Chemistry and Supercomputer Institute</em> <strong>1999</strong>.&#160;<a class="footnote-backref" href="#fnref_footnote_10" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
