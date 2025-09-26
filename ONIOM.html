@@ -3392,14 +3392,14 @@ are specified, then so must the other.</p>
 <h2 id="real-model-and-intermediate-geometries">Real, model and intermediate geometries<a class="headerlink" href="#real-model-and-intermediate-geometries" title="Permanent link">&para;</a></h2>
 <p>The geometry and total charge of the full or real system should be
 specified as normal using the <a href="Geometry.html">geometry</a> directive.
-If <span class="arithmatex">\(N_{model}\)</span> of the atoms are to be included in the model system,
+If N<sub>model</sub> of the atoms are to be included in the model system,
 then these should be specified first in the geometry. Similarly, in a
-three-layer calculation, if there are <span class="arithmatex">\(N_{inter}\)</span> atoms to be included
+three-layer calculation, if there are N<sub>inter</sub> atoms to be included
 in the intermediate system, then these should also be arranged together
 at the beginning of the geometry. The implict assumption is that the
 model system is a subset of the intermediate system which is a subset of
 the real system. The number of atoms to be included in the model and
-intemediate systems are specified using the MODEL and INTER directives.
+intemediate systems are specified using the <code>MODEL</code> and <code>INTER</code> directives.
 Optionally, the total charge of the model and intermediate systems may
 be adjusted. The default is that all three systems have the same total
 charge.</p>
@@ -3565,7 +3565,7 @@ workstation. It will print these geometries before starting any
 calculations which you can then terminate.</p>
 <p>E.g., in a calculation on Fe(III) surrounded by some ligands, it is hard
 to converge the full (real) system from the atomic guess so as to obtain
-a <span class="arithmatex">\(d^5\)</span> configuration for the iron atom since the <em>d</em> orbitals are
+a d<sup>5</sup> configuration for the iron atom since the <em>d</em> orbitals are
 often nominally lower in energy than some of the ligand orbitals. The
 most effective mechanism is to converge the isolated Fe(III) and then to
 use the <a href="Hartree-Fock-Theory-for-Molecules.html#vectors-fragment-superposition-of-fragment-molecular-orbitals">fragment
