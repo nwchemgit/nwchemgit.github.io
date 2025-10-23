@@ -38915,11 +38915,11 @@ available:</p>
     modern ones like InfiniBand. See
     <a href="http://hpc.pnl.gov/globalarrays/support.shtml">http://hpc.pnl.gov/globalarrays/support.shtml</a> for details.</li>
 <li>ARMCI-MPI - This library is a completely separate implementation of
-    the ARMCI interface by Argonne and Intel. It uses the one-sided
+    the ARMCI interface maintained by Jeff Hammond. It uses the one-sided
     communication features of MPI, rather than a platform-specific
     conduit. It currents provides both MPI-2 and MPI-3 implementations;
     the MPI-3 one is supported by nearly all platforms. See
-    <a href="https://github.com/pmodels/mpich/blob/main/doc/wiki/Index.md">https://github.com/pmodels/mpich/blob/main/doc/wiki/Index.md</a> for details.</li>
+    <a href="https://www.mpi-forum.org/implementation-status/">https://www.mpi-forum.org/implementation-status/</a> for details.</li>
 </ul>
 <p>By default, Global Arrays will choose ARMCI or ComEx, based upon the
 environment variables selected by the user (see GA documentation for
@@ -38941,12 +38941,12 @@ Global Arrays:</p>
 <tr>
 <td style="text-align: left;"><code>MPI-PR</code></td>
 <td style="text-align: left;">ARMCI with progress rank</td>
-<td style="text-align: left;">Recommended, except on Blue Gene/Q.</td>
+<td style="text-align: left;">High-performance option.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>MPI-PT</code></td>
 <td style="text-align: left;">ARMCI with progress thread</td>
-<td style="text-align: left;">Appropriate for Blue Gene/Q.</td>
+<td style="text-align: left;">Not recommended.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>MPI-MT</code></td>
@@ -38956,22 +38956,17 @@ Global Arrays:</p>
 <tr>
 <td style="text-align: left;"><code>MPI-TS</code></td>
 <td style="text-align: left;">ARMCI over MPI without data server</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Universally portable but not always high-performance.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>MPI-SPAWN</code></td>
 <td style="text-align: left;">ARMCI using MPI dynamic processes</td>
-<td style="text-align: left;">Requires MPI_Comm_spawn support.</td>
+<td style="text-align: left;">Not recommended.  Requires MPI_Comm_spawn support.</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>ARMCI</code></td>
-<td style="text-align: left;">Uses ARMCI-MPI</td>
-<td style="text-align: left;">See <a href="https://github.com/pmodels/mpich/blob/main/doc/wiki/Index.md">the ARMCI-MPI NWChem page</a> for details.</td>
-</tr>
-<tr>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">(please use <em>mpi3rma</em> branch)</td>
-<td style="text-align: left;">requires <code>EXTERNAL_ARMCI_PATH</code></td>
+<td style="text-align: left;">Uses ARMCI-MPI. Requires <code>EXTERNAL_ARMCI_PATH</code>.</td>
+<td style="text-align: left;">See <a href="https://github.com/pmodels/armci-mpi">https://github.com/pmodels/armci-mpi</a> for details.</td>
 </tr>
 </tbody>
 </table>
@@ -38985,31 +38980,24 @@ option to choose. However, we observe the following:</p>
     executing on a single node (i.e. the case of desktop execution) you
     would need to ask for n+1 processes; in other words, a serial
     execution would require the following mpirun invocation <code>mpirun -np 2 ...</code>  </li>
-<li>On Intel True Scale and Omni Path systems, <code>MPI-PR</code> is more reliable
+<li>On Intel Omni Path systems, <code>MPI-PR</code> is more reliable
     than <code>OPENIB</code> or <code>MPI-SPAWN</code>. <code>ARMCI-MPI</code> with Casper and Intel MPI is
     also recommended. See <a href="https://github.com/jeffhammond/HPCInfo/blob/master/ofi/NWChem-OPA.md">this page</a>
-    for details. Contact <a href="mailto:jeff.science@gmail.com&gt;">Jeff Hammond</a>
-    for assistance.</li>
-<li>On IBM Blue Gene/Q, one must use the <em>mpi2rma</em> branch of <code>ARMCI-MPI</code>
-    because MPI-3 is not fully supported. On all other platforms, the
-    <code>ARMCI-MPI</code> branch <em>mpi3rma</em> is recommended.</li>
+    for details.</li>
 <li>The performance of <code>ARMCI-MPI</code> is greatly enhanced by
     <a href="https://pmodels.github.io/casper-www/">Casper</a>. See <a href="https://pmodels.github.io/casper-www/publication.html">this
     link</a> 
-    for design details and <a href="https://wiki.mpich.org/armci-mpi/index.php/Casper">this
-    page</a> for
-    instructions on how to use it.</li>
+    for design details.</li>
 </ul>
 <p>When using ARMCI-MPI, please make sure to use the most recent version of
 MPI (MPICH 3.2+, Cray MPI 7.2+, MVAPICH2 2.0+, Intel MPI 5.1+, Open-MPI
 2.0+). Older versions of MPI are known to have bugs in the MPI-3 RMA
 features that affect the correctness of NWChem.</p>
 <h2 id="armci-support">Support<a class="headerlink" href="#armci-support" title="Permanent link">&para;</a></h2>
-<p>Global Arrays, ARMCI and ComEx are developed and supported by PNNL. The
-user list for support is <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#116;&#111;&#111;&#108;&#115;&#64;&#103;&#111;&#111;&#103;&#108;&#101;&#103;&#114;&#111;&#117;&#112;&#115;&#46;&#99;&#111;&#109;">&#104;&#112;&#99;&#116;&#111;&#111;&#108;&#115;&#64;&#103;&#111;&#111;&#103;&#108;&#101;&#103;&#114;&#111;&#117;&#112;&#115;&#46;&#99;&#111;&#109;</a>.</p>
-<p>ARMCI-MPI is developed by Argonne and Intel. All ARMCI-MPI questions
-should be directed to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#114;&#109;&#99;&#105;&#45;&#100;&#105;&#115;&#99;&#117;&#115;&#115;&#64;&#108;&#105;&#115;&#116;&#115;&#46;&#109;&#112;&#105;&#99;&#104;&#46;&#111;&#114;&#103;">&#97;&#114;&#109;&#99;&#105;&#45;&#100;&#105;&#115;&#99;&#117;&#115;&#115;&#64;&#108;&#105;&#115;&#116;&#115;&#46;&#109;&#112;&#105;&#99;&#104;&#46;&#111;&#114;&#103;</a>. <em>ARMCI-MPI is not
-an Intel product.</em></p>
+<p>Global Arrays, ARMCI and ComEx are developed and supported by PNNL.
+Use <a href="https://github.com/GlobalArrays/ga/issues">https://github.com/GlobalArrays/ga/issues</a> for support.</p>
+<p>ARMCI-MPI is maintained by Jeff Hammond.
+Use <a href="https://github.com/pmodels/armci-mpi/issues">https://github.com/pmodels/armci-mpi/issues</a> for support.</p>
 <h2 id="armci-automated-installation-of-armci-mpi">Automated installation of ARMCI-MPI<a class="headerlink" href="#armci-automated-installation-of-armci-mpi" title="Permanent link">&para;</a></h2>
 <p>If you wish to use ARMCI-MPI, a script is available to automatically
 install it:</p>
