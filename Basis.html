@@ -3455,18 +3455,18 @@ accessed for the basis functions. For example,</p>
    si library 6-31g file /usr/d3g681/nwchem/libraries/  
  end
 </code></pre>
-<p>This directive tells the code to use the basis set 3-21g in the file
-/usr/d3g681/nwchem/library for atom o and to use the basis set 6-31g in
-the directory /usr/d3g681/nwchem/libraries/ for atom si, rather than
+<p>This directive tells the code to use the basis set <code>3-21g</code> in the file
+<code>/usr/d3g681/nwchem/library</code> for atom <code>o</code> and to use the basis set <code>6-31g</code> in
+the directory <code>/usr/d3g681/nwchem/libraries/</code> for atom <code>si</code>, rather than
 look for them in the default libraries. When a directory is defined the
-code will search for the basis set in a file with the name 6-31g.</p>
+code will search for the basis set in a file with the name <code>6-31g</code>.</p>
 <p>The &ldquo;<code>*</code>&rdquo; tag can be used to efficiently define basis set input
 directives for large numbers of atoms. An example is:</p>
 <pre><code> basis  
    *  library 3-21g 
  end
 </code></pre>
-<p>This directive tells the code to assign the basis sets 3-21g to all the
+<p>This directive tells the code to assign the basis sets <code>3-21g</code> to all the
 atom tags defined in the geometry. If one wants to place a different
 basis set on one of the atoms defined in the geometry, the following
 directive can be used:</p>
@@ -3474,7 +3474,7 @@ directive can be used:</p>
    *  library 3-21g except H 
  end
 </code></pre>
-<p>This directive tells the code to assign the basis sets 3-21g to all the
+<p>This directive tells the code to assign the basis sets <code>3-21g</code> to all the
 atoms in the geometry, except the hydrogen atoms. Remember that the user
 will have to explicitly define the hydrogen basis set in this
 directive! One may also define tags that end with a &ldquo;<code>*</code>&rdquo;:</p>
@@ -3482,7 +3482,7 @@ directive! One may also define tags that end with a &ldquo;<code>*</code>&rdquo;
    oxy*  library 3-21g   
  end
 </code></pre>
-<p>This directive tells the code to assign the basis sets 3-21g to all atom
+<p>This directive tells the code to assign the basis sets <code>3-21g</code> to all atom
 tags in the geometry that start with &ldquo;<code>oxy</code>&rdquo;.</p>
 <p>If standard basis sets are to be placed upon a dummy center, the
 variable <code>&lt;tag_in_lib&gt;</code> must also be entered on this line, to identify the
