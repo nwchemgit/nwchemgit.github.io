@@ -39241,6 +39241,7 @@ later versions&#160;<a class="footnote-backref" href="#software-supporting-nwche
 </ol>
 </div></section><section class="print-page" id="containers" heading-number="30"><h1 id="containers-containers">Containers<a class="headerlink" href="#containers-containers" title="Permanent link">&para;</a></h1>
 <h2 id="containers-docker">Docker<a class="headerlink" href="#containers-docker" title="Permanent link">&para;</a></h2>
+<h3 id="containers-running-nwchem-using-docker-compose">Running NWChem using docker compose<a class="headerlink" href="#containers-running-nwchem-using-docker-compose" title="Permanent link">&para;</a></h3>
 <p>Instruction for using the NWChem Docker container with the <a href="https://docs.docker.com/compose">docker compose</a> command</p>
 <ol>
 <li>
@@ -39274,6 +39275,10 @@ If you would like to use more processes,
 then you would have to set the environment variable <code>MYNPROC</code> to the number of processes plus one.
 For example, if you wish to use 4 processes, then you will execute the following (bash syntax)</p>
 <pre><code>export MYNPROC=5
+</code></pre>
+<h3 id="containers-running-nwchem-on-macos-using-apple-container">Running NWChem on MacOS using Apple container<a class="headerlink" href="#containers-running-nwchem-on-macos-using-apple-container" title="Permanent link">&para;</a></h3>
+<p>After installing Apple Container as described at https://github.com/apple/container on computers equipped with Apple silicon, it is possible to run NWChem docker images as in the example below. </p>
+<pre><code>container run -i --shm-size  1G --memory 3G  -t --volume $(pwd):/data --entrypoint=mpirun   --rm ghcr.io/nwchemgit/nwchemcross-dev-mpi-pr:arm64 -np 4 nwchem /data/siosi3.nw
 </code></pre>
 <h2 id="containers-singularityapptainer">Singularity/Apptainer<a class="headerlink" href="#containers-singularityapptainer" title="Permanent link">&para;</a></h2>
 <p>Singularity/Apptainer recipes for NWChem are available at.<br />
