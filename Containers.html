@@ -3169,27 +3169,27 @@
 <h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <h3 id="running-nwchem-using-docker-compose">Running NWChem using docker compose<a class="headerlink" href="#running-nwchem-using-docker-compose" title="Permanent link">&para;</a></h3>
 <p>Instruction for using the NWChem Docker container with the <a href="https://docs.docker.com/compose">docker compose</a> command</p>
-<ol>
+<ul>
 <li>
 <p>Install docker  as described in <a href="https://docs.docker.com/engine/install">https://docs.docker.com/engine/install</a></p>
 </li>
 <li>
 <p>Download the <a href="https://github.com/nwchemgit/nwchem-dockerfiles/raw/refs/heads/master/nwchem-cross/compose.yaml">compose.yaml</a> file</p>
 </li>
-</ol>
+</ul>
 <pre><code> wget https://github.com/nwchemgit/nwchem-dockerfiles/raw/refs/heads/master/nwchem-cross/compose.yaml
 </code></pre>
-<ol>
+<ul>
 <li>Create the nwchem service</li>
-</ol>
+</ul>
 <pre><code>docker compose up -d
 </code></pre>
 <p>In some installation, <code>docker compose</code> is available as the command <code>docker-compose</code>, therefore in those cases, this command becomes</p>
 <pre><code>docker-compose up -d
 </code></pre>
-<ol>
+<ul>
 <li>Run NWChem</li>
-</ol>
+</ul>
 <pre><code> docker compose run --rm nwchem h2o.nw
 </code></pre>
 <p>In some installation, <code>docker compose</code> is available as the command <code>docker-compose</code>, therefore in those cases, this command becomes</p>
