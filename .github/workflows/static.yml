@@ -5,7 +5,8 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["master"]
-
+  repository_dispatch:
+    types: [backend_automation]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -34,7 +35,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v7
+        uses: actions/upload-pages-artifact@v5
         with:
           # Upload entire repository
           path: '.'
