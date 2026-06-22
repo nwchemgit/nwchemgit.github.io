@@ -4057,8 +4057,8 @@ For example, if you wish to use 4 processes, then you will execute the following
 <pre><code>export MYNPROC=5
 </code></pre>
 <h3 id="running-nwchem-on-macos-using-apple-container">Running NWChem on MacOS using Apple container<a class="headerlink" href="#running-nwchem-on-macos-using-apple-container" title="Permanent link">&para;</a></h3>
-<p>After installing Apple Container as described at https://github.com/apple/container on computers equipped with Apple silicon, it is possible to run NWChem docker images as in the example below. </p>
-<pre><code>container run --shm-size 1G --memory 3G --volume $(pwd):/data --entrypoint=mpirun   --rm ghcr.io/nwchemgit/nwchemcross-dev-mpi-pr:arm64 -np 4 nwchem /data/siosi3.nw
+<p>After installing Apple Container as described at <a href="https://github.com/apple/container">https://github.com/apple/container</a> on computers equipped with Apple silicon, it is possible to run NWChem docker images as in the example below. </p>
+<pre><code>container run -c 7 --shm-size 1G --memory 3G --volume $(pwd):/data --entrypoint=mpirun   --rm ghcr.io/nwchemgit/nwchemcross-dev-mpi-pr:arm64 -np 7 nwchem /data/siosi3.nw
 </code></pre>
 <h2 id="singularityapptainer">Singularity/Apptainer<a class="headerlink" href="#singularityapptainer" title="Permanent link">&para;</a></h2>
 <p>Singularity/Apptainer recipes for NWChem are available at.<br />
