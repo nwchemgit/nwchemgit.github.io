@@ -9282,7 +9282,7 @@ are:</p>
               [diis [nfock &lt;integer nfock default 10&gt;]] \  
               [nodiis] [lshift &lt;real lshift default 0.5&gt;] \  
               [nolevelshifting] \  
-              [hl_tol &lt;real hl_tol default 0.1&gt;] \  
+              [hl_tol &lt;real hl_tol default 0.01&gt;] \  
               [rabuck [n_rabuck &lt;integer n_rabuck default 25&gt;]\
               [fast] ]  
  GRID [(xcoarse||coarse||medium||fine||xfine||huge) default medium] \  
@@ -10968,7 +10968,7 @@ file</a>.</p>
 <pre><code> CONVERGENCE [energy &lt;real energy default 1e-6&gt;] \  
              [density &lt;real density default 1e-5&gt;] \  
              [gradient &lt;real gradient default 5e-4&gt;] \  
-             [hl_tol &lt;real hl_tol default 0.1&gt;]  
+             [hl_tol &lt;real hl_tol default 0.01&gt;]  
              [dampon &lt;real dampon default 0.0&gt;] \  
              [dampoff &lt;real dampoff default 0.0&gt;] \  
              [ncydp &lt;integer ncydp default 2&gt;] \  
@@ -11040,7 +11040,7 @@ can be modified by the following keywords</p>
 <pre><code> CONVERGENCE  [damp &lt;integer ndamp default 0&gt;] \  
               [diis [nfock &lt;integer nfock default 10&gt;]] \  
               [lshift &lt;real lshift default 0.5&gt;] \  
-              [hl_tol &lt;real hl_tol default 0.1&gt;]]
+              [hl_tol &lt;real hl_tol default 0.01&gt;]]
 </code></pre>
 <h3 id="density-functional-theory-for-molecules-convergence-damp-keyword">CONVERGENCE DAMP Keyword<a class="headerlink" href="#density-functional-theory-for-molecules-convergence-damp-keyword" title="Permanent link">&para;</a></h3>
 <p>Damping is defined to be the percentage of the previous iterations
@@ -11058,10 +11058,10 @@ specified by the keyword <code>lshift</code>. For example the directive,</p>
 <p>causes the diagonal elements of the Fock matrix corresponding to the
 virtual orbitals to be shifted by 0.5 a.u. By default, this
 level-shifting procedure is switched on whenever the HOMO-LUMO gap is
-small. Small is defined by default to be 0.05 au but can be modified by
+small. Small is defined by default to be 0.01 au but can be modified by
 the directive hl_tol. An example of changing the HOMO-LUMO gap
-tolerance to 0.01 would be,</p>
-<pre><code> CONVERGENCE hl_tol 0.01
+tolerance to 0.005 would be,</p>
+<pre><code> CONVERGENCE hl_tol 0.005
 </code></pre>
 <h3 id="density-functional-theory-for-molecules-convergence-diis-keyword">CONVERGENCE DIIS Keyword<a class="headerlink" href="#density-functional-theory-for-molecules-convergence-diis-keyword" title="Permanent link">&para;</a></h3>
 <p>Direct inversion of the iterative subspace with extrapolation of up to
