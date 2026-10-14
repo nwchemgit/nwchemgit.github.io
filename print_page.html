@@ -12244,7 +12244,7 @@ Therefore please use the following links for <a href="#hartree-fock-theory-for-m
 <p>Köster, A. M.; Reveles, J. U.; Campo, J. M. del. Calculation of Exchange-Correlation Potentials with Auxiliary Function Densities. <em>The Journal of Chemical Physics</em> <strong>2004</strong>, <em>121</em> (8), 3417–3424. <a href="https://doi.org/10.1063/1.1771638">https://doi.org/10.1063/1.1771638</a>&#160;<a class="footnote-backref" href="#density-functional-theory-for-molecules-fnref_footnote_3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="density-functional-theory-for-molecules-fn_footnote_4">
-<p>Slater, J. C.; Johnson, K. H. Self-Consistent-Field <em>X</em><em>α</em> Cluster Method for Polyatomic Molecules and Solids. <em>Phys. Rev. B</em> <strong>1972</strong>, <em>5</em>, 844–853. <a href="https://doi.org/10.1103/PhysRevB.5.844">https://doi.org/10.1103/PhysRevB.5.844</a>&#160;<a class="footnote-backref" href="#density-functional-theory-for-molecules-fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#density-functional-theory-for-molecules-fnref2_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Slater, J. C.; Johnson, K. H. Self-Consistent-Field <em>X**α</em> Cluster Method for Polyatomic Molecules and Solids. <em>Phys. Rev. B</em> <strong>1972</strong>, <em>5</em>, 844–853. <a href="https://doi.org/10.1103/PhysRevB.5.844">https://doi.org/10.1103/PhysRevB.5.844</a>&#160;<a class="footnote-backref" href="#density-functional-theory-for-molecules-fnref_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#density-functional-theory-for-molecules-fnref2_footnote_4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="density-functional-theory-for-molecules-fn_footnote_5">
 <p>Slater, J. C. <em>Quantum Theory of Molecules and Solids: The Self-Consistent Field for Molecules and Solids</em>; McGraw-Hill Education, 1974; p 640.&#160;<a class="footnote-backref" href="#density-functional-theory-for-molecules-fnref_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#density-functional-theory-for-molecules-fnref2_footnote_5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
@@ -13906,7 +13906,7 @@ Fourier transform, I &ldquo;paste&rdquo; the three files together to easily plot
 absorption, which is constructed from the trace of the polarizability
 matrix, i.e., the sum of the imaginary parts of the FFTs of the dipole
 moments.</p>
-<p><em>S (&omega;) = (4&pi;&omega;)/(3c&kappa;)</em>Tr[Im<em> &alpha;(&omega;)</em>]  </p>
+<p><em>S (&omega;) = (4&pi;&omega;)/(3c&kappa;)<em>Tr[Im</em> &alpha;(&omega;)</em>]  </p>
 <p>where <em>c</em> is the speed of light (137 in atomic units), <em>&kappa;</em>  is
 the kick electric field strength, and <em>&alpha;(&omega;)</em> is the linear
 polarizabilty tensor computed from the Fourier transforms of the
@@ -30090,8 +30090,8 @@ basis set as specified in <a href="#qmmm_qmmm_parameters-qmmm-link_ecp"><code>li
 <pre><code>link_ecp &lt;(auto||user)default auto&gt; 
 </code></pre>
 <p>This directive specifies ECP basis set on fluoride link atoms. If set to
-<code>auto</code> the ECP basis set given by Zhang, Lee, Yang<sup id="fnref_footnote_1"><a class="footnote-ref" href="#qmmm_qmmm_parameters-fn_footnote_1">1</a></sup> for 6-31G<em> basis
-will be used. Strictly speaking, this implies the use of 6-31G</em>
+<code>auto</code> the ECP basis set given by Zhang, Lee, Yang<sup id="fnref_footnote_1"><a class="footnote-ref" href="#qmmm_qmmm_parameters-fn_footnote_1">1</a></sup> for 6-31G* basis
+will be used. Strictly speaking, this implies the use of 6-31G*
 spherical basis as the main basis set. If other choices are desired then
 keyword user should be used and ECP basis set should be entered
 separatelly following the format given in section dealing with <a href="#ecp">ECPs</a> .
@@ -31172,8 +31172,8 @@ end
 <h3 id="bq-bq-load-keyword">BQ: LOAD keyword<a class="headerlink" href="#bq-bq-load-keyword" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>load</strong> <file> [charges <chargefile> ] [format ix iy iz iq] [units au|nm|pm|<strong>ang</strong>|&hellip;] [ scale <factor> ] - this directive allows to load point charges from external file(s). You can load charges and their coordinates from a single file, or from separate files. The files do not have to follow any specific format, but blank lines and comments (starting with #) will be ignored. The actual specification of how the coordinates/charges are laid out in in the file is given by format keyword. Multiple load directives are a supported.<br />
-<strong> <file> - the name of the file where Bq coordinates and charges are stored. <br />
-</strong> charges <chargefile> - this optional keyword allows to load charges (NOT the coordinates) from a separate <chargefile>. In this case, only coordinates would be loaded from <file>  </li>
+** <file> - the name of the file where Bq coordinates and charges are stored. <br />
+** charges <chargefile> - this optional keyword allows to load charges (NOT the coordinates) from a separate <chargefile>. In this case, only coordinates would be loaded from <file>  </li>
 </ul>
 <h4 id="bq-bq-loadformat-keyword">BQ: LOAD/FORMAT keyword<a class="headerlink" href="#bq-bq-loadformat-keyword" title="Permanent link">&para;</a></h4>
 <p>** format ix iy iz iq - this optional keyword allows to set the fields (separated by blanks) where x,y,z coordinates and respective charge values are to be found. If a specified field doe nor exist or contains no numerical value, the processing will skip to the next line. The default value for format is &lsquo;&rsquo;&lsquo;2 3 4 5&rsquo;&lsquo;&rsquo;, which will work for the following example (note that the second line will not be processed here)  </p>
@@ -34652,8 +34652,8 @@ integrals and basic information including initial wavefunction guesses
 for quantum algorithms. There are currently two options for integrals:</p>
 <h2 id="quantum-bare-hamiltonian">Bare Hamiltonian<a class="headerlink" href="#quantum-bare-hamiltonian" title="Permanent link">&para;</a></h2>
 <p>To print the bare Hamiltonian, you must set up a CCSD calculation with the following parameters: <br />
-<em> The symmetry must be declared as &lsquo;C1&rsquo; <br />
-</em> In the TCE block, you must include the following:   </p>
+* The symmetry must be declared as &lsquo;C1&rsquo; <br />
+* In the TCE block, you must include the following:   </p>
 <pre><code>        2eorb
         2emet 13
         nroots ### (Optional, but will include leading excitations for excited-state quantum calculations)
@@ -39859,8 +39859,8 @@ application called MPI_Abort(comm=0x84000002, -1)
 <pre><code>[0] Received an Error in Communication: (-1) 0: ptsalloc: increase memory in input line:
 </code></pre>
 <p>you can fix it by either  <br />
-<em> increasing the memory line in the input file using the syntax described in the <a href="#memory">Memory section</a> (e.g. <code>memory total 1000 mb</code>), or by<br />
-</em> recompiling the NWChem binary with the <code>getmem.nwchem</code> script as described in the section avaible at this 
+* increasing the memory line in the input file using the syntax described in the <a href="#memory">Memory section</a> (e.g. <code>memory total 1000 mb</code>), or by<br />
+* recompiling the NWChem binary with the <code>getmem.nwchem</code> script as described in the section avaible at this 
 <a href="#compiling-nwchem-setting-the-default-memory-values">link</a>  </p></section><section class="print-page" id="tutorials" heading-number="23"><h1 id="tutorials-tutorials">Tutorials<a class="headerlink" href="#tutorials-tutorials" title="Permanent link">&para;</a></h1>
 <h2 id="tutorials-links-to-material-of-past-nwchem-tutorials">Links to material of past NWChem Tutorials<a class="headerlink" href="#tutorials-links-to-material-of-past-nwchem-tutorials" title="Permanent link">&para;</a></h2>
 <ul>
