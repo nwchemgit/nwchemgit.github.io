@@ -31186,63 +31186,75 @@ end
  H  1.560   1.268   1.608   0.45
 </code></pre>
 <h4 id="bq-bq-loadunits-keyword">BQ: LOAD/UNITS keyword<a class="headerlink" href="#bq-bq-loadunits-keyword" title="Permanent link">&para;</a></h4>
-<p>** <code>units au|nm|pm|ang|...</code> - this optional keyword sets the local coordinate units valid only for this particular load directive. Otherwise global unit definition will apply (see above)</p>
+<ul>
+<li><code>units au|nm|pm|ang|...</code> - this optional keyword sets the local coordinate units valid only for this particular load directive. Otherwise global unit definition will apply (see above)</li>
+</ul>
 <h4 id="bq-bq-loadscale-keyword">BQ: LOAD/SCALE keyword<a class="headerlink" href="#bq-bq-loadscale-keyword" title="Permanent link">&para;</a></h4>
-<p>** <code>scale &lt;factor&gt;</code>
-  geometry nocenter noautosym units angstrom noautoz print<br />
-  O          2.045   1.011  -1.505<br />
-  H1         1.912   0.062  -1.314<br />
-  H2         1.119   1.318  -1.544<br />
-  end  </p>
-<p>#example of explicit Bq input
-  bq<br />
-  2.384   1.738   1.380  -0.9<br />
-  2.448   1.608   0.416   0.45<br />
-  1.560   1.268   1.608   0.45<br />
-  end  </p>
-<p>task dft energy  </p>
-<p>#example of implicit Bq input using load directive<br />
-  bq<br />
-  load bq.xyz format 1 2 3 4<br />
-  end<br />
-  task dft energy  </p>
-<p>#example of loading coordinates and charges separately<br />
-  bq<br />
-  load   bq.xyz charges bq.xyz format 1 2 3 4<br />
-  end<br />
-  task dft energy  </p>
-<p>#example of loading Bq&rsquo;s with default format (1 2 3 4) and scaling charges (to zero)<br />
-  bq<br />
-  load bq.xyz scale 0.0<br />
-  end<br />
-  task dft energy  </p>
-<p>#example of mixed Bq input<br />
-  bq<br />
-  load bqO.xyz format 2 3 4 6<br />
-  2.448   1.608   0.416   0.45<br />
-  1.560   1.268   1.608   0.45<br />
-  end<br />
-  task dft energy  </p>
-<p>#example of erasing Bq&rsquo;s<br />
-  bq<br />
-  clear<br />
-  end<br />
-  task dft energy  </p>
-<p>#example of storing Bq&rsquo;s in custom namespace (not activated)<br />
-  bq marat<br />
-  load bq.xyz format 1 2 3 4<br />
-  end<br />
-  task dft energy  </p>
-<p>#example of activating Bq&rsquo;s stored in custom namespace<br />
-  set bq marat  </p>
-<p>task dft energy  </p>
-<pre><code>## How to increasing the limit on the number of bq  charges
+<ul>
+<li><code>scale &lt;factor&gt;</code></li>
+</ul>
+<pre><code>  geometry nocenter noautosym units angstrom noautoz print  
+  O          2.045   1.011  -1.505  
+  H1         1.912   0.062  -1.314  
+  H2         1.119   1.318  -1.544  
+  end  
 
+  #example of explicit Bq input
+  bq  
+  2.384   1.738   1.380  -0.9  
+  2.448   1.608   0.416   0.45  
+  1.560   1.268   1.608   0.45  
+  end  
 
-  There is an internal limit of 25000 bq charges. To increase this use the following set directive in the input file  
+  task dft energy  
+
+  #example of implicit Bq input using load directive  
+  bq  
+  load bq.xyz format 1 2 3 4  
+  end  
+  task dft energy  
+
+  #example of loading coordinates and charges separately  
+  bq  
+  load   bq.xyz charges bq.xyz format 1 2 3 4  
+  end  
+  task dft energy  
+
+  #example of loading Bq's with default format (1 2 3 4) and scaling charges (to zero)  
+  bq  
+  load bq.xyz scale 0.0  
+  end  
+  task dft energy  
+
+  #example of mixed Bq input  
+  bq  
+  load bqO.xyz format 2 3 4 6  
+  2.448   1.608   0.416   0.45  
+  1.560   1.268   1.608   0.45  
+  end  
+  task dft energy  
+
+  #example of erasing Bq's  
+  bq  
+  clear  
+  end  
+  task dft energy  
+
+  #example of storing Bq's in custom namespace (not activated)  
+  bq marat  
+  load bq.xyz format 1 2 3 4  
+  end  
+  task dft energy  
+
+  #example of activating Bq's stored in custom namespace  
+  set bq marat  
+
+  task dft energy  
 </code></pre>
-<p>set bq:max_nbq 30000
-```</p></section><section class="print-page" id="1d-rism" heading-number="13.6"><h1 id="1d-rism-1-d-rism">1-D RISM<a class="headerlink" href="#1d-rism-1-d-rism" title="Permanent link">&para;</a></h1>
+<h2 id="bq-how-to-increasing-the-limit-on-the-number-of-bq-charges">How to increasing the limit on the number of bq  charges<a class="headerlink" href="#bq-how-to-increasing-the-limit-on-the-number-of-bq-charges" title="Permanent link">&para;</a></h2>
+<p>There is an internal limit of 25000 bq charges. To increase this use the following set directive in the input file  </p>
+<pre><code>set bq:max_nbq 30000
+</code></pre></section><section class="print-page" id="1d-rism" heading-number="13.6"><h1 id="1d-rism-1-d-rism">1-D RISM<a class="headerlink" href="#1d-rism-1-d-rism" title="Permanent link">&para;</a></h1>
 <h2 id="1d-rism-overview">Overview<a class="headerlink" href="#1d-rism-overview" title="Permanent link">&para;</a></h2>
 <p>The 1D-RISM module in NWChem provides description of solvated systems
 following one-dimensional reference interaction site of model of
