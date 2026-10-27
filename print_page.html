@@ -31163,7 +31163,7 @@ end
 </ul>
 <h3 id="bq-bq-forcenoforce-keyword">BQ: FORCE|NOFORCE keyword<a class="headerlink" href="#bq-bq-forcenoforce-keyword" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>force</strong> <output_file> | <strong>noforce</strong> this directive triggers|disables calculation of forces on Bq charges. Default value is <strong>noforce</strong>, which disables force calculation. The forces will be written to <output_file> if provided or to <prefix>.bqforce.dat file. The format of the file is</li>
+<li><strong>force</strong> <code>&lt;output_file&gt;</code> | <strong>noforce</strong> this directive triggers|disables calculation of forces on Bq charges. Default value is <strong>noforce</strong>, which disables force calculation. The forces will be written to <code>&lt;output_file&gt;</code> if provided or to <code>&lt;prefix&gt;.bqforce.dat</code> file. The format of the file is</li>
 </ul>
 <pre><code> #comment line
  fx fy fz
@@ -31171,12 +31171,14 @@ end
 </code></pre>
 <h3 id="bq-bq-load-keyword">BQ: LOAD keyword<a class="headerlink" href="#bq-bq-load-keyword" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>load</strong> <file> [charges <chargefile> ] [format ix iy iz iq] [units au|nm|pm|<strong>ang</strong>|&hellip;] [ scale <factor> ] - this directive allows to load point charges from external file(s). You can load charges and their coordinates from a single file, or from separate files. The files do not have to follow any specific format, but blank lines and comments (starting with #) will be ignored. The actual specification of how the coordinates/charges are laid out in in the file is given by format keyword. Multiple load directives are a supported.<br />
+<li><strong>load</strong> <code>&lt;file&gt; [charges &lt;chargefile&gt; ] [format ix iy iz iq] [units au|nm|pm|**ang**|...] [ scale &lt;factor&gt; ]</code> - this directive allows to load point charges from external file(s). You can load charges and their coordinates from a single file, or from separate files. The files do not have to follow any specific format, but blank lines and comments (starting with #) will be ignored. The actual specification of how the coordinates/charges are laid out in in the file is given by format keyword. Multiple load directives are a supported.<br />
 ** <file> - the name of the file where Bq coordinates and charges are stored. <br />
-** charges <chargefile> - this optional keyword allows to load charges (NOT the coordinates) from a separate <chargefile>. In this case, only coordinates would be loaded from <file>  </li>
+** charges <chargefile> - this optional keyword allows to load charges (NOT the coordinates) from a separate <code>&lt;chargefile&gt;</code>. In this case, only coordinates would be loaded from <code>&lt;file&gt;</code></li>
 </ul>
 <h4 id="bq-bq-loadformat-keyword">BQ: LOAD/FORMAT keyword<a class="headerlink" href="#bq-bq-loadformat-keyword" title="Permanent link">&para;</a></h4>
-<p>** format ix iy iz iq - this optional keyword allows to set the fields (separated by blanks) where x,y,z coordinates and respective charge values are to be found. If a specified field doe nor exist or contains no numerical value, the processing will skip to the next line. The default value for format is &lsquo;&rsquo;&lsquo;2 3 4 5&rsquo;&lsquo;&rsquo;, which will work for the following example (note that the second line will not be processed here)  </p>
+<ul>
+<li><code>format ix iy iz iq</code> - this optional keyword allows to set the fields (separated by blanks) where x,y,z coordinates and respective charge values are to be found. If a specified field doe nor exist or contains no numerical value, the processing will skip to the next line. The default value for <code>format</code> is <code>2 3 4 5</code>, which will work for the following example (note that the second line will not be processed here)  </li>
+</ul>
 <pre><code> #this is a comment
  coordinates are in fields 2,3,4 and charge is field 5
  O  2.384   1.738   1.380  -0.9
@@ -31184,86 +31186,63 @@ end
  H  1.560   1.268   1.608   0.45
 </code></pre>
 <h4 id="bq-bq-loadunits-keyword">BQ: LOAD/UNITS keyword<a class="headerlink" href="#bq-bq-loadunits-keyword" title="Permanent link">&para;</a></h4>
-<p>** units au|nm|pm|ang|&hellip; - this optional keyword sets the local coordinate units valid only for this particular load directive. Otherwise global unit definition will apply (see above)</p>
+<p>** <code>units au|nm|pm|ang|...</code> - this optional keyword sets the local coordinate units valid only for this particular load directive. Otherwise global unit definition will apply (see above)</p>
 <h4 id="bq-bq-loadscale-keyword">BQ: LOAD/SCALE keyword<a class="headerlink" href="#bq-bq-loadscale-keyword" title="Permanent link">&para;</a></h4>
-<p>** scale <factor> - this optional keyword allows to scale loaded charge values by some factor</p>
-<ul>
-<li>x y z q  - explicit definition of coordinates and charge values of point charges. These can be mixed in with load directive at will. </li>
-</ul>
-<pre><code>  start w1  
+<p>** <code>scale &lt;factor&gt;</code>
+  geometry nocenter noautosym units angstrom noautoz print<br />
+  O          2.045   1.011  -1.505<br />
+  H1         1.912   0.062  -1.314<br />
+  H2         1.119   1.318  -1.544<br />
+  end  </p>
+<p>#example of explicit Bq input
+  bq<br />
+  2.384   1.738   1.380  -0.9<br />
+  2.448   1.608   0.416   0.45<br />
+  1.560   1.268   1.608   0.45<br />
+  end  </p>
+<p>task dft energy  </p>
+<p>#example of implicit Bq input using load directive<br />
+  bq<br />
+  load bq.xyz format 1 2 3 4<br />
+  end<br />
+  task dft energy  </p>
+<p>#example of loading coordinates and charges separately<br />
+  bq<br />
+  load   bq.xyz charges bq.xyz format 1 2 3 4<br />
+  end<br />
+  task dft energy  </p>
+<p>#example of loading Bq&rsquo;s with default format (1 2 3 4) and scaling charges (to zero)<br />
+  bq<br />
+  load bq.xyz scale 0.0<br />
+  end<br />
+  task dft energy  </p>
+<p>#example of mixed Bq input<br />
+  bq<br />
+  load bqO.xyz format 2 3 4 6<br />
+  2.448   1.608   0.416   0.45<br />
+  1.560   1.268   1.608   0.45<br />
+  end<br />
+  task dft energy  </p>
+<p>#example of erasing Bq&rsquo;s<br />
+  bq<br />
+  clear<br />
+  end<br />
+  task dft energy  </p>
+<p>#example of storing Bq&rsquo;s in custom namespace (not activated)<br />
+  bq marat<br />
+  load bq.xyz format 1 2 3 4<br />
+  end<br />
+  task dft energy  </p>
+<p>#example of activating Bq&rsquo;s stored in custom namespace<br />
+  set bq marat  </p>
+<p>task dft energy  </p>
+<pre><code>## How to increasing the limit on the number of bq  charges
 
-  BASIS &quot;ao basis&quot; PRINT  
-  * library &quot;3-21G&quot;  
-  END  
 
-  dft  
-   mult 1  
-   XC b3lyp  
-   iterations 5000  
-  end  
-
-  geometry nocenter noautosym units angstrom noautoz print  
-  O          2.045   1.011  -1.505  
-  H1         1.912   0.062  -1.314  
-  H2         1.119   1.318  -1.544  
-  end  
-
-  #example of explicit Bq input
-  bq  
-  2.384   1.738   1.380  -0.9  
-  2.448   1.608   0.416   0.45  
-  1.560   1.268   1.608   0.45  
-  end  
-
-  task dft energy  
-
-  #example of implicit Bq input using load directive  
-  bq  
-  load bq.xyz format 1 2 3 4  
-  end  
-  task dft energy  
-
-  #example of loading coordinates and charges separately  
-  bq  
-  load   bq.xyz charges bq.xyz format 1 2 3 4  
-  end  
-  task dft energy  
-
-  #example of loading Bq's with default format (1 2 3 4) and scaling charges (to zero)  
-  bq  
-  load bq.xyz scale 0.0  
-  end  
-  task dft energy  
-
-  #example of mixed Bq input  
-  bq  
-  load bqO.xyz format 2 3 4 6  
-  2.448   1.608   0.416   0.45  
-  1.560   1.268   1.608   0.45  
-  end  
-  task dft energy  
-
-  #example of erasing Bq's  
-  bq  
-  clear  
-  end  
-  task dft energy  
-
-  #example of storing Bq's in custom namespace (not activated)  
-  bq marat  
-  load bq.xyz format 1 2 3 4  
-  end  
-  task dft energy  
-
-  #example of activating Bq's stored in custom namespace  
-  set bq marat  
-
-  task dft energy  
+  There is an internal limit of 25000 bq charges. To increase this use the following set directive in the input file  
 </code></pre>
-<h2 id="bq-how-to-increasing-the-limit-on-the-number-of-bq-charges">How to increasing the limit on the number of bq  charges<a class="headerlink" href="#bq-how-to-increasing-the-limit-on-the-number-of-bq-charges" title="Permanent link">&para;</a></h2>
-<p>There is an internal limit of 25000 bq charges. To increase this use the following set directive in the input file  </p>
-<pre><code>set bq:max_nbq 30000
-</code></pre></section><section class="print-page" id="1d-rism" heading-number="13.6"><h1 id="1d-rism-1-d-rism">1-D RISM<a class="headerlink" href="#1d-rism-1-d-rism" title="Permanent link">&para;</a></h1>
+<p>set bq:max_nbq 30000
+```</p></section><section class="print-page" id="1d-rism" heading-number="13.6"><h1 id="1d-rism-1-d-rism">1-D RISM<a class="headerlink" href="#1d-rism-1-d-rism" title="Permanent link">&para;</a></h1>
 <h2 id="1d-rism-overview">Overview<a class="headerlink" href="#1d-rism-overview" title="Permanent link">&para;</a></h2>
 <p>The 1D-RISM module in NWChem provides description of solvated systems
 following one-dimensional reference interaction site of model of
